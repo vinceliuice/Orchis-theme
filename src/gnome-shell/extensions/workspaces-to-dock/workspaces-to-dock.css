@@ -1,0 +1,519 @@
+#workspacestodockTriggerSpacer {
+    background-color: none;
+}
+
+#workspacestodockContainerWrapper {
+    background-color: none;
+}
+
+#workspacestodockContainer {
+    background-color: none;
+}
+
+#workspacestodockDockWrapper {
+}
+
+#workspacestodockDock {
+    padding: 0;
+}
+
+#workspacestodockDock .workspace-thumbnails {
+    background-color: #37474F;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#workspacestodockDock:overview .workspace-thumbnails {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#workspacestodockDock.fullheight:overview .workspace-thumbnails {
+    background-color: transparent;
+}
+
+#workspacestodockDock .workspace-thumbnail-indicator {
+    border-left-width: 0;
+}
+
+#workspacestodockDock.right .workspace-thumbnail-indicator {
+    border-left-width: 2px;
+}
+
+#workspacestodockDock.left .workspace-thumbnail-indicator {
+    border-right-width: 2px;
+}
+
+#workspacestodockDock.top .workspace-thumbnail-indicator {
+    border-bottom-width: 2px;
+}
+
+#workspacestodockDock.bottom .workspace-thumbnail-indicator {
+    border-top-width: 2px;
+}
+
+#workspacestodockDock.right .workspace-thumbnails {
+    border-radius: 2px 0 0 2px;
+}
+
+#workspacestodockDock.left .workspace-thumbnails {
+    border-radius: 0 2px 2px 0;
+}
+
+#workspacestodockDock.top .workspace-thumbnails {
+    border-radius: 0 0 2px 2px;
+}
+
+#workspacestodockDock.bottom .workspace-thumbnails {
+    border-radius: 2px 2px 0 0;
+}
+
+#workspacestodockDock.right.inside .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.left.inside .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.top.inside .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.bottom.inside .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.right.fullheight .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.left.fullheight .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.top.fullheight .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock.bottom.fullheight .workspace-thumbnails {
+    border-radius: 0;
+}
+
+#workspacestodockDock .workspacestodock-shortcuts-panel {
+    border: 0 solid rgba(255, 255, 255, 0.12);
+}
+
+#workspacestodockDock.right .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+    padding: 0;
+    spacing: 0;
+    border-left: 1px;
+    border-right: none;
+}
+
+#workspacestodockDock.left .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+    padding: 0;
+    spacing: 0;
+    border-left: none;
+    border-right: 1px;
+}
+
+#workspacestodockDock.top .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+    padding: 0;
+    spacing: 0;
+    border-top: none;
+    border-bottom: 1px;
+}
+
+#workspacestodockDock.bottom .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+    padding: 0;
+    spacing: 0;
+    border-top: 1px;
+    border-bottom: none;
+}
+
+#workspacestodockDock.right.inside .workspacestodock-shortcuts-panel {
+    border-radius: 2px 0 0 2px;
+    padding: 0;
+    spacing: 0;
+    border-left: none;
+    border-right: 1px;
+}
+
+#workspacestodockDock.left.inside .workspacestodock-shortcuts-panel {
+    border-radius: 0 2px 2px 0;
+    padding: 0;
+    spacing: 0;
+    border-left: 1px;
+    border-right: none;
+}
+
+#workspacestodockDock.top.inside .workspacestodock-shortcuts-panel {
+    border-radius: 0 0 2px 2px;
+    padding: 0;
+    spacing: 0;
+    border-top: 1px;
+    border-bottom: none;
+}
+
+#workspacestodockDock.bottom.inside .workspacestodock-shortcuts-panel {
+    border-radius: 2px 2px 0 0;
+    padding: 0;
+    spacing: 0;
+    border-top: none;
+    border-bottom: 1px;
+}
+
+#workspacestodockDock.right.fullheight .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+}
+
+#workspacestodockDock.left.fullheight .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+}
+
+#workspacestodockDock.top.fullheight .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+}
+
+#workspacestodockDock.bottom.fullheight .workspacestodock-shortcuts-panel {
+    border-radius: 0;
+}
+
+#workspacestodockDock .workspacestodock-shortcuts-panel > * {
+    border: 0 !important;
+}
+
+.workspacestodock-shortcuts-panel-popupmenu {
+    padding: 2px;
+    spacing: 0;
+}
+
+.workspacestodock-shortcuts-panel-favorites {
+}
+
+.workspacestodock-shortcuts-panel-running {
+}
+
+.workspacestodock-shortcuts-panel-places {
+}
+
+/* shortcuts panel buttons */
+#workspacestodockDock .app-well-app {
+}
+
+#workspacestodockDock .workspacestodock-shortcuts-panel > StButton {
+    background-size: cover;
+}
+
+#workspacestodockDock.left .workspacestodock-shortcuts-panel > StButton,
+#workspacestodockDock.right .workspacestodock-shortcuts-panel > StButton {
+    padding: 3px 6px;
+}
+
+#workspacestodockDock.left .workspacestodock-shortcuts-panel > StButton:first-child,
+#workspacestodockDock.right .workspacestodock-shortcuts-panel > StButton:first-child {
+    padding: 6px 6px 3px 6px;
+}
+
+#workspacestodockDock.left .workspacestodock-shortcuts-panel > StButton:last-child,
+#workspacestodockDock.right .workspacestodock-shortcuts-panel > StButton:last-child {
+    padding: 3px 6px 6px 6px;
+}
+
+#workspacestodockDock.top .workspacestodock-shortcuts-panel > StButton,
+#workspacestodockDock.bottom .workspacestodock-shortcuts-panel > StButton {
+    padding: 6px 3px;
+}
+
+#workspacestodockDock.top .workspacestodock-shortcuts-panel > StButton:first-child,
+#workspacestodockDock.bottom .workspacestodock-shortcuts-panel > StButton:first-child {
+    padding: 6px 3px 6px 6px;
+}
+
+#workspacestodockDock.top .workspacestodock-shortcuts-panel > StButton:last-child,
+#workspacestodockDock.bottom .workspacestodock-shortcuts-panel > StButton:last-child {
+    padding: 6px 6px 6px 3px;
+}
+
+.workspacestodock-shortcut-button {
+}
+
+.workspacestodock-shortcut-button-symbolic {
+}
+
+/* shortcuts panel button icons */
+#workspacestodockDock .app-well-app > .overview-icon {
+}
+
+.workspacestodock-shortcut-button-icon {
+    padding: 6px;
+}
+
+.workspacestodock-shortcut-button-symbolic-icon {
+    padding: 8px;
+}
+
+/* shortcuts panel items */
+#workspacestodockDock .popup-separator-menu-item {
+    margin: 0;
+}
+
+.workspacestodock-shortcut-panel-separator {
+    -margin-horizontal: 0;
+}
+
+.workspacestodock-shortcut-panel-filler {
+    -margin-horizontal: 0;
+    height: 0;
+    padding: 0;
+    border: none;
+}
+
+/* shortcuts panel button window count indicators */
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-1 {
+    background-image: url("../../assets/dash/right-running1.svg");
+}
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-1 {
+    background-image: url("../../assets/dash/left-running1.svg");
+}
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-1 {
+    background-image: url("../../assets/dash/top-running1.svg");
+}
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-1 {
+    background-image: url("../../assets/dash/bottom-running1.svg");
+}
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-2 {
+    background-image: url("../../assets/dash/right-running2.svg");
+}
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-2 {
+    background-image: url("../../assets/dash/left-running2.svg");
+}
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-2 {
+    background-image: url("../../assets/dash/top-running2.svg");
+}
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-2 {
+    background-image: url("../../assets/dash/bottom-running2.svg");
+}
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-3 {
+    background-image: url("../../assets/dash/right-running3.svg");
+}
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-3 {
+    background-image: url("../../assets/dash/left-running3.svg");
+}
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-3 {
+    background-image: url("../../assets/dash/top-running3.svg");
+}
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-3 {
+    background-image: url("../../assets/dash/bottom-running3.svg");
+}
+
+#workspacestodockDock.right .workspacestodock-shortcut-button-windowcount-image-4 {
+    background-image: url("../../assets/dash/right-running4.svg");
+}
+
+#workspacestodockDock.left .workspacestodock-shortcut-button-windowcount-image-4 {
+    background-image: url("../../assets/dash/left-running4.svg");
+}
+
+#workspacestodockDock.top .workspacestodock-shortcut-button-windowcount-image-4 {
+    background-image: url("../../assets/dash/top-running4.svg");
+}
+
+#workspacestodockDock.bottom .workspacestodock-shortcut-button-windowcount-image-4 {
+    background-image: url("../../assets/dash/bottom-running4.svg");
+}
+
+.workspacestodock-workspace-caption-container {
+    padding: 0;
+}
+
+.workspacestodock-workspace-caption-background {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* border-radius: 0 0 2px 2px; */
+}
+
+.workspacestodock-workspace-caption-background.caption-top {
+    /* border-radius: 2px 2px 0 0; */
+}
+
+.workspacestodock-workspace-caption {
+}
+
+/* caption window apps (taskbar) */
+.workspacestodock-caption-windowapps {
+    padding: 0;
+}
+
+.workspacestodock-caption-windowapps-menu {
+    -boxpointer-gap: 12px;
+}
+
+.workspacestodock-caption-windowapps-menu .popup-menu-item {
+    min-height: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.workspacestodock-caption-windowapps-menu .popup-menu-item:active {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.workspacestodock-caption-windowapps-menu .popup-menu-item.selected:active {
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.workspacestodock-caption-windowapps-menu-item {
+    /*fallback class for GS34 since it can't override gnome shell class 'popup-menu-item' */
+}
+
+.workspacestodock-caption-windowapps-menu-item:active {
+    /*fallback class for GS34 since it can't override gnome shell class 'popup-menu-item' */
+}
+
+.workspacestodock-caption-windowapps-menu-icon {
+}
+
+.workspacestodock-caption-windowapps-menu-label {
+    padding: 0 8px;
+}
+
+.workspacestodock-caption-windowapps-menu .window-close {
+    /* GS36+ can override gnome shell class 'window-close' */
+    border-radius: 100px;
+    -st-background-image-shadow: none;
+    background-image: url("../../assets/close.svg");
+    background-size: 24px;
+    height: 24px;
+    width: 24px;
+}
+
+.workspacestodock-caption-windowapps-menu .window-close:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.workspacestodock-caption-windowapps-menu .window-close:active {
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.workspacestodock-caption-windowapps-menu-close {
+    /*fallback class for GS34 since it can't override gnome shell class 'window-close' */
+}
+
+.workspacestodock-caption-windowapps-menu-close:hover {
+    /*fallback class for GS34 since it can't override gnome shell class 'window-close' */
+}
+
+.workspacestodock-caption-windowapps-button {
+    padding: 0;
+}
+
+.workspacestodock-caption-windowapps-button-icon {
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.01); /* needs to draw box-shadow */
+}
+
+.workspacestodock-caption-windowapps-button:active > .workspacestodock-caption-windowapps-button-icon {
+    box-shadow: inset 0 -2px rgba(255, 255, 255, 0.3);
+}
+
+.workspacestodock-caption-windowapps-button-active > .workspacestodock-caption-windowapps-button-icon {
+    box-shadow: inset 0 -2px #FFFFFF;
+}
+
+/* caption workspace number */
+.workspacestodock-caption-number {
+    margin: 1px;
+    padding: 0 10px;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* caption workspace name */
+.workspacestodock-caption-name {
+    margin: 0 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 9pt;
+    text-align: center;
+}
+
+/* caption workspace windowcount */
+.workspacestodock-caption-windowcount {
+    /* min-width: 16px; */
+    margin: 0px 4px;
+    padding: 0px 4px;
+    color: #FFFFFF;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* caption workspace windowcount image*/
+.workspacestodock-caption-windowcount-image {
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    border-radius: 0;
+    background-color: #FF4081;
+    color: #FFFFFF;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* The classes below are used in conjunction with the above workspacestodock-caption-windowcount-image
+ * They provide background images that corespond with the window count */
+.workspacestodock-caption-windowcount-image-1 {
+}
+
+.workspacestodock-caption-windowcount-image-2 {
+}
+
+.workspacestodock-caption-windowcount-image-3 {
+}
+
+.workspacestodock-caption-windowcount-image-4 {
+}
+
+/* caption spacer-filler */
+.workspacestodock-caption-spacer {
+    width: 4px;
+}
+
+/* The classes below are used in conjuction with the above classes
+ * They provide additional theming for the current workspace caption */
+.workspacestodock-workspace-caption-background-current {
+}
+
+.workspacestodock-workspace-caption-background-current.caption-top {
+}
+
+.workspacestodock-caption-number-current {
+    /* background-color: #42A5F5; */
+}
+
+.workspacestodock-caption-name-current {
+}
+
+.workspacestodock-caption-windowcount-current {
+}
+
+.workspacestodock-caption-windowcount-image-current {
+}

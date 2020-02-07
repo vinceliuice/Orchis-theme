@@ -1,0 +1,120 @@
+// When color definition differs for dark and light variant,
+// it gets @if ed depending on $variant
+
+@import 'color-palette';
+
+@function gtkalpha($c, $a) {
+  @return unquote("alpha(#{$c}, #{$a})");
+}
+
+@function on($color, $state: 'primary') {
+  // Allow 'light' or 'dark' to $color
+  @if ($color == 'light') { $color: white; }
+  @if ($color == 'dark') { $color: black; }
+
+  // Calculate color brightness according to https://www.w3.org/TR/AERT/#color-contrast
+  $brightness: (red($color) * 299 + green($color) * 587 + blue($color) * 114) / 1000;
+
+  @if ($brightness >= 128) {
+    @if ($state == 'primary') { @return rgba(black, 0.87); }
+    @if ($state == 'secondary') { @return rgba(black, 0.6); }
+    @if ($state == 'disabled') { @return rgba(black, 0.38); }
+    @if ($state == 'secondary-disabled') { @return rgba(black, 0.26); }
+    @if ($state == 'track') { @return rgba(black, 0.26); }
+    @if ($state == 'track-disabled') { @return rgba(black, 0.12); }
+    @if ($state == 'divider') { @return rgba(black, 0.12); }
+    @if ($state == 'fill') { @return rgba(black, 0.04); }
+  } @else {
+    @if ($state == 'primary') { @return white; }
+    @if ($state == 'secondary') { @return rgba(white, 0.7); }
+    @if ($state == 'disabled') { @return rgba(white, 0.5); }
+    @if ($state == 'secondary-disabled') { @return rgba(white, 0.3); }
+    @if ($state == 'track') { @return rgba(white, 0.3); }
+    @if ($state == 'track-disabled') { @return rgba(white, 0.12); }
+    @if ($state == 'divider') { @return rgba(white, 0.12); }
+    @if ($state == 'fill') { @return rgba(white, 0.04); }
+  }
+}
+
+@function highlight($color) {
+  @if (lightness($color) >= 80%) { @return rgba(white, 0.4); }
+  @else if (lightness($color) >= 40%) { @return rgba(white, 0.2); }
+  @else { @return rgba(white, 0.1); }
+}
+
+//
+// Basic colors
+//
+
+$primary-dark:                          %SEL_BG%;
+$primary-light:                         %SEL_BG%;
+$primary:                               if($variant == 'light', $primary-dark, $primary-light);
+
+$background:                            %BG%;
+$surface:                               %MATERIA_SURFACE%;
+$base:                                  %MATERIA_VIEW%;
+$base-alt:                              %INACTIVE_MATERIA_VIEW%;
+
+$os-background:                         %HDR_BG3%;
+$tooltip:                               rgba(%HDR_BG%, 0.9);
+$scrim:                                 rgba(black, %MATERIA_PANEL_OPACITY%);
+$scrim-alt:                             rgba(black, 0.3);
+$scrim-inverse:                         rgba(white, 0.1);
+$titlebar:                              %HDR_BG%;
+$titlebar-backdrop:                     %HDR_BG2%;
+$panel:                                 if($topbar == 'dark', %HDR_BG3%, $scrim);
+$panel-solid:                           %HDR_BG3%; // for Unity panel which doesn't allow translucent colors
+
+//
+// Misc colors
+//
+
+$link:                                  $primary;
+$link-visited:                          %TERMINAL_COLOR5%;
+
+$warning:                               %TERMINAL_COLOR11%;
+$error:                                 %TERMINAL_COLOR9%;
+$success:                               %TERMINAL_COLOR10%;
+
+$suggested:                             $primary;
+$destructive:                           $error;
+
+$frame:                                 if($variant == 'light', rgba(black, 0.12), rgba(black, 0.26)); // instead of shadows
+$border-alt:                            rgba(black, 0.26); // darker border color for Chrome and Firefox
+$titlebar-indicator:                    if($topbar == 'dark', currentColor, $primary);
+
+//
+// Overlay state colors
+//
+
+$overlay-hover:                         gtkalpha(currentColor, 0.08);
+$overlay-focus:                         gtkalpha(currentColor, 0.08);
+$overlay-focus-hover:                   gtkalpha(currentColor, 0.16);
+$overlay-active:                        gtkalpha(currentColor, 0.12);
+$overlay-checked:                       gtkalpha(currentColor, 0.12);
+$overlay-selected:                      rgba($primary, %MATERIA_SELECTION_OPACITY%);
+
+//
+// Text and derivative colors
+//
+
+$text:                                  %FG%;
+$text-secondary:                        rgba(%FG%, 0.7);
+$text-disabled:                         rgba(%FG%, 0.5);
+$text-secondary-disabled:               rgba(%FG%, 0.3);
+$track:                                 rgba(%FG%, 0.3);
+$track-disabled:                        rgba(%FG%, 0.12);
+$divider:                               rgba(%FG%, 0.12);
+$fill:                                  rgba(%FG%, 0.04);
+
+$titlebar-text:                         %HDR_FG%;
+$titlebar-text-secondary:               rgba(%HDR_FG%, 0.7);
+$titlebar-text-disabled:                rgba(%HDR_FG%, 0.5);
+$titlebar-text-secondary-disabled:      rgba(%HDR_FG%, 0.3);
+$titlebar-track:                        rgba(%HDR_FG%, 0.3);
+$titlebar-track-disabled:               rgba(%HDR_FG%, 0.12);
+$titlebar-divider:                      rgba(%HDR_FG%, 0.12);
+$titlebar-fill:                         rgba(%HDR_FG%, 0.04);
+
+// workaround for GTK3 @placeholder_text_color which doesn't allow translucent colors
+$placeholder_text_color:                mix(%FG%, $base, percentage(0.7));

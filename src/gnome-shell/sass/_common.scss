@@ -1,0 +1,2573 @@
+//This is the RIGHT PLACE to edit the stylesheet
+
+//let's start by telling people not to edit the generated CSS:
+$cakeisalie: "This stylesheet is generated, DO NOT EDIT";
+/* #{$cakeisalie} */
+
+/* Copyright 2009, 2015 Red Hat, Inc.
+ *
+ * Portions adapted from Mx's data/style/default.css
+ *   Copyright 2009 Intel Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU Lesser General Public License,
+ * version 2.1, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+
+/* GLOBALS */
+* {
+  // transition-timing-function: $deceleration_curve;
+  transition-duration: $longer_duration;
+}
+
+stage {
+  font-family: $font-family;
+  @include font(body-1);
+  color: $fg_color;
+}
+
+/* WIDGETS */
+
+/* Buttons */
+.button {
+  min-height: $medium_size;
+  padding: 0 16px;
+  border-width: 0;
+  border-radius: $bt_radius;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+
+}
+
+/* Entries */
+GPasteSearchEntry,
+StEntry {
+  min-height: $medium_size;
+  padding: 0 8px;
+  border-radius: 0;
+  border-width: 0;
+  selection-background-color: $primary_color;
+  selected-color: $inverse_fg_color;
+  @include font(subheading);
+  @include entry(normal);
+  &:hover { @include entry(hover);}
+  &:focus { @include entry(focus);}
+  &:insensitive { @include entry(insensitive);}
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning_color;
+    padding: 0 0;
+  }
+}
+
+
+/* Scrollbars */
+
+StScrollView {
+  &.vfade { -st-vfade-offset: 32px; }
+  &.hfade { -st-hfade-offset: 32px; }
+}
+
+StScrollBar {
+  padding: 0;
+
+  StScrollView & {
+    min-width: 16px;
+    min-height: 6px;
+  }
+
+  StBin#trough {
+    margin: 6px;
+    border-radius: 100px;
+    background-color: $divider_color;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    border-radius: 100px;
+    background-color: $hint_fg_color;
+    //border: 4px solid transparent; //would be nice to margin or at least to transparent
+    margin: 6px;
+    &:hover { background-color: $secondary_fg_color; }
+    &:active { background-color: $fg_color; }
+  }
+}
+
+%overview_scrollbar {
+  StBin#trough {
+    background-color: $inverse_divider_color;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    background-color: $inverse_hint_fg_color;
+    &:hover { background-color: $inverse_secondary_fg_color; }
+    &:active { background-color: $inverse_fg_color; }
+  }
+}
+
+/* Slider */
+
+$slider_color: if($variant == 'light', $accent_color, white);
+
+.slider {
+  height: 20px;
+  color: $slider_color;
+  -slider-height: 2px;
+  -slider-background-color: $track_color; //background of the trough
+  -slider-border-color: transparent; //trough border color
+  -slider-active-background-color: $accent_color; //active trough fill
+  -slider-active-border-color: transparent; //active trough border
+  -slider-border-width: 0;
+  -slider-handle-radius: 7px;
+  -slider-handle-border-width: 0;
+  -slider-handle-border-color: $border_color;
+
+  // barlevels are for >= 3.29.90
+  -barlevel-height: 2px;
+  -barlevel-background-color: $track_color;
+  -barlevel-border-color: transparent;
+  -barlevel-active-background-color: $accent_color;
+  -barlevel-active-border-color: transparent;
+  -barlevel-overdrive-color: $destructive_color;
+  -barlevel-overdrive-border-color: transparent;
+  -barlevel-overdrive-separator-width: 2px;
+  -barlevel-border-width: 0;
+}
+
+/* Check Boxes */
+
+.check-box {
+  * {
+    min-height: $medium_size - 8px * 2;
+    padding: 8px 0;
+  }
+  StBoxLayout { spacing: 8px; }
+  StBin {
+    width: 24px;
+    height: 24px;
+    padding: ($medium_size - 24px) / 2;
+    border-radius: 100px;
+    background-image: url("assets/checkbox-off.svg");
+  }
+  &:focus StBin {
+    background-image: url("assets/checkbox-off.svg");
+  }
+  &:hover StBin {
+    background-color: $divider_color;
+  }
+  &:active StBin {
+    background-color: $track_color;
+  }
+  &:checked StBin {
+    background-image: url("assets/checkbox.svg");
+  }
+  &:focus:checked StBin {
+    background-image: url("assets/checkbox.svg");
+  }
+  &:hover:checked StBin {
+    background-color: rgba($accent_color, $lower_opacity / 2);
+  }
+  &:active:checked StBin {
+    background-color: rgba($accent_color, $lower_opacity);
+  }
+}
+
+/* Switches */
+.toggle-switch {
+  width: 50px;
+  height: 20px;
+  background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+
+  &:checked { background-image: url("assets/toggle-on.svg"); }
+
+  .popup-menu-item.selected & {
+    background-image: url("assets/toggle-off.svg");
+
+    &:checked { background-image: url("assets/toggle-on.svg"); }
+  }
+}
+
+@each $v in us, intl {
+  .toggle-switch-#{$v} {
+    background-image: url("assets/toggle-off.svg");
+    &:checked { background-image: url("assets/toggle-on.svg"); }
+  }
+}
+
+/* links */
+.shell-link {
+  border-radius: $bt_radius;
+  color: $link_color;
+  background-color: transparent;
+  &:hover {
+    color: $link_color;
+    background-color: rgba($link_color, $lower_opacity / 2);
+  }
+  &:active {
+    color: $link_color;
+    background-color: rgba($link_color, $lower_opacity);
+  }
+}
+
+/* Modal Dialogs */
+
+.headline { @include font(title); }
+.lightbox { background-color: black; }
+.flashspot { background-color: white; }
+
+$mdborder_color: if($variant == 'light', transparent, rgba($white, 0.12));
+
+.modal-dialog {
+  border-radius: $bt_radius*2;
+  color: $fg_color;
+  background-color: $base_color;
+  border: 2px solid $mdborder_color;
+  box-shadow: $shadow_0;
+  .modal-dialog-content-box {
+    padding: 24px;
+  }
+  .run-dialog-entry { width: 20em; margin-bottom: 6px; }
+  .run-dialog-error-box {
+    padding-top: 16px;
+    spacing: 6px;
+  }
+  .run-dialog-button-box {
+    margin: 3px;
+    padding-top: 1em;
+  }
+  .run-dialog-label {
+    font-size: 1em;
+    font-weight: normal;
+    color: $hint_fg_color;
+    padding-bottom: .4em;
+  }
+}
+
+$mdbt_radius: 100px;
+
+.modal-dialog-linked-button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: none;
+  margin-bottom: 6px;
+  @include font(button);
+  @include button(normal);
+  &:hover { @include button(hover); }
+  &:active { @include button(active); }
+  &:insensitive { @include button(insensitive); }
+  &:focus { @include button(focus); }
+
+  &:first-child {
+    margin-left: 6px;
+    border-radius: $mdbt_radius 0px 0px $mdbt_radius;
+  }
+  &:last-child {
+    margin-right: 6px;
+    border-right-width: 0px;
+    border-radius: 0px $mdbt_radius $mdbt_radius 0;
+  }
+  &:first-child:last-child {
+    margin: 0 6px 6px 6px;
+    border-right-width: 0px;
+    border-radius: $mdbt_radius;
+  }
+}
+
+.show-processes-dialog-subject,
+.mount-dialog-subject,
+.end-session-dialog-subject { //this should be a generic header class
+  @include font(title);
+}
+
+/* Message Dialog */
+.message-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.message-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.message-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.message-dialog-title {
+  font-weight: bold;
+}
+
+.message-dialog-subtitle {
+  color: $secondary_fg_color;
+  font-weight: bold;
+}
+
+/* End Session Dialog */
+.end-session-dialog {
+  spacing: 42px;
+  border: 2px solid $mdborder_color;
+
+  .modal-dialog-linked-button:last-child {
+    color: white;
+    background-color: $destructive_color;
+
+    &:hover {
+      color: white;
+      background-color: lighten($destructive_color, 9%);
+    }
+    &:active {
+      color: white;
+      background-color: darken($destructive_color, 5%);
+    }
+  }
+}
+
+.end-session-dialog-list {
+    padding-top: 20px;
+}
+
+.end-session-dialog-layout {
+  padding-left: 17px;
+  &:rtl { padding-right: 17px; }
+}
+
+.end-session-dialog-description {
+  width: 28em;
+  padding-bottom: 10px;
+  &:rtl {
+    text-align: right;
+  }
+}
+
+.end-session-dialog-warning {
+  width: 28em;
+  color: $warning_color;
+  padding-top: 6px;
+  &:rtl {
+    text-align: right;
+  }
+}
+
+.end-session-dialog-logout-icon {
+  //border: 2px solid #8b8b8b;
+  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+}
+
+.end-session-dialog-shutdown-icon {
+  color: $hint_fg_color;
+  width: 48px;
+  height: 48px;
+}
+
+.end-session-dialog-inhibitor-layout {
+  spacing: 16px;
+  max-height: 200px;
+  padding-right: 65px;
+  padding-left: 65px;
+}
+
+.end-session-dialog-session-list,
+.end-session-dialog-app-list {
+  spacing: 1em;
+}
+
+.end-session-dialog-list-header {
+  font-weight: bold;
+  &:rtl { text-align: right; }
+}
+
+.end-session-dialog-app-list-item,
+.end-session-dialog-session-list-item {
+  spacing: 1em;
+}
+
+.end-session-dialog-app-list-item-name,
+.end-session-dialog-session-list-item-name {
+  font-weight: bold;
+}
+
+.end-session-dialog-app-list-item-description {
+  color: $hint_fg_color;
+  font-size: 1em;
+}
+
+/* ShellMountOperation Dialogs */
+.shell-mount-operation-icon { icon-size: 48px; }
+
+  .mount-dialog {
+    spacing: 24px;
+
+    .message-dialog-title {
+      padding-top: 10px;
+      padding-left: 17px;
+      padding-bottom: 6px;
+      max-width: 34em;
+    }
+
+    .message-dialog-title:rtl {
+      padding-left: 0px;
+      padding-right: 17px;
+    }
+
+    .message-dialog-body {
+      padding-left: 17px;
+      width: 28em;
+    }
+
+    .message-dialog-body:rtl {
+      padding-left: 0px;
+      padding-right: 17px;
+    }
+  }
+
+  .mount-dialog-app-list {
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+  }
+
+  .mount-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+  }
+
+  .mount-dialog-app-list-item {
+    color: $fg_color;
+    &:hover { color: $fg_color; }
+    &:ltr { padding-right: 1em; }
+    &:rtl { padding-left: 1em; }
+  }
+
+  .mount-dialog-app-list-item-icon {
+    &:ltr { padding-right: 17px; }
+    &:rtl { padding-left: 17px; }
+  }
+
+  .mount-dialog-app-list-item-name {
+    font-size: 1em;
+  }
+
+
+/* Password or Authentication Dialog */
+
+.prompt-dialog {
+  //this is the width of the entire modal popup
+  width: 34em;
+  border: 2px solid $mdborder_color;
+
+  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
+  .message-dialog-content { spacing: 16px; }
+  .message-dialog-title { @include font(title); color: $fg_color; }
+}
+
+  .prompt-dialog-description:rtl {
+    text-align: right;
+  }
+
+  .prompt-dialog-password-box {
+    spacing: 1em;
+    padding-bottom: 1em;
+  }
+
+  .prompt-dialog-error-label {
+    font-size: 1em;
+    color: $error_color;
+    padding-bottom: 8px;
+  }
+
+  .prompt-dialog-info-label {
+    font-size: 1em;
+    padding-bottom: 8px;
+  }
+
+  .hidden {
+    color: rgba(0,0,0,0);
+  }
+
+  .prompt-dialog-null-label {
+    font-size: 1em;
+    padding-bottom: 8px;
+  }
+
+
+/* Polkit Dialog */
+
+.polkit-dialog-user-layout {
+  padding-left: 10px;
+  spacing: 10px;
+  &:rtl {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+}
+
+  .polkit-dialog-user-root-label {
+    color: $warning_color;
+  }
+
+  .polkit-dialog-user-icon {
+    border-radius: 5px;
+    background-size: contain;
+    width: 48px;
+    height: 48px;
+  }
+
+/* Audio selection dialog */
+.audio-device-selection-dialog {
+  spacing: 30px;
+}
+
+  .audio-selection-content {
+    spacing: 20px;
+    padding: 24px;
+  }
+
+  .audio-selection-title {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .audio-selection-box {
+    spacing: 20px;
+  }
+
+  .audio-selection-device {
+    border: 1px solid $border_color;
+    border-radius: $bt_radius;
+    &:active,&:hover,&:focus { background-color: $primary_color; }
+  }
+
+  .audio-selection-device-box {
+    padding: 20px;
+    spacing: 20px;
+  }
+
+  .audio-selection-device-icon {
+    icon-size: 64px;
+  }
+
+/* Access Dialog */
+.access-dialog {
+  spacing: 30px;
+}
+
+.access-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.access-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.access-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.access-dialog-title {
+  font-weight: bold;
+}
+
+.access-dialog-subtitle {
+  color: $secondary_fg_color;
+  font-weight: bold;
+}
+
+/* Geolocation Dialog */
+.geolocation-dialog {
+  spacing: 30px;
+}
+
+.geolocation-dialog-main-layout {
+  spacing: 12px;
+}
+
+.geolocation-dialog-content {
+  spacing: 20px;
+}
+
+.geolocation-dialog-icon {
+  icon-size: 48px;
+}
+
+.geolocation-dialog-title {
+  font-weight: bold;
+}
+
+.geolocation-dialog-reason {
+  color: $secondary_fg_color;
+  font-weight: bold;
+}
+
+/* Extension Dialog */
+.extension-dialog {
+  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
+  .message-dialog-title { color: $secondary_fg_color; }
+}
+
+/* Inhibit-Shortcuts Dialog */
+.inhibit-shortcuts-dialog {
+  spacing: 30px;
+}
+
+/* Network Agent Dialog */
+
+.network-dialog-secret-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+.keyring-dialog-control-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+/* Popovers/Menus */
+
+.popup-menu {
+  min-width: 12em;
+  color: $fg_color;
+  background-color: transparent;
+
+  .popup-menu-arrow { width: 16px; height: 16px; } //defined globally in the TOP BAR
+
+  .popup-sub-menu {
+    margin: 0 $container_padding;
+    color: rgba(black, 0.75);
+    background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
+    border-radius: 0 0 $bt_radius $bt_radius;
+    border: none;
+    box-shadow: none;
+
+    .popup-menu-item {
+      margin: 0;
+      border-radius: $bt_radius;
+      color: rgba(black, 0.75);
+
+      &:hover {
+        color: rgba(black, 0.85);
+        background-color: rgba(black, 0.15);
+      }
+
+      &:active {
+        color: rgba(black, 0.85);
+        background-color: rgba(black, 0.2);
+      }
+
+      &.selected:active { color: rgba(black, 0.75); }
+
+      &:not(:first-child):last-child {
+        border-radius: 0 0 $bt_radius $bt_radius;
+      }
+    }
+  }
+
+  // .popup-menu-content { }
+
+  .popup-menu-item {
+    spacing: $container_padding*2;
+    margin: 0 $container_padding;
+    color: $fg_color;
+    transition-duration: $shorter_duration;
+    border-radius: 100px;
+
+    &:ltr { padding: .5em 2em .5em 0em; }
+    &:rtl { padding: .5em 0em .5em 2em; }
+
+    &:checked {
+      background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
+      color: rgba(black, 0.75);
+      font-weight: normal;
+      border-radius: $bt_radius $bt_radius 0 0;
+      border: none;
+      box-shadow: none;
+
+      .popup-menu-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        // icon-shadow: 0 1px rgba(black, 0.45);
+      }
+
+      &.selected {
+        background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5);
+        color: rgba(black, 0.85);
+      }
+
+      &:active {
+        background-color: #dfdfdf;
+        color: rgba(black, 0.75);
+      }
+
+      &.selected:active { background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); color: rgba(black, 0.75); }
+      &:insensitive { color: rgba(black, 0.35); }
+    }
+
+    &.selected {
+      background-color: $divider_color;
+      color: $fg_color;
+      transition-duration: 0ms;
+    }
+
+    &:active {
+      background-color: $track_color;
+      color: $fg_color;
+      transition-duration: $longer_duration;
+    }
+
+    &.selected:active { color: $fg_color; }
+    &:insensitive { color: $disabled_fg_color; }
+  }
+
+  .popup-inactive-menu-item { //all icons and other graphical elements
+    color: $fg_color;
+
+    &:insensitive { color: $hint_fg_color; }
+  }
+
+  //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
+  &.panel-menu {
+    -boxpointer-gap: $container_padding;
+    margin-bottom: 1.75em;
+  }
+}
+
+  .popup-menu-ornament {
+    text-align: right;
+    width: 16px;
+    height: 16px;
+  }
+
+  .candidate-popup-boxpointer {
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -arrow-box-shadow: none; //dreaming. bug #689995
+    margin: $container_padding/2 10px 16px;
+    background-color: $menu_bg_color;
+    border-radius: $bt_radius;
+    box-shadow: $shadow_3;
+  }
+
+  .popup-menu-boxpointer {
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -arrow-box-shadow: none; //dreaming. bug #689995
+    margin: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+
+    .popup-menu-content {
+      margin: $container_padding 10px 16px;
+      background-color: $menu_bg_color;
+      border-radius: $bt_radius;
+      box-shadow: $shadow_3;
+    }
+  }
+
+  .popup-separator-menu-item {
+    height: 0; //not really the whole box
+    margin: 0 0;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom-width: 0;
+    border-bottom-style: solid;
+  }
+
+  // a little unstructured mess:
+
+  .system-switch-user-submenu-icon.user-icon {
+    icon-size: 20px;
+    padding: 0 2px;
+  }
+
+  .system-switch-user-submenu-icon.default-icon {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+
+  #appMenu {
+    spinner-image: url("process-working.svg");
+    spacing: 4px;
+
+    .label-shadow { color: transparent; }
+  }
+
+  .aggregate-menu {
+    min-width: 21em;
+
+    .popup-menu-icon {
+      padding: 0 $container_padding;
+      -st-icon-style: symbolic;
+    }
+
+    .popup-sub-menu .popup-menu-item > :first-child {
+      &:ltr { /* 12px spacing + 2*4px padding */
+        padding-left: 16px + $container_padding; margin-left: 1.09em;
+      }
+      &:rtl { /* 12px spacing + 2*4px padding */
+        padding-right: 16px + $container_padding; margin-right: 1.09em;
+      }
+    }
+  }
+
+  .system-menu-action {
+    color: $secondary_fg_color;
+    background-color: $divider_color;
+    border-radius: 100px; /* wish we could do 50% */
+    padding: ($large_size - 20px) / 2;
+    border: none;
+    -st-icon-style: symbolic; // >= 3.29.90
+
+    &:hover, &:focus {
+      background-color: $track_color;
+      color: $fg_color;
+      border: none;
+      padding: ($large_size - 20px) / 2;
+    }
+    &:active { background-color: $primary_color; color: white; }
+
+    & > StIcon { icon-size: 16px; }
+  }
+
+// Background menu
+.background-menu { -boxpointer-gap: 8px; -arrow-rise: 0; }
+
+/* fallback menu
+- odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
+  app menu inside the main app window itself rather than the top bar
+*/
+
+/* OSD */
+.osd-window {
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  margin: 32px;
+  min-width: 64px;
+  min-height: 64px;
+
+  .osd-monitor-label { @include font(display-2); }
+  .level {
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba($primary_color, $lower_opacity);
+    color: $fg_color;
+
+    // For >= 3.29.90
+    -barlevel-height: 4px;
+    // FIXME: above 'background-color' property rendered correct trough
+    // colour already, so keep -background-color style-property transparent
+    -barlevel-background-color: rgba($primary_color, $lower_opacity);
+    -barlevel-active-background-color: $primary_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 3px;
+    -barlevel-border-width: 0;
+  }
+  .level-bar {
+    background-color: $primary_color;
+    border-radius: 2px;
+  }
+}
+
+/* Pad OSD */
+.pad-osd-window {
+  padding: 32px;
+  background-color: $bg_color;
+
+  .pad-osd-title-box { spacing: 12px; }
+  .pad-osd-title-menu-box { spacing: 6px; }
+}
+
+.combo-box-label {
+  width: 15em;
+}
+
+/* App Switcher */
+.switcher-popup {
+  padding: 8px;
+  spacing: 16px;
+}
+
+.osd-window,
+.resize-popup,
+.switcher-list {
+  @extend %osd-panel;
+}
+
+  .switcher-list-item-container { spacing: 8px; }
+
+  .switcher-list .item-box {
+    padding: 8px;
+    border-radius: $bt_radius;
+  }
+
+  .switcher-list .item-box:outlined {
+    padding: 8px;
+    border: none;
+    background-color: $divider_color;
+    color: $fg_color; // for Ubuntu session
+  }
+
+  .switcher-list .item-box:selected {
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+  }
+
+  .switcher-list .thumbnail-box {
+    padding: 2px;
+    spacing: 4px;
+  }
+
+  .switcher-list .thumbnail {
+    width:  256px;
+  }
+
+  .switcher-list .separator {
+    width: 1px;
+    background: $border_color;
+  }
+
+  .switcher-arrow {
+    border-color: rgba(0,0,0,0);
+    color: $hint_fg_color;
+    &:highlighted {
+      color: $fg_color;
+    }
+  }
+
+  .input-source-switcher-symbol {
+    @include font(display-2);
+    width: 96px;
+    height: 96px;
+  }
+
+/* Window Cycler */
+.cycler-highlight { border: 4px solid $primary_color; }
+
+/* Workspace Switcher */
+.workspace-switcher-group { padding: 8px; }
+
+  .workspace-switcher-container {
+    @extend %osd-panel;
+  }
+
+  .workspace-switcher {
+    background: transparent;
+    border: 0px;
+    border-radius: 0px;
+    padding: 0px;
+    spacing: 8px;
+  }
+
+  .ws-switcher-active-up, .ws-switcher-active-down {
+    height: 48px;
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+    background-size: 32px;
+    border-radius: $bt_radius;
+  }
+
+  .ws-switcher-box {
+    height: 48px;
+    border: none;
+    background: $divider_color;
+    border-radius: $bt_radius;
+  }
+
+%osd-panel {
+  color: $fg_color;
+  background-color: $base_color;
+  border: none;
+  box-shadow: $shadow_2;
+  border-radius: $bt_radius;
+  padding: 12px;
+}
+
+/* Tiled window previews */
+.tile-preview {
+  background-color: rgba($alt_primary_color, $lower_opacity);
+  border: 1px solid $alt_primary_color;
+}
+
+  .tile-preview-left.on-primary {
+    border-radius: $panel-corner-radius 0 0 0;
+  }
+
+  .tile-preview-right.on-primary {
+    border-radius: 0 $panel-corner-radius 0 0;
+  }
+
+  .tile-preview-left.tile-preview-right.on-primary {
+    border-radius: $panel-corner-radius $panel-corner-radius 0 0;
+  }
+
+/* TOP BAR */
+
+#panel {
+  background-color: $panel_bg_color;
+  /* transition from solid to transparent */
+  transition-duration: 250ms;
+  font-weight: bold;
+  height: $medium_size + 2px;
+  box-shadow: $shadow_6;
+  border-radius: $circular_radius;
+  margin: $container_padding/2;
+
+  &:overview,
+  &.unlock-screen,
+  &.login-screen,
+  &.lock-screen {
+    background-color: transparent;
+  }
+
+  #panelLeft, #panelCenter { // spacing between activities<>app menu and such
+    spacing: 0;
+  }
+
+  .panel-corner {
+    -panel-corner-radius: $panel-corner-radius;
+    -panel-corner-background-color: $panel_bg_color;
+    -panel-corner-border-width: 0;
+    -panel-corner-border-color: transparent;
+
+    &:active, &:overview, &:focus {
+      -panel-corner-border-color: $inverse_fg_color;
+    }
+
+    &.lock-screen, &.login-screen, &.unlock-screen {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: transparent;
+      -panel-corner-border-color: transparent;
+    }
+
+    StLabel { padding: 0 4px; }
+  }
+
+  .panel-button {
+    margin: 4px 6px;
+    -natural-hpadding: $minimum-hpadding;
+    -minimum-hpadding: $minimum-hpadding;
+    font-weight: bold;
+    color: $panel_fg_color;
+    text-shadow: none;
+    border-radius: 100px;
+    transition-duration: $longer_duration;
+
+    StLabel { padding: 0 3px; }
+
+    .popup-menu-arrow { width: 0; height: 0; } // Remove arrow on panel button
+
+    .app-menu-icon {
+      -st-icon-style: symbolic;
+      margin-left: 4px;
+      margin-right: 0;
+      //dimensions of the icon are hardcoded
+    }
+
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+    }
+
+    &:hover {
+      color: $panel_fg_color;
+      background-color: $inverse_divider_color;
+      text-shadow: none;
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      // Trick due to St limitations. It needs a background to draw
+      // a box-shadow
+      background-color: rgba($inverse_fg_color, 0.25);
+      color: $inverse_fg_color;
+      text-shadow: none;
+      box-shadow: none;
+
+      .system-status-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: none;
+      }
+    }
+
+    .system-status-icon { icon-size: em(16px); padding: 0 3px; }
+    .unlock-screen &,
+    .login-screen &,
+    .lock-screen & {
+      color: $inverse_secondary_fg_color;
+      &:focus, &:hover, &:active { color: $inverse_fg_color; }
+    }
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 2px;
+  }
+
+  // spacing between power icon and (optional) percentage label
+  .power-status.panel-status-indicators-box {
+    spacing: 0;
+  }
+
+  .screencast-indicator { color: $error_color; }
+  .remote-access-indicator { color: $warning_color; } // > 3.29.4
+
+  &.solid {
+    background-color: $panel_bg;
+    /* transition from transparent to solid */
+    transition-duration: 250ms;
+    background-gradient-direction: none; // for Ubuntu session
+    text-shadow: none; // for Ubuntu session
+
+    &:overview { background-color: transparent; } // for Ubuntu session
+
+    .panel-corner {
+      -panel-corner-background-color: $panel_bg_color;
+    }
+
+    .panel-button {
+      color: $panel_fg_color;
+      text-shadow: none;
+
+      &:active, &:overview, &:focus, &:checked {
+        color: $inverse_fg_color;
+        text-shadow: none;
+      }
+    }
+
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+
+      &:active, &:overview, &:focus, &:checked {
+        icon-shadow: none;
+      }
+    }
+  }
+}
+
+// Activities button
+
+$size_suffix: if($laptop == 'true', '-small', '');
+
+#panel #panelActivities.panel-button {
+  > * {
+    background-image: url("assets/activities#{$size_suffix}.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: transparent !important;
+    background-gradient-direction: none !important;
+    border: 0 solid transparent !important;
+    text-shadow: 0 0 transparent !important;
+    transition-duration: 0ms !important;
+    box-shadow: none !important;
+    color: transparent;
+  }
+
+  &:hover, &:active, &:overview, &:focus, &:checked {
+    background-color: transparent;
+    border: none;
+    transition: none;
+    animation: none;
+  }
+
+  &:active, &:overview, &:focus, &:checked {
+    > * { background-image: url("assets/activities-active#{$size_suffix}.svg"); }
+  }
+}
+
+// Gjs_ActivitiesButton.panel-button,
+Gjs_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button {
+  background-color: rgba($panel_fg_color, 0.15);
+}
+
+  // calendar popover
+  #calendarArea {
+    padding: 8px 16px;
+  }
+
+  .calendar {
+    margin-bottom: 0;
+  }
+
+    .calendar,
+    .datemenu-today-button,
+    .datemenu-displays-box,
+    .message-list-sections {
+      margin: 0 8px;
+    }
+
+    .datemenu-calendar-column { spacing: 8px; }
+    .datemenu-displays-section { padding-bottom: 0; }
+    .datemenu-displays-box { spacing: 8px; }
+
+    .datemenu-calendar-column {
+      border: 0 solid $border_color;
+      &:ltr { border-left-width: 0; }
+      &:rtl { border-right-width: 0; }
+    }
+
+    .datemenu-today-button,
+    .world-clocks-button,
+    .weather-button,
+    .events-section-title {
+      min-height: $menuitem_size - 4px * 2;
+      padding: 4px 8px;
+      border-radius: $bt_radius;
+    }
+
+    .datemenu-today-button {
+      min-height: $menuitem_size * 2 - 4px * 2;
+    }
+
+    .message-list-section-list:ltr {
+      padding-left: 0;
+    }
+
+    .message-list-section-list:rtl {
+      padding-right: 0;
+    }
+
+    .datemenu-today-button,
+    .world-clocks-button,
+    .weather-button,
+    .events-section-title {
+      &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+      &:active {
+        color: $fg_color;
+        background-color: $track_color;
+      }
+    }
+
+    .datemenu-today-button .day-label {
+    }
+
+    .datemenu-today-button .date-label {
+      @include font(headline);
+    }
+
+    .world-clocks-header,
+    .weather-header,
+    .events-section-title {
+      color: $secondary_fg_color;
+      font-weight: bold;
+    }
+
+    .world-clocks-grid {
+      spacing-rows: 0.4em;
+    }
+
+    .weather-box {
+      spacing: 0.4em;
+    }
+
+    .calendar-month-label {
+      height: $menuitem_size - 4px * 2;
+      margin: 2px;
+      padding: 6px 16px;
+      border-radius: $bt_radius;
+      color: $fg_color;
+      font-weight: bold;
+      text-align: center;
+      &:focus { background-color: $divider_color; }
+    }
+
+    .pager-button {
+      width: $menuitem_size;
+      height: $menuitem_size;
+      margin: 2px;
+      border-radius: 100px;
+      background-color: transparent;
+      color: $fg_color;
+      &:hover, &:focus { background-color: $divider_color; }
+      &:active { background-color: $track_color; }
+    }
+
+    .calendar-change-month-back { //arrow back
+      padding: 0 2px;
+      background-image: url("assets/calendar-arrow-left.svg");
+      &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+    }
+    .calendar-change-month-forward { //arrow foreward
+      padding: 0 2px;
+      background-image: url("assets/calendar-arrow-right.svg");
+      &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+    }
+
+    .calendar-day-base {
+      @include font(caption);
+      text-align: center;
+      width: $menuitem_size; height: $menuitem_size;
+      padding: 0;
+      margin: 2px;
+      border-radius: 100px;
+      &:hover,&:focus { background-color: $divider_color; }
+      &:active {
+        color: inherit;
+        background-color: $track_color;
+        border-color: transparent; //avoid jumparound due to today
+      }
+      &:selected {
+        color: $inverse_fg_color;
+        background-color: $primary_color;
+        border-color: transparent; //avoid jumparound due to today
+      }
+      &.calendar-day-heading {  //day of week heading
+        width: $menuitem_size; height: $menuitem_size - 7px;
+        margin-top: 2px;
+        padding: 7px 0 0;
+        border-radius: 100px;
+        background-color: transparent;
+        color: $hint_fg_color;
+        @include font(caption);
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+      .calendar-day { //border collapse hack - see calendar.js
+        border-width: 0;
+      }
+      .calendar-day-top { border-top-width: 0; }
+      .calendar-day-left { border-left-width: 0; }
+      .calendar-work-day {
+
+      }
+      .calendar-nonwork-day {
+        color: $fg_color;
+      }
+      .calendar-today {
+        font-weight: bold !important;
+        //color: $fg_color;
+        //background-color: transparent;
+        border: none;
+      }
+      .calendar-day-with-events {
+        color: $link_color;
+        font-weight: normal;
+        text-decoration: underline;
+        background-image: none;
+      }
+      .calendar-other-month-day {
+        color: $disabled_secondary_fg_color;
+        opacity: 0.5;
+      }
+      .calendar-week-number {
+        width: $menuitem_size; height: $menuitem_size - 7px;
+        margin: 2px;
+        padding: 7px 0 0;
+        border-radius: 100px;
+        background-color: transparent;
+        color: $hint_fg_color;
+        font-size: inherit;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Message list */
+      .message-list {
+        width: 25em;
+      }
+
+        .message-list-clear-button.button {
+          background-color: transparent;
+          &:hover,&:focus { background-color: $divider_color; }
+          &:active { background-color: $track_color; }
+          margin: 8px 8px 0;
+        }
+
+        .message-list-sections {
+          spacing: 8px;
+        }
+
+        .message-list-section,
+        .message-list-section-list {
+          spacing: 8px;
+        }
+
+        .message {
+          min-height: $menuitem_size * 2;
+          background-color: transparent;
+          border: none;
+          &:hover,&:focus { background-color: $divider_color; }
+          &:active { background-color: $track_color; }
+          border-radius: $bt_radius;
+        }
+
+          .message-icon-bin {
+            padding: 8px 0px 8px 8px;
+            &:rtl { padding: 8px 8px 8px 0px; }
+          }
+
+          .message-icon-bin > StIcon {
+            color: $fg_color;
+            icon-size: em(16px);
+            -st-icon-style: requested;
+            margin: 4px 0px 4px 4px;
+            &:rtl { margin: 4px 4px 4px 0px; }
+          }
+
+          .message-secondary-bin {
+            padding: 0 8px;
+          }
+
+          .message-secondary-bin > .event-time {
+            min-height: $small_size - 2px;
+            padding-top: 2px;
+            color: $secondary_fg_color;
+            font-size: 1em;
+            /* HACK: the label should be baseline-aligned with a 1em label,
+                     fake this with some bottom padding */
+            padding-bottom: 0;
+          }
+
+          .message-secondary-bin > StIcon {
+            icon-size: em(16px);
+          }
+
+          .message-title {
+            min-height: $small_size - 2px;
+            padding-top: 2px;
+            color: $fg_color;
+            font-weight: bold;
+            font-size: 1em;
+          }
+
+          .message-content {
+            min-height: $menuitem_size * 2 - 8px * 2;
+            padding: 8px;
+            color: $secondary_fg_color;
+            font-size: 1em;
+          }
+
+          .message-content * > StIcon {
+            icon-size: 16px;
+            border-radius: 16px;
+            padding: ($small_size - 16px) / 2;
+            color: $secondary_fg_color;
+          }
+
+          /* FIXME: how do you do this in sass? */
+          .message-content *:hover > StIcon,
+          .message-content *:focus > StIcon {
+            color: $fg_color;
+            background-color: $divider_color;
+          }
+
+          .message-content *:active > StIcon {
+            color: $fg_color;
+            background-color: $track_color;
+          }
+
+          .message-media-control {
+            margin: 16px 0;
+            padding: 8px;
+            border-radius: 100px;
+            color: $secondary_fg_color;
+            &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+            &:active { color: $fg_color; background-color: $track_color; }
+            &:insensitive { color: $disabled_secondary_fg_color; }
+
+            &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
+            &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+          }
+
+          .media-message-cover-icon {
+            icon-size: 32px !important;
+            margin: 8px 0px 8px 4px !important;
+            &:rtl { margin: 8px 4px 8px 0px !important; }
+            &.fallback {
+              icon-size: 16px !important;
+              padding: 8px;
+              border: none;
+              border-radius: $bt_radius;
+              background-color: $divider_color;
+              color: $hint_fg_color;
+            }
+          }
+
+
+//Activities Ripples
+.ripple-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 0 0 48px 0;
+  background-color: $inverse_track_color;
+  background-image: none;
+  background-size: auto;
+}
+
+.ripple-box:rtl {
+  border-radius: 0 0 0 48px;
+  background-image: none;
+}
+
+// not really top bar only
+.popup-menu-arrow { width: 16px; height: 16px; }
+.popup-menu-icon { icon-size: em(16px); }
+
+//close buttons
+
+.window-close {
+  transition-duration: 0ms; // FIXME: unless disable the transition, button will distort when hovering
+  height: 42px;
+  width: 42px;
+  -shell-close-overlap: 20px;
+  // -st-background-image-shadow: $shadow_1;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: transparent;
+  background-color: transparent;
+  background-image: url("assets/window-close.svg");
+
+  &:hover {
+    height: 42px;
+    width: 42px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    // -st-background-image-shadow: $shadow_2;
+    background-image: url("assets/window-close-hover.svg");
+  }
+
+  &:active {
+    height: 42px;
+    width: 42px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    background-image: url("assets/window-close-active.svg");
+  }
+
+  // For backward compatibility of 3.26.0
+  // &:rtl { -st-background-image-shadow: $shadow_1; }
+  // &:rtl:hover { -st-background-image-shadow: $shadow_2; }
+}
+
+/* NETWORK DIALOGS */
+
+.nm-dialog {
+  max-height: 34em;
+  min-height: 31em;
+  min-width: 32em;
+}
+
+  .nm-dialog-content {
+    spacing: 20px;
+    padding: 24px;
+  }
+  .nm-dialog-header-hbox { spacing: 10px; }
+  .nm-dialog-airplane-box { spacing: 12px; }
+
+  .nm-dialog-airplane-headline {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .nm-dialog-airplane-text { color: $fg_color; }
+  .nm-dialog-header-icon { icon-size: 32px; }
+  .nm-dialog-scroll-view { border: none; }
+  .nm-dialog-header { @include font(title); }
+
+  .nm-dialog-item {
+    font-size: 1em;
+    border-bottom: none;
+    border-radius: $bt_radius;
+    padding: 12px;
+    spacing: 20px;
+    &:hover, &:focus { background-color: $divider_color; }
+    &:active { background-color: $track_color; }
+  }
+
+  .nm-dialog-item:selected {
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+  }
+
+  .nm-dialog-icons { spacing: .5em; }
+  .nm-dialog-icon { icon-size: 16px; }
+  .no-networks-label { color: $hint_fg_color; }
+  .no-networks-box { spacing: 12px; }
+
+/* OVERVIEW */
+
+#overview {
+  spacing: 24px; //
+  StScrollBar { @extend %overview_scrollbar; }
+}
+
+.overview-controls {
+  padding-bottom: 32px;
+}
+
+  .window-picker { //container around window thumbnails
+    -horizontal-spacing: 16px;
+    -vertical-spacing: 16px;
+    padding: 0 16px 32px;
+
+    &.external-monitor { padding: 16px; }
+  }
+
+  .window-clone-border {
+    border: 4px solid $inverse_track_color;
+    border-radius: $material_radius;
+    // For window decorations with round corners we can't match
+    // the exact shape when the window is scaled. So apply a shadow
+    // to fix that case
+    box-shadow: inset 0 0 0 1px $inverse_track_color;
+  }
+
+  .window-caption {
+    spacing: 25px;
+    color: $inverse_fg_color;
+    background-color: $bg_color;
+    border-radius: $bt_radius;
+    padding: 4px 8px;
+  }
+
+  //search entry
+  .search-entry {
+    width: 320px - 8px * 2;
+    padding: 0 8px;
+    border: none;
+    selection-background-color: $primary_color;
+    selected-color: $inverse_fg_color;
+    @include search_entry(normal, $fc:$inverse_fg_color);
+    &:focus {
+      @include search_entry(focus, $fc:$inverse_fg_color);
+      padding: 0 8px;
+    }
+
+    .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: rgba(black, 0.75); }
+    }
+  }
+
+  //search results
+
+  #searchResultsBin {
+    max-width: 1000px;
+  }
+
+  #searchResultsContent {
+    padding-left: 20px;
+    padding-right: 20px;
+    spacing: 16px;
+  }
+
+  .search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
+  .search-section-content { spacing: 32px; } // This is the space between the provider icon and the results container
+  .search-statustext { // "no results"
+    @extend %status_text;
+  }
+  .list-search-results { spacing: 3px; }
+
+  .search-section-separator { height: 1px; background-color: $inverse_divider_color; }
+
+  .list-search-result-content { spacing: 30px; }
+  .list-search-result-title { @include font(subheading); color: $inverse_fg_color; spacing: 12px; }
+  .list-search-result-description { color: $inverse_secondary_fg_color; }
+  .list-search-provider-details { width: 150px; color: $inverse_secondary_fg_color; margin-top: 0.24em; }
+  .list-search-provider-content { spacing: 20px; }
+  .search-provider-icon { padding: 15px; }
+
+
+  /* DASHBOARD */
+
+  #dash {
+    font-size: 1em;
+    color: $inverse_fg_color;
+    background-color: $inverse_bg_color;
+    padding: 3px 0;
+    margin: 6px;
+    border: none;
+    border-radius: 100px;
+
+    &:rtl {
+      border-radius: 100px;
+    }
+
+    .placeholder {
+      background-image: url("assets/dash-placeholder.svg");
+      background-size: contain;
+      height: 24px;
+    }
+
+    .empty-dash-drop-target {
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+
+  .dash-item-container > StWidget {
+    padding: 3px 6px;
+  }
+
+  .dash-label { //osd tooltip
+    // min-height: 32px - 6px * 2;
+    border-radius: 100px;
+    padding: 8px 10px;
+    color: $inverse_fg_color;
+    background-color: rgba(black, 0.75);
+    border: none;
+    box-shadow: $shadow_2;
+    text-align: center;
+    -x-offset: 8px;
+  }
+
+  /* App Vault/Grid */
+  .icon-grid {
+    spacing: 30px;
+    -shell-grid-horizontal-item-size: 136px;
+    -shell-grid-vertical-item-size: 136px;
+
+    .overview-icon { icon-size: 96px; }
+  }
+  //.app-display { spacing: 20px; }
+
+  .system-action-icon {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); // FIXME: this should really have a highlight
+    background-color: $grey_900;
+    color: $white;
+    border-radius: 99px;
+    icon-size: 48px;
+  }
+
+  .app-view-controls { //favorties | all toggle container
+    width: 320px;
+    margin-bottom: 32px;
+    padding: 0;
+    border-radius: 100px;
+    background-color: $inverse_divider_color;
+  }
+  .app-view-control { //favorties | all toggle button
+    padding: 0 16px;
+    margin: 3px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: $inverse_secondary_fg_color;
+    background-color: transparent;
+    &:hover {
+      color: $inverse_fg_color;
+      background-color: rgba($inverse_fg_color, 0.20);
+    }
+    &:active {
+      color: $inverse_fg_color;
+      background-color: $inverse_track_color;
+    }
+    &:checked {
+      color: white;
+      background-color: $primary_color;
+      box-shadow: none;
+    }
+    &:first-child {
+      border-right-width: 0;
+      margin-right: 0;
+      // border-radius: 100px 0 0 100px;
+      // &:checked { border-radius: 0; }
+    }
+    &:last-child {
+      // border-radius: 0 100px 100px 0;
+      // &:checked { border-radius: 0; }
+    }
+  }
+
+  //Icon tile
+  .search-provider-icon,
+  .list-search-result {
+    @extend %icon_tile;
+    &:focus, &:selected, &:hover {
+      background-color: $inverse_divider_color;
+      transition-duration: 0ms;
+    }
+    &:active, &:checked {
+      background-color: $inverse_track_color;
+      transition-duration: $longer_duration;
+    }
+  }
+
+  .show-apps,
+  .app-well-app,
+  .app-well-app.app-folder,
+  .grid-search-result {
+    & .overview-icon {
+      @extend %icon_tile;
+    }
+    &:hover .overview-icon,
+    &:focus .overview-icon,
+    &:selected .overview-icon {
+      background-color: $inverse_divider_color;
+      transition-duration: 0ms;
+      border-image: none;
+      background-image: none;
+    }
+    &:active .overview-icon,
+    &:checked .overview-icon {
+      background-color: $inverse_track_color;
+      box-shadow: none;
+      transition-duration: $longer_duration;
+    }
+
+  }
+
+  // .show-apps {
+  //   & .overview-icon {
+  //     background-image: url("assets/startup.png") !important;
+  //     background-size: contain;
+  //   }
+  // }
+
+  .app-well-app-running-dot { //running apps indicator
+    width: 5px; height: 2px;
+    border-radius: 0;
+    background-color: $inverse_fg_color;
+    margin-bottom: 0;
+  }
+
+  StWidget.focused .app-well-app-running-dot {
+    width: 16px;
+    background-color: $primary_color;
+  }
+
+  %icon_tile {
+    color: $inverse_fg_color;
+    border-radius: 100px;
+    padding: 6px;
+    border: none;
+    transition-duration: $longer_duration;
+    text-align: center;
+  }
+
+  .app-well-app.app-folder > .overview-icon {
+    background-color: $inverse_bg_color;
+  }
+
+  .show-apps .show-apps-icon {
+    color: $inverse_secondary_fg_color;
+  }
+
+  .show-apps:hover .show-apps-icon,
+  .show-apps:active .show-apps-icon,
+  .show-apps:checked .show-apps-icon,
+  .show-apps:focus .show-apps-icon {
+    color: $inverse_fg_color;
+    transition-duration: $longer_duration;
+  }
+
+
+  // Collections
+  .app-folder-popup { //expanded collection
+    -arrow-border-radius: $bt_radius;
+    -arrow-background-color: $inverse_bg_color;
+    -arrow-base: 0;
+    -arrow-rise: 12px;
+  }
+  .app-folder-popup-bin { padding: 5px; }
+  .app-folder-icon {
+    padding: 5px;
+    spacing-rows: 5px;
+    spacing-columns: 5px;
+  }
+
+  .page-indicator {
+    padding: 15px 20px;
+
+    .page-indicator-icon {
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 12px;
+      background-image: none;
+      background-color: $inverse_disabled_secondary_fg_color;
+    }
+    &:hover .page-indicator-icon {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-image: none;
+      background-color: $inverse_disabled_fg_color;
+    }
+    &:active .page-indicator-icon {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-image: none;
+      background-color: $inverse_secondary_fg_color;
+    }
+    &:checked .page-indicator-icon {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-image: none;
+      background-color: $inverse_fg_color;
+      transition-duration: 0ms;
+    }
+    &:checked:active { background-image: none; }
+  }
+
+  .no-frequent-applications-label { @extend %status_text; }
+
+  .app-well-app > .overview-icon.overview-icon-with-label,
+  .grid-search-result .overview-icon.overview-icon-with-label {
+    padding: 10px 8px 5px 8px;
+    spacing: 4px;
+  }
+
+  // Workspace pager
+  .workspace-thumbnails { //container ala dash
+    @extend %overview-panel;
+    visible-width: 32px; //amount visible before hover
+    spacing: 12px;
+    padding: 16px;
+    border-radius: $bt_radius;
+    margin: 6px;
+    //border-width: 0; //fixme: can't have non unoform borders :(
+    // &:rtl { border-radius: $material_radius; }
+  }
+  .workspace-thumbnail-indicator {
+    border: 0 solid $primary_color;
+    border-width: 2px;
+    padding: 6px;
+    border-radius: 2px;
+  }
+
+  //Some hacks I don't even
+  .search-display > StBoxLayout,
+  .all-apps,
+  .frequent-apps > StBoxLayout {
+    // horizontal padding to make sure scrollbars or dash don't overlap content
+    padding: 0px 88px 10px 88px;
+  }
+
+%overview-panel {
+  color: $inverse_fg_color;
+  background-color: $inverse_bg_color;
+  border: none;
+}
+
+%status_text {
+  @include font(display-2);
+  color: $inverse_hint_fg_color;
+}
+
+/* NOTIFICATIONS & MESSAGE TRAY */
+
+  .url-highlighter { link-color: $link_color; }
+
+  // Banners
+  .notification-banner {
+    font-size: 1em;
+    width: 34em;
+    min-height: $menuitem_size * 2;
+    margin: 5px;
+    border-radius: $bt_radius;
+    color: $fg_color;
+    background-color: rgba($base_color, 0.92);
+    border: none;
+    box-shadow: $shadow_2;
+    &:hover { background-color: rgba($base_color, 0.95); }
+    &:focus { background-color: $base_color; }
+
+    .notification-icon { padding: 5px; }
+    .notification-content { padding: 5px; spacing: 5px; }
+    .secondary-icon { icon-size: em(16px); }
+    .notification-actions {
+      background-color: transparent;
+      padding-top: 0;
+      border-top: 1px solid $border_color;
+      spacing: 1px;
+    }
+    .notification-button {
+      min-height: 40px;
+      padding: 0 16px;
+      background-color: transparent;
+      color: $secondary_fg_color;
+      font-weight: 500;
+      &:first-child { border-radius: 0 0 0 2px; }
+      &:last-child { border-radius: 0 0 2px 0; }
+      &:hover, &focus { background-color: $divider_color; color: $fg_color; }
+      &:active { background-color: $track_color; color: $fg_color; }
+    }
+  }
+  .summary-source-counter {
+    font-size: 1em;
+    font-weight: bold;
+    height: 1.6em; width: 1.6em;
+    -shell-counter-overlap-x: 3px;
+    -shell-counter-overlap-y: 3px;
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+    border: 2px solid $primary_color;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
+  }
+
+  .secondary-icon { icon-size: em(16px); }
+
+  //chat bubbles
+  .chat-body { spacing: 5px; }
+  .chat-response { margin: 5px; }
+  .chat-log-message { color: $fg_color; }
+  .chat-new-group { padding-top: 1em; }
+  .chat-received {
+    padding-left: 4px;
+    &:rtl { padding-left: 0px; padding-right: 4px; }
+  }
+  .chat-sent {
+    padding-left: 18pt;
+    color: $secondary_fg_color;
+    &:rtl { padding-left: 0; padding-right: 18pt; }
+  }
+  .chat-meta-message {
+    padding-left: 4px;
+    @include font(caption);
+    color: $hint_fg_color;
+    &:rtl { padding-left: 0; padding-right: 4px; }
+  }
+
+  //hotplug
+  .hotplug-transient-box {
+    spacing: 6px;
+    padding: 2px 72px 2px 12px;
+  }
+    .hotplug-notification-item {
+      padding: 2px 10px;
+      &:focus { padding: 1px 71px 1px 11px; }
+    }
+
+    .hotplug-notification-item-icon {
+      icon-size: 24px;
+      padding: 2px 5px;
+    }
+
+    .hotplug-resident-box { spacing: 8px; }
+
+    .hotplug-resident-mount {
+      spacing: 8px;
+      border-radius: $bt_radius;
+      &:hover { background-color: $divider_color; }
+      &:active { background-color: $track_color; }
+    }
+
+    .hotplug-resident-mount-label {
+      color: inherit;
+      padding-left: 6px;
+    }
+
+    .hotplug-resident-mount-icon {
+      icon-size: 24px;
+      padding-left: 6px;
+    }
+
+    .hotplug-resident-eject-icon {
+      icon-size: 16px;
+    }
+
+    .hotplug-resident-eject-button {
+      padding: 7px;
+      border-radius: $bt_radius;
+      color: $fg_color;
+    }
+
+/* Eeeky things */
+
+//magnifier
+
+.magnifier-zoom-region {
+  border: 2px solid $primary_color;
+  &.full-screen { border-width: 0; }
+}
+
+//Keyboard
+/* On-screen Keyboard */
+.word-suggestions {
+    font-size: 14pt;
+    spacing: 12px;
+    min-height: 20pt;
+}
+
+#keyboard {
+    background-color: rgba(black, 0.25);
+}
+
+  .keyboard-layout {
+    padding: 4px;
+    spacing: 4px;
+  }
+
+//  .keyboard-row { spacing: 15px; }
+
+  .keyboard-key {
+    min-height: 2em;
+    min-width: 2em;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: $bt_radius;
+    border: none;
+    color: inherit;
+    background-color: $keyboard_bg_color;
+    box-shadow: 0 1px rgba($black, 0.2);
+    &:focus, &:hover { color: $inverse_fg_color; background-color: $accent_color; }
+    &:checked, &:active { color: $inverse_fg_color; background-color: darken($accent_color, 6%); }
+    &:grayed { //FIXME
+      background-color: $alt_bg_color;
+      color: $inverse_fg_color;
+      border-color: $alt_bg_color;
+    }
+
+    &.default-key { background-size: 20px; } // backspace button
+    &.default-key,
+    &.enter-key,
+    &.shift-key-lowercase,
+    &.shift-key-uppercase,
+    &.hide-key,
+    &.layout-key {
+      background-color: $alt_keyboard_bg_color;
+      box-shadow: 0 1px rgba($black, 0.2);
+      &:focus, &:hover { color: $button_fg_color; background-color: $keyboard_bg_color; }
+      &:checked, &:active { color: $button_fg_color; background-color: darken($keyboard_bg_color, 6%); }
+    }
+    &.enter-key {
+      background-color: $primary_color;
+      background-image: url("assets/key-enter.svg");
+      &:focus, &:hover { color: $inverse_fg_color; background-color: lighten($primary_color, 5%); }
+      &:checked, &:active { color: $inverse_fg_color; background-color: darken($primary_color, 10%); }
+    }
+    &.shift-key-lowercase {
+      background-image: url("assets/key-shift.svg");
+    }
+    &.shift-key-uppercase {
+      background-image: url("assets/key-shift-uppercase.svg");
+    }
+    &.shift-key-uppercase:latched {
+      background-image: url("assets/key-shift-latched-uppercase.svg");
+    }
+    &.hide-key {
+      background-image: url("assets/key-hide.svg");
+    }
+    &.layout-key {
+      background-image: url("assets/key-layout.svg");
+    }
+  }
+
+  .keyboard-subkeys { //long press on a key popup
+    color: inherit;
+    -arrow-border-radius: $bt_radius;
+    -arrow-background-color: rgba(black, 0.45);
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
+    -boxpointer-gap: 5px;
+    box-shadow: $shadow_2;
+  }
+
+// IBus Candidate Popup
+
+.candidate-popup-content {
+  padding: 8px;
+  spacing: 0;
+}
+
+  .candidate-index {
+    padding: 0 4px 0 0;
+    color: $hint_fg_color;
+    .candidate-box:selected & { color: $inverse_hint_fg_color; }
+  }
+
+  .candidate-box {
+    transition-duration: 0ms; // FIXME: needs more natural transitions
+    min-height: $menuitem_size;
+    padding: 0 8px;
+    border-radius: $bt_radius;
+    &:hover { background-color: $divider_color; color: $fg_color; }
+    &:active { background-color: $track_color; color: $fg_color; }
+    &:selected { background-color: $primary_color; color: $inverse_fg_color; }
+  }
+
+  .candidate-page-button-box {
+    height: $menuitem_size;
+    .vertical & { padding-top: 0; }
+    .horizontal & { padding-left: 0; }
+  }
+
+  .candidate-page-button {
+    min-width: $menuitem_size;
+    min-height: $menuitem_size;
+    padding: 0;
+  }
+
+  .candidate-page-button-previous { border-radius: $bt_radius; border-right-width: 0; }
+  .candidate-page-button-next { border-radius: $bt_radius;  }
+  .candidate-page-button-icon { icon-size: em(16px); }
+
+/* Auth Dialogs & Screen Shield */
+
+.framed-user-icon {
+  background-size: contain;
+  border: none;
+  color: $inverse_fg_color;
+  border-radius: $bt_radius;
+  &:hover {
+    border-color: $inverse_fg_color;
+    color: $inverse_fg_color;
+  }
+}
+
+// LOGIN DIALOG
+
+.login-dialog-banner-view {
+  padding-top: 24px;
+  max-width: 23em;
+}
+
+.login-dialog {
+  //reset
+  border: none;
+  background-color: transparent;
+
+  StEntry {
+    selection-background-color: $primary_color;
+    selected-color: $inverse_fg_color;
+    @include entry(normal, $fc:$inverse_track_color);
+    &:focus { @include entry(focus, $fc:$inverse_fg_color); }
+    &:insensitive {
+      @include entry(insensitive, $fc:$inverse_divider_color);
+    }
+  }
+
+  .modal-dialog-button-box { spacing: 3px; }
+  .modal-dialog-button {
+    padding: 0 16px;
+    @include button(flat-normal, $tc: $inverse_fg_color);
+    &:hover,&:focus { @include button(flat-hover, $tc: $inverse_fg_color); }
+    &:active { @include button(flat-active, $tc: $inverse_fg_color); }
+    &:insensitive { @include button(flat-insensitive, $tc: $inverse_fg_color); }
+
+    &:default {
+      @include button(normal, $c: $suggested_color, $tc: $inverse_fg_color);
+      &:hover,&:focus { @include button(hover, $c: $suggested_color, $tc: $inverse_fg_color); }
+      &:active { @include button(active, $c: $suggested_color, $tc: $inverse_fg_color); }
+      &:insensitive { @include button(insensitive, $c: $inverse_divider_color, $tc: $inverse_disabled_fg_color); }
+    }
+  }
+}
+
+  .login-dialog-logo-bin { padding: 24px 0px; }
+  .login-dialog-banner { color: $inverse_secondary_fg_color; }
+  .login-dialog-button-box { spacing: 5px; }
+  .login-dialog-message-warning { color: $warning_color; }
+  .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
+  .login-dialog-user-selection-box { padding: 100px 0px; }
+  .login-dialog-not-listed-label {
+    padding-left: 2px;
+    .login-dialog-not-listed-button:focus &,
+    .login-dialog-not-listed-button:hover & {
+      color: $inverse_fg_color;
+    }
+  }
+  .login-dialog-not-listed-label {
+    font-size: 1em;
+    font-weight: bold;
+    color: $inverse_secondary_fg_color;
+    padding-top: 1em;
+    &:hover { color: $inverse_fg_color; }
+    &:focus { background-color: $inverse_divider_color; }
+  }
+
+  .login-dialog-user-list-view { -st-vfade-offset: 1em; }
+  .login-dialog-user-list {
+    spacing: 12px;
+    padding: .2em;
+    width: 23em;
+    &:expanded .login-dialog-user-list-item:selected { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+    &:expanded .login-dialog-user-list-item:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+    &:expanded .login-dialog-user-list-item:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
+    &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $inverse_fg_color; }
+  }
+  .login-dialog-user-list-item {
+    border-radius: $bt_radius;
+    padding: 6px;
+    color: $inverse_secondary_fg_color;
+    &:ltr { padding-right: 1em; }
+    &:rtl { padding-left: 1em; }
+    &:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+    &:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
+    .login-dialog-timed-login-indicator {
+      height: 2px;
+      margin: 6px 0 0 0;
+      background-color: $inverse_fg_color;
+    }
+    &:focus .login-dialog-timed-login-indicator { background-color: $inverse_fg_color; }
+  }
+
+  .login-dialog-username,
+  .user-widget-label {
+    color: $inverse_fg_color;
+    @include font(title);
+    text-align: left;
+    padding-left: 15px;
+  }
+    .user-widget-label {
+      &:ltr { padding-left: 18px; }
+      &:rtl { padding-right: 18px; }
+    }
+
+  .login-dialog-prompt-layout {
+      padding-top: 24px;
+      padding-bottom: 12px;
+      spacing: 8px;
+      width: 23em;
+  }
+
+  .login-dialog-prompt-label {
+      color: $inverse_hint_fg_color;
+      font-size: 1em;
+      padding-top: 1em;
+  }
+
+  .login-dialog-session-list-button StIcon {
+      icon-size: 1.25em;
+  }
+
+  .login-dialog-session-list-button {
+      color: $inverse_secondary_fg_color;
+      &:hover,&:focus { color: $inverse_fg_color; }
+      &:active { color: $inverse_fg_color; }
+  }
+
+//SCREEN SHIELD
+
+.screen-shield-arrows {
+    padding-bottom: 3em;
+}
+
+.screen-shield-arrows Gjs_Arrow {
+    color: white;
+    width: 80px;
+    height: 48px;
+    -arrow-thickness: 12px;
+    -arrow-shadow: $shadow_1;
+}
+
+.screen-shield-clock {
+  color: white;
+  text-shadow: $shadow_1;
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+.screen-shield-clock-time {
+  @include font(display-4);
+  text-shadow: $shadow_1;
+}
+
+.screen-shield-clock-date { @include font(display-2); }
+
+.screen-shield-notifications-container {
+  spacing: 6px;
+  width: 30em;
+  background-color: transparent;
+  max-height: 500px;
+  .summary-notification-stack-scrollview {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .notification,
+  .screen-shield-notification-source {
+    padding: 8px;
+    border: none;
+    background-color: $alt_bg_color;
+    color: $inverse_fg_color;
+    border-radius: $bt_radius;
+  }
+  .notification { margin-right: 16px; } //compensate for space allocated to the scrollbar
+}
+
+
+.screen-shield-notification-label {
+  min-height: $small_size - 2px;
+  padding: 2px 0px 0px 16px;
+  font-weight: bold;
+}
+
+.screen-shield-notification-count-text {
+  min-height: $small_size - 2px;
+  padding: 2px 0px 0px 16px;
+  color: $inverse_secondary_fg_color;
+}
+
+#panel.lock-screen { background-color: $alt_bg_color; }
+
+.screen-shield-background { //just the shadow, really
+  background: black;
+  box-shadow: $shadow_5;
+}
+
+#lockDialogGroup {
+  background: #333333 url("assets/noise-texture.svg");
+  background-size: cover;
+}
+
+#screenShieldNotifications {
+  StScrollBar { @extend %overview_scrollbar; }
+}
+
+
+// Looking Glass
+#LookingGlassDialog {
+  background-color: $base_color;
+  spacing: 4px;
+  padding: 0;
+  border: none;
+  border-radius: $bt_radius;
+  box-shadow: $shadow_4;
+  & > #Toolbar {
+    padding: 0 8px;
+    border: none;
+    border-radius: 0;
+    background-color: rgba($base_color, 0.01);
+    box-shadow: inset 0 -1px 0 $border_color;
+  }
+  .labels { spacing: 0; }
+  .notebook-tab {
+    -natural-hpadding: 12px;
+    -minimum-hpadding: 6px;
+    font-weight: bold;
+    color: $hint_fg_color;
+    transition-duration: $longer_duration;
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: $medium_size;
+    padding: 0 16px * 2;
+    &:hover {
+      box-shadow: inset 0 -2px 0px $track_color;
+      color: $fg_color;
+      text-shadow: none;
+    }
+    &:selected {
+      border-bottom-width: 0;
+      border-color: transparent;
+      background-color: rgba($base_color, 0.01);
+      box-shadow: inset 0 -2px 0px $inverse_fg_color;
+      color: $fg_color;
+      text-shadow: none;
+    }
+  }
+  StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
+  StBoxLayout#ResultsArea { spacing: 4px; }
+}
+
+  .lg-dialog {
+    StEntry {
+      selection-background-color: $primary_color;
+      selected-color: $inverse_fg_color;
+    }
+    .shell-link {
+      color: $link_color;
+      &:hover { color: $link_color; }
+     }
+  }
+
+  .lg-completions-text {
+      font-size: 1em;
+      font-style: italic;
+  }
+
+  .lg-obj-inspector-title {
+      spacing: 4px;
+  }
+
+  .lg-obj-inspector-button {
+      min-height: $medium_size;
+      padding: 0 16px;
+      border: none;
+      border-radius: $bt_radius;
+      @include font(button);
+      @include button(flat-normal);
+      &:hover { @include button(flat-hover); }
+      &:active { @include button(flat-active); }
+      &:insensitive { @include button(flat-insensitive); }
+      &:focus { @include button(flat-focus); }
+      &:hover { border: none; }
+  }
+
+  #lookingGlassExtensions { padding: 4px; }
+
+  .lg-extensions-list {
+      padding: 4px;
+      spacing: 6px;
+  }
+
+  .lg-extension {
+      border: none;
+      border-radius: $bt_radius;
+      padding: 4px;
+  }
+
+  .lg-extension-name {
+      @include font(headline);
+  }
+
+  .lg-extension-meta {
+      spacing: 6px;
+  }
+
+  #LookingGlassPropertyInspector {
+    background: $base_color;
+    border: none;
+    border-radius: $bt_radius;
+    padding: 6px;
+    box-shadow: $shadow_4;
+  }

@@ -1,0 +1,16 @@
+<svg width="24" height="24" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="color-primary-dark">
+   <stop stop-color="#1A73E8" offset="1"/>
+  </linearGradient>
+  <linearGradient id="a" x1="-2.6324e-15" x2="24" y1="-3.5527e-15" y2="-3.5527e-15" gradientUnits="userSpaceOnUse" xlink:href="#color-primary-dark"/>
+ </defs>
+ <g id="scale-vert-marks-before-slider">
+  <g fill="url(#a)">
+   <g transform="rotate(-90,12,12)">
+    <rect width="24" height="24" fill="none"/>
+    <path transform="rotate(45,12,12)" d="m6 6h6a6 6 0 1 1-6 6z" fill="#000"/>
+   </g>
+  </g>
+ </g>
+</svg>
