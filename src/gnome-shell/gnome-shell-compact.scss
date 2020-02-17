@@ -1,0 +1,10 @@
+$variant: 'light';
+$laptop: 'true';
+$panel: 'light';
+$trans: 'true';
+
+@import 'sass/variables';
+@import 'sass/colors';
+@import 'sass/drawing';
+@import 'sass/common';
+@import 'sass/extensions';

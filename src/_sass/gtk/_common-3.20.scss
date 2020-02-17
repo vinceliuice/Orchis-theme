@@ -1876,7 +1876,7 @@ notebook {
       font-weight: 500;
 
       &:hover {
-        background-color: $overlay-hover;
+        background-color: $frame;
         color: $text;
       }
 
@@ -3277,7 +3277,7 @@ tooltip {
   }
 
   // padding: 4px; /* not working */
-  border-radius: $circular-radius;
+  border-radius: $corner-radius/2;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
 
   &:not(.csd):not(.unity-csd) {

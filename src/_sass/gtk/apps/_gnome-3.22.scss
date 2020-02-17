@@ -288,7 +288,7 @@
 
   .icon-item-background {
     padding: 4px;
-    border-radius: 6px;
+    border-radius: $bar-size;
   }
 
   &:selected {
@@ -298,8 +298,8 @@
   }
 }
 
-.nautilus-window .view {
-  border-radius: 6px;
+.nautilus-window notebook :not(treeview).view {
+  border-radius: $bar-size;
 
   selection,
   &:selected {
