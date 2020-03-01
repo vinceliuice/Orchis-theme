@@ -4719,7 +4719,7 @@ stack > grid.vertical scrolledwindow.frame.emptyGrid {
 /******************
  * Gnome Contacts *
  ******************/
-window.background.csd > overlay > grid.horizontal > overlay > stack > box.horizontal > grid.horizontal > scrolledwindow.contacts-contact-form {
+window.background.csd scrolledwindow.contacts-contact-form {
   border-bottom-right-radius: 18px;
 }
 
@@ -6553,19 +6553,19 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.top .budgie-panel.transparent {
+.top .budgie-panel.transparent, .top .budgie-panel:not(.dock-mode) {
   border-radius: 0 0 16px 16px;
 }
 
-.bottom .budgie-panel.transparent {
+.bottom .budgie-panel.transparent, .bottom .budgie-panel:not(.dock-mode) {
   border-radius: 16px 16px 0 0;
 }
 
-.left .budgie-panel.transparent {
+.left .budgie-panel.transparent, .left .budgie-panel:not(.dock-mode) {
   border-radius: 0 16px 16px 0;
 }
 
-.right .budgie-panel.transparent {
+.right .budgie-panel.transparent, .right .budgie-panel:not(.dock-mode) {
   border-radius: 16px 0 0 16px;
 }
 
@@ -7141,6 +7141,7 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
  * Nemo *
  ********/
 .nemo-window .primary-toolbar {
+  background-color: #FFFFFF;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
@@ -7167,10 +7168,6 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   background-color: transparent;
 }
 
-.nemo-window infobar {
-  margin-top: -6px;
-}
-
 .nemo-window .nemo-inactive-pane .view:not(:selected), .nemo-window .nemo-inactive-pane window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:selected), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window .nemo-inactive-pane treeview.view:not(:selected) {
   background-color: #FAFAFA;
 }
@@ -7187,6 +7184,8 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   -NemoPlacesTreeView-disk-full-bar-radius: 0;
   -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
   -NemoPlacesTreeView-disk-full-max-length: 80px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 /* GTK NAMED COLORS

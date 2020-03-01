@@ -9,6 +9,7 @@
 
 .nemo-window {
   .primary-toolbar {
+    background-color: $titlebar;
     border-bottom: 1px solid $divider;
 
     // FIXME: workaround for wrong size allocation of Nemo
@@ -30,13 +31,15 @@
     }
   }
 
+  // .nemo-places-sidebar { }
+
   scrolledwindow.frame {
     border-style: none;
 
     .view:not(:selected) { background-color: transparent; }
   }
 
-  infobar { margin-top: -6px; }
+  // infobar { margin-top: -6px; }
 
   // Inactive F3 pane shading
   .nemo-inactive-pane .view:not(:selected) { background-color: $base-alt; }
@@ -67,6 +70,8 @@
   -NemoPlacesTreeView-disk-full-bar-radius: 0;
   -NemoPlacesTreeView-disk-full-bottom-padding: 1px; // There is already hard-coded 1px bottom-padding
   -NemoPlacesTreeView-disk-full-max-length: 80px;
+  padding-top: $container-padding/2;
+  padding-bottom: $container-padding/2;
 }
 
 .nemo-desktop.nemo-canvas-item {

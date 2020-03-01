@@ -273,7 +273,7 @@
                            (bottom, 16px 16px 0 0),
                            (left,   0 16px 16px 0),
                            (right,  16px 0 0 16px) {
-    .#{$pos} &.transparent {
+    .#{$pos} &.transparent, .#{$pos} &:not(.dock-mode) {
       border-radius: $p_radius;
     }
   }

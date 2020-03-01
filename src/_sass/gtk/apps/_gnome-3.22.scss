@@ -757,12 +757,8 @@ stack {
  * Gnome Contacts *
  ******************/
 window.background.csd {
-  > overlay > grid.horizontal {
-    > overlay > stack > box.horizontal > grid.horizontal {
-      > scrolledwindow.contacts-contact-form {
-        border-bottom-right-radius: $window-radius;
-      }
-    }
+  scrolledwindow.contacts-contact-form {
+    border-bottom-right-radius: $window-radius;
   }
 }
 
