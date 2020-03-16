@@ -1186,30 +1186,13 @@ searchbar > revealer > box {
     }
   }
 
-  // FIXME: Ugly overriding
-  stackswitcher {
-    min-height: 0;
+  button.toggle { border-radius: $circular-radius; }
+
+  stackswitcher { // reset
     border-radius: $circular-radius;
-    background-color: $overlay-normal;
-    padding: 0;
-    margin: $container-padding 0;
 
     &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
-      margin: 0 0;
-      min-width: 120px - 8px * 2;
       border-radius: $circular-radius;
-
-      &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
-
-      &:active {
-        box-shadow: inset 0 0 0 9999px gtkalpha($primary, 0.08);
-        background-image: radial-gradient(circle, gtkalpha($primary, 0.08) 10%, transparent 0%);
-      }
-
-      &:checked {
-        background-color: $primary;
-        color: on($primary);
-      }
     }
   }
 
@@ -1729,6 +1712,11 @@ notebook {
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
 
+  &, &.frame {
+    background-color: $base;
+    border-radius: $corner-radius;
+  }
+
   &:focus tab:checked {
     box-shadow: none;
   }
@@ -1741,6 +1729,7 @@ notebook {
 
     &.top {
       border-bottom-style: solid;
+      border-radius: $corner-radius $corner-radius 0 0;
 
       > tabs {
         margin-bottom: -1px;
@@ -1755,6 +1744,7 @@ notebook {
 
     &.bottom {
       border-top-style: solid;
+      border-radius: 0 0 $corner-radius $corner-radius;
 
       > tabs {
         margin-top: -1px;
@@ -1769,6 +1759,7 @@ notebook {
 
     &.left {
       border-right-style: solid;
+      border-radius: $corner-radius 0 0 $corner-radius;
 
       > tabs {
         margin-left: 4px;
@@ -1783,6 +1774,7 @@ notebook {
 
     &.right {
       border-left-style: solid;
+      border-radius: 0 $corner-radius $corner-radius 0;
 
       > tabs {
         margin-left: -1px;
@@ -1955,7 +1947,8 @@ notebook {
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
-    background-color: $base;
+    background-color: transparent;
+    border-radius: $corner-radius;
   }
 }
 
@@ -2713,12 +2706,8 @@ actionbar > revealer > box {
 }
 
 scrolledwindow {
-  stack &.frame { border-radius: $corner-radius; }
-
   viewport.frame { // avoid double borders when viewport inside scrolled window
     border-style: none;
-
-    &.view { border-radius: $corner-radius; }
   }
 
   // This is used when content is touch-dragged past boundaries.
@@ -3569,13 +3558,39 @@ cursor-handle {
   caret-color: $primary;
 }
 
-stackswitcher button.text-button { min-width: 100px; } // FIXME aggregate with buttons
-
-stackswitcher button.circular,
-stackswitcher button.text-button.circular { // FIXME aggregate with buttons
-  min-width: $medium-size;
-  min-height: $medium-size;
+stackswitcher {
+  min-height: 0;
+  border-radius: $circular-radius;
+  background-color: $overlay-normal;
   padding: 0;
+  margin: $container-padding 0;
+
+  &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+    margin: 0 0;
+    min-width: 120px - 8px * 2;
+    border-radius: $circular-radius;
+
+    &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
+
+    &:active {
+      box-shadow: inset 0 0 0 9999px gtkalpha($primary, 0.08);
+      background-image: radial-gradient(circle, gtkalpha($primary, 0.08) 10%, transparent 0%);
+    }
+
+    &:checked {
+      background-color: $primary;
+      color: on($primary);
+    }
+  }
+
+  button.text-button { min-width: 100px; } // FIXME aggregate with buttons
+
+  button.circular,
+  button.text-button.circular { // FIXME aggregate with buttons
+    min-width: $medium-size;
+    min-height: $medium-size;
+    padding: 0;
+  }
 }
 
 

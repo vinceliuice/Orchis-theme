@@ -1529,32 +1529,16 @@ searchbar > revealer > box {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.titlebar stackswitcher {
-  min-height: 0;
+.titlebar button.toggle {
   border-radius: 9999px;
-  background-color: alpha(currentColor, 0.05);
-  padding: 0;
-  margin: 4px 0;
+}
+
+.titlebar stackswitcher {
+  border-radius: 9999px;
 }
 
 .titlebar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
-  margin: 0 0;
-  min-width: 104px;
   border-radius: 9999px;
-}
-
-.titlebar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:focus {
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
-}
-
-.titlebar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:active {
-  box-shadow: inset 0 0 0 9999px alpha(#1A73E8, 0.08);
-  background-image: radial-gradient(circle, alpha(#1A73E8, 0.08) 10%, transparent 0%);
-}
-
-.titlebar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked {
-  background-color: #1A73E8;
-  color: white;
 }
 
 .titlebar .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
@@ -2131,6 +2115,11 @@ notebook.frame > header {
   background-color: #FAFAFA;
 }
 
+notebook, notebook.frame {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+
 notebook:focus tab:checked {
   box-shadow: none;
 }
@@ -2144,6 +2133,7 @@ notebook > header {
 
 notebook > header.top {
   border-bottom-style: solid;
+  border-radius: 12px 12px 0 0;
 }
 
 notebook > header.top > tabs {
@@ -2158,6 +2148,7 @@ notebook > header.top > tabs > tab {
 
 notebook > header.bottom {
   border-top-style: solid;
+  border-radius: 0 0 12px 12px;
 }
 
 notebook > header.bottom > tabs {
@@ -2172,6 +2163,7 @@ notebook > header.bottom > tabs > tab {
 
 notebook > header.left {
   border-right-style: solid;
+  border-radius: 12px 0 0 12px;
 }
 
 notebook > header.left > tabs {
@@ -2186,6 +2178,7 @@ notebook > header.left > tabs > tab {
 
 notebook > header.right {
   border-left-style: solid;
+  border-radius: 0 12px 12px 0;
 }
 
 notebook > header.right > tabs {
@@ -2340,7 +2333,8 @@ notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs t
 }
 
 notebook > stack:not(:only-child) {
-  background-color: #FFFFFF;
+  background-color: transparent;
+  border-radius: 12px;
 }
 
 /**************
@@ -3175,16 +3169,8 @@ actionbar > revealer > box {
   border-radius: 0 0 18px 18px;
 }
 
-stack scrolledwindow.frame {
-  border-radius: 12px;
-}
-
 scrolledwindow viewport.frame {
   border-style: none;
-}
-
-scrolledwindow viewport.frame.view {
-  border-radius: 12px;
 }
 
 overshoot.top {
@@ -3988,6 +3974,34 @@ cursor-handle.insertion-cursor:dir(ltr), cursor-handle.insertion-cursor:dir(rtl)
 
 :not(decoration):not(window):drop(active) {
   caret-color: #1A73E8;
+}
+
+stackswitcher {
+  min-height: 0;
+  border-radius: 9999px;
+  background-color: alpha(currentColor, 0.05);
+  padding: 0;
+  margin: 4px 0;
+}
+
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+  margin: 0 0;
+  min-width: 104px;
+  border-radius: 9999px;
+}
+
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:focus {
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
+}
+
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:active {
+  box-shadow: inset 0 0 0 9999px alpha(#1A73E8, 0.08);
+  background-image: radial-gradient(circle, alpha(#1A73E8, 0.08) 10%, transparent 0%);
+}
+
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked {
+  background-color: #1A73E8;
+  color: white;
 }
 
 stackswitcher button.text-button {
@@ -5408,6 +5422,26 @@ dialog.background.csd > box.vertical.dialog-vbox > stack toolbar.toolbar {
 
 dialog.background.csd > box.vertical.dialog-vbox > notebook > stack {
   border-radius: 0 0 18px 18px;
+}
+
+dialog.background.csd stack scrolledwindow.frame {
+  border-radius: 12px;
+}
+
+dialog.background.csd stack scrolledwindow.frame textview.view {
+  border-radius: 12px;
+}
+
+dialog.background.csd stack scrolledwindow.frame textview.view > text {
+  background: none;
+}
+
+dialog.background.csd stack scrolledwindow.frame treeview.view:not(:hover):not(:selected), dialog.background.csd window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow scrolledwindow.frame treeview.view:not(:hover):not(:selected) {
+  background: none;
+}
+
+dialog.background.csd stack scrolledwindow viewport.frame.view {
+  border-radius: 12px;
 }
 
 /*********

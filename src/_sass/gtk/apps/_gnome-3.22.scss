@@ -1528,4 +1528,24 @@ dialog.background.csd {
       }
     }
   }
+
+  stack scrolledwindow {
+    &.frame {
+      border-radius: $corner-radius;
+
+      textview.view {
+        border-radius: $corner-radius;
+
+        > text {
+          background: none;
+        }
+      }
+
+      treeview.view:not(:hover):not(:selected) { background: none; }
+    }
+
+    viewport.frame {
+      &.view { border-radius: $corner-radius; }
+    }
+  }
 }
