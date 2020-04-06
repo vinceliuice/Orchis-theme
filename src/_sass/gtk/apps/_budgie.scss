@@ -63,7 +63,7 @@
     }
 
     button.flat:not(.image-button):not(.indicator-item) {
-      @extend row.activatable;
+      @extend %row_activatable;
 
       min-height: 32px;
       padding: 0 8px;
@@ -280,7 +280,7 @@
 
   button {
     @extend %button-flat;
-    @extend %button-on-dark.flat;
+    @extend %button-on-dark;
 
     min-height: 24px;
     min-width: 24px;
@@ -398,7 +398,21 @@
   }
 
   .unpinned button.flat.launcher,
-  .pinned button.flat.launcher.running { @extend %underscores:checked; }
+  .pinned button.flat.launcher.running {
+    @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        2 0 0 0 / 2px 0 0 0),
+                                  (bottom, center calc(100% - 1px), 0 0 2 0 / 0 0 2px 0),
+                                  (left,   calc(1px) center,        0 0 0 2 / 0 0 0 2px),
+                                  (right,  calc(100% - 1px) center, 0 2 0 0 / 0 2px 0 0) {
+      .#{$pos} & {
+        &:checked {
+          border-image: radial-gradient(circle closest-corner at #{$b_pos},
+                                        currentColor 100%,
+                                        transparent 0%)
+                                        #{$b_wid};
+        }
+      }
+    }
+  }
 }
 
 %underscores {
@@ -572,7 +586,7 @@ calendar.raven-calendar {
   button.image-button {
     padding: ($large-size - 24px) / 2;
 
-    @extend %button-on-dark.flat;
+    @extend %button-on-dark;
   }
 }
 

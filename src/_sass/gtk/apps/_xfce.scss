@@ -20,7 +20,7 @@
 
   button {
     @extend %button-flat;
-    @extend %button-on-dark.flat;
+    @extend %button-on-dark;
 
     min-height: 16px;
     min-width: 16px;

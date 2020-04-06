@@ -33,7 +33,7 @@
           > row.activatable {
             // Needs overriding of the GtkListBoxRow padding
             border-radius: 0;
-            margin: -8px -8px -8px 0;
+            margin: -8px 0 -8px 0;
 
             &, &:hover, &:active {
               background: none;
@@ -56,11 +56,21 @@
 
               label.sidebar-label {
                 background-color: $base;
+                box-shadow: 4px 0 $base;
                 border-image-width: 10px 10px 10px 18px;
                 border-image-slice: 10 10 10 18;
                 border-image-repeat: stretch;
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$asset-suffix}.png"),
                                                  url("assets/row-selected#{$asset-suffix}@2.png"));
+              }
+
+              revealer.sidebar-revealer {
+                padding-right: 0;
+              }
+
+              button.sidebar-button {
+                margin-right: 8px;
+                margin-left: -32px;
               }
             }
 
@@ -167,6 +177,7 @@
   color: $text-secondary;
 }
 
+%desktop-canvas-item,
 .nautilus-desktop.nautilus-canvas-item {
   // background-color: $scrim;
   color: on(dark);
@@ -239,7 +250,12 @@
     }
 
     &:last-child:dir(ltr),
-    &:first-child:dir(rtl) { @extend %titlebar-button:checked; }
+    &:first-child:dir(rtl) {
+      &:disabled {
+        background-color: transparent;
+        color: $titlebar-text-disabled;
+      }
+    }
   }
 }
 
@@ -715,17 +731,9 @@ window#gnome-system-monitor.background.csd {
     border-radius: 0 0 $window-radius $window-radius;
 
     > box.vertical > scrolledwindow {
-      treeview.view {
+      treeview.view:not(.progressbar):not(.trough) {
         background: none;
         @extend .view;
-
-        &.progressbar, &.progressbar:focus { // progress bar in treeviews
-          @extend treeview.view.progressbar;
-        }
-
-        &.trough { // progress bar trough in treeviews
-          @extend treeview.view.trough;
-        }
       }
     }
   }
@@ -1213,7 +1221,7 @@ overlay grid.horizontal > revealer > scrolledwindow.frame {
 }
 
 frame.documents-dropdown {
-  @extend toolbar.osd;
+  @extend %toolbar_osd;
 
   margin: 8px;
 
@@ -1449,6 +1457,7 @@ button.title label { min-height: $medium-size; }
 /*********
  * Geary *
  *********/
+window.background.csd.geary-main-window,
 window#GearyMainWindow.background.csd {
   box.vertical > paned.horizontal > box.sidebar.vertical {
     border-bottom-left-radius: $window-radius;

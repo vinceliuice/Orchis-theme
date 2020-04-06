@@ -77,7 +77,7 @@
   > buttonbox { margin: -16px; }
 
   button {
-    @extend %button_basic.flat;
+    @extend %button-flat;
 
     &:not(:disabled) { color: $primary; }
   }

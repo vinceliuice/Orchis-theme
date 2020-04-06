@@ -31,7 +31,7 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
 }
 
 stage {
-  font-family: $font-family;
+  // font-family: $font-family;
   @include font(body-1);
   color: $fg_color;
 }
@@ -71,6 +71,14 @@ StEntry {
     icon-size: 16px;
     warning-color: $warning_color;
     padding: 0 0;
+  }
+  StIcon.peek-password {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: transparentize($fg_color, 0.3);
   }
 }
 
@@ -187,7 +195,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
 /* Switches */
 .toggle-switch {
-  width: 50px;
+  width: 40px;
   height: 20px;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
@@ -687,14 +695,15 @@ $mdbt_radius: 100px;
   // .popup-menu-content { }
 
   .popup-menu-item {
-    spacing: $container_padding*2;
+    spacing: 12px;
     margin: 0 $container_padding;
+    padding: 6px;
     color: $fg_color;
     transition-duration: $shorter_duration;
     border-radius: 100px;
 
-    &:ltr { padding: .5em 2em .5em 0em; }
-    &:rtl { padding: .5em 0em .5em 2em; }
+    &:ltr { padding-right:1.5em; padding-left: 0; }
+    &:rtl { padding-right: 0; padding-left:1.5em; }
 
     &:checked {
       background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
@@ -767,7 +776,7 @@ $mdbt_radius: 100px;
     -arrow-base: 0;
     -arrow-rise: 0;
     -arrow-box-shadow: none; //dreaming. bug #689995
-    margin: $container_padding/2 10px 16px;
+    margin: $container_padding 10px 16px;
     background-color: $menu_bg_color;
     border-radius: $bt_radius;
     box-shadow: $shadow_3;
@@ -795,12 +804,22 @@ $mdbt_radius: 100px;
   }
 
   .popup-separator-menu-item {
-    height: 0; //not really the whole box
-    margin: 0 0;
-    background-color: transparent;
-    border-color: transparent;
-    border-bottom-width: 0;
-    border-bottom-style: solid;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    .popup-separator-menu-item-separator {
+      background: none;
+      padding: 0;
+      margin: 0;
+
+      .popup-sub-menu & { //submenu separators
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
   }
 
   // a little unstructured mess:
@@ -826,16 +845,17 @@ $mdbt_radius: 100px;
     min-width: 21em;
 
     .popup-menu-icon {
-      padding: 0 $container_padding;
+      padding: 0;
+      margin: 0;
       -st-icon-style: symbolic;
     }
 
     .popup-sub-menu .popup-menu-item > :first-child {
       &:ltr { /* 12px spacing + 2*4px padding */
-        padding-left: 16px + $container_padding; margin-left: 1.09em;
+        padding-left: 16px; margin-left: 1.09em;
       }
       &:rtl { /* 12px spacing + 2*4px padding */
-        padding-right: 16px + $container_padding; margin-right: 1.09em;
+        padding-right: 16px; margin-right: 1.09em;
       }
     }
   }
@@ -1130,6 +1150,17 @@ $mdbt_radius: 100px;
     }
   }
 
+  .panel-button.clock-display {
+    &:active, &:overview, &:focus, &:checked {
+      box-shadow: none;
+
+      .clock {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
   .panel-status-indicators-box,
   .panel-status-menu-box {
     spacing: 2px;
@@ -1222,6 +1253,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .calendar {
     margin-bottom: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
 
     .calendar,
@@ -1247,7 +1281,17 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     .events-section-title {
       min-height: $menuitem_size - 4px * 2;
       padding: 4px 8px;
-      border-radius: $bt_radius;
+      border-radius: $material_radius;
+      border: none;
+      box-shadow: none;
+      background: none;
+      color: $secondary_fg_color;
+
+      &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+      &:active {
+        color: $fg_color;
+        background-color: $track_color;
+      }
     }
 
     .datemenu-today-button {
@@ -1260,17 +1304,6 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
     .message-list-section-list:rtl {
       padding-right: 0;
-    }
-
-    .datemenu-today-button,
-    .world-clocks-button,
-    .weather-button,
-    .events-section-title {
-      &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
-      &:active {
-        color: $fg_color;
-        background-color: $track_color;
-      }
     }
 
     .datemenu-today-button .day-label {
@@ -1335,6 +1368,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
       padding: 0;
       margin: 2px;
       border-radius: 100px;
+      color: $secondary_fg_color;
       &:hover,&:focus { background-color: $divider_color; }
       &:active {
         color: inherit;
@@ -1371,9 +1405,24 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
       }
       .calendar-today {
         font-weight: bold !important;
-        //color: $fg_color;
-        //background-color: transparent;
+        color: white;
+        background-color: $primary_color;
         border: none;
+
+        &:hover, &:focus {
+          background-color: lighten($primary_color, 3%);
+          color: white;
+        }
+
+        &:active, &:selected {
+          background-color: $primary_color;
+          color: white;
+
+          &:hover, &:focus {
+            background-color: lighten($primary_color, 3%);
+            color: white;
+          }
+        }
       }
       .calendar-day-with-events {
         color: $link_color;
@@ -1422,9 +1471,11 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
           min-height: $menuitem_size * 2;
           background-color: transparent;
           border: none;
-          &:hover,&:focus { background-color: $divider_color; }
-          &:active { background-color: $track_color; }
+          color: $secondary_fg_color;
           border-radius: $bt_radius;
+          text-shadow: none;
+          &:hover, &:focus { color: $fg_color; background-color: $visit_color; }
+          &:active { color: $fg_color; background-color: $track_color; }
         }
 
           .message-icon-bin {
@@ -1525,7 +1576,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   width: 48px;
   height: 48px;
   border-radius: 0 0 48px 0;
-  background-color: $inverse_track_color;
+  background-color: rgba($primary_color, 0.35);
   background-image: none;
   background-size: auto;
 }
@@ -1610,7 +1661,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .nm-dialog-airplane-text { color: $fg_color; }
   .nm-dialog-header-icon { icon-size: 32px; }
-  .nm-dialog-scroll-view { border: none; }
+
+  .nm-dialog-scroll-view {
+    border: none;
+    background-color: transparent;
+  }
+
   .nm-dialog-header { @include font(title); }
 
   .nm-dialog-item {
@@ -1619,13 +1675,15 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     border-radius: $bt_radius;
     padding: 12px;
     spacing: 20px;
-    &:hover, &:focus { background-color: $divider_color; }
-    &:active { background-color: $track_color; }
-  }
 
-  .nm-dialog-item:selected {
-    background-color: $primary_color;
-    color: $inverse_fg_color;
+    &:hover, &:focus { background-color: $divider_color; }
+
+    &:active { background-color: $track_color; }
+
+    &:selected {
+      background-color: $primary_color;
+      color: $inverse_fg_color;
+    }
   }
 
   .nm-dialog-icons { spacing: .5em; }
@@ -1667,6 +1725,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     background-color: $bg_color;
     border-radius: $bt_radius;
     padding: 4px 8px;
+    border: none;
+    font-size: 1em;
+    font-weight: normal;
   }
 
   //search entry
@@ -1674,11 +1735,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     width: 320px - 8px * 2;
     padding: 0 8px;
     border: none;
-    selection-background-color: $primary_color;
-    selected-color: $inverse_fg_color;
-    @include search_entry(normal, $fc:$inverse_fg_color);
+    @include search_entry(normal);
+
     &:focus {
-      @include search_entry(focus, $fc:$inverse_fg_color);
+      @include search_entry(focus);
       padding: 0 8px;
     }
 
@@ -1686,6 +1746,14 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
     &:hover, &:focus {
       .search-entry-icon { color: rgba(black, 0.75); }
+    }
+
+    &:insensitive, StLabel.hint-text {
+      @include search_entry(insensitive);
+    }
+
+    StLabel.hint-text {
+      color: rgba(black, 0.45);
     }
   }
 
@@ -1699,16 +1767,26 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     padding-left: 20px;
     padding-right: 20px;
     spacing: 16px;
+    max-width: 1024px;
   }
 
   .search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
-  .search-section-content { spacing: 32px; } // This is the space between the provider icon and the results container
+  .search-section-content { // This is the space between the provider icon and the results container
+    spacing: 32px;
+    background-color: $inverse_divider_color;
+    border-radius: $bt_radius;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    color: $inverse_fg_color;
+    padding: 12px;
+  }
   .search-statustext { // "no results"
     @extend %status_text;
   }
   .list-search-results { spacing: 3px; }
 
-  .search-section-separator { height: 1px; background-color: $inverse_divider_color; }
+  .search-section-separator { height: 0; }
 
   .list-search-result-content { spacing: 30px; }
   .list-search-result-title { @include font(subheading); color: $inverse_fg_color; spacing: 12px; }
@@ -1854,18 +1932,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
       box-shadow: none;
       transition-duration: $longer_duration;
     }
-
   }
 
-  // .show-apps {
-  //   & .overview-icon {
-  //     background-image: url("assets/startup.png") !important;
-  //     background-size: contain;
-  //   }
-  // }
-
   .app-well-app-running-dot { //running apps indicator
-    width: 5px; height: 2px;
+    width: 8px; height: 2px;
     border-radius: 0;
     background-color: $inverse_fg_color;
     margin-bottom: 0;
@@ -1909,12 +1979,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     -arrow-base: 0;
     -arrow-rise: 12px;
   }
+
   .app-folder-popup-bin { padding: 5px; }
-  .app-folder-icon {
-    padding: 5px;
-    spacing-rows: 5px;
-    spacing-columns: 5px;
-  }
 
   .page-indicator {
     padding: 15px 20px;
@@ -1956,10 +2022,84 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   .no-frequent-applications-label { @extend %status_text; }
 
-  .app-well-app > .overview-icon.overview-icon-with-label,
   .grid-search-result .overview-icon.overview-icon-with-label {
     padding: 10px 8px 5px 8px;
-    spacing: 4px;
+    spacing: 6px;
+  }
+
+
+  .overview-icon.overview-icon-with-label {
+    padding: 10px 8px 5px 8px;
+
+    > StBoxLayout {
+      spacing: 6px;
+    }
+  }
+
+  /* App Folders */
+  .app-folder {
+    .overview-icon {
+      background-color: $inverse_bg_color;
+      padding: 16px;
+      border-radius: 100px;
+    }
+  }
+
+  // expanded folder
+  .app-folder-dialog {
+    border-radius: $bt_radius * 2;
+    border: none;
+    spacing: 12px;
+    background-color: rgba(black, 0.75);
+
+    & .folder-name-container {
+      padding: 24px 36px 0;
+      spacing: 12px;
+
+      & .folder-name-label,
+      & .folder-name-entry {
+        font-size: 18pt;
+        font-weight: bold;
+      }
+
+      & .folder-name-entry {
+        @extend .search-entry;
+      }
+
+      /* FIXME: this is to keep the label in sync with the entry */
+      & .folder-name-label { padding: 5px 7px; color: $inverse_secondary_fg_color; }
+
+      & .edit-folder-button {
+        background-color: $inverse_divider_color;
+        color: $inverse_secondary_fg_color;
+        border: none;
+
+        padding: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+
+        & > StIcon { icon-size: 16px }
+
+        &:hover { background-color: $inverse_divider_color; }
+        &:checked, &:active { background-color: $inverse_track_color; }
+      }
+    }
+
+    & StButton#vhandle,
+    & StButton#vhandle:hover,
+    & StButton#vhandle:active { background-color: transparent; }
+  }
+  .app-folder-dialog-container {
+    padding: 12px;
+    width: 800px;
+    height: 600px;
+  }
+
+  .app-folder-icon {
+    padding: 4px;
+    spacing-rows: 4px;
+    spacing-columns: 4px;
   }
 
   // Workspace pager
@@ -2130,86 +2270,86 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 //Keyboard
 /* On-screen Keyboard */
 .word-suggestions {
-    font-size: 14pt;
-    spacing: 12px;
-    min-height: 20pt;
+  font-size: 14pt;
+  spacing: 12px;
+  min-height: 20pt;
 }
 
 #keyboard {
-    background-color: rgba(black, 0.25);
+  background-color: rgba(black, 0.25);
 }
 
-  .keyboard-layout {
-    padding: 4px;
-    spacing: 4px;
-  }
+.keyboard-layout {
+  padding: 4px;
+  spacing: 4px;
+}
 
 //  .keyboard-row { spacing: 15px; }
 
-  .keyboard-key {
-    min-height: 2em;
-    min-width: 2em;
-    font-size: 14pt;
-    font-weight: bold;
-    border-radius: $bt_radius;
-    border: none;
-    color: inherit;
-    background-color: $keyboard_bg_color;
+.keyboard-key {
+  min-height: 2em;
+  min-width: 2em;
+  font-size: 14pt;
+  font-weight: bold;
+  border-radius: $bt_radius;
+  border: none;
+  color: inherit;
+  background-color: $keyboard_bg_color;
+  box-shadow: 0 1px rgba($black, 0.2);
+  &:focus, &:hover { color: $inverse_fg_color; background-color: $accent_color; }
+  &:checked, &:active { color: $inverse_fg_color; background-color: darken($accent_color, 6%); }
+  &:grayed { //FIXME
+    background-color: $alt_bg_color;
+    color: $inverse_fg_color;
+    border-color: $alt_bg_color;
+  }
+
+  &.default-key { background-size: 20px; } // backspace button
+  &.default-key,
+  &.enter-key,
+  &.shift-key-lowercase,
+  &.shift-key-uppercase,
+  &.hide-key,
+  &.layout-key {
+    background-color: $alt_keyboard_bg_color;
     box-shadow: 0 1px rgba($black, 0.2);
-    &:focus, &:hover { color: $inverse_fg_color; background-color: $accent_color; }
-    &:checked, &:active { color: $inverse_fg_color; background-color: darken($accent_color, 6%); }
-    &:grayed { //FIXME
-      background-color: $alt_bg_color;
-      color: $inverse_fg_color;
-      border-color: $alt_bg_color;
-    }
-
-    &.default-key { background-size: 20px; } // backspace button
-    &.default-key,
-    &.enter-key,
-    &.shift-key-lowercase,
-    &.shift-key-uppercase,
-    &.hide-key,
-    &.layout-key {
-      background-color: $alt_keyboard_bg_color;
-      box-shadow: 0 1px rgba($black, 0.2);
-      &:focus, &:hover { color: $button_fg_color; background-color: $keyboard_bg_color; }
-      &:checked, &:active { color: $button_fg_color; background-color: darken($keyboard_bg_color, 6%); }
-    }
-    &.enter-key {
-      background-color: $primary_color;
-      background-image: url("assets/key-enter.svg");
-      &:focus, &:hover { color: $inverse_fg_color; background-color: lighten($primary_color, 5%); }
-      &:checked, &:active { color: $inverse_fg_color; background-color: darken($primary_color, 10%); }
-    }
-    &.shift-key-lowercase {
-      background-image: url("assets/key-shift.svg");
-    }
-    &.shift-key-uppercase {
-      background-image: url("assets/key-shift-uppercase.svg");
-    }
-    &.shift-key-uppercase:latched {
-      background-image: url("assets/key-shift-latched-uppercase.svg");
-    }
-    &.hide-key {
-      background-image: url("assets/key-hide.svg");
-    }
-    &.layout-key {
-      background-image: url("assets/key-layout.svg");
-    }
+    &:focus, &:hover { color: $button_fg_color; background-color: $keyboard_bg_color; }
+    &:checked, &:active { color: $button_fg_color; background-color: darken($keyboard_bg_color, 6%); }
   }
-
-  .keyboard-subkeys { //long press on a key popup
-    color: inherit;
-    -arrow-border-radius: $bt_radius;
-    -arrow-background-color: rgba(black, 0.45);
-    -arrow-border-width: 0;
-    -arrow-border-color: transparent;
-    -arrow-base: 20px;
-    -arrow-rise: 10px;
-    -boxpointer-gap: 5px;
-    box-shadow: $shadow_2;
+  &.enter-key {
+    background-color: $primary_color;
+    background-image: url("assets/key-enter.svg");
+    &:focus, &:hover { color: $inverse_fg_color; background-color: lighten($primary_color, 5%); }
+    &:checked, &:active { color: $inverse_fg_color; background-color: darken($primary_color, 10%); }
   }
+  &.shift-key-lowercase {
+    background-image: url("assets/key-shift.svg");
+  }
+  &.shift-key-uppercase {
+    background-image: url("assets/key-shift-uppercase.svg");
+  }
+  &.shift-key-uppercase:latched {
+    background-image: url("assets/key-shift-latched-uppercase.svg");
+  }
+  &.hide-key {
+    background-image: url("assets/key-hide.svg");
+  }
+  &.layout-key {
+    background-image: url("assets/key-layout.svg");
+  }
+}
+
+.keyboard-subkeys { //long press on a key popup
+  color: inherit;
+  -arrow-border-radius: $bt_radius;
+  -arrow-background-color: rgba(black, 0.45);
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -boxpointer-gap: 5px;
+  box-shadow: $shadow_2;
+}
 
 // IBus Candidate Popup
 
@@ -2218,37 +2358,37 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   spacing: 0;
 }
 
-  .candidate-index {
-    padding: 0 4px 0 0;
-    color: $hint_fg_color;
-    .candidate-box:selected & { color: $inverse_hint_fg_color; }
-  }
+.candidate-index {
+  padding: 0 4px 0 0;
+  color: $hint_fg_color;
+  .candidate-box:selected & { color: $inverse_hint_fg_color; }
+}
 
-  .candidate-box {
-    transition-duration: 0ms; // FIXME: needs more natural transitions
-    min-height: $menuitem_size;
-    padding: 0 8px;
-    border-radius: $bt_radius;
-    &:hover { background-color: $divider_color; color: $fg_color; }
-    &:active { background-color: $track_color; color: $fg_color; }
-    &:selected { background-color: $primary_color; color: $inverse_fg_color; }
-  }
+.candidate-box {
+  transition-duration: 0ms; // FIXME: needs more natural transitions
+  min-height: $menuitem_size;
+  padding: 0 8px;
+  border-radius: $bt_radius;
+  &:hover { background-color: $divider_color; color: $fg_color; }
+  &:active { background-color: $track_color; color: $fg_color; }
+  &:selected { background-color: $primary_color; color: $inverse_fg_color; }
+}
 
-  .candidate-page-button-box {
-    height: $menuitem_size;
-    .vertical & { padding-top: 0; }
-    .horizontal & { padding-left: 0; }
-  }
+.candidate-page-button-box {
+  height: $menuitem_size;
+  .vertical & { padding-top: 0; }
+  .horizontal & { padding-left: 0; }
+}
 
-  .candidate-page-button {
-    min-width: $menuitem_size;
-    min-height: $menuitem_size;
-    padding: 0;
-  }
+.candidate-page-button {
+  min-width: $menuitem_size;
+  min-height: $menuitem_size;
+  padding: 0;
+}
 
-  .candidate-page-button-previous { border-radius: $bt_radius; border-right-width: 0; }
-  .candidate-page-button-next { border-radius: $bt_radius;  }
-  .candidate-page-button-icon { icon-size: em(16px); }
+.candidate-page-button-previous { border-radius: $bt_radius; border-right-width: 0; }
+.candidate-page-button-next { border-radius: $bt_radius;  }
+.candidate-page-button-icon { icon-size: em(16px); }
 
 /* Auth Dialogs & Screen Shield */
 
@@ -2302,88 +2442,88 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   }
 }
 
-  .login-dialog-logo-bin { padding: 24px 0px; }
-  .login-dialog-banner { color: $inverse_secondary_fg_color; }
-  .login-dialog-button-box { spacing: 5px; }
-  .login-dialog-message-warning { color: $warning_color; }
-  .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
-  .login-dialog-user-selection-box { padding: 100px 0px; }
-  .login-dialog-not-listed-label {
-    padding-left: 2px;
-    .login-dialog-not-listed-button:focus &,
-    .login-dialog-not-listed-button:hover & {
-      color: $inverse_fg_color;
-    }
-  }
-  .login-dialog-not-listed-label {
-    font-size: 1em;
-    font-weight: bold;
-    color: $inverse_secondary_fg_color;
-    padding-top: 1em;
-    &:hover { color: $inverse_fg_color; }
-    &:focus { background-color: $inverse_divider_color; }
-  }
-
-  .login-dialog-user-list-view { -st-vfade-offset: 1em; }
-  .login-dialog-user-list {
-    spacing: 12px;
-    padding: .2em;
-    width: 23em;
-    &:expanded .login-dialog-user-list-item:selected { background-color: $inverse_divider_color; color: $inverse_fg_color; }
-    &:expanded .login-dialog-user-list-item:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
-    &:expanded .login-dialog-user-list-item:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
-    &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $inverse_fg_color; }
-  }
-  .login-dialog-user-list-item {
-    border-radius: $bt_radius;
-    padding: 6px;
-    color: $inverse_secondary_fg_color;
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
-    &:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
-    &:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
-    .login-dialog-timed-login-indicator {
-      height: 2px;
-      margin: 6px 0 0 0;
-      background-color: $inverse_fg_color;
-    }
-    &:focus .login-dialog-timed-login-indicator { background-color: $inverse_fg_color; }
-  }
-
-  .login-dialog-username,
-  .user-widget-label {
+.login-dialog-logo-bin { padding: 24px 0px; }
+.login-dialog-banner { color: $inverse_secondary_fg_color; }
+.login-dialog-button-box { spacing: 5px; }
+.login-dialog-message-warning { color: $warning_color; }
+.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
+.login-dialog-user-selection-box { padding: 100px 0px; }
+.login-dialog-not-listed-label {
+  padding-left: 2px;
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
     color: $inverse_fg_color;
-    @include font(title);
-    text-align: left;
-    padding-left: 15px;
   }
-    .user-widget-label {
-      &:ltr { padding-left: 18px; }
-      &:rtl { padding-right: 18px; }
-    }
+}
+.login-dialog-not-listed-label {
+  font-size: 1em;
+  font-weight: bold;
+  color: $inverse_secondary_fg_color;
+  padding-top: 1em;
+  &:hover { color: $inverse_fg_color; }
+  &:focus { background-color: $inverse_divider_color; }
+}
 
-  .login-dialog-prompt-layout {
-      padding-top: 24px;
-      padding-bottom: 12px;
-      spacing: 8px;
-      width: 23em;
+.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list {
+  spacing: 12px;
+  padding: .2em;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+  &:expanded .login-dialog-user-list-item:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+  &:expanded .login-dialog-user-list-item:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $inverse_fg_color; }
+}
+.login-dialog-user-list-item {
+  border-radius: $bt_radius;
+  padding: 6px;
+  color: $inverse_secondary_fg_color;
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+  &:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+  &:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin: 6px 0 0 0;
+    background-color: $inverse_fg_color;
+  }
+  &:focus .login-dialog-timed-login-indicator { background-color: $inverse_fg_color; }
+}
+
+.login-dialog-username,
+.user-widget-label {
+  color: $inverse_fg_color;
+  @include font(title);
+  text-align: left;
+  padding-left: 15px;
+}
+  .user-widget-label {
+    &:ltr { padding-left: 18px; }
+    &:rtl { padding-right: 18px; }
   }
 
-  .login-dialog-prompt-label {
-      color: $inverse_hint_fg_color;
-      font-size: 1em;
-      padding-top: 1em;
-  }
+.login-dialog-prompt-layout {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    spacing: 8px;
+    width: 23em;
+}
 
-  .login-dialog-session-list-button StIcon {
-      icon-size: 1.25em;
-  }
+.login-dialog-prompt-label {
+    color: $inverse_hint_fg_color;
+    font-size: 1em;
+    padding-top: 1em;
+}
 
-  .login-dialog-session-list-button {
-      color: $inverse_secondary_fg_color;
-      &:hover,&:focus { color: $inverse_fg_color; }
-      &:active { color: $inverse_fg_color; }
-  }
+.login-dialog-session-list-button StIcon {
+    icon-size: 1.25em;
+}
+
+.login-dialog-session-list-button {
+    color: $inverse_secondary_fg_color;
+    &:hover,&:focus { color: $inverse_fg_color; }
+    &:active { color: $inverse_fg_color; }
+}
 
 //SCREEN SHIELD
 
@@ -2467,9 +2607,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 // Looking Glass
 #LookingGlassDialog {
+  color: $secondary_fg_color;
   background-color: $base_color;
   spacing: 4px;
-  padding: 0;
+  padding: 6px;
   border: none;
   border-radius: $bt_radius;
   box-shadow: $shadow_4;

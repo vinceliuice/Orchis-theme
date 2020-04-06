@@ -82,8 +82,10 @@ $icon_padding: 9px;
 
 .openweather {
   &-button,
+  &-button-action,
   &-menu-button-container,
   &-button-box {
+    border: 1px solid transparent;
   }
 
   &-provider {

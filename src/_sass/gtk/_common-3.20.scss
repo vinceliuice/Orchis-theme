@@ -87,7 +87,7 @@
 }
 
 .view {
-  // @extend row.activatable;
+  // @extend %row_activatable;
 
   background-color: $base;
   color: $text;
@@ -159,7 +159,7 @@ label {
   &:disabled {
     color: $text-disabled;
 
-    // selection { @extend %selected_items:disabled; }
+    // selection { color: $text-disabled; }
 
     headerbar &,
     tab &,
@@ -404,6 +404,14 @@ treeview entry {
   }
 }
 
+%button-on-dark {
+  color: on(dark, secondary);
+
+  &:focus, &:hover, &:active, &:checked { color: on(dark); }
+  &:disabled { color: on(dark, secondary-disabled); }
+  &:checked:disabled { color: on(dark, disabled); }
+}
+
 %button,
 button {
   @at-root %button_basic, & {
@@ -429,7 +437,7 @@ button {
 
     &:checked:disabled { @include button(checked-disabled); }
 
-    &:drop(active) { @extend button:hover; }
+    &:drop(active) { @include button(hover); }
 
     @at-root %button-flat, &.flat {
       @at-root %button-flat-simple, & {
@@ -517,18 +525,6 @@ button {
     }
   }
 
-  @at-root %button-on-dark {
-    &.flat {
-      color: on(dark, secondary);
-
-      &:focus, &:hover, &:active, &:checked { color: on(dark); }
-
-      &:disabled { color: on(dark, secondary-disabled); }
-
-      &:checked:disabled { color: on(dark, disabled); }
-    }
-  }
-
   // big standalone buttons like in Documents pager
   &.osd {
     padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
@@ -539,8 +535,7 @@ button {
   }
 
   // overlay / OSD style
-  @at-root %osd_button,
-  .osd & { }
+  // .osd & { }
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color in (suggested-action, $suggested),
@@ -620,7 +615,7 @@ button {
 
   // inline-toolbar buttons
   .inline-toolbar & {
-    // @extend %button_basic.flat;
+    // @extend %button-flat;
 
     &:not(.text-button) { @extend %circular_button; }
   }
@@ -654,16 +649,12 @@ button {
 
 // all the following is for the +|- buttons on inline toolbars, that way
 // should really be deprecated...
-.inline-toolbar toolbutton > button { // redefining the button look is
-                                      // needed since those are flat...
-}
+// .inline-toolbar toolbutton > button { // redefining the button look is
+// }
 
 // More inline toolbar buttons
-toolbar.inline-toolbar toolbutton {
-  // &:not(:first-child) > button.flat { @extend %linked:not(:first-child); }
-
-  // &:not(:last-child) > button.flat { @extend %linked:not(:last-child); }
-}
+// toolbar.inline-toolbar toolbutton {
+// }
 
 %linked {
   &:not(:first-child) {
@@ -754,7 +745,7 @@ button.color {
 /*********
  * Links *
  *********/
-*:link {
+*:link, %links {
   color: $link;
 }
 
@@ -764,11 +755,11 @@ button.color {
 
 button.link {
   &:link {
-    &, &:focus, &:hover, &:active { @extend *:link; }
+    &, &:focus, &:hover, &:active { color: $link; }
   }
 
   &:visited {
-    &, &:focus, &:hover, &:active { @extend *:visited; }
+    &, &:focus, &:hover, &:active { color: $link-visited; }
   }
 
   > label { text-decoration-line: underline; }
@@ -923,8 +914,14 @@ combobox {
 
   &.linked {
     button:nth-child(2) {
-      &:dir(ltr) { @extend %linked:not(:first-child); }
-      &:dir(rtl) { @extend %linked:not(:last-child); }
+      &:dir(ltr) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      &:dir(rtl) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
   }
 
@@ -959,15 +956,27 @@ combobox {
 // https://bugzilla.gnome.org/show_bug.cgi?id=733979
 
 .linked:not(.vertical) > combobox {
-  &:not(:first-child) > box > button.combo { @extend %linked:not(:first-child); }
+  &:not(:first-child) > box > button.combo {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
-  &:not(:last-child) > box > button.combo { @extend %linked:not(:last-child); }
+  &:not(:last-child) > box > button.combo {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .linked.vertical > combobox {
-  &:not(:first-child) > box > button.combo { @extend %linked-vertical:not(:first-child); }
+  &:not(:first-child) > box > button.combo {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 
-  &:not(:last-child) > box > button.combo { @extend %linked-vertical:not(:last-child); }
+  &:not(:last-child) > box > button.combo {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 button.combo:only-child {
@@ -994,13 +1003,13 @@ toolbar {
   padding: 2px;
   background-color: $background;
 
-  button { @extend %button_basic.flat; }
+  button { @extend %button-flat; }
 
   // on OSD
   .osd & { background-color: transparent; }
 
   // stand-alone OSD toolbars
-  &.osd {
+  @at-root %toolbar_osd, &.osd {
     transition: $transition-shadow;
     padding: $container-padding;
     border-radius: $corner-radius;
@@ -1149,36 +1158,6 @@ searchbar > revealer > box {
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
-  @at-root %titlebar-button, & button:not(.suggested-action):not(.destructive-action) {
-    @extend %button_basic.flat;
-    color: $titlebar-text-secondary;
-
-    &:focus, &:hover, &:active { color: $titlebar-text; }
-
-    &:disabled { color: $titlebar-text-secondary-disabled; }
-
-    &:checked {
-      &:disabled {
-        background-color: transparent;
-        color: $titlebar-text-disabled;
-      }
-    }
-
-    &:backdrop {
-      color: $titlebar-text-disabled;
-
-      &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
-
-      &:disabled { color: $titlebar-text-secondary-disabled; }
-
-      &:checked {
-        color: $titlebar-text-secondary;
-
-        &:disabled { color: $titlebar-text-secondary-disabled; }
-      }
-    }
-  }
-
   button.suggested-action, button.destructive-action {
     &:disabled {
       background-color: $titlebar-fill;
@@ -1313,6 +1292,59 @@ searchbar > revealer > box {
   }
 }
 
+%titlebar-button {
+  @extend %button-flat;
+  color: $titlebar-text-secondary;
+
+  .linked:not(.vertical) > & {
+    border-radius: $circular-radius;
+
+    &:not(:first-child), &:not(:last-child) {
+      border-top-left-radius: $circular-radius;
+      border-bottom-left-radius: $circular-radius;
+      border-top-right-radius: $circular-radius;
+      border-bottom-right-radius: $circular-radius;
+    }
+
+    &.image-button:not(.text-button) {
+      &:first-child {
+        border-top-left-radius: $circular-radius;
+        border-bottom-left-radius: $circular-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $circular-radius;
+        border-bottom-right-radius: $circular-radius;
+      }
+    }
+  }
+
+  &:focus, &:hover, &:active { color: $titlebar-text; }
+
+  &:disabled { color: $titlebar-text-secondary-disabled; }
+
+  &:checked {
+    &:disabled {
+      background-color: transparent;
+      color: $titlebar-text-disabled;
+    }
+  }
+
+  &:backdrop {
+    color: $titlebar-text-disabled;
+
+    &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
+
+    &:disabled { color: $titlebar-text-secondary-disabled; }
+
+    &:checked {
+      color: $titlebar-text-secondary;
+
+      &:disabled { color: $titlebar-text-secondary-disabled; }
+    }
+  }
+}
+
 headerbar {
   // The sizing factor needs to be defined in the headerbar node for the case of split headerbars
   min-height: $large-size;
@@ -1324,6 +1356,10 @@ headerbar {
   button {
     margin-top: $container-padding;
     margin-bottom: $container-padding;
+  }
+
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %titlebar-button;
   }
 
   separator.titlebutton {
@@ -1472,7 +1508,7 @@ treeview.view {
 
   header {
     button {
-      @extend row.activatable;
+      @extend %row_activatable;
 
       padding: 2px 6px;
       border-style: none solid solid none;
@@ -1691,7 +1727,7 @@ popover.background {
 
   &.menu button,
   button.model {
-    @extend %button_basic.flat;
+    @extend %button-flat;
 
     min-height: 32px;
     padding: 0 8px;
@@ -1894,7 +1930,10 @@ notebook {
         margin: -$container-padding -12px;
         padding: $container-padding 12px;
 
-        &:drop(active) { @extend tab:hover; }
+        &:drop(active) {
+          background-color: $frame;
+          color: $text;
+        }
       }
 
       // colors the button like the label, overridden otherwise
@@ -2688,7 +2727,7 @@ frame > border,
   &.flat { border-style: none; }
 }
 
-frame.flat > border { @extend .frame.flat; } // for backward compatibility
+frame.flat > border { border-style: none; } // for backward compatibility
 
 actionbar > revealer > box {
   padding: $container-padding;
@@ -2700,7 +2739,7 @@ actionbar > revealer > box {
     border-radius: 0 0 $window-radius $window-radius;
   }
 
-  button:not(.suggested-action):not(.destructive-action) { @extend %button_basic.flat; }
+  button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
 
   // .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 }
@@ -2768,7 +2807,7 @@ list {
 }
 
 row {
-  &.activatable {
+  @at-root %row_activatable, &.activatable {
     transition: $transition,
                 background-size $ripple-fade-out-duration $ease-out,
                 background-image $ripple-fade-out-opacity-duration $ease-out;
@@ -2831,12 +2870,12 @@ row {
 .app-notification {
   // @extend %osd;
 
-  @extend toolbar.osd;
+  @extend %toolbar_osd;
 
   margin: 8px;
 
   button {
-    @extend %button_basic.flat;
+    @extend %button-flat;
 
     &.text-button:not(:disabled) { color: $primary; }
   }
@@ -2934,7 +2973,15 @@ messagedialog { // Message Dialog styling
       // padding: $container-padding;
 
       button {
-        @extend %button_basic.flat;
+        @extend %button-flat;
+        border-radius: $circular-radius;
+
+        &:not(:first-child), &:not(:last-child) {
+          border-top-left-radius: $circular-radius;
+          border-bottom-left-radius: $circular-radius;
+          border-top-right-radius: $circular-radius;
+          border-bottom-right-radius: $circular-radius;
+        }
 
         &:not(:last-child) { margin-right: $container-padding; }
 
@@ -2956,7 +3003,7 @@ filechooser {
     background-color: $background;
 
     > stack > box > button { // The new folder button
-      @extend %button_basic.flat;
+      @extend %button-flat;
       @extend %circular_button;
     }
   }
@@ -3128,7 +3175,13 @@ placessidebar.sidebar {
       image.sidebar-icon { color: $primary; }
     }
 
-    &:drop(active) { @extend row:hover; }
+    &:drop(active) {
+      transition: $transition,
+                  box-shadow 0ms,
+                  background-size $ripple-fade-out-duration $ease-out,
+                  background-image $ripple-fade-out-opacity-duration $ease-out;
+      box-shadow: inset 0 0 0 9999px $overlay-hover;
+    }
   }
 }
 
@@ -3220,7 +3273,7 @@ infobar {
     background-color: $base;
 
     button {
-      @extend %button_basic.flat;
+      @extend %button-flat;
 
       &.text-button:not(:disabled) { color: $primary; }
     }
@@ -3241,7 +3294,7 @@ infobar {
     background-color: $error;
     color: on($error);
 
-    button { @extend %button-on-dark; }
+    button.flat { @extend %button-on-dark; }
 
     // selection {}
 
@@ -3569,6 +3622,7 @@ stackswitcher {
     margin: 0 0;
     min-width: 120px - 8px * 2;
     border-radius: $circular-radius;
+    background-color: transparent;
 
     &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
 

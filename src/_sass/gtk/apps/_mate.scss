@@ -18,7 +18,7 @@
 
   button {
     @extend %button-flat;
-    @extend %button-on-dark.flat;
+    @extend %button-on-dark;
 
     min-height: 16px;
     min-width: 16px;
@@ -350,7 +350,7 @@ na-tray-applet widget box widget {
 
 // desktop mode
 .caja-desktop.caja-canvas-item {
-  @extend .nautilus-desktop.nautilus-canvas-item;
+  @extend %desktop-canvas-item;
 }
 
 .caja-desktop EelEditableLabel.entry {
@@ -467,7 +467,7 @@ na-tray-applet widget box widget {
   frame > border { border-style: none; }
 
   button {
-    @extend %button_basic.flat;
+    @extend %button-flat;
 
     &:not(:disabled) { color: $primary; }
   }
