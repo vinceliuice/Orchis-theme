@@ -87,7 +87,7 @@ StEntry {
   border-radius: 0;
   border-width: 0;
   selection-background-color: #4586D8;
-  selected-color: rgba(255, 255, 255, 0.85);
+  selected-color: #FFFFFF;
   font-size: 12pt;
   font-weight: 400;
   caret-color: rgba(255, 255, 255, 0.7);
@@ -954,12 +954,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-popup-boxpointer {
-  -arrow-border-radius: 0;
+  -arrow-border-radius: 3px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
   -arrow-box-shadow: none;
   margin: 6px 10px 16px;
   background-color: rgba(32, 32, 32, 0.95);
@@ -968,12 +968,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-boxpointer {
-  -arrow-border-radius: 0;
+  -arrow-border-radius: 3px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
   -arrow-box-shadow: none;
   margin: 0;
   background-color: transparent;
@@ -1726,7 +1726,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 /* Message list */
 .message-list {
-  width: 25em;
+  width: 31.5em;
+  padding: 0 12px;
+}
+
+.message-list .message-list-placeholder {
+  spacing: 12px;
 }
 
 .message-list-clear-button.button {
@@ -1742,13 +1747,16 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message-list-sections {
+.message-list-section,
+.message-list-sections,
+.message-list-section-list {
   spacing: 8px;
 }
 
-.message-list-section,
-.message-list-section-list {
-  spacing: 8px;
+.message-list-controls {
+  margin: 8px 16px 0;
+  padding: 4px;
+  spacing: 16px;
 }
 
 .message {
@@ -1758,6 +1766,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   color: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
   text-shadow: none;
+  /* FIXME: how do you do this in sass? */
 }
 
 .message:hover, .message:focus {
@@ -1770,44 +1779,44 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message-icon-bin {
+.message .message-icon-bin {
+  margin: 8px 0;
   padding: 8px 0px 8px 8px;
 }
 
-.message-icon-bin:rtl {
+.message .message-icon-bin:rtl {
   padding: 8px 8px 8px 0px;
 }
 
-.message-icon-bin > StIcon {
-  color: rgba(255, 255, 255, 0.9);
-  icon-size: 1.1428571429em;
-  -st-icon-style: requested;
-  margin: 4px 0px 4px 4px;
+.message .message-icon-bin > StIcon {
+  icon-size: 32px;
+  -st-icon-style: symbolic;
 }
 
-.message-icon-bin > StIcon:rtl {
-  margin: 4px 4px 4px 0px;
+.message .message-icon-bin > .fallback-app-icon {
+  width: 16px;
+  height: 16px;
 }
 
-.message-secondary-bin {
+.message .message-secondary-bin {
   padding: 0 8px;
 }
 
-.message-secondary-bin > .event-time {
+.message .message-secondary-bin > .event-time {
   min-height: 22px;
   padding-top: 2px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
   /* HACK: the label should be baseline-aligned with a 1em label,
-                     fake this with some bottom padding */
+             fake this with some bottom padding */
   padding-bottom: 0;
 }
 
-.message-secondary-bin > StIcon {
+.message .message-secondary-bin > StIcon {
   icon-size: 1.1428571429em;
 }
 
-.message-title {
+.message .message-title {
   min-height: 22px;
   padding-top: 2px;
   color: rgba(255, 255, 255, 0.9);
@@ -1815,79 +1824,108 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: 1em;
 }
 
-.message-content {
+.message .message-content {
   min-height: 48px;
   padding: 8px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
 }
 
-.message-content * > StIcon {
+.message .message-content * > StIcon {
   icon-size: 16px;
   border-radius: 16px;
   padding: 4px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* FIXME: how do you do this in sass? */
-.message-content *:hover > StIcon,
-.message-content *:focus > StIcon {
+.message .message-content *:hover > StIcon,
+.message .message-content *:focus > StIcon {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-.message-content *:active > StIcon {
+.message .message-content *:active > StIcon {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message-media-control {
-  margin: 16px 0;
+.message .message-media-control {
+  margin: 24px 4px;
   padding: 8px;
   border-radius: 100px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.message-media-control:hover, .message-media-control:focus {
+.message .message-media-control:hover, .message .message-media-control:focus {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-.message-media-control:active {
+.message .message-media-control:active {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message-media-control:insensitive {
+.message .message-media-control:insensitive {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.message-media-control:last-child:ltr {
+.message .message-media-control:last-child:ltr {
   margin-right: 16px;
   padding-right: 8px;
 }
 
-.message-media-control:last-child:rtl {
+.message .message-media-control:last-child:rtl {
   margin-left: 16px;
   padding-left: 8px;
 }
 
-.media-message-cover-icon {
+.message .media-message-cover-icon {
   icon-size: 32px !important;
-  margin: 8px 0px 8px 4px !important;
+  margin: 0 0 0 4px !important;
 }
 
-.media-message-cover-icon:rtl {
-  margin: 8px 4px 8px 0px !important;
+.message .media-message-cover-icon:rtl {
+  margin: 0 4px 0 0 !important;
 }
 
-.media-message-cover-icon.fallback {
+.message .media-message-cover-icon.fallback {
   icon-size: 16px !important;
   padding: 8px;
   border: none;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.5);
+}
+
+.message .message-close-button {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+}
+
+.message .message-close-button:hover, .message .message-close-button:focus {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.message .message-close-button:active {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.message .message-close-button:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.message .message-body {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.url-highlighter {
+  link-color: #4586D8;
 }
 
 .ripple-box {
@@ -2070,10 +2108,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-weight: normal;
 }
 
-.search-entry, .app-folder-dialog .folder-name-container .folder-name-entry {
+.search-entry {
   width: 304px;
   padding: 0 8px;
   border: none;
+  selection-background-color: #4586D8;
+  selected-color: #FFFFFF;
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
@@ -2082,7 +2122,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
-.search-entry:focus, .app-folder-dialog .folder-name-container .folder-name-entry:focus {
+.search-entry:focus {
   color: rgba(0, 0, 0, 0.85);
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
@@ -2091,22 +2131,22 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   padding: 0 8px;
 }
 
-.search-entry .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon {
+.search-entry .search-entry-icon {
   icon-size: 16px;
   padding: 0 0;
   color: rgba(0, 0, 0, 0.75);
 }
 
-.search-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon {
+.search-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.search-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .search-entry StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+.search-entry:insensitive {
   color: rgba(0, 0, 0, 0.35);
   box-shadow: none;
 }
 
-.search-entry StLabel.hint-text, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+.search-entry StLabel.hint-text {
   color: rgba(0, 0, 0, 0.45);
 }
 
@@ -2447,6 +2487,29 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog .folder-name-container .folder-name-label, .app-folder-dialog .folder-name-container .folder-name-entry {
   font-size: 18pt;
   font-weight: bold;
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  selection-background-color: #4586D8;
+  selected-color: #FFFFFF;
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .app-folder-dialog .folder-name-container .folder-name-label {
@@ -3577,7 +3640,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 /* GPaste */
-.popup-menu .search-entry, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry {
+.popup-menu .search-entry {
   color: rgba(255, 255, 255, 0.9);
   selection-background-color: #4586D8;
   selected-color: rgba(255, 255, 255, 0.85);
@@ -3590,17 +3653,17 @@ StWidget.focused .app-well-app-running-dot {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
 }
 
-.popup-menu .search-entry:focus, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus {
+.popup-menu .search-entry:focus {
   color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
   border: 2px solid #4586D8;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.popup-menu .search-entry .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry .search-entry-icon {
+.popup-menu .search-entry .search-entry-icon {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:hover .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon, .popup-menu .app-folder-dialog .folder-name-container .folder-name-entry:focus .search-entry-icon, .app-folder-dialog .folder-name-container .popup-menu .folder-name-entry:focus .search-entry-icon {
+.popup-menu .search-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon {
   color: rgba(255, 255, 255, 0.9);
 }
