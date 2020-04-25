@@ -868,7 +868,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-content {
-  padding: 0 0;
+  padding: 8px 0;
 }
 
 .popup-menu .popup-menu-item {
