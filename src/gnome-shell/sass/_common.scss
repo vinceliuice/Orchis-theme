@@ -655,7 +655,7 @@ $mdbt_radius: 100px;
 /* Popovers/Menus */
 
 .popup-menu {
-  min-width: 12em;
+  min-width: 15em;
   color: $fg_color;
   background-color: transparent;
 
@@ -692,7 +692,7 @@ $mdbt_radius: 100px;
     }
   }
 
-  // .popup-menu-content { }
+  .popup-menu-content { padding: 0 0; }
 
   .popup-menu-item {
     spacing: 12px;
@@ -762,122 +762,122 @@ $mdbt_radius: 100px;
   }
 }
 
-  .popup-menu-ornament {
-    text-align: right;
-    width: 16px;
-    height: 16px;
-  }
+.popup-menu-ornament {
+  text-align: right;
+  width: 16px;
+  height: 16px;
+}
 
-  .candidate-popup-boxpointer {
-    -arrow-border-radius: 3px;
-    -arrow-background-color: transparent;
-    -arrow-border-width: 0;
-    -arrow-border-color: transparent;
-    -arrow-base: 64px;
-    -arrow-rise: 6px;
-    -arrow-box-shadow: none; //dreaming. bug #689995
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
+  -arrow-box-shadow: none; //dreaming. bug #689995
+  margin: $container_padding 10px 16px;
+  background-color: $menu_bg_color;
+  border-radius: $bt_radius;
+  box-shadow: $shadow_3;
+}
+
+.popup-menu-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
+  -arrow-box-shadow: none; //dreaming. bug #689995
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+
+  .popup-menu-content {
     margin: $container_padding 10px 16px;
     background-color: $menu_bg_color;
     border-radius: $bt_radius;
     box-shadow: $shadow_3;
   }
+}
 
-  .popup-menu-boxpointer {
-    -arrow-border-radius: 3px;
-    -arrow-background-color: transparent;
-    -arrow-border-width: 0;
-    -arrow-border-color: transparent;
-    -arrow-base: 64px;
-    -arrow-rise: 6px;
-    -arrow-box-shadow: none; //dreaming. bug #689995
-    margin: 0;
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
+.popup-separator-menu-item {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 
-    .popup-menu-content {
-      margin: $container_padding 10px 16px;
-      background-color: $menu_bg_color;
-      border-radius: $bt_radius;
-      box-shadow: $shadow_3;
-    }
-  }
-
-  .popup-separator-menu-item {
+  .popup-separator-menu-item-separator {
     background: none;
-    border: none;
     padding: 0;
     margin: 0;
 
-    .popup-separator-menu-item-separator {
+    .popup-sub-menu & { //submenu separators
       background: none;
       padding: 0;
       margin: 0;
-
-      .popup-sub-menu & { //submenu separators
-        background: none;
-        padding: 0;
-        margin: 0;
-      }
     }
   }
+}
 
-  // a little unstructured mess:
+// a little unstructured mess:
 
-  .system-switch-user-submenu-icon.user-icon {
-    icon-size: 20px;
-    padding: 0 2px;
+.system-switch-user-submenu-icon.user-icon {
+  icon-size: 20px;
+  padding: 0 2px;
+}
+
+.system-switch-user-submenu-icon.default-icon {
+  icon-size: 16px;
+  padding: 0 4px;
+}
+
+#appMenu {
+  spinner-image: url("process-working.svg");
+  spacing: 4px;
+
+  .label-shadow { color: transparent; }
+}
+
+.aggregate-menu {
+  min-width: 21em;
+
+  .popup-menu-icon {
+    padding: 0;
+    margin: 0;
+    -st-icon-style: symbolic;
   }
 
-  .system-switch-user-submenu-icon.default-icon {
-    icon-size: 16px;
-    padding: 0 4px;
-  }
-
-  #appMenu {
-    spinner-image: url("process-working.svg");
-    spacing: 4px;
-
-    .label-shadow { color: transparent; }
-  }
-
-  .aggregate-menu {
-    min-width: 21em;
-
-    .popup-menu-icon {
-      padding: 0;
-      margin: 0;
-      -st-icon-style: symbolic;
+  .popup-sub-menu .popup-menu-item > :first-child {
+    &:ltr { /* 12px spacing + 2*4px padding */
+      padding-left: 16px; margin-left: 1.09em;
     }
-
-    .popup-sub-menu .popup-menu-item > :first-child {
-      &:ltr { /* 12px spacing + 2*4px padding */
-        padding-left: 16px; margin-left: 1.09em;
-      }
-      &:rtl { /* 12px spacing + 2*4px padding */
-        padding-right: 16px; margin-right: 1.09em;
-      }
+    &:rtl { /* 12px spacing + 2*4px padding */
+      padding-right: 16px; margin-right: 1.09em;
     }
   }
+}
 
-  .system-menu-action {
-    color: $secondary_fg_color;
-    background-color: $divider_color;
-    border-radius: 100px; /* wish we could do 50% */
-    padding: ($large_size - 20px) / 2;
+.system-menu-action {
+  color: $secondary_fg_color;
+  background-color: $divider_color;
+  border-radius: 100px; /* wish we could do 50% */
+  padding: ($large_size - 20px) / 2;
+  border: none;
+  -st-icon-style: symbolic; // >= 3.29.90
+
+  &:hover, &:focus {
+    background-color: $track_color;
+    color: $fg_color;
     border: none;
-    -st-icon-style: symbolic; // >= 3.29.90
-
-    &:hover, &:focus {
-      background-color: $track_color;
-      color: $fg_color;
-      border: none;
-      padding: ($large_size - 20px) / 2;
-    }
-    &:active { background-color: $primary_color; color: white; }
-
-    & > StIcon { icon-size: 16px; }
+    padding: ($large_size - 20px) / 2;
   }
+  &:active { background-color: $primary_color; color: white; }
+
+  & > StIcon { icon-size: 16px; }
+}
 
 // Background menu
 .background-menu { -boxpointer-gap: 8px; -arrow-rise: 0; }
@@ -944,52 +944,52 @@ $mdbt_radius: 100px;
   @extend %osd-panel;
 }
 
-  .switcher-list-item-container { spacing: 8px; }
+.switcher-list-item-container { spacing: 8px; }
 
-  .switcher-list .item-box {
-    padding: 8px;
-    border-radius: $bt_radius;
-  }
+.switcher-list .item-box {
+  padding: 8px;
+  border-radius: $bt_radius;
+}
 
-  .switcher-list .item-box:outlined {
-    padding: 8px;
-    border: none;
-    background-color: $divider_color;
-    color: $fg_color; // for Ubuntu session
-  }
+.switcher-list .item-box:outlined {
+  padding: 8px;
+  border: none;
+  background-color: $divider_color;
+  color: $fg_color; // for Ubuntu session
+}
 
-  .switcher-list .item-box:selected {
-    background-color: $primary_color;
-    color: $inverse_fg_color;
-  }
+.switcher-list .item-box:selected {
+  background-color: $primary_color;
+  color: $inverse_fg_color;
+}
 
-  .switcher-list .thumbnail-box {
-    padding: 2px;
-    spacing: 4px;
-  }
+.switcher-list .thumbnail-box {
+  padding: 2px;
+  spacing: 4px;
+}
 
-  .switcher-list .thumbnail {
-    width:  256px;
-  }
+.switcher-list .thumbnail {
+  width:  256px;
+}
 
-  .switcher-list .separator {
-    width: 1px;
-    background: $border_color;
-  }
+.switcher-list .separator {
+  width: 1px;
+  background: $border_color;
+}
 
-  .switcher-arrow {
-    border-color: rgba(0,0,0,0);
-    color: $hint_fg_color;
-    &:highlighted {
-      color: $fg_color;
-    }
+.switcher-arrow {
+  border-color: rgba(0,0,0,0);
+  color: $hint_fg_color;
+  &:highlighted {
+    color: $fg_color;
   }
+}
 
-  .input-source-switcher-symbol {
-    @include font(display-2);
-    width: 96px;
-    height: 96px;
-  }
+.input-source-switcher-symbol {
+  @include font(display-2);
+  width: 96px;
+  height: 96px;
+}
 
 /* Window Cycler */
 .cycler-highlight { border: 4px solid $primary_color; }
@@ -997,32 +997,32 @@ $mdbt_radius: 100px;
 /* Workspace Switcher */
 .workspace-switcher-group { padding: 8px; }
 
-  .workspace-switcher-container {
-    @extend %osd-panel;
-  }
+.workspace-switcher-container {
+  @extend %osd-panel;
+}
 
-  .workspace-switcher {
-    background: transparent;
-    border: 0px;
-    border-radius: 0px;
-    padding: 0px;
-    spacing: 8px;
-  }
+.workspace-switcher {
+  background: transparent;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  spacing: 8px;
+}
 
-  .ws-switcher-active-up, .ws-switcher-active-down {
-    height: 48px;
-    background-color: $primary_color;
-    color: $inverse_fg_color;
-    background-size: 32px;
-    border-radius: $bt_radius;
-  }
+.ws-switcher-active-up, .ws-switcher-active-down {
+  height: 48px;
+  background-color: $primary_color;
+  color: $inverse_fg_color;
+  background-size: 32px;
+  border-radius: $bt_radius;
+}
 
-  .ws-switcher-box {
-    height: 48px;
-    border: none;
-    background: $divider_color;
-    border-radius: $bt_radius;
-  }
+.ws-switcher-box {
+  height: 48px;
+  border: none;
+  background: $divider_color;
+  border-radius: $bt_radius;
+}
 
 %osd-panel {
   color: $fg_color;
@@ -1039,17 +1039,17 @@ $mdbt_radius: 100px;
   border: 1px solid $alt_primary_color;
 }
 
-  .tile-preview-left.on-primary {
-    border-radius: $panel-corner-radius 0 0 0;
-  }
+.tile-preview-left.on-primary {
+  border-radius: $panel-corner-radius 0 0 0;
+}
 
-  .tile-preview-right.on-primary {
-    border-radius: 0 $panel-corner-radius 0 0;
-  }
+.tile-preview-right.on-primary {
+  border-radius: 0 $panel-corner-radius 0 0;
+}
 
-  .tile-preview-left.tile-preview-right.on-primary {
-    border-radius: $panel-corner-radius $panel-corner-radius 0 0;
-  }
+.tile-preview-left.tile-preview-right.on-primary {
+  border-radius: $panel-corner-radius $panel-corner-radius 0 0;
+}
 
 /* TOP BAR */
 
@@ -1448,6 +1448,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .message-list {
   width: 31.5em;
   padding: 0 12px;
+  color: $secondary_fg_color;
 
   .message-list-placeholder { spacing: 12px; }
 }
@@ -1477,134 +1478,115 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   min-height: $menuitem_size * 2;
   background-color: transparent;
   border: none;
-  color: $secondary_fg_color;
   border-radius: $bt_radius;
-  text-shadow: none;
-  &:hover, &:focus { color: $fg_color; background-color: $visit_color; }
-  &:active { color: $fg_color; background-color: $track_color; }
-
-
-  // icon container
-  .message-icon-bin {
-    margin: 8px 0;
-    padding: 8px 0px 8px 8px;
-    &:rtl { padding: 8px 8px 8px 0px; }
-
-    // icon size and color
-    > StIcon {
-      icon-size: 32px; // 32px
-      -st-icon-style: symbolic;
-    }
-
-    // fallback
-    > .fallback-app-icon {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  .message-secondary-bin {
-    padding: 0 8px;
-  }
-
-  .message-secondary-bin > .event-time {
-    min-height: $small_size - 2px;
-    padding-top: 2px;
-    color: $secondary_fg_color;
-    font-size: 1em;
-    /* HACK: the label should be baseline-aligned with a 1em label,
-             fake this with some bottom padding */
-    padding-bottom: 0;
-  }
-
-  .message-secondary-bin > StIcon {
-    icon-size: em(16px);
-  }
-
-  .message-title {
-    min-height: $small_size - 2px;
-    padding-top: 2px;
-    color: $fg_color;
-    font-weight: bold;
-    font-size: 1em;
-  }
-
-  .message-content {
-    min-height: $menuitem_size * 2 - 8px * 2;
-    padding: 8px;
-    color: $secondary_fg_color;
-    font-size: 1em;
-  }
-
-  .message-content * > StIcon {
-    icon-size: 16px;
-    border-radius: 16px;
-    padding: ($small_size - 16px) / 2;
-    color: $secondary_fg_color;
-  }
-
-  /* FIXME: how do you do this in sass? */
-  .message-content *:hover > StIcon,
-  .message-content *:focus > StIcon {
-    color: $fg_color;
-    background-color: $divider_color;
-  }
-
-  .message-content *:active > StIcon {
-    color: $fg_color;
-    background-color: $track_color;
-  }
-
-  .message-media-control {
-    margin: 24px 4px;
-    padding: 8px;
-    border-radius: 100px;
-    color: $secondary_fg_color;
-    &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
-    &:active { color: $fg_color; background-color: $track_color; }
-    &:insensitive { color: $disabled_secondary_fg_color; }
-
-    &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
-    &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
-  }
-
-  .media-message-cover-icon {
-    icon-size: 32px !important;
-    margin: 0 0 0 4px !important;
-    &:rtl { margin: 0 4px 0 0 !important; }
-
-    &.fallback {
-      icon-size: 16px !important;
-      padding: 8px;
-      border: none;
-      border-radius: $bt_radius;
-      background-color: $divider_color;
-      color: $hint_fg_color;
-    }
-  }
-
-  // close button
-  .message-close-button {
-    color: $secondary_fg_color;
-    padding: 0;
-    height: 24px;
-    width: 24px;
-    border-radius: 100px;
-
-    &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
-    &:active { color: $fg_color; background-color: $track_color; }
-    &:insensitive { color: $disabled_secondary_fg_color; }
-  }
-
-  // body
-  .message-body {
-    color: $hint_fg_color;
-  }
+  color: $secondary_fg_color;
+  &:hover,&:focus { background-color: $divider_color; }
+  &:active { background-color: $track_color; }
 }
 
-// URLs in messages
-.url-highlighter {
-  link-color: $link_color;
+.message-icon-bin {
+  padding: 8px 0px 8px 8px;
+  &:rtl { padding: 8px 8px 8px 0px; }
+}
+
+.message-icon-bin > StIcon {
+  // color: $fg_color;
+  icon-size: 32px; // 32px
+  -st-icon-style: symbolic;
+  margin: 8px 0px 8px 8px;
+  &:rtl { margin: 8px 8px 8px 0px; }
+}
+
+.message-secondary-bin {
+  padding: 0 8px;
+}
+
+.message-secondary-bin > .event-time {
+  min-height: $small_size - 2px;
+  padding-top: 2px;
+  color: $secondary_fg_color;
+  font-size: 1em;
+  padding-bottom: 0;
+}
+
+.message-secondary-bin > StIcon {
+  icon-size: em(16px);
+}
+
+.message-title {
+  min-height: $small_size - 2px;
+  padding-top: 2px;
+  color: $fg_color;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.message-content {
+  min-height: $menuitem_size * 2 - 8px * 2;
+  padding: 8px;
+  color: $secondary_fg_color;
+  font-size: 1em;
+}
+
+// .message-content * > StIcon {
+//   color: $secondary_fg_color;
+// }
+//
+// /* FIXME: how do you do this in sass? */
+// .message-content *:hover > StIcon,
+// .message-content *:focus > StIcon {
+//   color: $fg_color;
+//   background-color: $divider_color;
+// }
+//
+// .message-content *:active > StIcon {
+//   color: $fg_color;
+//   background-color: $track_color;
+// }
+
+// close button
+.message-close-button {
+  color: $secondary_fg_color;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
+  &:active { color: $fg_color; background-color: $track_color; }
+  &:insensitive { color: $disabled_secondary_fg_color; }
+}
+
+// body
+.message-body {
+  color: $hint_fg_color;
+}
+
+.message-media-control {
+  margin: 16px 4px;
+  padding: 8px;
+  border-radius: 100px;
+  color: $secondary_fg_color;
+  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+  &:active { color: $fg_color; background-color: $track_color; }
+  &:insensitive { color: $disabled_secondary_fg_color; }
+
+  &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
+  &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+}
+
+.media-message-cover-icon {
+  icon-size: 32px !important;
+  margin: 8px 0px 8px 4px !important;
+  &:rtl { margin: 8px 4px 8px 0px !important; }
+  &.fallback {
+    icon-size: 16px !important;
+    padding: 8px;
+    border: none;
+    border-radius: $bt_radius;
+    background-color: $divider_color;
+    color: $hint_fg_color;
+  }
 }
 
 //Activities Ripples
@@ -1683,49 +1665,49 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   min-width: 32em;
 }
 
-  .nm-dialog-content {
-    spacing: 20px;
-    padding: 24px;
+.nm-dialog-content {
+  spacing: 20px;
+  padding: 24px;
+}
+.nm-dialog-header-hbox { spacing: 10px; }
+.nm-dialog-airplane-box { spacing: 12px; }
+
+.nm-dialog-airplane-headline {
+  font-weight: bold;
+  text-align: center;
+}
+
+.nm-dialog-airplane-text { color: $fg_color; }
+.nm-dialog-header-icon { icon-size: 32px; }
+
+.nm-dialog-scroll-view {
+  border: none;
+  background-color: transparent;
+}
+
+.nm-dialog-header { @include font(title); }
+
+.nm-dialog-item {
+  font-size: 1em;
+  border-bottom: none;
+  border-radius: $bt_radius;
+  padding: 12px;
+  spacing: 20px;
+
+  &:hover, &:focus { background-color: $divider_color; }
+
+  &:active { background-color: $track_color; }
+
+  &:selected {
+    background-color: $primary_color;
+    color: $inverse_fg_color;
   }
-  .nm-dialog-header-hbox { spacing: 10px; }
-  .nm-dialog-airplane-box { spacing: 12px; }
+}
 
-  .nm-dialog-airplane-headline {
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .nm-dialog-airplane-text { color: $fg_color; }
-  .nm-dialog-header-icon { icon-size: 32px; }
-
-  .nm-dialog-scroll-view {
-    border: none;
-    background-color: transparent;
-  }
-
-  .nm-dialog-header { @include font(title); }
-
-  .nm-dialog-item {
-    font-size: 1em;
-    border-bottom: none;
-    border-radius: $bt_radius;
-    padding: 12px;
-    spacing: 20px;
-
-    &:hover, &:focus { background-color: $divider_color; }
-
-    &:active { background-color: $track_color; }
-
-    &:selected {
-      background-color: $primary_color;
-      color: $inverse_fg_color;
-    }
-  }
-
-  .nm-dialog-icons { spacing: .5em; }
-  .nm-dialog-icon { icon-size: 16px; }
-  .no-networks-label { color: $hint_fg_color; }
-  .no-networks-box { spacing: 12px; }
+.nm-dialog-icons { spacing: .5em; }
+.nm-dialog-icon { icon-size: 16px; }
+.no-networks-label { color: $hint_fg_color; }
+.no-networks-box { spacing: 12px; }
 
 /* OVERVIEW */
 

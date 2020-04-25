@@ -824,7 +824,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu {
-  min-width: 12em;
+  min-width: 15em;
   color: rgba(255, 255, 255, 0.9);
   background-color: transparent;
 }
@@ -865,6 +865,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-sub-menu .popup-menu-item:not(:first-child):last-child {
   border-radius: 0 0 12px 12px;
+}
+
+.popup-menu .popup-menu-content {
+  padding: 0 0;
 }
 
 .popup-menu .popup-menu-item {
@@ -1728,6 +1732,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .message-list {
   width: 31.5em;
   padding: 0 12px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .message-list .message-list-placeholder {
@@ -1763,60 +1768,53 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   min-height: 64px;
   background-color: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
-  text-shadow: none;
-  /* FIXME: how do you do this in sass? */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .message:hover, .message:focus {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 .message:active {
-  color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message .message-icon-bin {
-  margin: 8px 0;
+.message-icon-bin {
   padding: 8px 0px 8px 8px;
 }
 
-.message .message-icon-bin:rtl {
+.message-icon-bin:rtl {
   padding: 8px 8px 8px 0px;
 }
 
-.message .message-icon-bin > StIcon {
+.message-icon-bin > StIcon {
   icon-size: 32px;
   -st-icon-style: symbolic;
+  margin: 8px 0px 8px 8px;
 }
 
-.message .message-icon-bin > .fallback-app-icon {
-  width: 16px;
-  height: 16px;
+.message-icon-bin > StIcon:rtl {
+  margin: 8px 8px 8px 0px;
 }
 
-.message .message-secondary-bin {
+.message-secondary-bin {
   padding: 0 8px;
 }
 
-.message .message-secondary-bin > .event-time {
+.message-secondary-bin > .event-time {
   min-height: 22px;
   padding-top: 2px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
-  /* HACK: the label should be baseline-aligned with a 1em label,
-             fake this with some bottom padding */
   padding-bottom: 0;
 }
 
-.message .message-secondary-bin > StIcon {
+.message-secondary-bin > StIcon {
   icon-size: 1.1428571429em;
 }
 
-.message .message-title {
+.message-title {
   min-height: 22px;
   padding-top: 2px;
   color: rgba(255, 255, 255, 0.9);
@@ -1824,81 +1822,14 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: 1em;
 }
 
-.message .message-content {
+.message-content {
   min-height: 48px;
   padding: 8px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
 }
 
-.message .message-content * > StIcon {
-  icon-size: 16px;
-  border-radius: 16px;
-  padding: 4px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.message .message-content *:hover > StIcon,
-.message .message-content *:focus > StIcon {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-.message .message-content *:active > StIcon {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.message .message-media-control {
-  margin: 24px 4px;
-  padding: 8px;
-  border-radius: 100px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.message .message-media-control:hover, .message .message-media-control:focus {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-.message .message-media-control:active {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.message .message-media-control:insensitive {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.message .message-media-control:last-child:ltr {
-  margin-right: 16px;
-  padding-right: 8px;
-}
-
-.message .message-media-control:last-child:rtl {
-  margin-left: 16px;
-  padding-left: 8px;
-}
-
-.message .media-message-cover-icon {
-  icon-size: 32px !important;
-  margin: 0 0 0 4px !important;
-}
-
-.message .media-message-cover-icon:rtl {
-  margin: 0 4px 0 0 !important;
-}
-
-.message .media-message-cover-icon.fallback {
-  icon-size: 16px !important;
-  padding: 8px;
-  border: none;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.message .message-close-button {
+.message-close-button {
   color: rgba(255, 255, 255, 0.7);
   padding: 0;
   height: 24px;
@@ -1906,26 +1837,71 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border-radius: 100px;
 }
 
-.message .message-close-button:hover, .message .message-close-button:focus {
+.message-close-button:hover, .message-close-button:focus {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-.message .message-close-button:active {
+.message-close-button:active {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.message .message-close-button:insensitive {
+.message-close-button:insensitive {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.message .message-body {
+.message-body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.url-highlighter {
-  link-color: #4586D8;
+.message-media-control {
+  margin: 16px 4px;
+  padding: 8px;
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.message-media-control:hover, .message-media-control:focus {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.message-media-control:active {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.message-media-control:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.message-media-control:last-child:ltr {
+  margin-right: 16px;
+  padding-right: 8px;
+}
+
+.message-media-control:last-child:rtl {
+  margin-left: 16px;
+  padding-left: 8px;
+}
+
+.media-message-cover-icon {
+  icon-size: 32px !important;
+  margin: 8px 0px 8px 4px !important;
+}
+
+.media-message-cover-icon:rtl {
+  margin: 8px 4px 8px 0px !important;
+}
+
+.media-message-cover-icon.fallback {
+  icon-size: 16px !important;
+  padding: 8px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .ripple-box {

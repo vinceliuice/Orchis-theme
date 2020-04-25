@@ -824,7 +824,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu {
-  min-width: 12em;
+  min-width: 15em;
   color: rgba(0, 0, 0, 0.87);
   background-color: transparent;
 }
@@ -865,6 +865,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-sub-menu .popup-menu-item:not(:first-child):last-child {
   border-radius: 0 0 12px 12px;
+}
+
+.popup-menu .popup-menu-content {
+  padding: 0 0;
 }
 
 .popup-menu .popup-menu-item {
@@ -1728,6 +1732,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .message-list {
   width: 31.5em;
   padding: 0 12px;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .message-list .message-list-placeholder {
@@ -1763,60 +1768,53 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   min-height: 64px;
   background-color: transparent;
   border: none;
-  color: rgba(0, 0, 0, 0.54);
   border-radius: 12px;
-  text-shadow: none;
-  /* FIXME: how do you do this in sass? */
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .message:hover, .message:focus {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.16);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .message:active {
-  color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.message .message-icon-bin {
-  margin: 8px 0;
+.message-icon-bin {
   padding: 8px 0px 8px 8px;
 }
 
-.message .message-icon-bin:rtl {
+.message-icon-bin:rtl {
   padding: 8px 8px 8px 0px;
 }
 
-.message .message-icon-bin > StIcon {
+.message-icon-bin > StIcon {
   icon-size: 32px;
   -st-icon-style: symbolic;
+  margin: 8px 0px 8px 8px;
 }
 
-.message .message-icon-bin > .fallback-app-icon {
-  width: 16px;
-  height: 16px;
+.message-icon-bin > StIcon:rtl {
+  margin: 8px 8px 8px 0px;
 }
 
-.message .message-secondary-bin {
+.message-secondary-bin {
   padding: 0 8px;
 }
 
-.message .message-secondary-bin > .event-time {
+.message-secondary-bin > .event-time {
   min-height: 22px;
   padding-top: 2px;
   color: rgba(0, 0, 0, 0.54);
   font-size: 1em;
-  /* HACK: the label should be baseline-aligned with a 1em label,
-             fake this with some bottom padding */
   padding-bottom: 0;
 }
 
-.message .message-secondary-bin > StIcon {
+.message-secondary-bin > StIcon {
   icon-size: 1.1428571429em;
 }
 
-.message .message-title {
+.message-title {
   min-height: 22px;
   padding-top: 2px;
   color: rgba(0, 0, 0, 0.87);
@@ -1824,81 +1822,14 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: 1em;
 }
 
-.message .message-content {
+.message-content {
   min-height: 48px;
   padding: 8px;
   color: rgba(0, 0, 0, 0.54);
   font-size: 1em;
 }
 
-.message .message-content * > StIcon {
-  icon-size: 16px;
-  border-radius: 16px;
-  padding: 4px;
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.message .message-content *:hover > StIcon,
-.message .message-content *:focus > StIcon {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-.message .message-content *:active > StIcon {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.message .message-media-control {
-  margin: 24px 4px;
-  padding: 8px;
-  border-radius: 100px;
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.message .message-media-control:hover, .message .message-media-control:focus {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-.message .message-media-control:active {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.message .message-media-control:insensitive {
-  color: rgba(0, 0, 0, 0.26);
-}
-
-.message .message-media-control:last-child:ltr {
-  margin-right: 16px;
-  padding-right: 8px;
-}
-
-.message .message-media-control:last-child:rtl {
-  margin-left: 16px;
-  padding-left: 8px;
-}
-
-.message .media-message-cover-icon {
-  icon-size: 32px !important;
-  margin: 0 0 0 4px !important;
-}
-
-.message .media-message-cover-icon:rtl {
-  margin: 0 4px 0 0 !important;
-}
-
-.message .media-message-cover-icon.fallback {
-  icon-size: 16px !important;
-  padding: 8px;
-  border: none;
-  border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.38);
-}
-
-.message .message-close-button {
+.message-close-button {
   color: rgba(0, 0, 0, 0.54);
   padding: 0;
   height: 24px;
@@ -1906,26 +1837,71 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border-radius: 100px;
 }
 
-.message .message-close-button:hover, .message .message-close-button:focus {
+.message-close-button:hover, .message-close-button:focus {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.message .message-close-button:active {
+.message-close-button:active {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.message .message-close-button:insensitive {
+.message-close-button:insensitive {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.message .message-body {
+.message-body {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.url-highlighter {
-  link-color: #4586D8;
+.message-media-control {
+  margin: 16px 4px;
+  padding: 8px;
+  border-radius: 100px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.message-media-control:hover, .message-media-control:focus {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.message-media-control:active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.message-media-control:insensitive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.message-media-control:last-child:ltr {
+  margin-right: 16px;
+  padding-right: 8px;
+}
+
+.message-media-control:last-child:rtl {
+  margin-left: 16px;
+  padding-left: 8px;
+}
+
+.media-message-cover-icon {
+  icon-size: 32px !important;
+  margin: 8px 0px 8px 4px !important;
+}
+
+.media-message-cover-icon:rtl {
+  margin: 8px 4px 8px 0px !important;
+}
+
+.media-message-cover-icon.fallback {
+  icon-size: 16px !important;
+  padding: 8px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .ripple-box {
