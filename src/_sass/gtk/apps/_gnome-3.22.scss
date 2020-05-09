@@ -13,7 +13,7 @@
 
     headerbar {
       padding-left: 12px;
-      box-shadow: none;
+      box-shadow: inset 0 1px highlight($titlebar);
     }
 
     placessidebar {

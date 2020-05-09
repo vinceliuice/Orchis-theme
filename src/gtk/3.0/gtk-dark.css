@@ -772,7 +772,7 @@ button.text-button.image-button image:not(:only-child) {
   border-radius: 12px;
 }
 
-.linked:not(.vertical) > button.flat:not(:only-child).image-button:not(.text-button), .linked.vertical > button.flat:not(:only-child).image-button:not(.text-button) {
+.linked:not(.vertical) > button.flat.image-button:not(:only-child):not(.text-button), .linked.vertical > button.flat.image-button:not(:only-child):not(.text-button) {
   border-radius: 9999px;
 }
 
@@ -919,7 +919,7 @@ button.destructive-action.flat:checked {
   -gtk-icon-shadow: none;
 }
 
-.raven .expander-button, .nautilus-window headerbar revealer > button, .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(:only-child).disclosure-button, button.titlebutton, filechooser #pathbarbox > stack > box > button, check,
+.raven .expander-button, .nautilus-window headerbar revealer > button, .linked:not(.vertical) > button.disclosure-button:not(.suggested-action):not(.destructive-action):not(:only-child), button.titlebutton, filechooser #pathbarbox > stack > box > button, check,
 radio,
 button.image-button, .inline-toolbar button:not(.text-button),
 button.close,
@@ -1430,11 +1430,11 @@ searchbar > revealer > box {
   border-radius: 9999px;
 }
 
-.titlebar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+.titlebar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   border-radius: 9999px;
 }
 
-.titlebar .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
+.titlebar .path-bar button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 0;
   padding-left: 6px;
   padding-right: 6px;
@@ -1716,11 +1716,11 @@ treeview.view:drop(active), window#gnome-system-monitor.background.csd > box.ver
   border-color: alpha(currentColor, 0.08);
 }
 
-treeview.view:drop(active).after, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:drop(active).after:not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view:drop(active).after {
+treeview.view.after:drop(active), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.after:drop(active):not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view.after:drop(active) {
   border-top-style: none;
 }
 
-treeview.view:drop(active).before, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:drop(active).before:not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view:drop(active).before {
+treeview.view.before:drop(active), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.before:drop(active):not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view.before:drop(active) {
   border-bottom-style: none;
 }
 
@@ -2220,7 +2220,7 @@ notebook > header tab:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-notebook > header tab:checked.reorderable-page {
+notebook > header tab.reorderable-page:checked {
   background-color: #2C2C2C;
 }
 
@@ -2379,19 +2379,19 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) slider {
   min-width: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal button {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) button {
   min-width: 8px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) slider {
   min-height: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical button {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) button {
   min-height: 8px;
 }
 
@@ -3435,12 +3435,12 @@ filechooser stack.view scrolledwindow treeview.view, filechooser stack.view wind
   background-color: #242424;
 }
 
-stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:not(separator):dir(ltr), .sidebar:not(separator).left {
+stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:not(separator):dir(ltr), .sidebar.left:not(separator) {
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   border-left-style: none;
 }
 
-stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:not(separator):dir(rtl), .sidebar:not(separator).right {
+stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:not(separator):dir(rtl), .sidebar.right:not(separator) {
   border-left: 1px solid rgba(255, 255, 255, 0.12);
   border-right-style: none;
 }
@@ -3855,7 +3855,7 @@ XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover
   background-color: alpha(currentColor, 0.06);
 }
 
-.nemo-window .view selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:not(.progressbar):not(.trough) selection, .nemo-window .view:selected, .nemo-window filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .nemo-window treeview.view:selected, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:selected:not(.progressbar):not(.trough), .nautilus-window notebook :not(treeview).view selection, .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):not(.progressbar):not(.trough) selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):not(.progressbar):not(.trough) selection, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview) selection, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) selection, .nautilus-window notebook :not(treeview).view:selected, .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):selected:not(.progressbar):not(.trough), .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview):selected, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, flowbox flowboxchild:selected {
+.nemo-window .view selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:not(.progressbar):not(.trough) selection, .nemo-window .view:selected, .nemo-window filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .nemo-window treeview.view:selected, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:selected:not(.progressbar):not(.trough), .nautilus-window notebook .view:not(treeview) selection, .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):not(.progressbar):not(.trough) selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):not(.progressbar):not(.trough) selection, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview) selection, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) selection, .nautilus-window notebook .view:not(treeview):selected, .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):selected:not(.progressbar):not(.trough), .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview):selected, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, flowbox flowboxchild:selected {
   color: #3281ea;
   background-color: rgba(50, 129, 234, 0.2);
 }
@@ -3922,23 +3922,23 @@ stackswitcher {
   margin: 6px 0;
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   margin: 0 0;
   min-width: 104px;
   border-radius: 9999px;
   background-color: transparent;
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:focus {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:active {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):active {
   box-shadow: inset 0 0 0 9999px alpha(#3281ea, 0.08);
   background-image: radial-gradient(circle, alpha(#3281ea, 0.08) 10%, transparent 0%);
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):checked {
   background-color: #3281ea;
   color: white;
 }
@@ -4031,7 +4031,7 @@ popover.emoji-completion .emoji:hover {
 
 .nautilus-window.csd headerbar {
   padding-left: 12px;
-  box-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .nautilus-window.csd placessidebar {
@@ -4248,16 +4248,16 @@ popover.emoji-completion .emoji:hover {
   margin-right: 0;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button {
+.path-bar-box .linked.nautilus-path-bar button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 0;
   border-radius: 1000px;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button {
+.path-bar-box .linked.nautilus-path-bar button.text-button.image-button:not(.suggested-action):not(.destructive-action) {
   border-radius: 1000px;
 }
 
-.path-bar-box .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).text-button.image-button image:not(:only-child) {
+.path-bar-box .linked.nautilus-path-bar button.text-button.image-button:not(.suggested-action):not(.destructive-action) image:not(:only-child) {
   margin: 0;
 }
 
@@ -4301,7 +4301,7 @@ popover.emoji-completion .emoji:hover {
   background-color: transparent;
 }
 
-.nautilus-window notebook :not(treeview).view, .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):not(.progressbar):not(.trough), .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview), filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) {
+.nautilus-window notebook .view:not(treeview), .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):not(.progressbar):not(.trough), .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview), filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) {
   border-radius: 6px;
 }
 
@@ -5747,7 +5747,7 @@ UnityDecoration .menuitem:hover {
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17);
 }
 
-.background:not(.csd) headerbar:not(.titlebar).inline-toolbar {
+.background:not(.csd) headerbar.inline-toolbar:not(.titlebar) {
   border-style: none;
 }
 

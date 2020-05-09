@@ -1449,6 +1449,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   width: 31.5em;
   padding: 0 12px;
   color: $secondary_fg_color;
+  text-shadow: none;
 
   .message-list-placeholder { spacing: 12px; }
 }

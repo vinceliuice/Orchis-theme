@@ -899,7 +899,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu .popup-menu-item:checked.selected {
+.popup-menu .popup-menu-item.selected:checked {
   background-color: #e5e5e5;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -909,7 +909,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu .popup-menu-item:checked.selected:active {
+.popup-menu .popup-menu-item.selected:checked:active {
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.75);
 }
