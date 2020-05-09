@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="window-minimize-symbolic.svg"
+   height="16"
+   id="svg7384"
+   style="enable-background:new"
+   version="1.1"
+   width="16">
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg7384"
+     inkscape:window-maximized="1"
+     inkscape:window-y="28"
+     inkscape:window-x="0"
+     inkscape:cy="9.1353295"
+     inkscape:cx="3.4332218"
+     inkscape:zoom="18.104904"
+     showgrid="false"
+     id="namedview17"
+     inkscape:window-height="1016"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icons</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title8473">Gnome Symbolic Icons</title>
+  <defs
+     id="defs7386" />
+  <g
+     style="fill:#333333"
+     id="layer1"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer7"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer6"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer5"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer9"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer2"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer8"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer3"
+     transform="translate(-32.005853,-888)" />
+  <g
+     style="fill:#333333"
+     id="layer4"
+     transform="translate(-32.005853,-888)" />
+  <path
+     id="rect8269"
+     d="m 3.999999,10.00891 h 8 v 1.98874 h -8 z"
+     style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+     inkscape:connector-curvature="0" />
+</svg>

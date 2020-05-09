@@ -1733,6 +1733,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   width: 31.5em;
   padding: 0 12px;
   color: rgba(0, 0, 0, 0.54);
+  text-shadow: none;
 }
 
 .message-list .message-list-placeholder {

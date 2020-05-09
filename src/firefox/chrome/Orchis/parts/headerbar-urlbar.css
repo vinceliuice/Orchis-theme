@@ -1,0 +1,174 @@
+/* Header bar's URL bar */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+#urlbar {
+	--urlbar-height: 32.00px;
+	--urlbar-toolbar-height: 32.00px !important;
+}
+
+/* Megabar reset  */
+#urlbar.megabar {
+	border: 0 !important;
+	box-shadow: none !important;
+	border-radius: 100px !important;
+	background: none !important;
+	padding: 0 0 !important;
+}
+#urlbar-background {
+	display: none !important;
+}
+#urlbar.megabar[breakout][breakout-extend][breakout-extend-animate]  > .urlbarView {
+	animation: none !important;
+}
+#urlbar.megabar[breakout][breakout-extend] {
+	left: 0 !important;
+	top: 0 !important;
+	width: 100% !important;
+	padding: 0 0 !important;
+}
+#urlbar.megabar[breakout][breakout-extend]:not([open]) {
+	height: 32px !important;
+}
+
+/* Megabar breakout styles  */
+#urlbar.megabar[breakout][breakout-extend][open] {
+	border-radius: 16px !important;
+	padding: 0 0 !important;
+}
+#urlbar.megabar[breakout][breakout-extend][open] #urlbar-input-container {
+	border-radius: 16px 16px 0 0 !important;
+	border: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+	border-bottom: none !important;
+	background: var(--gnome-focused-urlbar-background) !important;
+	padding: 0 0 !important;
+}
+#urlbar.megabar[breakout][breakout-extend][open] #identity-box {
+	padding-inline-start: 16px !important;
+}
+#urlbar.megabar[breakout][breakout-extend][open] .urlbarView {
+	border-radius: 0 0 16px 16px !important;
+	box-shadow: var(--gnome-popover-shadow) !important;
+	border: 2px solid var(--gnome-focused-urlbar-border-color) !important;
+	border-top: none !important;
+}
+
+/* Center the URL bar */
+toolbarspring {
+	max-width: 10000px !important;
+}
+
+/* URL bar and Search bar's icons */
+.urlbar-icon:hover,
+.urlbar-icon-wrapper:hover,
+.urlbar-icon[open],
+.urlbar-icon-wrapper[open],
+.urlbar-icon:hover:active,
+.urlbar-icon-wrapper:hover:active,
+.searchbar-search-button:hover .searchbar-search-icon,
+.searchbar-search-button[open] .searchbar-search-icon,
+.searchbar-search-button:hover:active .searchbar-search-icon {
+	background-color: transparent !important;
+	fill-opacity: 1 !important;
+}
+
+/* URL bar results */
+#urlbar .urlbarView {
+	left: calc(var(--item-padding-start) - 6px) !important;
+	right: var(--item-padding-end) !important;
+	top: 40px !important;
+	z-index: 10 !important;
+	max-width: 100% !important;
+	background: var(--gnome-popover-background) !important;
+	border: none !important;
+	border-radius: 16px;
+	box-shadow: var(--gnome-popover-shadow) !important;
+	color: var(--gnome-button-color) !important;
+	padding: 0;
+}
+
+#urlbar .urlbarView-body-outer {
+	max-height: 28vh !important;
+	overflow-x: auto;
+}
+
+#urlbar .search-one-offs {
+	padding: 8px 0 0 0 !important;
+	margin-top: 8px !important;
+	border-color: var(--gnome-popover-separator-color) !important;
+}
+
+#urlbar .search-panel-header > label {
+	margin-top: 0px !important;
+	margin-left: 6px !important;
+}
+
+.urlbarView-body-outer {
+	--item-padding-start: 0 !important;
+	--item-padding-end: 0 !important;
+}
+
+/* URL bar results megabar fixes */
+#urlbar.megabar .urlbarView {
+	background: var(--gnome-focused-urlbar-background) !important;
+	width: 100% !important;
+	margin: 0 !important;
+	margin-top: -42px !important;
+	box-shadow: none !important;
+	border-top: 0 !important;
+	padding: 0px !important;
+	border-color: var(--gnome-urlbar-border-color) !important;
+}
+#urlbar.megabar .urlbarView-body-outer {
+	padding: 0 8px !important;
+}
+#urlbar.megabar .urlbarView-body-inner {
+	border: 0 !important;
+}
+#urlbar.megabar .urlbarView-row {
+	padding: 6px !important;
+	border-radius: 5px !important;
+}
+#urlbar.megabar .search-one-offs {
+	margin-top: 6px !important;
+	padding: 8px !important;
+	background: var(--gnome-popover-background) !important;
+	border-top: 1px solid var(--gnome-popover-separator-color) !important;
+}
+
+/* Search engines buttons */
+#urlbar .searchbar-engine-one-off-item {
+	--toolbarbutton-active-background: transparent !important;
+	--toolbarbutton-hover-background: transparent !important;
+}
+
+#urlbar .searchbar-engine-one-off-item {
+	-moz-appearance: none !important;
+	background: var(--gnome-button-background) !important;
+	box-shadow: var(--gnome-button-box-shadow) !important;
+	border: 1px solid var(--gnome-button-border-color) !important;
+	border-left-width: 0 !important;
+	border-bottom-color: var(--gnome-button-border-accent-color) !important;
+	padding: 0 0 !important;
+	min-height: 32px !important;
+	min-width: 32px !important;
+	margin: 0 !important;
+}
+#urlbar .searchbar-engine-one-off-item:hover, .searchbar-engine-one-off-item[selected] {
+	background: var(--gnome-button-hover-background) !important;
+	color: unset !important;
+}
+#urlbar .searchbar-engine-one-off-item:first-child {
+	border-radius: 16px 0 0 16px;
+	border-left-width: 1px !important;
+}
+#urlbar .searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {
+	border-radius: 0 16px 16px 0;
+}
+
+#urlbar  #urlbar-anon-search-settings-compact {
+	border-left-width: 1px !important;
+	border-bottom: 1px solid var(--gnome-button-border-accent-color) !important;
+	border-radius: 16px;
+	margin-left: 6px !important;
+}
