@@ -4140,13 +4140,21 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.csd .nautilus-list-view {
-  background-color: #FFFFFF;
-  border-radius: 0 0 18px 18px;
+  background-color: transparent;
+  border-radius: 18px;
 }
 
 .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected), .nautilus-window.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), .nautilus-window.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected), filechooser stack.view scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
   border-radius: 0;
+}
+
+.nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child, .nautilus-window.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:first-child, .nautilus-window.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child, filechooser stack.view scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child {
+  border-top-left-radius: 18px;
+}
+
+.nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child, .nautilus-window.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:last-child, .nautilus-window.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child, filechooser stack.view scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child {
+  border-top-right-radius: 18px;
 }
 
 .nautilus-window.csd notebook {
@@ -4155,12 +4163,30 @@ popover.emoji-completion .emoji:hover {
   margin: 0 6px 6px 0;
 }
 
+.nautilus-window.csd notebook > header {
+  padding: 0 16px;
+  background: none;
+}
+
 .nautilus-window.csd notebook > stack {
   background-color: #FFFFFF;
   border-radius: 18px;
 }
 
 .nautilus-window.csd notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.csd notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked):not(.progressbar):not(.trough), .nautilus-window.csd notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), filechooser stack.view .nautilus-window.csd notebook scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
+  background-color: transparent;
+}
+
+.nautilus-window.csd notebook placesview > stack > frame > scrolledwindow > viewport > list {
+  background-color: transparent;
+}
+
+.nautilus-window.csd notebook placesview > actionbar {
+  background-color: transparent;
+  border-radius: 0 0 18px 18px;
+}
+
+.nautilus-window.csd notebook placesview > actionbar > revealer > box {
   background-color: transparent;
 }
 
@@ -4174,8 +4200,7 @@ popover.emoji-completion .emoji:hover {
   background: none;
 }
 
-.nautilus-window.maximized, .nautilus-window.maximized notebook, .nautilus-window.maximized notebook > stack,
-.nautilus-window.maximized placessidebar {
+.nautilus-window.maximized, .nautilus-window.maximized placessidebar {
   border-radius: 0;
 }
 
@@ -7135,6 +7160,15 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 .nemo-window .primary-toolbar button.text-button {
   padding-left: 8px;
   padding-right: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nemo-window .primary-toolbar button.text-button:hover, .nemo-window .primary-toolbar button.text-button:active, .nemo-window .primary-toolbar button.text-button:checked {
+  color: white;
+}
+
+.nemo-window .primary-toolbar button.text-button:disabled {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .nemo-window .primary-toolbar button:not(.text-button):not(.image-button) {

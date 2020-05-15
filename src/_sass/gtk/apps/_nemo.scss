@@ -24,6 +24,11 @@
     button.text-button {
       padding-left: 8px;
       padding-right: 8px;
+      color: $titlebar-text-secondary;
+
+      &:hover, &:active, &:checked { color: $titlebar-text; }
+
+      &:disabled { color: $titlebar-text-disabled; }
     }
 
     // instead of .path-bar button.slider-button

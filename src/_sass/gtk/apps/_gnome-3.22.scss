@@ -120,13 +120,18 @@
     }
 
     .nautilus-list-view {
-      background-color: $base;
-      border-radius: 0 0 $window-radius $window-radius;
+      background-color: transparent;
+      border-radius: $window-radius;
 
       treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: transparent;
         border-radius: 0;
         // @extend %view;
+
+        > header > button {
+          &:first-child { border-top-left-radius: $window-radius; }
+          &:last-child { border-top-right-radius: $window-radius; }
+        }
       }
     }
 
@@ -135,6 +140,11 @@
       border-radius: $window-radius - 2px;
       margin: if($topbar == 'dark' and $variant == 'light', (0 6px 6px 0), 0);
 
+      > header {
+        padding: 0 16px;
+        background: none;
+      }
+
       > stack {
         background-color: $base;
         border-radius: $window-radius;
@@ -142,6 +152,16 @@
 
       scrolledwindow > .view:not(:selected):not(:hover):not(:checked) {
         background-color: transparent;
+      }
+
+      placesview {
+        > stack > frame > scrolledwindow > viewport > list { background-color: transparent; }
+        > actionbar {
+          background-color: transparent;
+          border-radius: 0 0 $window-radius $window-radius;
+
+          > revealer > box { background-color: transparent; }
+        }
       }
     }
 
@@ -157,9 +177,7 @@
   }
 
   &.maximized { // No border radius when window maximized
-    &, & notebook,
-    & notebook > stack,
-    placessidebar { border-radius: 0; }
+    &, placessidebar { border-radius: 0; }
   }
 
   // Floating status bar
