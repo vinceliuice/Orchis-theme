@@ -137,7 +137,6 @@
 
     notebook {
       background: none;
-      border-radius: $window-radius - 2px;
       margin: if($topbar == 'dark' and $variant == 'light', (0 6px 6px 0), 0);
 
       > header {
@@ -147,7 +146,7 @@
 
       > stack {
         background-color: $base;
-        border-radius: $window-radius;
+        border-radius: $window-radius - 2px;
       }
 
       scrolledwindow > .view:not(:selected):not(:hover):not(:checked) {
