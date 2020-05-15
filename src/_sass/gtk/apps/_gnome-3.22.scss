@@ -8,22 +8,26 @@
 
 .nautilus-window {
   &.csd {
-    background-color: $base;
+    background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
     border-radius: 0 0 $window-radius $window-radius;
 
     headerbar {
       padding-left: 12px;
+      background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
       box-shadow: inset 0 1px highlight($titlebar);
     }
+
+    > grid.horizontal > paned.horizontal > separator { margin-left: if($topbar == 'dark' and $variant == 'light', -1px, 0); }
 
     placessidebar {
       background: none;
       border-radius: $window-radius;
+      color: $titlebar-text-secondary;
 
       > viewport.frame {
         margin: 8px 0 12px 12px;
         border-radius: $window-radius - 6px;
-        background-color: rgba($primary, 0.08);
+        background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
 
         > list {
           padding: 12px 0 12px 0;
@@ -35,6 +39,10 @@
             border-radius: 0;
             margin: -8px 0 -8px 0;
 
+            &, image.sidebar-icon, label.sidebar-label {
+              color: $titlebar-text-secondary;
+            }
+
             &, &:hover, &:active {
               background: none;
               box-shadow: none;
@@ -42,6 +50,7 @@
             }
 
             &:hover {
+              image.sidebar-icon,
               label.sidebar-label {
                 color: $primary;
               }
@@ -49,19 +58,20 @@
 
             &:selected {
               background-color: transparent;
-              font-weight: 600;
-              font-size: bigger;
+              font-weight: 700;
+              // font-size: larger;
 
               image.sidebar-icon { color: $primary; }
 
               label.sidebar-label {
+                color: $primary;
                 background-color: $base;
                 box-shadow: 4px 0 $base;
                 border-image-width: 10px 10px 10px 18px;
                 border-image-slice: 10 10 10 18;
                 border-image-repeat: stretch;
-                border-image-source: -gtk-scaled(url("assets/row-selected#{$asset-suffix}.png"),
-                                                 url("assets/row-selected#{$asset-suffix}@2.png"));
+                border-image-source: -gtk-scaled(url("assets/row-selected#{$theme-asset-suffix}.png"),
+                                                 url("assets/row-selected#{$theme-asset-suffix}@2.png"));
               }
 
               revealer.sidebar-revealer {
@@ -74,7 +84,7 @@
               }
             }
 
-            &:disabled { color: $text-disabled; }
+            &:disabled { color: $titlebar-text-disabled; }
 
             image.sidebar-icon {
               padding-right: 8px;
@@ -122,11 +132,12 @@
 
     notebook {
       background: none;
-      border-radius: 0 0 $window-radius $window-radius;
+      border-radius: $window-radius - 2px;
+      margin: if($topbar == 'dark' and $variant == 'light', (0 6px 6px 0), 0);
 
       > stack {
         background-color: $base;
-        border-radius: 0 0 $window-radius $window-radius;
+        border-radius: $window-radius;
       }
 
       scrolledwindow > .view:not(:selected):not(:hover):not(:checked) {

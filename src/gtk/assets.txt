@@ -11,6 +11,7 @@ scale-vert-marks-before-slider-disabled
 scale-vert-marks-after-slider
 scale-vert-marks-after-slider-disabled
 row-selected
+row-selected-light
 selectionmode-checkbox-unchecked-dark
 selectionmode-checkbox-checked-dark
 scale-slider-dark

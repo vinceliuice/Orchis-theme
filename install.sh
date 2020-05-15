@@ -16,7 +16,7 @@ else
 fi
 
 THEME_NAME=Orchis
-COLOR_VARIANTS=('' '-dark')
+COLOR_VARIANTS=('' '-light' '-dark')
 SIZE_VARIANTS=('' '-compact')
 
 usage() {
@@ -26,7 +26,7 @@ Usage: $0 [OPTION]...
 OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-  -c, --color VARIANT...  Specify color variant(s) [standard|dark] (Default: All variants)s)
+  -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
   -h, --help              Show help
 
@@ -45,6 +45,9 @@ install() {
   local name="$2"
   local color="$3"
   local size="$4"
+
+  [[ "$color" == '-dark' ]] && local ELSE_DARK="$color"
+  [[ "$color" == '-light' ]] && local ELSE_LIGHT="$color"
 
   local THEME_DIR="$dest/$name$color$size"
 
@@ -70,9 +73,9 @@ install() {
 
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
   cp -ur "${SRC_DIR}"/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell$color$size.css"                              "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell${ELSE_DARK:-}$size.css"                      "${THEME_DIR}/gnome-shell/gnome-shell.css"
   cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
-  cp -ur "${SRC_DIR}"/gnome-shell/assets$color/*.svg                                      "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
 
   cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -81,8 +84,8 @@ install() {
 
   mkdir -p                                                                      "$THEME_DIR/gtk-2.0"
   cp -r "$SRC_DIR/gtk-2.0/"{apps.rc,hacks.rc,main.rc}                           "$THEME_DIR/gtk-2.0"
-  cp -r "$SRC_DIR/gtk-2.0/assets$color"                                         "$THEME_DIR/gtk-2.0/assets"
-  cp -r "$SRC_DIR/gtk-2.0/gtkrc$color"                                          "$THEME_DIR/gtk-2.0/gtkrc"
+  cp -r "$SRC_DIR/gtk-2.0/assets${ELSE_DARK:-}"                                 "$THEME_DIR/gtk-2.0/assets"
+  cp -r "$SRC_DIR/gtk-2.0/gtkrc${ELSE_DARK:-}"                                  "$THEME_DIR/gtk-2.0/gtkrc"
 
   cp -r "$SRC_DIR/gtk/assets"                                                   "$THEME_DIR/gtk-assets"
 
@@ -117,8 +120,12 @@ while [[ "$#" -gt 0 ]]; do
             colors+=("${COLOR_VARIANTS[0]}")
             shift
             ;;
-          dark)
+          light)
             colors+=("${COLOR_VARIANTS[1]}")
+            shift
+            ;;
+          dark)
+            colors+=("${COLOR_VARIANTS[2]}")
             shift
             ;;
           -*)

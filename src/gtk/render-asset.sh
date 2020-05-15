@@ -17,7 +17,7 @@ if [[ -n "${RENDER_SVG}" ]]; then
 else
   "$INKSCAPE" --export-id="$i" \
               --export-id-only \
-              --export-png="$ASSETS_DIR/$i.png" "$SRC_FILE" >/dev/null
+              --export-filename="$ASSETS_DIR/$i.png" "$SRC_FILE" >/dev/null
 fi
 if [[ -n "${OPTIPNG}" ]]; then
   "$OPTIPNG" -o7 --quiet "$ASSETS_DIR/$i.png"
@@ -34,7 +34,7 @@ else
   "$INKSCAPE" --export-id="$i" \
               --export-id-only \
               --export-dpi=192 \
-              --export-png="$ASSETS_DIR/$i@2.png" "$SRC_FILE" >/dev/null
+              --export-filename="$ASSETS_DIR/$i@2.png" "$SRC_FILE" >/dev/null
 fi
 if [[ -n "${OPTIPNG}" ]]; then
   "$OPTIPNG" -o7 --quiet "$ASSETS_DIR/$i@2.png"

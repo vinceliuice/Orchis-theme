@@ -29,7 +29,7 @@ Run the following commands in the terminal:
 ```
 -d, --dest DIR          Specify destination directory (Default: /usr/share/themes)
 -n, --name NAME         Specify theme name (Default: Orchis)
--c, --color VARIANT...  Specify color variant(s) [standard|dark] (Default: All variants)
+-c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -h, --help              Show help
 ```
 
@@ -38,8 +38,8 @@ Run the following commands in the terminal:
 ### Firefox theme
 [Intall Firefox theme](src/firefox)
 
-![Firefox-theme](src/extra/firefox/preview01.png?raw=true)
-![Firefox-theme](src/extra/firefox/preview02.png?raw=true)
+![Firefox-theme](src/firefox/preview01.png?raw=true)
+![Firefox-theme](src/firefox/preview02.png?raw=true)
 
 ## Preview
 ![1](preview.jpg?raw=true)
