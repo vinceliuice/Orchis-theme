@@ -995,20 +995,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-separator-menu-item {
   background: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 0;
+  margin: 0 0;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 0;
+  margin: 0 0;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 0;
+  margin: 0 0;
 }
 
 .system-switch-user-submenu-icon.user-icon {
@@ -1468,8 +1468,17 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   background-color: rgba(222, 222, 222, 0.15);
 }
 
+.clock-display-box {
+  spacing: 4px;
+}
+
+.clock-display-box .clock {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 #calendarArea {
-  padding: 8px 16px;
+  padding: 8px 6px;
 }
 
 .calendar {
@@ -1477,6 +1486,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   box-shadow: none;
   background: none;
+  padding: 0;
 }
 
 .calendar,
@@ -1484,10 +1494,6 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .datemenu-displays-box,
 .message-list-sections {
   margin: 0 8px;
-}
-
-.datemenu-calendar-column {
-  spacing: 8px;
 }
 
 .datemenu-displays-section {
@@ -1499,7 +1505,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 .datemenu-calendar-column {
+  spacing: 8px;
   border: 0 solid rgba(255, 255, 255, 0.12);
+  padding: 0 0;
 }
 
 .datemenu-calendar-column:ltr {
@@ -1513,6 +1521,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.message-list-section-title,
 .events-section-title {
   min-height: 24px;
   padding: 4px 8px;
@@ -1520,6 +1529,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   box-shadow: none;
   background: none;
+  text-shadow: none;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1528,6 +1538,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .world-clocks-button:focus,
 .weather-button:hover,
 .weather-button:focus,
+.message-list-section-title:hover,
+.message-list-section-title:focus,
 .events-section-title:hover,
 .events-section-title:focus {
   color: rgba(255, 255, 255, 0.9);
@@ -1537,6 +1549,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .datemenu-today-button:active,
 .world-clocks-button:active,
 .weather-button:active,
+.message-list-section-title:active,
 .events-section-title:active {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.1);
@@ -1546,32 +1559,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   min-height: 56px;
 }
 
-.message-list-section-list:ltr {
-  padding-left: 0;
-}
-
-.message-list-section-list:rtl {
-  padding-right: 0;
-}
-
 .datemenu-today-button .date-label {
   font-size: 18pt;
   font-weight: 400;
-}
-
-.world-clocks-header,
-.weather-header,
-.events-section-title {
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: bold;
-}
-
-.world-clocks-grid {
-  spacing-rows: 0.4em;
-}
-
-.weather-box {
-  spacing: 0.4em;
 }
 
 .calendar-month-label {
@@ -1629,10 +1619,12 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   text-align: center;
   width: 32px;
   height: 32px;
-  padding: 0;
+  padding: 0 0;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-feature-settings: "tnum";
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
@@ -1710,6 +1702,11 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   background-image: none;
 }
 
+.calendar-day-with-events.calendar-work-day {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
 .calendar-other-month-day {
   color: rgba(255, 255, 255, 0.3);
   opacity: 0.5;
@@ -1726,6 +1723,74 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+}
+
+.message-list-section-list:ltr {
+  padding-left: 0;
+}
+
+.message-list-section-list:rtl {
+  padding-right: 0;
+}
+
+.world-clocks-header,
+.weather-header,
+.events-section-title {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+.world-clocks-grid,
+.weather-grid {
+  spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
+}
+
+.world-clocks-city {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: rgba(255, 255, 255, 0.5);
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+.weather-box {
+  spacing: 0.4em;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.weather-forecast-icon {
+  icon-size: 2.18em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.weather-forecast-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8em;
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-temp {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: none;
 }
 
 /* Message list */
@@ -1771,6 +1836,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   border-radius: 12px;
   color: rgba(255, 255, 255, 0.7);
+  text-shadow: none;
 }
 
 .message:hover, .message:focus {

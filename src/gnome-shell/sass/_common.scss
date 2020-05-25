@@ -702,8 +702,8 @@ $mdbt_radius: 100px;
     transition-duration: $shorter_duration;
     border-radius: 100px;
 
-    &:ltr { padding-right:1.5em; padding-left: 0; }
-    &:rtl { padding-right: 0; padding-left:1.5em; }
+    &:ltr { padding-right: 1.5em; padding-left: 0; }
+    &:rtl { padding-right: 0; padding-left: 1.5em; }
 
     &:checked {
       background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
@@ -806,18 +806,18 @@ $mdbt_radius: 100px;
 .popup-separator-menu-item {
   background: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 0;
+  margin: 0 0;
 
   .popup-separator-menu-item-separator {
     background: none;
-    padding: 0;
-    margin: 0;
+    padding: 0 0;
+    margin: 0 0;
 
     .popup-sub-menu & { //submenu separators
       background: none;
-      padding: 0;
-      margin: 0;
+      padding: 0 0;
+      margin: 0 0;
     }
   }
 }
@@ -1247,8 +1247,17 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 }
 
 // calendar popover
+.clock-display-box {
+  spacing: 4px;
+
+  .clock {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
 #calendarArea {
-  padding: 8px 16px;
+  padding: 8px 6px;
 }
 
 .calendar {
@@ -1256,6 +1265,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   box-shadow: none;
   background: none;
+  padding: 0;
 }
 
 .calendar,
@@ -1265,12 +1275,14 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   margin: 0 8px;
 }
 
-.datemenu-calendar-column { spacing: 8px; }
 .datemenu-displays-section { padding-bottom: 0; }
 .datemenu-displays-box { spacing: 8px; }
 
 .datemenu-calendar-column {
+  spacing: 8px;
   border: 0 solid $border_color;
+  padding: 0 0;
+
   &:ltr { border-left-width: 0; }
   &:rtl { border-right-width: 0; }
 }
@@ -1278,6 +1290,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.message-list-section-title,
 .events-section-title {
   min-height: $menuitem_size - 4px * 2;
   padding: 4px 8px;
@@ -1285,6 +1298,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   box-shadow: none;
   background: none;
+  text-shadow: none;
   color: $secondary_fg_color;
 
   &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
@@ -1296,36 +1310,10 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
 .datemenu-today-button {
   min-height: $menuitem_size * 2 - 4px * 2;
-}
 
-.message-list-section-list:ltr {
-  padding-left: 0;
-}
-
-.message-list-section-list:rtl {
-  padding-right: 0;
-}
-
-.datemenu-today-button .day-label {
-}
-
-.datemenu-today-button .date-label {
-  @include font(headline);
-}
-
-.world-clocks-header,
-.weather-header,
-.events-section-title {
-  color: $secondary_fg_color;
-  font-weight: bold;
-}
-
-.world-clocks-grid {
-  spacing-rows: 0.4em;
-}
-
-.weather-box {
-  spacing: 0.4em;
+  .date-label {
+    @include font(headline);
+  }
 }
 
 .calendar-month-label {
@@ -1364,11 +1352,14 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 .calendar-day-base {
   @include font(caption);
   text-align: center;
-  width: $menuitem_size; height: $menuitem_size;
-  padding: 0;
+  width: $menuitem_size;
+  height: $menuitem_size;
+  padding: 0 0;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   color: $secondary_fg_color;
+  border: none;
+  font-feature-settings: "tnum";
   &:hover,&:focus { background-color: $divider_color; }
   &:active {
     color: inherit;
@@ -1392,15 +1383,18 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     text-align: center;
   }
 }
+
 .calendar-day { //border collapse hack - see calendar.js
   border-width: 0;
 }
+
 .calendar-day-top { border-top-width: 0; }
 .calendar-day-left { border-left-width: 0; }
-.calendar-work-day { }
+// .calendar-work-day { }
 .calendar-nonwork-day {
   color: $fg_color;
 }
+
 .calendar-today {
   font-weight: bold !important;
   color: white;
@@ -1422,18 +1416,27 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     }
   }
 }
+
 .calendar-day-with-events {
   color: $link_color;
   font-weight: normal;
   text-decoration: underline;
   background-image: none;
+
+  &.calendar-work-day {
+    color: $hint_fg_color;
+    font-weight: bold;
+  }
 }
+
 .calendar-other-month-day {
   color: $disabled_secondary_fg_color;
   opacity: 0.5;
 }
+
 .calendar-week-number {
-  width: $menuitem_size; height: $menuitem_size - 7px;
+  width: $menuitem_size;
+  height: $menuitem_size - 7px;
   margin: 2px;
   padding: 7px 0 0;
   border-radius: 100px;
@@ -1442,6 +1445,74 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+}
+
+.message-list-section-list:ltr {
+  padding-left: 0;
+}
+
+.message-list-section-list:rtl {
+  padding-right: 0;
+}
+
+.world-clocks-header,
+.weather-header,
+.events-section-title {
+  color: $secondary_fg_color;
+  font-weight: bold;
+}
+
+.world-clocks-grid,
+.weather-grid {
+  spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
+}
+
+.world-clocks-city {
+  color: $hint_fg_color;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $hint_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: $hint_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+.weather-box {
+  spacing: 0.4em;
+}
+
+.weather-header.location {
+  font-weight: normal;
+  color: transparentize($fg_color, 0.45);
+}
+
+.weather-forecast-icon {
+  icon-size: 2.18em;
+  color: transparentize($fg_color, 0.35);
+}
+
+.weather-forecast-time {
+  color: $hint_fg_color;
+  font-size: 0.8em;
+  font-feature-settings: "tnum";
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-forecast-temp {
+  font-weight: bold;
+  color: transparentize($fg_color, 0.35);
+  text-shadow: none;
 }
 
 /* Message list */
@@ -1481,6 +1552,8 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   border-radius: $bt_radius;
   color: $secondary_fg_color;
+  text-shadow: none;
+
   &:hover,&:focus { background-color: $divider_color; }
   &:active { background-color: $track_color; }
 }
@@ -1528,22 +1601,6 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   color: $secondary_fg_color;
   font-size: 1em;
 }
-
-// .message-content * > StIcon {
-//   color: $secondary_fg_color;
-// }
-//
-// /* FIXME: how do you do this in sass? */
-// .message-content *:hover > StIcon,
-// .message-content *:focus > StIcon {
-//   color: $fg_color;
-//   background-color: $divider_color;
-// }
-//
-// .message-content *:active > StIcon {
-//   color: $fg_color;
-//   background-color: $track_color;
-// }
 
 // close button
 .message-close-button {
