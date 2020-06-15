@@ -43,6 +43,10 @@
               color: $titlebar-text-secondary;
             }
 
+            button.sidebar-button {
+              @extend %button-on-dark;
+            }
+
             &, &:hover, &:active {
               background: none;
               box-shadow: none;
@@ -81,6 +85,8 @@
               button.sidebar-button {
                 margin-right: 8px;
                 margin-left: -32px;
+
+                @extend %button-flat-simple;
               }
             }
 
@@ -142,6 +148,31 @@
       > header {
         padding: 0 16px;
         background: none;
+
+        tab {
+          color: $titlebar-text-secondary;
+
+          &:hover:not(:checked):not(:active) {
+            color: $titlebar-text;
+            background-color: if($topbar == 'dark', rgba($titlebar-text, 0.08), $frame);
+          }
+
+          &:disabled { color: $titlebar-text-secondary-disabled; }
+
+          &:checked, &:active {
+            color: $text;
+
+            &:disabled { color: $text-disabled; }
+
+            button.flat {
+              @extend %button-flat-simple;
+            }
+          }
+
+          button.flat {
+            @extend %button-on-dark;
+          }
+        }
       }
 
       > stack {
