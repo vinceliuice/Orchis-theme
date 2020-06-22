@@ -1607,6 +1607,10 @@ headerbar {
   padding: 0 4px;
 }
 
+box.vertical headerbar {
+  background-color: #FFFFFF;
+}
+
 headerbar entry,
 headerbar spinbutton,
 headerbar button {
@@ -3097,7 +3101,7 @@ actionbar > revealer > box {
   background-clip: border-box;
 }
 
-.background.csd revealer > actionbar > revealer > box {
+.background.csd box.vertical > actionbar > revealer > box, .background.csd revealer > actionbar > revealer > box {
   border-radius: 0 0 18px 18px;
 }
 

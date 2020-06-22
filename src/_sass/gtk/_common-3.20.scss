@@ -1346,6 +1346,10 @@ headerbar {
   min-height: $large-size;
   padding: 0 $container-padding;
 
+  box.vertical & {
+    background-color: $titlebar;
+  }
+
   // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
   entry,
   spinbutton,
@@ -2731,6 +2735,7 @@ actionbar > revealer > box {
   background-color: $base;
   background-clip: border-box;
 
+  .background.csd box.vertical > &,
   .background.csd revealer > & {
     border-radius: 0 0 $window-radius $window-radius;
   }
