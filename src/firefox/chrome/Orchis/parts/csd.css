@@ -156,11 +156,13 @@
 	background: var(--gnome-titlebutton-min-active-background) !important;
 }
 
+:root[tabsintitlebar] #titlebar .titlebar-restore:hover,
 :root[tabsintitlebar] #titlebar .titlebar-max:hover,
 :root[tabsintitlebar] #titlebar #titlebar-max:hover {
 	background: var(--gnome-titlebutton-max-hover-background) !important;
 }
 
+:root[tabsintitlebar] #titlebar .titlebar-restore:active,
 :root[tabsintitlebar] #titlebar .titlebar-max:active,
 :root[tabsintitlebar] #titlebar #titlebar-max:active {
 	background: var(--gnome-titlebutton-max-active-background) !important;

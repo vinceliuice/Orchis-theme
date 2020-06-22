@@ -162,6 +162,8 @@ menuitem[type="radio"]:not([disabled="true"]):hover .menu-iconic-icon {
 :root[tabsintitlebar] #titlebar #titlebar-min .toolbarbutton-icon {
 	list-style-image: url("../icons/window-minimize-symbolic.svg") !important;
 }
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar #titlebar-restore .toolbarbutton-icon,
 :root[tabsintitlebar][sizemode="maximized"] #titlebar .titlebar-max .toolbarbutton-icon,
 :root[tabsintitlebar][sizemode="maximized"] #titlebar #titlebar-max .toolbarbutton-icon {
 	list-style-image: url("../icons/window-unmaximize-symbolic.svg") !important;
