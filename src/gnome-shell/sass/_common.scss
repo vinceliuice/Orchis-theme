@@ -2116,6 +2116,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
 
   /* App Folders */
   .app-folder {
+    border-radius: 100px;
+    background: none;
+
     .overview-icon {
       background-color: $inverse_bg_color;
       padding: 16px;

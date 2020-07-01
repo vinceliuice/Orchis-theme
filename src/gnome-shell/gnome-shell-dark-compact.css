@@ -2508,6 +2508,11 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 /* App Folders */
+.app-folder {
+  border-radius: 100px;
+  background: none;
+}
+
 .app-folder .overview-icon {
   background-color: rgba(255, 255, 255, 0.13);
   padding: 16px;
