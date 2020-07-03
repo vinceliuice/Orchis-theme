@@ -1377,8 +1377,8 @@ window.background.csd {
 window.background.csd {
   > box.vertical > paned.horizontal {
     > scrolledwindow {
-      treeview.view {
-        border-bottom-left-radius: $window-radius;
+      treeview.view:not(:selected):not(:hover) {
+        background-color: transparent;
       }
     }
   }

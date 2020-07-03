@@ -5232,8 +5232,8 @@ window.background.csd evview.view.content-view {
 /**************
  * Gnome Disk *
  **************/
-window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view, filechooser stack.view window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view, window.background.csd > box.vertical > paned.horizontal > scrolledwindow window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:not(.progressbar):not(.trough) {
-  border-bottom-left-radius: 18px;
+window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:not(:selected):not(:hover), filechooser stack.view window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:not(:selected):not(:hover), window.background.csd > box.vertical > paned.horizontal > scrolledwindow window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:selected):not(:hover):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow window.background.csd > box.vertical > paned.horizontal > scrolledwindow treeview.view:not(:selected):not(:hover):not(.progressbar):not(.trough) {
+  background-color: transparent;
 }
 
 /************
