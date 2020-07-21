@@ -4043,7 +4043,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.csd placessidebar {
-  background: none;
+  background-color: transparent;
   border-radius: 18px;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -4069,10 +4069,13 @@ popover.emoji-completion .emoji:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:active {
+.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active), .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) label.sidebar-label {
+  color: #FF7043;
+}
+
+.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:active {
   background: none;
   box-shadow: none;
-  animation: none;
 }
 
 .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover image.sidebar-icon,

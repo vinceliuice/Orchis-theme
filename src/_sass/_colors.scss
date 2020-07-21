@@ -49,6 +49,7 @@
 $primary-dark:                          #1A73E8;
 $primary-light:                         #3281ea;
 $primary:                               if($variant == 'light', $primary-dark, $primary-light);
+$drop_target_color:                     #FF7043;
 
 $background:                            if($variant == 'light', #F2F2F2, #212121);
 $surface:                               if($variant == 'light', #FFFFFF, #3C3C3C);

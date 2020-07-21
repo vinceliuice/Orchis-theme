@@ -20,7 +20,7 @@
     > grid.horizontal > paned.horizontal > separator { margin-left: if($topbar == 'dark' and $variant == 'light', -1px, 0); }
 
     placessidebar {
-      background: none;
+      background-color: transparent;
       border-radius: $window-radius;
       color: $titlebar-text-secondary;
 
@@ -43,14 +43,20 @@
               color: $titlebar-text-secondary;
             }
 
+            &:drop(active) {
+              &, image.sidebar-icon, label.sidebar-label {
+                color: $drop_target_color;
+              }
+            }
+
             button.sidebar-button {
               @extend %button-on-dark;
             }
 
-            &, &:hover, &:active {
+            &:hover, &:active {
               background: none;
               box-shadow: none;
-              animation: none;
+              // animation: none;
             }
 
             &:hover {
