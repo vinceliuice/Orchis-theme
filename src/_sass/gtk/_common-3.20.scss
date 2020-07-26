@@ -3135,7 +3135,7 @@ placessidebar.sidebar {
     min-height: 32px;
     margin: -1px 4px -1px 0; // Remove unwanted hard-coded vertical margins with -1px
     padding: 0;
-    border-radius: 0 1000px 1000px 0;
+    border-radius: 0 $circular_radius $circular_radius 0;
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump

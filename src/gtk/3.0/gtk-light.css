@@ -3511,7 +3511,7 @@ placessidebar.sidebar row {
   min-height: 32px;
   margin: -1px 4px -1px 0;
   padding: 0;
-  border-radius: 0 1000px 1000px 0;
+  border-radius: 0 9999px 9999px 0;
 }
 
 placessidebar.sidebar row > revealer {
@@ -4065,21 +4065,25 @@ popover.emoji-completion .emoji:hover {
   margin: -8px 0 -8px 0;
 }
 
+.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:focused, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:active {
+  background-image: none;
+  box-shadow: none;
+  animation: none;
+}
+
 .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable label.sidebar-label {
   color: rgba(0, 0, 0, 0.6);
+}
+
+.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) {
+  background-color: rgba(255, 112, 67, 0.1);
 }
 
 .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active), .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) label.sidebar-label {
   color: #FF7043;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:active {
-  background: none;
-  box-shadow: none;
-}
-
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover image.sidebar-icon,
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover label.sidebar-label {
+.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover label.sidebar-label {
   color: #1A73E8;
 }
 
@@ -4111,8 +4115,8 @@ popover.emoji-completion .emoji:hover {
   margin-left: -32px;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled {
-  color: rgba(0, 0, 0, 0.38);
+.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled label.sidebar-label {
+  color: rgba(0, 0, 0, 0.26);
 }
 
 .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable image.sidebar-icon {

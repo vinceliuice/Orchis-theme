@@ -39,11 +39,25 @@
             border-radius: 0;
             margin: -8px 0 -8px 0;
 
+            &, &:focused, &:hover, &:active {
+              background-image: none;
+              box-shadow: none;
+              animation: none;
+            }
+
             &, image.sidebar-icon, label.sidebar-label {
               color: $titlebar-text-secondary;
             }
 
             &:drop(active) {
+              // border-radius: $window-radius - 6px;
+
+              @if $topbar == 'dark' {
+                border-radius: $circular_radius 0 0 $circular_radius;
+              }
+
+              background-color: rgba($drop_target_color, 0.1);
+
               &, image.sidebar-icon, label.sidebar-label {
                 color: $drop_target_color;
               }
@@ -53,17 +67,8 @@
               @extend %button-on-dark;
             }
 
-            &:hover, &:active {
-              background: none;
-              box-shadow: none;
-              // animation: none;
-            }
-
             &:hover {
-              image.sidebar-icon,
-              label.sidebar-label {
-                color: $primary;
-              }
+              image.sidebar-icon, label.sidebar-label { color: $primary; }
             }
 
             &:selected {
@@ -96,7 +101,11 @@
               }
             }
 
-            &:disabled { color: $titlebar-text-disabled; }
+            &:disabled {
+              &, image.sidebar-icon, label.sidebar-label {
+                color: $titlebar-text-secondary-disabled;
+              }
+            }
 
             image.sidebar-icon {
               padding-right: 8px;
