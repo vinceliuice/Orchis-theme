@@ -451,7 +451,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 // Raven
 .raven {
   background-color: $surface;
-  margin: 6px;
+  margin: 8px 6px 6px;
   border-radius: $corner-radius;
   box-shadow: $shadow-z16;
 

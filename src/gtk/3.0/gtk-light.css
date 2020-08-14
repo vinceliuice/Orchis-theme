@@ -6763,7 +6763,7 @@ frame.raven-frame > border {
 
 .raven {
   background-color: #FFFFFF;
-  margin: 6px;
+  margin: 8px 6px 6px;
   border-radius: 12px;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
