@@ -269,18 +269,21 @@
 
   &.transparent { background-color: $scrim; }
 
-  @each $pos, $p_radius in (top,    0 0 16px 16px),
-                           (bottom, 16px 16px 0 0),
-                           (left,   0 16px 16px 0),
-                           (right,  16px 0 0 16px) {
+  @each $pos, $bpos, $p_radius in (top, bottom,  $circular-radius),
+                                  (bottom, top,  $circular-radius),
+                                  (left, right,  $circular-radius),
+                                  (right, left,  $circular-radius) {
     .#{$pos} &.transparent, .#{$pos} &:not(.dock-mode) {
       border-radius: $p_radius;
+      margin: 4px 6px;
+      margin-#{$bpos}: 8px;
     }
   }
 
   button {
     @extend %button-flat;
     @extend %button-on-dark;
+    color: on($panel, secondary);
 
     min-height: 24px;
     min-width: 24px;
@@ -290,7 +293,11 @@
     // Menu Button
     &.budgie-menu-launcher {
       // padding: 0 2px;
-      @extend %panel_circlebutton;
+      // @extend %panel_circlebutton;
+      @extend %button-flat;
+      @extend %button-on-dark;
+      color: on($panel, secondary);
+      border-radius: $circular-radius;
 
       &:focus { // Fixed issues when global menubar item is hovering
         background: none;
@@ -302,26 +309,8 @@
 
     // Raven Trigger
     &.raven-trigger {
-      background-image: -gtk-scaled(url("assets/scalable/circle-bg.svg"));
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-      background-clip: padding-box;
-
-      &, &:hover, &:focus, &:active, &:active:hover {
-        background-color: transparent;
-        box-shadow: none;
-        animation: none;
-        background-size: auto;
-      }
-
-      &:hover:not(:active) {
-        background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
-      }
-
-      &:active, &:active:hover {
-        background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
-      }
+      color: on($panel, secondary);
+      border-radius: $circular-radius;
     }
   }
 
@@ -440,7 +429,7 @@
 
 frame.raven-frame > border {
   border-style: none;
-  box-shadow: $shadow-z16;
+  // box-shadow: $shadow-z16;
 }
 
 $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
@@ -462,27 +451,20 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 // Raven
 .raven {
   background-color: $surface;
+  margin: 6px;
+  border-radius: $corner-radius;
+  box-shadow: $shadow-z16;
 
   > box { margin-bottom: -10px; } // remove extra space between box and .raven-header.bottom
 
-  stackswitcher.linked > button {
-    @extend %button-flat;
+  stackswitcher.linked {
+    margin: 6px 16px;
 
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $primary 0%,
-                                  transparent 0%)
-                                  0 0 0 / 0 0 0px;
-    border-radius: 0;
+    > button {
+      @extend %button-flat;
 
-    &:checked {
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $primary 100%,
-                                    transparent 0%)
-                                    0 0 2 / 0 0 2px;
-      background-color: transparent;
+      &:focus { box-shadow: none; }
     }
-
-    &:focus { box-shadow: none; }
   }
 
   .raven-header {
@@ -496,7 +478,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       stackswitcher button {
         margin: -4px 0 -5px; // remove unwanted vertical margins
         padding: 0 16px;
-        min-height: $large-size;
+        min-height: $medium-size;
       }
     }
 

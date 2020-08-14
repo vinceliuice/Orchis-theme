@@ -553,7 +553,7 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   }
 }
 
-.xfce4-panel.background button, .raven-mpris button.image-button, .budgie-panel button, .mate-panel-menu-bar button, .nautilus-window.csd notebook > header tab button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button, infobar.error button.flat {
+.xfce4-panel.background button, .raven-mpris button.image-button, .budgie-panel button.budgie-menu-launcher, .budgie-panel button, .mate-panel-menu-bar button, .nautilus-window.csd notebook > header tab button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button, infobar.error button.flat {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -639,7 +639,7 @@ button:drop(active) {
 
 .budgie-session-dialog .linked.horizontal > button, .drop-shadow button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, .gedit-search-slider .linked > button, .nautilus-window.csd notebook > header tab:checked button.flat, .nautilus-window.csd notebook > header tab:active button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
-.menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .budgie-panel button, .lock-dialog button, .mate-panel-menu-bar button, layouttabbar button, infobar.info button, infobar.question button, filechooser #pathbarbox > stack > box > button, messagedialog.csd .dialog-action-box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
+.menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .budgie-panel button.budgie-menu-launcher, .budgie-panel button, .lock-dialog button, .mate-panel-menu-bar button, layouttabbar button, infobar.info button, infobar.question button, filechooser #pathbarbox > stack > box > button, messagedialog.csd .dialog-action-box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, .caja-pathbar button,
 .path-bar.linked:not(.vertical) > button, .nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action), toolbar button, combobox > .linked:not(.vertical) > button:not(:only-child),
 button.flat {
@@ -2036,6 +2036,22 @@ popover.background filechooser stack.view scrolledwindow treeview.view:not(:sele
 filechooser stack.view scrolledwindow popover.background treeview.view:not(:selected),
 popover.background toolbar {
   background-color: #3C3C3C;
+}
+
+popover.background .linked > button:not(.radio) {
+  border-radius: 12px;
+}
+
+popover.background .linked > button:not(.radio):first-child {
+  border-radius: 12px;
+}
+
+popover.background .linked > button:not(.radio):last-child {
+  border-radius: 12px;
+}
+
+popover.background .linked > button:not(.radio):only-child {
+  border-radius: 12px;
 }
 
 popover.background.menu button,
@@ -6537,43 +6553,6 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 12px;
 }
 
-.budgie-panel button.budgie-menu-launcher {
-  padding: 0;
-  margin: 0;
-  min-width: 32px;
-  min-width: 32px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.budgie-panel button.budgie-menu-launcher {
-  background: none;
-  box-shadow: none;
-}
-
-.budgie-panel button.budgie-menu-launcher image {
-  padding: 0;
-  margin: 0;
-  background-size: 32px 32px;
-  border-radius: 100px;
-  background-image: image(rgba(255, 255, 255, 0.12));
-}
-
-.budgie-panel button.budgie-menu-launcher:hover {
-  color: white;
-}
-
-.budgie-panel button.budgie-menu-launcher:hover image {
-  background-image: image(rgba(255, 255, 255, 0.2));
-}
-
-.budgie-panel button.budgie-menu-launcher:active, .budgie-panel button.budgie-menu-launcher:checked {
-  color: white;
-}
-
-.budgie-panel button.budgie-menu-launcher:active image, .budgie-panel button.budgie-menu-launcher:checked image {
-  background-image: image(rgba(255, 255, 255, 0.28));
-}
-
 .budgie-panel {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: #1F1F1F;
@@ -6588,26 +6567,40 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .top .budgie-panel.transparent, .top .budgie-panel:not(.dock-mode) {
-  border-radius: 0 0 16px 16px;
+  border-radius: 9999px;
+  margin: 4px 6px;
+  margin-bottom: 8px;
 }
 
 .bottom .budgie-panel.transparent, .bottom .budgie-panel:not(.dock-mode) {
-  border-radius: 16px 16px 0 0;
+  border-radius: 9999px;
+  margin: 4px 6px;
+  margin-top: 8px;
 }
 
 .left .budgie-panel.transparent, .left .budgie-panel:not(.dock-mode) {
-  border-radius: 0 16px 16px 0;
+  border-radius: 9999px;
+  margin: 4px 6px;
+  margin-right: 8px;
 }
 
 .right .budgie-panel.transparent, .right .budgie-panel:not(.dock-mode) {
-  border-radius: 16px 0 0 16px;
+  border-radius: 9999px;
+  margin: 4px 6px;
+  margin-left: 8px;
 }
 
 .budgie-panel button {
+  color: rgba(255, 255, 255, 0.7);
   min-height: 24px;
   min-width: 24px;
   padding: 0;
   border-radius: 0;
+}
+
+.budgie-panel button.budgie-menu-launcher {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
 }
 
 .budgie-panel button.budgie-menu-launcher:focus {
@@ -6618,26 +6611,8 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel button.raven-trigger {
-  background-image: -gtk-scaled(url("assets/scalable/circle-bg.svg"));
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  background-clip: padding-box;
-}
-
-.budgie-panel button.raven-trigger, .budgie-panel button.raven-trigger:hover, .budgie-panel button.raven-trigger:focus, .budgie-panel button.raven-trigger:active, .budgie-panel button.raven-trigger:active:hover {
-  background-color: transparent;
-  box-shadow: none;
-  animation: none;
-  background-size: auto;
-}
-
-.budgie-panel button.raven-trigger:hover:not(:active) {
-  background-image: -gtk-scaled(url("assets/scalable/circle-bg-hover.svg"));
-}
-
-.budgie-panel button.raven-trigger:active, .budgie-panel button.raven-trigger:active:hover {
-  background-image: -gtk-scaled(url("assets/scalable/circle-bg-active.svg"));
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
 }
 
 .budgie-panel.horizontal button {
@@ -6769,7 +6744,6 @@ MsdOsdWindow.background.osd .progressbar {
 
 frame.raven-frame > border {
   border-style: none;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
 
 .top frame.raven-frame > border {
@@ -6790,20 +6764,17 @@ frame.raven-frame > border {
 
 .raven {
   background-color: #3C3C3C;
+  margin: 6px;
+  border-radius: 12px;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
 
 .raven > box {
   margin-bottom: -10px;
 }
 
-.raven stackswitcher.linked > button {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3281ea 0%, transparent 0%) 0 0 0/0 0 0px;
-  border-radius: 0;
-}
-
-.raven stackswitcher.linked > button:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #3281ea 100%, transparent 0%) 0 0 2/0 0 2px;
-  background-color: transparent;
+.raven stackswitcher.linked {
+  margin: 6px 16px;
 }
 
 .raven stackswitcher.linked > button:focus {
@@ -6823,7 +6794,7 @@ frame.raven-frame > border {
 .raven .raven-header.top stackswitcher button {
   margin: -4px 0 -5px;
   padding: 0 16px;
-  min-height: 40px;
+  min-height: 32px;
 }
 
 .raven .raven-header.bottom {

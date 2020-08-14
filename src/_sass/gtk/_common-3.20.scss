@@ -1725,6 +1725,22 @@ popover.background {
 
   // .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
+  .linked > button:not(.radio) {
+    border-radius: $corner-radius;
+
+    &:first-child {
+      border-radius: $corner-radius;
+    }
+
+    &:last-child {
+      border-radius: $corner-radius;
+    }
+
+    &:only-child {
+      border-radius: $corner-radius;
+    }
+  }
+
   &.menu button,
   button.model {
     @extend %button-flat;
