@@ -95,6 +95,10 @@ install() {
   [[ "$color" != '-dark' ]] && \
   cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                    "$THEME_DIR/gtk-3.0/gtk-dark.css"
 
+  mkdir -p                                                                      "${THEME_DIR}/xfwm4"
+  cp -r "${SRC_DIR}/xfwm4/assets${ELSE_LIGHT:-}/"*.png                          "${THEME_DIR}/xfwm4"
+  cp -r "${SRC_DIR}/xfwm4/themerc${ELSE_LIGHT:-}"                               "${THEME_DIR}/xfwm4/themerc"
+
   mkdir -p                                                                      "$THEME_DIR/plank"
   cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"
 }
