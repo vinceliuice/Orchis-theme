@@ -269,7 +269,7 @@ spinner:checked:disabled {
 /****************
  * Text Entries *
  ****************/
-spinbutton.vertical, spinbutton:not(.vertical),
+.nemo-window .primary-toolbar entry, .titlebar entry, spinbutton.vertical, spinbutton:not(.vertical),
 entry {
   min-height: 36px;
   padding: 0 8px;
@@ -281,26 +281,26 @@ entry {
   color: white;
 }
 
-spinbutton.vertical:focus, spinbutton:focus:not(.vertical),
+.nemo-window .primary-toolbar entry:focus, spinbutton.vertical:focus, spinbutton:focus:not(.vertical),
 entry:focus {
   background-color: rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 0 0 2px #3281ea;
 }
 
-spinbutton.vertical:drop(active), spinbutton:drop(active):not(.vertical),
+.nemo-window .primary-toolbar entry:drop(active), spinbutton.vertical:drop(active), spinbutton:drop(active):not(.vertical),
 entry:drop(active) {
   background-color: alpha(currentColor, 0.08);
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
-spinbutton.vertical:disabled, spinbutton:disabled:not(.vertical),
+.nemo-window .primary-toolbar entry:disabled, spinbutton.vertical:disabled, spinbutton:disabled:not(.vertical),
 entry:disabled {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
 }
 
-spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
+.nemo-window .primary-toolbar entry.flat, spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
 entry.flat {
   min-height: 0;
   padding: 2px;
@@ -308,35 +308,35 @@ entry.flat {
   background-color: transparent;
 }
 
-spinbutton.vertical image, spinbutton:not(.vertical) image,
+.nemo-window .primary-toolbar entry image, .titlebar entry image, spinbutton.vertical image, spinbutton:not(.vertical) image,
 entry image {
   color: rgba(255, 255, 255, 0.7);
 }
 
-spinbutton.vertical image:hover, spinbutton:not(.vertical) image:hover, spinbutton.vertical image:active, spinbutton:not(.vertical) image:active,
+.nemo-window .primary-toolbar entry image:hover, spinbutton.vertical image:hover, spinbutton:not(.vertical) image:hover, .nemo-window .primary-toolbar entry image:active, spinbutton.vertical image:active, spinbutton:not(.vertical) image:active,
 entry image:hover,
 entry image:active {
   color: white;
 }
 
-spinbutton.vertical image:disabled, spinbutton:not(.vertical) image:disabled,
+.nemo-window .primary-toolbar entry image:disabled, spinbutton.vertical image:disabled, spinbutton:not(.vertical) image:disabled,
 entry image:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-spinbutton.vertical image.left, spinbutton:not(.vertical) image.left,
+.nemo-window .primary-toolbar entry image.left, spinbutton.vertical image.left, spinbutton:not(.vertical) image.left,
 entry image.left {
   margin-left: 2px;
   margin-right: 6px;
 }
 
-spinbutton.vertical image.right, spinbutton:not(.vertical) image.right,
+.nemo-window .primary-toolbar entry image.right, spinbutton.vertical image.right, spinbutton:not(.vertical) image.right,
 entry image.right {
   margin-left: 6px;
   margin-right: 2px;
 }
 
-spinbutton.vertical undershoot.left, spinbutton:not(.vertical) undershoot.left,
+.nemo-window .primary-toolbar entry undershoot.left, spinbutton.vertical undershoot.left, spinbutton:not(.vertical) undershoot.left,
 entry undershoot.left {
   background-color: transparent;
   background-image: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.3) 50%);
@@ -349,7 +349,7 @@ entry undershoot.left {
   margin: 4px 0;
 }
 
-spinbutton.vertical undershoot.right, spinbutton:not(.vertical) undershoot.right,
+.nemo-window .primary-toolbar entry undershoot.right, spinbutton.vertical undershoot.right, spinbutton:not(.vertical) undershoot.right,
 entry undershoot.right {
   background-color: transparent;
   background-image: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.3) 50%);
@@ -362,7 +362,7 @@ entry undershoot.right {
   margin: 4px 0;
 }
 
-spinbutton.error.vertical, spinbutton.error:not(.vertical),
+.nemo-window .primary-toolbar entry.error, spinbutton.error.vertical, spinbutton.error:not(.vertical),
 entry.error {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
@@ -383,7 +383,7 @@ entry.error:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
+.nemo-window .primary-toolbar entry.warning, spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
 entry.warning {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 2px transparent;
@@ -404,7 +404,7 @@ entry.warning:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-spinbutton.vertical progress, spinbutton:not(.vertical) progress,
+.nemo-window .primary-toolbar entry progress, .titlebar entry progress, spinbutton.vertical progress, spinbutton:not(.vertical) progress,
 entry progress {
   margin: 2px -8px;
   border-bottom: 2px solid #3281ea;
@@ -947,22 +947,22 @@ stacksidebar.sidebar row.needs-attention > label:dir(rtl), .stack-switcher > but
   background-position: left 3px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:not(:first-child), .linked:not(.vertical) > spinbutton:not(:first-child):not(.vertical), .linked:not(.vertical) > entry:not(:first-child), .linked:not(.vertical) > button:not(:first-child) {
+.nemo-window .primary-toolbar .linked:not(.vertical) > entry:not(:first-child), .titlebar .linked:not(.vertical) > entry:not(:first-child), .linked:not(.vertical) > spinbutton.vertical:not(:first-child), .linked:not(.vertical) > spinbutton:not(:first-child):not(.vertical), .linked:not(.vertical) > entry:not(:first-child), .linked:not(.vertical) > button:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:not(:last-child), .linked:not(.vertical) > spinbutton:not(:last-child):not(.vertical), .linked:not(.vertical) > entry:not(:last-child), .linked:not(.vertical) > button:not(:last-child) {
+.nemo-window .primary-toolbar .linked:not(.vertical) > entry:not(:last-child), .titlebar .linked:not(.vertical) > entry:not(:last-child), .linked:not(.vertical) > spinbutton.vertical:not(:last-child), .linked:not(.vertical) > spinbutton:not(:last-child):not(.vertical), .linked:not(.vertical) > entry:not(:last-child), .linked:not(.vertical) > button:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.linked.vertical > spinbutton.vertical:not(:first-child), .linked.vertical > spinbutton:not(:first-child):not(.vertical), .linked.vertical > entry:not(:first-child), .linked.vertical > button:not(:first-child) {
+.nemo-window .primary-toolbar .linked.vertical > entry:not(:first-child), .titlebar .linked.vertical > entry:not(:first-child), .linked.vertical > spinbutton.vertical:not(:first-child), .linked.vertical > spinbutton:not(:first-child):not(.vertical), .linked.vertical > entry:not(:first-child), .linked.vertical > button:not(:first-child) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.linked.vertical > spinbutton.vertical:not(:last-child), .linked.vertical > spinbutton:not(:last-child):not(.vertical), .linked.vertical > entry:not(:last-child), .linked.vertical > button:not(:last-child) {
+.nemo-window .primary-toolbar .linked.vertical > entry:not(:last-child), .titlebar .linked.vertical > entry:not(:last-child), .linked.vertical > spinbutton.vertical:not(:last-child), .linked.vertical > spinbutton:not(:last-child):not(.vertical), .linked.vertical > entry:not(:last-child), .linked.vertical > button:not(:last-child) {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -1340,6 +1340,86 @@ searchbar > revealer > box {
 /***************
  * Header bars *
  ***************/
+.nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nemo-window .primary-toolbar .linked:not(.vertical) > button:not(.text-button), headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+  border-radius: 9999px;
+}
+
+.nemo-window .primary-toolbar .linked:not(.vertical) > button:not(:first-child):not(.text-button), headerbar .linked:not(.vertical) > button:not(:first-child):not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar .linked:not(.vertical) > button:not(:last-child):not(.text-button), headerbar .linked:not(.vertical) > button:not(:last-child):not(.suggested-action):not(.destructive-action) {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+.nemo-window .primary-toolbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child, headerbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child:not(.suggested-action):not(.destructive-action) {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+.nemo-window .primary-toolbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child, headerbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child:not(.suggested-action):not(.destructive-action) {
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+.nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:active:not(.text-button), headerbar button:active:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:checked:not(.text-button), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
+  color: white;
+}
+
+.nemo-window .primary-toolbar button:disabled:not(.text-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nemo-window .primary-toolbar button:checked:disabled:not(.text-button), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nemo-window .primary-toolbar button:backdrop:not(.text-button), headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nemo-window .primary-toolbar button:backdrop:focus:not(.text-button), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:backdrop:hover:not(.text-button), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:backdrop:active:not(.text-button), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nemo-window .primary-toolbar button:backdrop:disabled:not(.text-button), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nemo-window .primary-toolbar button:backdrop:checked:not(.text-button), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nemo-window .primary-toolbar button:backdrop:checked:disabled:not(.text-button), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nemo-window .primary-toolbar entry, .titlebar entry, spinbutton:not(.vertical), spinbutton.vertical {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: white;
+}
+
+.nemo-window .primary-toolbar entry:disabled, .titlebar entry:disabled, spinbutton:disabled:not(.vertical), spinbutton.vertical:disabled {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nemo-window .primary-toolbar entry image, .titlebar entry image, spinbutton:not(.vertical) image, spinbutton.vertical image {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nemo-window .primary-toolbar entry image:hover, .titlebar entry image:hover, spinbutton:not(.vertical) image:hover, spinbutton.vertical image:hover, .nemo-window .primary-toolbar entry image:active, .titlebar entry image:active, spinbutton:not(.vertical) image:active, spinbutton.vertical image:active {
+  color: white;
+}
+
+.nemo-window .primary-toolbar entry image:disabled, .titlebar entry image:disabled, spinbutton:not(.vertical) image:disabled, spinbutton.vertical image:disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 18px 18px 0 0;
@@ -1388,28 +1468,6 @@ searchbar > revealer > box {
 
 .titlebar headerbar + separator {
   background-color: rgba(255, 255, 255, 0.12);
-}
-
-.titlebar entry {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: white;
-}
-
-.titlebar entry:disabled {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.titlebar entry image {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.titlebar entry image:hover, .titlebar entry image:active {
-  color: white;
-}
-
-.titlebar entry image:disabled {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .titlebar .linked:not(.vertical) > entry:not(:only-child) {
@@ -1542,64 +1600,6 @@ searchbar > revealer > box {
 .solid-csd .titlebar:dir(rtl), .solid-csd .titlebar:dir(ltr) {
   border-radius: 0;
   box-shadow: none;
-}
-
-.nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button:not(.text-button), headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
-  border-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button:not(:first-child):not(.text-button), headerbar .linked:not(.vertical) > button:not(:first-child):not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar .linked:not(.vertical) > button:not(:last-child):not(.text-button), headerbar .linked:not(.vertical) > button:not(:last-child):not(.suggested-action):not(.destructive-action) {
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child, headerbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child:not(.suggested-action):not(.destructive-action) {
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child, headerbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child:not(.suggested-action):not(.destructive-action) {
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:active:not(.text-button), headerbar button:active:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:checked:not(.text-button), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
-  color: white;
-}
-
-.nemo-window .primary-toolbar button:disabled:not(.text-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.nemo-window .primary-toolbar button:checked:disabled:not(.text-button), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.nemo-window .primary-toolbar button:backdrop:not(.text-button), headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.nemo-window .primary-toolbar button:backdrop:focus:not(.text-button), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:backdrop:hover:not(.text-button), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:backdrop:active:not(.text-button), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nemo-window .primary-toolbar button:backdrop:disabled:not(.text-button), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.nemo-window .primary-toolbar button:backdrop:checked:not(.text-button), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nemo-window .primary-toolbar button:backdrop:checked:disabled:not(.text-button), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 headerbar {
@@ -3879,8 +3879,8 @@ XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover
   background-color: rgba(50, 129, 234, 0.2);
 }
 
-.nemo-window .nemo-window-pane widget.entry:selected, textview text selection:focus, textview text selection, label selection,
-entry selection, spinbutton:not(.vertical) selection, spinbutton.vertical selection {
+.nemo-window .nemo-window-pane widget.entry:selected, textview text selection:focus, textview text selection, label selection, .nemo-window .primary-toolbar entry selection,
+entry selection, spinbutton:not(.vertical) selection, spinbutton.vertical selection, .titlebar entry selection {
   color: white;
   background-color: #3281ea;
 }

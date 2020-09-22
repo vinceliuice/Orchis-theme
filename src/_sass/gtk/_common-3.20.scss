@@ -1089,6 +1089,78 @@ searchbar > revealer > box {
 /***************
  * Header bars *
  ***************/
+
+ %titlebar-button {
+   @extend %button-flat;
+   color: $titlebar-text-secondary;
+
+   .linked:not(.vertical) > & {
+     border-radius: $circular-radius;
+
+     &:not(:first-child), &:not(:last-child) {
+       border-top-left-radius: $circular-radius;
+       border-bottom-left-radius: $circular-radius;
+       border-top-right-radius: $circular-radius;
+       border-bottom-right-radius: $circular-radius;
+     }
+
+     &.image-button:not(.text-button) {
+       &:first-child {
+         border-top-left-radius: $circular-radius;
+         border-bottom-left-radius: $circular-radius;
+       }
+
+       &:last-child {
+         border-top-right-radius: $circular-radius;
+         border-bottom-right-radius: $circular-radius;
+       }
+     }
+   }
+
+   &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
+
+   &:disabled { color: $titlebar-text-secondary-disabled; }
+
+   &:checked {
+     &:disabled {
+       background-color: transparent;
+       color: $titlebar-text-disabled;
+     }
+   }
+
+   &:backdrop {
+     color: $titlebar-text-disabled;
+
+     &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
+
+     &:disabled { color: $titlebar-text-secondary-disabled; }
+
+     &:checked {
+       color: $titlebar-text-secondary;
+
+       &:disabled { color: $titlebar-text-secondary-disabled; }
+     }
+   }
+ }
+
+ %entry {
+   background-color: $titlebar-fill;
+   color: $titlebar-text;
+
+   &:disabled {
+     background-color: $titlebar-fill;
+     color: $titlebar-text-disabled;
+   }
+
+   image {
+     color: $titlebar-text-secondary;
+
+     &:hover, &:active { color: $titlebar-text; }
+
+     &:disabled { color: $titlebar-text-disabled; }
+   }
+ }
+
 .titlebar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
   border-radius: $window-radius $window-radius 0 0;
@@ -1134,23 +1206,7 @@ searchbar > revealer > box {
     background-color: $titlebar-divider;
   }
 
-  entry {
-    background-color: $titlebar-fill;
-    color: $titlebar-text;
-
-    &:disabled {
-      background-color: $titlebar-fill;
-      color: $titlebar-text-disabled;
-    }
-
-    image {
-      color: $titlebar-text-secondary;
-
-      &:hover, &:active { color: $titlebar-text; }
-
-      &:disabled { color: $titlebar-text-disabled; }
-    }
-  }
+  entry { @extend %entry; }
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
@@ -1284,59 +1340,6 @@ searchbar > revealer > box {
     &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;
       box-shadow: none; // just remove the highlight
-    }
-  }
-}
-
-%titlebar-button {
-  @extend %button-flat;
-  color: $titlebar-text-secondary;
-
-  .linked:not(.vertical) > & {
-    border-radius: $circular-radius;
-
-    &:not(:first-child), &:not(:last-child) {
-      border-top-left-radius: $circular-radius;
-      border-bottom-left-radius: $circular-radius;
-      border-top-right-radius: $circular-radius;
-      border-bottom-right-radius: $circular-radius;
-    }
-
-    &.image-button:not(.text-button) {
-      &:first-child {
-        border-top-left-radius: $circular-radius;
-        border-bottom-left-radius: $circular-radius;
-      }
-
-      &:last-child {
-        border-top-right-radius: $circular-radius;
-        border-bottom-right-radius: $circular-radius;
-      }
-    }
-  }
-
-  &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
-
-  &:disabled { color: $titlebar-text-secondary-disabled; }
-
-  &:checked {
-    &:disabled {
-      background-color: transparent;
-      color: $titlebar-text-disabled;
-    }
-  }
-
-  &:backdrop {
-    color: $titlebar-text-disabled;
-
-    &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
-
-    &:disabled { color: $titlebar-text-secondary-disabled; }
-
-    &:checked {
-      color: $titlebar-text-secondary;
-
-      &:disabled { color: $titlebar-text-secondary-disabled; }
     }
   }
 }
