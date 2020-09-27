@@ -209,6 +209,17 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
   menu > separator { color: $divider; }
 }
 
+//
+// plank
+//
+
+window.background:not(.csd) {
+  > window > menu {
+    menuitem {
+      transition: none; // Fixed plank menu background issue
+    }
+  }
+}
 
 /************
  * Inkscape *

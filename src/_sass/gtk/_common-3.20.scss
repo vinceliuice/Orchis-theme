@@ -2306,35 +2306,6 @@ radio {
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg")); }
 
   &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg")); }
-
-  border-image-slice: $check_radio_size / 2px;
-  border-image-width: $check_radio_size / 2;
-
-  $radio_indicator: 10px / $check_radio_size / 2;
-
-  // & {
-  //   border-image-source: -gtk-gradient(radial,
-  //                                      center center, 0,
-  //                                      center center, 0.001,
-  //                                      to($primary),
-  //                                      to(transparent));
-  // }
-  //
-  // &:checked:not(:indeterminate) {
-  //   border-image-source: -gtk-gradient(radial,
-  //                                      center center, 0,
-  //                                      center center, $radio_indicator,
-  //                                      to($primary),
-  //                                      to(transparent));
-  // }
-  //
-  // &:checked:not(:indeterminate):disabled {
-  //   border-image-source: -gtk-gradient(radial,
-  //                                      center center, 0,
-  //                                      center center, $radio_indicator,
-  //                                      to($text-secondary-disabled),
-  //                                      to(transparent));
-  // }
 }
 
 %small_check,

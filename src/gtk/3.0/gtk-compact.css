@@ -2635,8 +2635,6 @@ check:indeterminate {
 
 radio {
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
-  border-image-slice: 20;
-  border-image-width: 20px;
 }
 
 
@@ -5702,6 +5700,10 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget menu > separator {
   color: rgba(0, 0, 0, 0.12);
+}
+
+window.background:not(.csd) > window > menu menuitem {
+  transition: none;
 }
 
 /************
