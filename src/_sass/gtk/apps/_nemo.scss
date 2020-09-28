@@ -16,7 +16,7 @@
     entry {
       min-height: 0;
       margin: 0;
-      @extend %entry;
+      @extend %titlebar-entry;
     }
 
     button:not(.text-button) { @extend %titlebar-button; }

@@ -809,8 +809,7 @@ spinbutton {
   }
 
   // OSD horizontal
-  .osd &:not(.vertical) {
-  }
+  // .osd &:not(.vertical) { }
 
   // Vertical
   &.vertical {
@@ -859,8 +858,7 @@ spinbutton {
   }
 
   // OSD vertical
-  .osd &.vertical {
-  }
+  // .osd &.vertical { }
 
   // Misc
   treeview &:not(.vertical) {
@@ -1143,23 +1141,23 @@ searchbar > revealer > box {
    }
  }
 
- %entry {
-   background-color: $titlebar-fill;
-   color: $titlebar-text;
+%titlebar-entry {
+  background-color: $titlebar-fill;
+  color: $titlebar-text;
 
-   &:disabled {
-     background-color: $titlebar-fill;
-     color: $titlebar-text-disabled;
-   }
+  &:disabled {
+    background-color: $titlebar-fill;
+    color: $titlebar-text-disabled;
+  }
 
-   image {
-     color: $titlebar-text-secondary;
+  image {
+    color: $titlebar-text-secondary;
 
-     &:hover, &:active { color: $titlebar-text; }
+    &:hover, &:active { color: $titlebar-text; }
 
-     &:disabled { color: $titlebar-text-disabled; }
-   }
- }
+    &:disabled { color: $titlebar-text-disabled; }
+  }
+}
 
 .titlebar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
@@ -1206,7 +1204,7 @@ searchbar > revealer > box {
     background-color: $titlebar-divider;
   }
 
-  entry { @extend %entry; }
+  entry { @extend %titlebar-entry; }
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
