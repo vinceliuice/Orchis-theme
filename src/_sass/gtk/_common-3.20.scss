@@ -2728,7 +2728,7 @@ actionbar > revealer > box {
     border-radius: 0 0 $window-radius $window-radius;
   }
 
-  button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
+  button:not(.suggested-action):not(.destructive-action):not(.popup) { @extend %button-flat; }
 
   // .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 }
@@ -2985,6 +2985,11 @@ messagedialog { // Message Dialog styling
 }
 
 filechooser {
+  .csd & {
+    background-color: $base;
+    border-radius: 0 0 $window-radius $window-radius;
+  }
+
   .dialog-action-box { border-top: 1px solid $divider; }
 
   #pathbarbox {
@@ -3001,12 +3006,25 @@ filechooser {
     background-color: transparent;
 
     scrolledwindow {
-      background-color: $base;
-      border-radius: 0 0 $window-radius $window-radius;
+      background-color: transparent;
+      border-radius: 0 0 $window-radius 0;
+
+      list { background-color: transparent; }
 
       treeview.view {
         @extend .view;
         background-color: transparent;
+      }
+    }
+
+    > placesview {
+      background-color: transparent;
+      // border-bottom-right-radius: $window-radius;
+
+      > actionbar {
+        &, > revealer > box {
+          background-color: transparent;
+        }
       }
     }
   }
@@ -3015,11 +3033,17 @@ filechooser {
     background: none;
     border-bottom-left-radius: $window-radius;
   }
+
+  actionbar {
+    &, > revealer > box {
+      background-color: transparent;
+    }
+  }
 }
 
-filechooserbutton:drop(active) {
-  // box-shadow: none;
-}
+// filechooserbutton:drop(active) {
+//   box-shadow: none;
+// }
 
 
 /***********

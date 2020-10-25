@@ -704,6 +704,14 @@ window.background.csd {
           }
         }
       }
+
+      > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
+        > list.frame {
+          @extend %circular_list;
+
+          > row.activatable { @extend %circular_row; }
+        }
+      }
     }
   }
 
@@ -1320,19 +1328,19 @@ box.vertical > revealer > toolbar.search-bar {
 .documents-scrolledwin {
   background-color: transparent;
 
-  .content-view {
+  .content-view:not(:selected):not(:hover) {
     background-color: transparent;
-    border-radius: 0 0 $window-radius $window-radius;
+    // border-radius: 0 0 $window-radius $window-radius;
   }
 
   viewport.frame { // Documents
     background-color: transparent;
 
-    widget > frame.content-view {
+    widget > frame.content-view:not(:selected):not(:hover) {
       border { border: none; }
 
       background-color: transparent;
-      border-radius: 0 0 $window-radius $window-radius;
+      // border-radius: 0 0 $window-radius $window-radius;
     }
   }
 }
@@ -1481,7 +1489,7 @@ tasklistview {
 
 
 /*******
- * eog *
+ * Eog *
  *******/
 #eog-thumb-nav {
   scrolledwindow { border-top: none; }
@@ -1496,8 +1504,18 @@ frame.taskbar > border { border-style: solid none none; }
 box.vertical > paned.horizontal notebook widget .frame { border-style: none; }
 
 
+/***********
+ * Fractal *
+ ***********/
+.background.csd.main-window {
+  .sidebar.rooms-sidebar {
+    border-bottom-left-radius: $window-radius;
+  }
+}
+
+
 /********
- * gitg *
+ * Gitg *
  ********/
 frame.commit-frame > border { border-style: solid none none; }
 

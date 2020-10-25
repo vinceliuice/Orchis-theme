@@ -1242,7 +1242,9 @@ $size_suffix: if($laptop == 'true', '-small', '');
 
 // Gjs_ActivitiesButton.panel-button,
 Gjs_AggregateMenu.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button {
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
   background-color: rgba($panel_fg_color, 0.15);
 }
 
@@ -2712,6 +2714,7 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
   border: none;
   border-radius: $bt_radius;
   box-shadow: $shadow_4;
+
   & > #Toolbar {
     padding: 0 8px;
     border: none;
@@ -2719,7 +2722,9 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     background-color: rgba($base_color, 0.01);
     box-shadow: inset 0 -1px 0 $border_color;
   }
+
   .labels { spacing: 0; }
+
   .notebook-tab {
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
@@ -2730,83 +2735,88 @@ Gjs_ArcMenu_ApplicationsButton.panel-button {
     padding-right: 16px;
     min-height: $medium_size;
     padding: 0 16px * 2;
+
     &:hover {
-      box-shadow: inset 0 -2px 0px $track_color;
+      box-shadow: inset 0 -2px 0 $track_color;
       color: $fg_color;
       text-shadow: none;
     }
+
     &:selected {
-      border-bottom-width: 0;
-      border-color: transparent;
       background-color: rgba($base_color, 0.01);
-      box-shadow: inset 0 -2px 0px $inverse_fg_color;
+      box-shadow: inset 0 -2px 0 $primary_color;
       color: $fg_color;
       text-shadow: none;
     }
   }
+
   StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
+
   StBoxLayout#ResultsArea { spacing: 4px; }
 }
 
-  .lg-dialog {
-    StEntry {
-      selection-background-color: $primary_color;
-      selected-color: $inverse_fg_color;
-    }
-    .shell-link {
-      color: $link_color;
-      &:hover { color: $link_color; }
-     }
+.lg-dialog {
+  StEntry {
+    selection-background-color: $primary_color;
+    selected-color: $inverse_fg_color;
   }
 
-  .lg-completions-text {
-      font-size: 1em;
-      font-style: italic;
-  }
+  .shell-link {
+    color: $link_color;
 
-  .lg-obj-inspector-title {
-      spacing: 4px;
+    &:hover { color: $link_color; }
   }
+}
 
-  .lg-obj-inspector-button {
-      min-height: $medium_size;
-      padding: 0 16px;
-      border: none;
-      border-radius: $bt_radius;
-      @include font(button);
-      @include button(flat-normal);
-      &:hover { @include button(flat-hover); }
-      &:active { @include button(flat-active); }
-      &:insensitive { @include button(flat-insensitive); }
-      &:focus { @include button(flat-focus); }
-      &:hover { border: none; }
-  }
+.lg-completions-text {
+  font-size: 1em;
+  font-style: italic;
+}
 
-  #lookingGlassExtensions { padding: 4px; }
+.lg-obj-inspector-title {
+    spacing: 4px;
+}
 
-  .lg-extensions-list {
-      padding: 4px;
-      spacing: 6px;
-  }
+.lg-obj-inspector-button {
+  min-height: $medium_size;
+  padding: 0 16px;
+  border: none;
+  border-radius: $bt_radius;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+  &:hover { border: none; }
+}
 
-  .lg-extension {
-      border: none;
-      border-radius: $bt_radius;
-      padding: 4px;
-  }
+#lookingGlassExtensions { padding: 4px; }
 
-  .lg-extension-name {
-      @include font(headline);
-  }
+.lg-extensions-list {
+  padding: 4px;
+  spacing: 6px;
+}
 
-  .lg-extension-meta {
-      spacing: 6px;
-  }
+.lg-extension {
+  border: none;
+  border-radius: $bt_radius;
+  background-color: $alt_base_color;
+  padding: 4px;
+}
 
-  #LookingGlassPropertyInspector {
-    background: $base_color;
-    border: none;
-    border-radius: $bt_radius;
-    padding: 6px;
-    box-shadow: $shadow_4;
-  }
+.lg-extension-name {
+  @include font(headline);
+}
+
+.lg-extension-meta {
+  spacing: 6px;
+}
+
+#LookingGlassPropertyInspector {
+  background: $base_color;
+  border: none;
+  border-radius: $bt_radius;
+  padding: 6px;
+  box-shadow: $shadow_4;
+}

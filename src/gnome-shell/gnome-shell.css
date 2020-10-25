@@ -1464,7 +1464,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 Gjs_AggregateMenu.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button {
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
   background-color: rgba(222, 222, 222, 0.15);
 }
 
@@ -3409,16 +3411,14 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #LookingGlassDialog .notebook-tab:hover {
-  box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.87);
   text-shadow: none;
 }
 
 #LookingGlassDialog .notebook-tab:selected {
-  border-bottom-width: 0;
-  border-color: transparent;
   background-color: rgba(255, 255, 255, 0.01);
-  box-shadow: inset 0 -2px 0px rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 -2px 0 #4586D8;
   color: rgba(0, 0, 0, 0.87);
   text-shadow: none;
 }
@@ -3519,6 +3519,7 @@ StWidget.focused .app-well-app-running-dot {
 .lg-extension {
   border: none;
   border-radius: 12px;
+  background-color: #bfbfbf;
   padding: 4px;
 }
 

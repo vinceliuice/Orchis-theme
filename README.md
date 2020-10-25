@@ -35,6 +35,25 @@ Run the following commands in the terminal:
 
 > For more information, run: `./install.sh --help`
 
+### On Snapcraft
+
+<a href="https://snapcraft.io/orchis-themes">
+<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+</a>
+
+You can install the theme from the Snap Store оr by running:
+
+```
+sudo snap install orchis-themes
+```
+To connect the theme to an app run:
+```
+sudo snap connect [other snap]:gtk-3-themes orchis-themes:gtk-3-themes
+```
+To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
+``` for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i orchis-themes:gtk-3-themes; done
+```
+
 ### Firefox theme
 [Install Firefox theme](src/firefox)
 
