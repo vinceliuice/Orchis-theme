@@ -87,7 +87,7 @@ StEntry {
   border-radius: 0;
   border-width: 0;
   selection-background-color: #4586D8;
-  selected-color: #FFFFFF;
+  selected-color: #FFFFFF !important;
   font-size: 11.25pt;
   font-weight: 400;
   caret-color: rgba(255, 255, 255, 0.7);
@@ -1438,7 +1438,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-shadow: none;
 }
 
-#panel #panelActivities.panel-button > * {
+Gjs_AggregateMenu.panel-button,
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
+  background-color: rgba(222, 222, 222, 0.15);
+}
+
+Gjs_ui_panel_ActivitiesButton.panel-button {
   background-image: url("assets/activities-small.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -1449,25 +1456,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: 0 0 transparent !important;
   transition-duration: 0ms !important;
   box-shadow: none !important;
-  color: transparent;
+  color: transparent !important;
 }
 
-#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
+Gjs_ui_panel_ActivitiesButton.panel-button:hover, Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton.panel-button:overview, Gjs_ui_panel_ActivitiesButton.panel-button:focus, Gjs_ui_panel_ActivitiesButton.panel-button:checked {
   background-color: transparent;
   border: none;
   transition: none;
   animation: none;
 }
 
-#panel #panelActivities.panel-button:active > *, #panel #panelActivities.panel-button:overview > *, #panel #panelActivities.panel-button:focus > *, #panel #panelActivities.panel-button:checked > * {
+Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton.panel-button:overview, Gjs_ui_panel_ActivitiesButton.panel-button:focus, Gjs_ui_panel_ActivitiesButton.panel-button:checked {
   background-image: url("assets/activities-active-small.svg");
-}
-
-Gjs_AggregateMenu.panel-button,
-Gjs_ui_panel_AggregateMenu.panel-button,
-Gjs_ArcMenu_ApplicationsButton.panel-button,
-Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
-  background-color: rgba(222, 222, 222, 0.15);
 }
 
 .clock-display-box {
@@ -1523,6 +1523,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.events-button,
 .message-list-section-title,
 .events-section-title {
   min-height: 20px;
@@ -1540,6 +1541,8 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 .world-clocks-button:focus,
 .weather-button:hover,
 .weather-button:focus,
+.events-button:hover,
+.events-button:focus,
 .message-list-section-title:hover,
 .message-list-section-title:focus,
 .events-section-title:hover,
@@ -1551,6 +1554,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 .datemenu-today-button:active,
 .world-clocks-button:active,
 .weather-button:active,
+.events-button:active,
 .message-list-section-title:active,
 .events-section-title:active {
   color: rgba(255, 255, 255, 0.9);
@@ -1574,6 +1578,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
   color: rgba(255, 255, 255, 0.9);
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
 }
 
 .calendar-month-label:focus {
@@ -1627,6 +1632,7 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
   color: rgba(255, 255, 255, 0.7);
   border: none;
   font-feature-settings: "tnum";
+  text-shadow: none;
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
@@ -1634,14 +1640,14 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 }
 
 .calendar-day-base:active {
-  color: inherit;
+  color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
 }
 
 .calendar-day-base:selected {
-  color: rgba(255, 255, 255, 0.85);
-  background-color: #4586D8;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
 }
 
@@ -1698,10 +1704,8 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 }
 
 .calendar-day-with-events {
-  color: #4586D8;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  color: rgba(255, 255, 255, 0.5);
+  background-image: url("assets/calendar-today.svg");
 }
 
 .calendar-day-with-events.calendar-work-day {
@@ -1725,6 +1729,29 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
   font-size: inherit;
   font-weight: bold;
   text-align: center;
+  text-shadow: none;
+}
+
+/* Events */
+.events-button .events-box {
+  spacing: 6px;
+}
+
+.events-button .events-list {
+  spacing: 12px;
+  text-shadow: none;
+}
+
+.events-button .events-title {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.events-button .event-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-feature-settings: "tnum";
 }
 
 .message-list-section-list:ltr {
@@ -2375,9 +2402,6 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 .app-well-app:hover .overview-icon,
 .app-well-app:focus .overview-icon,
 .app-well-app:selected .overview-icon,
-.app-well-app.app-folder:hover .overview-icon,
-.app-well-app.app-folder:focus .overview-icon,
-.app-well-app.app-folder:selected .overview-icon,
 .grid-search-result:hover .overview-icon,
 .grid-search-result:focus .overview-icon,
 .grid-search-result:selected .overview-icon {
@@ -2390,8 +2414,6 @@ Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-
 .show-apps:active .overview-icon, .show-apps:checked .overview-icon,
 .app-well-app:active .overview-icon,
 .app-well-app:checked .overview-icon,
-.app-well-app.app-folder:active .overview-icon,
-.app-well-app.app-folder:checked .overview-icon,
 .grid-search-result:active .overview-icon,
 .grid-search-result:checked .overview-icon {
   background-color: rgba(255, 255, 255, 0.3);
@@ -2415,7 +2437,6 @@ StWidget.focused .app-well-app-running-dot {
 .search-provider-icon,
 .list-search-result, .show-apps .overview-icon,
 .app-well-app .overview-icon,
-.app-well-app.app-folder .overview-icon,
 .grid-search-result .overview-icon {
   color: rgba(255, 255, 255, 0.85);
   border-radius: 100px;
@@ -2511,21 +2532,20 @@ StWidget.focused .app-well-app-running-dot {
 
 /* App Folders */
 .app-folder {
-  border-radius: 100px;
   background: none;
 }
 
 .app-folder .overview-icon {
   background-color: rgba(255, 255, 255, 0.13);
   padding: 16px;
-  border-radius: 100px;
+  border-radius: 24px;
 }
 
 .app-folder-dialog {
   border-radius: 24px;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.15);
   spacing: 12px;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .app-folder-dialog .folder-name-container {
