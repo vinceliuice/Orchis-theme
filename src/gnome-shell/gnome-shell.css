@@ -1442,7 +1442,7 @@ Gjs_AggregateMenu.panel-button,
 Gjs_ui_panel_AggregateMenu.panel-button,
 Gjs_ArcMenu_ApplicationsButton.panel-button,
 Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
-  background-color: rgba(222, 222, 222, 0.15);
+  background-color: rgba(222, 222, 222, 0.15) !important;
 }
 
 Gjs_ui_panel_ActivitiesButton.panel-button {
