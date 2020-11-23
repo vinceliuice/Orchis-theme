@@ -158,7 +158,6 @@ menulist[open] .menulist-label-box,
 }
 
 /* Disabled buttons */
-#nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled],
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled],
 #context-navigation menuitem[disabled] {
 	background: var(--gnome-button-disabled-background) !important;
@@ -171,7 +170,6 @@ menulist[open] .menulist-label-box,
 	opacity: .4 !important;
 }
 
-#nav-bar toolbarbutton:not(#urlbar-zoom-button)[disabled]:hover,
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton[disabled]:hover {
 	background: var(--gnome-button-disabled-background) !important;
 }
