@@ -15,6 +15,6 @@
 
 /* Set theme version text in customization panel */
 #customization-footer::before {
-	content: "Firefox ChromeOS theme";
+	content: "Firefox Orchis theme";
 	padding: 9px;
 }

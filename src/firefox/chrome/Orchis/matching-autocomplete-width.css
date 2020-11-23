@@ -1,14 +1,7 @@
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/*
-This feature is included by default for Firefox 70+
-*/
-
-/**************************************************************************************
-*********************************** FIREFOX 68 ****************************************
-**************************************************************************************/
 /* Set popover size and position */
-panel#urlbar-results { 
+panel#urlbar-results {
 	--box-width: calc(100vw - var(--item-padding-start) - var(--item-padding-end) + 8px);
 	--fixed-widths: calc((6px + 16px + 6px) + (16px + 9px) + 11px);
 	box-sizing: border-box;
@@ -76,11 +69,11 @@ panel#urlbar-results.search-panel-one-offs-header {
 	background: var(--gnome-button-hover-background) !important;
 	color: unset !important;
 }
-.searchbar-engine-one-off-item:first-child {	
+.searchbar-engine-one-off-item:first-child {
 	border-radius: 5px 0 0 5px;
 	border-left-width: 1px !important;
 }
-.searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {	
+.searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {
 	border-radius: 0 5px 5px 0;
 }
 .searchbar-engine-one-off-item.dummy {
@@ -92,7 +85,7 @@ panel#urlbar-results.search-panel-one-offs-header {
 #urlbar-anon-search-settings-compact {
 	border-left-width: 1px !important;
 	border-bottom: 1px solid var(--gnome-button-border-accent-color) !important;
-	border-radius: 5px;	
+	border-radius: 5px;
 	margin-left: 6px !important;
 }
 
@@ -158,15 +151,15 @@ panel#urlbar-results.search-panel-one-offs-header {
 	color: var(--gnome-toolbar-color) !important;
 	box-sizing: border-box !important;
 }
-#PopupAutoCompleteRichResult .searchbar-engine-one-off-item:hover, #PopupAutoCompleteRichResult .searchbar-engine-one-off-item[selected] {	
+#PopupAutoCompleteRichResult .searchbar-engine-one-off-item:hover, #PopupAutoCompleteRichResult .searchbar-engine-one-off-item[selected] {
 	background: var(--gnome-button-hover-background) !important;
 	color: unset !important;
 }
-#PopupAutoCompleteRichResult .searchbar-engine-one-off-item:first-child {	
+#PopupAutoCompleteRichResult .searchbar-engine-one-off-item:first-child {
 	border-radius: 5px 0 0 5px;
 	border-left-width: 1px !important;
 }
-#PopupAutoCompleteRichResult .searchbar-engine-one-off-item.last-engine {	
+#PopupAutoCompleteRichResult .searchbar-engine-one-off-item.last-engine {
 	border-radius: 0 5px 5px 0;
 }
 #PopupAutoCompleteRichResult .searchbar-engine-one-off-item.dummy {
