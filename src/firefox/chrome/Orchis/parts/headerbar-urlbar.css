@@ -7,26 +7,33 @@
 	--urlbar-toolbar-height: 32.00px !important;
 }
 
+/* Center the URL bar */
+toolbarspring {
+	max-width: 10000px !important;
+}
+
 /* Megabar reset  */
 #urlbar {
 	box-shadow: none !important;
+	background: var(--gnome-urlbar-background) !important;
+	border-radius: 16px !important;
+	padding: 0 6px !important;
 }
 #urlbar-background {
 	box-shadow: none !important;
 	border: 0 !important;
 	background: transparent !important;
+	border-radius: 16px !important;
 }
 #urlbar[breakout][breakout-extend] {
 	left: 0 !important;
 	top: 0 !important;
 	width: 100% !important;
 	z-index: 5 !important;
-	padding: 0 !important;
+	padding: 0 6px !important;
 }
 
 #urlbar[breakout][breakout-extend][open] {
-	border-radius: 16px !important;
-	padding: 0 0 !important;
 	height: auto !important;
 	max-height: unset !important;
 }
@@ -34,23 +41,7 @@
 #urlbar[breakout][breakout-extend] #urlbar-input-container {
 	height: 30px !important;
 	max-height: 30px !important;
-	border-radius: 16px 16px 0 0 !important;
 	padding: 0 0 !important;
-}
-
-#urlbar[breakout][breakout-extend][open] #urlbar-input-container {
-	height: 28px !important;
-	max-height: 28px !important;
-	border: 2px solid var(--gnome-focused-urlbar-border-color) !important;
-	border-bottom: none !important;
-	background: var(--gnome-urlbar-background) !important;
-	box-shadow: var(--gnome-popover-shadow) !important;
-	padding: 0 0 !important;
-}
-
-/* Center the URL bar */
-toolbarspring {
-	max-width: 10000px !important;
 }
 
 /* URL bar and Search bar's icons */
@@ -69,12 +60,8 @@ toolbarspring {
 
 /* URL bar results */
 .urlbarView {
-	background: var(--gnome-urlbar-background) !important;
-	border: 2px solid var(--gnome-focused-urlbar-border-color) !important;
-	border-top: none !important;
-	border-radius: 0 0 16px 16px;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3) !important;
-	color: var(--gnome-button-color) !important;
+	background: transparent !important;
+	color: var(--gnome-toolbar-color) !important;
 	margin: -2px 0 0 0 !important;
 	width: 100% !important;
 }
@@ -100,56 +87,15 @@ toolbarspring {
 }
 
 .search-one-offs {
-	padding: 8px 0 0 0 !important;
-	margin-top: 8px !important;
+	margin-top: 2px !important;
+	margin-bottom: 2px !important;
+	padding: 6px 6px !important;
 	border-color: var(--gnome-popover-separator-color) !important;
 }
 
-#urlbar .search-panel-header > label {
-	margin-top: 0px !important;
-	margin-left: 6px !important;
-}
-
-.urlbarView-body-outer {
-	--item-padding-start: 0 !important;
-	--item-padding-end: 0 !important;
-}
-
-/* URL bar results megabar fixes */
-#urlbar.megabar .urlbarView {
-	background: var(--gnome-urlbar-background) !important;
-	width: 100% !important;
-	margin: 0 !important;
-	margin-top: -42px !important;
-	box-shadow: none !important;
-	border-top: 0 !important;
-	padding: 0px !important;
-	border-color: var(--gnome-urlbar-border-color) !important;
-}
-#urlbar.megabar .urlbarView-body-outer {
-	padding: 0 8px !important;
-}
-#urlbar.megabar .urlbarView-body-inner {
-	border: 0 !important;
-}
-#urlbar.megabar .urlbarView-row {
-	padding: 6px !important;
-	border-radius: 5px !important;
-}
-#urlbar.megabar .search-one-offs {
-	margin-top: 6px !important;
-	padding: 8px !important;
-	background: var(--gnome-popover-background) !important;
-	border-top: 1px solid var(--gnome-popover-separator-color) !important;
-}
-
-/* Search engines buttons */
-#urlbar .searchbar-engine-one-off-item {
+.searchbar-engine-one-off-item {
 	--toolbarbutton-active-background: transparent !important;
 	--toolbarbutton-hover-background: transparent !important;
-}
-
-#urlbar .searchbar-engine-one-off-item {
 	-moz-appearance: none !important;
 	background: var(--gnome-button-background) !important;
 	box-shadow: none !important;
@@ -157,15 +103,32 @@ toolbarspring {
 	padding: 0 0 !important;
 	min-height: 32px !important;
 	min-width: 32px !important;
-	margin: 2px !important;
-	border-radius: 16px;
+	margin: 0 !important;
+	border-radius: 0;
 }
-#urlbar .searchbar-engine-one-off-item:hover, .searchbar-engine-one-off-item[selected] {
+.searchbar-engine-one-off-item:hover, .searchbar-engine-one-off-item[selected] {
 	background: var(--gnome-button-hover-background) !important;
 	color: unset !important;
 }
+.searchbar-engine-one-off-item:first-child {
+	border-radius: 16px 0 0 16px;
+}
+.searchbar-engine-one-off-item.last-engine, .searchbar-engine-one-off-item:last-child {
+	border-radius: 0 16px 16px 0;
+}
 
-#urlbar  #urlbar-anon-search-settings-compact {
+#urlbar-anon-search-settings-compact {
 	border-radius: 16px;
 	margin-left: 6px !important;
+}
+
+/* URL bar and Search bar */
+#urlbar[focused] .urlbar-textbox-container {
+	margin: -1px !important;
+}
+#searchbar > .searchbar-textbox[focused] .searchbar-search-button {
+	margin-left: -1px !important;
+}
+#searchbar > .searchbar-textbox[focused] .search-go-button {
+	margin-right: -1px !important;
 }

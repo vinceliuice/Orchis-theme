@@ -28,6 +28,10 @@
 	fill: var(--gnome-toolbar-color) !important;
 }
 
+:root[tabsintitlebar][sizemode="maximized"] #TabsToolbar {
+	border-radius: 0 0 0 0 !important;
+}
+
 #tabbrowser-tabs {
 	box-shadow: none !important;
 }

@@ -6,11 +6,6 @@
 	-moz-appearance: -moz-window-titlebar !important;
 }
 
-/* Headerbar top border corners rounded */
-:root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
-	border-radius: 12px 12px 0 0 !important;
-}
-
 /* Window buttons box */
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox-container,
 :root[tabsintitlebar] #titlebar-buttonbox-container,
@@ -92,11 +87,6 @@
 :root[tabsintitlebar][inFullscreen] #window-controls #minimize-button,
 :root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox-container {
 	display: none !important;
-}
-
-/* Headerbar top border corners rounded */
-:root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
-	border-radius: 0 0 0 0 !important;
 }
 
 /* Remove tabsbar titlebar blank spaces */

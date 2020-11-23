@@ -24,7 +24,7 @@
 	/* Sidebar */
 	--gnome-sidebar-background: #3b3b3b;
 	--gnome-inactive-sidebar-background: #3f3f3f;
-	
+
 	/* Popups */
 	--gnome-menu-background: #333333;
 	--gnome-menu-border-color: #121212;
@@ -44,7 +44,7 @@
 	--gnome-inactive-headerbar-box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
 
 	/* Buttons */
-	--gnome-button-background: transparent;
+	--gnome-button-background: rgba(255, 255, 255, 0.06);
 	--gnome-button-border-color: transparent;
 	--gnome-button-border-accent-color: transparent;
 	--gnome-headerbar-button-border-color: transparent;
@@ -82,7 +82,7 @@
 	--gnome-button-destructive-action-active-box-shadow: inset 0 1px rgba(255, 255, 255, 0);
 
 	/* URL bar */
-	--gnome-urlbar-background: #2d2d2d;
+	--gnome-urlbar-background: rgba(255, 255, 255, 0.06);
 	--gnome-urlbar-border-color: #282828;
 	--gnome-urlbar-box-shadow: inset 0 0 0 1px rgba(21, 83, 158, 0);
 	--gnome-urlbar-color: #ffffff;

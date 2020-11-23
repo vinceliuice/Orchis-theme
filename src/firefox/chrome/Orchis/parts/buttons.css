@@ -52,6 +52,7 @@
 /* Buttons with margins */
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton) {
 	margin: 0 2px !important;
+	background: transparent !important;
 }
 
 /* Text buttons */
@@ -277,7 +278,7 @@ menulist[open] .menulist-label-box,
 
 /* Combined buttons */
 #nav-bar .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#hack),
-#nav-bar #back-button:not(#hack),
+/* #nav-bar #back-button:not(#hack), */
 .subviewbutton.panel-subview-footer:not(:only-of-type):not(:last-of-type),
 .panel-footer button:not(:only-of-type):not(:last-of-type),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:last-of-type):not(#appMenu-zoomEnlarge-button),
@@ -291,7 +292,7 @@ menulist[open] .menulist-label-box,
 }
 
 #nav-bar .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#hack),
-#nav-bar #forward-button:not(#hack),
+/* #nav-bar #forward-button:not(#hack), */
 .subviewbutton.panel-subview-footer:not(:only-of-type):not(:first-of-type),
 .panel-footer button:not(:only-of-type):not(:first-of-type),
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(:first-of-type):not(#appMenu-fullscreen-button),

@@ -3,54 +3,39 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Entries */
-#search-box,
-.findbar-textbox,
 #searchbar,
-#urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar) {
+#search-box,
+.findbar-textbox {
 	-moz-appearance: none !important;
 	background: var(--gnome-urlbar-background) !important;
 	border: none !important;
-	border-radius: 1000px !important;
+	border-radius: 16px !important;
 	box-shadow: none !important;
 	color: var(--gnome-urlbar-color) !important;
 	height: 32px !important;
 	max-height: 32px !important;
 	padding: 6px 12px !important;
 	box-sizing: border-box;
-}
-
-#searchbar,
-#urlbar.megabar #urlbar-input-container,
-#urlbar:not(.megabar) {
-	background: var(--gnome-urlbar-background) !important;
-	padding: 0 6px !important;
+	transition: all 100ms;
 }
 
 /* Entries focused */
+#urlbar[breakout][breakout-extend],
+#searchbar:focus-within,
 #search-box[focused],
 .findbar-textbox[focused],
 .findbar-textbox:focus {
 	background: var(--gnome-focused-urlbar-background) !important;
 	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
 	outline-offset: -2px;
-	-moz-outline-radius: 1000px;
-}
-
-#urlbar.megabar[breakout][breakout-extend],
-#urlbar:not(.megabar)[focused],
-#searchbar:focus-within,
-#urlbar[focused] {
-	background: var(--gnome-focused-urlbar-background) !important;
-	outline: 2px solid var(--gnome-focused-urlbar-border-color) !important;
-	outline-offset: -2px;
-	-moz-outline-radius: 1000px;
+	-moz-outline-radius: 16px;
+	transition: all 100ms;
 }
 
 #urlbar:hover,
 #searchbar:hover,
-#urlbar.megabar #urlbar-input-container:hover,
-#urlbar:not(.megabar):hover {
+#search-box:hover,
+.findbar-textbox:hover {
 	background: var(--gnome-button-hover-background) !important;
 }
 
@@ -105,4 +90,3 @@
 #searchbar > .searchbar-textbox[focused] .searchbar-search-button:not(#hack) {
 	margin: 0 !important;
 }
-
