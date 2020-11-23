@@ -453,9 +453,41 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 // hard-coded css:
 // https://gitlab.gnome.org/GNOME/gedit/blob/master/gedit/resources/css/gedit-style.css
 
-// Only normal state is handle
-.open-document-selector-name-label {
-  // font-weight: bold;
+window.org-gnome-gedit {
+  > paned.titlebar {
+    > separator { background-color: transparent; }
+  }
+
+  > overlay > box.vertical {
+    > paned.gedit-side-panel-paned {
+
+      // 'file-browser' pane
+      > box.vertical > stack > grid.horizontal {
+        > box.horizontal {  // header-part
+          margin: 4px 0;
+        }
+
+        > scrolledwindow { // raised widget
+          border-bottom-left-radius: $window-radius;
+
+          treeview.view:not(:hover):not(:selected) {
+            background: none;
+          }
+        }
+      }
+
+      // 'files' pane
+      stack {
+        scrolledwindow {
+          viewport.frame {
+            list.gedit-document-panel {
+              background: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Only normal state is handle
