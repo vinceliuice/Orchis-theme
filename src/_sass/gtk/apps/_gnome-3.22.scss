@@ -667,67 +667,69 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
  * Gnome Control Center *
  ************************/
 window.background.csd {
-  > headerbar.titlebar > hdyleaflet {
-    > headerbar {
-      &:first-child:not(:only-child) {
-        border-top-left-radius: $window-radius;
-      }
+  > headerbar.titlebar {
+    > leaflet,
+    > hdyleaflet {
+      > headerbar {
+        &:first-child:not(:only-child) {
+          border-top-left-radius: $window-radius;
+        }
 
-      &:last-child:not(:only-child) {
-        border-top-right-radius: $window-radius;
-      }
+        &:last-child:not(:only-child) {
+          border-top-right-radius: $window-radius;
+        }
 
-      &:first-child:only-child, &:last-child:only-child {
-        border-top-right-radius: $window-radius;
-        border-top-left-radius: $window-radius;
+        &:first-child:only-child, &:last-child:only-child {
+          border-top-right-radius: $window-radius;
+          border-top-left-radius: $window-radius;
+        }
       }
     }
   }
 
-  > stack:not(.titlebar),
-  > hdyleaflet > stack.background {
-    border-radius: 0 0 $window-radius $window-radius;
-  }
+  > stack:not(.titlebar) > stack.background { border-radius: 0 0 $window-radius $window-radius; }
 
-  > hdyleaflet > stack.background, // > 3.34.0
-  > box.horizontal > stack.background {
-    background: none;
+  > leaflet,
+  > hdyleaflet,
+  > box.horizontal {
+    > stack.background {
+      background: none;
 
-    > widget {
-      > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
-        > scrolledwindow > viewport.frame {
-          background-color: $base;
-          border-bottom-right-radius: $window-radius;
+      > widget {
+        > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
+          > scrolledwindow > viewport.frame {
+            background-color: $base;
+            border-bottom-right-radius: $window-radius;
 
-          > box.vertical.view {
-            background: none;
+            > box.vertical.view {
+              background: none;
+            }
+          }
+        }
+
+        > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
+          > list.frame {
+            @extend %circular_list;
+
+            > row.activatable { @extend %circular_row; }
           }
         }
       }
-
-      > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
-        > list.frame {
-          @extend %circular_list;
-
-          > row.activatable { @extend %circular_row; }
-        }
-      }
     }
-  }
 
-  > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
-  > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
-    background-color: $base;
-    border-bottom-left-radius: $window-radius;
+    > box.vertical > scrolledwindow.view { // > 3.25.90
+      background-color: $base;
+      border-bottom-left-radius: $window-radius;
 
-    > viewport.frame > stack {
-      background-color: transparent;
-
-      list { // left-pane
+      > viewport.frame > stack {
         background-color: transparent;
 
-        row.activatable:not(:hover):not(:active):not(:selected) {
+        list { // left-pane
           background-color: transparent;
+
+          row.activatable:not(:hover):not(:active):not(:selected) {
+            background-color: transparent;
+          }
         }
       }
     }
@@ -764,7 +766,7 @@ dialog.background.csd {
   }
 }
 
-hdyleaflet {
+hdyleaflet, leaflet {
   frame > border { border: none; }
 
   frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
@@ -783,7 +785,7 @@ hdyleaflet {
     }
   }
 
-  list.view.frame {
+  list.frame {
     @extend %circular_list;
 
     row.activatable { @extend %circular_row; }
@@ -851,6 +853,153 @@ window.background.csd {
     border-bottom-right-radius: $window-radius;
   }
 }
+
+
+/*****************
+ * Gnome Weather *
+ *****************/
+#weather-page,
+#weekly-forecast-frame {
+  border-bottom-right-radius: $window-radius;
+}
+
+#weather-page-content-view {
+  border-bottom-right-radius: $window-radius;
+  border-bottom-left-radius: $window-radius;
+}
+
+
+/****************
+ * Gnome Clocks *
+ ****************/
+window.background.csd.unified {
+  border-top-left-radius: $window-radius;
+  border-top-right-radius: $window-radius;
+
+  > deck > deck > deck {
+    > box.vertical > headerbar.titlebar.windowhandle {
+      > viewswitchertitle > squeezer {
+        > viewswitcher > box.horizontal {
+          > button.radio {
+            margin: 0;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*************
+ * Rhythmbox *
+ *************/
+
+%image_button {
+  min-height: 24px;
+  min-width: 24px;
+  padding: ($medium-size - 24px) / 2;
+  margin: 0;
+}
+
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
+  button.image-button {
+    border-radius: $circular-radius;
+
+    &:not(:first-child), &:not(:last-child) {
+      border-top-left-radius: $circular-radius;
+      border-bottom-left-radius: $circular-radius;
+      border-top-right-radius: $circular-radius;
+      border-bottom-right-radius: $circular-radius;
+    }
+
+    &.image-button:not(.text-button) {
+      &:first-child {
+        border-top-left-radius: $circular-radius;
+        border-bottom-left-radius: $circular-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $circular-radius;
+        border-bottom-right-radius: $circular-radius;
+      }
+    }
+
+    > widget > box > image { padding: 0; }
+  }
+}
+
+// tweak border and frame in alt-toolbar
+window.csd > box.vertical > box.vertical,
+window.solid-csd > box.vertical > box.vertical {
+  > toolbar.horizontal {
+    padding: $container-padding;
+    // margin: -1px 0;
+    border-bottom: none;
+    box-shadow: none;
+    background-color: transparent;
+
+    > toolitem > .linked > button,
+    > toolitem > box.horizontal > button {
+      @extend %circular_button;
+      @extend %image_button;
+    }
+  }
+
+  > frame {
+    margin: -1px 0;
+    padding: 0;
+
+    > border { border: none; }
+  }
+}
+
+// hard-coded spacing depends on non-scalable unit,
+// seems cover-art widget is the most biggest thing?
+window.background > box.vertical > toolbar.primary-toolbar {
+  > toolitem {
+    > .linked > button.image-button.raised { // 'shuffle/repeat'
+      @extend %circular_button;
+      @extend %image_button;
+
+      > widget > box > image { padding: 0; }
+    }
+
+    button.flat.scale { // 'volume'
+      @extend %circular_button;
+      @extend %image_button;
+    }
+
+    > box.horizontal:not(.linked) > button.toggle,
+    > .linked > button:not(.toggle):not(.raised):not(.flat) {
+      @extend %circular_button;
+      @extend %image_button;
+    }
+  }
+}
+
+
+/**********
+ * Polari *
+ **********/
+.polari-room-list {
+  .sidebar {
+    background: none;
+
+    > row.activatable:selected {
+      > widget > box.horizontal > label {
+        color: $text;
+      }
+    }
+  }
+}
+
+stack.view.polari-entry-area {
+  background-color: $background;
+  border-top: 1px solid $divider;
+}
+
+stack:disabled.view.polari-entry-area { background-image: image($background); }
 
 /***********
  * Builder *

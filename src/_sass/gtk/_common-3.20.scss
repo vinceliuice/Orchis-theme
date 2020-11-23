@@ -3280,38 +3280,50 @@ paned {
 infobar {
   border-style: none;
 
+  &.action:hover > revealer > box {
+    background-color: if($variant == 'light', desaturate(lighten(invert($primary), 47%), 30%),
+                        desaturate(darken(invert($primary),42%), 70%));
+    border-bottom: 1px solid $divider;
+  }
+
   &.info,
   &.question {
-    border-bottom: 1px solid $divider;
-    background-color: $base;
+    &:backdrop > revealer > box, & > revealer > box {
+      border-bottom: 1px solid $divider;
+      background-color: $base;
 
-    button {
-      @extend %button-flat;
+      button {
+        @extend %button-flat;
 
-      &.text-button:not(:disabled) { color: $primary; }
+        &.text-button:not(:disabled) { color: $primary; }
+      }
     }
   }
 
   &.warning {
-    background-color: $warning;
-    color: on($warning);
+    &:backdrop > revealer > box, & > revealer > box {
+      background-color: $warning;
+      color: on($warning);
 
-    // button { @extend %button-on-dark; }
+      // button { @extend %button-on-dark; }
 
-    // selection {}
+      // selection {}
 
-    *:link { color: on($warning); }
+      *:link { color: on($warning); }
+    }
   }
 
   &.error {
-    background-color: $error;
-    color: on($error);
+    &:backdrop > revealer > box, & > revealer > box {
+      background-color: $error;
+      color: on($error);
 
-    button.flat { @extend %button-on-dark; }
+      button.flat { @extend %button-on-dark; }
 
-    // selection {}
+      // selection {}
 
-    *:link { color: on($error); }
+      *:link { color: on($error); }
+    }
   }
 }
 
