@@ -154,11 +154,8 @@ tab[selected]:-moz-window-inactive {
 	padding: 2px;
 	width: 16px;
 }
-tab[selected] .tab-close-button {
-	list-style-image: url("../icons/window-close-symbolic.svg") !important;
-}
 @media (prefers-color-scheme: dark) {
-	tab[selected] .tab-close-button {
+	.tab-close-button {
 		list-style-image: url("../icons/window-close-symbolic-dark.svg") !important;
 	}
 }
