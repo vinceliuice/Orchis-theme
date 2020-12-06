@@ -926,7 +926,6 @@ window.background.csd.unified {
 /*************
  * Rhythmbox *
  *************/
-
 %image_button {
   min-height: 24px;
   min-width: 24px;
@@ -1019,9 +1018,12 @@ window.background > box.vertical > toolbar.primary-toolbar {
     background: none;
 
     > row.activatable:selected {
-      > widget > box.horizontal > label {
-        color: $text;
-      }
+      background-color: $primary;
+      color: on($primary);
+
+      // > widget > box.horizontal > label {
+      //   color: $text; // not use !
+      // }
     }
   }
 }
@@ -1029,6 +1031,7 @@ window.background > box.vertical > toolbar.primary-toolbar {
 stack.view.polari-entry-area {
   background-color: $background;
   border-top: 1px solid $divider;
+  border-bottom-right-radius: $window-radius;
 }
 
 stack:disabled.view.polari-entry-area { background-image: image($background); }

@@ -1059,9 +1059,9 @@ $mdbt_radius: 100px;
   transition-duration: 250ms;
   font-weight: bold;
   height: $medium_size + 2px;
-  box-shadow: $shadow_6;
+  // box-shadow: $shadow_6;
   border-radius: $circular_radius;
-  margin: $container_padding/2;
+  margin: $container_padding / 2;
 
   &:overview,
   &.unlock-screen,
@@ -1100,7 +1100,7 @@ $mdbt_radius: 100px;
     font-weight: bold;
     color: $panel_fg_color;
     text-shadow: none;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     transition-duration: $longer_duration;
 
     StLabel { padding: 0 3px; }
@@ -1802,451 +1802,466 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   padding-bottom: 32px;
 }
 
-  .window-picker { //container around window thumbnails
-    -horizontal-spacing: 16px;
-    -vertical-spacing: 16px;
-    padding: 0 16px 32px;
+.window-picker { //container around window thumbnails
+  -horizontal-spacing: 16px;
+  -vertical-spacing: 16px;
+  padding: 0 16px 32px;
 
-    &.external-monitor { padding: 16px; }
-  }
+  &.external-monitor { padding: 16px; }
+}
 
-  .window-clone-border {
-    border: 4px solid $inverse_track_color;
-    border-radius: $material_radius;
-    // For window decorations with round corners we can't match
-    // the exact shape when the window is scaled. So apply a shadow
-    // to fix that case
-    box-shadow: inset 0 0 0 1px $inverse_track_color;
-  }
+.window-clone-border {
+  border: 4px solid $inverse_track_color;
+  border-radius: $material_radius;
+  // For window decorations with round corners we can't match
+  // the exact shape when the window is scaled. So apply a shadow
+  // to fix that case
+  box-shadow: inset 0 0 0 1px $inverse_track_color;
+}
 
-  .window-caption {
-    spacing: 25px;
-    color: $inverse_fg_color;
-    background-color: $bg_color;
-    border-radius: $bt_radius;
-    padding: 4px 8px;
-    border: none;
-    font-size: 1em;
-    font-weight: normal;
-  }
+.window-caption {
+  spacing: 25px;
+  color: $inverse_fg_color;
+  background-color: $bg_color;
+  border-radius: $bt_radius;
+  padding: 4px 8px;
+  border: none;
+  font-size: 1em;
+  font-weight: normal;
+}
 
-  //search entry
-  .search-entry {
-    width: 320px - 8px * 2;
+//search entry
+.search-entry {
+  width: 320px - 8px * 2;
+  padding: 0 8px;
+  border: none;
+  selection-background-color: $primary_color;
+  selected-color: $light_fg_color;
+  @include search_entry(normal);
+
+  &:focus {
+    @include search_entry(focus);
     padding: 0 8px;
-    border: none;
-    selection-background-color: $primary_color;
-    selected-color: $light_fg_color;
-    @include search_entry(normal);
-
-    &:focus {
-      @include search_entry(focus);
-      padding: 0 8px;
-    }
-
-    .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
-
-    &:hover, &:focus {
-      .search-entry-icon { color: rgba(black, 0.75); }
-    }
-
-    &:insensitive {
-      @include search_entry(insensitive);
-    }
-
-    StLabel.hint-text {
-      color: rgba(black, 0.45);
-    }
   }
 
-  //search results
+  .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
 
-  #searchResultsBin {
-    max-width: 1000px;
+  &:hover, &:focus {
+    .search-entry-icon { color: rgba(black, 0.75); }
   }
 
-  #searchResultsContent {
-    padding-left: 20px;
-    padding-right: 20px;
-    spacing: 16px;
-    max-width: 1024px;
+  &:insensitive {
+    @include search_entry(insensitive);
   }
 
-  .search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
-  .search-section-content { // This is the space between the provider icon and the results container
-    spacing: 32px;
-    background-color: $inverse_divider_color;
-    border-radius: $bt_radius;
-    border: none;
-    box-shadow: none;
-    text-shadow: none;
-    color: $inverse_fg_color;
-    padding: 12px;
+  StLabel.hint-text {
+    color: rgba(black, 0.45);
   }
-  .search-statustext { // "no results"
-    @extend %status_text;
-  }
-  .list-search-results { spacing: 3px; }
+}
 
-  .search-section-separator { height: 0; }
+//search results
 
-  .list-search-result-content { spacing: 30px; }
-  .list-search-result-title { @include font(subheading); color: $inverse_fg_color; spacing: 12px; }
-  .list-search-result-description { color: $inverse_secondary_fg_color; }
-  .list-search-provider-details { width: 150px; color: $inverse_secondary_fg_color; margin-top: 0.24em; }
-  .list-search-provider-content { spacing: 20px; }
-  .search-provider-icon { padding: 15px; }
+#searchResultsBin {
+  max-width: 1000px;
+}
+
+#searchResultsContent {
+  padding-left: 20px;
+  padding-right: 20px;
+  spacing: 16px;
+  max-width: 1024px;
+}
+
+.search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
+.search-section-content { // This is the space between the provider icon and the results container
+  spacing: 32px;
+  background-color: $inverse_divider_color;
+  border-radius: $bt_radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $inverse_fg_color;
+  padding: 12px;
+}
+.search-statustext { // "no results"
+  @extend %status_text;
+}
+.list-search-results { spacing: 3px; }
+
+.search-section-separator { height: 0; }
+
+.list-search-result-content { spacing: 30px; }
+.list-search-result-title { @include font(subheading); color: $inverse_fg_color; spacing: 12px; }
+.list-search-result-description { color: $inverse_secondary_fg_color; }
+.list-search-provider-details { width: 150px; color: $inverse_secondary_fg_color; margin-top: 0.24em; }
+.list-search-provider-content { spacing: 20px; }
+.search-provider-icon { padding: 15px; }
 
 
-  /* DASHBOARD */
+// /* DASHBOARD */
 
-  #dash {
-    font-size: 1em;
-    color: $inverse_fg_color;
-    background-color: $inverse_bg_color;
-    padding: 3px 0;
-    margin: 6px;
-    border: none;
+#dash {
+  font-size: 1em;
+  color: $inverse_fg_color;
+  background-color: $inverse_bg_color;
+  padding: 3px 0;
+  margin: 6px;
+  border: none;
+  border-radius: 100px;
+
+  &:rtl {
     border-radius: 100px;
-
-    &:rtl {
-      border-radius: 100px;
-    }
-
-    .placeholder {
-      background-image: url("assets/dash-placeholder.svg");
-      background-size: contain;
-      height: 24px;
-    }
-
-    .empty-dash-drop-target {
-      width: 24px;
-      height: 24px;
-    }
-
   }
 
-  .dash-item-container > StWidget {
-    padding: 3px 6px;
+  .placeholder {
+    background-image: url("assets/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
   }
 
-  .dash-label { //osd tooltip
-    // min-height: 32px - 6px * 2;
-    border-radius: 100px;
-    padding: 8px 10px;
-    color: $inverse_fg_color;
-    background-color: rgba(black, 0.75);
-    border: none;
-    box-shadow: $shadow_2;
-    text-align: center;
-    -x-offset: 8px;
-  }
-
-  /* App Vault/Grid */
-  .icon-grid {
-    spacing: 30px;
-    -shell-grid-horizontal-item-size: 136px;
-    -shell-grid-vertical-item-size: 136px;
-
-    .overview-icon { icon-size: 96px; }
-  }
-  //.app-display { spacing: 20px; }
-
-  .system-action-icon {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); // FIXME: this should really have a highlight
-    background-color: $grey_900;
-    color: $white;
-    border-radius: 99px;
-    icon-size: 48px;
-  }
-
-  .app-view-controls { //favorties | all toggle container
-    width: 320px;
-    margin-bottom: 32px;
-    padding: 0;
-    border-radius: 100px;
-    background-color: $inverse_divider_color;
-  }
-  .app-view-control { //favorties | all toggle button
-    padding: 0 16px;
-    margin: 3px;
-    border-radius: 100px;
-    font-weight: bold;
-    color: $inverse_secondary_fg_color;
-    background-color: transparent;
-    &:hover {
-      color: $inverse_fg_color;
-      background-color: rgba($inverse_fg_color, 0.20);
-    }
-    &:active {
-      color: $inverse_fg_color;
-      background-color: $inverse_track_color;
-    }
-    &:checked {
-      color: white;
-      background-color: $primary_color;
-      box-shadow: none;
-    }
-    &:first-child {
-      border-right-width: 0;
-      margin-right: 0;
-      // border-radius: 100px 0 0 100px;
-      // &:checked { border-radius: 0; }
-    }
-    &:last-child {
-      // border-radius: 0 100px 100px 0;
-      // &:checked { border-radius: 0; }
-    }
-  }
-
-  //Icon tile
-  .search-provider-icon,
-  .list-search-result {
-    @extend %icon_tile;
-    &:focus, &:selected, &:hover {
-      background-color: $inverse_divider_color;
-      transition-duration: 0ms;
-    }
-    &:active, &:checked {
-      background-color: $inverse_track_color;
-      transition-duration: $longer_duration;
-    }
+  .empty-dash-drop-target {
+    width: 24px;
+    height: 24px;
   }
 
   .show-apps,
-  .app-well-app,
-  .grid-search-result {
-    & .overview-icon {
-      @extend %icon_tile;
-    }
-    &:hover .overview-icon,
-    &:focus .overview-icon,
-    &:selected .overview-icon {
-      background-color: $inverse_divider_color;
-      transition-duration: 0ms;
-      border-image: none;
-      background-image: none;
-    }
-    &:active .overview-icon,
-    &:checked .overview-icon {
-      background-color: $inverse_track_color;
-      box-shadow: none;
-      transition-duration: $longer_duration;
+  .app-well-app {
+    & .overview-icon { // reset
+      border-radius: $circular-radius;
     }
   }
+}
 
-  .app-well-app-running-dot { //running apps indicator
-    width: 8px; height: 2px;
-    border-radius: 0;
-    background-color: $inverse_fg_color;
-    margin-bottom: 0;
+.dash-item-container > StWidget {
+  padding: 3px 6px;
+}
+
+.dash-label { //osd tooltip
+  // min-height: 32px - 6px * 2;
+  border-radius: 100px;
+  padding: 8px 10px;
+  color: $inverse_fg_color;
+  background-color: rgba(black, 0.75);
+  border: none;
+  box-shadow: $shadow_2;
+  text-align: center;
+  -x-offset: 8px;
+}
+
+/* App Vault/Grid */
+.icon-grid {
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
+
+  .overview-icon { icon-size: 96px; }
+}
+//.app-display { spacing: 20px; }
+
+.system-action-icon {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); // FIXME: this should really have a highlight
+  background-color: $grey_900;
+  color: $white;
+  border-radius: 99px;
+  icon-size: 48px;
+}
+
+.app-view-controls { //favorties | all toggle container
+  width: 320px;
+  margin-bottom: 32px;
+  padding: 0;
+  border-radius: 100px;
+  background-color: $inverse_divider_color;
+}
+.app-view-control { //favorties | all toggle button
+  padding: 0 16px;
+  margin: 3px;
+  border-radius: 100px;
+  font-weight: bold;
+  color: $inverse_secondary_fg_color;
+  background-color: transparent;
+  &:hover {
+    color: $inverse_fg_color;
+    background-color: rgba($inverse_fg_color, 0.20);
   }
-
-  StWidget.focused .app-well-app-running-dot {
-    width: 16px;
+  &:active {
+    color: $inverse_fg_color;
+    background-color: $inverse_track_color;
+  }
+  &:checked {
+    color: white;
     background-color: $primary_color;
+    box-shadow: none;
+  }
+  &:first-child {
+    border-right-width: 0;
+    margin-right: 0;
+    // border-radius: 100px 0 0 100px;
+    // &:checked { border-radius: 0; }
+  }
+  &:last-child {
+    // border-radius: 0 100px 100px 0;
+    // &:checked { border-radius: 0; }
+  }
+}
+
+//Icon tile
+.search-provider-icon,
+.list-search-result {
+  @extend %icon_tile;
+  &:focus, &:selected, &:hover {
+    background-color: $inverse_divider_color;
+    transition-duration: 0ms;
+  }
+  &:active, &:checked {
+    background-color: $inverse_track_color;
+    transition-duration: $longer_duration;
+  }
+}
+
+.show-apps,
+.app-well-app,
+.grid-search-result {
+  & .overview-icon {
+    @extend %icon_tile;
   }
 
-  %icon_tile {
-    color: $inverse_fg_color;
-    border-radius: 100px;
-    padding: 6px;
+  &:hover .overview-icon,
+  &:focus .overview-icon,
+  &:selected .overview-icon {
+    background-color: $inverse_divider_color;
+    transition-duration: 0ms;
+    border-image: none;
+    background-image: none;
+  }
+
+  &:active .overview-icon,
+  &:checked .overview-icon {
+    background-color: $inverse_track_color;
+    box-shadow: none;
+    transition-duration: $longer_duration;
+  }
+}
+
+.app-well-app-running-dot { //running apps indicator
+  width: 8px; height: 2px;
+  border-radius: 0;
+  background-color: $inverse_fg_color;
+  margin-bottom: 0;
+}
+
+StWidget.focused .app-well-app-running-dot {
+  width: 16px;
+  background-color: $primary_color;
+}
+
+%icon_tile {
+  color: $inverse_fg_color;
+  border-radius: $bt_radius;
+  padding: 6px;
+  border: none;
+  transition-duration: $longer_duration;
+  text-align: center;
+}
+
+.app-well-app.app-folder > .overview-icon {
+  background-color: $inverse_bg_color;
+}
+
+.show-apps .show-apps-icon {
+  color: $inverse_secondary_fg_color;
+}
+
+.show-apps:hover .show-apps-icon,
+.show-apps:active .show-apps-icon,
+.show-apps:checked .show-apps-icon,
+.show-apps:focus .show-apps-icon {
+  color: $inverse_fg_color;
+  transition-duration: $longer_duration;
+}
+
+
+// Collections
+.app-folder-popup { //expanded collection
+  -arrow-border-radius: $bt_radius;
+  -arrow-background-color: $inverse_bg_color;
+  -arrow-base: 0;
+  -arrow-rise: 12px;
+}
+
+.app-folder-popup-bin { padding: 5px; }
+
+.page-indicator {
+  padding: 15px 20px;
+
+  .page-indicator-icon {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
     border: none;
-    transition-duration: $longer_duration;
-    text-align: center;
+    border-radius: 12px;
+    background-image: none;
+    background-color: $inverse_disabled_secondary_fg_color;
   }
-
-  .app-well-app.app-folder > .overview-icon {
-    background-color: $inverse_bg_color;
+  &:hover .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    background-color: $inverse_disabled_fg_color;
   }
-
-  .show-apps .show-apps-icon {
-    color: $inverse_secondary_fg_color;
+  &:active .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    background-color: $inverse_secondary_fg_color;
   }
-
-  .show-apps:hover .show-apps-icon,
-  .show-apps:active .show-apps-icon,
-  .show-apps:checked .show-apps-icon,
-  .show-apps:focus .show-apps-icon {
-    color: $inverse_fg_color;
-    transition-duration: $longer_duration;
+  &:checked .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    background-color: $inverse_fg_color;
+    transition-duration: 0ms;
   }
+  &:checked:active { background-image: none; }
+}
+
+.no-frequent-applications-label { @extend %status_text; }
+
+.grid-search-result .overview-icon.overview-icon-with-label {
+  padding: 10px 8px 5px 8px;
+  spacing: 6px;
+}
 
 
-  // Collections
-  .app-folder-popup { //expanded collection
-    -arrow-border-radius: $bt_radius;
-    -arrow-background-color: $inverse_bg_color;
-    -arrow-base: 0;
-    -arrow-rise: 12px;
-  }
+.overview-icon.overview-icon-with-label {
+  padding: 10px 8px 5px 8px;
 
-  .app-folder-popup-bin { padding: 5px; }
-
-  .page-indicator {
-    padding: 15px 20px;
-
-    .page-indicator-icon {
-      width: 12px;
-      height: 12px;
-      margin: 0;
-      padding: 0;
-      border: none;
-      border-radius: 12px;
-      background-image: none;
-      background-color: $inverse_disabled_secondary_fg_color;
-    }
-    &:hover .page-indicator-icon {
-      margin: 0;
-      padding: 0;
-      border: none;
-      background-image: none;
-      background-color: $inverse_disabled_fg_color;
-    }
-    &:active .page-indicator-icon {
-      margin: 0;
-      padding: 0;
-      border: none;
-      background-image: none;
-      background-color: $inverse_secondary_fg_color;
-    }
-    &:checked .page-indicator-icon {
-      margin: 0;
-      padding: 0;
-      border: none;
-      background-image: none;
-      background-color: $inverse_fg_color;
-      transition-duration: 0ms;
-    }
-    &:checked:active { background-image: none; }
-  }
-
-  .no-frequent-applications-label { @extend %status_text; }
-
-  .grid-search-result .overview-icon.overview-icon-with-label {
-    padding: 10px 8px 5px 8px;
+  > StBoxLayout {
     spacing: 6px;
   }
+}
 
+/* App Folders */
+.app-folder {
+  background: none;
 
-  .overview-icon.overview-icon-with-label {
-    padding: 10px 8px 5px 8px;
-
-    > StBoxLayout {
-      spacing: 6px;
-    }
-  }
-
-  /* App Folders */
-  .app-folder {
-    background: none;
-
-    .overview-icon {
-      background-color: $inverse_bg_color;
-      padding: 16px;
-      border-radius: $bt_radius * 2;
-    }
-  }
-
-  // expanded folder
-  .app-folder-dialog {
-    border-radius: $bt_radius * 2;
-    border: 2px solid rgba(white, 0.15);
-    spacing: 12px;
-    background-color: rgba(black, 0.85);
-
-    & .folder-name-container {
-      padding: 24px 36px 0;
-      spacing: 12px;
-
-      & .folder-name-label,
-      & .folder-name-entry {
-        font-size: 18pt;
-        font-weight: bold;
-      }
-
-      & .folder-name-entry {
-        border: none;
-        background-color: rgba(white, 0.15);
-        selection-background-color: $primary_color;
-        selected-color: $light_fg_color;
-
-        &:focus {
-          background-color: rgba(white, 0.25);
-        }
-
-        .search-entry-icon { color: rgba(white, 0.85); }
-
-        &:hover, &:focus {
-          .search-entry-icon { color: rgba(white, 0.95); }
-        }
-
-        &:insensitive, StLabel.hint-text {
-          color: rgba(white, 0.45);
-        }
-      }
-
-      /* FIXME: this is to keep the label in sync with the entry */
-      & .folder-name-label { padding: 5px 7px; color: $inverse_secondary_fg_color; }
-
-      & .edit-folder-button {
-        background-color: $inverse_divider_color;
-        color: $inverse_secondary_fg_color;
-        border: none;
-
-        padding: 0;
-        width: 36px;
-        height: 36px;
-        border-radius: 18px;
-
-        & > StIcon { icon-size: 16px }
-
-        &:hover { background-color: $inverse_divider_color; }
-        &:checked, &:active { background-color: $inverse_track_color; }
-      }
-    }
-
-    & StButton#vhandle,
-    & StButton#vhandle:hover,
-    & StButton#vhandle:active { background-color: transparent; }
-  }
-  .app-folder-dialog-container {
-    padding: 12px;
-    width: 800px;
-    height: 600px;
-  }
-
-  .app-folder-icon {
-    padding: 4px;
-    spacing-rows: 4px;
-    spacing-columns: 4px;
-  }
-
-  // Workspace pager
-  .workspace-thumbnails { //container ala dash
-    @extend %overview-panel;
-    visible-width: 32px; //amount visible before hover
-    spacing: 12px;
+  .overview-icon {
+    background-color: $inverse_bg_color;
     padding: 16px;
-    border-radius: $bt_radius;
-    margin: 6px;
-    //border-width: 0; //fixme: can't have non unoform borders :(
-    // &:rtl { border-radius: $material_radius; }
-  }
-  .workspace-thumbnail-indicator {
-    border: 0 solid $primary_color;
-    border-width: 2px;
-    padding: 6px;
-    border-radius: 2px;
+    border-radius: $bt_radius * 2;
   }
 
-  //Some hacks I don't even
-  .search-display > StBoxLayout,
-  .all-apps,
-  .frequent-apps > StBoxLayout {
-    // horizontal padding to make sure scrollbars or dash don't overlap content
-    padding: 0px 88px 10px 88px;
+  &:hover .overview-icon {
+    background-color: $inverse_divider_color;
   }
+}
+
+
+// expanded folder
+.app-folder-dialog {
+  border-radius: $bt_radius * 4;
+  border: 2px solid rgba(white, 0.15);
+  spacing: 0;
+  background-color: rgba(#222, 0.95);
+
+  & .folder-name-container {
+    padding: 24px 36px 0;
+    spacing: 12px;
+
+    & .folder-name-label,
+    & .folder-name-entry {
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    & .folder-name-entry {
+      border: none;
+      background-color: rgba(white, 0.15);
+      selection-background-color: $primary_color;
+      selected-color: $light_fg_color;
+
+      &:focus {
+        background-color: rgba(white, 0.25);
+      }
+
+      .search-entry-icon { color: rgba(white, 0.85); }
+
+      &:hover, &:focus {
+        .search-entry-icon { color: rgba(white, 0.95); }
+      }
+
+      &:insensitive, StLabel.hint-text {
+        color: rgba(white, 0.45);
+      }
+    }
+
+    /* FIXME: this is to keep the label in sync with the entry */
+    & .folder-name-label { padding: 5px 7px; color: $inverse_secondary_fg_color; }
+
+    & .edit-folder-button {
+      background-color: $inverse_divider_color;
+      color: $inverse_secondary_fg_color;
+      border: none;
+
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+
+      & > StIcon { icon-size: 16px }
+
+      &:hover { background-color: $inverse_divider_color; }
+      &:checked, &:active { background-color: $inverse_track_color; }
+    }
+  }
+
+  & StButton#vhandle,
+  & StButton#vhandle:hover,
+  & StButton#vhandle:active { background-color: transparent; }
+}
+
+.app-folder-dialog-container {
+  padding: $container-padding;
+  width: 600px;
+  height: 600px;
+}
+
+.app-folder-icon {
+  padding: 4px;
+  spacing-rows: 4px;
+  spacing-columns: 4px;
+}
+
+// Workspace pager
+.workspace-thumbnails { //container ala dash
+  @extend %overview-panel;
+  visible-width: 32px; //amount visible before hover
+  spacing: 12px;
+  padding: 16px;
+  border-radius: $bt_radius;
+  margin: 6px;
+  //border-width: 0; //fixme: can't have non unoform borders :(
+  // &:rtl { border-radius: $material_radius; }
+}
+
+.workspace-thumbnail-indicator {
+  border: 0 solid $primary_color;
+  border-width: 2px;
+  padding: 6px;
+  border-radius: 2px;
+}
+
+//Some hacks I don't even
+.search-display > StBoxLayout,
+.all-apps,
+.frequent-apps > StBoxLayout {
+  // horizontal padding to make sure scrollbars or dash don't overlap content
+  padding: 0px 88px 10px 88px;
+}
 
 %overview-panel {
   color: $inverse_fg_color;

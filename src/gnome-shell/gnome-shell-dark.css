@@ -1264,7 +1264,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   transition-duration: 250ms;
   font-weight: bold;
   height: 38px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.3);
   border-radius: 9999px;
   margin: 3px;
 }
@@ -1305,7 +1304,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   color: #dedede;
   text-shadow: none;
-  border-radius: 100px;
+  border-radius: 9999px;
   transition-duration: 150ms;
 }
 
@@ -2285,7 +2284,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   padding: 15px;
 }
 
-/* DASHBOARD */
 #dash {
   font-size: 1em;
   color: rgba(255, 255, 255, 0.85);
@@ -2309,6 +2307,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 #dash .empty-dash-drop-target {
   width: 24px;
   height: 24px;
+}
+
+#dash .show-apps .overview-icon,
+#dash .app-well-app .overview-icon {
+  border-radius: 9999px;
 }
 
 .dash-item-container > StWidget {
@@ -2439,7 +2442,7 @@ StWidget.focused .app-well-app-running-dot {
 .app-well-app .overview-icon,
 .grid-search-result .overview-icon {
   color: rgba(255, 255, 255, 0.85);
-  border-radius: 100px;
+  border-radius: 12px;
   padding: 6px;
   border: none;
   transition-duration: 150ms;
@@ -2541,11 +2544,15 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 24px;
 }
 
+.app-folder:hover .overview-icon {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 .app-folder-dialog {
-  border-radius: 24px;
+  border-radius: 48px;
   border: 2px solid rgba(255, 255, 255, 0.15);
-  spacing: 12px;
-  background-color: rgba(0, 0, 0, 0.85);
+  spacing: 0;
+  background-color: rgba(34, 34, 34, 0.95);
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2614,8 +2621,8 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-folder-dialog-container {
-  padding: 12px;
-  width: 800px;
+  padding: 6px;
+  width: 600px;
   height: 600px;
 }
 

@@ -3278,51 +3278,73 @@ paned {
  * GtkInfoBar *
  **************/
 infobar {
-  border-style: none;
+  border: none;
+  margin-bottom: 0;
 
-  &.action:hover > revealer > box {
-    background-color: if($variant == 'light', desaturate(lighten(invert($primary), 47%), 30%),
-                        desaturate(darken(invert($primary),42%), 70%));
-    border-bottom: 1px solid $divider;
-  }
-
-  &.info,
-  &.question {
-    &:backdrop > revealer > box, & > revealer > box {
-      border-bottom: 1px solid $divider;
+  &.info {
+    & > revealer > box,
+    &:hover > revealer > box,
+    &:backdrop > revealer > box {
       background-color: $base;
 
       button {
-        @extend %button-flat;
-
-        &.text-button:not(:disabled) { color: $primary; }
+        &, &.text-button:not(:disabled) { color: $primary; }
       }
     }
   }
 
+  &.action,
+  &.question {
+    & > revealer > box,
+    &:backdrop > revealer > box {
+      background-color: $primary;
+      color: on($primary);
+
+      button {
+        &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
+      }
+    }
+
+    &:hover > revealer > box {
+      background-color: if($variant == 'light', lighten($primary, 5%), darken($primary, 5%));
+    }
+  }
+
   &.warning {
-    &:backdrop > revealer > box, & > revealer > box {
+    & > revealer > box,
+    &:backdrop > revealer > box {
       background-color: $warning;
       color: on($warning);
 
-      // button { @extend %button-on-dark; }
+      button {
+        @extend %button-on-dark;
 
-      // selection {}
+        &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($warning); }
+      }
 
       *:link { color: on($warning); }
+    }
+
+    &:hover > revealer > box {
+      background-color: if($variant == 'light', lighten($warning, 5%), darken($warning, 5%));
     }
   }
 
   &.error {
-    &:backdrop > revealer > box, & > revealer > box {
+    & > revealer > box,
+    &:backdrop > revealer > box {
       background-color: $error;
       color: on($error);
 
-      button.flat { @extend %button-on-dark; }
-
-      // selection {}
+      button {
+        &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($error); }
+      }
 
       *:link { color: on($error); }
+    }
+
+    &:hover > revealer > box {
+      background-color: if($variant == 'light', lighten($error, 5%), darken($error, 5%));
     }
   }
 }
