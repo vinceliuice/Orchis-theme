@@ -2943,7 +2943,7 @@ StWidget.focused .app-well-app-running-dot {
   icon-shadow: none;
   padding: 12px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0;
   border-left-width: 0;
   border-bottom-width: 0;
 }
