@@ -36,6 +36,24 @@ stage {
   color: $fg_color;
 }
 
+// Pointer location
+.ripple-pointer-location {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px; // radius equals the size of the box to give us the curve
+  background-color: lighten(transparentize($primary_color, 0.7), 30%);
+  box-shadow: 0 0 2px 2px lighten($primary_color, 20%);
+}
+
+// Pointer accessibility notifications
+.pie-timer {
+  width: 60px;
+  height: 60px;
+  -pie-border-width: 3px;
+  -pie-border-color: $primary_color;
+  -pie-background-color: lighten(transparentize($primary_color, 0.7), 40%);
+}
+
 /* WIDGETS */
 
 /* Buttons */
@@ -162,7 +180,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     min-height: $medium_size - 8px * 2;
     padding: 8px 0;
   }
-  StBoxLayout { spacing: 8px; }
+  StBoxLayout { spacing: .8em; }
   StBin {
     width: 24px;
     height: 24px;
@@ -231,11 +249,73 @@ $slider_color: if($variant == 'light', $accent_color, white);
   }
 }
 
+// Outline for low res icons
+.lowres-icon {
+  icon-shadow: 0 1px 2px rgba(black, 0.3);
+}
+
+// Dropshadow for large icons
+.icon-dropshadow {
+  icon-shadow: 0 1px 2px rgba(black, 0.4);
+}
+
+// Rubberband for select-area screenshots
+.select-area-rubberband {
+  background-color: transparentize($primary_color, 0.7);
+  border: 1px solid $primary_color;
+}
+
+// User icon
+.user-icon {
+  background-size: contain;
+  color: $inverse_secondary_fg_color;
+  border-radius: $circular_radius;
+  border: 2px $inverse_secondary_fg_color;
+
+  &:hover {
+    color: $inverse_fg_color;
+  }
+
+  & StIcon {
+    background-color: transparentize($inverse_secondary_fg_color, 0.95);
+    border-radius: 99px;
+  }
+}
+
+.user-widget.vertical .user-icon {
+  icon-size: 128px; // 128px
+
+  & StIcon {
+    padding: $container_padding * 3 + 2px; // 20px
+    padding-top: $container_padding * 3; // 18 px
+    padding-bottom: $container_padding * 3 + 4px; // 22px
+    width: 88px; height:  88px; // 88px;
+  }
+}
+
+.user-widget.horizontal .user-icon {
+  icon-size: 64px;
+
+  & StIcon {
+    padding: $container_padding * 2 ; // 12px
+    width: $container_padding * 2.5; height:  $container_padding * 2.5; // 40px;
+  }
+}
+
+// Caps-lock warning
+.caps-lock-warning-label {
+  text-align: center;
+  padding-bottom: 8px;
+  @include font(body-1);
+  color: $warning_color;
+}
+
+.lightbox { background-color: black; }
+.flashspot { background-color: white; }
+
 /* Modal Dialogs */
 
 .headline { @include font(title); }
-.lightbox { background-color: black; }
-.flashspot { background-color: white; }
 
 $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.12));
 
@@ -246,7 +326,9 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.12));
   border: 2px solid $mdborder_color;
   box-shadow: $shadow_0;
   .modal-dialog-content-box {
-    padding: 24px;
+    margin: 32px 40px;
+    spacing: 32px;
+    max-width: 28em;
   }
   .run-dialog-entry { width: 20em; margin-bottom: 6px; }
   .run-dialog-error-box {
@@ -281,9 +363,11 @@ $mdbt_radius: 100px;
 
   &:first-child {
     margin-left: 6px;
+    margin-right: 0;
     border-radius: $mdbt_radius 0px 0px $mdbt_radius;
   }
   &:last-child {
+    margin-left: 0;
     margin-right: 6px;
     border-right-width: 0px;
     border-radius: 0px $mdbt_radius $mdbt_radius 0;
@@ -302,33 +386,25 @@ $mdbt_radius: 100px;
 }
 
 /* Message Dialog */
-.message-dialog-main-layout {
-  padding: 12px 20px 0;
-  spacing: 12px;
-}
-
 .message-dialog-content {
-  max-width: 28em;
-  spacing: 20px;
-}
+  spacing: 18px;
 
-.message-dialog-icon {
-  min-width: 48px;
-  icon-size: 48px;
-}
+  .message-dialog-title {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 800;
 
-.message-dialog-title {
-  font-weight: bold;
-}
-
-.message-dialog-subtitle {
-  color: $secondary_fg_color;
-  font-weight: bold;
+    &.lightweight {
+      font-size: 13pt;
+      font-weight: 800;
+    }
+  }
+  .message-dialog-description { text-align: center; }
 }
 
 /* End Session Dialog */
 .end-session-dialog {
-  spacing: 42px;
+  width: 30em;
   border: 2px solid $mdborder_color;
 
   .modal-dialog-linked-button:last-child {
@@ -344,78 +420,50 @@ $mdbt_radius: 100px;
       background-color: darken($destructive_color, 5%);
     }
   }
-}
 
-.end-session-dialog-list {
-    padding-top: 20px;
-}
-
-.end-session-dialog-layout {
-  padding-left: 17px;
-  &:rtl { padding-right: 17px; }
-}
-
-.end-session-dialog-description {
-  width: 28em;
-  padding-bottom: 10px;
-  &:rtl {
-    text-align: right;
+  .end-session-dialog-battery-warning,
+  .dialog-list-title {
+    color: $warning_color;
   }
 }
 
-.end-session-dialog-warning {
-  width: 28em;
-  color: $warning_color;
-  padding-top: 6px;
-  &:rtl {
-    text-align: right;
+/* Dialog List */
+.dialog-list {
+  spacing: 18px;
+
+  .dialog-list-title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .dialog-list-scrollview { max-height: 200px; }
+  .dialog-list-box {
+    spacing: 1em;
+
+    .dialog-list-item {
+      spacing: 1em;
+
+      .dialog-list-item-title { font-weight: bold; }
+      .dialog-list-item-description {
+        color: $secondary_fg_color;
+        @include font(title);
+      }
+    }
   }
 }
 
-.end-session-dialog-logout-icon {
-  //border: 2px solid #8b8b8b;
-  border-radius: 5px;
-  width: 48px;
-  height: 48px;
-  background-size: contain;
-}
-
-.end-session-dialog-shutdown-icon {
-  color: $hint_fg_color;
-  width: 48px;
-  height: 48px;
-}
-
-.end-session-dialog-inhibitor-layout {
-  spacing: 16px;
-  max-height: 200px;
-  padding-right: 65px;
-  padding-left: 65px;
-}
-
-.end-session-dialog-session-list,
-.end-session-dialog-app-list {
-  spacing: 1em;
-}
-
-.end-session-dialog-list-header {
-  font-weight: bold;
-  &:rtl { text-align: right; }
-}
-
-.end-session-dialog-app-list-item,
-.end-session-dialog-session-list-item {
-  spacing: 1em;
-}
-
-.end-session-dialog-app-list-item-name,
-.end-session-dialog-session-list-item-name {
-  font-weight: bold;
-}
-
-.end-session-dialog-app-list-item-description {
-  color: $hint_fg_color;
-  font-size: 1em;
+/* Run Dialog */
+.run-dialog {
+  .modal-dialog-content-box {
+    margin-top: 24px;
+    margin-bottom: 14px;
+  }
+  .run-dialog-entry { width: 20em; }
+  .run-dialog-description {
+    @include font(subheading);
+    text-align: center;
+    color: $hint_fg_color;
+  }
 }
 
 /* ShellMountOperation Dialogs */
@@ -480,99 +528,125 @@ $mdbt_radius: 100px;
 
 .prompt-dialog {
   //this is the width of the entire modal popup
-  width: 34em;
+  width: 28em;
   border: 2px solid $mdborder_color;
+
+  .modal-dialog-content-box {
+    margin-bottom: 24px;
+  }
 
   .message-dialog-main-layout { spacing: 24px; padding: 10px; }
   .message-dialog-content { spacing: 16px; }
   .message-dialog-title { @include font(title); color: $fg_color; }
 }
 
-  .prompt-dialog-description:rtl {
-    text-align: right;
-  }
+.prompt-dialog-password-grid {
+  spacing-rows: 8px;
+  spacing-columns: 4px;
 
-  .prompt-dialog-password-box {
-    spacing: 1em;
-    padding-bottom: 1em;
-  }
+  .prompt-dialog-password-entry {
+    width: auto;
 
-  .prompt-dialog-error-label {
-    font-size: 1em;
-    color: $error_color;
-    padding-bottom: 8px;
-  }
-
-  .prompt-dialog-info-label {
-    font-size: 1em;
-    padding-bottom: 8px;
-  }
-
-  .hidden {
-    color: rgba(0,0,0,0);
-  }
-
-  .prompt-dialog-null-label {
-    font-size: 1em;
-    padding-bottom: 8px;
-  }
-
-
-/* Polkit Dialog */
-
-.polkit-dialog-user-layout {
-  padding-left: 10px;
-  spacing: 10px;
-  &:rtl {
-    padding-left: 0px;
-    padding-right: 10px;
+    // 4px (spacing) + 16px (spinner-width)
+    &:ltr { margin-left: 20px; }
+    &:rtl { margin-right: 20px; }
   }
 }
 
-  .polkit-dialog-user-root-label {
-    color: $warning_color;
-  }
+.prompt-dialog-password-layout {
+  spacing: 8px;
+}
 
-  .polkit-dialog-user-icon {
-    border-radius: 5px;
-    background-size: contain;
-    width: 48px;
-    height: 48px;
-  }
+.prompt-dialog-password-entry {
+  width: 20em;
+}
+
+.prompt-dialog-error-label,
+.prompt-dialog-info-label,
+.prompt-dialog-null-label {
+  text-align: center;
+  @include font(title);
+}
+
+.prompt-dialog-error-label {
+  color: $warning_color;
+}
+
+.prompt-dialog-description:rtl {
+  text-align: right;
+}
+
+.prompt-dialog-password-box {
+  spacing: 1em;
+  padding-bottom: 1em;
+}
+
+.prompt-dialog-error-label {
+  font-size: 1em;
+  color: $error_color;
+  padding-bottom: 8px;
+}
+
+.prompt-dialog-info-label {
+  font-size: 1em;
+  padding-bottom: 8px;
+}
+
+.hidden {
+  color: rgba(0,0,0,0);
+}
+
+.prompt-dialog-null-label {
+  font-size: 1em;
+  padding-bottom: 8px;
+}
+
+/* Polkit Dialog */
+.polkit-dialog-user-layout {
+  text-align: center;
+  spacing: 8px;
+  margin-bottom: 6px;
+
+  .polkit-dialog-user-root-label { color: $warning_color; }
+}
+
+.polkit-dialog-user-icon {
+  border-radius: $circular_radius;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+}
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
-  spacing: 30px;
+  .modal-dialog-content-box { margin-bottom: 28px; }
+  .audio-selection-box { spacing: 20px; }
 }
 
-  .audio-selection-content {
-    spacing: 20px;
-    padding: 24px;
-  }
+.audio-selection-content {
+  spacing: 20px;
+  padding: 24px;
+}
 
-  .audio-selection-title {
-    font-weight: bold;
-    text-align: center;
-  }
+.audio-selection-title {
+  font-weight: bold;
+  text-align: center;
+}
 
-  .audio-selection-box {
-    spacing: 20px;
-  }
+.audio-selection-device {
+  border: 1px solid $border_color;
+  border-radius: $bt_radius;
+  &:active,&:hover,&:focus { background-color: $primary_color; }
+}
 
-  .audio-selection-device {
-    border: 1px solid $border_color;
-    border-radius: $bt_radius;
-    &:active,&:hover,&:focus { background-color: $primary_color; }
-  }
+.audio-selection-device-box {
+  padding: 20px;
+  spacing: 20px;
+}
 
-  .audio-selection-device-box {
-    padding: 20px;
-    spacing: 20px;
-  }
-
-  .audio-selection-device-icon {
-    icon-size: 64px;
-  }
+.audio-selection-device-icon {
+  icon-size: 64px;
+}
 
 /* Access Dialog */
 .access-dialog {
@@ -882,13 +956,9 @@ $mdbt_radius: 100px;
 // Background menu
 .background-menu { -boxpointer-gap: 8px; -arrow-rise: 0; }
 
-/* fallback menu
-- odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
-  app menu inside the main app window itself rather than the top bar
-*/
-
 /* OSD */
 .osd-window {
+  @extend %osd-panel;
   text-align: center;
   font-weight: bold;
   spacing: 1em;
@@ -935,7 +1005,7 @@ $mdbt_radius: 100px;
 /* App Switcher */
 .switcher-popup {
   padding: 8px;
-  spacing: 16px;
+  spacing: 24px;
 }
 
 .osd-window,
@@ -1068,6 +1138,12 @@ $mdbt_radius: 100px;
   &.login-screen,
   &.lock-screen {
     background-color: transparent;
+
+    .panel-corner {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: transparent;
+      -panel-corner-border-color: transparent;
+    }
   }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
@@ -1095,8 +1171,8 @@ $mdbt_radius: 100px;
 
   .panel-button {
     margin: 4px 6px;
-    -natural-hpadding: $minimum-hpadding;
-    -minimum-hpadding: $minimum-hpadding;
+    -natural-hpadding: $minimum_hpadding;
+    -minimum-hpadding: $minimum_hpadding;
     font-weight: bold;
     color: $panel_fg_color;
     text-shadow: none;
@@ -1255,7 +1331,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 #calendarArea {
-  padding: 8px 6px;
+  padding: 0;
 }
 
 .calendar {
@@ -1274,15 +1350,15 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .datemenu-displays-section { padding-bottom: 0; }
-.datemenu-displays-box { spacing: 8px; }
+.datemenu-displays-box { spacing: $container_padding; }
 
 .datemenu-calendar-column {
-  spacing: 8px;
+  spacing: $container_padding;
   border: 0 solid $border_color;
-  padding: 0 0;
+  padding: 0 $container_padding * 2;
 
-  &:ltr { border-left-width: 0; }
-  &:rtl { border-right-width: 0; }
+  &:ltr { margin-right: $container_padding * 2; border-left-width: 0; }
+  &:rtl { margin-left: $container_padding * 2; border-right-width: 0; }
 }
 
 .datemenu-today-button,
@@ -1292,7 +1368,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 .message-list-section-title,
 .events-section-title {
   min-height: $menuitem_size - 4px * 2;
-  padding: 4px 8px;
+  padding: $container_padding 8px;
   border-radius: $material_radius;
   border: none;
   box-shadow: none;
@@ -1310,6 +1386,13 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 .datemenu-today-button {
   min-height: $menuitem_size * 2 - 4px * 2;
 
+  // weekday label
+  .day-label {
+    @include font(title);
+    font-weight: bold;
+  }
+
+  // date label
   .date-label {
     @include font(headline);
   }
@@ -1806,6 +1889,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   -horizontal-spacing: 16px;
   -vertical-spacing: 16px;
   padding: 0 16px 32px;
+  spacing: 12px;
 
   &.external-monitor { padding: 16px; }
 }
@@ -1953,6 +2037,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   spacing: 30px;
   -shell-grid-horizontal-item-size: 136px;
   -shell-grid-vertical-item-size: 136px;
+
+  row-spacing: $container_padding * 6;
+  column-spacing: $container_padding * 6;
+  max-row-spacing: $container_padding * 12;
+  max-column-spacing: $container_padding * 12;
 
   .overview-icon { icon-size: 96px; }
 }
@@ -2160,12 +2249,11 @@ StWidget.focused .app-well-app-running-dot {
   }
 }
 
-
 // expanded folder
 .app-folder-dialog {
   border-radius: $bt_radius * 4;
   border: 2px solid rgba(white, 0.15);
-  spacing: 0;
+  padding: 12px;
   background-color: rgba(#222, 0.95);
 
   & .folder-name-container {
@@ -2183,6 +2271,7 @@ StWidget.focused .app-well-app-running-dot {
       background-color: rgba(white, 0.15);
       selection-background-color: $primary_color;
       selected-color: $light_fg_color;
+      width: 300px;
 
       &:focus {
         background-color: rgba(white, 0.25);
@@ -2219,21 +2308,48 @@ StWidget.focused .app-well-app-running-dot {
     }
   }
 
+  & .icon-grid {
+    row-spacing: $container_padding * 2;
+    column-spacing: $container_padding * 5;
+  }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+
+    .page-indicator {
+      padding: 15px 12px;
+    }
+  }
+
   & StButton#vhandle,
   & StButton#vhandle:hover,
   & StButton#vhandle:active { background-color: transparent; }
 }
 
 .app-folder-dialog-container {
-  padding: $container-padding;
+  padding: $container_padding;
   width: 600px;
   height: 600px;
 }
 
 .app-folder-icon {
-  padding: 4px;
-  spacing-rows: 4px;
-  spacing-columns: 4px;
+  padding: $container_padding;
+  spacing-rows: $container_padding;
+  spacing-columns: $container_padding;
+}
+
+// Rename popup for app folders
+.rename-folder-popup {
+  .rename-folder-popup-item {
+    spacing: $container_padding;
+    &:ltr, &:rtl { padding: 0 $container_padding * 2; }
+  }
+}
+
+// right-click app menu
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
 }
 
 // Workspace pager
@@ -2246,18 +2362,23 @@ StWidget.focused .app-well-app-running-dot {
   margin: 6px;
   //border-width: 0; //fixme: can't have non unoform borders :(
   // &:rtl { border-radius: $material_radius; }
+
+  .placeholder {
+    background-image: url("assets/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
 }
 
 .workspace-thumbnail-indicator {
-  border: 0 solid $primary_color;
-  border-width: 2px;
+  border: 2px solid $primary_color;
   padding: 6px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 //Some hacks I don't even
-.search-display > StBoxLayout,
 .all-apps,
+.search-display > StBoxLayout,
 .frequent-apps > StBoxLayout {
   // horizontal padding to make sure scrollbars or dash don't overlap content
   padding: 0px 88px 10px 88px;
@@ -2276,122 +2397,154 @@ StWidget.focused .app-well-app-running-dot {
 
 /* NOTIFICATIONS & MESSAGE TRAY */
 
-  .url-highlighter { link-color: $link_color; }
+.url-highlighter { link-color: $link_color; }
 
-  // Banners
-  .notification-banner {
-    font-size: 1em;
-    width: 34em;
-    min-height: $menuitem_size * 2;
-    margin: 5px;
-    border-radius: $bt_radius;
-    color: $fg_color;
-    background-color: rgba($base_color, 0.92);
-    border: none;
-    box-shadow: $shadow_2;
-    &:hover { background-color: rgba($base_color, 0.95); }
-    &:focus { background-color: $base_color; }
+// Banners
+.notification-banner {
+  font-size: 1em;
+  width: 34em;
+  min-height: $menuitem_size * 2;
+  margin: 5px;
+  border-radius: $bt_radius;
+  color: $fg_color;
+  background-color: rgba($base_color, 0.92);
+  border: none;
+  box-shadow: $shadow_2;
+  &:hover { background-color: rgba($base_color, 0.95); }
+  &:focus { background-color: $base_color; }
 
-    .notification-icon { padding: 5px; }
-    .notification-content { padding: 5px; spacing: 5px; }
-    .secondary-icon { icon-size: em(16px); }
-    .notification-actions {
-      background-color: transparent;
-      padding-top: 0;
-      border-top: 1px solid $border_color;
-      spacing: 1px;
-    }
-    .notification-button {
-      min-height: 40px;
-      padding: 0 16px;
-      background-color: transparent;
-      color: $secondary_fg_color;
-      font-weight: 500;
-      &:first-child { border-radius: 0 0 0 2px; }
-      &:last-child { border-radius: 0 0 2px 0; }
-      &:hover, &focus { background-color: $divider_color; color: $fg_color; }
-      &:active { background-color: $track_color; color: $fg_color; }
-    }
-  }
-  .summary-source-counter {
-    font-size: 1em;
-    font-weight: bold;
-    height: 1.6em; width: 1.6em;
-    -shell-counter-overlap-x: 3px;
-    -shell-counter-overlap-y: 3px;
-    background-color: $primary_color;
-    color: $inverse_fg_color;
-    border: 2px solid $primary_color;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
-    border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
-  }
-
+  .notification-icon { padding: 5px; }
+  .notification-content { padding: 5px; spacing: 5px; }
   .secondary-icon { icon-size: em(16px); }
-
-  //chat bubbles
-  .chat-body { spacing: 5px; }
-  .chat-response { margin: 5px; }
-  .chat-log-message { color: $fg_color; }
-  .chat-new-group { padding-top: 1em; }
-  .chat-received {
-    padding-left: 4px;
-    &:rtl { padding-left: 0px; padding-right: 4px; }
+  .notification-actions {
+    background-color: transparent;
+    padding-top: 0;
+    border-top: 1px solid $border_color;
+    spacing: 1px;
   }
-  .chat-sent {
-    padding-left: 18pt;
+  .notification-button {
+    min-height: 40px;
+    padding: 0 16px;
+    background-color: transparent;
     color: $secondary_fg_color;
-    &:rtl { padding-left: 0; padding-right: 18pt; }
+    font-weight: 500;
+    &:first-child { border-radius: 0 0 0 2px; }
+    &:last-child { border-radius: 0 0 2px 0; }
+    &:hover, &focus { background-color: $divider_color; color: $fg_color; }
+    &:active { background-color: $track_color; color: $fg_color; }
   }
-  .chat-meta-message {
-    padding-left: 4px;
-    @include font(caption);
-    color: $hint_fg_color;
-    &:rtl { padding-left: 0; padding-right: 4px; }
+}
+
+// counter
+.summary-source-counter {
+  font-size: 1em;
+  font-weight: bold;
+  height: 1.6em; width: 1.6em;
+  -shell-counter-overlap-x: 3px;
+  -shell-counter-overlap-y: 3px;
+  background-color: $primary_color;
+  color: $inverse_fg_color;
+  border: 2px solid $primary_color;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
+}
+
+.secondary-icon { icon-size: em(16px); }
+
+//chat bubbles
+.chat-body { spacing: 5px; }
+.chat-response { margin: 5px; }
+.chat-log-message { color: $fg_color; }
+.chat-new-group { padding-top: 1em; }
+.chat-received {
+  padding-left: 4px;
+  &:rtl { padding-left: 0px; padding-right: 4px; }
+}
+.chat-sent {
+  padding-left: 18pt;
+  color: $secondary_fg_color;
+  &:rtl { padding-left: 0; padding-right: 18pt; }
+}
+.chat-meta-message {
+  padding-left: 4px;
+  @include font(caption);
+  color: $hint_fg_color;
+  &:rtl { padding-left: 0; padding-right: 4px; }
+}
+
+%bubble_button {
+  @include button(normal);
+  padding: $container_padding * 2;
+  border-style: solid;
+  border-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+
+  &:insensitive { @include button(insensitive); }
+  &:hover { @include button(hover); }
+  &:focus { @include button(focus); }
+  &:active { @include button(active); }
+
+  // radius is 2 pixel less to fit in bubble
+  &:first-child {
+    border-radius: 0 0 0 $bt_radius;
   }
 
-  //hotplug
-  .hotplug-transient-box {
-    spacing: 6px;
-    padding: 2px 72px 2px 12px;
+  &:last-child {
+    border-right-width: 0;
+    border-radius: 0 0 $bt_radius 0;
   }
-    .hotplug-notification-item {
-      padding: 2px 10px;
-      &:focus { padding: 1px 71px 1px 11px; }
-    }
 
-    .hotplug-notification-item-icon {
-      icon-size: 24px;
-      padding: 2px 5px;
-    }
+  &:first-child:last-child {
+    border-radius: 0 0 $bt_radius $bt_radius;
+  }
+}
 
-    .hotplug-resident-box { spacing: 8px; }
+//hotplug
+.hotplug-transient-box {
+  spacing: 6px;
+  padding: 2px 72px 2px 12px;
+}
 
-    .hotplug-resident-mount {
-      spacing: 8px;
-      border-radius: $bt_radius;
-      &:hover { background-color: $divider_color; }
-      &:active { background-color: $track_color; }
-    }
+.hotplug-notification-item {
+  padding: 2px 10px;
+  @extend %bubble_button;
+  &:focus { padding: 1px 71px 1px 11px; }
+}
 
-    .hotplug-resident-mount-label {
-      color: inherit;
-      padding-left: 6px;
-    }
+.hotplug-notification-item-icon {
+  icon-size: 24px;
+  padding: 2px 5px;
+}
 
-    .hotplug-resident-mount-icon {
-      icon-size: 24px;
-      padding-left: 6px;
-    }
+.hotplug-resident-box { spacing: 8px; }
 
-    .hotplug-resident-eject-icon {
-      icon-size: 16px;
-    }
+.hotplug-resident-mount {
+  spacing: 8px;
+  border-radius: $bt_radius;
+  &:hover { background-color: $divider_color; }
+  &:active { background-color: $track_color; }
+}
 
-    .hotplug-resident-eject-button {
-      padding: 7px;
-      border-radius: $bt_radius;
-      color: $fg_color;
-    }
+.hotplug-resident-mount-label {
+  color: inherit;
+  padding-left: 6px;
+}
+
+.hotplug-resident-mount-icon {
+  icon-size: 24px;
+  padding-left: 6px;
+}
+
+.hotplug-resident-eject-icon {
+  icon-size: 16px;
+}
+
+.hotplug-resident-eject-button {
+  padding: 7px;
+  border-radius: $bt_radius;
+  color: $fg_color;
+}
 
 /* Eeeky things */
 
@@ -2486,6 +2639,22 @@ StWidget.focused .app-well-app-running-dot {
   box-shadow: $shadow_2;
 }
 
+// emoji
+.emoji-page {
+  .keyboard-key {
+    background-color: transparent;
+    border: none;
+    color: initial;
+  }
+}
+
+.emoji-panel {
+  .keyboard-key:latched {
+    border-color: lighten($primary_color, 5%);
+    background-color: $primary_color;
+  }
+}
+
 // IBus Candidate Popup
 
 .candidate-popup-content {
@@ -2531,7 +2700,7 @@ StWidget.focused .app-well-app-running-dot {
   background-size: contain;
   border: none;
   color: $inverse_fg_color;
-  border-radius: $bt_radius;
+  border-radius: $circular_radius;
   &:hover {
     border-color: $inverse_fg_color;
     color: $inverse_fg_color;
@@ -2728,6 +2897,67 @@ StWidget.focused .app-well-app-running-dot {
 .screen-shield-background { //just the shadow, really
   background: black;
   box-shadow: $shadow_5;
+}
+
+/* Screen Shield */
+
+.unlock-dialog-clock {
+  color: white;
+  font-weight: 300;
+  text-align: center;
+  spacing: 24px;
+  padding-bottom: 2.5em;
+}
+
+.unlock-dialog-clock-time {
+  font-size: 64pt;
+  padding-top: 42px;
+  font-feature-settings: "tnum";
+}
+
+.unlock-dialog-clock-date {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.unlock-dialog-clock-hint {
+  font-weight: normal;
+  padding-top: 48px;
+}
+
+.unlock-dialog-notifications-container {
+  margin: 12px 0;
+  spacing: 6px;
+  width: 23em;
+  background-color: transparent;
+  .summary-notification-stack-scrollview {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .notification,
+  .unlock-dialog-notification-source {
+    padding: 12px 6px;
+    border: none;
+    background-color: $bg_color;
+    color: $inverse_fg_color;
+    border-radius: $bt_radius;
+
+    &.critical { background-color: $alt_bg_color; }
+  }
+}
+
+.unlock-dialog-notification-label {
+  padding: 0px 0px 0px 12px;
+}
+
+.unlock-dialog-notification-count-text {
+  weight: bold;
+  padding: 0 6px;
+  color: $bg_color;
+  background-color: $inverse_secondary_fg_color;
+  border-radius: 99px;
+  margin-right: 12px;
 }
 
 #lockDialogGroup {
