@@ -731,7 +731,7 @@ $mdbt_radius: 100px;
 .popup-menu {
   min-width: 15em;
   color: $fg_color;
-  background-color: transparent;
+  background: none;
 
   .popup-menu-arrow { width: 16px; height: 16px; } //defined globally in the TOP BAR
 
@@ -742,11 +742,13 @@ $mdbt_radius: 100px;
     border-radius: 0 0 $bt_radius $bt_radius;
     border: none;
     box-shadow: none;
+    background-image: none;
 
     .popup-menu-item {
       margin: 0;
       border-radius: $bt_radius;
       color: rgba(black, 0.75);
+      background-image: none;
 
       &:hover {
         color: rgba(black, 0.85);
@@ -775,6 +777,7 @@ $mdbt_radius: 100px;
     color: $fg_color;
     transition-duration: $shorter_duration;
     border-radius: 100px;
+    background-image: none;
 
     &:ltr { padding-right: 1.5em; padding-left: 0; }
     &:rtl { padding-right: 0; padding-left: 1.5em; }
@@ -865,7 +868,7 @@ $mdbt_radius: 100px;
   -arrow-rise: 6px;
   -arrow-box-shadow: none; //dreaming. bug #689995
   margin: 0;
-  background-color: transparent;
+  background-image: none;
   border-radius: 0;
   box-shadow: none;
 
@@ -1877,7 +1880,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 /* OVERVIEW */
 
 #overview {
-  spacing: 24px; //
+  spacing: 24px;
   StScrollBar { @extend %overview_scrollbar; }
 }
 
@@ -2034,16 +2037,16 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 
 /* App Vault/Grid */
 .icon-grid {
-  spacing: 30px;
-  -shell-grid-horizontal-item-size: 136px;
-  -shell-grid-vertical-item-size: 136px;
+  // spacing: 30px;
+  // -shell-grid-horizontal-item-size: 136px;
+  // -shell-grid-vertical-item-size: 136px;
 
   row-spacing: $container_padding * 6;
   column-spacing: $container_padding * 6;
   max-row-spacing: $container_padding * 12;
   max-column-spacing: $container_padding * 12;
 
-  .overview-icon { icon-size: 96px; }
+  // .overview-icon { icon-size: 96px; }
 }
 //.app-display { spacing: 20px; }
 
@@ -2220,14 +2223,10 @@ StWidget.focused .app-well-app-running-dot {
 
 .no-frequent-applications-label { @extend %status_text; }
 
-.grid-search-result .overview-icon.overview-icon-with-label {
+.grid-search-result .overview-icon.overview-icon-with-label,
+.app-well-app .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
   spacing: 6px;
-}
-
-
-.overview-icon.overview-icon-with-label {
-  padding: 10px 8px 5px 8px;
 
   > StBoxLayout {
     spacing: 6px;
@@ -2240,7 +2239,6 @@ StWidget.focused .app-well-app-running-dot {
 
   .overview-icon {
     background-color: $inverse_bg_color;
-    padding: 16px;
     border-radius: $bt_radius * 2;
   }
 
@@ -2253,7 +2251,8 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog {
   border-radius: $bt_radius * 4;
   border: 2px solid rgba(white, 0.15);
-  padding: 12px;
+  spacing: 12px;
+  padding: 0;
   background-color: rgba(#222, 0.95);
 
   & .folder-name-container {
@@ -2410,6 +2409,7 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba($base_color, 0.92);
   border: none;
   box-shadow: $shadow_2;
+
   &:hover { background-color: rgba($base_color, 0.95); }
   &:focus { background-color: $base_color; }
 
@@ -2422,15 +2422,33 @@ StWidget.focused .app-well-app-running-dot {
     border-top: 1px solid $border_color;
     spacing: 1px;
   }
+
   .notification-button {
     min-height: 40px;
     padding: 0 16px;
     background-color: transparent;
     color: $secondary_fg_color;
     font-weight: 500;
-    &:first-child { border-radius: 0 0 0 2px; }
-    &:last-child { border-radius: 0 0 2px 0; }
-    &:hover, &focus { background-color: $divider_color; color: $fg_color; }
+    border-width: 0;
+
+    &:first-child { border-radius: 0 0 0 $bt_radius; }
+
+    &:last-child { border-radius: 0 0 $bt_radius 0; }
+
+    &:only-child, &:first-child:last-child { border-radius: 0 0 $bt_radius $bt_radius; }
+
+    &:focus {
+      background-color: transparent;
+      color: $secondary_fg_color;
+      box-shadow: inset 0 0 0 2px $divider_color;
+    }
+
+    &:hover, &:focus:hover {
+      background-color: $divider_color;
+      color: $fg_color;
+      box-shadow: none;
+    }
+
     &:active { background-color: $track_color; color: $fg_color; }
   }
 }
@@ -2714,7 +2732,8 @@ StWidget.focused .app-well-app-running-dot {
   max-width: 23em;
 }
 
-.login-dialog {
+.login-dialog,
+.unlock-dialog {
   //reset
   border: none;
   background-color: transparent;
