@@ -656,20 +656,6 @@ list {
   }
 }
 
-row#Focus,
-row#ClickMethod,
-row#StaticWorkspaceTweak, // for 3.26.0
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
-  padding: 0;
-  // border: 1px solid $frame;
-
-  // row:not(:last-child) { border-bottom: 1px solid $divider; }
-
-  &.tweak > list { margin-top: -3px; }
-}
-
 // Add more spaces between title and list
 row#Focus,
 row#ClickMethod,
@@ -777,7 +763,7 @@ dialog.background.csd {
 }
 
 %circular_list {
-  border-radius: $corner-radius;
+  border-radius: $corner-radius + 1px;
   box-shadow: none;
   border: 1px solid $frame;
 }
@@ -823,16 +809,18 @@ hdyleaflet, leaflet {
     row.activatable { @extend %circular_row; }
   }
 
-  > box.vertical list:not(.view) {
-    row.activatable {
-      margin-right: 4px;
-      border-radius: 0 1000px 1000px 0;
+  > box.vertical > scrolledwindow > viewport.frame {
+    list:not(.view):not(.tweak-group) {
+      row.activatable {
+        margin-right: 4px;
+        border-radius: 0 $circular-radius $circular-radius 0;
 
-      &:selected {
-        background-color: $overlay-checked;
-        color: $primary;
+        &:selected {
+          background-color: $overlay-checked;
+          color: $primary;
 
-        image, label { color: $primary; }
+          image, label { color: $primary; }
+        }
       }
     }
   }

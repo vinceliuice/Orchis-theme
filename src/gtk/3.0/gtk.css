@@ -951,52 +951,40 @@ stacksidebar.sidebar row.needs-attention > label:dir(rtl), .stack-switcher > but
   background-position: left 3px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:not(:first-child), .linked:not(.vertical) > spinbutton:not(:first-child):not(.vertical), .linked:not(.vertical) > entry:not(:first-child), .linked:not(.vertical) > button:not(:first-child) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.linked:not(.vertical) > spinbutton.vertical, .linked:not(.vertical) > spinbutton:not(.vertical), .linked:not(.vertical) > entry, .linked:not(.vertical) > button {
+  border-radius: 0;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:not(:last-child), .linked:not(.vertical) > spinbutton:not(:last-child):not(.vertical), .linked:not(.vertical) > entry:not(:last-child), .linked:not(.vertical) > button:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.linked.vertical > spinbutton.vertical:not(:first-child), .linked.vertical > spinbutton:not(:first-child):not(.vertical), .linked.vertical > entry:not(:first-child), .linked.vertical > button:not(:first-child) {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.linked.vertical > spinbutton.vertical:not(:last-child), .linked.vertical > spinbutton:not(:last-child):not(.vertical), .linked.vertical > entry:not(:last-child), .linked.vertical > button:not(:last-child) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.linked:not(.vertical) > button.image-button:first-child:not(.text-button) {
+.linked:not(.vertical) > spinbutton.vertical:first-child, .linked:not(.vertical) > spinbutton:first-child:not(.vertical), .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
 }
 
-.linked:not(.vertical) > button.image-button:last-child:not(.text-button) {
+.linked:not(.vertical) > spinbutton.vertical:last-child, .linked:not(.vertical) > spinbutton:last-child:not(.vertical), .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-.linked:not(.vertical) > button.image-button:only-child:not(.text-button) {
-  border-radius: 9999px;
+.linked:not(.vertical) > spinbutton.vertical:only-child, .linked:not(.vertical) > spinbutton:only-child:not(.vertical), .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
+  border-radius: 12px;
 }
 
-.linked.vertical > button.image-button:first-child:not(.text-button) {
+.linked.vertical > spinbutton.vertical, .linked.vertical > spinbutton:not(.vertical), .linked.vertical > entry, .linked.vertical > button {
+  border-radius: 0;
+}
+
+.linked.vertical > spinbutton.vertical:first-child, .linked.vertical > spinbutton:first-child:not(.vertical), .linked.vertical > entry:first-child, .linked.vertical > button:first-child {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
-.linked.vertical > button.image-button:last-child:not(.text-button) {
+.linked.vertical > spinbutton.vertical:last-child, .linked.vertical > spinbutton:last-child:not(.vertical), .linked.vertical > entry:last-child, .linked.vertical > button:last-child {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-.linked.vertical > button.image-button:only-child:not(.text-button) {
-  border-radius: 9999px;
+.linked.vertical > spinbutton.vertical:only-child, .linked.vertical > spinbutton:only-child:not(.vertical), .linked.vertical > entry:only-child, .linked.vertical > button:only-child {
+  border-radius: 12px;
 }
 
 /* menu buttons */
@@ -1194,7 +1182,7 @@ combobox > .linked:not(.vertical) > button:not(:only-child) {
   min-width: 16px;
   margin: 6px;
   padding: 4px;
-  border-radius: 9999px;
+  border-radius: 12px;
 }
 
 .linked:not(.vertical) > combobox:not(:first-child) > box > button.combo {
@@ -1350,23 +1338,6 @@ searchbar > revealer > box {
 
 .nemo-window .primary-toolbar .linked:not(.vertical) > button:not(.text-button), headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
   border-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button:not(:first-child):not(.text-button), headerbar .linked:not(.vertical) > button:not(:first-child):not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar .linked:not(.vertical) > button:not(:last-child):not(.text-button), headerbar .linked:not(.vertical) > button:not(:last-child):not(.suggested-action):not(.destructive-action) {
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child, headerbar .linked:not(.vertical) > button.image-button:not(.text-button):first-child:not(.suggested-action):not(.destructive-action) {
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-}
-
-.nemo-window .primary-toolbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child, headerbar .linked:not(.vertical) > button.image-button:not(.text-button):last-child:not(.suggested-action):not(.destructive-action) {
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
 }
 
 .nemo-window .primary-toolbar button:focus:not(.text-button), headerbar button:focus:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:hover:not(.text-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:active:not(.text-button), headerbar button:active:not(.suggested-action):not(.destructive-action), .nemo-window .primary-toolbar button:checked:not(.text-button), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
@@ -2083,6 +2054,10 @@ frame > paned > notebook > header, notebook.frame > header {
 notebook, notebook.frame {
   background-color: #FFFFFF;
   border-radius: 12px;
+}
+
+notebook.frame frame, notebook.frame frame border, notebook.frame frame list {
+  border-radius: 13px;
 }
 
 notebook:focus tab:checked {
@@ -3398,15 +3373,8 @@ messagedialog.csd .dialog-action-box {
   margin-top: -6px;
 }
 
-messagedialog.csd .dialog-action-box button {
+messagedialog.csd .dialog-action-box button, messagedialog.csd .dialog-action-box button:first-child, messagedialog.csd .dialog-action-box button:last-child {
   border-radius: 9999px;
-}
-
-messagedialog.csd .dialog-action-box button:not(:first-child), messagedialog.csd .dialog-action-box button:not(:last-child) {
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
 }
 
 messagedialog.csd .dialog-action-box button:not(:last-child) {
@@ -3993,23 +3961,26 @@ stackswitcher {
   margin: 6px 0;
 }
 
-stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
   margin: 0 0;
-  min-width: 104px;
   border-radius: 9999px;
   background-color: transparent;
 }
 
-stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):focus {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
+  min-width: 100px;
+}
+
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
-stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):active {
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):active {
   box-shadow: inset 0 0 0 9999px alpha(#1A73E8, 0.08);
   background-image: radial-gradient(circle, alpha(#1A73E8, 0.08) 10%, transparent 0%);
 }
 
-stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):checked {
+stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
   background-color: #1A73E8;
   color: white;
 }
@@ -4660,24 +4631,6 @@ frame.gedit-map-frame > border:dir(rtl) {
 
 row#Focus,
 row#ClickMethod,
-row#StaticWorkspaceTweak,
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak,
-row#workspaces-only-on-primary {
-  padding: 0;
-}
-
-row#Focus.tweak > list,
-row#ClickMethod.tweak > list,
-row#StaticWorkspaceTweak.tweak > list,
-row#dynamic-workspaces.tweak > list,
-row#PrimaryWorkspaceTweak.tweak > list,
-row#workspaces-only-on-primary.tweak > list {
-  margin-top: -3px;
-}
-
-row#Focus,
-row#ClickMethod,
 row#PrimaryWorkspaceTweak,
 row#workspaces-only-on-primary {
   margin-top: 4px;
@@ -4773,26 +4726,26 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizo
 hdyleaflet list.frame, leaflet list.frame, hdyleaflet frame.view, leaflet frame.view, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list), .tweak-group-startup, list.tweak-group list, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame,
 window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame,
 window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame {
-  border-radius: 12px;
+  border-radius: 13px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-hdyleaflet list.frame row.activatable:first-child, leaflet list.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, leaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:first-child,
+hdyleaflet list.frame row.activatable:first-child, leaflet list.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, leaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, notebook.frame frame row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:first-child,
 window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:first-child,
 window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:first-child {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
-hdyleaflet list.frame row.activatable:last-child, leaflet list.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, leaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:last-child,
+hdyleaflet list.frame row.activatable:last-child, leaflet list.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, leaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, notebook.frame frame row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:last-child,
 window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:last-child,
 window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:last-child {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-hdyleaflet list.frame row.activatable:only-child, leaflet list.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, leaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:only-child,
+hdyleaflet list.frame row.activatable:only-child, leaflet list.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, leaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, notebook.frame frame row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child, window.background.csd > leaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:only-child,
 window.background.csd > hdyleaflet > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:only-child,
 window.background.csd > box.horizontal > stack.background > widget > scrolledwindow > viewport.frame > hdycolumn > box.vertical > list.frame > row.activatable:only-child {
   border-radius: 12px;
@@ -4806,17 +4759,17 @@ hdyleaflet frame.view list, leaflet frame.view list {
   background: none;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable, leaflet > box.vertical list:not(.view) row.activatable {
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable {
   margin-right: 4px;
-  border-radius: 0 1000px 1000px 0;
+  border-radius: 0 9999px 9999px 0;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable:selected, leaflet > box.vertical list:not(.view) row.activatable:selected {
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected {
   background-color: alpha(currentColor, 0.1);
   color: #1A73E8;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable:selected image, hdyleaflet > box.vertical list:not(.view) row.activatable:selected label, leaflet > box.vertical list:not(.view) row.activatable:selected image, leaflet > box.vertical list:not(.view) row.activatable:selected label {
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label {
   color: #1A73E8;
 }
 

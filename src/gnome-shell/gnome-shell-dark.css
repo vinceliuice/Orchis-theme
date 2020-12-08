@@ -405,7 +405,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 24px;
   color: rgba(255, 255, 255, 0.9);
   background-color: #202020;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 transparent;
 }
 
@@ -492,20 +492,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .modal-dialog-linked-button:first-child {
   margin-left: 6px;
   margin-right: 0;
-  border-radius: 100px 0px 0px 100px;
+  border-radius: 9999px 0px 0px 9999px;
 }
 
 .modal-dialog-linked-button:last-child {
   margin-left: 0;
   margin-right: 6px;
   border-right-width: 0px;
-  border-radius: 0px 100px 100px 0;
+  border-radius: 0px 9999px 9999px 0;
 }
 
 .modal-dialog-linked-button:first-child:last-child {
   margin: 0 6px 6px 6px;
   border-right-width: 0px;
-  border-radius: 100px;
+  border-radius: 9999px;
 }
 
 .show-processes-dialog-subject,
@@ -538,7 +538,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* End Session Dialog */
 .end-session-dialog {
   width: 30em;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
@@ -684,11 +684,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 28em;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .prompt-dialog .modal-dialog-content-box {
   margin-bottom: 24px;
+}
+
+.prompt-dialog .modal-dialog-linked-button:first-child {
+  color: #FF5252;
+}
+
+.prompt-dialog .modal-dialog-linked-button:first-child:active {
+  color: white;
+  background-color: #FF5252;
+}
+
+.prompt-dialog .modal-dialog-linked-button:last-child {
+  color: white;
+  background-color: #4586D8;
+}
+
+.prompt-dialog .modal-dialog-linked-button:last-child:hover {
+  color: white;
+  background-color: #6b9fe0;
+}
+
+.prompt-dialog .modal-dialog-linked-button:last-child:active {
+  color: white;
+  background-color: #3078d4;
+}
+
+.prompt-dialog .modal-dialog-linked-button:last-child:insensitive {
+  color: rgba(69, 134, 216, 0.5);
+  background-color: rgba(69, 134, 216, 0.15);
 }
 
 .prompt-dialog .message-dialog-main-layout {

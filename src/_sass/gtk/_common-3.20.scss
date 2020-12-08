@@ -501,16 +501,12 @@ button {
       @extend %linked;
 
       // &:focus { box-shadow: none; }
-
-      &.image-button:not(.text-button) { @extend %linked-image-button; }
     }
 
     .linked.vertical > & {
       @extend %linked-vertical;
 
       // &:focus { box-shadow: none; }
-
-      &.image-button:not(.text-button) { @extend %linked-vertical-image-button; }
     }
 
     .linked:not(.vertical) > &.flat,
@@ -657,46 +653,26 @@ button {
 // }
 
 %linked {
-  &:not(:first-child) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+  border-radius: 0;
+
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-bottom-left-radius: $corner-radius;
   }
 
-  &:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  &:last-child {
+    border-top-right-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
   }
 }
 
 %linked-vertical {
-  &:not(:first-child) {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
+  border-radius: 0;
 
-  &:not(:last-child) {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}
-
-%linked-image-button {
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-bottom-left-radius: $corner-radius;
-  }
-
-  &:last-child {
-    border-top-right-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $circular-radius;
-  }
-}
-
-%linked-vertical-image-button {
   &:first-child {
     border-top-left-radius: $corner-radius;
     border-top-right-radius: $corner-radius;
@@ -708,7 +684,7 @@ button {
   }
 
   &:only-child {
-    border-radius: $circular-radius;
+    border-radius: $corner-radius;
   }
 }
 
@@ -945,7 +921,7 @@ combobox {
     min-width: 16px;
     margin: ($medium-size - $small-size) / 2;
     padding: ($small-size - 16px) / 2;
-    border-radius: $circular-radius;
+    border-radius: $corner-radius;
   }
 }
 
@@ -1088,58 +1064,39 @@ searchbar > revealer > box {
  * Header bars *
  ***************/
 
- %titlebar-button {
-   @extend %button-flat;
-   color: $titlebar-text-secondary;
+%titlebar-button {
+  @extend %button-flat;
+  color: $titlebar-text-secondary;
 
-   .linked:not(.vertical) > & {
-     border-radius: $circular-radius;
+  .linked:not(.vertical) > & {
+    border-radius: $circular-radius;
+  }
 
-     &:not(:first-child), &:not(:last-child) {
-       border-top-left-radius: $circular-radius;
-       border-bottom-left-radius: $circular-radius;
-       border-top-right-radius: $circular-radius;
-       border-bottom-right-radius: $circular-radius;
-     }
+  &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
 
-     &.image-button:not(.text-button) {
-       &:first-child {
-         border-top-left-radius: $circular-radius;
-         border-bottom-left-radius: $circular-radius;
-       }
+  &:disabled { color: $titlebar-text-secondary-disabled; }
 
-       &:last-child {
-         border-top-right-radius: $circular-radius;
-         border-bottom-right-radius: $circular-radius;
-       }
-     }
-   }
+  &:checked {
+    &:disabled {
+      background-color: transparent;
+      color: $titlebar-text-disabled;
+    }
+  }
 
-   &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
+  &:backdrop {
+    color: $titlebar-text-disabled;
 
-   &:disabled { color: $titlebar-text-secondary-disabled; }
+    &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
 
-   &:checked {
-     &:disabled {
-       background-color: transparent;
-       color: $titlebar-text-disabled;
-     }
-   }
+    &:disabled { color: $titlebar-text-secondary-disabled; }
 
-   &:backdrop {
-     color: $titlebar-text-disabled;
+    &:checked {
+      color: $titlebar-text-secondary;
 
-     &:focus, &:hover, &:active { color: $titlebar-text-secondary; }
-
-     &:disabled { color: $titlebar-text-secondary-disabled; }
-
-     &:checked {
-       color: $titlebar-text-secondary;
-
-       &:disabled { color: $titlebar-text-secondary-disabled; }
-     }
-   }
- }
+      &:disabled { color: $titlebar-text-secondary-disabled; }
+    }
+  }
+}
 
 %titlebar-entry {
   background-color: $titlebar-fill;
@@ -1768,6 +1725,12 @@ notebook {
   &, &.frame {
     background-color: $base;
     border-radius: $corner-radius;
+  }
+
+  &.frame frame {
+    &, border, list { border-radius: $corner-radius + 1px; }
+
+    row.activatable { @extend %circular_row; }
   }
 
   &:focus tab:checked {
@@ -2963,14 +2926,8 @@ messagedialog { // Message Dialog styling
 
       button {
         @extend %button-flat;
-        border-radius: $circular-radius;
 
-        &:not(:first-child), &:not(:last-child) {
-          border-top-left-radius: $circular-radius;
-          border-bottom-left-radius: $circular-radius;
-          border-top-right-radius: $circular-radius;
-          border-bottom-right-radius: $circular-radius;
-        }
+        &, &:first-child, &:last-child { border-radius: $circular-radius; }
 
         &:not(:last-child) { margin-right: $container-padding; }
 
@@ -3665,11 +3622,12 @@ stackswitcher {
   padding: 0;
   margin: $container-padding 0;
 
-  &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+  &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
     margin: 0 0;
-    min-width: 120px - 8px * 2;
     border-radius: $circular-radius;
     background-color: transparent;
+
+    &.text-button { min-width: 100px; }
 
     &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
 
