@@ -35,7 +35,6 @@
           border-radius: $window-radius - 6px;
 
           > row.activatable {
-            // Needs overriding of the GtkListBoxRow padding
             border-radius: 0;
             margin: -8px 0 -8px 0;
 
@@ -48,6 +47,18 @@
             &, image.sidebar-icon, label.sidebar-label {
               color: $titlebar-text-secondary;
             }
+
+            image.sidebar-icon {
+              padding-right: 8px;
+            }
+
+            label.sidebar-label {
+              color: inherit;
+              min-height: 54px;
+              padding: 0 0 0 4px;
+            }
+
+            &.sidebar-placeholder-row { background-color: transparent; }
 
             &:drop(active) {
               // border-radius: $window-radius - 6px;
@@ -64,7 +75,7 @@
             }
 
             button.sidebar-button {
-              @extend %button-on-dark;
+              @if $topbar == 'dark' { @extend %button-on-dark; }
             }
 
             &:hover {
@@ -82,6 +93,7 @@
                 color: $primary;
                 background-color: $base;
                 box-shadow: 4px 0 $base;
+                padding: 0 0 0 14px;
                 border-image-width: 10px 10px 10px 18px;
                 border-image-slice: 10 10 10 18;
                 border-image-repeat: stretch;
@@ -106,18 +118,6 @@
                 color: $titlebar-text-secondary-disabled;
               }
             }
-
-            image.sidebar-icon {
-              padding-right: 8px;
-            }
-
-            label.sidebar-label {
-              color: inherit;
-              min-height: 54px;
-              padding: 0 0 0 14px;
-            }
-
-            &.sidebar-placeholder-row { background-color: transparent; }
           }
 
           > separator { background: none; }
@@ -680,6 +680,39 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
   }
 }
 
+%circular_list {
+  border-radius: $corner-radius + 1px;
+  box-shadow: none;
+  border: 1px solid $divider;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
+
+%sidebar_row {
+  margin-right: 4px;
+  border-radius: 0 $circular-radius $circular-radius 0;
+
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
+
+    image, label { color: $primary; }
+  }
+}
 
 /************************
  * Gnome Control Center *
@@ -725,13 +758,13 @@ window.background.csd {
           }
         }
 
-        > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
-          > list.frame {
-            @extend %circular_list;
-
-            > row.activatable { @extend %circular_row; }
-          }
-        }
+        // > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
+        //   > list.frame {
+        //     @extend %circular_list;
+        //
+        //     > row.activatable { @extend %circular_row; }
+        //   }
+        // }
       }
     }
 
@@ -762,65 +795,35 @@ dialog.background.csd {
   }
 }
 
-%circular_list {
-  border-radius: $corner-radius + 1px;
-  box-shadow: none;
-  border: 1px solid $frame;
-}
-
-%circular_row {
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-top-right-radius: $corner-radius;
-  }
-
-  &:last-child { // Not use ?
-    border-bottom-left-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $corner-radius;
-  }
-}
-
 hdyleaflet, leaflet {
   frame > border { border: none; }
 
-  frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
-    @extend %circular_list;
-
-    row.activatable { @extend %circular_row; }
-  }
-
-  frame.view {
-    @extend %circular_list;
-
-    list {
-      background: none;
-
-      row.activatable { @extend %circular_row; }
-    }
-  }
-
-  list.frame {
-    @extend %circular_list;
-
-    row.activatable { @extend %circular_row; }
-  }
+  // frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
+  //   @extend %circular_list;
+  //
+  //   row.activatable { @extend %circular_row; }
+  // }
+  //
+  // frame.view {
+  //   @extend %circular_list;
+  //
+  //   list {
+  //     background: none;
+  //
+  //     row.activatable { @extend %circular_row; }
+  //   }
+  // }
+  //
+  // list.frame {
+  //   @extend %circular_list;
+  //
+  //   row.activatable { @extend %circular_row; }
+  // }
 
   > box.vertical > scrolledwindow > viewport.frame {
     list:not(.view):not(.tweak-group) {
       row.activatable {
-        margin-right: 4px;
-        border-radius: 0 $circular-radius $circular-radius 0;
-
-        &:selected {
-          background-color: $overlay-checked;
-          color: $primary;
-
-          image, label { color: $primary; }
-        }
+        @extend %sidebar_row;
       }
     }
   }
@@ -834,10 +837,16 @@ window#gnome-system-monitor.background.csd {
     background-color: $base;
     border-radius: 0 0 $window-radius $window-radius;
 
-    > box.vertical > scrolledwindow {
-      treeview.view:not(.progressbar):not(.trough) {
-        background: none;
-        @extend .view;
+    > box.vertical {
+      > scrolledwindow {
+        treeview.view:not(.progressbar):not(.trough) {
+          background: none;
+          @extend .view;
+        }
+      }
+
+      > revealer > actionbar > revealer > box {
+        border-radius: 0 0 $window-radius $window-radius;
       }
     }
   }
@@ -889,6 +898,14 @@ window.background.csd {
 }
 
 
+/***************
+ * Gnome Music *
+ ***************/
+window.background.csd {
+  box.vertical > overlay > stack.background { border-radius: 0 0 $window-radius $window-radius; }
+}
+
+
 /****************
  * Gnome Clocks *
  ****************/
@@ -898,10 +915,18 @@ window.background.csd.unified {
 
   > deck > deck > deck {
     > box.vertical > headerbar.titlebar.windowhandle {
+      border-top-left-radius: $window-radius;
+      border-top-right-radius: $window-radius;
+      box-shadow: none;
+
       > viewswitchertitle > squeezer {
+        margin: 0 0;
+        background: none;
+
         > viewswitcher > box.horizontal {
           > button.radio {
             margin: 0;
+            padding: 0;
             border-radius: 0;
           }
         }
@@ -1523,17 +1548,25 @@ box.vertical > revealer > toolbar.search-bar {
  *******************/
 window.background.csd {
   > box.vertical {
-    > scrolledwindow {
-      > iconview.view.content-view:not(:hover):not(:selected) {
-        background-color: transparent;
-        border-radius: $window-radius;
-      }
+    // > scrolledwindow {
+    //   > iconview.view.content-view {
+    //     &:not(:hover):not(:selected) {
+    //       background-color: transparent;
+    //     }
+    //   }
+    // }
+
+    > paned.horizontal > box.vertical > scrolledwindow {
+      > treeview.view:not(:hover):not(:selected) { background-color: transparent; }
     }
   }
 
   evview.view.content-view {
-    background-color: transparent;
     border-radius: 0 0 $window-radius $window-radius;
+
+    &:selected, &:selected:backdrop {
+      @extend %selected_items_primary;
+    }
   }
 }
 
@@ -1742,7 +1775,68 @@ window#GearyMainWindow.background.csd {
         }
       }
     }
+
+    .geary-expanded {
+      animation: none;
+      background-image: none;
+
+      > .geary-composer-embed {
+        actionbar > revealer > box { border-radius: 0; }
+
+        headerbar {
+          color: $text;
+          background-color: $background;
+          box-shadow: none;
+          border-bottom: 1px solid $frame;
+
+          button { @extend %button-flat; }
+        }
+      }
+    }
+
+    .geary-composer-box {
+      actionbar > revealer > box { border-bottom-left-radius: 0; }
+    }
   }
+}
+
+window.background.csd.unified {
+  squeezer {
+    min-height: 0;
+    padding: 0 0;
+    margin: $container-padding 0;
+    border-radius: $circular-radius;
+    background-color: $overlay-normal;
+    color: on($titlebar);
+
+    viewswitcher { margin: 0 0; }
+
+    button {
+      margin: 0 0;
+      border-radius: $circular-radius;
+      background-color: transparent;
+
+      &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
+
+      &:active {
+        box-shadow: inset 0 0 0 9999px gtkalpha($primary, 0.08);
+        background-image: radial-gradient(circle, gtkalpha($primary, 0.08) 10%, transparent 0%);
+      }
+
+      &:checked {
+        background-color: $primary;
+        color: on($primary);
+      }
+    }
+  }
+
+  // preferencesgroup {
+  //   list.content {
+  //     @extend %circular_list;
+  //
+  //     row.activatable { @extend %circular_row; }
+  //   }
+  // }
 }
 
 

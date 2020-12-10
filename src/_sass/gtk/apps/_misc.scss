@@ -298,3 +298,36 @@ window.background:not(.csd) {
  * Synapse *
  ***********/
 box.vertical > widget > widget:selected { @extend %selected_items; }
+
+/*********
+ * Pamac *
+ *********/
+window.background.csd {
+  > box.vertical > overlay > stack > box.vertical > box.horizontal {
+    > revealer > stack {
+      &, // Search left side
+      > scrolledwindow > viewport.frame, // Installed left side
+      > box.vertical > stack > scrolledwindow > viewport.frame { // Browse left side
+        > list {
+          border: none;
+          border-radius: 0;
+
+          > row.activatable {
+            @extend %sidebar_row;
+          }
+        }
+      }
+    }
+
+    > box.vertical > stack > scrolledwindow > viewport.frame { // App lists
+      > list {
+        border: none;
+        border-radius: 0;
+
+        > row.activatable {
+          &:first-child, &:last-child { border-radius: 0; }
+        }
+      }
+    }
+  }
+}
