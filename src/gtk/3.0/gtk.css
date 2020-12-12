@@ -1354,7 +1354,7 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 18px 18px 0 0;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #2C2C2C;
   color: white;
 }
@@ -1432,7 +1432,7 @@ searchbar > revealer > box {
 .titlebar.selection-mode {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
   animation: ripple-on-headerbar 225ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17), inset 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
   background-color: #1A73E8;
   color: white;
 }
@@ -1537,6 +1537,10 @@ searchbar > revealer > box {
 headerbar {
   min-height: 48px;
   padding: 0 6px;
+}
+
+headerbar:not(.titlebar) {
+  box-shadow: none;
 }
 
 box.vertical headerbar {
@@ -2015,6 +2019,10 @@ notebook, notebook.frame {
 
 notebook.frame frame > border {
   border: none;
+  border-radius: 12px;
+}
+
+notebook.frame frame > list row.activatable {
   border-radius: 12px;
 }
 
@@ -3027,18 +3035,23 @@ printdialog .dialog-action-box {
 /**********
  * Frames *
  **********/
-frame > border, .frame {
+frame > border,
+.frame {
   margin: 0;
   padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0;
   box-shadow: none;
 }
 
-.frame.view, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.frame.view:not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.frame.view {
+frame > border.view,
+.frame.view,
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.frame.view:not(.progressbar):not(.trough),
+filechooser stack.view scrolledwindow treeview.frame.view {
   border-radius: 12px;
 }
 
+frame > border.flat,
 .frame.flat {
   border-style: none;
 }
@@ -3047,18 +3060,9 @@ frame.flat > border, statusbar frame > border {
   border: none;
 }
 
-stack:not(.main-container) viewport.frame frame > border {
-  border: none;
-}
-
-stack:not(.view) > stack frame > border,
-stack:not(.view) > box > stack > box > frame > border {
-  border: none;
-}
-
 actionbar > revealer > box {
   padding: 6px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   background-color: #FFFFFF;
   background-clip: border-box;
 }
@@ -3185,7 +3189,7 @@ stacksidebar.sidebar separator.horizontal, button.font separator, button.file se
  * Lists *
  *********/
 list {
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
   background-color: #FFFFFF;
 }
 
@@ -4625,25 +4629,36 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right + separator {
   background-image: image(rgba(255, 255, 255, 0.12));
 }
 
-stack:not(.main-container) viewport.frame list, stack:not(.view) > stack frame > list,
-stack:not(.view) > box > stack > box > frame > list, .tweak-group-startup, list.tweak-group list {
+window.background.csd stack stack stack frame > list,
+window.background.csd > stack > stack > box > frame > list,
+window.background.csd > stack > stack > box > box > frame > list,
+window.background.csd > stack > box > stack > box > frame > list,
+window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
+window.background.csd > stack > scrolledwindow > viewport > box > list,
+window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, .tweak-group-startup, list.tweak-group list {
   border-radius: 13px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-stack:not(.main-container) viewport.frame list row.activatable:first-child, stack:not(.view) > stack frame > list row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child {
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
-stack:not(.main-container) viewport.frame list row.activatable:last-child, stack:not(.view) > stack frame > list row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child {
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-stack:not(.main-container) viewport.frame list row.activatable:only-child, stack:not(.view) > stack frame > list row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child {
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child {
   border-radius: 12px;
+}
+
+window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus, preferencesgroup list row.activatable:focus, .geary-accounts-editor-pane list row.activatable:focus, window.background.csd.unified > deck > deck > deck list row.activatable:focus, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:focus, hdyleaflet overlay scrolledwindow > viewport list row.activatable:focus, leaflet stack.background scrolledwindow > viewport list row.activatable:focus, leaflet overlay scrolledwindow > viewport list row.activatable:focus, .tweak-group-startup row.activatable:focus, list.tweak-group list row.activatable:focus {
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > list > row.activatable,
@@ -4762,6 +4777,10 @@ window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical
   border-radius: 0 0 18px 18px;
 }
 
+window#gnome-system-monitor.background:not(.csd) > box.vertical > headerbar {
+  box-shadow: none;
+}
+
 /************************
  * Gnome Sound Recorder *
  ************************/
@@ -4816,7 +4835,7 @@ window.background.csd.unified {
 window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle {
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
-  box-shadow: none;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle > viewswitchertitle > squeezer {
@@ -5621,6 +5640,28 @@ window.background.csd.unified squeezer button:active {
 window.background.csd.unified squeezer button:checked {
   background-color: #1A73E8;
   color: white;
+}
+
+.geary-accounts-editor-pane frame:not(.geary-signature) > border,
+.geary-accounts-editor-pane scrolledwindow.frame {
+  border: none;
+}
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd stack stack stack frame > border,
+window.background.csd > stack > stack > box > frame > border,
+window.background.csd > stack > stack > box > box > frame > border,
+window.background.csd > stack > box > stack > box > frame > border,
+window.background.csd > stack > box > stack > scrolledwindow > viewport frame > border,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > border,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > border {
+  border: none;
+}
+
+window.background.csd > stack > box > box > list {
+  border-bottom-left-radius: 18px;
 }
 
 /***********

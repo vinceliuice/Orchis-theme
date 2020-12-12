@@ -700,6 +700,10 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
   &:only-child {
     border-radius: $corner-radius;
   }
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px $overlay-focus;
+  }
 }
 
 %sidebar_row {
@@ -796,29 +800,17 @@ dialog.background.csd {
 }
 
 hdyleaflet, leaflet {
-  frame > border { border: none; }
+  stack.background, overlay {
+    scrolledwindow > viewport {
+      list {
+        @extend %circular_list;
 
-  // frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
-  //   @extend %circular_list;
-  //
-  //   row.activatable { @extend %circular_row; }
-  // }
-  //
-  // frame.view {
-  //   @extend %circular_list;
-  //
-  //   list {
-  //     background: none;
-  //
-  //     row.activatable { @extend %circular_row; }
-  //   }
-  // }
-  //
-  // list.frame {
-  //   @extend %circular_list;
-  //
-  //   row.activatable { @extend %circular_row; }
-  // }
+        row.activatable { @extend %circular_row; }
+      }
+    }
+  }
+
+  frame > border { border: none; }
 
   > box.vertical > scrolledwindow > viewport.frame {
     list:not(.view):not(.tweak-group) {
@@ -850,6 +842,10 @@ window#gnome-system-monitor.background.csd {
       }
     }
   }
+}
+
+window#gnome-system-monitor.background:not(.csd) {
+  > box.vertical > headerbar { box-shadow: none; }
 }
 
 
@@ -917,7 +913,7 @@ window.background.csd.unified {
     > box.vertical > headerbar.titlebar.windowhandle {
       border-top-left-radius: $window-radius;
       border-top-right-radius: $window-radius;
-      box-shadow: none;
+      box-shadow: inset 0 -1px $divider;
 
       > viewswitchertitle > squeezer {
         margin: 0 0;
@@ -931,6 +927,12 @@ window.background.csd.unified {
           }
         }
       }
+    }
+
+    list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
     }
   }
 }
@@ -1548,14 +1550,6 @@ box.vertical > revealer > toolbar.search-bar {
  *******************/
 window.background.csd {
   > box.vertical {
-    // > scrolledwindow {
-    //   > iconview.view.content-view {
-    //     &:not(:hover):not(:selected) {
-    //       background-color: transparent;
-    //     }
-    //   }
-    // }
-
     > paned.horizontal > box.vertical > scrolledwindow {
       > treeview.view:not(:hover):not(:selected) { background-color: transparent; }
     }
@@ -1829,16 +1823,56 @@ window.background.csd.unified {
       }
     }
   }
-
-  // preferencesgroup {
-  //   list.content {
-  //     @extend %circular_list;
-  //
-  //     row.activatable { @extend %circular_row; }
-  //   }
-  // }
 }
 
+preferencesgroup, .geary-accounts-editor-pane {
+  list {
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+}
+
+.geary-accounts-editor-pane {
+  frame:not(.geary-signature) > border,
+  scrolledwindow.frame { border: none; }
+}
+
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd {
+  > stack, // GameMode setting
+  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
+  > box > stack > scrolledwindow > viewport > box {
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  stack stack stack frame, // ArcMenu setting
+  > stack > stack > box > frame, // Night Theme Switcher setting
+  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
+  > stack > box > stack > box > frame, // ArcMenu setting
+  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
+  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
+  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
+    > border { border: none; }
+
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  > stack > box > box > list { // ArcMenu setting sidebar
+    border-bottom-left-radius: $window-radius;
+  }
+}
 
 /***********
  * Dialogs *

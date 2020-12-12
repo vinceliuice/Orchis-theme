@@ -1600,6 +1600,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 
 #calendarArea {
   padding: 0;
+  margin: 12px 0;
 }
 
 .calendar {

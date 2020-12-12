@@ -1123,7 +1123,7 @@ searchbar > revealer > box {
 .titlebar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
   border-radius: $window-radius $window-radius 0 0;
-  box-shadow: inset 0 -1px $frame, inset 0 1px highlight($titlebar);
+  box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
   background-color: $titlebar;
   color: $titlebar-text;
 
@@ -1198,7 +1198,7 @@ searchbar > revealer > box {
     // but let's keep it for backwards compatibility.
     transition: background-color 0.1ms $ripple-fade-in-duration, color $duration $ease-out;
     animation: ripple-on-headerbar $ripple-fade-in-duration $ease-out;
-    box-shadow: $shadow-z1, inset 0 1px highlight($primary);
+    box-shadow: inset 0 1px highlight($primary);
     background-color: $primary;
     color: on($primary);
 
@@ -1307,6 +1307,8 @@ headerbar {
   // The sizing factor needs to be defined in the headerbar node for the case of split headerbars
   min-height: $large-size;
   padding: 0 $container-padding;
+
+  &:not(.titlebar) { box-shadow: none; }
 
   box.vertical & {
     background-color: $titlebar;
@@ -1731,9 +1733,17 @@ notebook {
     border-radius: $corner-radius;
   }
 
-  &.frame frame > border {
-    border: none;
-    border-radius: $corner-radius;
+  &.frame frame {
+    > border {
+      border: none;
+      border-radius: $corner-radius;
+    }
+
+    > list {
+      // @extend %circular_list;
+
+      row.activatable { border-radius: $corner-radius; }
+    }
   }
 
   &:focus tab:checked {
@@ -2674,11 +2684,12 @@ printdialog {
 %frame {
   margin: 0;
   padding: 0;
-  border: 1px solid $divider;
+  border: 1px solid $frame;
   border-radius: 0;
   box-shadow: none;
 }
 
+frame > border,
 .frame {
   @extend %frame;
 
@@ -2688,36 +2699,15 @@ printdialog {
 }
 
 frame {
-  & > border { @extend %frame; }
+  // & > border { @extend %frame; }
 
   &.flat > border,
   statusbar & > border { border: none; } // for backward compatibility
 }
 
-stack:not(.main-container) viewport.frame {
-  frame > border { border: none; }
-
-  list {
-    @extend %circular_list;
-
-    row.activatable { @extend %circular_row; }
-  }
-}
-
-stack:not(.view) > stack frame,
-stack:not(.view) > box > stack > box > frame {
-  & > border { border: none; }
-
-  & > list {
-    @extend %circular_list;
-
-    row.activatable { @extend %circular_row; }
-  }
-}
-
 actionbar > revealer > box {
   padding: $container-padding;
-  border-top: 1px solid $divider;
+  border-top: 1px solid $frame;
   background-color: $base;
   background-clip: border-box;
 
@@ -2794,7 +2784,7 @@ separator {
  * Lists *
  *********/
 list {
-  border-color: $divider;
+  border-color: $frame;
   background-color: $base;
 
   row { padding: 2px; }
