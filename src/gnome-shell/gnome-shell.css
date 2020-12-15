@@ -2576,10 +2576,6 @@ StWidget.focused .app-well-app-running-dot {
   text-align: center;
 }
 
-.app-well-app.app-folder > .overview-icon {
-  background-color: rgba(255, 255, 255, 0.13);
-}
-
 .show-apps .show-apps-icon {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -3089,7 +3085,6 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(0, 0, 0, 0.87);
 }
 
-/* Eeeky things */
 .magnifier-zoom-region {
   border: 2px solid #4586D8;
 }
@@ -3098,7 +3093,6 @@ StWidget.focused .app-well-app-running-dot {
   border-width: 0;
 }
 
-/* On-screen Keyboard */
 .word-suggestions {
   font-size: 14pt;
   spacing: 12px;
@@ -3106,7 +3100,23 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #keyboard {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.65);
+  border: none;
+  border-top-width: 0;
+  box-shadow: none;
+}
+
+#keyboard .page-indicator {
+  padding: 6px;
+}
+
+#keyboard .page-indicator .page-indicator-icon {
+  width: 8px;
+  height: 8px;
+}
+
+.keyboard-row {
+  spacing: 15px;
 }
 
 .keyboard-layout {
@@ -3127,13 +3137,13 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .keyboard-key:focus, .keyboard-key:hover {
-  color: rgba(255, 255, 255, 0.85);
-  background-color: #4586D8;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #e1e1e1;
 }
 
 .keyboard-key:checked, .keyboard-key:active {
-  color: rgba(255, 255, 255, 0.85);
-  background-color: #2c76d2;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #c7c7c7;
 }
 
 .keyboard-key:grayed {
@@ -3143,27 +3153,23 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .keyboard-key.default-key {
-  background-size: 20px;
-}
-
-.keyboard-key.default-key, .keyboard-key.enter-key, .keyboard-key.shift-key-lowercase, .keyboard-key.shift-key-uppercase, .keyboard-key.hide-key, .keyboard-key.layout-key {
   background-color: #E0E0E0;
   box-shadow: 0 1px rgba(0, 0, 0, 0.2);
 }
 
-.keyboard-key.default-key:focus, .keyboard-key.default-key:hover, .keyboard-key.enter-key:focus, .keyboard-key.enter-key:hover, .keyboard-key.shift-key-lowercase:focus, .keyboard-key.shift-key-lowercase:hover, .keyboard-key.shift-key-uppercase:focus, .keyboard-key.shift-key-uppercase:hover, .keyboard-key.hide-key:focus, .keyboard-key.hide-key:hover, .keyboard-key.layout-key:focus, .keyboard-key.layout-key:hover {
+.keyboard-key.default-key:focus, .keyboard-key.default-key:hover {
   color: rgba(0, 0, 0, 0.62);
   background-color: #FAFAFA;
 }
 
-.keyboard-key.default-key:checked, .keyboard-key.default-key:active, .keyboard-key.enter-key:checked, .keyboard-key.enter-key:active, .keyboard-key.shift-key-lowercase:checked, .keyboard-key.shift-key-lowercase:active, .keyboard-key.shift-key-uppercase:checked, .keyboard-key.shift-key-uppercase:active, .keyboard-key.hide-key:checked, .keyboard-key.hide-key:active, .keyboard-key.layout-key:checked, .keyboard-key.layout-key:active {
+.keyboard-key.default-key:checked, .keyboard-key.default-key:active {
   color: rgba(0, 0, 0, 0.62);
   background-color: #ebebeb;
 }
 
 .keyboard-key.enter-key {
   background-color: #4586D8;
-  background-image: url("assets/key-enter.svg");
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .keyboard-key.enter-key:focus, .keyboard-key.enter-key:hover {
@@ -3174,26 +3180,6 @@ StWidget.focused .app-well-app-running-dot {
 .keyboard-key.enter-key:checked, .keyboard-key.enter-key:active {
   color: rgba(255, 255, 255, 0.85);
   background-color: #296cc1;
-}
-
-.keyboard-key.shift-key-lowercase {
-  background-image: url("assets/key-shift.svg");
-}
-
-.keyboard-key.shift-key-uppercase {
-  background-image: url("assets/key-shift-uppercase.svg");
-}
-
-.keyboard-key.shift-key-uppercase:latched {
-  background-image: url("assets/key-shift-latched-uppercase.svg");
-}
-
-.keyboard-key.hide-key {
-  background-image: url("assets/key-hide.svg");
-}
-
-.keyboard-key.layout-key {
-  background-image: url("assets/key-layout.svg");
 }
 
 .keyboard-subkeys {

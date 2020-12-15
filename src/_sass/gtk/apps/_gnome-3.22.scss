@@ -590,8 +590,44 @@ frame.gedit-map-frame > border {
 /**********
  * Tweaks *
  **********/
-// hard-coded css:
-// https://gitlab.gnome.org/GNOME/gnome-tweaks/blob/master/data/shell.css
+
+ %circular_list {
+   border-radius: $corner-radius + 1px;
+   box-shadow: none;
+   border: 1px solid $divider;
+ }
+
+ %circular_row {
+   &:first-child {
+     border-top-left-radius: $corner-radius;
+     border-top-right-radius: $corner-radius;
+   }
+
+   &:last-child { // Not use ?
+     border-bottom-left-radius: $corner-radius;
+     border-bottom-right-radius: $corner-radius;
+   }
+
+   &:only-child {
+     border-radius: $corner-radius;
+   }
+
+   &:focus {
+     box-shadow: inset 0 0 0 2px $overlay-focus;
+   }
+ }
+
+ %sidebar_row {
+   margin-right: 4px;
+   border-radius: 0 $circular-radius $circular-radius 0;
+
+   &:selected {
+     background-color: $overlay-checked;
+     color: $primary;
+
+     image, label { color: $primary; }
+   }
+ }
 
 // the sidebar
 .tweak-categories {
@@ -642,10 +678,7 @@ frame.gedit-map-frame > border {
   }
 }
 
-//
 // Workaround for 3.26
-//
-
 list {
   &.tweak-group {
     list {
@@ -680,43 +713,6 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
   }
 }
 
-%circular_list {
-  border-radius: $corner-radius + 1px;
-  box-shadow: none;
-  border: 1px solid $divider;
-}
-
-%circular_row {
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-top-right-radius: $corner-radius;
-  }
-
-  &:last-child { // Not use ?
-    border-bottom-left-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $corner-radius;
-  }
-
-  &:focus {
-    box-shadow: inset 0 0 0 2px $overlay-focus;
-  }
-}
-
-%sidebar_row {
-  margin-right: 4px;
-  border-radius: 0 $circular-radius $circular-radius 0;
-
-  &:selected {
-    background-color: $overlay-checked;
-    color: $primary;
-
-    image, label { color: $primary; }
-  }
-}
 
 /************************
  * Gnome Control Center *

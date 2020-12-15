@@ -1746,9 +1746,7 @@ notebook {
     }
   }
 
-  &:focus tab:checked {
-    box-shadow: none;
-  }
+  &:focus tab:checked { box-shadow: none; }
 
   > header {
     border-width: 1px;

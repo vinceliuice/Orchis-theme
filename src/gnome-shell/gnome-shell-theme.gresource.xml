@@ -35,6 +35,7 @@
     <file>assets/dash/top-running4-focused.svg</file>
     <file>assets/calendar-arrow-left.svg</file>
     <file>assets/calendar-arrow-right.svg</file>
+    <file>assets/calendar-today.svg</file>
     <file>assets/checkbox.svg</file>
     <file>assets/checkbox-off.svg</file>
     <file>assets/close.svg</file>
@@ -45,12 +46,6 @@
     <file>assets/toggle-on.svg</file>
     <file>assets/window-close.svg</file>
     <file>assets/window-close-active.svg</file>
-    <file>assets/key-enter.svg</file>
-    <file>assets/key-hide.svg</file>
-    <file>assets/key-layout.svg</file>
-    <file>assets/key-shift.svg</file>
-    <file>assets/key-shift-latched-uppercase.svg</file>
-    <file>assets/key-shift-uppercase.svg</file>
     <file>assets/activities.svg</file>
     <file>extensions/workspaces-to-dock/workspaces-to-dock.css</file>
     <file>gnome-shell.css</file>
