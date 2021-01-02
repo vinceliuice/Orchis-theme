@@ -1605,18 +1605,13 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 }
 
 .calendar {
-  margin-bottom: 0;
+  padding: 0;
+  margin: 0 8px;
   border: none;
   box-shadow: none;
   background: none;
-  padding: 0;
-}
-
-.calendar,
-.datemenu-today-button,
-.datemenu-displays-box,
-.message-list-sections {
-  margin: 0 8px;
+  text-shadow: none;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .datemenu-displays-section {
@@ -1631,6 +1626,17 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   spacing: 6px;
   border: 0 solid rgba(0, 0, 0, 0.12);
   padding: 0 12px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.datemenu-calendar-column:hover, .datemenu-calendar-column:focus {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.datemenu-calendar-column:active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .datemenu-calendar-column:ltr {
@@ -1643,49 +1649,15 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   border-right-width: 0;
 }
 
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.events-button,
-.message-list-section-title,
-.events-section-title {
-  min-height: 24px;
+.datemenu-today-button {
+  min-height: 56px;
   padding: 6px 8px;
   border-radius: 5px;
   border: none;
   box-shadow: none;
-  background: none;
   text-shadow: none;
+  background: none;
   color: rgba(0, 0, 0, 0.54);
-}
-
-.datemenu-today-button:hover, .datemenu-today-button:focus,
-.world-clocks-button:hover,
-.world-clocks-button:focus,
-.weather-button:hover,
-.weather-button:focus,
-.events-button:hover,
-.events-button:focus,
-.message-list-section-title:hover,
-.message-list-section-title:focus,
-.events-section-title:hover,
-.events-section-title:focus {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-.datemenu-today-button:active,
-.world-clocks-button:active,
-.weather-button:active,
-.events-button:active,
-.message-list-section-title:active,
-.events-section-title:active {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.datemenu-today-button {
-  min-height: 56px;
 }
 
 .datemenu-today-button .day-label {
@@ -1699,18 +1671,29 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   font-weight: 400;
 }
 
+.datemenu-today-button:hover, .datemenu-today-button:focus {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.datemenu-today-button:active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .calendar-month-label {
   height: 24px;
   margin: 2px;
   padding: 6px 16px;
   border-radius: 12px;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.54);
   font-weight: bold;
   text-align: center;
   text-shadow: none;
 }
 
 .calendar-month-label:focus {
+  color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -1720,14 +1703,16 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   margin: 2px;
   border-radius: 100px;
   background-color: transparent;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .pager-button:hover, .pager-button:focus {
+  color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.12);
 }
 
 .pager-button:active {
+  color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -1848,12 +1833,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 }
 
 .calendar-week-number {
-  width: 32px;
-  height: 25px;
-  margin: 2px;
-  padding: 7px 0 0;
+  height: 1.8em;
+  width: 2em;
+  margin: 6px 0;
   border-radius: 100px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
   font-size: inherit;
   font-weight: bold;
@@ -1861,7 +1845,58 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   text-shadow: none;
 }
 
-/* Events */
+.world-clocks-button,
+.weather-button,
+.events-button {
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: rgba(0, 0, 0, 0.54);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.world-clocks-button:hover, .world-clocks-button:focus,
+.weather-button:hover,
+.weather-button:focus,
+.events-button:hover,
+.events-button:focus {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.world-clocks-button:active,
+.weather-button:active,
+.events-button:active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title,
+.events-title {
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.weather-grid,
+.world-clocks-grid {
+  spacing-rows: 8px;
+  spacing-columns: 16px;
+}
+
+.world-clocks-header,
+.weather-header,
+.events-section-title {
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: bold;
+}
+
 .events-button .events-box {
   spacing: 6px;
 }
@@ -1871,72 +1906,57 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   text-shadow: none;
 }
 
-.events-button .events-title {
-  color: rgba(0, 0, 0, 0.38);
-  font-weight: bold;
-  margin-bottom: 4px;
-  text-shadow: none;
-}
-
 .events-button .event-time {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(0, 0, 0, 0.26);
   font-feature-settings: "tnum";
 }
 
-.message-list-section-list:ltr {
-  padding-left: 0;
-}
-
-.message-list-section-list:rtl {
-  padding-right: 0;
-}
-
-.world-clocks-header,
-.weather-header,
-.events-section-title {
-  color: rgba(0, 0, 0, 0.54);
-  font-weight: bold;
-}
-
-.world-clocks-grid,
-.weather-grid {
-  spacing-rows: 0.4em;
-  spacing-columns: 0.8em;
-}
-
-.world-clocks-city {
+.world-clocks-button .world-clocks-city {
   color: rgba(0, 0, 0, 0.38);
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
-.world-clocks-time {
-  color: rgba(0, 0, 0, 0.38);
-  font-feature-settings: "tnum";
-  font-size: 1.2em;
-}
-
-.world-clocks-timezone {
-  color: rgba(0, 0, 0, 0.38);
-  font-feature-settings: "tnum";
-  font-size: 0.9em;
-}
-
-.weather-box {
-  spacing: 0.4em;
-}
-
-.weather-header.location {
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.42);
+  font-size: 1em;
 }
 
-.weather-forecast-icon {
-  icon-size: 2.18em;
-  color: rgba(0, 0, 0, 0.52);
+.world-clocks-button .world-clocks-time {
+  color: rgba(0, 0, 0, 0.38);
+  font-feature-settings: "tnum";
+  font-weight: bold;
+  font-size: 1em;
 }
 
-.weather-forecast-time {
+.world-clocks-button .world-clocks-time:ltr {
+  text-align: right;
+}
+
+.world-clocks-button .world-clocks-time:rtl {
+  text-align: left;
+}
+
+.world-clocks-button .world-clocks-timezone {
+  color: rgba(0, 0, 0, 0.38);
+  font-feature-settings: "tnum";
+  font-size: 1em;
+}
+
+.weather-button .weather-box {
+  spacing: 12px;
+}
+
+.weather-button .weather-header-box {
+  spacing: 8px;
+}
+
+.weather-button .weather-header.location {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.weather-button .weather-forecast-icon {
+  icon-size: 32px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.weather-button .weather-forecast-time {
   color: rgba(0, 0, 0, 0.38);
   font-size: 0.8em;
   font-feature-settings: "tnum";
@@ -1945,13 +1965,12 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   padding-bottom: 0.4em;
 }
 
-.weather-forecast-temp {
+.weather-button .weather-forecast-temp {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.52);
   text-shadow: none;
 }
 
-/* Message list */
 .message-list {
   width: 31.5em;
   padding: 0 12px;
@@ -2314,14 +2333,14 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   width: 304px;
   padding: 0 8px;
   border: none;
-  selection-background-color: #4586D8;
-  selected-color: #FFFFFF;
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 100px;
   border-color: transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  selection-background-color: #4586D8;
+  selected-color: #FFFFFF !important;
 }
 
 .search-entry:focus {
@@ -2331,6 +2350,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   border: none;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.55);
   padding: 0 8px;
+  selection-background-color: #4586D8;
+  selected-color: #FFFFFF !important;
 }
 
 .search-entry .search-entry-icon {
@@ -3303,7 +3324,7 @@ StWidget.focused .app-well-app-running-dot {
 .login-dialog StEntry,
 .unlock-dialog StEntry {
   selection-background-color: #4586D8;
-  selected-color: rgba(255, 255, 255, 0.85);
+  selected-color: rgba(255, 255, 255, 0.85) !important;
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   background-color: #ffffff;
@@ -3774,7 +3795,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .lg-dialog StEntry {
   selection-background-color: #4586D8;
-  selected-color: rgba(255, 255, 255, 0.85);
+  selected-color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .lg-dialog .shell-link {

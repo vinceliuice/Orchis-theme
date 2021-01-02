@@ -1376,18 +1376,13 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .calendar {
-  margin-bottom: 0;
+  padding: 0;
+  margin: 0 8px;
   border: none;
   box-shadow: none;
   background: none;
-  padding: 0;
-}
-
-.calendar,
-.datemenu-today-button,
-.datemenu-displays-box,
-.message-list-sections {
-  margin: 0 8px;
+  text-shadow: none;
+  color: $secondary_fg_color;
 }
 
 .datemenu-displays-section { padding-bottom: 0; }
@@ -1397,35 +1392,25 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   spacing: $container_padding;
   border: 0 solid $border_color;
   padding: 0 $container_padding * 2;
+  color: $secondary_fg_color;
+
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
+
+  &:active { color: $fg_color; background-color: $track_color; }
 
   &:ltr { margin-right: $container_padding * 2; border-left-width: 0; }
   &:rtl { margin-left: $container_padding * 2; border-right-width: 0; }
 }
 
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.events-button,
-.message-list-section-title,
-.events-section-title {
-  min-height: $menuitem_size - 4px * 2;
+.datemenu-today-button {
+  min-height: $menuitem_size * 2 - 4px * 2;
   padding: $container_padding 8px;
   border-radius: $material_radius;
   border: none;
   box-shadow: none;
-  background: none;
   text-shadow: none;
+  background: none;
   color: $secondary_fg_color;
-
-  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
-  &:active {
-    color: $fg_color;
-    background-color: $track_color;
-  }
-}
-
-.datemenu-today-button {
-  min-height: $menuitem_size * 2 - 4px * 2;
 
   // weekday label
   .day-label {
@@ -1437,6 +1422,16 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   .date-label {
     @include font(headline);
   }
+
+  &:hover, &:focus {
+    color: $fg_color;
+    background-color: $divider_color;
+  }
+
+  &:active {
+    color: $fg_color;
+    background-color: $track_color;
+  }
 }
 
 .calendar-month-label {
@@ -1444,11 +1439,12 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   margin: 2px;
   padding: 6px 16px;
   border-radius: $bt_radius;
-  color: $fg_color;
+  color: $secondary_fg_color;
   font-weight: bold;
   text-align: center;
   text-shadow: none;
-  &:focus { background-color: $divider_color; }
+
+  &:focus { color: $fg_color; background-color: $divider_color; }
 }
 
 .pager-button {
@@ -1457,9 +1453,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   margin: 2px;
   border-radius: 100px;
   background-color: transparent;
-  color: $fg_color;
-  &:hover, &:focus { background-color: $divider_color; }
-  &:active { background-color: $track_color; }
+  color: $secondary_fg_color;
+
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
+
+  &:active { color: $fg_color; background-color: $track_color; }
 }
 
 .calendar-change-month-back { //arrow back
@@ -1467,6 +1465,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   background-image: url("assets/calendar-arrow-left.svg");
   &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
 }
+
 .calendar-change-month-forward { //arrow foreward
   padding: 0 2px;
   background-image: url("assets/calendar-arrow-right.svg");
@@ -1485,17 +1484,21 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   border: none;
   font-feature-settings: "tnum";
   text-shadow: none;
+
   &:hover, &:focus { background-color: $divider_color; }
+
   &:active {
     color: $secondary_fg_color;
     background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }
+
   &:selected {
     color: $fg_color;
     background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }
+
   &.calendar-day-heading {  //day of week heading
     width: $menuitem_size; height: $menuitem_size - 7px;
     margin-top: 2px;
@@ -1558,12 +1561,11 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .calendar-week-number {
-  width: $menuitem_size;
-  height: $menuitem_size - 7px;
-  margin: 2px;
-  padding: 7px 0 0;
+  height: 1.8em;
+  width: 2em;
+  margin: $container_padding 0;
   border-radius: 100px;
-  background-color: transparent;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $hint_fg_color;
   font-size: inherit;
   font-weight: bold;
@@ -1571,7 +1573,54 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   text-shadow: none;
 }
 
-/* Events */
+// buttons under calendar
+.world-clocks-button,
+.weather-button,
+.events-button {
+  padding: $container_padding 8px;
+  border-radius: $material_radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $secondary_fg_color;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+
+  &:hover, &:focus {
+    color: $fg_color;
+    background-color: $divider_color;
+  }
+
+  &:active {
+    color: $fg_color;
+    background-color: $track_color;
+  }
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title,
+.events-title {
+  color: $hint_fg_color;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.weather-grid,
+.world-clocks-grid {
+  spacing-rows: 8px;
+  spacing-columns: 16px;
+}
+
+.world-clocks-header,
+.weather-header,
+.events-section-title {
+  color: $hint_fg_color;
+  font-weight: bold;
+}
+
+// Events button
 .events-button {
   .events-box {
     spacing: 6px;
@@ -1582,88 +1631,74 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
     text-shadow: none;
   }
 
-  .events-title {
-    color: $hint_fg_color;
-    font-weight: bold;
-    margin-bottom: 4px;
-    text-shadow: none;
-  }
-
   .event-time {
-    color: $hint_fg_color;
+    color: $disabled_secondary_fg_color;
     font-feature-settings: "tnum";
   }
 }
 
-.message-list-section-list:ltr {
-  padding-left: 0;
+// World clocks button
+.world-clocks-button {
+  .world-clocks-city {
+    color: $hint_fg_color;
+    font-weight: normal;
+    font-size: 1em;
+  }
+
+  .world-clocks-time {
+    color: $hint_fg_color;
+    font-feature-settings: "tnum";
+    font-weight: bold;
+    font-size: 1em;
+
+    &:ltr { text-align: right; }
+    &:rtl { text-align: left; }
+  }
+
+  .world-clocks-timezone {
+    color: $hint_fg_color;
+    font-feature-settings: "tnum";
+    font-size: 1em;
+  }
 }
 
-.message-list-section-list:rtl {
-  padding-right: 0;
+// Weather button
+.weather-button {
+  .weather-box {
+    spacing: 12px;
+  }
+
+  .weather-header-box {
+    spacing: 8px;
+  }
+
+  .weather-header.location {
+    font-weight: normal;
+    color: $hint_fg_color;
+  }
+
+  .weather-forecast-icon {
+    icon-size: 32px;
+    color: $hint_fg_color;
+  }
+
+  .weather-forecast-time {
+    color: $hint_fg_color;
+    font-size: 0.8em;
+    font-feature-settings: "tnum";
+    font-weight: normal;
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+  }
+
+  .weather-forecast-temp {
+    font-weight: bold;
+    color: transparentize($fg_color, 0.35);
+    text-shadow: none;
+  }
 }
 
-.world-clocks-header,
-.weather-header,
-.events-section-title {
-  color: $secondary_fg_color;
-  font-weight: bold;
-}
-
-.world-clocks-grid,
-.weather-grid {
-  spacing-rows: 0.4em;
-  spacing-columns: 0.8em;
-}
-
-.world-clocks-city {
-  color: $hint_fg_color;
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
-.world-clocks-time {
-  color: $hint_fg_color;
-  font-feature-settings: "tnum";
-  font-size: 1.2em;
-}
-
-.world-clocks-timezone {
-  color: $hint_fg_color;
-  font-feature-settings: "tnum";
-  font-size: 0.9em;
-}
-
-.weather-box {
-  spacing: 0.4em;
-}
-
-.weather-header.location {
-  font-weight: normal;
-  color: transparentize($fg_color, 0.45);
-}
-
-.weather-forecast-icon {
-  icon-size: 2.18em;
-  color: transparentize($fg_color, 0.35);
-}
-
-.weather-forecast-time {
-  color: $hint_fg_color;
-  font-size: 0.8em;
-  font-feature-settings: "tnum";
-  font-weight: normal;
-  padding-top: 0.2em;
-  padding-bottom: 0.4em;
-}
-
-.weather-forecast-temp {
-  font-weight: bold;
-  color: transparentize($fg_color, 0.35);
-  text-shadow: none;
-}
-
-/* Message list */
+// Message list
 .message-list {
   width: 31.5em;
   padding: 0 12px;
@@ -1960,13 +1995,15 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   width: 320px - 8px * 2;
   padding: 0 8px;
   border: none;
-  selection-background-color: $primary_color;
-  selected-color: $light_fg_color;
   @include search_entry(normal);
+  selection-background-color: $primary_color;
+  selected-color: $light_fg_color !important;
 
   &:focus {
     @include search_entry(focus);
     padding: 0 8px;
+    selection-background-color: $primary_color;
+    selected-color: $light_fg_color !important;
   }
 
   .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
@@ -2765,7 +2802,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 
   StEntry {
     selection-background-color: $primary_color;
-    selected-color: $inverse_fg_color;
+    selected-color: $inverse_fg_color !important;
     @include entry(normal, $fc:$inverse_track_color);
     &:focus { @include entry(focus, $fc:$inverse_fg_color); }
     &:insensitive {
@@ -3067,7 +3104,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 .lg-dialog {
   StEntry {
     selection-background-color: $primary_color;
-    selected-color: $inverse_fg_color;
+    selected-color: $inverse_fg_color !important;
   }
 
   .shell-link {
