@@ -1083,7 +1083,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-base: 64px;
   -arrow-rise: 6px;
   -arrow-box-shadow: none;
-  margin: 4px 10px 16px;
+  margin-left: 4px;
   background-color: rgba(32, 32, 32, 0.95);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
@@ -1104,7 +1104,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-boxpointer .popup-menu-content {
-  margin: 4px 10px 16px;
+  margin-left: 6px;
   background-color: rgba(32, 32, 32, 0.95);
   border-radius: 12px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
@@ -1380,6 +1380,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 34px;
   border-radius: 9999px;
   margin: 2px;
+  margin-bottom: 0;
 }
 
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
@@ -2461,10 +2462,17 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 
 /* App Vault/Grid */
 .icon-grid {
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
   row-spacing: 24px;
   column-spacing: 24px;
   max-row-spacing: 48px;
   max-column-spacing: 48px;
+}
+
+.icon-grid .overview-icon {
+  icon-size: 96px;
 }
 
 .system-action-icon {
@@ -2506,11 +2514,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   color: white;
   background-color: #4586D8;
   box-shadow: none;
-}
-
-.app-view-control:first-child {
-  border-right-width: 0;
-  margin-right: 0;
 }
 
 .search-provider-icon:focus, .search-provider-icon:selected, .search-provider-icon:hover,
@@ -2595,8 +2598,10 @@ StWidget.focused .app-well-app-running-dot {
   -arrow-rise: 12px;
 }
 
-.app-folder-popup-bin {
+.app-folder-icon {
   padding: 5px;
+  spacing-rows: 5px;
+  spacing-columns: 5px;
 }
 
 .page-indicator {
@@ -2643,13 +2648,13 @@ StWidget.focused .app-well-app-running-dot {
   background-image: none;
 }
 
-.grid-search-result .overview-icon.overview-icon-with-label,
+.overview-icon.overview-icon-with-label,
 .app-well-app .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
   spacing: 6px;
 }
 
-.grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout,
+.overview-icon.overview-icon-with-label > StBoxLayout,
 .app-well-app .overview-icon.overview-icon-with-label > StBoxLayout {
   spacing: 6px;
 }
@@ -2671,8 +2676,7 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog {
   border-radius: 48px;
   border: 2px solid rgba(255, 255, 255, 0.15);
-  spacing: 12px;
-  padding: 0;
+  padding: 12px;
   background-color: rgba(34, 34, 34, 0.95);
 }
 
@@ -3950,7 +3954,6 @@ StWidget.focused .app-well-app-running-dot {
   background-size: contain;
 }
 
-/* Simple Dock */
 #dash:desktop {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -4024,7 +4027,6 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* GPaste */
 .popup-menu .search-entry {
   color: rgba(255, 255, 255, 0.9);
   selection-background-color: #4586D8;

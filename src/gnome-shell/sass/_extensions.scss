@@ -1,6 +1,6 @@
-// /**************************
-//  * Dash to Dock Extension *
-//  **************************/
+//
+// Dash to Dock
+//
 
 $icon_padding: 9px;
 
@@ -69,15 +69,17 @@ $icon_padding: 9px;
   }
 }
 
-/* Simple Dock */
+//
+// Simple Dock
+//
 
 #dash:desktop {
   background-color: $panel_bg_color;
 }
 
-// /*************************
-//  * OpenWeather Extension *
-//  *************************/
+//
+// OpenWeather
+//
 
 .openweather {
   &-button,
@@ -136,7 +138,9 @@ $icon_padding: 9px;
   &-build-icon { color: $secondary_fg_color; }
 }
 
-/* GPaste */
+//
+// GPaste
+//
 
 .popup-menu {
   .search-entry {

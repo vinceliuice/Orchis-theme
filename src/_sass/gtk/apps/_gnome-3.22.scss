@@ -757,14 +757,6 @@ window.background.csd {
             }
           }
         }
-
-        // > scrolledwindow > viewport.frame > hdycolumn > box.vertical {
-        //   > list.frame {
-        //     @extend %circular_list;
-        //
-        //     > row.activatable { @extend %circular_row; }
-        //   }
-        // }
       }
     }
 

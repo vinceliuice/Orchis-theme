@@ -889,7 +889,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   -arrow-base: 64px;
   -arrow-rise: 6px;
   -arrow-box-shadow: none; //dreaming. bug #689995
-  margin: $container_padding 10px 16px;
+  margin-left: $container_padding;
   background-color: $menu_bg_color;
   border-radius: $bt_radius;
   box-shadow: $shadow_3;
@@ -909,7 +909,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   box-shadow: none;
 
   .popup-menu-content {
-    margin: $container_padding 10px 16px;
+    margin-left: $container_padding * 1.5;
     background-color: $menu_bg_color;
     border-radius: $bt_radius;
     box-shadow: $shadow_3;
@@ -1171,6 +1171,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   // box-shadow: $shadow_6;
   border-radius: $circular_radius;
   margin: $container_padding / 2;
+  margin-bottom: 0;
 
   &:overview,
   &.unlock-screen,
@@ -2074,16 +2075,16 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 
 /* App Vault/Grid */
 .icon-grid {
-  // spacing: 30px;
-  // -shell-grid-horizontal-item-size: 136px;
-  // -shell-grid-vertical-item-size: 136px;
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
 
   row-spacing: $container_padding * 6;
   column-spacing: $container_padding * 6;
   max-row-spacing: $container_padding * 12;
   max-column-spacing: $container_padding * 12;
 
-  // .overview-icon { icon-size: 96px; }
+  .overview-icon { icon-size: 96px; }
 }
 //.app-display { spacing: 20px; }
 
@@ -2121,16 +2122,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
     color: white;
     background-color: $primary_color;
     box-shadow: none;
-  }
-  &:first-child {
-    border-right-width: 0;
-    margin-right: 0;
-    // border-radius: 100px 0 0 100px;
-    // &:checked { border-radius: 0; }
-  }
-  &:last-child {
-    // border-radius: 0 100px 100px 0;
-    // &:checked { border-radius: 0; }
   }
 }
 
@@ -2205,7 +2196,6 @@ StWidget.focused .app-well-app-running-dot {
   transition-duration: $longer_duration;
 }
 
-
 // Collections
 .app-folder-popup { //expanded collection
   -arrow-border-radius: $bt_radius;
@@ -2214,7 +2204,11 @@ StWidget.focused .app-well-app-running-dot {
   -arrow-rise: 12px;
 }
 
-.app-folder-popup-bin { padding: 5px; }
+.app-folder-icon {
+  padding: 5px;
+  spacing-rows: 5px;
+  spacing-columns: 5px;
+}
 
 .page-indicator {
   padding: 15px 20px;
@@ -2256,7 +2250,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .no-frequent-applications-label { @extend %status_text; }
 
-.grid-search-result .overview-icon.overview-icon-with-label,
+.overview-icon.overview-icon-with-label,
 .app-well-app .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
   spacing: 6px;
@@ -2284,8 +2278,7 @@ StWidget.focused .app-well-app-running-dot {
 .app-folder-dialog {
   border-radius: $bt_radius * 4;
   border: 2px solid rgba(white, 0.15);
-  spacing: 12px;
-  padding: 0;
+  padding: 12px;
   background-color: rgba(#222, 0.95);
 
   & .folder-name-container {
