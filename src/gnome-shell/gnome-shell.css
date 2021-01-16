@@ -405,7 +405,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 24px;
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
-  border: 2px solid transparent;
   box-shadow: 0 0 transparent;
 }
 
@@ -538,7 +537,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* End Session Dialog */
 .end-session-dialog {
   width: 30em;
-  border: 2px solid transparent;
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
@@ -684,7 +682,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 28em;
-  border: 2px solid transparent;
 }
 
 .prompt-dialog .modal-dialog-content-box {
@@ -937,7 +934,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing-columns: 1em;
 }
 
-/* Popovers/Menus */
 .popup-menu {
   min-width: 15em;
   color: rgba(0, 0, 0, 0.87);
@@ -985,7 +981,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-content {
-  padding: 8px 0;
+  padding: 6px 0;
 }
 
 .popup-menu .popup-menu-item {
@@ -1115,18 +1111,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   padding: 0 0;
   margin: 0 0;
+  height: 0;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
   padding: 0 0;
   margin: 0 0;
+  height: 0;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
   padding: 0 0;
   margin: 0 0;
+  height: 0;
 }
 
 .system-switch-user-submenu-icon.user-icon {
@@ -2005,8 +2004,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 }
 
 .message {
-  min-height: 64px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.04);
   border: none;
   border-radius: 12px;
   color: rgba(0, 0, 0, 0.54);

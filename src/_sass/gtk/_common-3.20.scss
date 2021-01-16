@@ -1679,30 +1679,11 @@ popover.background {
   .view:not(:selected),
   toolbar { background-color: $surface; }
 
-  // &.touch-selection,
-  // &.magnifier,
-  // &.osd { @extend %osd; }
-
-  // button:not(.suggested-action):not(.destructive-action) {
-  //   &:focus { box-shadow: none; }
-  // }
-
-  // .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
-
   .linked > button:not(.radio) {
     border-radius: $corner-radius;
-
-    &:first-child {
-      border-radius: $corner-radius;
-    }
-
-    &:last-child {
-      border-radius: $corner-radius;
-    }
-
-    &:only-child {
-      border-radius: $corner-radius;
-    }
+    &:first-child { border-radius: $corner-radius; }
+    &:last-child { border-radius: $corner-radius; }
+    &:only-child { border-radius: $corner-radius; }
   }
 
   &.menu button,

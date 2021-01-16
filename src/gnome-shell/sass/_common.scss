@@ -323,7 +323,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   border-radius: $buttons_radius * 2;
   color: $fg_color;
   background-color: $base_color;
-  border: 2px solid $mdborder_color;
+  // border: 2px solid $mdborder_color;
   box-shadow: $shadow_0;
 
   .modal-dialog-content-box {
@@ -411,7 +411,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 /* End Session Dialog */
 .end-session-dialog {
   width: 30em;
-  border: 2px solid $mdborder_color;
+  // border: 2px solid $mdborder_color;
 
   .modal-dialog-linked-button:last-child {
     color: white;
@@ -476,59 +476,59 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 /* ShellMountOperation Dialogs */
 .shell-mount-operation-icon { icon-size: 48px; }
 
-  .mount-dialog {
-    spacing: 24px;
+.mount-dialog {
+  spacing: 24px;
 
-    .message-dialog-title {
-      padding-top: 10px;
-      padding-left: 17px;
-      padding-bottom: 6px;
-      max-width: 34em;
-    }
-
-    .message-dialog-title:rtl {
-      padding-left: 0px;
-      padding-right: 17px;
-    }
-
-    .message-dialog-body {
-      padding-left: 17px;
-      width: 28em;
-    }
-
-    .message-dialog-body:rtl {
-      padding-left: 0px;
-      padding-right: 17px;
-    }
+  .message-dialog-title {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+    max-width: 34em;
   }
 
-  .mount-dialog-app-list {
-    max-height: 200px;
-    padding-top: 24px;
-    padding-left: 49px;
-    padding-right: 32px;
+  .message-dialog-title:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
   }
 
-  .mount-dialog-app-list:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
+  .message-dialog-body {
+    padding-left: 17px;
+    width: 28em;
   }
 
-  .mount-dialog-app-list-item {
-    color: $fg_color;
-    &:hover { color: $fg_color; }
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
+  .message-dialog-body:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
   }
+}
 
-  .mount-dialog-app-list-item-icon {
-    &:ltr { padding-right: 17px; }
-    &:rtl { padding-left: 17px; }
-  }
+.mount-dialog-app-list {
+  max-height: 200px;
+  padding-top: 24px;
+  padding-left: 49px;
+  padding-right: 32px;
+}
 
-  .mount-dialog-app-list-item-name {
-    font-size: 1em;
-  }
+.mount-dialog-app-list:rtl {
+  padding-right: 49px;
+  padding-left: 32px;
+}
+
+.mount-dialog-app-list-item {
+  color: $fg_color;
+  &:hover { color: $fg_color; }
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+}
+
+.mount-dialog-app-list-item-icon {
+  &:ltr { padding-right: 17px; }
+  &:rtl { padding-left: 17px; }
+}
+
+.mount-dialog-app-list-item-name {
+  font-size: 1em;
+}
 
 
 /* Password or Authentication Dialog */
@@ -536,7 +536,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 .prompt-dialog {
   //this is the width of the entire modal popup
   width: 28em;
-  border: 2px solid $mdborder_color;
+  // border: 2px solid $mdborder_color;
 
   .modal-dialog-content-box {
     margin-bottom: 24px;
@@ -762,8 +762,9 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   spacing-columns: 1em;
 }
 
-/* Popovers/Menus */
-
+//
+// Popovers/Menus
+//
 .popup-menu {
   min-width: 15em;
   color: $fg_color;
@@ -804,7 +805,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
     }
   }
 
-  .popup-menu-content { padding: 8px 0; }
+  .popup-menu-content { padding: $container_padding 0; }
 
   .popup-menu-item {
     spacing: 12px;
@@ -921,16 +922,19 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   border: none;
   padding: 0 0;
   margin: 0 0;
+  height: 0;
 
   .popup-separator-menu-item-separator {
     background: none;
     padding: 0 0;
     margin: 0 0;
+    height: 0;
 
     .popup-sub-menu & { //submenu separators
       background: none;
       padding: 0 0;
       margin: 0 0;
+      height: 0;
     }
   }
 }
@@ -1729,14 +1733,14 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 }
 
 .message {
-  min-height: $menuitem_size * 2;
-  background-color: transparent;
+  // min-height: $menuitem_size * 2;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   border: none;
   border-radius: $buttons_radius;
   color: $secondary_fg_color;
   text-shadow: none;
 
-  &:hover,&:focus { background-color: $divider_color; }
+  &:hover, &:focus { background-color: $divider_color; }
   &:active { background-color: $track_color; }
 }
 
