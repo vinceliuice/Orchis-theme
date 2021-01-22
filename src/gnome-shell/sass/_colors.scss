@@ -7,6 +7,28 @@
   @return mix($c, $grey_900, 50%);
 }
 
+@function theme($color) {
+  @if ($variant == 'light') {
+    @if ($theme == 'default') { @return #1A73E8; }
+    @if ($theme == 'purple') { @return $purple-400; }
+    @if ($theme == 'pink') { @return $pink-400; }
+    @if ($theme == 'red') { @return $red-600; }
+    @if ($theme == 'orange') { @return $orange-700; }
+    @if ($theme == 'yellow') { @return $yellow-700; }
+    @if ($theme == 'green') { @return $green-500; }
+    @if ($theme == 'grey') { @return $grey-700; }
+  } @else {
+    @if ($theme == 'default') { @return #3281ea; }
+    @if ($theme == 'purple') { @return $purple-300; }
+    @if ($theme == 'pink') { @return $pink-300; }
+    @if ($theme == 'red') { @return $red-500; }
+    @if ($theme == 'orange') { @return $orange-600; }
+    @if ($theme == 'yellow') { @return $yellow-a700; }
+    @if ($theme == 'green') { @return $green-400; }
+    @if ($theme == 'grey') { @return $grey-600; }
+  }
+}
+
 // Foreground colors
 $dark_fg_color:   rgba($black, 0.87);
 $light_fg_color:  $white;
@@ -50,9 +72,9 @@ $alt_keyboard_bg_color:  if($variant == 'light', $grey_300, fade($grey_900)); //
 
 // Misc colors
 
-$primary_color: if($variant == 'light', #4586D8, #4586D8);
-$alt_primary_color: if($variant == 'light', #4586D8, #4586D8);
-$accent_color: if($variant == 'light', #4586D8, #4586D8);
+$primary_color: theme(color);
+$alt_primary_color: darken($primary_color, 3%);
+$accent_color: lighten($primary_color, 3%);
 
 $panel_bg: if($variant == 'light', #000000, #000000);
 $panel_bg_color: if($trans == 'true', rgba($panel_bg, 0.5), $panel_bg);
@@ -60,14 +82,14 @@ $panel_fg_color: if($panel == 'dark', #dedede, #dedede);
 $menu_bg_color: if($trans == 'true', rgba($base_color, 0.95), $base_color);
 
 $link_color:         $primary_color;
-$visited_link_color: $purple_A200;
+$visited_link_color: if($variant == 'light', $purple-500, $purple-200);
 
-$warning_color: $orange_A700;
-$error_color:   $deep_orange_A700;
-$success_color: $green_A700;
+$warning_color: $orange_a700;
+$error_color:   $deep_orange_a700;
+$success_color: $green_a700;
 
 $suggested_color:   $accent_color;
-$destructive_color: $red_A200;
+$destructive_color: $red_a200;
 
 $info_bg_color:     $green_400;
 $question_bg_color: $blue_400;

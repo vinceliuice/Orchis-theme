@@ -118,7 +118,7 @@ MatePanelAppletFrameDBus {
 // WnckPager
 PanelApplet.wnck-applet .wnck-pager {
   background-color: transparent;
-  color: $primary-light;
+  color: $primary;
 
   &:hover { background-color: $overlay-hover; }
 

@@ -16,6 +16,7 @@ else
 fi
 
 THEME_NAME=Orchis
+THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
 COLOR_VARIANTS=('' '-light' '-dark')
 SIZE_VARIANTS=('' '-compact')
 
@@ -26,6 +27,7 @@ Usage: $0 [OPTION]...
 OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
+  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
   -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
   -h, --help              Show help
@@ -43,13 +45,14 @@ EOF
 install() {
   local dest="$1"
   local name="$2"
-  local color="$3"
-  local size="$4"
+  local theme="$3"
+  local color="$4"
+  local size="$5"
 
   [[ "$color" == '-dark' ]] && local ELSE_DARK="$color"
   [[ "$color" == '-light' ]] && local ELSE_LIGHT="$color"
 
-  local THEME_DIR="$dest/$name$color$size"
+  local THEME_DIR="$dest/$name$theme$color$size"
 
   [[ -d "$THEME_DIR" ]] && rm -rf "${THEME_DIR:?}"
 
@@ -60,22 +63,25 @@ install() {
 
   echo "[Desktop Entry]" >>                                                     "${THEME_DIR}/index.theme"
   echo "Type=X-GNOME-Metatheme" >>                                              "${THEME_DIR}/index.theme"
-  echo "Name=$name$color$size" >>                                               "${THEME_DIR}/index.theme"
+  echo "Name=$name$theme$color$size" >>                                         "${THEME_DIR}/index.theme"
   echo "Comment=An Materia Gtk+ theme based on Elegant Design" >>               "${THEME_DIR}/index.theme"
   echo "Encoding=UTF-8" >>                                                      "${THEME_DIR}/index.theme"
   echo "" >>                                                                    "${THEME_DIR}/index.theme"
   echo "[X-GNOME-Metatheme]" >>                                                 "${THEME_DIR}/index.theme"
-  echo "GtkTheme=$name$color$size" >>                                           "${THEME_DIR}/index.theme"
-  echo "MetacityTheme=$name$color$size" >>                                      "${THEME_DIR}/index.theme"
-  echo "IconTheme=Adwaita" >>                                                   "${THEME_DIR}/index.theme"
-  echo "CursorTheme=Adwaita" >>                                                 "${THEME_DIR}/index.theme"
+  echo "GtkTheme=$name$theme$color$size" >>                                     "${THEME_DIR}/index.theme"
+  echo "MetacityTheme=$name$theme$color$size" >>                                "${THEME_DIR}/index.theme"
+  echo "IconTheme=Tela-circle${ELSE_DARK:-}" >>                                 "${THEME_DIR}/index.theme"
+  echo "CursorTheme=Vimix${ELSE_DARK:-}" >>                                     "${THEME_DIR}/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "${THEME_DIR}/index.theme"
 
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}"/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell${ELSE_DARK:-}$size.css"                      "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  cp -ur "${SRC_DIR}/gnome-shell/"{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
+  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell$theme${ELSE_DARK:-}$size.css"                "${THEME_DIR}/gnome-shell/gnome-shell.css"
   cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
-  cp -ur "${SRC_DIR}"/gnome-shell/assets${ELSE_DARK:-}/*.svg                              "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}/gnome-shell/assets${ELSE_DARK:-}/"*.svg                              "${THEME_DIR}/gnome-shell/assets"
+  cp -ur "${SRC_DIR}/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"                  "${THEME_DIR}/gnome-shell/assets/checkbox.svg"
+  cp -ur "${SRC_DIR}/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"              "${THEME_DIR}/gnome-shell/assets/more-results.svg"
+  cp -ur "${SRC_DIR}/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"                 "${THEME_DIR}/gnome-shell/assets/toggle-on.svg"
 
   cd "${THEME_DIR}/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -83,17 +89,16 @@ install() {
   ln -s assets/no-notifications.svg no-notifications.svg
 
   mkdir -p                                                                      "$THEME_DIR/gtk-2.0"
-  cp -r "$SRC_DIR/gtk-2.0/"{apps.rc,hacks.rc,main.rc}                           "$THEME_DIR/gtk-2.0"
-  cp -r "$SRC_DIR/gtk-2.0/assets${ELSE_DARK:-}"                                 "$THEME_DIR/gtk-2.0/assets"
-  cp -r "$SRC_DIR/gtk-2.0/gtkrc${ELSE_DARK:-}"                                  "$THEME_DIR/gtk-2.0/gtkrc"
-
-  cp -r "$SRC_DIR/gtk/assets"                                                   "$THEME_DIR/gtk-assets"
+  cp -r "$SRC_DIR/gtk-2.0/common/"{apps.rc,hacks.rc,main.rc}                    "$THEME_DIR/gtk-2.0"
+  cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets$theme${ELSE_DARK:-}"             "$THEME_DIR/gtk-2.0/assets"
+  cp -r "$SRC_DIR/gtk-2.0/gtkrc$theme${ELSE_DARK:-}"                            "$THEME_DIR/gtk-2.0/gtkrc"
 
   mkdir -p                                                                      "$THEME_DIR/gtk-3.0"
-  ln -s ../gtk-assets                                                           "$THEME_DIR/gtk-3.0/assets"
-  cp -r "$SRC_DIR/gtk/3.0/gtk$color$size.css"                                   "$THEME_DIR/gtk-3.0/gtk.css"
+  cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-3.0/assets"
+  cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-3.0/assets"
+  cp -r "$SRC_DIR/gtk/3.0/gtk$theme$color$size.css"                             "$THEME_DIR/gtk-3.0/gtk.css"
   [[ "$color" != '-dark' ]] && \
-  cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                    "$THEME_DIR/gtk-3.0/gtk-dark.css"
+  cp -r "$SRC_DIR/gtk/3.0/gtk$theme-dark$size.css"                              "$THEME_DIR/gtk-3.0/gtk-dark.css"
 
   mkdir -p                                                                      "${THEME_DIR}/xfwm4"
   cp -r "${SRC_DIR}/xfwm4/assets${ELSE_LIGHT:-}/"*.png                          "${THEME_DIR}/xfwm4"
@@ -103,8 +108,10 @@ install() {
   cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"
 }
 
+themes=()
 colors=()
 sizes=()
+
 while [[ "$#" -gt 0 ]]; do
   case "${1:-}" in
     -d|--dest)
@@ -115,6 +122,58 @@ while [[ "$#" -gt 0 ]]; do
     -n|--name)
       _name="$2"
       shift 2
+      ;;
+    -t|--theme)
+      accent='true'
+      shift
+      for variant in "$@"; do
+        case "$variant" in
+          default)
+            themes+=("${THEME_VARIANTS[0]}")
+            shift
+            ;;
+          purple)
+            themes+=("${THEME_VARIANTS[1]}")
+            shift
+            ;;
+          pink)
+            themes+=("${THEME_VARIANTS[2]}")
+            shift
+            ;;
+          red)
+            themes+=("${THEME_VARIANTS[3]}")
+            shift
+            ;;
+          orange)
+            themes+=("${THEME_VARIANTS[4]}")
+            shift
+            ;;
+          yellow)
+            themes+=("${THEME_VARIANTS[5]}")
+            shift
+            ;;
+          green)
+            themes+=("${THEME_VARIANTS[6]}")
+            shift
+            ;;
+          grey)
+            themes+=("${THEME_VARIANTS[7]}")
+            shift
+            ;;
+          all)
+            themes+=("${THEME_VARIANTS[@]}")
+            shift
+            ;;
+          -*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
       ;;
     -c|--color)
       shift
@@ -178,6 +237,10 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
+if [[ "${#themes[@]}" -eq 0 ]] ; then
+  themes=("${THEME_VARIANTS[0]}")
+fi
+
 if [[ "${#colors[@]}" -eq 0 ]] ; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
@@ -186,9 +249,11 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-for color in "${colors[@]}"; do
-  for size in "${sizes[@]}"; do
-    install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$color" "$size"
+for theme in "${themes[@]}"; do
+  for color in "${colors[@]}"; do
+    for size in "${sizes[@]}"; do
+      install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+    done
   done
 done
 

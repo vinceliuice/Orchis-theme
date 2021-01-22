@@ -12,7 +12,7 @@ Based on nana-4 --  [materia-theme](https://github.com/nana-4/materia-theme)
   - `gtk-murrine-engine` on Fedora
   - `gtk2-engine-murrine` on openSUSE
   - `gtk2-engines-murrine` on Debian, Ubuntu, etc.
-- `bc` — build dependency
+- `sassc` — build dependency
 
 ## Installation
 
@@ -29,11 +29,20 @@ Run the following commands in the terminal:
 ```
 -d, --dest DIR          Specify destination directory (Default: /usr/share/themes)
 -n, --name NAME         Specify theme name (Default: Orchis)
+-t, --theme VARIANT...  Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -h, --help              Show help
 ```
 
 > For more information, run: `./install.sh --help`
+
+> Install different accent color version, run: `./install.sh -t [color name]`
+
+![theme-color](theme-color.png?raw=true)
+
+```
+./install.sh -t purple # install purple accent color version
+```
 
 ### On Snapcraft
 
@@ -51,7 +60,7 @@ To connect the theme to an app run:
 sudo snap connect [other snap]:gtk-3-themes orchis-themes:gtk-3-themes
 ```
 To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
-``` 
+```
 for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i orchis-themes:gtk-3-themes; done
 ```
 

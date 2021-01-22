@@ -15,7 +15,7 @@
   // Calculate color brightness according to https://www.w3.org/TR/AERT/#color-contrast
   $brightness: (red($color) * 299 + green($color) * 587 + blue($color) * 114) / 1000;
 
-  @if ($brightness >= 128) {
+  @if ($brightness >= 156) {
     @if ($state == 'primary') { @return rgba(black, 0.87); }
     @if ($state == 'secondary') { @return rgba(black, 0.6); }
     @if ($state == 'disabled') { @return rgba(black, 0.38); }
@@ -42,13 +42,33 @@
   @else { @return rgba(white, 0.1); }
 }
 
+@function theme($color) {
+  @if ($variant == 'light') {
+    @if ($theme == 'default') { @return #1A73E8; }
+    @if ($theme == 'purple') { @return $purple-400; }
+    @if ($theme == 'pink') { @return $pink-400; }
+    @if ($theme == 'red') { @return $red-600; }
+    @if ($theme == 'orange') { @return $orange-700; }
+    @if ($theme == 'yellow') { @return $yellow-700; }
+    @if ($theme == 'green') { @return $green-500; }
+    @if ($theme == 'grey') { @return $grey-700; }
+  } @else {
+    @if ($theme == 'default') { @return #3281ea; }
+    @if ($theme == 'purple') { @return $purple-300; }
+    @if ($theme == 'pink') { @return $pink-300; }
+    @if ($theme == 'red') { @return $red-500; }
+    @if ($theme == 'orange') { @return $orange-600; }
+    @if ($theme == 'yellow') { @return $yellow-a700; }
+    @if ($theme == 'green') { @return $green-400; }
+    @if ($theme == 'grey') { @return $grey-600; }
+  }
+}
+
 //
 // Basic colors
 //
 
-$primary-dark:                          #1A73E8;
-$primary-light:                         #3281ea;
-$primary:                               if($variant == 'light', $primary-dark, $primary-light);
+$primary:                               theme(color);
 $drop_target_color:                     #FF7043;
 
 $background:                            if($variant == 'light', #F2F2F2, #212121);

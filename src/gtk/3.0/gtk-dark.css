@@ -2506,7 +2506,7 @@ radio {
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: #81C995;
+  color: #3281ea;
 }
 
 check:checked:disabled, check:indeterminate:disabled,

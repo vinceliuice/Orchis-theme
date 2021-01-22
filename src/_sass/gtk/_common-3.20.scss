@@ -125,8 +125,8 @@ iconview {
 
 .rubberband,
 rubberband {
-  border: 1px solid $primary-light;
-  background-color: rgba($primary-light, 0.3);
+  border: 1px solid $primary;
+  background-color: rgba($primary, 0.3);
 }
 
 flowbox {
@@ -2196,7 +2196,7 @@ radio {
   @extend %circular_button;
 
   &:checked, &:indeterminate {
-    color: $success;
+    color: $primary;
 
     &:disabled { color: $text-secondary-disabled; }
   }
@@ -3572,7 +3572,7 @@ button.titlebutton {
 
 %selected_items_color {
   color: $primary;
-  background-color: rgba($primary-light, 0.2);
+  background-color: rgba($primary, 0.2);
 }
 
 %selected_items_primary {
