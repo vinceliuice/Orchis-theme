@@ -26,7 +26,7 @@
   box-shadow: $shadow-z4;
   background-color: $surface;
 
-  .container { padding: 2px; }
+  .container { padding: 0; }
 
   border { border: none; }
 
@@ -36,6 +36,41 @@
     padding: 0;
 
     &:hover { box-shadow: none; }
+  }
+
+  scrolledwindow.sidebar.categories { // AppMenu
+    background-color: $fill;
+  }
+
+ // AppMenu (Elementary)
+  scrolledwindow.sidebar:not(.categories) {
+    background-color: $fill;
+    border-right: none;
+    border-bottom-left-radius: $corner-radius;
+
+    list > row.activatable {
+      @extend %row_activatable;
+      padding: $container-padding ($container-padding + 2px);
+    }
+  }
+
+  &.bottom scrolledwindow.sidebar:not(.categories) {
+    padding-top: $corner-radius;
+    border-top-left-radius: $corner-radius;
+    border-bottom-left-radius: 0;
+  }
+
+  > frame.container > grid.horizontal > grid.horizontal {
+    > widget > grid.horizontal > stack {
+      border-top: 1px solid $divider;
+    }
+  }
+
+  &.bottom > frame.container > grid.horizontal > grid.horizontal {
+    > widget > grid.horizontal > stack {
+      border-top: none;
+      border-bottom: 1px solid $divider;
+    }
   }
 
   button.flat:not(.image-button) {
@@ -118,11 +153,6 @@
   &.places-menu {
     .container { padding: 8px; }
 
-    // FIXME: untested
-    // .message-bar {
-    //   margin-bottom: 4px;
-    // }
-
     .name-button {
       image {
         &:dir(ltr) { margin-right: 8px - 5px; }
@@ -135,20 +165,11 @@
       padding: 0;
     }
 
-    // .places-section-header { }
-
     .places-list:not(.always-expand) {
       margin-top: 4px;
       padding-top: 4px;
       border-top: 1px solid $divider;
     }
-
-    // FIXME: untested
-    // .unlock-area {
-    //   entry { }
-    //
-    //   button { }
-    // }
 
     // use such sizes for consistency with other hard-coded dim-label sizes
     .alternative-label {
@@ -221,11 +242,11 @@
   }
 }
 
-%panel_circlebutton {
-  padding: 0;
-  margin: 0;
-  min-width: 32px;
-  min-width: 32px;
+%panel_circular_button {
+  padding: 0 0;
+  margin: ($container-padding / 2) 0;
+  min-width: 16px;
+  min-height: 16px;
   color: on($panel, secondary);
 
   &, &:hover, &:active, &:checked {
@@ -236,8 +257,7 @@
   image {
     padding: 0;
     margin: 0;
-    background-size: 32px 32px;
-    border-radius: 100px;
+    border-radius: $circular-radius;
     background-image: image(on($panel, divider));
   }
 
@@ -273,10 +293,9 @@
                                   (bottom, top,  $circular-radius),
                                   (left, right,  $circular-radius),
                                   (right, left,  $circular-radius) {
-    .#{$pos} &.transparent, .#{$pos} &:not(.dock-mode) {
+    .#{$pos} & {
       border-radius: $p_radius;
       margin: 4px 6px;
-      margin-#{$bpos}: 8px;
     }
   }
 
@@ -284,7 +303,6 @@
     @extend %button-flat;
     @extend %button-on-dark;
     color: on($panel, secondary);
-
     min-height: 24px;
     min-width: 24px;
     padding: 0;
@@ -293,11 +311,11 @@
     // Menu Button
     &.budgie-menu-launcher {
       // padding: 0 2px;
-      // @extend %panel_circlebutton;
-      @extend %button-flat;
-      @extend %button-on-dark;
+      @extend %panel_circular_button;
+      // @extend %button-flat;
+      // @extend %button-on-dark;
       color: on($panel, secondary);
-      border-radius: $circular-radius;
+      // border-radius: $menu-radius;
 
       &:focus { // Fixed issues when global menubar item is hovering
         background: none;
@@ -310,6 +328,7 @@
     // Raven Trigger
     &.raven-trigger {
       color: on($panel, secondary);
+      margin: ($container-padding / 2) 0;
       border-radius: $circular-radius;
     }
   }
@@ -325,7 +344,7 @@
 
   // End Section needs to be fancy
   // .end-region {
-  //   background-color: rgba(0,0,0,0.2);
+  //   background-color: rgba(0,0,0, 0.2);
   // }
 
   // budgie-pixel-saver-applet
@@ -355,9 +374,6 @@
       &:hover, &:active {
         color: on($panel);
       }
-
-      > window.background.popup > decoration,
-      > window.background.popup > menu { border-radius: 0 0 $window-radius $window-radius; }
     }
   }
 
@@ -436,7 +452,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
 @each $pos, $b_pos in $pos_list {
   // Panel borders
-  // .#{$pos} .budgie-panel { border-#{$b_pos}: 1px solid $frame; }
+  // .#{$pos} .budgie-panel { border-#{$b_pos}: 4px solid transparent; }
 
   // Raven borders
   .#{$pos} frame.raven-frame > border {
@@ -620,48 +636,42 @@ calendar.raven-calendar {
 }
 
 %budgie_dialog {
-  border-radius: $window-radius;
   box-shadow: inset 0 1px highlight($surface);
   background-color: $surface;
-
-  decoration { border-radius: $window-radius; }
 }
 
 // Session Dialog
-.budgie-session-dialog {
+.budgie-session-dialog,
+.budgie-polkit-dialog,
+.budgie-run-dialog {
   @extend %budgie_dialog;
 
+  &.background.csd, decoration { border-radius: $window-radius $window-radius $window-radius $window-radius; }
+
   label:not(:last-child),
-  .dialog-title { font-size: 120%; }
+  .dialog-title {
+    font-size: 120%;
+  }
 
   .linked.horizontal > button {
     padding: 8px 16px;
     border-top: 1px solid $divider;
     border-radius: 0;
-
     @extend %button-flat-simple;
 
     &:first-child { border-bottom-left-radius: $window-radius; }
-
     &:last-child { border-bottom-right-radius: $window-radius; }
   }
 }
 
 // PolKit Dialog
 .budgie-polkit-dialog {
-  @extend %budgie_dialog;
-
   .message { color: $text-secondary; }
-
   .failure { color: $destructive; }
 }
 
 // Run Dialog
 .budgie-run-dialog {
-  @extend %budgie_dialog;
-
-  background-color: $base;
-
   entry.search {
     font-size: 120%;
     padding: $container-padding 8px + $container-padding;

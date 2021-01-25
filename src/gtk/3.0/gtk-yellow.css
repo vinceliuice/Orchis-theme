@@ -2677,7 +2677,7 @@ filechooser stack.view scrolledwindow treeview.view radio:checked,
 treeview.view radio:indeterminate,
 window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) radio:indeterminate,
 filechooser stack.view scrolledwindow treeview.view radio:indeterminate {
-  color: #0F9D58;
+  color: #FBC02D;
 }
 
 treeview.view check:checked:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) check:checked:disabled, filechooser stack.view scrolledwindow treeview.view check:checked:disabled, treeview.view check:indeterminate:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) check:indeterminate:disabled, filechooser stack.view scrolledwindow treeview.view check:indeterminate:disabled,
@@ -6840,28 +6840,28 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.top .budgie-panel.transparent, .top .budgie-panel:not(.dock-mode) {
+.top .budgie-panel {
   border-radius: 9999px;
   margin: 4px 6px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
-.bottom .budgie-panel.transparent, .bottom .budgie-panel:not(.dock-mode) {
+.bottom .budgie-panel {
   border-radius: 9999px;
   margin: 4px 6px;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
-.left .budgie-panel.transparent, .left .budgie-panel:not(.dock-mode) {
+.left .budgie-panel {
   border-radius: 9999px;
   margin: 4px 6px;
-  margin-right: 8px;
+  margin-right: 0;
 }
 
-.right .budgie-panel.transparent, .right .budgie-panel:not(.dock-mode) {
+.right .budgie-panel {
   border-radius: 9999px;
   margin: 4px 6px;
-  margin-left: 8px;
+  margin-left: 0;
 }
 
 .budgie-panel button {

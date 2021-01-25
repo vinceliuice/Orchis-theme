@@ -52,13 +52,6 @@
   }
 }
 
-/*
-   These wildcard seems unavoidable, need to investigate.
-   Wildcards are bad and troublesome, use them with care,
-   or better, just don't.
-   Everytime a wildcard is used a kitten dies, painfully.
-*/
-
 *:disabled { -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
@@ -2310,7 +2303,7 @@ treeview.view radio {
 
     &:disabled { color: $text-secondary-disabled; }
 
-    &:checked, &:indeterminate { color: $success; }
+    &:checked, &:indeterminate { color: $primary; }
 
     &:checked:disabled, &:indeterminate:disabled { color: $text-secondary-disabled; }
   }
