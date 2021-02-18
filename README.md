@@ -70,5 +70,12 @@ for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print 
 ![Firefox-theme](src/firefox/preview01.png?raw=true)
 ![Firefox-theme](src/firefox/preview02.png?raw=true)
 
+### Fix for Dash to panel
+Go to `src/gnome-shell/extensions/dash-to-panel` [dash-to-panel](src/gnome-shell/extensions/dash-to-panel) run the following commands in the terminal:
+
+```sh
+./install.sh
+```
+
 ## Preview
 ![1](preview.jpg?raw=true)
