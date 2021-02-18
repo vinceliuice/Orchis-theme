@@ -3266,6 +3266,8 @@ infobar {
       button {
         &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
       }
+
+      *:link { color: on($primary); }
     }
 
     &:hover > revealer > box {

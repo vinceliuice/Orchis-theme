@@ -3656,6 +3656,10 @@ infobar.action > revealer > box button, infobar.action > revealer > box button:h
   color: white;
 }
 
+infobar.action > revealer > box *:link, infobar.action:backdrop > revealer > box *:link, infobar.question > revealer > box *:link, infobar.question:backdrop > revealer > box *:link {
+  color: white;
+}
+
 infobar.action:hover > revealer > box, infobar.question:hover > revealer > box {
   background-color: #1b73e8;
 }
