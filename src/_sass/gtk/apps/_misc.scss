@@ -330,4 +330,12 @@ window.background.csd {
       }
     }
   }
+
+  > box.vertical > overlay > stack > scrolledwindow.frame {  // >= 10.0
+    border: none;
+
+    > viewport.frame > box.vertical > stack > scrolledwindow {
+      border-top: 1px solid $divider;
+    }
+  }
 }

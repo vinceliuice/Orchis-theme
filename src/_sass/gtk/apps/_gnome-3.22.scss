@@ -1857,8 +1857,13 @@ window.background.csd {
     }
   }
 
-  > stack > box > box > list { // ArcMenu setting sidebar
+  > stack > box > box > list,
+  > stack > box > stack > scrolledwindow > viewport > list { // ArcMenu setting sidebar
     border-bottom-left-radius: $window-radius;
+  }
+
+  > stack > box > .sidebar > scrolledwindow > viewport > list {
+    padding: 0 0;
   }
 }
 

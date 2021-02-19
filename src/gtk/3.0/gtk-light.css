@@ -5667,8 +5667,13 @@ window.background.csd > stack > grid > scrolledwindow > viewport > box > frame >
   border: none;
 }
 
-window.background.csd > stack > box > box > list {
+window.background.csd > stack > box > box > list,
+window.background.csd > stack > box > stack > scrolledwindow > viewport > list {
   border-bottom-left-radius: 18px;
+}
+
+window.background.csd > stack > box > .sidebar > scrolledwindow > viewport > list {
+  padding: 0 0;
 }
 
 /***********
@@ -6062,6 +6067,14 @@ window.background.csd > box.vertical > overlay > stack > box.vertical > box.hori
 
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:first-child, window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:last-child {
   border-radius: 0;
+}
+
+window.background.csd > box.vertical > overlay > stack > scrolledwindow.frame {
+  border: none;
+}
+
+window.background.csd > box.vertical > overlay > stack > scrolledwindow.frame > viewport.frame > box.vertical > stack > scrolledwindow {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /*********
