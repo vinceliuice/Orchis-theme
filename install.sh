@@ -30,6 +30,7 @@ OPTIONS:
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
   -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
+  --radio-color           Change radio button checked color to default primary color (Default is Green)
   -h, --help              Show help
 
 INSTALLATION EXAMPLES:
@@ -122,6 +123,10 @@ while [[ "$#" -gt 0 ]]; do
     -n|--name)
       _name="$2"
       shift 2
+      ;;
+    --radio-color)
+      radio="true"
+      shift
       ;;
     -t|--theme)
       accent='true'
@@ -237,6 +242,39 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
+parse_sass() {
+  cd ${REPO_DIR} && ./parse-sass.sh
+}
+
+change_radio_color() {
+  if [[ "${radio:-}" == 'true' ]]; then
+    cd ${SRC_DIR}/_sass/gtk
+    sed -i.bak "/\$check_radio_primary/s/success/primary/" _common-3.20.scss
+    echo "Change radio color ..."
+    parse_sass
+  fi
+}
+
+restore_files() {
+  if [[ -f ${SRC_DIR}/_sass/gtk/_common-3.20.scss.bak ]]; then
+    cd ${SRC_DIR}/_sass/gtk
+    rm -rf _common-3.20.scss
+    mv -f _common-3.20.scss.bak _common-3.20.scss
+    echo "Restore _common-3.20.scss file ..."
+    parse_sass
+  fi
+}
+
+install_theme() {
+  for theme in "${themes[@]}"; do
+    for color in "${colors[@]}"; do
+      for size in "${sizes[@]}"; do
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+      done
+    done
+  done
+}
+
 if [[ "${#themes[@]}" -eq 0 ]] ; then
   themes=("${THEME_VARIANTS[0]}")
 fi
@@ -249,13 +287,7 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-for theme in "${themes[@]}"; do
-  for color in "${colors[@]}"; do
-    for size in "${sizes[@]}"; do
-      install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
-    done
-  done
-done
+change_radio_color && install_theme && restore_files
 
 echo
 echo "Done."

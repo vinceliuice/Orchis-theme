@@ -2510,7 +2510,7 @@ radio {
 check:checked, check:indeterminate,
 radio:checked,
 radio:indeterminate {
-  color: #F57C00;
+  color: #0F9D58;
 }
 
 check:checked:disabled, check:indeterminate:disabled,
@@ -2681,7 +2681,7 @@ filechooser stack.view scrolledwindow treeview.view radio:checked,
 treeview.view radio:indeterminate,
 window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) radio:indeterminate,
 filechooser stack.view scrolledwindow treeview.view radio:indeterminate {
-  color: #F57C00;
+  color: #0F9D58;
 }
 
 treeview.view check:checked:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) check:checked:disabled, filechooser stack.view scrolledwindow treeview.view check:checked:disabled, treeview.view check:indeterminate:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) check:indeterminate:disabled, filechooser stack.view scrolledwindow treeview.view check:indeterminate:disabled,
@@ -5667,8 +5667,13 @@ window.background.csd > stack > grid > scrolledwindow > viewport > box > frame >
   border: none;
 }
 
-window.background.csd > stack > box > box > list {
+window.background.csd > stack > box > box > list,
+window.background.csd > stack > box > stack > scrolledwindow > viewport > list {
   border-bottom-left-radius: 18px;
+}
+
+window.background.csd > stack > box > .sidebar > scrolledwindow > viewport > list {
+  padding: 0 0;
 }
 
 /***********
@@ -6062,6 +6067,14 @@ window.background.csd > box.vertical > overlay > stack > box.vertical > box.hori
 
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:first-child, window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:last-child {
   border-radius: 0;
+}
+
+window.background.csd > box.vertical > overlay > stack > scrolledwindow.frame {
+  border: none;
+}
+
+window.background.csd > box.vertical > overlay > stack > scrolledwindow.frame > viewport.frame > box.vertical > stack > scrolledwindow {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /*********

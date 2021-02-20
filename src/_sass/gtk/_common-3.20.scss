@@ -2177,6 +2177,7 @@ radiobutton.text-button {
 }
 
 $check_radio_size: 40px;
+$check_radio_primary: $success;
 
 check,
 radio {
@@ -2189,7 +2190,7 @@ radio {
   @extend %circular_button;
 
   &:checked, &:indeterminate {
-    color: $primary;
+    color: $check_radio_primary;
 
     &:disabled { color: $text-secondary-disabled; }
   }
@@ -2303,7 +2304,7 @@ treeview.view radio {
 
     &:disabled { color: $text-secondary-disabled; }
 
-    &:checked, &:indeterminate { color: $primary; }
+    &:checked, &:indeterminate { color: $check_radio_primary; }
 
     &:checked:disabled, &:indeterminate:disabled { color: $text-secondary-disabled; }
   }
