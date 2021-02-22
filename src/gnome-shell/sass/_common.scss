@@ -73,6 +73,7 @@ stage {
 
 /* Entries */
 GPasteSearchEntry,
+.search-entry,
 StEntry {
   min-height: $medium_size;
   padding: 0 8px;
@@ -96,7 +97,7 @@ StEntry {
   }
   StLabel.hint-text {
     margin-left: 2px;
-    color: transparentize($fg_color, 0.3);
+    color: $disabled_fg_color;
   }
 }
 
@@ -880,20 +881,6 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   text-align: right;
   width: 16px;
   height: 16px;
-}
-
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 3px;
-  -arrow-background-color: transparent;
-  -arrow-border-width: 0;
-  -arrow-border-color: transparent;
-  -arrow-base: 64px;
-  -arrow-rise: 6px;
-  -arrow-box-shadow: none; //dreaming. bug #689995
-  margin-left: $container_padding;
-  background-color: $menu_bg_color;
-  border-radius: $buttons_radius;
-  box-shadow: $shadow_3;
 }
 
 .popup-menu-boxpointer {
@@ -1958,6 +1945,36 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
 #overview {
   spacing: 24px;
   StScrollBar { @extend %overview_scrollbar; }
+
+  .search-entry {
+    width: 320px - 8px * 2;
+    padding: 0 8px;
+    border: none;
+    @include search_entry(normal);
+    selection-background-color: $primary_color;
+    selected-color: $light_fg_color !important;
+
+    &:focus {
+      @include search_entry(focus);
+      padding: 0 8px;
+      selection-background-color: $primary_color;
+      selected-color: $light_fg_color !important;
+    }
+
+    .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: rgba(black, 0.75); }
+    }
+
+    &:insensitive {
+      @include search_entry(insensitive);
+    }
+
+    StLabel.hint-text {
+      color: rgba(black, 0.45);
+    }
+  }
 }
 
 .overview-controls {
@@ -1991,37 +2008,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   border: none;
   font-size: 1em;
   font-weight: normal;
-}
-
-//search entry
-.search-entry {
-  width: 320px - 8px * 2;
-  padding: 0 8px;
-  border: none;
-  @include search_entry(normal);
-  selection-background-color: $primary_color;
-  selected-color: $light_fg_color !important;
-
-  &:focus {
-    @include search_entry(focus);
-    padding: 0 8px;
-    selection-background-color: $primary_color;
-    selected-color: $light_fg_color !important;
-  }
-
-  .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
-
-  &:hover, &:focus {
-    .search-entry-icon { color: rgba(black, 0.75); }
-  }
-
-  &:insensitive {
-    @include search_entry(insensitive);
-  }
-
-  StLabel.hint-text {
-    color: rgba(black, 0.45);
-  }
 }
 
 //search results
@@ -2336,12 +2322,14 @@ StWidget.focused .app-well-app-running-dot {
 
     & .folder-name-entry {
       border: none;
+      color: $light_fg_color;
       background-color: rgba(white, 0.15);
       selection-background-color: $primary_color;
       selected-color: $light_fg_color;
       width: 300px;
 
       &:focus {
+        color: $light_fg_color;
         background-color: rgba(white, 0.25);
       }
 
@@ -2742,10 +2730,25 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 }
 
 // IBus Candidate Popup
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 12px;
+  -arrow-box-shadow: none; //dreaming. bug #689995
+  background-color: transparent;
+  box-shadow: none;
+}
 
 .candidate-popup-content {
-  padding: 8px;
-  spacing: 0;
+  background-color: $menu_bg_color;
+  border-radius: $buttons_radius;
+  box-shadow: $shadow_3;
+  margin: ($container_padding / 2) 8px;
+  padding: $container_padding;
+  spacing: $container_padding;
 }
 
 .candidate-index {
@@ -2758,10 +2761,12 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
   transition-duration: 0ms; // FIXME: needs more natural transitions
   min-height: $menuitem_size;
   padding: 0 8px;
-  border-radius: $buttons_radius;
+  margin-right: $container_padding / 2;
+  border-radius: $buttons_radius - $container_padding;
   &:hover { background-color: $divider_color; color: $fg_color; }
   &:active { background-color: $track_color; color: $fg_color; }
   &:selected { background-color: $primary_color; color: $inverse_fg_color; }
+  &:last-child { margin-right: 0; }
 }
 
 .candidate-page-button-box {
