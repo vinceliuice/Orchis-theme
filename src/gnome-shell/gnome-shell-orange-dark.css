@@ -97,6 +97,7 @@ stage {
 
 /* Entries */
 GPasteSearchEntry,
+.search-entry,
 StEntry {
   min-height: 36px;
   padding: 0 8px;
@@ -116,11 +117,13 @@ StEntry {
 }
 
 GPasteSearchEntry:hover,
+.search-entry:hover,
 StEntry:hover {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
 }
 
 GPasteSearchEntry:focus,
+.search-entry:focus,
 StEntry:focus {
   color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
@@ -128,11 +131,13 @@ StEntry:focus {
 }
 
 GPasteSearchEntry:insensitive,
+.search-entry:insensitive,
 StEntry:insensitive {
   color: rgba(255, 255, 255, 0.7);
 }
 
 GPasteSearchEntry StIcon.capslock-warning,
+.search-entry StIcon.capslock-warning,
 StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #FF6D00;
@@ -140,15 +145,17 @@ StEntry StIcon.capslock-warning {
 }
 
 GPasteSearchEntry StIcon.peek-password,
+.search-entry StIcon.peek-password,
 StEntry StIcon.peek-password {
   icon-size: 16px;
   padding: 0 4px;
 }
 
 GPasteSearchEntry StLabel.hint-text,
+.search-entry StLabel.hint-text,
 StEntry StLabel.hint-text {
   margin-left: 2px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Scrollbars */
@@ -1069,20 +1076,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-align: right;
   width: 16px;
   height: 16px;
-}
-
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 3px;
-  -arrow-background-color: transparent;
-  -arrow-border-width: 0;
-  -arrow-border-color: transparent;
-  -arrow-base: 64px;
-  -arrow-rise: 6px;
-  -arrow-box-shadow: none;
-  margin-left: 6px;
-  background-color: rgba(32, 32, 32, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
 }
 
 .popup-menu-boxpointer {
@@ -2292,6 +2285,50 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   spacing: 24px;
 }
 
+#overview .search-entry {
+  width: 304px;
+  padding: 0 8px;
+  border: none;
+  caret-color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 100px;
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  selection-background-color: #FB8C00;
+  selected-color: #FFFFFF !important;
+}
+
+#overview .search-entry:focus {
+  color: rgba(0, 0, 0, 0.85);
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.55);
+  padding: 0 8px;
+  selection-background-color: #FB8C00;
+  selected-color: #FFFFFF !important;
+}
+
+#overview .search-entry .search-entry-icon {
+  icon-size: 16px;
+  padding: 0 0;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#overview .search-entry:hover .search-entry-icon, #overview .search-entry:focus .search-entry-icon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#overview .search-entry:insensitive {
+  color: rgba(0, 0, 0, 0.35);
+  box-shadow: none;
+}
+
+#overview .search-entry StLabel.hint-text {
+  color: rgba(0, 0, 0, 0.45);
+}
+
 .overview-controls {
   padding-bottom: 32px;
 }
@@ -2322,50 +2359,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   border: none;
   font-size: 1em;
   font-weight: normal;
-}
-
-.search-entry {
-  width: 304px;
-  padding: 0 8px;
-  border: none;
-  caret-color: rgba(0, 0, 0, 0.75);
-  color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 100px;
-  border-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  selection-background-color: #FB8C00;
-  selected-color: #FFFFFF !important;
-}
-
-.search-entry:focus {
-  color: rgba(0, 0, 0, 0.85);
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 0.95);
-  border: none;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.55);
-  padding: 0 8px;
-  selection-background-color: #FB8C00;
-  selected-color: #FFFFFF !important;
-}
-
-.search-entry .search-entry-icon {
-  icon-size: 16px;
-  padding: 0 0;
-  color: rgba(0, 0, 0, 0.75);
-}
-
-.search-entry:hover .search-entry-icon, .search-entry:focus .search-entry-icon {
-  color: rgba(0, 0, 0, 0.75);
-}
-
-.search-entry:insensitive {
-  color: rgba(0, 0, 0, 0.35);
-  box-shadow: none;
-}
-
-.search-entry StLabel.hint-text {
-  color: rgba(0, 0, 0, 0.45);
 }
 
 #searchResultsBin {
@@ -2709,6 +2702,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .app-folder-dialog .folder-name-container .folder-name-entry {
   border: none;
+  color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.15);
   selection-background-color: #FB8C00;
   selected-color: #FFFFFF;
@@ -2716,6 +2710,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry:focus {
+  color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -3225,9 +3220,25 @@ StWidget.focused .app-well-app-running-dot {
   background-color: #FB8C00;
 }
 
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 12px;
+  -arrow-box-shadow: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .candidate-popup-content {
-  padding: 8px;
-  spacing: 0;
+  background-color: rgba(32, 32, 32, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
+  margin: 3px 8px;
+  padding: 6px;
+  spacing: 6px;
 }
 
 .candidate-index {
@@ -3243,7 +3254,8 @@ StWidget.focused .app-well-app-running-dot {
   transition-duration: 0ms;
   min-height: 32px;
   padding: 0 8px;
-  border-radius: 12px;
+  margin-right: 3px;
+  border-radius: 6px;
 }
 
 .candidate-box:hover {
@@ -3259,6 +3271,10 @@ StWidget.focused .app-well-app-running-dot {
 .candidate-box:selected {
   background-color: #FB8C00;
   color: rgba(255, 255, 255, 0.85);
+}
+
+.candidate-box:last-child {
+  margin-right: 0;
 }
 
 .candidate-page-button-box {
