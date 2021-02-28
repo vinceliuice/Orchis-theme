@@ -15,7 +15,7 @@ if [[ -f ${DEST_DIR}/stylesheet.css ]]; then
   mv -n ${DEST_DIR}/stylesheet.css ${DEST_DIR}/stylesheet.css.back
   cp -r ${REPO_DIR}/stylesheet.css ${DEST_DIR}/stylesheet.css
 else
-  prompt -i "\n stylesheet.css not exist!"
+  echo -e "\n stylesheet.css not exist!"
   exit 0
 fi
 
@@ -28,7 +28,7 @@ if [[ -f ${DEST_DIR}/stylesheet.css.back ]]; then
   rm -rf ${DEST_DIR}/stylesheet.css
   mv -n ${REPO_DIR}/stylesheet.css.back ${DEST_DIR}/stylesheet.css
 else
-  prompt -i "\n stylesheet.css.back not exist!"
+  echo -e "\n stylesheet.css.back not exist!"
   exit 0
 fi
 
