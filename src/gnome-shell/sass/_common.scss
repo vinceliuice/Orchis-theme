@@ -2752,15 +2752,14 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 }
 
 .candidate-index {
-  padding: 0 4px 0 0;
+  padding: 0 0.5em 0 0;
   color: $hint_fg_color;
   .candidate-box:selected & { color: $inverse_hint_fg_color; }
 }
 
 .candidate-box {
   transition-duration: 0ms; // FIXME: needs more natural transitions
-  min-height: $menuitem_size;
-  padding: 0 8px;
+  padding: 0.3em 0.5em 0.3em 0.5em;
   margin-right: $container_padding / 2;
   border-radius: $buttons_radius - $container_padding;
   &:hover { background-color: $divider_color; color: $fg_color; }
@@ -2770,23 +2769,20 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 }
 
 .candidate-page-button-box {
-  height: $menuitem_size;
-  .vertical & { padding-top: 0; }
-  .horizontal & { padding-left: 0; }
+  height: 2em;
+  .vertical & { padding-top: 0.5em; }
+  .horizontal & { padding-left: 0.5em; }
 }
 
 .candidate-page-button {
-  min-width: $menuitem_size;
-  min-height: $menuitem_size;
-  padding: 0;
+  padding: 4px;
 }
 
 .candidate-page-button-previous { border-radius: $buttons_radius; border-right-width: 0; }
 .candidate-page-button-next { border-radius: $buttons_radius;  }
-.candidate-page-button-icon { icon-size: em(16px); }
+.candidate-page-button-icon { icon-size: 1em; }
 
-/* Auth Dialogs & Screen Shield */
-
+// Auth Dialogs & Screen Shield
 .framed-user-icon {
   background-size: contain;
   border: none;
@@ -2798,8 +2794,9 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
   }
 }
 
+//
 // LOGIN DIALOG
-
+//
 .login-dialog-banner-view {
   padding-top: 24px;
   max-width: 23em;

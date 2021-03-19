@@ -787,15 +787,11 @@ dialog.background.csd {
   }
 }
 
-hdyleaflet, leaflet {
-  stack.background, overlay {
-    scrolledwindow > viewport {
-      list {
-        @extend %circular_list;
+hdyleaflet, leaflet, box.horizontal > stack.background {
+  frame:not(.view) list:not(.contacts-contact-list) {
+    @extend %circular_list;
 
-        row.activatable { @extend %circular_row; }
-      }
-    }
+    row.activatable { @extend %circular_row; }
   }
 
   frame > border { border: none; }
@@ -806,6 +802,27 @@ hdyleaflet, leaflet {
         @extend %sidebar_row;
       }
     }
+  }
+
+  frame.view {
+    @extend %circular_list;
+
+    list {
+      background: none;
+
+      > separator {
+        background: none;
+        min-height: 0;
+      }
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  list.view, list.frame {
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
   }
 }
 

@@ -3242,7 +3242,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-index {
-  padding: 0 4px 0 0;
+  padding: 0 0.5em 0 0;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -3252,8 +3252,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .candidate-box {
   transition-duration: 0ms;
-  min-height: 28px;
-  padding: 0 8px;
+  padding: 0.3em 0.5em 0.3em 0.5em;
   margin-right: 2px;
   border-radius: 8px;
 }
@@ -3278,21 +3277,19 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-page-button-box {
-  height: 28px;
+  height: 2em;
 }
 
 .vertical .candidate-page-button-box {
-  padding-top: 0;
+  padding-top: 0.5em;
 }
 
 .horizontal .candidate-page-button-box {
-  padding-left: 0;
+  padding-left: 0.5em;
 }
 
 .candidate-page-button {
-  min-width: 28px;
-  min-height: 28px;
-  padding: 0;
+  padding: 4px;
 }
 
 .candidate-page-button-previous {
@@ -3305,10 +3302,9 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-page-button-icon {
-  icon-size: 1.2307692308em;
+  icon-size: 1em;
 }
 
-/* Auth Dialogs & Screen Shield */
 .framed-user-icon {
   background-size: contain;
   border: none;
