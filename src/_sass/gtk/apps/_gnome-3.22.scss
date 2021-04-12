@@ -237,7 +237,7 @@
     button {
       margin: (32px - $small-size) / 2;
 
-      @extend %small_button;
+      @extend %small-button;
     }
   }
 }
@@ -272,7 +272,7 @@
   animation: nautilus-operations-button-needs-attention $ripple-fade-out-duration $ease 6 alternate;
 }
 
-.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(:only-child).disclosure-button { @extend %circular_button; }
+.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(:only-child).disclosure-button { @extend %circular-button; }
 
 // Path bar
 
@@ -439,7 +439,7 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 }
 
 // Make operations button circular
-.nautilus-window headerbar revealer > button { @extend %circular_button; }
+.nautilus-window headerbar revealer > button { @extend %circular-button; }
 
 // Ensure paned separator rendering. See issue #84 for details.
 .nautilus-window paned > separator { background-color: $base-alt; }
@@ -510,7 +510,7 @@ window.org-gnome-gedit {
     margin-top: 8px;
     margin-bottom: 8px;
 
-    @extend %small_button;
+    @extend %small-button;
   }
 }
 
@@ -571,7 +571,7 @@ window.org-gnome-gedit {
     border-radius: $circular-radius;
 
     @extend %button-flat-simple;
-    @extend %small_button;
+    @extend %small-button;
 
     &:last-child:dir(ltr),
     &:not(:first-child):dir(rtl) { margin-left: -$container-padding / 2; }
@@ -697,10 +697,11 @@ row#workspaces-only-on-primary {
   margin-top: 4px;
 }
 
-// Workaround for gnome-tweaks 3.34
 // See https://github.com/nana-4/materia-theme/issues/432
+leaflet.titlebar > .titlebar.tweak-titlebar-left,
+leaflet.titlebar > .titlebar.tweak-titlebar-right, // Workaround for gnome-tweaks 40.0
 hdyleaflet.titlebar > .titlebar.tweak-titlebar-left,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
+hdyleaflet.titlebar > .titlebar.tweak-titlebar-right { // Workaround for gnome-tweaks 3.34
   background-color: inherit;
   box-shadow: inherit;
   // Remove only background-color transition.
@@ -794,6 +795,16 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
     row.activatable { @extend %circular_row; }
   }
 
+  stack.background, overlay {
+    scrolledwindow > viewport {
+      list {
+        @extend %circular_list;
+
+        row.activatable { @extend %circular_row; }
+      }
+    }
+  }
+
   frame > border { border: none; }
 
   > box.vertical > scrolledwindow > viewport.frame {
@@ -885,6 +896,33 @@ window.background.csd {
 }
 
 
+/************************
+ * Epiphany (Gnome Web) *
+ ************************/
+
+tabbox { // Gnome 40.0
+  background-color: $background;
+  box-shadow: inset 0 -1px $divider;
+  padding: ($container-padding / 2) ($container-padding / 2) 0;
+
+  > tab {
+    @extend %tabs_tab;
+    border-radius: $corner-radius $corner-radius 0 0;
+    border-bottom: none;
+
+    // close button
+    button {
+      min-height: 24px;
+      min-width: 24px;
+      border-radius: $circular-radius;
+      border: none;
+      padding: 0;
+      @extend %button-flat-simple;
+    }
+  }
+}
+
+
 /*****************
  * Gnome Weather *
  *****************/
@@ -946,7 +984,7 @@ window.background.csd.unified {
 /*************
  * Rhythmbox *
  *************/
-%image_button {
+%image-button {
   min-height: 24px;
   min-width: 24px;
   padding: ($medium-size - 24px) / 2;
@@ -992,8 +1030,8 @@ window.solid-csd > box.vertical > box.vertical {
 
     > toolitem > .linked > button,
     > toolitem > box.horizontal > button {
-      @extend %circular_button;
-      @extend %image_button;
+      @extend %circular-button;
+      @extend %image-button;
     }
   }
 
@@ -1010,21 +1048,21 @@ window.solid-csd > box.vertical > box.vertical {
 window.background > box.vertical > toolbar.primary-toolbar {
   > toolitem {
     > .linked > button.image-button.raised { // 'shuffle/repeat'
-      @extend %circular_button;
-      @extend %image_button;
+      @extend %circular-button;
+      @extend %image-button;
 
       > widget > box > image { padding: 0; }
     }
 
     button.flat.scale { // 'volume'
-      @extend %circular_button;
-      @extend %image_button;
+      @extend %circular-button;
+      @extend %image-button;
     }
 
     > box.horizontal:not(.linked) > button.toggle,
     > .linked > button:not(.toggle):not(.raised):not(.flat) {
-      @extend %circular_button;
-      @extend %image_button;
+      @extend %circular-button;
+      @extend %image-button;
     }
   }
 }
@@ -1099,7 +1137,7 @@ layouttab {
   }
 
   // Close button styling for layouttab.
-  // > box > button.close { @extend %circular_button; }
+  // > box > button.close { @extend %circular-button; }
 }
 
 layout {
@@ -1795,37 +1833,6 @@ window#GearyMainWindow.background.csd {
 
     .geary-composer-box {
       actionbar > revealer > box { border-bottom-left-radius: 0; }
-    }
-  }
-}
-
-window.background.csd.unified {
-  squeezer {
-    min-height: 0;
-    padding: 0 0;
-    margin: $container-padding 0;
-    border-radius: $circular-radius;
-    background-color: $overlay-normal;
-    color: on($titlebar);
-
-    viewswitcher { margin: 0 0; }
-
-    button {
-      margin: 0 0;
-      border-radius: $circular-radius;
-      background-color: transparent;
-
-      &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
-
-      &:active {
-        box-shadow: inset 0 0 0 9999px gtkalpha($primary, 0.08);
-        background-image: radial-gradient(circle, gtkalpha($primary, 0.08) 10%, transparent 0%);
-      }
-
-      &:checked {
-        background-color: $primary;
-        color: on($primary);
-      }
     }
   }
 }

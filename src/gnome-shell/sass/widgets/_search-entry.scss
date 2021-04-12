@@ -1,0 +1,44 @@
+// Search entry
+
+$search_entry_width: 320px;
+
+%search_entry {
+  width: $search_entry_width;
+  padding: 0 8px;
+  border: none;
+  @include search_entry(normal);
+  selection-background-color: $primary_color;
+  selected-color: $light_fg_color !important;
+  margin-top: $container_padding * 2;
+  margin-bottom: $container_padding;
+
+  &:hover {
+    @include search_entry(hover);
+  }
+
+  &:focus {
+    @include search_entry(focus);
+    padding: 0 8px;
+    selection-background-color: $primary_color;
+    selected-color: $light_fg_color !important;
+  }
+
+  .search-entry-icon {
+    icon-size: 16px;
+    padding: 0 4px;
+    color: inherit;
+  }
+
+  &:hover, &:focus {
+    .search-entry-icon { color: rgba(black, 0.75); }
+  }
+
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: rgba(black, 0.35);
+  }
+}
+
+#overview {
+  .search-entry { @extend %search_entry; }
+}

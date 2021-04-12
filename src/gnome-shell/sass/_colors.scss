@@ -63,8 +63,8 @@ $inverse_divider_color:               rgba($white, 0.15);
 $base_color:     if($variant =='dark', #202020, #ffffff);
 $alt_base_color: if($variant =='dark', lighten($base_color, 25%), darken($base_color, 25%));
 
-$bg_color:         rgba($black, $middle_opacity);
-$alt_bg_color:     rgba($black, $lower_opacity);
+$dark_bg_color:         rgba(#202020, 0.9);
+$alt_dark_bg_color:     rgba(#202020, 0.75);
 $inverse_bg_color: rgba($inverse_fg_color, 0.13);
 $button_bg_color:  if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
 $keyboard_bg_color:  if($variant == 'light', $grey_50, fade($grey_700)); // for gnome-shell keyboard
@@ -80,6 +80,7 @@ $panel_bg: if($variant == 'light', #000000, #000000);
 $panel_bg_color: if($trans == 'true', rgba($panel_bg, 0.5), $panel_bg);
 $panel_fg_color: if($panel == 'dark', #dedede, #dedede);
 $menu_bg_color: if($trans == 'true', rgba($base_color, 0.95), $base_color);
+$system_bg_color: #222222;
 
 $link_color:         $primary_color;
 $visited_link_color: if($variant == 'light', $purple-500, $purple-200);

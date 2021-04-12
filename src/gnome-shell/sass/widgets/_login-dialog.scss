@@ -1,0 +1,149 @@
+/* Login Dialog */
+
+.login-dialog-banner-view {
+  padding-top: 24px;
+  max-width: 23em;
+}
+
+.login-dialog,
+.unlock-dialog {
+  //reset
+  border: none;
+  background-color: transparent;
+
+  StEntry {
+    selection-background-color: $primary_color;
+    selected-color: $inverse_fg_color !important;
+    @include entry(normal, $fc:$inverse_track_color);
+    &:focus { @include entry(focus, $fc:$inverse_fg_color); }
+    &:insensitive {
+      @include entry(insensitive, $fc:$inverse_divider_color);
+    }
+  }
+
+  .modal-dialog-button-box { spacing: 3px; }
+  .modal-dialog-button {
+    padding: 4px 18px;
+    box-shadow: none;
+    @include button(flat-normal, $tc: $inverse_fg_color);
+    &:hover,&:focus { @include button(flat-hover, $tc: $inverse_fg_color); }
+    &:active { @include button(flat-active, $tc: $inverse_fg_color); }
+    &:insensitive { @include button(flat-insensitive, $tc: $inverse_fg_color); }
+
+    &:default {
+      @include button(normal, $c: $suggested_color, $tc: $inverse_fg_color);
+      &:hover,&:focus { @include button(hover, $c: $suggested_color, $tc: $inverse_fg_color); }
+      &:active { @include button(active, $c: $suggested_color, $tc: $inverse_fg_color); }
+      &:insensitive { @include button(insensitive, $c: $inverse_divider_color, $tc: $inverse_disabled_fg_color); }
+    }
+  }
+
+  .cancel-button,
+  .switch-user-button,
+  .login-dialog-session-list-button {
+    padding: 0;
+    border-radius: 99px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: $inverse_divider_color;
+    color: $inverse_secondary_fg_color;
+
+    &:hover,&:focus { color: $inverse_fg_color; }
+    &:active {
+      color: $inverse_fg_color;
+      background-color: $inverse_track_color;
+    }
+
+    StIcon { icon-size: 16px; }
+  }
+
+  .caps-lock-warning-label,
+  .login-dialog-message-warning {
+    color: $inverse_fg_color;
+  }
+}
+
+.login-dialog-logo-bin { padding: 24px 0px; }
+.login-dialog-banner { color: $inverse_secondary_fg_color; }
+.login-dialog-button-box { width: 23em; spacing: 5px; }
+.login-dialog-message { text-align: center; }
+.login-dialog-user-selection-box { padding: 100px 0px; }
+
+.login-dialog-not-listed-label {
+  padding-left: 2px;
+  font-size: 1em;
+  font-weight: bold;
+  color: $inverse_secondary_fg_color;
+  padding-top: 1em;
+  &:hover { color: $inverse_fg_color; }
+  &:focus { background-color: $inverse_divider_color; }
+
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
+    color: $inverse_fg_color;
+  }
+}
+
+.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list {
+  spacing: 12px;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+  &:expanded .login-dialog-user-list-item:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+  &:expanded .login-dialog-user-list-item:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $inverse_fg_color; }
+}
+
+.login-dialog-user-list-item {
+  border-radius: $buttons_radius;
+  padding: 6px;
+  color: $inverse_secondary_fg_color;
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+  &:hover { background-color: $inverse_divider_color; color: $inverse_fg_color; }
+  &:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin: 6px 0 0 0;
+    background-color: $inverse_fg_color;
+  }
+  &:focus .login-dialog-timed-login-indicator { background-color: $inverse_fg_color; }
+}
+
+.user-widget-label {
+  color: $inverse_fg_color;
+}
+
+.user-widget.horizontal .user-widget-label {
+  @include font(title);
+  font-weight: bold;
+  padding-left: 15px;
+
+  &:ltr { padding-left: 14px; text-align: left; }
+  &:rtl { padding-right: 14px; text-align: right; }
+}
+
+.user-widget.vertical .user-widget-label {
+  @include font(title);
+  text-align: center;
+  font-weight: normal;
+  padding-top: 16px;
+}
+
+.login-dialog-prompt-layout {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  spacing: $container_padding * 2;
+  width: 23em;
+}
+
+.login-dialog-prompt-entry {
+  height: 1.5em;
+}
+
+.login-dialog-prompt-label {
+  color: $inverse_hint_fg_color;
+  font-size: 1em;
+  padding-top: 1em;
+}

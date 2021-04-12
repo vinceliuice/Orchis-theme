@@ -1,0 +1,13 @@
+/* OVERVIEW */
+
+.controls-manager, .secondary-monitor-workspaces {
+  spacing: $container_padding * 2;
+}
+
+#overviewGroup {
+  background-color: $system_bg_color;
+}
+
+.overview-controls {
+  padding-bottom: 32px;
+}

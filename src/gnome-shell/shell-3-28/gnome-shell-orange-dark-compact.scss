@@ -1,0 +1,11 @@
+$variant: 'dark';
+$laptop: 'true';
+$panel: 'dark';
+$trans: 'true';
+$theme: 'orange';
+
+@import '../sass/variables';
+@import '../sass/colors';
+@import '../sass/drawing';
+@import '../sass/common-3-28';
+@import '../sass/extensions-3-28';

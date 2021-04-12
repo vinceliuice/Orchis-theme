@@ -1,0 +1,147 @@
+/* Top Bar */
+// a.k.a. the panel
+
+$panel_transition_duration: 250ms; // same as the overview transition duration
+
+#panel {
+  background-color: $panel_bg_color;
+  font-weight: bold;
+  height: $medium_size + 2px;
+  font-feature-settings: "tnum";
+  border-radius: $circular_radius;
+  margin: $container_padding / 2;
+  transition-duration: $panel_transition_duration;
+
+  // transparent panel on lock & login screens
+  &.unlock-screen,
+  &.login-screen,
+  &:overview {
+    background-color: transparent;
+
+    .panel-corner {
+      -panel-corner-opacity: 0;
+    }
+  }
+
+  // the rounded outset corners
+  .panel-corner {
+    -panel-corner-radius: $panel-corner-radius;
+    -panel-corner-background-color: $panel_bg_color;
+    -panel-corner-border-width: 0;
+    -panel-corner-border-color: transparent;
+    -panel-corner-opacity: 1;
+    transition-duration: $panel_transition_duration;
+  }
+
+  // panel menus
+  .panel-button {
+    font-weight: bold;
+    color: $panel_fg_color;
+    -natural-hpadding: $container_padding * 2;
+    -minimum-hpadding: $container_padding;
+    transition-duration: 150ms;
+    border: 3px solid transparent;
+    border-radius: 99px;
+
+    &.clock-display {
+      .clock {
+        transition-duration: 150ms;
+        border: $container_padding / 2 solid transparent;
+        border-radius: $circular_radius;
+      }
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 100px $inverse_divider_color;
+
+      // The clock display needs to have the background on .clock because
+      // we want to exclude the do-not-disturb indicator from the background
+      &.clock-display {
+        box-shadow: none;
+
+        .clock {
+          box-shadow: inset 0 0 0 100px $inverse_divider_color;
+        }
+      }
+    }
+
+    &:hover, &:active, &:overview, &:focus, &:checked {
+      box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25);
+
+      // The clock display needs to have the background on .clock because
+      // we want to exclude the do-not-disturb indicator from the background
+      &.clock-display {
+        box-shadow: none;
+
+        .clock {
+          box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.25);
+        }
+      }
+    }
+
+    // status area icons
+    .system-status-icon {
+      icon-size: 16px;
+      padding: $container_padding - 1px;
+      margin: 0 $container_margin;
+    }
+
+    .panel-status-indicators-box .system-status-icon,
+    .panel-status-menu-box .system-status-icon {
+      margin: 0;
+    }
+
+    // app menu icon
+    .app-menu-icon {
+      -st-icon-style: symbolic;
+      // dimensions of the icon are hardcoded
+    }
+
+    &#panelActivities {
+      -natural-hpadding: $container_padding * 3;
+    }
+  }
+
+  &.unlock-screen,
+  &.login-screen,
+  &:overview {
+    .panel-button {
+      &:hover, &:active, &:overview, &:focus, &:checked {
+        box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.15);
+
+        &.clock-display {
+          box-shadow: none;
+
+          .clock {
+            box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.15);
+          }
+        }
+      }
+    }
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 2px;
+  }
+
+  // spacing between power icon and (optional) percentage label
+  .power-status.panel-status-indicators-box {
+    spacing: 0;
+  }
+
+  // indicator for active
+  .screencast-indicator,
+  .remote-access-indicator { color: $warning_color; }
+}
+
+// App Menu
+#appMenu {
+  spacing: $container_padding;
+  .label-shadow { color: transparent; }
+}
+
+#appMenu .panel-status-menu-box {
+  padding: 0 $container_padding;
+  spacing: $container_padding;
+}

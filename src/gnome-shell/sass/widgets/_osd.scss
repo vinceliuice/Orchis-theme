@@ -1,0 +1,56 @@
+/* OSD */
+
+$osd_levelbar_height: 4px;
+
+%osd_panel {
+  color: $fg_color;
+  background-color: $base_color;
+  border: none;
+  box-shadow: $shadow_2;
+  border-radius: $buttons_radius;
+  padding: 12px;
+}
+
+.osd-window {
+  @extend %osd_panel;
+  text-align: center;
+  font-weight: bold;
+  spacing: $container_padding * 2; // 12px
+  margin: $container_margin * 8; // 32px
+  min-width: 64px;
+  min-height: 64px;
+
+  StIcon {
+    icon-size: 96px;
+  }
+
+  .osd-monitor-label { font-size: 3em; }
+
+  .level {
+    height: $osd_levelbar_height;
+    -barlevel-height: $osd_levelbar_height;
+    -barlevel-background-color: rgba($primary_color, $lower_opacity);
+    -barlevel-active-background-color: $primary_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 3px;
+    -barlevel-border-width: 0;
+  }
+}
+
+/* Pad OSD */
+.pad-osd-window {
+  padding: 32px;
+  background-color: transparentize(#000, 0.2);
+  border: none;
+
+  .pad-osd-title-box { spacing: 12px; }
+  .pad-osd-title-menu-box { spacing: 6px; }
+}
+
+.combo-box-label {
+  width: 15em;
+}
+
+.resize-popup {
+  @extend %osd_panel;
+}

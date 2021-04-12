@@ -433,7 +433,7 @@ na-tray-applet widget box widget {
   box.horizontal button.flat {
     margin: 1px;
 
-    @extend %small_button;
+    @extend %small-button;
   }
 
   .frame { border-style: none; }

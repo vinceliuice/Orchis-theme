@@ -20,6 +20,18 @@ THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey'
 COLOR_VARIANTS=('' '-light' '-dark')
 SIZE_VARIANTS=('' '-compact')
 
+if [[ "$(command -v gnome-shell)" ]]; then
+  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -2)"
+  if [[ "${SHELL_VERSION:-}" == '40.0' ]]; then
+    GS_VERSION="new"
+  else
+    GS_VERSION="old"
+  fi
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="new"
+fi
+
 usage() {
   cat << EOF
 Usage: $0 [OPTION]...
@@ -77,7 +89,13 @@ install() {
 
   mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
   cp -ur "${SRC_DIR}/gnome-shell/"{extensions,message-indicator-symbolic.svg,pad-osd.css} "${THEME_DIR}/gnome-shell"
-  cp -ur "${SRC_DIR}/gnome-shell/gnome-shell$theme${ELSE_DARK:-}$size.css"                "${THEME_DIR}/gnome-shell/gnome-shell.css"
+
+  if [[ "${GS_VERSION:-}" == 'new' ]]; then
+    cp -r "${SRC_DIR}/gnome-shell/shell-40-0/gnome-shell$theme${ELSE_DARK:-}$size.css"    "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  else
+    cp -r "${SRC_DIR}/gnome-shell/shell-3-28/gnome-shell$theme${ELSE_DARK:-}$size.css"    "${THEME_DIR}/gnome-shell/gnome-shell.css"
+  fi
+
   cp -ur "${SRC_DIR}/gnome-shell/common-assets"                                           "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}/gnome-shell/assets${ELSE_DARK:-}/"*.svg                              "${THEME_DIR}/gnome-shell/assets"
   cp -ur "${SRC_DIR}/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"                  "${THEME_DIR}/gnome-shell/assets/checkbox.svg"
@@ -100,6 +118,13 @@ install() {
   cp -r "$SRC_DIR/gtk/3.0/gtk$theme$color$size.css"                             "$THEME_DIR/gtk-3.0/gtk.css"
   [[ "$color" != '-dark' ]] && \
   cp -r "$SRC_DIR/gtk/3.0/gtk$theme-dark$size.css"                              "$THEME_DIR/gtk-3.0/gtk-dark.css"
+
+  mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
+  cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-4.0/assets"
+  cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-4.0/assets"
+  cp -r "$SRC_DIR/gtk/4.0/gtk$theme$color$size.css"                             "$THEME_DIR/gtk-4.0/gtk.css"
+  [[ "$color" != '-dark' ]] && \
+  cp -r "$SRC_DIR/gtk/4.0/gtk$theme-dark$size.css"                              "$THEME_DIR/gtk-4.0/gtk-dark.css"
 
   mkdir -p                                                                      "${THEME_DIR}/xfwm4"
   cp -r "${SRC_DIR}/xfwm4/assets${ELSE_LIGHT:-}/"*.png                          "${THEME_DIR}/xfwm4"

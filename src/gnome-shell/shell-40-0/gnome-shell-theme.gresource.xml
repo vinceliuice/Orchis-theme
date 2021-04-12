@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/shell/theme">
+    <file>assets/dash/bottom-running1.svg</file>
+    <file>assets/dash/bottom-running1-focused.svg</file>
+    <file>assets/dash/bottom-running2.svg</file>
+    <file>assets/dash/bottom-running2-focused.svg</file>
+    <file>assets/dash/bottom-running3.svg</file>
+    <file>assets/dash/bottom-running3-focused.svg</file>
+    <file>assets/dash/bottom-running4.svg</file>
+    <file>assets/dash/bottom-running4-focused.svg</file>
+    <file>assets/dash/left-running1.svg</file>
+    <file>assets/dash/left-running1-focused.svg</file>
+    <file>assets/dash/left-running2.svg</file>
+    <file>assets/dash/left-running2-focused.svg</file>
+    <file>assets/dash/left-running3.svg</file>
+    <file>assets/dash/left-running3-focused.svg</file>
+    <file>assets/dash/left-running4.svg</file>
+    <file>assets/dash/left-running4-focused.svg</file>
+    <file>assets/dash/right-running1.svg</file>
+    <file>assets/dash/right-running1-focused.svg</file>
+    <file>assets/dash/right-running2.svg</file>
+    <file>assets/dash/right-running2-focused.svg</file>
+    <file>assets/dash/right-running3.svg</file>
+    <file>assets/dash/right-running3-focused.svg</file>
+    <file>assets/dash/right-running4.svg</file>
+    <file>assets/dash/right-running4-focused.svg</file>
+    <file>assets/dash/top-running1.svg</file>
+    <file>assets/dash/top-running1-focused.svg</file>
+    <file>assets/dash/top-running2.svg</file>
+    <file>assets/dash/top-running2-focused.svg</file>
+    <file>assets/dash/top-running3.svg</file>
+    <file>assets/dash/top-running3-focused.svg</file>
+    <file>assets/dash/top-running4.svg</file>
+    <file>assets/dash/top-running4-focused.svg</file>
+    <file>assets/calendar-arrow-left.svg</file>
+    <file>assets/calendar-arrow-right.svg</file>
+    <file>assets/calendar-today.svg</file>
+    <file>assets/checkbox.svg</file>
+    <file>assets/checkbox-off.svg</file>
+    <file>assets/close.svg</file>
+    <file>assets/dash-placeholder.svg</file>
+    <file>assets/more-results.svg</file>
+    <file>assets/noise-texture.svg</file>
+    <file>assets/toggle-off.svg</file>
+    <file>assets/toggle-on.svg</file>
+    <file>assets/window-close.svg</file>
+    <file>assets/window-close-active.svg</file>
+    <file>assets/activities.svg</file>
+    <file>extensions/workspaces-to-dock/workspaces-to-dock.css</file>
+    <file>gnome-shell.css</file>
+    <file alias="icons/message-indicator-symbolic.svg">message-indicator-symbolic.svg</file>
+    <file>no-events.svg</file>
+    <file>no-notifications.svg</file>
+    <file>pad-osd.css</file>
+    <file>process-working.svg</file>
+  </gresource>
+</gresources>
