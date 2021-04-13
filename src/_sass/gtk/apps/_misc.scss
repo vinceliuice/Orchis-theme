@@ -128,17 +128,17 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
     }
 
     // For separators in bookmark toolbar
-    > separator { color: $divider; }
+    > separator { color: $solid-border; }
 
     // avoid black border
-    // > scrollbar { background-clip: border-box; }
+    > scrollbar { background-clip: border-box; }
 
     // Emphasize toolbar's border-bottom
-    > frame > border { border-color: $track; }
+    > frame > border { border-color: $solid-border; }
 
     > entry,
     > button > button {
-      border: 1px solid $track;
+      border: 1px solid $solid-border;
       border-radius: $corner-radius;
       box-shadow: none;
 
@@ -203,10 +203,10 @@ tooltip.background.chromium { background-color: rgba($tooltip, 1); }
       &:disabled { color: $titlebar-text-secondary-disabled; }
     }
 
-    > frame { color: $track; }
+    > frame { color: $solid-border; }
   }
 
-  menu > separator { color: $divider; }
+  menu > separator { color: $solid-border; }
 }
 
 //

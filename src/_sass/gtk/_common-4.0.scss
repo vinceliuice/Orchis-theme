@@ -38,13 +38,14 @@ treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
   background-color: $base;
   color: $text;
 
-  // &:hover { box-shadow: inset 0 0 0 9999px $overlay-hover; }
+  &:hover {
+    background: none;
+    box-shadow: none;
+  }
 
-  &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($primary, 0.08); }
+  // &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($primary, 0.08); }
 
   &:disabled { color: $text-disabled; }
-
-  // &:hover, &:selected { border-radius: $corner-radius; }
 
   &:selected {
     @extend %selected_items_color;
@@ -1410,11 +1411,15 @@ treeview.view {
   &:selected {
     background-color: $base;
     background-image: image($overlay-checked);
+    box-shadow: none;
   }
 
   > rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
 
-  &:hover, &:selected { border-radius: 0; }
+  &:hover, &:selected {
+    border-radius: 0;
+    box-shadow: none;
+  }
 
   &.separator {
     min-height: 1px + 2px * 2;

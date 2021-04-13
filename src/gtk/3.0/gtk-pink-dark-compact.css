@@ -5498,6 +5498,14 @@ window.background.csd > box.vertical > paned.horizontal > scrolledwindow treevie
 /************
  * Terminal *
  ************/
+terminal-window.background.csd {
+  border-radius: 0 0 0 0;
+}
+
+terminal-window.background.csd.maximized {
+  border-radius: 0 0 0 0;
+}
+
 terminal-window notebook > header > box {
   margin: -2px -2px -3px;
 }
@@ -5905,16 +5913,20 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > separator {
-  color: rgba(255, 255, 255, 0.12);
+  color: #404040;
+}
+
+#MozillaGtkWidget > widget > scrollbar {
+  background-clip: border-box;
 }
 
 #MozillaGtkWidget > widget > frame > border {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: #404040;
 }
 
 #MozillaGtkWidget > widget > entry,
 #MozillaGtkWidget > widget > button > button {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #404040;
   border-radius: 12px;
   box-shadow: none;
 }
@@ -5990,11 +6002,11 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame {
-  color: rgba(255, 255, 255, 0.3);
+  color: #404040;
 }
 
 #MozillaGtkWidget menu > separator {
-  color: rgba(255, 255, 255, 0.12);
+  color: #404040;
 }
 
 window.background:not(.csd) > window > menu menuitem {

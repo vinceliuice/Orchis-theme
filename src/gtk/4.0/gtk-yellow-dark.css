@@ -40,8 +40,9 @@ filechooser stack.view scrolledwindow treeview.view, iconview, .view {
   color: white;
 }
 
-filechooser stack.view scrolledwindow treeview.view:selected:hover, iconview:selected:hover, .view:selected:hover {
-  box-shadow: inset 0 0 0 9999px rgba(255, 214, 0, 0.08);
+filechooser stack.view scrolledwindow treeview.view:hover, iconview:hover, .view:hover {
+  background: none;
+  box-shadow: none;
 }
 
 filechooser stack.view scrolledwindow treeview.view:disabled, iconview:disabled, .view:disabled {
@@ -1557,12 +1558,14 @@ columnview.view:selected,
 treeview.view:selected {
   background-color: #2C2C2C;
   background-image: image(alpha(currentColor, 0.1));
+  box-shadow: none;
 }
 
 columnview.view:hover, columnview.view:selected,
 treeview.view:hover,
 treeview.view:selected {
   border-radius: 0;
+  box-shadow: none;
 }
 
 columnview.view.separator,
