@@ -8,10 +8,13 @@
 ![02](preview02.png?raw=true)
 
 ## Description
-
 This is a bunch of CSS code to make Firefox look closer to Chrome theme.
 
 ## Installation
+### Quick installation
+1. Copy `src/firefox/chrome` into `../.mazilla/firefox/*default* (your user firefox folder)`
+2. Copy `src/firefox/configuration/user.js` into `../.mazilla/firefox/*default* (your user firefox folder)`
+3. Restart your firefox!
 
 ### Manual installation
 1. Go to `about:support` in Firefox.
@@ -35,8 +38,16 @@ Open `userChrome.css` with a text editor and follow instructions to enable extra
 ### CSD have sharp corners
 See upstream [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1408360).
 
-### Icons color broken
-Icons might appear black where they should be white on some systems. I have no idea why, but you can adjust them in the `theme/colors/light.css` or `theme/colors/dark.css` files, look for `--gnome-icons-hack-filter` var and play with css filters.
+#### Wayland fix:
+1. Go to the `about:config` page
+2. Search for the `layers.acceleration.force-enabled` preference and set it to true.
+3. Now restart Firefox, and it should look good!
+
+#### X11 fix:
+1. Go to the `about:config` page
+2. Type `mozilla.widget.use-argb-visuals`
+3. Set it as a `boolean` and click on the add button
+4. Now restart Firefox, and it should look good
 
 ## Development
 
