@@ -1,0 +1,64 @@
+/* Network Dialogs */
+.nm-dialog {
+  max-height: 34em;
+  min-height: 31em;
+  min-width: 32em;
+}
+
+.nm-dialog-content {
+  spacing: 20px;
+  padding: 24px;
+}
+
+.nm-dialog-airplane-box { spacing: 12px; }
+
+.nm-dialog-airplane-headline {
+  font-weight: bold;
+  text-align: center;
+}
+
+.nm-dialog-airplane-text { color: $fg_color; }
+
+// header
+.nm-dialog-header {
+  font-weight: bold;
+}
+.nm-dialog-header-icon {
+  icon-size: 32px
+}
+.nm-dialog-header-hbox { spacing: 10px; }
+
+// list of networks
+.nm-dialog-scroll-view {
+  border: none;
+  background-color: $divider_color;
+  border-radius: $buttons_radius;
+  padding: $container_padding * 2;
+  padding-right: 0;
+}
+
+// list item
+.nm-dialog-item {
+  font-size: 1em;
+  border-bottom: none;
+  border-radius: $buttons_radius - $container_padding;
+  padding: $container_padding * 2;
+  spacing: 0px;
+
+  &:hover, &:focus { background-color: $divider_color; }
+
+  &:active { background-color: $track_color; }
+
+  &:selected {
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+  }
+}
+
+// icons in list
+.nm-dialog-icon { icon-size: 16px; }
+.nm-dialog-icons { spacing: $container_padding * 2; }
+
+// no networks
+.no-networks-label { color: $disabled_fg_color; }
+.no-networks-box { spacing: $container_padding; }

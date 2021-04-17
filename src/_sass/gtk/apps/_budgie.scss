@@ -507,7 +507,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
     scrolledwindow .raven-header { margin-top: -8px; } // remove extra spaces in Applets stack
   }
 
-  .expander-button { @extend %circular_button; }
+  .expander-button { @extend %circular-button; }
 
   .raven-background {
     border-style: solid none;

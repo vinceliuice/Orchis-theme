@@ -1,0 +1,11 @@
+$variant: 'light';
+$topbar: 'dark';
+$compact: 'true';
+$theme: 'green';
+
+@import '../../_sass/variables';
+@import '../../_sass/colors';
+@import '../../_sass/gtk/drawing-4.0';
+@import '../../_sass/gtk/common-4.0';
+// @import '../../_sass/gtk/apps-4.0';
+@import '../../_sass/gtk/colors-public';

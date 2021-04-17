@@ -471,7 +471,7 @@ button {
     min-width: 24px;
     padding: ($medium-size - 24px) / 2;
 
-    @extend %circular_button;
+    @extend %circular-button;
   }
 
   // NOTE: Some image-only buttons use this as well
@@ -610,12 +610,12 @@ button {
   .inline-toolbar & {
     // @extend %button-flat;
 
-    &:not(.text-button) { @extend %circular_button; }
+    &:not(.text-button) { @extend %circular-button; }
   }
 
   .primary-toolbar & { -gtk-icon-shadow: none; } // tango icons don't need shadows
 
-  @at-root %circular_button,
+  @at-root %circular-button,
   &.close,
   &.circular { // The Bloody Circul Button
     border-radius: $circular-radius;
@@ -623,7 +623,7 @@ button {
     // label { padding: 0; }
   }
 
-  @at-root %small_button {
+  @at-root %small-button {
     min-height: $small-size;
     min-width: $small-size;
     padding: 0;
@@ -690,7 +690,7 @@ modelbutton.flat,
 .menuitem.button.flat {
   min-height: $menuitem-size;
   padding: 0 8px;
-  border-radius: $corner-radius;
+  border-radius: $corner-radius - $container-padding;
   color: $text;
 
   @extend %button-flat-simple;
@@ -762,7 +762,7 @@ spinbutton {
 
     button {
       @extend %button-flat-simple;
-      @extend %small_button;
+      @extend %small-button;
 
       // margin: $container-padding;
       border: solid $container-padding transparent;
@@ -813,7 +813,7 @@ spinbutton {
 
     button {
       @extend %button-flat-simple;
-      @extend %small_button;
+      @extend %small-button;
       padding: 0;
 
       border: solid $container-padding transparent;
@@ -912,7 +912,7 @@ combobox {
 
   > .linked:not(.vertical) > button:not(:only-child) {
     @extend %button-flat;
-    // @extend %small_button;
+    // @extend %small-button;
 
     min-height: 16px;
     min-width: 16px;
@@ -1341,6 +1341,35 @@ headerbar {
     margin-top: 5px;
     margin-bottom: 5px;
   }
+
+  &.windowhandle {
+    > viewswitcher > box > button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+      border-radius: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    > button.popup {
+      label, image { min-height: 0; }
+    }
+
+    viewswitchertitle > squeezer {
+      margin-top: 0;
+      margin-bottom: 0;
+      background: none;
+
+      > viewswitcher {
+        margin: 0 0;
+        background: none;
+
+        > box.horizontal > button.radio {
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
 }
 
 // Development versions of apps to use a differently styled headerbar
@@ -1698,6 +1727,47 @@ popover.background {
 /*************
  * Notebooks *
  *************/
+
+%tabs_tab {
+  transition: $transition,
+              background-size 0ms,
+              background-image 0ms;
+  min-height: $small-size;
+  min-width: $small-size;
+  padding: $container-padding 12px;
+
+  border-width: 1px;
+  border-color: transparent;
+  border-style: solid;
+
+  outline: none;
+  background-clip: padding-box;
+
+  color: $text-secondary;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $frame;
+    color: $text;
+  }
+
+  &:disabled { color: $text-secondary-disabled; }
+
+  &:checked {
+    transition: $transition;
+    background-color: $base;
+    background-clip: padding-box;
+    border-color: $frame;
+    color: $text;
+
+    &:disabled { color: $text-disabled; }
+
+    &.reorderable-page {
+      background-color: $base;
+    }
+  }
+}
+
 notebook {
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
@@ -1851,43 +1921,7 @@ notebook {
     }
 
     tab {
-      transition: $transition,
-                  background-size 0ms,
-                  background-image 0ms;
-      min-height: $small-size;
-      min-width: $small-size;
-      padding: $container-padding 12px;
-
-      border-width: 1px;
-      border-color: transparent;
-      border-style: solid;
-
-      outline: none;
-      background-clip: padding-box;
-
-      color: $text-secondary;
-      font-weight: 500;
-
-      &:hover {
-        background-color: $frame;
-        color: $text;
-      }
-
-      &:disabled { color: $text-secondary-disabled; }
-
-      &:checked {
-        transition: $transition;
-        background-color: $base;
-        background-clip: padding-box;
-        border-color: $frame;
-        color: $text;
-
-        &:disabled { color: $text-disabled; }
-
-        &.reorderable-page {
-          background-color: $base;
-        }
-      }
+      @extend %tabs_tab;
 
       // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
       > box {
@@ -1903,7 +1937,7 @@ notebook {
 
       // colors the button like the label, overridden otherwise
       button.flat {
-        @extend %small_button;
+        @extend %small-button;
 
         &:last-child {
           margin-left: $container-padding;
@@ -2187,7 +2221,7 @@ radio {
   padding: ($check_radio_size - 24px) / 2;
 
   @extend %button-flat-simple;
-  @extend %circular_button;
+  @extend %circular-button;
 
   &:checked, &:indeterminate {
     color: $check_radio_primary;
@@ -2960,7 +2994,7 @@ filechooser {
 
     > stack > box > button { // The new folder button
       @extend %button-flat;
-      @extend %circular_button;
+      @extend %circular-button;
     }
   }
 
@@ -3141,7 +3175,7 @@ placessidebar.sidebar {
 
     button.sidebar-button {
       @extend %button-flat-simple;
-      @extend %small_button;
+      @extend %small-button;
     }
 
     &.sidebar-placeholder-row { background-color: $overlay-hover; }
@@ -3554,7 +3588,7 @@ decoration {
 button.titlebutton {
   // @extend %button-flat-simple;
 
-  @extend %circular_button;
+  @extend %circular-button;
 
   // .selection-mode & { }
 }

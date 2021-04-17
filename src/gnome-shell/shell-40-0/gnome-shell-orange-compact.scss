@@ -1,0 +1,12 @@
+$variant: 'light';
+$laptop: 'true';
+$panel: 'light';
+$trans: 'true';
+$theme: 'orange';
+
+@import '../sass/variables';
+@import '../sass/colors';
+@import '../sass/drawing';
+@import '../sass/common-40-0';
+@import '../sass/widgets';
+@import '../sass/extensions-40-0';

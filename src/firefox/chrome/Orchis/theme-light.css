@@ -1,0 +1,19 @@
+@import "parts/toolbox.css";
+@import "parts/buttons.css";
+@import "parts/entries.css";
+@import "parts/headerbar.css";
+@import "parts/csd.css";
+@import "parts/popups.css";
+@import "parts/tabsbar.css";
+@import "parts/findbar.css";
+@import "parts/remove-white-flash.css";
+@import "parts/custom-icons.css";
+@import "parts/icons.css";
+@import "colors/light.css";
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Set theme version text in customization panel */
+#customization-footer::before {
+	content: "Firefox Orchis theme";
+	padding: 9px;
+}

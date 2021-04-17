@@ -31,6 +31,16 @@ menuitem[type="checkbox"] image, menuitem[type="radio"] image {
 	visibility: visible !important;
 }
 
+menuitem:hover, menupopup menu:hover,
+menubar > menu:hover {
+	color: var(--gnome-button-color) !important;
+	background: var(--gnome-button-hover-background) !important;
+}
+
+menuitem[disabled="true"], menupopup menu[disabled="true"] {
+	color: var(--gnome-button-disabled-color) !important;
+}
+
 menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	background: transparent !important;
 }

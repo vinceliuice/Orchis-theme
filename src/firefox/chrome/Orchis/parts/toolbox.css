@@ -36,6 +36,11 @@
 	box-shadow: none !important;
 }
 
+:root:-moz-lwtheme-brighttext, toolbar[brighttext] {
+	--toolbarbutton-hover-background: var(--gnome-button-hover-background) !important;
+	--toolbarbutton-active-background: var(--gnome-button-active-background) !important;
+}
+
 #TabsToolbar:-moz-window-inactive,
 #toolbar-menubar:-moz-window-inactive,
 #tabbrowser-tabs:-moz-window-inactive {

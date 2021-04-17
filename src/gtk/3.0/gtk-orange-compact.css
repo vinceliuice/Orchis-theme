@@ -209,7 +209,7 @@ headerbar label:disabled, tab label:disabled, button label:disabled {
 
 label.osd {
   border-radius: 12px;
-  background-color: rgba(97, 97, 97, 0.9);
+  background-color: rgba(54, 54, 54, 0.9);
   color: white;
 }
 
@@ -623,7 +623,7 @@ button:drop(active) {
 
 .budgie-session-dialog .linked.horizontal > button,
 .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, .gedit-search-slider .linked > button, .nautilus-window.csd notebook > header tab:checked button.flat, .nautilus-window.csd notebook > header tab:active button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
+.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, .nautilus-window.csd notebook > header tab:checked button.flat, .nautilus-window.csd notebook > header tab:active button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
 .menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .budgie-panel button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button, layouttabbar button, filechooser #pathbarbox > stack > box > button, messagedialog.csd .dialog-action-box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
@@ -642,7 +642,7 @@ popover.background button.model, .caja-pathbar button,
 
 .budgie-session-dialog .linked.horizontal > button:focus,
 .budgie-polkit-dialog .linked.horizontal > button:focus,
-.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, .gedit-search-slider .linked > button:focus, .nautilus-window.csd notebook > header tab:checked button.flat:focus, .nautilus-window.csd notebook > header tab:active button.flat:focus, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, check:focus,
+.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, .nautilus-window.csd notebook > header tab:checked button.flat:focus, .nautilus-window.csd notebook > header tab:active button.flat:focus, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, check:focus,
 radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
 .menuitem.button.flat:focus, .nemo-window .toolbar button:focus, #buttonbox_frame button:focus, .xfce4-panel.background button:focus, .raven stackswitcher.linked > button:focus, .budgie-panel button:focus, .lock-dialog button:focus, .mate-panel-menu-bar button:focus, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus, layouttabbar button:focus, filechooser #pathbarbox > stack > box > button:focus, messagedialog.csd .dialog-action-box button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
@@ -654,7 +654,7 @@ popover.background button.model:focus, .caja-pathbar button:focus,
 
 .budgie-session-dialog .linked.horizontal > button:hover,
 .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, .gedit-search-slider .linked > button:hover, .nautilus-window.csd notebook > header tab:checked button.flat:hover, .nautilus-window.csd notebook > header tab:active button.flat:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, check:hover,
+.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, .nautilus-window.csd notebook > header tab:checked button.flat:hover, .nautilus-window.csd notebook > header tab:active button.flat:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
 .menuitem.button.flat:hover, .nemo-window .toolbar button:hover, #buttonbox_frame button:hover, .xfce4-panel.background button:hover, .raven stackswitcher.linked > button:hover, .budgie-panel button:hover, .lock-dialog button:hover, .mate-panel-menu-bar button:hover, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover, layouttabbar button:hover, filechooser #pathbarbox > stack > box > button:hover, messagedialog.csd .dialog-action-box button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
@@ -666,7 +666,7 @@ popover.background button.model:hover, .caja-pathbar button:hover,
 
 .budgie-session-dialog .linked.horizontal > button:active,
 .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, .gedit-search-slider .linked > button:active, .nautilus-window.csd notebook > header tab:checked button.flat:active, .nautilus-window.csd notebook > header tab:active button.flat:active, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, check:active,
+.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, .nautilus-window.csd notebook > header tab:checked button.flat:active, .nautilus-window.csd notebook > header tab:active button.flat:active, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
 .menuitem.button.flat:active, .nemo-window .toolbar button:active, #buttonbox_frame button:active, .xfce4-panel.background button:active, .raven stackswitcher.linked > button:active, .budgie-panel button:active, .lock-dialog button:active, .mate-panel-menu-bar button:active, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active, layouttabbar button:active, filechooser #pathbarbox > stack > box > button:active, messagedialog.csd .dialog-action-box button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
@@ -682,7 +682,7 @@ popover.background button.model:active, .caja-pathbar button:active,
 
 .budgie-session-dialog .linked.horizontal > button:disabled,
 .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, .gedit-search-slider .linked > button:disabled, .nautilus-window.csd notebook > header tab:checked button.flat:disabled, .nautilus-window.csd notebook > header tab:active button.flat:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
+.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, .nautilus-window.csd notebook > header tab:checked button.flat:disabled, .nautilus-window.csd notebook > header tab:active button.flat:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, .nemo-window .toolbar button:disabled, #buttonbox_frame button:disabled, .xfce4-panel.background button:disabled, .raven stackswitcher.linked > button:disabled, .budgie-panel button:disabled, .lock-dialog button:disabled, .mate-panel-menu-bar button:disabled, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled, layouttabbar button:disabled, filechooser #pathbarbox > stack > box > button:disabled, messagedialog.csd .dialog-action-box button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
@@ -892,8 +892,8 @@ radio, button.image-button, .inline-toolbar button:not(.text-button), button.clo
 }
 
 .pluma-window paned.horizontal box.vertical box.horizontal button.flat, .gedit-search-slider .linked > button, .gedit-document-panel row button.flat, .nautilus-window .floating-bar button, placessidebar.sidebar row button.sidebar-button, notebook > header tab button.flat, spinbutton.vertical button, spinbutton:not(.vertical) button {
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 22px;
+  min-width: 22px;
   padding: 0;
   border-radius: 9999px;
 }
@@ -950,9 +950,9 @@ stacksidebar.sidebar row.needs-attention > label:dir(rtl), .stack-switcher > but
 /* menu buttons */
 modelbutton.flat,
 .menuitem.button.flat {
-  min-height: 28px;
+  min-height: 24px;
   padding: 0 8px;
-  border-radius: 12px;
+  border-radius: 8px;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -965,8 +965,8 @@ modelbutton.flat arrow.right {
 }
 
 button.color {
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 22px;
+  min-width: 22px;
   padding: 4px;
 }
 
@@ -1140,8 +1140,8 @@ combobox > .linked:not(.vertical) > entry:not(:only-child):last-child {
 combobox > .linked:not(.vertical) > button:not(:only-child) {
   min-height: 16px;
   min-width: 16px;
-  margin: 4px;
-  padding: 4px;
+  margin: 5px;
+  padding: 3px;
   border-radius: 12px;
 }
 
@@ -1507,7 +1507,7 @@ searchbar > revealer > box {
 
 .titlebar.default-decoration {
   background-color: #2C2C2C;
-  min-height: 24px;
+  min-height: 22px;
   padding: 4px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   border-radius: 12px 12px 0 0;
@@ -1523,8 +1523,8 @@ searchbar > revealer > box {
 }
 
 .titlebar.default-decoration button.titlebutton {
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 22px;
+  min-width: 22px;
   margin: 0;
   padding: 0;
 }
@@ -1577,6 +1577,33 @@ headerbar spinbutton button {
 headerbar .entry-tag, headerbar .photos-entry-tag, headerbar .documents-entry-tag {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+headerbar.windowhandle > viewswitcher > box > button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+headerbar.windowhandle > button.popup label, headerbar.windowhandle > button.popup image {
+  min-height: 0;
+}
+
+headerbar.windowhandle viewswitchertitle > squeezer {
+  margin-top: 0;
+  margin-bottom: 0;
+  background: none;
+}
+
+headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher {
+  margin: 0 0;
+  background: none;
+}
+
+headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizontal > button.radio {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 /************
@@ -2012,6 +2039,45 @@ popover.background list separator {
 /*************
  * Notebooks *
  *************/
+tabbox > tab, notebook > header tab {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  min-height: 22px;
+  min-width: 22px;
+  padding: 4px 12px;
+  border-width: 1px;
+  border-color: transparent;
+  border-style: solid;
+  outline: none;
+  background-clip: padding-box;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+}
+
+tabbox > tab:hover, notebook > header tab:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+tabbox > tab:disabled, notebook > header tab:disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+tabbox > tab:checked, notebook > header tab:checked {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  background-color: #FFFFFF;
+  background-clip: padding-box;
+  border-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+tabbox > tab:checked:disabled, notebook > header tab:checked:disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+tabbox > tab.reorderable-page:checked, notebook > header tab.reorderable-page:checked {
+  background-color: #FFFFFF;
+}
+
 frame > paned > notebook > header, notebook.frame > header {
   background-color: #FAFAFA;
 }
@@ -2151,45 +2217,6 @@ notebook > header > tabs > arrow {
   min-height: 16px;
   min-width: 16px;
   border-radius: 0;
-}
-
-notebook > header tab {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
-  min-height: 24px;
-  min-width: 24px;
-  padding: 4px 12px;
-  border-width: 1px;
-  border-color: transparent;
-  border-style: solid;
-  outline: none;
-  background-clip: padding-box;
-  color: rgba(0, 0, 0, 0.6);
-  font-weight: 500;
-}
-
-notebook > header tab:hover {
-  background-color: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.87);
-}
-
-notebook > header tab:disabled {
-  color: rgba(0, 0, 0, 0.26);
-}
-
-notebook > header tab:checked {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: #FFFFFF;
-  background-clip: padding-box;
-  border-color: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.87);
-}
-
-notebook > header tab:checked:disabled {
-  color: rgba(0, 0, 0, 0.38);
-}
-
-notebook > header tab.reorderable-page:checked {
-  background-color: #FFFFFF;
 }
 
 notebook > header tab > box {
@@ -3331,7 +3358,7 @@ messagedialog.background {
 }
 
 messagedialog .titlebar {
-  min-height: 24px;
+  min-height: 22px;
   border-style: none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
@@ -3707,7 +3734,7 @@ tooltip {
 }
 
 tooltip.background {
-  background-color: rgba(97, 97, 97, 0.9);
+  background-color: rgba(54, 54, 54, 0.9);
   color: white;
 }
 
@@ -4042,7 +4069,7 @@ popover.emoji-completion arrow {
 }
 
 popover.emoji-completion .emoji-completion-row {
-  min-height: 28px;
+  min-height: 24px;
   padding: 0 12px;
 }
 
@@ -4064,7 +4091,8 @@ popover.emoji-completion .emoji:hover {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-.nautilus-window.csd > grid.horizontal > paned.horizontal > separator {
+.nautilus-window.csd > grid.horizontal > paned.horizontal > separator,
+.nautilus-window.csd > deck > box.vertical > paned.horizontal > separator {
   margin-left: -1px;
 }
 
@@ -4273,7 +4301,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window .floating-bar button {
-  margin: 4px;
+  margin: 5px;
 }
 
 .nautilus-canvas-item.dim-label,
@@ -4515,8 +4543,8 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) {
-  margin-right: -60px;
-  padding-right: 60px;
+  margin-right: -56px;
+  padding-right: 56px;
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) .gedit-search-entry-occurrences-tag {
@@ -4528,8 +4556,8 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) {
-  margin-left: -60px;
-  padding-left: 60px;
+  margin-left: -56px;
+  padding-left: 56px;
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) .gedit-search-entry-occurrences-tag {
@@ -4588,49 +4616,49 @@ window.background.csd > stack > box > stack > scrolledwindow > viewport frame > 
 window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
 window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
 window.background.csd > stack > scrolledwindow > viewport > box > list,
-window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, list.tweak-group list, .tweak-group-startup {
+window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet list.view, hdyleaflet list.frame, leaflet list.view, leaflet list.frame, box.horizontal > stack.background list.view, box.horizontal > stack.background list.frame, hdyleaflet frame.view, leaflet frame.view, box.horizontal > stack.background frame.view, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, box.horizontal > stack.background stack.background scrolledwindow > viewport list, box.horizontal > stack.background overlay scrolledwindow > viewport list, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list), box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list), list.tweak-group list, .tweak-group-startup {
   border-radius: 13px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, list.tweak-group list row.activatable:first-child, .tweak-group-startup row.activatable:first-child {
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet list.view row.activatable:first-child, hdyleaflet list.frame row.activatable:first-child, leaflet list.view row.activatable:first-child, leaflet list.frame row.activatable:first-child, box.horizontal > stack.background list.view row.activatable:first-child, box.horizontal > stack.background list.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, leaflet frame.view list row.activatable:first-child, box.horizontal > stack.background frame.view list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:first-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, list.tweak-group list row.activatable:first-child, .tweak-group-startup row.activatable:first-child {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, list.tweak-group list row.activatable:last-child, .tweak-group-startup row.activatable:last-child {
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet list.view row.activatable:last-child, hdyleaflet list.frame row.activatable:last-child, leaflet list.view row.activatable:last-child, leaflet list.frame row.activatable:last-child, box.horizontal > stack.background list.view row.activatable:last-child, box.horizontal > stack.background list.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, leaflet frame.view list row.activatable:last-child, box.horizontal > stack.background frame.view list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:last-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, list.tweak-group list row.activatable:last-child, .tweak-group-startup row.activatable:last-child {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, list.tweak-group list row.activatable:only-child, .tweak-group-startup row.activatable:only-child {
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet list.view row.activatable:only-child, hdyleaflet list.frame row.activatable:only-child, leaflet list.view row.activatable:only-child, leaflet list.frame row.activatable:only-child, box.horizontal > stack.background list.view row.activatable:only-child, box.horizontal > stack.background list.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, leaflet frame.view list row.activatable:only-child, box.horizontal > stack.background frame.view list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:only-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, list.tweak-group list row.activatable:only-child, .tweak-group-startup row.activatable:only-child {
   border-radius: 12px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus, preferencesgroup list row.activatable:focus, .geary-accounts-editor-pane list row.activatable:focus, window.background.csd.unified > deck > deck > deck list row.activatable:focus, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:focus, hdyleaflet overlay scrolledwindow > viewport list row.activatable:focus, leaflet stack.background scrolledwindow > viewport list row.activatable:focus, leaflet overlay scrolledwindow > viewport list row.activatable:focus, list.tweak-group list row.activatable:focus, .tweak-group-startup row.activatable:focus {
+window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus, preferencesgroup list row.activatable:focus, .geary-accounts-editor-pane list row.activatable:focus, window.background.csd.unified > deck > deck > deck list row.activatable:focus, hdyleaflet list.view row.activatable:focus, hdyleaflet list.frame row.activatable:focus, leaflet list.view row.activatable:focus, leaflet list.frame row.activatable:focus, box.horizontal > stack.background list.view row.activatable:focus, box.horizontal > stack.background list.frame row.activatable:focus, hdyleaflet frame.view list row.activatable:focus, leaflet frame.view list row.activatable:focus, box.horizontal > stack.background frame.view list row.activatable:focus, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:focus, hdyleaflet overlay scrolledwindow > viewport list row.activatable:focus, leaflet stack.background scrolledwindow > viewport list row.activatable:focus, leaflet overlay scrolledwindow > viewport list row.activatable:focus, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:focus, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:focus, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:focus, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:focus, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:focus, list.tweak-group list row.activatable:focus, .tweak-group-startup row.activatable:focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > list > row.activatable,
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list > row.activatable,
-window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable {
+window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable {
   margin-right: 4px;
   border-radius: 0 9999px 9999px 0;
 }
 
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > list > row.activatable:selected,
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list > row.activatable:selected,
-window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:selected, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected {
+window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:selected, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected {
   background-color: alpha(currentColor, 0.1);
   color: #F57C00;
 }
 
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > list > row.activatable:selected image,
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list > row.activatable:selected image,
-window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:selected image, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > list > row.activatable:selected label,
+window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:selected image, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > list > row.activatable:selected label,
 window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame > list > row.activatable:selected label,
-window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:selected label, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label {
+window.background.csd > box.vertical > overlay > stack > box.vertical > box.horizontal > revealer > stack > box.vertical > stack > scrolledwindow > viewport.frame > list > row.activatable:selected label, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label {
   color: #F57C00;
 }
 
@@ -4678,6 +4706,8 @@ row#workspaces-only-on-primary {
   margin-top: 4px;
 }
 
+leaflet.titlebar > .titlebar.tweak-titlebar-left,
+leaflet.titlebar > .titlebar.tweak-titlebar-right,
 hdyleaflet.titlebar > .titlebar.tweak-titlebar-left,
 hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
   background-color: inherit;
@@ -4685,6 +4715,8 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
 }
 
+leaflet.titlebar > .titlebar.tweak-titlebar-left + separator,
+leaflet.titlebar > .titlebar.tweak-titlebar-right + separator,
 hdyleaflet.titlebar > .titlebar.tweak-titlebar-left + separator,
 hdyleaflet.titlebar > .titlebar.tweak-titlebar-right + separator {
   background-color: inherit;
@@ -4765,8 +4797,17 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizo
   border-radius: 0 0 18px 18px;
 }
 
-hdyleaflet frame > border, leaflet frame > border {
+hdyleaflet frame > border, leaflet frame > border, box.horizontal > stack.background frame > border {
   border: none;
+}
+
+hdyleaflet frame.view list, leaflet frame.view list, box.horizontal > stack.background frame.view list {
+  background: none;
+}
+
+hdyleaflet frame.view list > separator, leaflet frame.view list > separator, box.horizontal > stack.background frame.view list > separator {
+  background: none;
+  min-height: 0;
 }
 
 /************************
@@ -4810,6 +4851,28 @@ stack > grid.vertical scrolledwindow.frame.emptyGrid {
  ******************/
 window.background.csd scrolledwindow.contacts-contact-form {
   border-bottom-right-radius: 18px;
+}
+
+/************************
+ * Epiphany (Gnome Web) *
+ ************************/
+tabbox {
+  background-color: #F2F2F2;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  padding: 2px 2px 0;
+}
+
+tabbox > tab {
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+tabbox > tab button {
+  min-height: 24px;
+  min-width: 24px;
+  border-radius: 9999px;
+  border: none;
+  padding: 0;
 }
 
 /*****************
@@ -5101,8 +5164,8 @@ docktabstrip {
 
 docktab {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 22px;
+  min-width: 22px;
   margin-bottom: -1px;
   padding: 4px 6px;
   border-width: 1px;
@@ -5436,6 +5499,14 @@ window.background.csd > box.vertical > paned.horizontal > scrolledwindow treevie
 /************
  * Terminal *
  ************/
+terminal-window.background.csd {
+  border-radius: 0 0 0 0;
+}
+
+terminal-window.background.csd.maximized {
+  border-radius: 0 0 0 0;
+}
+
 terminal-window notebook > header > box {
   margin: -2px -2px -3px;
 }
@@ -5617,39 +5688,6 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
   border-bottom-left-radius: 0;
 }
 
-window.background.csd.unified squeezer {
-  min-height: 0;
-  padding: 0 0;
-  margin: 4px 0;
-  border-radius: 9999px;
-  background-color: alpha(currentColor, 0.05);
-  color: white;
-}
-
-window.background.csd.unified squeezer viewswitcher {
-  margin: 0 0;
-}
-
-window.background.csd.unified squeezer button {
-  margin: 0 0;
-  border-radius: 9999px;
-  background-color: transparent;
-}
-
-window.background.csd.unified squeezer button:focus {
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
-}
-
-window.background.csd.unified squeezer button:active {
-  box-shadow: inset 0 0 0 9999px alpha(#F57C00, 0.08);
-  background-image: radial-gradient(circle, alpha(#F57C00, 0.08) 10%, transparent 0%);
-}
-
-window.background.csd.unified squeezer button:checked {
-  background-color: #F57C00;
-  color: white;
-}
-
 .geary-accounts-editor-pane frame:not(.geary-signature) > border,
 .geary-accounts-editor-pane scrolledwindow.frame {
   border: none;
@@ -5773,8 +5811,8 @@ notebook.tilix-background tab > box > stack {
 }
 
 button.flat.tilix-small-button {
-  min-height: 20px;
-  min-width: 16px;
+  min-height: 18px;
+  min-width: 14px;
 }
 
 /**************
@@ -5860,7 +5898,7 @@ window.background.chromium treeview.view button, window.background.chromium file
 }
 
 tooltip.background.chromium {
-  background-color: #616161;
+  background-color: #363636;
 }
 
 /***********
@@ -5876,16 +5914,20 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > separator {
-  color: rgba(0, 0, 0, 0.12);
+  color: #dedede;
+}
+
+#MozillaGtkWidget > widget > scrollbar {
+  background-clip: border-box;
 }
 
 #MozillaGtkWidget > widget > frame > border {
-  border-color: rgba(0, 0, 0, 0.26);
+  border-color: #dedede;
 }
 
 #MozillaGtkWidget > widget > entry,
 #MozillaGtkWidget > widget > button > button {
-  border: 1px solid rgba(0, 0, 0, 0.26);
+  border: 1px solid #dedede;
   border-radius: 12px;
   box-shadow: none;
 }
@@ -5961,11 +6003,11 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame {
-  color: rgba(0, 0, 0, 0.26);
+  color: #dedede;
 }
 
 #MozillaGtkWidget menu > separator {
-  color: rgba(0, 0, 0, 0.12);
+  color: #dedede;
 }
 
 window.background:not(.csd) > window > menu menuitem {
@@ -6226,7 +6268,7 @@ MatePanelAppletFrameDBus {
 }
 
 .mate-panel-menu-bar menubar menu > menuitem {
-  min-height: 28px;
+  min-height: 24px;
   padding: 0 6px;
 }
 
@@ -6617,7 +6659,7 @@ window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical
 /* multimedia OSD */
 MsdOsdWindow.background.osd {
   border-radius: 12px;
-  background-color: rgba(97, 97, 97, 0.9);
+  background-color: rgba(54, 54, 54, 0.9);
   color: white;
 }
 
@@ -6705,7 +6747,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover button.flat:not(.image-button) {
-  min-height: 28px;
+  min-height: 24px;
   padding: 0 8px;
   color: rgba(0, 0, 0, 0.87);
   font-weight: normal;
@@ -6790,7 +6832,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover.places-menu .unmount-button {
-  margin: 2px;
+  margin: 1px;
   padding: 0;
 }
 

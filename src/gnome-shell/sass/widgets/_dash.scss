@@ -1,0 +1,64 @@
+/* Dash */
+
+$dash_background_color: rgba(white, 0.2);
+$dash_placeholder_size: 32px;
+$dash_padding: $container_padding + 4px; // 10px
+$dash_spacing: $container_padding / 4;
+$dash_bottom_margin: ($container_padding - 2px) * 4;
+$dash_border_radius: $buttons_radius * 1.5;
+
+#dash {
+  font-size: 1em;
+  margin-top: $container_padding * 2;
+  padding: 0 $container_padding;
+
+  .placeholder {
+    // background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-image:none;
+    background-size: contain;
+    height: $dash_placeholder_size;
+  }
+
+  .empty-dash-drop-target {
+    width: $dash_placeholder_size;
+    height: $dash_placeholder_size;
+  }
+
+  .overview-icon {
+    padding: $dash_padding / 2;
+  }
+}
+
+.dash-background {
+  background-color: $dash_background_color;
+  margin-bottom: $dash_bottom_margin;
+  padding: $dash_padding;
+  border-radius: $dash_border_radius;
+}
+
+// Dash Items
+.dash-item-container .app-well-app, .show-apps {
+  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+}
+
+.dash-separator {
+  width: 1px;
+  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
+  background-color: rgba(white, 0.15);
+}
+
+// OSD Tooltip
+.dash-label {
+  border-radius: 100px;
+  padding: 8px 10px;
+  color: $inverse_fg_color;
+  background-color: rgba(black, 0.75);
+  border: none;
+  box-shadow: $shadow_2;
+  text-align: center;
+  -y-offset: $container_margin * 3; // distance from the dash edge
+}
+
+// Show apps button
+//.show-apps {
+//}

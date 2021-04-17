@@ -1,0 +1,77 @@
+//
+// Dash to Dock
+//
+
+$icon_padding: 9px;
+
+#dashtodockContainer {
+  background: transparent;
+
+  #dash,
+  &:overview #dash {
+    background: transparent;
+  }
+
+  &.extended {
+    #dash {
+      padding: 0;
+      margin: 0;
+      background-color: $panel_bg_color;
+
+      .dash-background {
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &:overview #dash {
+      background-color: rgba(white, 0.2);
+      margin-bottom: 0;
+
+      .dash-background {
+        background: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #dash .dash-background {
+    background-color: $panel_bg_color;
+  }
+
+  .dash-separator {
+    width: 0 !important;
+    margin: 0 0 !important;
+    background: none;
+  }
+
+  &.opaque #dash .dash-background { // solid-mode
+    background-color: $panel_bg;
+  }
+
+  &.transparent #dash .dash-background { // translucent-mode
+    background-color: $panel_bg_color; // does not work
+  }
+
+  &:overview #dash .dash-background { // overview-mode #1
+    background-color: rgba(white, 0.2);
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+
+      .dash-background { background-color: transparent !important; }
+    }
+  }
+
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash .dash-background {
+      background-color: rgba(white, 0.2);
+    }
+  }
+}

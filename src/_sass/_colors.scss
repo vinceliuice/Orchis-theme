@@ -77,7 +77,7 @@ $base:                                  if($variant == 'light', #FFFFFF, #2C2C2C
 $base-alt:                              if($variant == 'light', #FAFAFA, #242424);
 
 $os-background:                         #212121;
-$tooltip:                               rgba(#616161, 0.9);
+$tooltip:                               rgba(#363636, 0.9);
 $scrim:                                 rgba(black, 0.6);
 $scrim-alt:                             rgba(black, 0.3);
 $scrim-inverse:                         rgba(white, 0.1);
@@ -104,7 +104,7 @@ $suggested:                             $primary;
 $destructive:                           $error;
 
 $frame:                                 if($variant == 'light', rgba(black, 0.08), rgba(black, 0.16)); // instead of shadows
-$solid-border:                          if($variant == 'light', darken($background, 10%), transparent);
+$solid-border:                          if($variant == 'light', darken($background, 8%), lighten($background, 12%));
 $border-alt:                            rgba(black, 0.16); // darker border color for Chrome and Firefox
 $titlebar-indicator:                    if($topbar == 'dark', currentColor, $primary);
 
