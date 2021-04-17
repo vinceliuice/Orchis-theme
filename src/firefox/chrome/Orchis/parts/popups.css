@@ -8,7 +8,7 @@ menupopup {
 	-moz-appearance: none !important;
 	background: var(--gnome-menu-background) !important;
 	border: 1px solid var(--gnome-menu-border-color) !important;
-	border-radius: 5px;
+	border-radius: 9px;
 	padding: 4px 0 !important;
 	color: var(--gnome-button-color) !important;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
@@ -52,7 +52,7 @@ panelview {
 
 .panel-arrowcontent {
 	background: var(--gnome-popover-background) !important;
-	border: none !important;
+	border: 1px solid var(--gnome-menu-border-color) !important;
 	border-radius: 9px;
 	box-shadow: var(--gnome-popover-shadow) !important;
 	padding: 12px !important;
