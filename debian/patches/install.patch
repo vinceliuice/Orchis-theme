@@ -1,0 +1,10 @@
+--- a/install.sh
++++ b/install.sh
+@@ -1,6 +1,5 @@
+ #!/bin/bash
+-set -ueo pipefail
+-#set -x
++set -x
+ 
+ REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+ SRC_DIR="$REPO_DIR/src"
