@@ -5,3 +5,4 @@
 
 override_dh_install:
 	./install.sh -d $(CURDIR)/debian/orchis-gtk-theme/usr/share/themes
+	find $(CURDIR)/debian/orchis-gtk-theme/usr/share/themes -name COPYING -delete
