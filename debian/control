@@ -1,8 +1,8 @@
 Source: orchis-gtk-theme
-Section: x11
+Section: misc
 Priority: optional
 Maintainer: Jérémy Lal <kapouer@melix.org>
-Build-Depends: debhelper-compat (= 13), meson, sassc
+Build-Depends: debhelper-compat (= 13), sassc
 Standards-Version: 4.5.1
 Homepage: https://github.com/vinceliuice/Orchis-theme
 
