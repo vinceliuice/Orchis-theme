@@ -1,3 +1,7 @@
+Description: remove unknown bash options
+Author: Jérémy Lal <kapouer@melix.org>
+Last-Update: 20210423
+Forwarded: not yet
 --- a/install.sh
 +++ b/install.sh
 @@ -1,6 +1,5 @@
