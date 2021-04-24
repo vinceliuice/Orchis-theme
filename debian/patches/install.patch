@@ -1,0 +1,14 @@
+Description: remove unknown bash options
+Author: Jérémy Lal <kapouer@melix.org>
+Last-Update: 20210423
+Forwarded: not yet
+--- a/install.sh
++++ b/install.sh
+@@ -1,6 +1,5 @@
+ #!/bin/bash
+-set -ueo pipefail
+-#set -x
++set -e
+ 
+ REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+ SRC_DIR="$REPO_DIR/src"
