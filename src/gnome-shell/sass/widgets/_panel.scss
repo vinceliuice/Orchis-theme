@@ -98,7 +98,25 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
 
     &#panelActivities {
-      -natural-hpadding: $container_padding * 3;
+      $size_suffix: if($laptop == 'true', '-small', '');
+      -natural-hpadding: $container_padding;
+      background-image: url("assets/activities#{$size_suffix}.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: auto;
+      color: transparent;
+      background-color: transparent;
+      box-shadow: none;
+
+      &:hover {
+        background-image: url("assets/activities-active#{$size_suffix}.svg");
+      }
+
+      &:hover, &:active, &:overview, &:focus, &:checked {
+        color: transparent;
+        background-color: transparent;
+        box-shadow: none;
+      }
     }
   }
 

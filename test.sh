@@ -21,8 +21,8 @@ COLOR_VARIANTS=('' '-light' '-dark')
 SASSC_OPT=('-M' '-t' 'expanded')
 
 if [[ "$(command -v gnome-shell)" ]]; then
-  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -2)"
-  if [[ "${SHELL_VERSION:-}" == '40.0' ]]; then
+  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
+  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
     GS_VERSION="new"
   else
     GS_VERSION="old"

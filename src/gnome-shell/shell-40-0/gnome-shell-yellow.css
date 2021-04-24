@@ -1850,7 +1850,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel #panelActivities.panel-button {
-  -natural-hpadding: 18px;
+  -natural-hpadding: 6px;
+  background-image: url("assets/activities.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#panel #panelActivities.panel-button:hover {
+  background-image: url("assets/activities-active.svg");
+}
+
+#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 #panel.unlock-screen .panel-button:hover, #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button:hover, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:checked, #panel:overview .panel-button:hover, #panel:overview .panel-button:active, #panel:overview .panel-button:overview, #panel:overview .panel-button:focus, #panel:overview .panel-button:checked {
