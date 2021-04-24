@@ -1,0 +1,130 @@
+// Drawing mixins
+
+// generic drawing of more complex things
+
+// provide font size in rem, with px fallback
+@mixin fontsize($size: 24, $base: 16) {
+  font-size: round($size) + pt;
+}
+
+// Entries
+
+@mixin entry($t, $dark:false) {
+//
+// Entries drawing function
+//
+
+  @if $t==normal {
+    color: $text;
+    border: 2px solid transparent;
+    background-color: $fill;
+  }
+
+  @if $t==focus {
+    color: $text;
+    background-color: $fill;
+    border: 2px solid $primary;
+  }
+
+  @if $t==insensitive {
+    border: 2px solid transparent;
+    background-color: $fill;
+    color: $text-disabled;
+  }
+
+  @if $t==osd {
+    color: on(black);
+    background-color: on(black, fill);
+    border: 2px solid transparent;
+  }
+
+  @if $t==osd-focus {
+    color: on(black);
+    background-color: on(black, fill);
+    border: 2px solid $primary;
+  }
+
+  @if $t==osd-insensitive {
+    color: on(black, disabled);
+    background-color: on(black, fill);
+    border: 2px solid transparent;
+  }
+}
+
+// Buttons
+
+@mixin button($t) {
+//
+// Button drawing function
+//
+
+  @if $t==normal {
+    color: $text-secondary;
+    background-color: $fill;
+  }
+
+  @else if $t==hover {
+    color: $text;
+    background-color: $divider;
+  }
+
+  @else if $t==focus {
+    color: $text;
+    background-color: $divider;
+  }
+
+  @else if $t==focus-hover {
+    color: $text;
+    background-color: $track;
+  }
+
+  @else if $t==active {
+    color: $text;
+    background-color: $track;
+  }
+
+  @else if $t==insensitive {
+    color: $text-disabled;
+    background-color: $fill;
+  }
+
+  @else if $t==flat {
+    color: $text-secondary;
+    background-color: transparent;
+  }
+
+  @else if $t==flat-hover {
+    color: $text;
+    background-color: $divider;
+  }
+
+  @else if $t==flat-active {
+    color: $text;
+    background-color: $track;
+  }
+
+  @else if $t==flat-insensitive {
+    color: $text-secondary-disabled;
+    background-color: transparent;
+  }
+
+  @else if $t==osd {
+    color: on(black, secondary);
+    background-color: on(black, fill);
+  }
+
+  @else if $t==osd-hover {
+    color: on(black);
+    background-color: on(black, divider);
+  }
+
+  @else if $t==osd-active {
+    color: on(black);
+    background-color: on(black, track);
+  }
+
+  @else if $t==osd-insensitive {
+    color: on(black, secondary-disabled);
+    background-color: transparent;
+  }
+}

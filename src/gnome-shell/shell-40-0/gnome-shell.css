@@ -274,7 +274,7 @@ StEntry StLabel.hint-text {
 /* Slider */
 .slider {
   height: 15px;
-  -barlevel-height: 3px;
+  -barlevel-height: 2px;
   -barlevel-background-color: rgba(0, 0, 0, 0.2);
   -barlevel-border-width: 0;
   -barlevel-border-color: rgba(0, 0, 0, 0.12);

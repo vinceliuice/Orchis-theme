@@ -1,0 +1,1992 @@
+
+//
+// Globals
+//
+
+$asset_path: assets;
+$font-size: 9;
+$panel_bg: rgba(#222, 0.75);
+$panel_fg: on(#222, secondary);
+
+stage {
+  @include fontsize($font-size);
+  color: $text;
+}
+
+.label-shadow {
+  color: rgba(0, 0, 0, 0);
+}
+
+%reset_style {
+  background-color: transparent !important;
+  background-gradient-direction: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+//
+// Buttons
+//
+%button {
+  min-height: 24px;
+  padding: 5px 32px;
+  transition-duration: 100ms;
+  border-radius: $corner-radius;
+  @include button(normal);
+
+  &:focus { @include button(focus); border-radius: $corner-radius; }
+  &:hover { @include button(hover); border-radius: $corner-radius; }
+  &:hover:focus { @include button(focus-hover); border-radius: $corner-radius; }
+  &:active, &:active:focus { @include button(active); border-radius: $corner-radius; }
+  &:insensitive { @include button(insensitive); border-radius: $corner-radius; }
+}
+
+%flat_button {
+  border-radius: $corner-radius;
+  @include button(flat);
+
+  &:hover { @include button(flat-hover); border-radius: $corner-radius; }
+  &:active { @include button(flat-active); border-radius: $corner-radius; }
+  &:insensitive { @include button(flat-insensitive); border-radius: $corner-radius; }
+}
+
+%osd_button {
+  min-height: 24px;
+  padding: $container-padding $container-padding*5;
+  transition-duration: 100ms;
+  border-radius: $corner-radius;
+
+  @include button(osd);
+
+  &:hover { @include button(osd-hover); }
+  &:focus { color: $primary; }
+  &:active { @include button(osd-active); }
+  &:insensitive { @include button(osd-insensitive); }
+}
+
+//
+// Entries
+//
+%entry {
+  padding: $container-padding/2 $container-padding*2;
+  min-height: $small-size;
+  caret-size: 1px;
+  selection-background-color: $primary;
+  selected-color: on($primary);
+  transition-duration: 300ms;
+  border-radius: $circular-radius;
+  @include entry(normal);
+
+  &:focus, &:hover { @include entry(focus); }
+  &:insensitive { @include entry(insensitive); }
+
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning;
+    padding: 0 $container-padding;
+  }
+}
+
+%osd_entry {
+  padding: $container-padding/2 $container-padding*2;
+  caret-size: 1px;
+  caret-color: on($os-background);
+  selection-background-color: $primary;
+  selected-color: on($primary);
+  transition-duration: 300ms;
+  border-radius: $corner-radius;
+
+  @include entry(osd);
+
+  &:focus { @include entry(osd-focus); }
+  &:insensitive { @include entry(osd-insensitive); }
+}
+
+//
+// Scrollbars
+//
+StScrollView {
+  &.vfade { -st-vfade-offset: 0px; }
+  &.hfade { -st-hfade-offset: 0px; }
+}
+
+StScrollBar {
+  padding: 8px;
+
+  StScrollView & {
+    min-width: 5px;
+    min-height: 5px;
+  }
+
+  StBin#trough {
+    background-color: transparentize($base, 0.9);
+    border-radius: $circular-radius;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    border-radius: $circular-radius;
+    background-color: mix($text, $background, 40%);
+    border: 0px solid;
+    margin: 0px;
+
+    &:hover { background-color: mix($text, $background, 30%); }
+
+    &:active { background-color: $primary; }
+  }
+}
+
+.separator {
+  -gradient-height: 1px;
+  -gradient-start: rgba(0,0,0,0);
+  -gradient-end: rgba(0,0,0,0);
+  -margin-horizontal: 1.5em;
+  height: 1em;
+}
+
+//
+// Slider
+//
+.popup-slider-menu-item,
+.slider {
+  -slider-height: 4px;
+  -slider-background-color: $divider;        //background of the trough
+  -slider-border-color: transparent;         //trough border color
+  -slider-active-background-color: $primary; //active trough fill
+  -slider-active-border-color: transparent;  //active trough border
+  -slider-border-width: 0;
+  -slider-handle-radius: 4px;
+  height: 18px;
+  min-width: 15em;
+  border: 0 solid transparent;
+  border-right-width: 1px;
+  border-left-width: 5px;
+  color: transparent;
+
+  // .popup-menu-item:active & {
+  //   -slider-background-color: transparentize(black, 0.8);
+  //   -slider-active-background-color: on($primary);
+  // }
+}
+
+//
+// Check Boxes
+//
+.check-box {
+  CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 30px;
+    padding-top: 2px;
+  }
+
+  StLabel { font-weight: normal; }
+
+  StBin {
+    width: 24px;
+    height: 24px;
+    background-image: url("#{$asset_path}/checkbox-unchecked.svg");
+  }
+
+  &:focus StBin { background-image: url("#{$asset_path}/checkbox-unchecked-focused.svg"); }
+
+  &:checked StBin { background-image: url("#{$asset_path}/checkbox-checked.svg"); }
+
+  &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox-checked-focused.svg"); }
+}
+
+//
+// Radio Buttons
+//
+.radiobutton {
+  CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 30px;
+    padding-top: 2px;
+  }
+
+  StLabel {
+    padding-top: 4px;
+    font-size: 0.9em;
+    box-shadow: none;
+  }
+
+  StBin {
+    width: 24px;
+    height: 24px;
+    background-image: url("#{$asset_path}/checkbox-unchecked.svg");
+  }
+
+  &:focus StBin { background-image: url("#{$asset_path}/checkbox-unchecked-focused.svg"); }
+
+  &:checked StBin { background-image: url("#{$asset_path}/checkbox-checked.svg"); }
+
+  &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox-checked-focused.svg"); }
+}
+
+//
+// Switches
+//
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-size: contain;
+  background-image: url("#{$asset_path}/toggle-off.svg");
+
+  &:checked { background-image: url("#{$asset_path}/toggle-on.svg"); }
+
+  .popup-menu-item:active & {
+    background-image: url("#{$asset_path}/toggle-off.svg");
+
+    &:checked { background-image: url("#{$asset_path}/toggle-on.svg"); }
+  }
+}
+
+//
+// Links
+//
+.cinnamon-link {
+  color: $link;
+  text-decoration: underline;
+
+  &:hover { color: lighten($link, 10%); }
+}
+
+//
+// Tooltip
+//
+#Tooltip {
+  border-radius: $corner-radius;
+  padding: 5px 12px;
+  background-color: $os-background;
+  color: on($os-background);
+  font-size: 1em;
+  font-weight: normal;
+  text-align: center;
+}
+
+//
+// Popovers/Menus
+//
+
+$menu_bg: if($variant=='light', rgba($base, 0.95), rgba($background, 0.95));
+$sub_menu_bg: if($variant == 'light', #555555, #eaeaea);
+$menu_item_radius: $window-radius - $container-padding;
+
+.menu,
+.popup-menu,
+%menu {
+  padding: $container-padding / 2;
+  color: $text;
+  background-color: $menu_bg;
+  border-radius: $window-radius;
+  margin: $container-padding;
+  box-shadow: 0 5px 12px rgba(black, 0.35);
+
+  &-arrow { icon-size: 16px; }
+
+  .popup-sub-menu {
+    border-radius: $menu_item_radius;
+    background-gradient-direction: none;
+    box-shadow: none;
+    background-color: $sub_menu_bg;
+    color: on($sub_menu_bg, secondary);
+
+    .popup-menu-item:active {
+      background-color: on($sub_menu_bg, divider);
+      color: on($sub_menu_bg);
+    }
+
+    StScrollBar {
+      padding: 4px;
+      StBin#trough, StBin#vhandle { border-width: 0; }
+    }
+  }
+
+  .popup-menu-content { padding: $container-padding / 2; }
+
+  .popup-menu-item {
+    padding: $container-padding $container-padding*2;
+    spacing: $container-padding*2;
+    border-radius: $menu_item_radius;
+
+    &:hover, &:active {
+      color: $text;
+      background-color: $divider;
+    }
+
+    &:insensitive {
+      color: $text-disabled;
+      background: none;
+    }
+  }
+
+  .popup-inactive-menu-item { //all icons and other graphical elements
+    color: $text-disabled;
+
+    &:insensitive { color: $track-disabled; }
+  }
+
+  .popup-menu-item:active .popup-inactive-menu-item { color: $text-disabled; }
+
+  &-icon { icon-size: 16px; }
+}
+
+.popup-menu-boxpointer {
+  -arrow-border-radius: $corner-radius;
+  -arrow-background-color:  rgba(0,0,0,0.0);
+  -arrow-border-width: 0;
+  -arrow-border-color: rgba(0,0,0,0.0);
+  -arrow-base: 0;
+  -arrow-rise: 0;
+}
+
+.popup-combo-menu {
+  @extend %menu;
+  padding: $container-padding*2;
+}
+
+// .popup-image-menu-item {}
+
+.popup-combobox-item { spacing: 1em; }
+
+.popup-separator-menu-item {
+  -gradient-height: 0;
+  -gradient-start: transparent;
+  -gradient-end: transparent;
+  -margin-horizontal: 1.5em;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border-color: $divider;
+  border-bottom-width: 0;
+  border-bottom-style: solid;
+  background-color: transparent;
+}
+
+.popup-alternating-menu-item:alternate {
+  font-weight: normal;
+}
+
+.popup-device-menu-item { spacing: .5em; }
+
+.popup-subtitle-menu-item { font-weight: normal; }
+
+.nm-menu-item-icons { spacing: .5em; }
+
+//
+// Panel
+//
+#panel {
+  font-weight: bold;
+  height: $medium-size;
+  width: $medium-size + $container-padding;
+
+  &:highlight {
+    border-image: none;
+    background-color: transparentize($error, 0.5);
+  }
+
+  &Left {
+    spacing: 4px;
+
+    &:dnd {
+      background-gradient-direction: vertical;
+      background-gradient-start: rgba(255,0,0,0.05);
+      background-gradient-end: rgba(255,0,0,0.2);
+    }
+
+    &:ltr { padding-right: 4px; }
+    &:rtl { padding-left: 4px; }
+
+    &.vertical {
+      padding: 0;
+
+      &:ltr { padding-right: 0px; }
+      &:rtl { padding-left: 0px; }
+    }
+  }
+
+  &Right {
+    &:dnd {
+      background-gradient-direction: vertical;
+      background-gradient-start: rgba(0,0,255,0.05);
+      background-gradient-end: rgba(0,0,255,0.2);
+    }
+
+    &:ltr { padding-left: $container-padding; spacing: 0px; }
+    &:rtl { padding-right: $container-padding; spacing: 0px; }
+
+    &.vertical {
+      padding: 0;
+
+      &:ltr { padding-right: 0px; }
+      &:rtl { padding-left: 0px; }
+    }
+  }
+
+  &Center {
+    spacing: 4px;
+
+    &:dnd {
+      background-gradient-direction: vertical;
+      background-gradient-start: rgba(0,255,0,0.05);
+      background-gradient-end: rgba(0,255,0,0.2);
+    }
+  }
+}
+
+.panel {
+  &-top, &-bottom, &-left, &-right {
+    color: $panel_fg;
+    font-size: 1em;
+    padding: 0px;
+    background-color: $panel_bg;
+    box-shadow: 0 0 5px rgba(#000, 0.5), 0 0 16px rgba(#000, 0.24);
+
+    .panel-button,
+    .panel-status-button {
+      &:hover {
+        color: $text;
+        background-color: $divider;
+      }
+
+      &:active {
+        color: on($primary);
+        background-color: $primary;
+      }
+    }
+  }
+
+  &-dummy {
+    background-color: transparentize($error, 0.5);
+
+    &:entered { background-color: transparentize($error, 0.4); }
+  }
+
+  &-status-button {
+    border-width: 0;
+    -natural-hpadding: 3px;
+    -minimum-hpadding: 3px;
+    font-weight: bold;
+    height: 22px;
+    color: $panel_fg;
+  }
+
+  &-button {
+    -natural-hpadding: 6px;
+    -minimum-hpadding: 2px;
+    font-weight: bold;
+    transition-duration: 100ms;
+    color: $panel_fg;
+  }
+}
+
+.system-status-icon {
+  icon-size: 16px;
+  padding: 0 1px;
+}
+
+//
+// Overview
+//
+#overview { spacing: 12px; }
+
+.window-caption {
+  background-color: $os-background;
+  border: 1px solid $os-background;
+  color: on($os-background);
+  spacing: 25px;
+  border-radius: $corner-radius;
+  font-size: 9pt;
+  padding: 5px 8px;
+  -cinnamon-caption-spacing: 4px;
+
+  &#selected {
+    background-color: $primary;
+    color: on($primary);
+    border: 1px solid $primary;
+    spacing: 25px;
+  }
+}
+
+.expo-workspaces-name-entry,
+.expo-workspaces-name-entry#selected {
+  height: 15px;
+  border-radius: $corner-radius;
+  font-size: 9pt;
+  padding: 5px 8px;
+  -cinnamon-caption-spacing: 4px;
+  @include entry(osd);
+
+  &:focus {
+    border: 1px solid $primary;
+    background-color: $primary;
+    color: on($primary);
+    font-style: italic;
+    transition-duration: 300;
+    selection-background-color: on($primary);
+    selected-color: $primary;
+  }
+}
+
+.expo-workspace-thumbnail-frame {
+  border: 4px solid rgba(255,255,255,0.0);
+  background-color: rgba(255,255,255,0.0);
+  border-radius: $corner-radius;
+
+  &#active {
+    border: 4px solid $primary;
+    background-color: black;
+    border-radius: $corner-radius;
+  }
+}
+
+.expo-background {
+  background-color: opacify($os-background, 1);
+}
+
+.workspace {
+  //&-controls { visible-height: 32px; }
+
+  &-thumbnails {
+    spacing: 26px;
+
+    &-background, &-background:rtl { padding: 8px; }
+  }
+
+  &-add-button {
+    background-image: url("#{$asset_path}/add-workspace.svg");
+    height: 200px;
+    width: 35px;
+    transition-duration: 100;
+
+    &:hover {
+      background-image: url("#{$asset_path}/add-workspace-hover.svg");
+      transition-duration: 100;
+    }
+    &:active {
+      background-image: url("#{$asset_path}/add-workspace-active.svg");
+      transition-duration: 100;
+    }
+  }
+  &-overview-background-shade { background-color: rgba(0,0,0,0.5); }
+}
+
+.workspace-close-button,
+.window-close {
+  background-image: url("#{$asset_path}/close.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
+  -cinnamon-close-overlap: 13px;
+
+  &:hover {
+    background-image: url("#{$asset_path}/close-hover.svg");
+    background-size: 26px;
+    height: 26px;
+    width: 26px;
+  }
+
+  &:active {
+    background-image: url("#{$asset_path}/close-active.svg");
+    background-size: 26px;
+    height: 26px;
+    width: 26px;
+  }
+}
+
+.workspace-thumbnail-indicator {
+  outline: 2px solid red;
+  border: 1px solid green;
+}
+
+.window-close:rtl {
+  -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.window-close-area {
+  background-image: url("#{$asset_path}/trash-icon.svg");
+  height: 120px;
+  width: 400px;
+}
+
+//
+// About Dialog (applet.js and desklet.js)
+//
+.about {
+  &-content {
+    width: 550px;
+    height: 250px;
+    spacing: 8px;
+    padding-bottom: 10px;
+  }
+  &-title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  &-uuid {
+    font-size: 10px;
+    color: #888;
+  }
+  &-icon {
+    padding-right: 20px;
+    padding-bottom: 14px;
+  }
+  &-scrollBox {
+    border: 1px solid $divider;
+    border-radius: $corner-radius;
+    background-color: $base;
+    padding: 4px;
+    padding-right: 0;
+    border-radius: 0;
+
+    &-innerBox {
+      padding: 1.2em;
+      spacing: 1.2em;
+    }
+  }
+  &-description {
+    padding-top: 4px;
+    padding-bottom: 16px;
+  }
+  &-version {
+    padding-left: 7px;
+    font-size: 10px;
+    color: #888;
+  }
+}
+
+//
+// Calendar
+//
+.calendar {
+  padding: .4em 1.75em;
+  spacing-rows: 0px;
+  spacing-columns: 0px;
+}
+
+.calendar-month-label {
+  color: $text;
+  font-weight: bold;
+  margin: 0 2px;
+  padding: 2px; // label centering
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border-radius: $circular-radius;
+
+  &:focus, &:hover { background-color: rgba($text, 0.1); }
+  &:active { background-color: rgba($text, 0.25); }
+}
+
+//arrow back
+.calendar-change-month-back {
+  background-image: url("#{$asset_path}/calendar-arrow-left.svg");
+
+  &:rtl {
+    background-image: url("#{$asset_path}/calendar-arrow-right.svg");
+  }
+}
+
+//arrow forward
+.calendar-change-month-forward {
+  background-image: url("#{$asset_path}/calendar-arrow-right.svg");
+
+  &:rtl {
+    background-image: url("#{$asset_path}/calendar-arrow-left.svg");
+  }
+}
+
+.datemenu-date-label {
+  padding: .4em 1.75em;
+  font-weight: normal;
+  text-align: center;
+  font-size: 14px;
+  color: $text;
+  border-radius: $corner-radius;
+}
+
+.calendar-day-base {
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 2px;
+  border-radius: $circular-radius;
+}
+
+.calendar-day-heading {
+  color: $text-secondary;
+  margin-top: 1em;
+}
+
+.calendar-day {
+  border-width: 0;
+  color: $text-secondary;
+}
+
+.calendar-day-top {
+  border-top-width: 0;
+}
+
+.calendar-day-left {
+  border-left-width: 0;
+}
+
+.calendar-nonwork-day {
+  color: $text;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.calendar-today,
+.calendar-today:active,
+.calendar-today:focus,
+.calendar-today:hover {
+  font-weight: bold;
+  color: on($primary);
+  background-color: $primary;
+  border-width: 0;
+}
+
+.calendar-other-month-day {
+  color: $text-secondary;
+  opacity: 1;
+}
+
+.calendar-week-number {
+  width: 20px;
+  height: 20px;
+  margin: 6px 0;
+  color: $track;
+  font-weight: bold;
+  background-color: $fill;
+  border-radius: $circular-radius;
+
+  StLabel {
+    padding: 0;
+    margin-top: 3px;
+  }
+}
+
+//
+// Notifications
+//
+#notification {
+  border-radius: $window-radius;
+  padding: $container-padding*2;
+  spacing-rows: $container-padding*1.5;
+  spacing-columns: $container-padding*1.5;
+  margin-from-right-edge-of-screen: $container-padding*3;
+  width: 28em;
+  color: $text;
+  background-color: rgba($base, 0.8);
+  box-shadow: 0 5px 12px rgba(black, 0.35);
+  margin: 7px 12px 17px 12px;
+
+  .notification-button, .notification-icon-button {
+    @extend %flat_button;
+    padding: $container-padding;
+  }
+
+  StEntry { @extend %entry; }
+
+  .menu &,
+  .popup-menu & {
+    border: none;
+    border-radius: $corner-radius;
+    background-color: rgba($text, 0.05);
+    box-shadow: none;
+    margin: 0;
+
+    &:hover {
+      background-color: rgba($text, 0.1);
+      box-shadow: 0 3px 8px rgba(black, 0.15);
+    }
+
+    &, &.multi-line-notification { color: $text; }
+
+    .notification-button, .notification-icon-button {
+      @extend %flat_button;
+      padding: $container-padding;
+    }
+
+    StEntry { @extend %entry; }
+  }
+
+  &.multi-line-notification {
+    padding-bottom: $container-padding*2;
+    color: $text;
+  }
+
+  &-scrollview {
+    max-height: 10em;
+
+    > .top-shadow, > .bottom-shadow { height: 1em; }
+
+    &:ltr > StScrollBar { padding-left: $container-padding; }
+    &:rtl > StScrollBar { padding-right: $container-padding; }
+  }
+
+  &-body { spacing: $container-padding; }
+  &-actions { spacing: $container-padding*1.5; }
+}
+
+.notification {
+  &-with-image {
+    min-height: 159px;
+    color: $text;
+  }
+
+  &-button, &-icon-button {
+    @extend %flat_button;
+    padding: $container-padding;
+  }
+
+  &-icon-button > StIcon { icon-size: 36px; }
+
+  StEntry { @extend %entry; }
+}
+
+//
+// Alt Tab
+//
+#altTabPopup {
+  padding: 8px;
+  spacing: 16px;
+}
+
+.switcher-list {
+  color: $text;
+  background-color: $menu_bg;
+  border: none;
+  border-radius: $corner-radius;
+  padding: 20px;
+
+  > StBoxLayout {
+    padding: 4px;
+  }
+
+  &-item-container { spacing: 8px; }
+
+  .item-box {
+    padding: 8px;
+    border-radius: $corner-radius;
+
+    &:outlined {
+      padding: 8px;
+      border: 1px solid $primary;
+    }
+
+    &:selected {
+      color: on($primary);
+      background-color: $primary;
+      border: 0px solid $primary;
+    }
+  }
+
+  .thumbnail { width: 256px; }
+
+  .thumbnail-box {
+    padding: 2px;
+    spacing: 4px;
+  }
+  .separator {
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+  }
+}
+
+.switcher-arrow {
+  border-color: rgba(0,0,0,0);
+  color: on($os-background);
+
+  &:highlighted {
+    border-color: rgba(0,0,0,0);
+    color: $panel_fg;
+  }
+}
+
+//.switcher-preview-backdrop { background-color: rgba(25,25,25,0.95); }
+
+.thumbnail-scroll-gradient-left {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 24px;
+  border-radius-topright: 0px;
+  border-radius-bottomright: 0px;
+  width: 60px;
+}
+
+.thumbnail-scroll-gradient-right {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 24px;
+  border-radius-topleft: 0px;
+  border-radius-bottomleft: 0px;
+  width: 60px;
+}
+
+//
+//Activities Ripples
+//
+.ripple-box {
+  width: 104px;
+  height: 104px;
+  background-image: url("#{$asset_path}/corner-ripple.svg");
+  background-size: contain;
+}
+
+//
+// Modal dialogs
+//
+.lightbox { background-color: rgba(0, 0, 0, 0.4); }
+.flashspot { background-color: white; }
+
+.modal-dialog {
+  color: on($os-background);
+  background-color: rgba(darken($os-background, 3%), 0.95);
+  border: 1px solid rgba(black, 0.65);
+  padding: 0 5px 6px 5px;
+  border-radius: $corner-radius;
+  box-shadow: 0 3px 8px rgba(black, 0.75), 0 5px 18px rgba(black, 0.55);
+
+  > StBoxLayout:first-child {
+    padding: 20px 10px 10px 10px;
+  }
+
+  &-button-box {
+    spacing: 0;
+    margin: 0;
+    padding: 14px 10px;
+    background-color: transparent;
+    border: none;
+
+    .modal-dialog-button {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 30px;
+
+      @extend %osd_button;
+    }
+  }
+}
+
+//
+// Run dialog
+//
+.run-dialog {
+  padding: $container-padding $container-padding*2;
+  background-color: $os-background;
+  border-radius: $corner-radius;
+  color: on($os-background);
+
+  > * { padding: 0; }
+
+  &-label {
+    font-size: 0;
+    font-weight: bold;
+    color: on($os-background);
+    padding-bottom: 0;
+  }
+
+  &-error-label { color: $error; }
+
+  &-error-box {
+    padding-top: 15px;
+    spacing: 5px;
+  }
+
+  &-completion-box {
+    padding-left: 15px;
+    font-size: 10px;
+  }
+
+  &-entry {
+    width: 21em;
+    padding: $container-padding/2 $container-padding*2;
+    border-radius: $corner-radius;
+    caret-color: on($os-background);
+    selected-color: on($primary);
+    selection-background-color: $primary;
+    @include entry(osd);
+
+    &:focus { @include entry(osd-focus); }
+  }
+
+  .modal-dialog-button-box {
+    border: none;
+    box-shadow: none;
+    background: none;
+    background-gradient-direction: none;
+  }
+}
+
+/* CinnamonMountOperation Dialogs */
+.cinnamon-mount-operation-icon {
+  icon-size: 48px;
+}
+
+.mount-password-reask {
+  color: $warning;
+}
+
+.show-processes-dialog,
+.mount-question-dialog {
+  spacing: 24px;
+
+  &-subject {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+
+    &:rtl {
+      padding-left: 0px;
+      padding-right: 17px;
+    }
+  }
+  &-description {
+    padding-left: 17px;
+    width: 28em;
+
+    &:rtl { padding-right: 17px; }
+  }
+}
+
+.show-processes-dialog-app-list {
+  max-height: 200px;
+  padding-top: 24px;
+  padding-left: 49px;
+  padding-right: 32px;
+
+  &:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+  }
+
+  &-item {
+    color: #ccc;
+
+    &:hover { color: white }
+
+    &:ltr { padding-right: 1em; }
+    &:rtl { padding-left: 1em; }
+
+    &-icon:ltr { padding-right: 17px; }
+    &-icon:rtl { padding-left: 17px; }
+
+    &-name { font-size: 1.1em; }
+  }
+}
+
+//
+// Magnifier
+//
+.magnifier-zoom-region {
+  border: 2px solid rgba(128, 0, 0, 1);
+
+  .full-screen { border-width: 0px; }
+}
+
+//
+// On-Screen Keyboard
+//
+#keyboard {
+  background-color: $os-background;
+  border-width: 0;
+  border-top-width: 1px;
+  border-color: transparentize(black, 0.6);
+}
+
+.keyboard-layout {
+  spacing: 10px;
+  padding: 10px;
+}
+
+.keyboard-row {
+  spacing: 15px;
+}
+
+.keyboard-key {
+  min-height: 2em;
+  min-width: 2em;
+  font-size: 14pt;
+  font-weight: bold;
+  border-radius: $corner-radius;
+  box-shadow: none;
+
+  @include button(osd);
+
+  &:hover { @include button(osd-hover); }
+  &:active, &:checked { @include button(osd-active); }
+
+  &:grayed { @include button(osd-insensitive); }
+}
+
+.keyboard-subkeys { //long press on a key popup
+  color: on($os-background);
+  padding: 5px;
+  -arrow-border-radius: $corner-radius;
+  -arrow-background-color: $os-background;
+  -arrow-border-width: 1px;
+  -arrow-border-color: transparentize(black, 0.6);;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -boxpointer-gap: 5px;
+}
+
+//
+// Cinnamon Specific Section
+//
+
+//
+// Menu (menu.js)
+//
+.menu {
+  &-favorites-box {
+    margin: auto;
+    padding: $container-padding;
+    transition-duration: 300;
+    background-color: rgba($text, 0.05);
+    border: none;
+    border-radius: $corner-radius;
+  }
+
+  &-favorites-button {
+    padding: $container-padding*1.5;
+    border: none;
+    border-radius: $corner-radius;
+
+    &:hover {
+      border-radius: $corner-radius;
+      background-color: rgba($text, 0.1);
+    }
+  }
+
+  &-places {
+    &-box {
+      margin: auto;
+      padding: $container-padding*1.5;
+      border: 1px solid rgba(0,0,0,0);
+    }
+
+    &-button { padding: $container-padding*1.5; }
+  }
+
+  &-categories-box { padding: $container-padding*1.5 $container-padding*5; }
+
+  &-applications-inner-box,
+  &-applications-outer-box { padding: $container-padding*1.5 $container-padding*1.5 0 $container-padding*1.5; }
+
+  &-application-button {
+    padding: $container-padding;
+    border-radius: $corner-radius;
+    border: none;
+
+    // This style is used in menu application buttons for applications which were newly installed
+    &:highlighted { font-weight: bold; }
+
+    &-selected {
+      @include button(hover);
+      padding: $container-padding;
+      border-radius: $corner-radius;
+      border: none;
+
+      &:highlighted { font-weight: bold; }
+    }
+
+    &-label:ltr { padding-left: $container-padding; }
+    &-label:rtl { padding-right: $container-padding; }
+  }
+
+  StScrollView.menu-application-button { // extracted submenu container
+    padding: $container-padding/2 0;
+    border-radius: $corner-radius;
+    background-color: $sub_menu_bg;
+    color: on($sub_menu_bg);
+
+    .popup-menu-item {
+      padding: 0;
+      spacing: 0;
+      margin: 0 $container-padding/2;
+      border-radius: $corner-radius;
+      color: on($sub_menu_bg);
+
+      &:ltr { padding-left: $container-padding; }
+      &:rtl { padding-right: $container-padding; }
+
+      &:active {
+        border-image: none; // image independent
+        background-color: on($sub_menu_bg, divider);
+        color: on($sub_menu_bg);
+      }
+
+      StIcon { min-width: 22px; } // indentation
+
+      StLabel {
+        &:ltr { padding: $container-padding 0 $container-padding $container-padding; }
+        &:rtl { padding: $container-padding $container-padding $container-padding 0; }
+      }
+    }
+  }
+
+  &-category-button {
+    padding: $container-padding;
+    border-radius: $corner-radius;
+
+    &-selected {
+      padding: $container-padding;
+    }
+
+    &-hover, &-selected {
+      @include button(flat-hover);
+      border-radius: $corner-radius;
+    }
+
+    &-greyed {
+      padding: $container-padding;
+      color: $text-disabled;
+    }
+
+    &-label:ltr { padding-left: $container-padding; }
+    &-label:rtl { padding-right: $container-padding; }
+  }
+
+  // Name and description of the currently hovered item in the menu
+  // This appears on the bottom right hand corner of the menu
+  &-selected-app-box {
+    padding-right: 30px;
+    padding-left: 28px;
+    text-align: right;
+    height: 30px;
+
+    &:rtl {
+      padding-top: 10px;
+      height: 30px;
+    }
+  }
+
+  &-selected-app-title { font-weight: bold; }
+
+  &-selected-app-description { max-width: 150px; }
+
+  &-search-box:ltr { padding-left: 30px; }
+  &-search-box-rtl { padding-right: 30px; }
+}
+
+#menu-search-entry {
+  width: 250px;
+  height: 15px;
+  font-weight: normal;
+  caret-color: $text;
+
+  @extend %entry;
+}
+
+.menu-search-entry-icon {
+  icon-size: 1em;
+  color: $text;
+}
+
+// Context menu (at the moment only for favorites)
+// .menu-context-menu { }
+
+//
+// OSD
+//
+.info-osd {
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  padding: 16px;
+  color: $panel_fg;
+  background-color: $panel_bg;
+}
+
+.osd-window {
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  padding: 20px;
+  min-width: 64px;
+  min-height: 64px;
+  color: $panel_fg;
+  border-radius: 0;
+  background-color: $panel_bg;
+  border: none;
+
+  .osd-monitor-label { font-size: 3em; }
+
+  .level {
+    padding: 0;
+    height: 4px;
+    background-color: rgba(black, 0.35);
+    border-radius: $corner-radius;
+    color: $primary;
+  }
+
+  .level-bar {
+    border-radius: $corner-radius;
+    background-color: $primary;
+  }
+}
+
+//
+// Window list (windowList.js)
+//
+
+.window-list {
+  &-box {
+    spacing: 2px;
+
+    .panel-bottom &,
+    .panel-top & {
+      &:ltr { padding: 0 0 0 8px; }
+      &:rtl { padding: 0 8px 0 0; }
+    }
+
+    &.vertical {
+      padding: 6px 0 0 0;
+
+      #appMenuIcon {
+        padding-top: 2px;
+      }
+    }
+
+    &:highlight { background-color: rgba($error, 0.5); }
+  }
+
+  &-item-label {
+    font-weight: normal;
+    width: 15em;
+    min-width: 5px;
+  }
+
+  &-item-box {
+    font-weight: normal;
+    background-image: none;
+    transition-duration: 100ms;
+    color: rgba($panel_fg, 0.9);
+    border-radius: 0;
+
+    .panel-bottom & StLabel { padding-left: $container-padding; }
+    .panel-top & StLabel { padding-left: $container-padding; }
+    .panel-left & StLabel { padding-top: $container-padding; }
+    .panel-right & StLabel { padding-top: $container-padding; }
+
+    @each $position in (top),
+                       (bottom),
+                       (left),
+                       (right) {
+      .panel-#{$position} & {
+        border-#{$position}: 2px solid transparent;
+        StIcon, StBin, #appMenuIcon { padding: 2px; padding-#{$position}: 0; }
+      }
+    }
+
+    &:hover {
+      color: $panel_fg;
+      background-gradient-direction: none;
+      background-color: rgba($panel_fg, 0.15);
+    }
+
+    &:active,
+    &:checked,
+    &:running {
+      color: $panel_fg;
+      background-gradient-direction: none;
+      background-color: rgba($panel_fg, 0.25);
+      border-color: on($panel_bg, track);
+
+      &:hover {
+        background-color: rgba($panel_fg, 0.3);
+      }
+    }
+
+    &:focus {
+      color: $panel_fg;
+      background-gradient-direction: none;
+      background-image: radial-gradient(5px 5px 45deg, circle cover, $panel_fg 0%, $panel_fg 100%);
+      border-color: $primary;
+      background-color: rgba($panel_fg, 0.2);
+
+      &:hover {
+        background-color: rgba($panel_fg, 0.3);
+      }
+
+      @each $position in (top),
+                         (bottom),
+                         (left),
+                         (right) {
+        .panel-#{$position} & {
+          background-position: #{$position} center;
+        }
+      }
+    }
+
+    &.right, &.left {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .progress {
+      background-gradient-direction: vertical;
+      background-gradient-start: $success;
+      background-gradient-end: $success;
+      border-radius: $corner-radius;
+      box-shadow: none;
+    }
+  }
+
+  &-item-demands-attention {
+    background-gradient-start: $warning;
+    background-gradient-end: $warning;
+  }
+
+  // >= 3.6.7
+  &-preview { // thumbnail popup windows = .switcher-list
+    padding: $container-padding*2; // = .switcher-list - .item-box
+    spacing: $container-padding; // = .switcher-list-item-container
+    border: none;
+    background-color: $base;
+    border-radius: $corner-radius;
+    color: $text;
+    box-shadow: 0 3px 5px rgba(#000, 0.35), 0 3px 12px rgba(#000, 0.16);
+  }
+}
+
+//
+// Grouped window list (grouped-window-list@cinnamon.org) // >= 4.0
+//
+
+.grouped-window-list {
+  &-thumbnail-label {
+    padding-left: 4px;
+  }
+
+  &-thumbnail-alert {
+    background-color: rgba($error, 0.5);
+  }
+
+  &-thumbnail-menu {
+    padding: $container-padding;
+
+    .item-box {
+      padding: $container-padding;
+      border-radius: $corner-radius;
+      spacing: $container-padding;
+      margin: 1px;
+
+      &:outlined {
+        background-color: rgba($text, 0.1);
+      }
+
+      &:hover {
+        background-color: rgba($text, 0.15);
+      }
+    }
+
+    .thumbnail {
+      width: 256px;
+    }
+
+    .separator {
+      width: 1px;
+      background-color: $divider;
+    }
+  }
+
+  &-number-label {
+    z-index: 120;
+    text-shadow: none;
+    color: on($primary);
+    padding: 0;
+  }
+
+  &-button-label {
+    padding-left: 2px;
+  }
+
+  &-badge {
+    border-radius: 256px;
+    background-color: $primary;
+  }
+
+  &-item-box {
+    font-weight: normal;
+    transition-duration: 100ms;
+    border: none;
+    margin: 0;
+    color: rgba($panel_fg, 0.6);
+    border-radius: 0;
+    spacing: $container-padding;
+    border-bottom: 2px solid transparent;
+
+    &.top, &.bottom {
+      padding: 0 2px;
+    }
+
+    &:hover {
+      color: $panel_fg;
+      background-gradient-direction: none;
+      background-color: rgba($panel_fg, 0.15);
+    }
+
+    &:active {
+      color: $panel_fg;
+      background-gradient-direction: none;
+      background-color: transparent;
+      border-color: on($panel_bg, track);
+
+      &:hover {
+        background-color: rgba($panel_fg, 0.15);
+      }
+    }
+
+    &:focus {
+      color: $panel_fg;
+      background-gradient-direction: none;
+      background-color: rgba($panel_fg, 0.2);
+      border-color: $primary;
+
+      &:hover {
+        background-color: rgba($panel_fg, 0.3);
+      }
+    }
+
+    .progress {
+      background-gradient-direction: vertical;
+      background-gradient-start: $success;
+      background-gradient-end: $success;
+      border-radius: $corner-radius;
+      box-shadow: none;
+    }
+  }
+
+  &-item-demands-attention {
+    background-gradient-start: $warning;
+    background-gradient-end: $warning;
+  }
+}
+
+///
+// Sound Applet (status/volume.js)
+//
+.sound-button {
+  width: 22px;
+  height: 13px;
+  padding: 8px;
+
+  @extend %button;
+
+  &-container {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  StIcon { icon-size: 1.4em; }
+}
+
+.sound-track {
+  &-infos { padding: 5px; }
+  &-info {
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    StIcon { icon-size: 16px; }
+
+    StLabel {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  &-box {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 220px;
+  }
+}
+
+.sound-seek-box {
+  padding-left: 15px;
+
+  StLabel { padding-top: 2px; }
+  StIcon { icon-size: 16px; }
+}
+
+.sound-seek-slider { width: 140px; }
+
+.sound-volume-menu-item {
+  padding: .4em 1.75em;
+
+  StIcon {
+    icon-size: 1.14em;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.sound-playback-control { padding: 5px 10px 10px 10px; }
+
+// 2.8
+.sound-player {
+  padding: 0 0;
+  margin-top: 6px;
+  border-radius: $corner-radius;
+  background-color: $sub_menu_bg;
+  color: on($sub_menu_bg);
+
+  > StBoxLayout:first-child {
+    padding: 5px 10px 10px 10px;
+    spacing: 0.5em;
+
+    StButton:small {
+      width: 24px;
+      height: 24px;
+      border-radius: $circular-radius;
+
+      &:hover { background-color: on($sub_menu_bg, divider); }
+      &:active { background-color: on($sub_menu_bg, track); }
+
+      StIcon { icon-size: 16px; }
+    }
+  }
+
+  &-generic-coverart {
+    background: rgba(black, 0.2);
+  }
+
+  &-overlay {
+    width: 290px;
+    height: 80px;
+    padding: $container-padding*2 $container-padding*3;
+    spacing: $container-padding;
+    background-color: on($sub_menu_bg, track);
+    border: none;
+    border-radius: 0 0 $corner-radius $corner-radius;
+    color: on($sub_menu_bg);
+
+    StButton {
+      width: 16px;
+      height: 16px;
+      padding: 8px;
+      margin: 0 $container-padding $container-padding;
+      color: on($sub_menu_bg);
+      border-radius: $circular-radius;
+      border: none;
+
+      StIcon { icon-size: 16px; }
+
+      &:hover { background-color: rgba(on($os-background), 0.1); }
+      &:active { background-color: rgba(on($os-background), 0.25); }
+      &:insensitive {
+        opacty: 0.35;
+        color: rgba(on($os-background), 0.35);
+      }
+    }
+
+    StLabel { padding: 0 $container-padding; }
+
+    StBoxLayout {
+      padding-top: 2px;
+    }
+  }
+
+  .slider {
+    height: 0.5em;
+    padding: 0;
+    border: 0px solid darken($os-background, 8%);
+    border-bottom: 1px;
+    -slider-height: 0.5em;
+    -slider-background-color: if($variant == 'light', $divider, darken($background, 5%));
+    -slider-border-color: rgba(0,0,0,0);
+    -slider-active-background-color: $primary;
+    -slider-active-border-color: rgba(0,0,0,0);
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
+  }
+}
+
+//
+// Workspace Switcher applet (workspaceSwitcher.js)
+//
+#workspaceSwitcher {
+  spacing: 0px;
+  padding: 3px;
+}
+
+/* Controls the styling when using the "Simple buttons" option */
+.workspace-switcher {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.workspace-button {
+  width: 20px;
+  height: 10px;
+  color: $panel_fg;
+  padding: 3px;
+  padding-top: 4px;
+  transition-duration: 300;
+
+  &:outlined, &:outlined:hover { color: $primary; }
+  &:hover { color: lighten($primary, 10%) }
+}
+
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+  padding: 3px;
+  spacing: 3px;
+}
+
+.workspace-graph .workspace {
+  border: 1px solid transparentize(black, 0.6);
+  background-gradient-direction: none;
+  background-color: transparentize(black, 0.8);
+}
+
+.workspace-graph .workspace:active {
+  border: 1px solid $primary;
+  background-gradient-direction: none;
+}
+
+.workspace-graph .workspace .windows {
+  -active-window-background: lighten($panel_bg, 15%);
+  -active-window-border: rgba(0, 0, 0, 0.8);
+  -inactive-window-background: lighten($panel_bg, 15%);
+  -inactive-window-border: rgba(0, 0, 0, 0.8);
+}
+
+.workspace-graph .workspace:active .windows {
+  -active-window-background: lighten($panel_bg, 20%);
+  -active-window-border: rgba(0, 0, 0, 0.8);
+  -inactive-window-background: lighten($panel_bg, 5%);
+  -inactive-window-border: rgba(0, 0, 0, 0.8);
+}
+
+//
+// Panel Launchers Applet (panelLaunchers.js)
+//
+#panel-launchers-box {
+  padding: 0 6px;
+
+  &.vertical {
+    padding: 3px 0;
+  }
+}
+
+.panel-launcher {
+  padding: 2px;
+  transition-duration: 200ms;
+  border-radius: 0;
+
+  &:hover {
+    background-gradient-direction: none;
+    background-color: rgba($panel_fg, 0.1);
+  }
+
+  &:active {
+    background-color: rgba($panel_fg, 0.2);
+  }
+}
+
+// 3.2.x
+.launcher {
+  padding: 2px;
+  spacing: 2px;
+  transition-duration: 0.2s;
+  border-radius: 0;
+
+  &:hover {
+    background-gradient-direction: none;
+    background-color: rgba($panel_fg, 0.1);
+  }
+
+  &:active {
+    background-color: rgba($panel_fg, 0.2);
+  }
+
+  .icon-box { padding: 2px; }
+}
+
+//
+// Overview corner
+//
+#overview-corner {
+//  background-image: url("#{$asset_path}/overview.png");
+
+//  &:hover { background-image: url("#{$asset_path}/overview-hover.png"); }
+}
+
+//
+// Applets (applet.js)
+//
+.applet {
+  &-separator { padding: 1px 4px; }
+
+  &-separator-line {
+    width: 1px;
+    background: rgba($panel_fg, 0.12);
+  }
+
+  &-box {
+    padding: 0 8px;
+    color: $panel_fg;
+    text-shadow: none;
+    transition-duration: 100ms;
+    border-radius: 0;
+
+    &.vertical {
+      padding: 8px 0;
+    }
+
+    &:hover {
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.15);
+    }
+
+    &:checked, &:checked:hover {
+      color: $panel_fg;
+      background-color: rgba($panel_fg, 0.25);
+    }
+
+    &:highlight {
+      background-image: none;
+      border-image: none;
+      background-color: transparentize($error, 0.5);
+    }
+  }
+
+  &-label {
+    font-weight: bold;
+    color: $panel_fg;
+
+    .applet-box:checked & {
+      color: $panel_fg;
+      text-shadow: none;
+    }
+  }
+
+  &-icon {
+    color: $panel_fg;
+    icon-size: 16px;
+
+    .applet-box:checked & {
+      color: $panel_fg;
+      text-shadow: none;
+    }
+  }
+}
+
+//
+// User Applet
+//
+.user-icon {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.user-label {
+  color: $text;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0px;
+}
+
+//
+// Desklets (desklet.js)
+//
+.desklet {
+  color: on($os-background);
+
+  &:highlight {
+    background-color: transparentize($error, 0.5);
+  }
+
+  &-with-borders {
+    color: on($os-background);
+    background-color: $os-background;
+    padding: 12px;
+    padding-bottom: 16px;
+
+    &:highlight {
+      background-color: transparentize($error, 0.5);
+    }
+  }
+
+  &-with-borders-and-header {
+    color: on($os-background);
+    background-color: $os-background;
+    border-radius: 6px;
+    border-radius-topleft: 0;
+    border-radius-topright: 0;
+    padding: 12px;
+    padding-bottom: 17px;
+
+    &:highlight {
+      background-color: transparentize($error, 0.5);
+    }
+  }
+  &-header {
+    color: on($os-background);
+    background-color: $os-background;
+    border-radius: 0;
+    border-radius-topleft: 6px;
+    border-radius-topright: 6px;
+    font-size: 1em;
+    padding: 12px;
+    padding-bottom: 6px;
+  }
+  &-drag-placeholder {
+    border: 2px solid $primary;
+    background-color: transparentize($primary, 0.7);
+  }
+}
+
+.photoframe-box {
+  color: on($os-background);
+  background-color: $os-background;
+  padding: 12px;
+  padding-bottom: 16px;
+}
+
+//
+// Workspace OSD
+//
+.workspace-osd {
+  text-shadow: black 5px 5px 5px;
+  font-weight: bold;
+  font-size: 48pt;
+}
+
+//
+// Notification Applet
+//
+.notification-applet-padding { padding: .5em 1em; }
+
+.notification-applet-container { max-height: $circular-radius; }
+
+//
+// Tile Preview
+//
+.tile-preview, .tile-preview.snap,
+.tile-hud, .tile-hud.snap {
+  background-color: transparentize($primary, 0.7);
+  border: 1px solid $primary;
+}
+
+//
+// Xkcd Desklet
+//
+.xkcd-box {
+  padding: 6px;
+  border: 0px;
+  background-color: rgba(0,0,0,0);
+  border-radius: 0px;
+}

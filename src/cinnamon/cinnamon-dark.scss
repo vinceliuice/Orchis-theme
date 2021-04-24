@@ -1,0 +1,9 @@
+$variant: 'dark';
+$topbar: 'dark';
+$compact: 'false';
+$theme: 'default';
+
+@import '../_sass/colors';
+@import '../_sass/variables';
+@import '../_sass/cinnamon/drawing';
+@import '../_sass/cinnamon/common';

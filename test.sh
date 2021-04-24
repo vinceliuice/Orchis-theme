@@ -64,40 +64,40 @@ install() {
 
   [[ -d "$THEME_DIR" ]] && rm -rf "${THEME_DIR:?}"
 
-  echo "Installing '${THEME_DIR}'..."
+  echo "Installing '$THEME_DIR'..."
 
   mkdir -p                                                                      "$THEME_DIR"
   cp -r "$REPO_DIR/COPYING"                                                     "$THEME_DIR"
 
-  echo "[Desktop Entry]" >>                                                     "${THEME_DIR}/index.theme"
-  echo "Type=X-GNOME-Metatheme" >>                                              "${THEME_DIR}/index.theme"
-  echo "Name=$name$color" >>                                                    "${THEME_DIR}/index.theme"
-  echo "Comment=An Materia Gtk+ theme based on Elegant Design" >>               "${THEME_DIR}/index.theme"
-  echo "Encoding=UTF-8" >>                                                      "${THEME_DIR}/index.theme"
-  echo "" >>                                                                    "${THEME_DIR}/index.theme"
-  echo "[X-GNOME-Metatheme]" >>                                                 "${THEME_DIR}/index.theme"
-  echo "GtkTheme=$name$color" >>                                                "${THEME_DIR}/index.theme"
-  echo "MetacityTheme=$name$color" >>                                           "${THEME_DIR}/index.theme"
-  echo "IconTheme=Tela-circle${ELSE_DARK:-}" >>                                 "${THEME_DIR}/index.theme"
-  echo "CursorTheme=Vimix${ELSE_DARK:-}" >>                                     "${THEME_DIR}/index.theme"
-  echo "ButtonLayout=close,minimize,maximize:menu" >>                           "${THEME_DIR}/index.theme"
+  echo "[Desktop Entry]" >>                                                     "$THEME_DIR/index.theme"
+  echo "Type=X-GNOME-Metatheme" >>                                              "$THEME_DIR/index.theme"
+  echo "Name=$name$color" >>                                                    "$THEME_DIR/index.theme"
+  echo "Comment=An Materia Gtk+ theme based on Elegant Design" >>               "$THEME_DIR/index.theme"
+  echo "Encoding=UTF-8" >>                                                      "$THEME_DIR/index.theme"
+  echo "" >>                                                                    "$THEME_DIR/index.theme"
+  echo "[X-GNOME-Metatheme]" >>                                                 "$THEME_DIR/index.theme"
+  echo "GtkTheme=$name$color" >>                                                "$THEME_DIR/index.theme"
+  echo "MetacityTheme=$name$color" >>                                           "$THEME_DIR/index.theme"
+  echo "IconTheme=Tela-circle${ELSE_DARK:-}" >>                                 "$THEME_DIR/index.theme"
+  echo "CursorTheme=Vimix${ELSE_DARK:-}" >>                                     "$THEME_DIR/index.theme"
+  echo "ButtonLayout=close,minimize,maximize:menu" >>                           "$THEME_DIR/index.theme"
 
-  mkdir -p                                                                                "${THEME_DIR}/gnome-shell"
-  cp -r "${SRC_DIR}/gnome-shell/"{extensions,message-indicator-symbolic.svg,pad-osd.css}  "${THEME_DIR}/gnome-shell"
+  mkdir -p                                                                                "$THEME_DIR/gnome-shell"
+  cp -r "$SRC_DIR/gnome-shell/"{extensions,message-indicator-symbolic.svg,pad-osd.css}  "$THEME_DIR/gnome-shell"
 
   if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    cp -r "${SRC_DIR}/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}.css"     "${THEME_DIR}/gnome-shell/gnome-shell.css"
+    cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}.css"      "$THEME_DIR/gnome-shell/gnome-shell.css"
   else
-    cp -r "${SRC_DIR}/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}.css"     "${THEME_DIR}/gnome-shell/gnome-shell.css"
+    cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}.css"      "$THEME_DIR/gnome-shell/gnome-shell.css"
   fi
 
-  cp -r "${SRC_DIR}/gnome-shell/common-assets"                                   "${THEME_DIR}/gnome-shell/assets"
-  cp -r "${SRC_DIR}/gnome-shell/assets${ELSE_DARK:-}/"*.svg                      "${THEME_DIR}/gnome-shell/assets"
-  cp -r "${SRC_DIR}/gnome-shell/theme/checkbox${ELSE_DARK:-}.svg"                "${THEME_DIR}/gnome-shell/assets/checkbox.svg"
-  cp -r "${SRC_DIR}/gnome-shell/theme/more-results${ELSE_DARK:-}.svg"            "${THEME_DIR}/gnome-shell/assets/more-results.svg"
-  cp -r "${SRC_DIR}/gnome-shell/theme/toggle-on${ELSE_DARK:-}.svg"               "${THEME_DIR}/gnome-shell/assets/toggle-on.svg"
+  cp -r "$SRC_DIR/gnome-shell/common-assets"                                   "$THEME_DIR/gnome-shell/assets"
+  cp -r "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                      "$THEME_DIR/gnome-shell/assets"
+  cp -r "$SRC_DIR/gnome-shell/theme/checkbox${ELSE_DARK:-}.svg"                "$THEME_DIR/gnome-shell/assets/checkbox.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme/more-results${ELSE_DARK:-}.svg"            "$THEME_DIR/gnome-shell/assets/more-results.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme/toggle-on${ELSE_DARK:-}.svg"               "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
 
-  cd "${THEME_DIR}/gnome-shell"
+  cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
   ln -s assets/process-working.svg process-working.svg
   ln -s assets/no-notifications.svg no-notifications.svg
@@ -121,12 +121,25 @@ install() {
   [[ "$color" != '-dark' ]] && \
   cp -r "$SRC_DIR/gtk/4.0/gtk-dark.css"                                          "$THEME_DIR/gtk-4.0/gtk-dark.css"
 
-#  mkdir -p                                                                       "${THEME_DIR}/xfwm4"
-#  cp -r "${SRC_DIR}/xfwm4/assets${ELSE_LIGHT:-}/"*.png                           "${THEME_DIR}/xfwm4"
-#  cp -r "${SRC_DIR}/xfwm4/themerc${ELSE_LIGHT:-}"                                "${THEME_DIR}/xfwm4/themerc"
+  mkdir -p                                                                       "$THEME_DIR/cinnamon"
+  cp -r "$SRC_DIR/cinnamon/common-assets"                                        "$THEME_DIR/cinnamon/assets"
+  cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                           "$THEME_DIR/cinnamon/assets"
+  cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.css"                           "$THEME_DIR/cinnamon/cinnamon.css"
+  cp -r "$SRC_DIR/cinnamon/thumbnail${ELSE_DARK:-}.png"                          "$THEME_DIR/cinnamon/thumbnail.png"
 
-#  mkdir -p                                                                       "$THEME_DIR/plank"
-#  cp -r "$SRC_DIR/plank/dock.theme"                                              "$THEME_DIR/plank"
+  mkdir -p                                                                       "$THEME_DIR/xfwm4"
+  cp -r "$SRC_DIR/xfwm4/assets${ELSE_LIGHT:-}/"*.png                             "$THEME_DIR/xfwm4"
+  cp -r "$SRC_DIR/xfwm4/themerc${ELSE_LIGHT:-}"                                  "$THEME_DIR/xfwm4/themerc"
+
+  mkdir -p                                                                       "$THEME_DIR/metacity-1"
+  cp -r "$SRC_DIR/metacity-1/metacity-theme-2${color}.xml"                       "$THEME_DIR/metacity-1/metacity-theme-2.xml"
+  cp -r "$SRC_DIR/metacity-1/metacity-theme-3.xml"                               "$THEME_DIR/metacity-1"
+  cp -r "$SRC_DIR/metacity-1/assets/"*.svg                                       "$THEME_DIR/metacity-1"
+  cp -r "$SRC_DIR/metacity-1/thumbnail${ELSE_DARK:-}.png"                        "$THEME_DIR/metacity-1/thumbnail.png"
+  cd "$THEME_DIR/metacity-1" && ln -s metacity-theme-2.xml metacity-theme-1.xml
+
+  mkdir -p                                                                       "$THEME_DIR/plank"
+  cp -r "$SRC_DIR/plank/dock.theme"                                              "$THEME_DIR/plank"
 }
 
 colors=()
@@ -196,6 +209,7 @@ done
 for color in '' '-dark'; do
   sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-3-28/gnome-shell$color."{scss,css}
   sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-40-0/gnome-shell$color."{scss,css}
+  sassc "${SASSC_OPT[@]}" "src/cinnamon/cinnamon$color."{scss,css}
 done
 
 for color in "${colors[@]}"; do
