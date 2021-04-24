@@ -274,7 +274,7 @@ StEntry StLabel.hint-text {
 /* Slider */
 .slider {
   height: 15px;
-  -barlevel-height: 3px;
+  -barlevel-height: 2px;
   -barlevel-background-color: rgba(255, 255, 255, 0.1);
   -barlevel-border-width: 0;
   -barlevel-border-color: rgba(255, 255, 255, 0.12);
@@ -506,6 +506,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   padding: 0 0;
   margin: 0 0;
+  height: 4px;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {

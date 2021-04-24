@@ -148,6 +148,7 @@ $popover_arrow_height: 12px;
   border: none;
   padding: 0 0;
   margin: 0 0;
+  height: $container_padding - 2px;
 
   .popup-separator-menu-item-separator {
     //-margin-horizontal: 24px;
@@ -155,12 +156,11 @@ $popover_arrow_height: 12px;
     margin: 0 0;
     padding: 0 0;
     background: none;
+
     .popup-sub-menu & { //submenu separators
-        margin: 0 0;
-        padding: 0 0;
-      @if $variant == 'dark' {
-        background: none;
-      }
+      margin: 0 0;
+      padding: 0 0;
+      background: none;
     }
   }
 }

@@ -506,6 +506,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   padding: 0 0;
   margin: 0 0;
+  height: 4px;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
@@ -518,6 +519,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   margin: 0 0;
   padding: 0 0;
+  background: none;
 }
 
 .background-menu {

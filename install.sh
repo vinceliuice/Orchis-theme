@@ -89,7 +89,7 @@ install() {
 
   if [[ "$color" != '-light' ]]; then
   mkdir -p                                                                              "$THEME_DIR/gnome-shell"
-  cp -ur "$SRC_DIR/gnome-shell/"{extensions,message-indicator-symbolic.svg,pad-osd.css} "$THEME_DIR/gnome-shell"
+  cp -r "$SRC_DIR/gnome-shell/pad-osd.css"                                              "$THEME_DIR/gnome-shell"
 
   if [[ "${GS_VERSION:-}" == 'new' ]]; then
     cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell$theme${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
@@ -97,11 +97,11 @@ install() {
     cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell$theme${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
   fi
 
-  cp -ur "$SRC_DIR/gnome-shell/common-assets"                                           "$THEME_DIR/gnome-shell/assets"
-  cp -ur "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                              "$THEME_DIR/gnome-shell/assets"
-  cp -ur "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"                  "$THEME_DIR/gnome-shell/assets/checkbox.svg"
-  cp -ur "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"              "$THEME_DIR/gnome-shell/assets/more-results.svg"
-  cp -ur "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"                 "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
+  cp -r "$SRC_DIR/gnome-shell/common-assets"                                            "$THEME_DIR/gnome-shell/assets"
+  cp -r "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                               "$THEME_DIR/gnome-shell/assets"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"                   "$THEME_DIR/gnome-shell/assets/checkbox.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"               "$THEME_DIR/gnome-shell/assets/more-results.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"                  "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
 
   cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
