@@ -12,7 +12,7 @@ This is a bunch of CSS code to make Firefox look closer to Chrome theme.
 
 ## Installation
 ### Quick installation
-1. Copy `src/firefox/chrome` into `~/.mozilla/firefox/*default* (your user firefox folder)`
+1. Copy `src/firefox/chrome` into `~/.mozilla/firefox/*default* (your user firefox folder)/chrome`
 2. Copy `src/firefox/configuration/user.js` into `~/.mozilla/firefox/*default* (your user firefox folder)`
 3. Restart your Firefox!
 
