@@ -84,6 +84,7 @@ tab[selected]:-moz-window-inactive {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: -1px;
 	min-width: 100% !important;
 	padding: 0 10px !important;
 }
@@ -111,26 +112,12 @@ tab[selected]:-moz-window-inactive {
 }
 
 /* Force tab favicon to the center */
-.tab-throbber, .tab-throbber-fallback {
-	margin-left: auto;
-}
-.tabbrowser-tab:not([busy]) .tab-icon-image {
-	margin-left: auto;
-}
-
-/* If tab favicon is not present, force tab label to the center */
-.tabbrowser-tab .tab-label-container {
-	margin-left: 0 !important;
-}
-.tabbrowser-tab:not([image]):not([busy]):not([progress]) .tab-label-container {
+.tabbrowser-tab:not([class*="identity-color-"]) .tab-icon-stack {
 	margin-left: auto !important;
 }
 
 /* If tab close button is not present, don't force favicon to the center */
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-throbber,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-throbber-fallback,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([busy]) .tab-icon-image,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([image]) .tab-label-container {
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-icon-stackr {
 	margin-left: 0 !important;
 }
 
@@ -146,19 +133,20 @@ tab[selected]:-moz-window-inactive {
 
 .close-icon {
 	height: 16px !important;
-	padding: 0 !important;
+	padding: 2px !important;
 	width: 16px !important;
+	border-radius: 100px;
 }
 
 .tab-close-button {
 	-moz-appearance: none !important;
 	border: none !important;
 	box-sizing: content-box; /* Avoid deformation on flexbox */
-	border-radius: 100px;
+	border-radius: 100px !important;
 	list-style-image: url("../icons/window-close-symbolic.svg") !important;
 	height: 16px;
 	opacity: .3;
-	padding: 2px;
+	padding: 2px !important;
 	width: 16px;
 }
 @media (prefers-color-scheme: dark) {

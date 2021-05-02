@@ -17,9 +17,6 @@
 :root[privatebrowsingmode="temporary"] #nav-bar toolbarspring:first-of-type:-moz-lwtheme-brighttext:before {
 	background-image: url("../icons/user-not-tracked-dark.svg");
 }
-:root[privatebrowsingmode="temporary"] #nav-bar {
-	overflow: hidden;
-}
 
 #TabsToolbar .private-browsing-indicator {
 	display: none !important;
