@@ -146,7 +146,7 @@ install() {
     mkdir -p                                                                    "$THEME_DIR/metacity-1"
     cp -r "$SRC_DIR/metacity-1/metacity-theme-2${color}.xml"                    "$THEME_DIR/metacity-1/metacity-theme-2.xml"
     cp -r "$SRC_DIR/metacity-1/metacity-theme-3.xml"                            "$THEME_DIR/metacity-1"
-    cp -r "$SRC_DIR/metacity-1/assets/"*.svg                                    "$THEME_DIR/metacity-1"
+    cp -r "$SRC_DIR/metacity-1/assets"                                          "$THEME_DIR/metacity-1"
     cp -r "$SRC_DIR/metacity-1/thumbnail${ELSE_DARK:-}.png"                     "$THEME_DIR/metacity-1/thumbnail.png"
     cd "$THEME_DIR/metacity-1" && ln -s metacity-theme-2.xml metacity-theme-1.xml
   fi

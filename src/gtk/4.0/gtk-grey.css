@@ -40,11 +40,6 @@ filechooser stack.view scrolledwindow treeview.view, iconview, .view {
   color: rgba(0, 0, 0, 0.87);
 }
 
-filechooser stack.view scrolledwindow treeview.view:hover, iconview:hover, .view:hover {
-  background: none;
-  box-shadow: none;
-}
-
 filechooser stack.view scrolledwindow treeview.view:disabled, iconview:disabled, .view:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
@@ -231,6 +226,7 @@ spinbutton.vertical, spinbutton:not(.vertical),
 entry {
   min-height: 36px;
   padding: 0 8px;
+  border-spacing: 6px;
   border-radius: 12px;
   caret-color: currentColor;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
@@ -511,11 +507,11 @@ button:drop(active) {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-placessidebar.sidebar row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
+placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
 treeview.view > header > button button.circular, row.activatable button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, filechooser #pathbarbox > stack > box > button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model,
-.path-bar.linked:not(.vertical) > button, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
+pathbar > button, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
@@ -525,33 +521,33 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
   color: rgba(0, 0, 0, 0.6);
 }
 
-placessidebar.sidebar row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
+placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
 treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, check:focus,
 radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
 popover.background button.model:focus,
-.path-bar.linked:not(.vertical) > button:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
+pathbar > button:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
-placessidebar.sidebar row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
+placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
 treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
 popover.background button.model:hover,
-.path-bar.linked:not(.vertical) > button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
+pathbar > button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
-placessidebar.sidebar row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
+placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
 treeview.view > header > button button.circular:active, row.activatable button.circular:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
 popover.background button.model:active,
-.path-bar.linked:not(.vertical) > button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
+pathbar > button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
@@ -559,11 +555,11 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
   color: rgba(0, 0, 0, 0.87);
 }
 
-placessidebar.sidebar row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
+placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
 treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
 popover.background button.model:disabled,
-.path-bar.linked:not(.vertical) > button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
+pathbar > button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
   box-shadow: none;
@@ -573,7 +569,7 @@ combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.fla
 
 filechooser #pathbarbox > stack > box > button:checked, window.dialog.message.csd .dialog-action-area > button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked,
 popover.background button.model:checked,
-.path-bar.linked:not(.vertical) > button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked,
+pathbar > button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked,
 toolbar button:checked, dropdown > .linked:not(.vertical) > button:checked:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat:checked, button.flat:checked:hover {
   background-color: alpha(currentColor, 0.1);
@@ -582,7 +578,7 @@ combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat
 
 filechooser #pathbarbox > stack > box > button:checked:disabled, window.dialog.message.csd .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:checked:disabled,
 popover.background button.model:checked:disabled,
-.path-bar.linked:not(.vertical) > button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
+pathbar > button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
 toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
@@ -754,12 +750,25 @@ stackswitcher > button.needs-attention:checked > image {
   background-image: none;
 }
 
+button.font > box, button.file > box {
+  border-spacing: 6px;
+}
+
+button.font > box > box > label, button.file > box > box > label {
+  font-weight: bold;
+}
+
 windowcontrols button, filechooser #pathbarbox > stack > box > button, check,
 radio, button.image-button, button.close, button.circular {
   border-radius: 9999px;
 }
 
-placessidebar.sidebar row button.sidebar-button, notebook > header tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
+windowcontrols button label, filechooser #pathbarbox > stack > box > button label, check label,
+radio label, button.image-button label, button.close label, button.circular label {
+  padding: 0;
+}
+
+placessidebar .navigation-sidebar > row button.sidebar-button, notebook > header tab button.flat, popover.menu box.circular-buttons button.circular.image-button.model, spinbutton.vertical > button, spinbutton:not(.vertical) > button {
   min-height: 24px;
   min-width: 24px;
   padding: 0;
@@ -894,6 +903,11 @@ button.link > label {
 /*****************
  * GtkSpinButton *
  *****************/
+spinbutton:not(.vertical) {
+  padding: 0;
+  border-spacing: 0;
+}
+
 spinbutton:not(.vertical) > text {
   min-width: 32px;
   margin: 0;
@@ -1130,6 +1144,7 @@ button.combo:only-child:disabled {
 toolbar {
   padding: 3px 6px;
   background-color: #F2F2F2;
+  border-spacing: 6px;
 }
 
 .osd .toolbar, .osd toolbar {
@@ -1370,12 +1385,6 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
   border-radius: 9999px;
 }
 
-.titlebar .path-bar button.text-button:not(.suggested-action):not(.destructive-action) {
-  min-width: 0;
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
 .titlebar.selection-mode {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
@@ -1460,7 +1469,7 @@ headerbar button {
   margin-bottom: 6px;
 }
 
-headerbar separator.titlebutton {
+headerbar separator:not(.sidebar) {
   margin-top: 12px;
   margin-bottom: 12px;
   background-color: rgba(255, 255, 255, 0.12);
@@ -1508,39 +1517,48 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
   border-radius: 0;
 }
 
+window.devel headerbar.titlebar {
+  background: #2C2C2C cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, rgba(97, 97, 97, 0.2)), linear-gradient(to top, #242424, #2C2C2C 3px, #3b3b3b);
+}
+
+window.devel headerbar.titlebar:backdrop {
+  background: #2C2C2C cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, image(#2C2C2C);
+  /* background-color would flash */
+}
+
 /************
  * Pathbars *
  ************/
 
-.path-bar.linked:not(.vertical) > button {
+pathbar > button {
   padding-left: 6px;
   padding-right: 6px;
   border-radius: 12px;
 }
 
 
-.path-bar.linked:not(.vertical) > button:checked,
-.path-bar.linked:not(.vertical) > button:checked:disabled {
+pathbar > button:checked,
+pathbar > button:checked:disabled {
   background-color: transparent;
 }
 
 
-.path-bar.linked:not(.vertical) > button label:not(:only-child):first-child {
+pathbar > button label:not(:only-child):first-child {
   margin-left: 0;
 }
 
 
-.path-bar.linked:not(.vertical) > button label:not(:only-child):last-child {
+pathbar > button label:not(:only-child):last-child {
   margin-right: 0;
 }
 
 
-.path-bar.linked:not(.vertical) > button.text-button {
+pathbar > button.text-button {
   min-width: 0;
 }
 
 
-.path-bar.linked:not(.vertical) > button.slider-button {
+pathbar > button.slider-button {
   padding-left: 4px;
   padding-right: 4px;
 }
@@ -1868,7 +1886,7 @@ popover.background, popover.background:backdrop {
 popover.background > arrow,
 popover.background > contents {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  padding: 2px;
+  padding: container-padding;
   box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   border-style: solid;
@@ -1880,11 +1898,6 @@ popover.background > contents {
 popover.background:backdrop > arrow,
 popover.background:backdrop > contents {
   box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-}
-
-popover.background > contents {
-  padding: 6px;
-  border-radius: 8px;
 }
 
 popover.background > contents > stack {
@@ -2252,15 +2265,15 @@ scrollbar > range.fine-tune > trough > slider {
   min-height: 4px;
 }
 
-scrollbar > range.fine-tune.horizontal slider {
+scrollbar > range.fine-tune.horizontal > trough > slider {
   margin: 2px 0;
 }
 
-scrollbar > range.fine-tune.vertical slider {
+scrollbar > range.fine-tune.vertical > trough > slider {
   margin: 0 2px;
 }
 
-scrollbar.overlay-indicator:not(.fine-tune) slider {
+scrollbar.overlay-indicator:not(.fine-tune) > range > trough > slider {
   transition-property: background-color, min-height, min-width;
 }
 
@@ -2366,7 +2379,6 @@ switch:disabled {
 
 switch image {
   margin: -8px;
-  -gtk-icon-transform: scale(0);
 }
 
 switch > slider {
@@ -2431,6 +2443,7 @@ switch:checked > slider {
 checkbutton,
 radiobutton {
   outline: none;
+  border-spacing: 4px;
 }
 
 checkbutton.text-button,
@@ -2512,6 +2525,7 @@ popover.menu check, popover.menu check:hover, popover.menu check:disabled, popov
 
 
 check {
+  -gtk-icon-size: 24px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-unchecked-symbolic.svg"));
 }
 
@@ -2527,6 +2541,7 @@ check:indeterminate {
 
 
 radio {
+  -gtk-icon-size: 24px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
 }
 
@@ -2544,6 +2559,7 @@ radio:indeterminate {
 popover.menu check {
   min-height: 16px;
   min-width: 16px;
+  -gtk-icon-size: 16px;
   border-radius: 12px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-unchecked-symbolic.svg"));
 }
@@ -2563,6 +2579,7 @@ popover.menu radio {
   min-height: 16px;
   min-width: 16px;
   border-image: none;
+  -gtk-icon-size: 16px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-unchecked-symbolic.svg"));
 }
 
@@ -3012,6 +3029,7 @@ frame.flat > border, statusbar frame > border {
 
 actionbar > revealer > box {
   padding: 6px;
+  border-spacing: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   background-clip: border-box;
@@ -3189,7 +3207,7 @@ columnview.view > header > button.has-open-popup,
 treeview.view > header > button.has-open-popup, columnview.view > header > button:active,
 treeview.view > header > button:active, row.activatable.has-open-popup, row.activatable:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
 }
 
 row:selected {
@@ -3247,6 +3265,8 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
  *********************/
 .app-notification {
   margin: 8px;
+  border-spacing: 9px;
+  padding: 9px;
   border: none;
 }
 
@@ -3266,17 +3286,12 @@ expander {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   min-width: 16px;
   min-height: 16px;
-  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-  -gtk-icon-transform: rotate(-90deg);
   color: rgba(0, 0, 0, 0.6);
+  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 expander:dir(rtl) {
-  -gtk-icon-transform: rotate(90deg);
-}
-
-expander:checked {
-  -gtk-icon-transform: unset;
+  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
 expander:hover, expander:active {
@@ -3579,87 +3594,88 @@ row image.sidebar-icon:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
-placessidebar.sidebar > viewport.frame {
+placessidebar > viewport.frame {
   border-style: none;
 }
 
-placessidebar.sidebar list {
+placessidebar list {
   padding: 1px 0 4px;
 }
 
-placessidebar.sidebar row {
+placessidebar .navigation-sidebar > row {
   min-height: 32px;
   margin: -1px 4px -1px 0;
   padding: 0;
   border-radius: 0 9999px 9999px 0;
 }
 
-placessidebar.sidebar row > revealer {
+placessidebar .navigation-sidebar > row > revealer {
   padding: 0 8px 0 16px;
 }
 
-placessidebar.sidebar row:selected {
+placessidebar .navigation-sidebar > row:selected {
   background-color: alpha(currentColor, 0.1);
   color: #616161;
   font-weight: 500;
 }
 
-placessidebar.sidebar row:selected image.sidebar-icon {
+placessidebar .navigation-sidebar > row:selected image.sidebar-icon {
   color: #616161;
 }
 
-placessidebar.sidebar row:disabled {
+placessidebar .navigation-sidebar > row:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-placessidebar.sidebar row image.sidebar-icon:dir(ltr) {
+placessidebar .navigation-sidebar > row image.sidebar-icon:dir(ltr) {
   padding-right: 8px;
 }
 
-placessidebar.sidebar row image.sidebar-icon:dir(rtl) {
+placessidebar .navigation-sidebar > row image.sidebar-icon:dir(rtl) {
   padding-left: 8px;
 }
 
-placessidebar.sidebar row label.sidebar-label {
+placessidebar .navigation-sidebar > row label.sidebar-label {
   color: inherit;
 }
 
-placessidebar.sidebar row label.sidebar-label:dir(ltr) {
+placessidebar .navigation-sidebar > row label.sidebar-label:dir(ltr) {
   padding-right: 2px;
 }
 
-placessidebar.sidebar row label.sidebar-label:dir(rtl) {
+placessidebar .navigation-sidebar > row label.sidebar-label:dir(rtl) {
   padding-left: 2px;
 }
 
-placessidebar.sidebar row.sidebar-placeholder-row {
+placessidebar .navigation-sidebar > row.sidebar-placeholder-row {
   background-color: alpha(currentColor, 0.08);
 }
 
-placessidebar.sidebar row.sidebar-new-bookmark-row {
+placessidebar .navigation-sidebar > row.sidebar-new-bookmark-row {
   color: #616161;
 }
 
-placessidebar.sidebar row.sidebar-new-bookmark-row image.sidebar-icon {
+placessidebar .navigation-sidebar > row.sidebar-new-bookmark-row image.sidebar-icon {
   color: #616161;
 }
 
-placessidebar.sidebar row:drop(active) {
+placessidebar .navigation-sidebar > row:drop(active) {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms;
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
 placesview .server-list-button > image {
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1);
   -gtk-icon-transform: rotate(0turn);
 }
 
 placesview .server-list-button:checked > image {
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1);
   -gtk-icon-transform: rotate(-0.5turn);
 }
 
 placesview > actionbar > revealer > box > label {
-  padding-left: 8px;
-  padding-right: 8px;
+  border-spacing: 6px;
 }
 
 /*********
@@ -3742,6 +3758,11 @@ video image.osd {
 infobar {
   border: none;
   margin-bottom: 0;
+}
+
+infobar > revealer > box {
+  padding: 6px;
+  border-spacing: 12px;
 }
 
 infobar.info > revealer > box, infobar.info:hover > revealer > box, infobar.info:backdrop > revealer > box {
@@ -3996,20 +4017,24 @@ cursor-handle {
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/cursor-handle-symbolic.svg"));
 }
 
-cursor-handle.top:dir(ltr), cursor-handle.bottom:dir(rtl) {
-  -gtk-icon-transform: rotate(90deg);
-}
-
-cursor-handle.bottom:dir(ltr), cursor-handle.top:dir(rtl) {
-  -gtk-icon-transform: unset;
-}
-
 cursor-handle.insertion-cursor:dir(ltr), cursor-handle.insertion-cursor:dir(rtl) {
   padding-top: 6px;
-  -gtk-icon-transform: rotate(45deg);
 }
 
-.keycap {
+shortcuts-section {
+  margin: 20px;
+}
+
+.shortcuts-search-results {
+  margin: 20px;
+  border-spacing: 24px;
+}
+
+shortcut {
+  border-spacing: 6px;
+}
+
+shortcut > .keycap {
   min-width: 12px;
   min-height: 26px;
   margin-top: 2px;
@@ -4062,8 +4087,12 @@ stackswitcher button.text-button {
   min-width: 100px;
 }
 
-stackswitcher button.circular,
-stackswitcher button.text-button.circular {
+stackswitcher.circular {
+  border-spacing: 12px;
+}
+
+stackswitcher.circular button.circular,
+stackswitcher.circular button.text-button.circular {
   min-width: 36px;
   min-height: 36px;
   padding: 0;

@@ -38,11 +38,6 @@ treeview.expander:disabled { -gtk-icon-filter: opacity(0.5); }
   background-color: $base;
   color: $text;
 
-  &:hover {
-    background: none;
-    box-shadow: none;
-  }
-
   // &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($primary, 0.08); }
 
   &:disabled { color: $text-disabled; }
@@ -257,6 +252,7 @@ entry {
   %entry_basic, & {
     min-height: $medium-size;
     padding: 0 8px;
+    border-spacing: $container-padding;
     border-radius: $corner-radius;
     caret-color: currentColor; // this shouldn't be needed.
 
@@ -625,12 +621,19 @@ button {
 
   // hide separators
   &.font,
-  &.file { separator { @extend %hide_separators; }}
+  &.file {
+    separator { @extend %hide_separators; }
+
+    > box { border-spacing: $container-padding; }
+    > box > box > label { font-weight: bold; }
+  }
 
   @at-root %circular-button,
   &.close,
   &.circular { // The Bloody Circul Button
     border-radius: $circular-radius;
+
+    label { padding: 0; }
   }
 
   @at-root %small-button {
@@ -763,6 +766,9 @@ spinbutton {
     // behaves as the entry, so we extend the entry styling
     // and nuke the style on the internal entry
     @extend %entry;
+
+    padding: 0;
+    border-spacing: 0;
 
     > text {
       min-width: $large-size - 8px * 2;
@@ -989,10 +995,11 @@ button.combo:only-child {
 /************
  * Toolbars *
  ************/
- .toolbar,
- toolbar {
+.toolbar,
+toolbar {
   padding: $container-padding / 2 $container-padding;
   background-color: $background;
+  border-spacing: $container-padding;
 
   button { @extend %button-flat; }
 
@@ -1192,13 +1199,6 @@ searchbar > revealer > box {
     }
   }
 
-  // FIXME: Ugly overriding
-  .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
-    min-width: 0;
-    padding-left: ($medium-size - 24px) / 2;
-    padding-right: ($medium-size - 24px) / 2;
-  }
-
   &.selection-mode {
     // 0.1ms was a workaround for https://gitlab.gnome.org/GNOME/gtk/issues/698
     // but let's keep it for backwards compatibility.
@@ -1313,7 +1313,7 @@ headerbar {
     @extend %titlebar-button;
   }
 
-  separator.titlebutton {
+  separator:not(.sidebar) {
     margin-top: $large-size / 4;
     margin-bottom: $large-size / 4;
     background-color: $titlebar-divider;
@@ -1366,12 +1366,32 @@ headerbar {
   }
 }
 
+window.devel {
+  headerbar.titlebar {
+    $c: $titlebar;
+    $gradient: cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
+               linear-gradient(to right, transparent 65%, transparentize($primary, 0.8)),
+               linear-gradient(to top, darken($c, 3%), $c 3px, lighten($c, 6%));
+    @if $variant == 'dark' {
+      $gradient: cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
+                 linear-gradient(to right, transparent 65%, transparentize($primary, 0.9)),
+                 linear-gradient(to top, lighten($c, 3%) 3px, lighten($c, 5%));
+    }
+
+    background: $titlebar $gradient;
+
+    &:backdrop {
+      background: $titlebar cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
+                  image($titlebar); /* background-color would flash */
+    }
+  }
+}
 
 /************
  * Pathbars *
  ************/
 %pathbar_button,
-.path-bar.linked:not(.vertical) > button {
+pathbar > button {
   @extend %button-flat;
 
   padding-left: ($medium-size - 24px) / 2;
@@ -1670,7 +1690,7 @@ popover.background {
   > arrow,
   > contents {
     transition: $transition-shadow;
-    padding: 2px;
+    padding: container-padding;
     box-shadow: $shadow-z6; // TODO: this should really have a highlight
     background-color: $surface;
     border-style: solid;
@@ -1687,9 +1707,6 @@ popover.background {
   }
 
   > contents {
-    padding: $container-padding;
-    border-radius: $menu-radius;
-
     > stack { margin: -4px; } // remove extra padding from menu style popovers
 
     > toolbar { margin: -2px; }
@@ -2059,13 +2076,13 @@ scrollbar {
       min-height: 4px;
     }
 
-    &.horizontal slider { margin: 2px 0; }
+    &.horizontal > trough > slider { margin: 2px 0; }
 
-    &.vertical slider { margin: 0 2px; }
+    &.vertical > trough > slider { margin: 0 2px; }
   }
 
   &.overlay-indicator {
-    &:not(.fine-tune) slider {
+    &:not(.fine-tune) > range > trough > slider {
       transition-property: background-color, min-height, min-width;
     }
 
@@ -2163,7 +2180,6 @@ switch {
   // hide on/off icons for >=3.24.5
   image {
     margin: -8px;
-    -gtk-icon-transform: scale(0);
   }
 
   > slider {
@@ -2224,6 +2240,7 @@ switch {
 checkbutton,
 radiobutton {
   outline: none;
+  border-spacing: 4px;
 }
 
 checkbutton.text-button,
@@ -2296,6 +2313,7 @@ radio {
 
 %check,
 check {
+  -gtk-icon-size: 24px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")); }
@@ -2305,6 +2323,7 @@ check {
 
 %radio,
 radio {
+  -gtk-icon-size: 24px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg")); }
@@ -2317,6 +2336,7 @@ popover.menu check {
   & {
     min-height: 16px;
     min-width: 16px;
+    -gtk-icon-size: 16px;
     border-radius: $corner-radius;
     -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-unchecked-symbolic.svg"));
   }
@@ -2332,6 +2352,7 @@ popover.menu radio {
     min-height: 16px;
     min-width: 16px;
     border-image: none;
+    -gtk-icon-size: 16px;
     -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-unchecked-symbolic.svg"));
   }
 
@@ -2738,6 +2759,7 @@ frame {
 
 actionbar > revealer > box {
   padding: $container-padding;
+  border-spacing: $container-padding;
   border-top: 1px solid $divider;
   background-color: $base;
   background-clip: border-box;
@@ -2848,7 +2870,7 @@ row {
     &.has-open-popup, // this is for indicathing which row generated a popover see https://bugzilla.gnome.org/show_bug.cgi?id=754411
     &:active {
       transition: $transition;
-      box-shadow: inset 0 0 0 9999px $overlay-hover;
+      box-shadow: inset 0 0 0 9999px $overlay-active;
     }
 
     button.circular {
@@ -2909,9 +2931,10 @@ columnview {
  * App Notifications *
  *********************/
 .app-notification {
-  // @extend %osd;
   @extend %toolbar_osd;
   margin: 8px;
+  border-spacing: $container-padding * 1.5;
+  padding: $container-padding * 1.5;
   border: none;
 
   button {
@@ -2932,14 +2955,10 @@ expander {
   transition: all $duration $ease-out;
   min-width: 16px;
   min-height: 16px;
-  -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-  -gtk-icon-transform: rotate(-90deg);
-
-  &:dir(rtl) { -gtk-icon-transform: rotate(90deg); }
-
-  &:checked { -gtk-icon-transform: unset; }
-
   color: $text-secondary;
+  -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+
+  &:dir(rtl) { -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl'); }
 
   &:hover, &:active { color: $text; }
 
@@ -3272,12 +3291,12 @@ row image.sidebar-icon {
   &:disabled { color: $text-secondary-disabled; }
 }
 
-placessidebar.sidebar {
+placessidebar {
   > viewport.frame { border-style: none; }
 
   list { padding: 1px 0 4px; }
 
-  row {
+  .navigation-sidebar > row {
     // Needs overriding of the GtkListBoxRow padding
     min-height: 32px;
     margin: -1px 4px -1px 0; // Remove unwanted hard-coded vertical margins with -1px
@@ -3332,14 +3351,19 @@ placessidebar.sidebar {
 }
 
 placesview {
-  .server-list-button > image { -gtk-icon-transform: rotate(0turn); }
+  .server-list-button > image {
+    transition: 200ms $ease-out;
+    -gtk-icon-transform: rotate(0turn);
+  }
 
-  .server-list-button:checked > image { -gtk-icon-transform: rotate(-0.5turn); }
+  .server-list-button:checked > image {
+    transition: 200ms $ease-out;
+    -gtk-icon-transform: rotate(-0.5turn);
+  }
 
   // this selects the "connect to server" label
   > actionbar > revealer > box > label {
-    padding-left: 8px;
-    padding-right: 8px;
+    border-spacing: $container-padding;
   }
 }
 
@@ -3429,6 +3453,11 @@ video {
 infobar {
   border: none;
   margin-bottom: 0;
+
+  > revealer > box {
+    padding: $container-padding;
+    border-spacing: $container-padding * 2;
+  }
 
   &.info {
     & > revealer > box,
@@ -3742,22 +3771,26 @@ cursor-handle {
   color: $primary;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/cursor-handle-symbolic.svg"));
 
-  &.top:dir(ltr), &.bottom:dir(rtl) {
-    -gtk-icon-transform: rotate(90deg);
-  }
-
-  &.bottom:dir(ltr), &.top:dir(rtl) {
-    -gtk-icon-transform: unset;
-  }
-
   &.insertion-cursor:dir(ltr), &.insertion-cursor:dir(rtl) {
     padding-top: 6px;
-    -gtk-icon-transform: rotate(45deg);
   }
 }
 
 // shortcut window keys
-.keycap {
+shortcuts-section {
+  margin: 20px;
+}
+
+.shortcuts-search-results {
+  margin: 20px;
+  border-spacing: 24px;
+}
+
+shortcut {
+  border-spacing: 6px;
+}
+
+shortcut > .keycap {
   min-width: 28px - 8px * 2;
   min-height: 28px - 2px;
   margin-top: 2px;
@@ -3805,11 +3838,15 @@ stackswitcher {
 
   button.text-button { min-width: 100px; } // FIXME aggregate with buttons
 
-  button.circular,
-  button.text-button.circular { // FIXME aggregate with buttons
-    min-width: $medium-size;
-    min-height: $medium-size;
-    padding: 0;
+  &.circular {
+    border-spacing: $container-padding * 2;
+
+    button.circular,
+    button.text-button.circular { // FIXME aggregate with buttons
+      min-width: $medium-size;
+      min-height: $medium-size;
+      padding: 0;
+    }
   }
 }
 
