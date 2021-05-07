@@ -80,14 +80,10 @@
 }
 
 .view {
-  // @extend %row_activatable;
-
   background-color: $base;
   color: $text;
 
   &:hover { box-shadow: inset 0 0 0 9999px $overlay-hover; }
-
-  &:selected:hover { box-shadow: inset 0 0 0 9999px rgba($primary, 0.08); }
 
   &:disabled { color: $text-disabled; }
 
@@ -95,6 +91,16 @@
 
   &:selected {
     @extend %selected_items_color;
+
+    &:hover { box-shadow: none; }
+  }
+}
+
+widget.view {
+  // border-radius: $corner-radius;
+
+  &:selected {
+    @extend %selected_items_primary;
   }
 }
 
@@ -134,11 +140,6 @@ flowbox {
 }
 
 .content-view .tile {
-  // margin: 2px;
-  // padding: 0;
-  // border-radius: 0;
-  // background-color: black;
-
   &:selected {
     background-color: transparent;
   }
