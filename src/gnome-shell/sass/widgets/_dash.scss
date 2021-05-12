@@ -5,7 +5,7 @@ $dash_placeholder_size: 32px;
 $dash_padding: $container_padding + 4px; // 10px
 $dash_spacing: $container_padding / 4;
 $dash_bottom_margin: ($container_padding - 2px) * 4;
-$dash_border_radius: $buttons_radius * 1.5;
+$dash_border_radius: $circular_radius;
 
 #dash {
   font-size: 1em;
@@ -26,6 +26,7 @@ $dash_border_radius: $buttons_radius * 1.5;
 
   .overview-icon {
     padding: $dash_padding / 2;
+    border-radius: $circular_radius;
   }
 }
 
@@ -49,8 +50,9 @@ $dash_border_radius: $buttons_radius * 1.5;
 
 // OSD Tooltip
 .dash-label {
-  border-radius: 100px;
-  padding: 8px 10px;
+  border-radius: $circular_radius;
+  padding: $container_padding $container_padding * 2;
+  margin-bottom: $container_padding;
   color: $inverse_fg_color;
   background-color: rgba(black, 0.75);
   border: none;

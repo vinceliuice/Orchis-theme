@@ -2051,7 +2051,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .list-search-result, .search-provider-icon {
-  border-radius: 100px;
+  border-radius: 9999px;
 }
 
 .list-search-result:focus, .search-provider-icon:focus, .list-search-result:hover, .search-provider-icon:hover, .list-search-result:selected, .search-provider-icon:selected {
@@ -2113,13 +2113,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #dash .overview-icon {
   padding: 5px;
+  border-radius: 9999px;
 }
 
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 16px;
   padding: 10px;
-  border-radius: 18px;
+  border-radius: 9999px;
 }
 
 .dash-item-container .app-well-app, .show-apps {
@@ -2133,8 +2134,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .dash-label {
-  border-radius: 100px;
-  padding: 8px 10px;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  margin-bottom: 6px;
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(0, 0, 0, 0.75);
   border: none;
@@ -2210,11 +2212,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* App Folders */
 .app-well-app.app-folder {
   background: none;
+  border-radius: 12px;
 }
 
 .app-well-app.app-folder .overview-icon {
   background-color: rgba(255, 255, 255, 0.13);
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .app-well-app.app-folder:hover .overview-icon {
@@ -2343,8 +2346,20 @@ StWidget.focused .app-well-app-running-dot {
 .page-indicator .page-indicator-icon {
   width: 10px;
   height: 10px;
-  border-radius: 10px;
-  background-color: white;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.page-indicator:hover .page-indicator-icon {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.page-indicator:active .page-indicator-icon {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.page-indicator:checked .page-indicator-icon {
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .apps-scroll-view {
@@ -3282,4 +3297,73 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer.opaque.extended:overview #dash .dash-background, #dashtodockContainer.transparent.extended:overview #dash .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:focus {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: 0 0 transparent;
+}
+
+.openweather-provider:active {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.openweather-current-databox-captions {
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.openweather-forecast-day, .openweather-forecast-temperature {
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: rgba(255, 255, 255, 0.7);
 }

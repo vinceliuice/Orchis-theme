@@ -1859,6 +1859,35 @@ preferencesgroup, .geary-accounts-editor-pane {
   scrolledwindow.frame { border: none; }
 }
 
+.geary-main-window {
+  > deck > overlay > .geary-main-layout {
+    background-color: $base-alt;
+
+    > leaflet > separator.sidebar, // centry
+    > leaflet > leaflet > separator.sidebar { // left
+      // border-right: none;
+      background-color: $titlebar;
+      box-shadow: inset 0 -1px $divider;
+      transition: background-color $duration $ease-out,
+                  color $duration $ease-out,
+                  box-shadow $duration $ease-out;
+
+      &:backdrop { background-color: $titlebar-backdrop; }
+    }
+
+    > leaflet > leaflet > box.vertical + separator.sidebar {
+      background-color: $divider;
+    }
+
+    > leaflet > leaflet > box.vertical > .geary-conversation-frame {
+      > scrolledwindow {
+        margin: -1px 0; // hide .view top border
+        // > treeview.view {}
+      }
+    }
+  }
+}
+
 
 /**************
  * Extensions *

@@ -1441,7 +1441,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   width: $menuitem_size;
   height: $menuitem_size;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: $circular_radius;
   background-color: transparent;
   color: $secondary_fg_color;
 
@@ -1469,7 +1469,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   height: $menuitem_size;
   padding: 0 0;
   margin: 2px;
-  border-radius: 1000px;
+  border-radius: $circular_radius;
   color: $secondary_fg_color;
   border: none;
   font-feature-settings: "tnum";
@@ -1493,7 +1493,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
     width: $menuitem_size; height: $menuitem_size - 7px;
     margin-top: 2px;
     padding: 7px 0 0;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     background-color: transparent;
     color: $hint_fg_color;
     @include font(caption);

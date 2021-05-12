@@ -911,6 +911,7 @@ spinbutton:not(.vertical) {
 spinbutton:not(.vertical) > text {
   min-width: 32px;
   margin: 0;
+  padding-left: 12px;
   border-image: none;
   border-radius: 0;
   box-shadow: none;
@@ -1886,7 +1887,7 @@ popover.background, popover.background:backdrop {
 popover.background > arrow,
 popover.background > contents {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  padding: container-padding;
+  padding: 6px;
   box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   border-style: solid;
@@ -2367,6 +2368,7 @@ switch {
   background-color: rgba(0, 0, 0, 0.26);
   background-clip: padding-box;
   font-size: 0;
+  color: transparent;
 }
 
 switch:checked {

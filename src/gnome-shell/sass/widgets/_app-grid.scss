@@ -60,10 +60,11 @@
 /* App Folders */
 .app-well-app.app-folder {
   background: none;
+  border-radius: $buttons_radius;
 
   .overview-icon {
     background-color: $inverse_bg_color;
-    border-radius: $buttons_radius * 2;
+    border-radius: $buttons_radius;
   }
 
   &:hover .overview-icon {
@@ -185,8 +186,20 @@ StWidget.focused .app-well-app-running-dot {
   .page-indicator-icon {
     width: 10px;
     height: 10px;
-    border-radius: 10px; // the same as height&width
-    background-color: white;
+    border-radius: $circular_radius; // the same as height&width
+    background-color: $inverse_disabled_secondary_fg_color;
+  }
+
+  &:hover .page-indicator-icon {
+    background-color: $inverse_disabled_fg_color;
+  }
+
+  &:active .page-indicator-icon {
+    background-color: $inverse_secondary_fg_color;
+  }
+
+  &:checked .page-indicator-icon {
+    background-color: $inverse_fg_color;
   }
 }
 
