@@ -276,7 +276,6 @@
 .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(:only-child).disclosure-button { @extend %circular-button; }
 
 // Path bar
-
 .path-bar-box {
   transition: background-color $duration $ease-out;
   margin: $container-padding 0;
@@ -316,16 +315,18 @@
 
     &.text-button {
       min-width: 0;
-      border-radius: 1000px;
+      border-radius: $circular_radius;
     }
 
     &.text-button.image-button {
-      border-radius: 1000px;
+      border-radius: $circular_radius;
       image:not(:only-child) { margin: 0; }
     }
 
     &:last-child:dir(ltr),
     &:first-child:dir(rtl) {
+      background-color: rgba($titlebar-text, 0.08);
+
       &:disabled {
         background-color: transparent;
         color: $titlebar-text-disabled;
