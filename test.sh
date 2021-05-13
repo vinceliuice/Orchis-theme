@@ -111,6 +111,7 @@ install() {
   cp -r "$SRC_DIR/gtk/3.0/gtk$color.css"                                        "$THEME_DIR/gtk-3.0/gtk.css"
   [[ "$color" != '-dark' ]] && \
   cp -r "$SRC_DIR/gtk/3.0/gtk-dark.css"                                         "$THEME_DIR/gtk-3.0/gtk-dark.css"
+  cp -r "$SRC_DIR/gtk/thumbnail${ELSE_DARK:-}.png"                              "$THEME_DIR/gtk-3.0/thumbnail.png"
 
   mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
   cp -r "$SRC_DIR/gtk/assets"                                                   "$THEME_DIR/gtk-4.0/assets"

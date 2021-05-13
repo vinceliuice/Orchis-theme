@@ -41,7 +41,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     -minimum-hpadding: $container_padding;
     transition-duration: 150ms;
     border: 3px solid transparent;
-    border-radius: 99px;
+    border-radius: $circular_radius;
 
     &.clock-display {
       .clock {
@@ -82,11 +82,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     // status area icons
     .system-status-icon {
       icon-size: 16px;
-      padding: $container_padding - 1px;
-      margin: 0 $container_margin;
+      padding: 0 $container_padding / 2;
+      margin: 0 2px;
     }
 
-    .panel-status-indicators-box .system-status-icon,
+    // .panel-status-indicators-box .system-status-icon,
     .panel-status-menu-box .system-status-icon {
       margin: 0;
     }
