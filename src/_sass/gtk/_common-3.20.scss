@@ -90,10 +90,12 @@
   // &:hover, &:selected { border-radius: $corner-radius; }
 
   &:selected {
-    @extend %selected_items_color;
+    @extend %selected_items_primary;
 
     &:hover { box-shadow: none; }
   }
+
+  .background.csd &:selected { @extend %selected_items_color; }
 }
 
 widget.view {
@@ -135,8 +137,10 @@ flowbox {
     padding: 4px;
     border-radius: $corner-radius;
 
-    &:selected { @extend %selected_items_color; }
+    &:selected { @extend %selected_items_primary; }
   }
+
+  .background.csd & flowboxchild:selected { @extend %selected_items_color; }
 }
 
 .content-view .tile {
