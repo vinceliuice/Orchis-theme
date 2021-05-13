@@ -254,10 +254,12 @@ StScrollBar {
 // Tooltip
 //
 #Tooltip {
-  border-radius: $corner-radius;
-  padding: 5px 12px;
+  border-radius: $circular-radius;
+  padding: $container-padding $container-padding * 2;
   background-color: $os-background;
   color: on($os-background);
+  margin: $container-padding;
+  box-shadow: $shadow-z4;
   font-size: 1em;
   font-weight: normal;
   text-align: center;
