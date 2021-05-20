@@ -9,17 +9,18 @@
   text-align: center;
 }
 
+$icon_padding: 6px;
 
 // app icons
 .icon-grid {
-  row-spacing: $container_padding * 2;
-  column-spacing: $container_padding * 2;
-  max-row-spacing: $container_padding * 12;
-  max-column-spacing: $container_padding * 12;
-  page-padding-top: $container_padding * 4;
-  page-padding-bottom: $container_padding * 4;
-  page-padding-left: $container_padding * 2;
-  page-padding-right: $container_padding * 2;
+  row-spacing: $icon_padding * 2;
+  column-spacing: $icon_padding * 2;
+  max-row-spacing: $icon_padding * 12;
+  max-column-spacing: $icon_padding * 12;
+  page-padding-top: $icon_padding * 4;
+  page-padding-bottom: $icon_padding * 4;
+  page-padding-left: $icon_padding * 2;
+  page-padding-right: $icon_padding * 2;
 }
 
 /* App Icons */
@@ -52,7 +53,7 @@
     padding: 10px 8px 5px 8px;
 
     > StBoxLayout {
-      spacing: $container_padding;
+      spacing: $icon_padding;
     }
   }
 }
@@ -77,10 +78,11 @@
   border-radius: $buttons_radius * 4;
   border: 0 solid rgba(white, 0.15);
   background-color: rgba(#222, 0.95);
+  padding: $container_padding * 2;
 
   & .folder-name-container {
     padding: 24px 36px 0;
-    spacing: 12px;
+    spacing: $container_padding * 2;
 
     & .folder-name-label,
     & .folder-name-entry {
@@ -133,8 +135,8 @@
   }
 
   & .icon-grid {
-    row-spacing: $container_padding * 2;
-    column-spacing: $container_padding * 5;
+    row-spacing: $icon_padding * 2;
+    column-spacing: $icon_padding * 5;
     page-padding-top: 0;
     page-padding-bottom: 0;
     page-padding-left: 0;
@@ -147,9 +149,9 @@
 }
 
 .app-folder-dialog-container {
-  padding: 12px;
-  width: 620px;
-  height: 620px;
+  padding: $container_padding * 2;
+  width: if($laptop == 'false', 620px, 520px);
+  height: if($laptop == 'false', 620px, 520px);
 }
 
 // Running app indicator (also shown in dash)
@@ -168,8 +170,8 @@ StWidget.focused .app-well-app-running-dot {
 // Rename popup for app folders
 .rename-folder-popup {
   .rename-folder-popup-item {
-    spacing: $container_padding;
-    &:ltr, &:rtl { padding: 0 $container_padding * 2; }
+    spacing: $icon_padding;
+    &:ltr, &:rtl { padding: 0 $icon_padding * 2; }
   }
 }
 
@@ -181,7 +183,7 @@ StWidget.focused .app-well-app-running-dot {
 
 // App Grid pagination indicators
 .page-indicator {
-  padding: $container_padding $container_padding * 2 0;
+  padding: $icon_padding $icon_padding * 2 0;
 
   .page-indicator-icon {
     width: 10px;
