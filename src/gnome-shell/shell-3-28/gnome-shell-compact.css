@@ -1649,7 +1649,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   width: 28px;
   height: 28px;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.54);
 }
@@ -1690,7 +1690,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   height: 28px;
   padding: 0 0;
   margin: 2px;
-  border-radius: 1000px;
+  border-radius: 9999px;
   color: rgba(0, 0, 0, 0.54);
   border: none;
   font-feature-settings: "tnum";
@@ -1718,7 +1718,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   height: 21px;
   margin-top: 2px;
   padding: 7px 0 0;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.38);
   font-size: 9pt;

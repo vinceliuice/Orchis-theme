@@ -774,6 +774,7 @@ spinbutton {
       min-width: $large-size - 8px * 2;
       // reset all the other props since the spinbutton node is styled here
       margin: 0;
+      padding-left: $container-padding * 2;
       border-image: none;
       border-radius: 0;
       box-shadow: none;
@@ -1690,7 +1691,7 @@ popover.background {
   > arrow,
   > contents {
     transition: $transition-shadow;
-    padding: container-padding;
+    padding: $container-padding;
     box-shadow: $shadow-z6; // TODO: this should really have a highlight
     background-color: $surface;
     border-style: solid;
@@ -2172,6 +2173,7 @@ switch {
   background-color: $track;
   background-clip: padding-box;
   font-size: 0;
+  color: transparent;
 
   &:checked { background-color: rgba($primary, 0.5); }
 

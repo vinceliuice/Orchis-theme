@@ -254,10 +254,12 @@ StScrollBar {
 // Tooltip
 //
 #Tooltip {
-  border-radius: $corner-radius;
-  padding: 5px 12px;
+  border-radius: $circular-radius;
+  padding: $container-padding $container-padding * 2;
   background-color: $os-background;
   color: on($os-background);
+  margin: $container-padding;
+  box-shadow: $shadow-z4;
   font-size: 1em;
   font-weight: normal;
   text-align: center;
@@ -1664,27 +1666,29 @@ $menu_item_radius: $window-radius - $container-padding;
     height: 80px;
     padding: $container-padding*2 $container-padding*3;
     spacing: $container-padding;
-    background-color: on($sub_menu_bg, track);
+    background-color: rgba(black, 0.45);
     border: none;
     border-radius: 0 0 $corner-radius $corner-radius;
-    color: on($sub_menu_bg);
+    color: on(dark);
+    text-shadow: none;
 
     StButton {
       width: 16px;
       height: 16px;
       padding: 8px;
       margin: 0 $container-padding $container-padding;
-      color: on($sub_menu_bg);
+      color: on(dark);
       border-radius: $circular-radius;
       border: none;
+      text-shadow: none;
 
       StIcon { icon-size: 16px; }
 
-      &:hover { background-color: rgba(on($os-background), 0.1); }
-      &:active { background-color: rgba(on($os-background), 0.25); }
+      &:hover { background-color: on(dark, divider); }
+      &:active { background-color: on(dark, track); }
       &:insensitive {
         opacty: 0.35;
-        color: rgba(on($os-background), 0.35);
+        color: on(dark, disabled);
       }
     }
 

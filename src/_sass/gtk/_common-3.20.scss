@@ -35,6 +35,56 @@
   &:focus { outline-color: $overlay-checked; }
 }
 
+%selected_items {
+  color: $text;
+  background-color: $overlay-selected;
+}
+
+%selected_items_color {
+  color: $primary;
+  background-color: rgba($primary, 0.2);
+}
+
+%selected_items_primary {
+  color: on($primary);
+  background-color: $primary;
+}
+
+%linked {
+  border-radius: 0;
+
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-bottom-left-radius: $corner-radius;
+  }
+
+  &:last-child {
+    border-top-right-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
+
+%linked-vertical {
+  border-radius: 0;
+
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
 
 /***************
  * Base States *
@@ -90,10 +140,12 @@
   // &:hover, &:selected { border-radius: $corner-radius; }
 
   &:selected {
-    @extend %selected_items_color;
+    @extend %selected_items_primary;
 
     &:hover { box-shadow: none; }
   }
+
+  .background.csd &:selected { @extend %selected_items_color; }
 }
 
 widget.view {
@@ -428,6 +480,19 @@ treeview entry {
   &:checked:disabled { @include button(checked-disabled); }
 }
 
+%circular-button { // The Bloody Circul Button
+  border-radius: $circular-radius;
+
+  label { padding: 0; }
+}
+
+%small-button {
+  min-height: $small-size;
+  min-width: $small-size;
+  padding: 0;
+  border-radius: $circular-radius;
+}
+
 button {
   min-height: 24px;
   min-width: 16px;
@@ -616,20 +681,8 @@ button {
 
   .primary-toolbar & { -gtk-icon-shadow: none; } // tango icons don't need shadows
 
-  @at-root %circular-button,
   &.close,
-  &.circular { // The Bloody Circul Button
-    border-radius: $circular-radius;
-
-    // label { padding: 0; }
-  }
-
-  @at-root %small-button {
-    min-height: $small-size;
-    min-width: $small-size;
-    padding: 0;
-    border-radius: $circular-radius;
-  }
+  &.circular { @extend %circular-button; }
 }
 
 %needs-attention {
@@ -641,52 +694,7 @@ button {
   &:dir(rtl) { background-position: left 3px; }
 }
 
-// all the following is for the +|- buttons on inline toolbars, that way
-// should really be deprecated...
-// .inline-toolbar toolbutton > button { // redefining the button look is
-// }
-
-// More inline toolbar buttons
-// toolbar.inline-toolbar toolbutton {
-// }
-
-%linked {
-  border-radius: 0;
-
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-bottom-left-radius: $corner-radius;
-  }
-
-  &:last-child {
-    border-top-right-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $corner-radius;
-  }
-}
-
-%linked-vertical {
-  border-radius: 0;
-
-  &:first-child {
-    border-top-left-radius: $corner-radius;
-    border-top-right-radius: $corner-radius;
-  }
-
-  &:last-child {
-    border-bottom-left-radius: $corner-radius;
-    border-bottom-right-radius: $corner-radius;
-  }
-
-  &:only-child {
-    border-radius: $corner-radius;
-  }
-}
-
-/* menu buttons */
+// menu buttons
 modelbutton.flat,
 .menuitem.button.flat {
   min-height: $menuitem-size;
@@ -1436,7 +1444,7 @@ treeview.view {
 
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
-    background-color: $base;
+    @extend %selected_items;
     background-image: image($overlay-checked);
   }
 
@@ -1596,6 +1604,7 @@ menu,
     &:hover {
       transition: none;
       background-color: $overlay-hover;
+      color: $text;
     }
 
     &:disabled { color: $text-disabled; }
@@ -1619,6 +1628,10 @@ menu,
     // avoids labels color being overridden, see
     // https://bugzilla.gnome.org/show_bug.cgi?id=767058
     label { &:dir(rtl), &:dir(ltr) { color: inherit; }}
+  }
+
+  .view:selected {
+    background-color: mix($text, $surface, 10%);
   }
 
   // overflow arrows
@@ -2861,9 +2874,7 @@ row {
  *********************/
 .app-notification {
   // @extend %osd;
-
   @extend %toolbar_osd;
-
   margin: 8px;
 
   button {
@@ -3592,23 +3603,6 @@ button.titlebutton {
   @extend %circular-button;
 
   // .selection-mode & { }
-}
-
-
-// catch all extend :)
-
-%selected_items {
-  background-color: $overlay-selected;
-}
-
-%selected_items_color {
-  color: $primary;
-  background-color: rgba($primary, 0.2);
-}
-
-%selected_items_primary {
-  color: on($primary);
-  background-color: $primary;
 }
 
 .monospace { font-family: monospace; }

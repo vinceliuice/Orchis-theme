@@ -35,7 +35,7 @@
 
 %search-section-content-item {
   @extend %icon_tile;
-  border-radius: 100px;
+  border-radius: $circular_radius;
 
   &:focus,
   &:hover,

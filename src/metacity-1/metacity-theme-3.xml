@@ -4,7 +4,7 @@
   <name>Orchis</name>
   <author>vinceliucie</author>
   <copyright>GPL</copyright>
-  <date>2020</date>
+  <date>2021</date>
   <description>Orchis Metacity theme</description>
 </info>
 
@@ -496,10 +496,10 @@
   <piece position="titlebar" draw_ops="entire_background_unfocused"/>
 </frame_style>
 
-<frame_style name="dialog_focused" geometry="nobuttons" parent="normal_focused">
+<frame_style name="dialog_focused" geometry="modal" parent="normal_focused">
 </frame_style>
 
-<frame_style name="dialog_unfocused" geometry="nobuttons" parent="normal_unfocused">
+<frame_style name="dialog_unfocused" geometry="modal" parent="normal_unfocused">
 </frame_style>
 
 <frame_style name="modal_dialog_focused" geometry="modal" parent="normal_focused">

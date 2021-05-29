@@ -278,10 +278,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #Tooltip {
-  border-radius: 12px;
-  padding: 5px 12px;
+  border-radius: 9999px;
+  padding: 6px 12px;
   background-color: #212121;
   color: white;
+  margin: 6px;
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   font-size: 1em;
   font-weight: normal;
   text-align: center;
@@ -1859,10 +1861,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 80px;
   padding: 12px 18px;
   spacing: 6px;
-  background-color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.45);
   border: none;
   border-radius: 0 0 12px 12px;
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
+  text-shadow: none;
 }
 
 .sound-player-overlay StButton {
@@ -1870,9 +1873,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 16px;
   padding: 8px;
   margin: 0 6px 6px;
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
   border-radius: 9999px;
   border: none;
+  text-shadow: none;
 }
 
 .sound-player-overlay StButton StIcon {
@@ -1880,16 +1884,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .sound-player-overlay StButton:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .sound-player-overlay StButton:active {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .sound-player-overlay StButton:insensitive {
   opacty: 0.35;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .sound-player-overlay StLabel {
