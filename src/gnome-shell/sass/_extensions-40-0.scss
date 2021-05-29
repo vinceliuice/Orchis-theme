@@ -2,8 +2,6 @@
 // Dash to Dock
 //
 
-$icon_padding: 9px;
-
 #dashtodockContainer {
   background: transparent;
 
@@ -38,12 +36,7 @@ $icon_padding: 9px;
 
   #dash .dash-background {
     background-color: $panel_bg_color;
-  }
-
-  .dash-separator {
-    width: 0 !important;
-    margin: 0 0 !important;
-    background: none;
+    padding: $dash_padding;
   }
 
   &.opaque #dash .dash-background { // solid-mode

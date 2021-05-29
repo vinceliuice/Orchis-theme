@@ -311,20 +311,20 @@ StScrollBar {
 }
 
 StScrollView StScrollBar {
-  min-width: 14px;
-  min-height: 14px;
+  min-width: 16px;
+  min-height: 6px;
 }
 
 StScrollBar StBin#trough {
   margin: 6px;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.06);
 }
 
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.5);
-  margin: 3px;
+  margin: 6px;
 }
 
 StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
@@ -1858,36 +1858,42 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-#panel #panelActivities.panel-button > * {
-  width: 28px;
-}
-
 #panel #panelActivities.panel-button:hover {
   background-image: url("assets/activities-active-small.svg");
 }
 
 #panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
   color: transparent;
-  background-color: transparent;
   box-shadow: none;
 }
 
-#panel Gjs_ui_panel_AggregateMenu.panel-button {
+#panel Gjs_ui_panel_AggregateMenu.panel-button,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
   background-color: rgba(255, 255, 255, 0.1);
-  margin: 2px;
+  margin: 2px !important;
 }
 
-#panel Gjs_ui_panel_AggregateMenu.panel-button:hover {
+#panel Gjs_ui_panel_AggregateMenu.panel-button:hover,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover {
   background-color: rgba(255, 255, 255, 0.18) !important;
 }
 
-#panel Gjs_ui_panel_AggregateMenu.panel-button:active, #panel Gjs_ui_panel_AggregateMenu.panel-button:overview, #panel Gjs_ui_panel_AggregateMenu.panel-button:focus, #panel Gjs_ui_panel_AggregateMenu.panel-button:checked {
+#panel Gjs_ui_panel_AggregateMenu.panel-button:active, #panel Gjs_ui_panel_AggregateMenu.panel-button:overview, #panel Gjs_ui_panel_AggregateMenu.panel-button:focus, #panel Gjs_ui_panel_AggregateMenu.panel-button:checked,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:active,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:overview,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:focus,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:checked {
   background-color: rgba(255, 255, 255, 0.28) !important;
 }
 
 #panel Gjs_ui_panel_AggregateMenu.panel-button .system-status-icon {
   margin: 0 0 !important;
   padding: 4px !important;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon {
+  margin: 0 0 !important;
+  padding: 0 !important;
 }
 
 #panel.unlock-screen .panel-button:hover, #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button:hover, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:checked, #panel:overview .panel-button:hover, #panel:overview .panel-button:active, #panel:overview .panel-button:overview, #panel:overview .panel-button:focus, #panel:overview .panel-button:checked {
@@ -2071,7 +2077,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .list-search-result, .search-provider-icon {
-  border-radius: 100px;
+  border-radius: 9999px;
 }
 
 .list-search-result:focus, .search-provider-icon:focus, .list-search-result:hover, .search-provider-icon:hover, .list-search-result:selected, .search-provider-icon:selected {
@@ -2139,17 +2145,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 16px;
-  padding: 4px;
+  padding: 6px;
   border-radius: 9999px;
 }
 
 .dash-item-container .app-well-app, .show-apps {
-  padding: 4px 2px 20px;
+  padding: 6px 2px 22px;
 }
 
 .dash-separator {
   width: 1px;
-  margin: 0 4px 16px;
+  margin: 0 5px 16px;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -3278,12 +3284,7 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer #dash .dash-background {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-#dashtodockContainer .dash-separator {
-  width: 0 !important;
-  margin: 0 0 !important;
-  background: none;
+  padding: 6px;
 }
 
 #dashtodockContainer.opaque #dash .dash-background {
@@ -3309,4 +3310,73 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer.opaque.extended:overview #dash .dash-background, #dashtodockContainer.transparent.extended:overview #dash .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
+  border: 1px solid transparent;
+}
+
+.openweather-provider {
+  padding: 0 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-provider:focus {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: 0 0 transparent;
+}
+
+.openweather-provider:active {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.openweather-current-icon, .openweather-current-summary, .openweather-current-summarybox {
+  background: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.openweather-current-databox-values {
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.openweather-current-databox-captions {
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.openweather-forecast-icon, .openweather-forecast-summary {
+  background: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.openweather-forecast-day, .openweather-forecast-temperature {
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.openweather-sunrise-icon, .openweather-sunset-icon, .openweather-build-icon {
+  color: rgba(255, 255, 255, 0.7);
 }

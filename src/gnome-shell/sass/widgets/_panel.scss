@@ -108,30 +108,37 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       background-color: transparent;
       box-shadow: none;
 
-      > * { width: $medium_size - $container_padding; }
-
       &:hover {
         background-image: url("assets/activities-active#{$size_suffix}.svg");
       }
 
       &:hover, &:active, &:overview, &:focus, &:checked {
         color: transparent;
-        background-color: transparent;
         box-shadow: none;
       }
     }
   }
 
-  Gjs_ui_panel_AggregateMenu.panel-button {
+  Gjs_ui_panel_AggregateMenu.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
     background-color: rgba(white, 0.1);
-    margin: $container_padding / 2;
+    margin: $container_padding / 2 !important;
 
    &:hover { background-color: rgba(white, 0.18) !important; }
    &:active, &:overview, &:focus, &:checked { background-color: rgba(white, 0.28) !important; }
+  }
 
+  Gjs_ui_panel_AggregateMenu.panel-button {
     .system-status-icon {
       margin: 0 0 !important;
       padding: $container_padding !important;
+    }
+  }
+
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
+    .arc-menu-icon {
+      margin: 0 0 !important;
+      padding: 0 !important;
     }
   }
 
