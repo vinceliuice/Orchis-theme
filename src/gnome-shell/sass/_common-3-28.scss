@@ -909,19 +909,18 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   border: none;
   padding: 0 0;
   margin: 0 0;
-  height: 0;
+  height: 4px;
 
   .popup-separator-menu-item-separator {
     background: none;
     padding: 0 0;
     margin: 0 0;
-    height: 0;
+    height: 1px;
 
     .popup-sub-menu & { //submenu separators
       background: none;
       padding: 0 0;
       margin: 0 0;
-      height: 0;
     }
   }
 }
@@ -946,7 +945,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 }
 
 .aggregate-menu {
-  min-width: 21em;
+  min-width: if($laptop == 'true', 19em, 21em);
 
   .popup-menu-icon {
     padding: 0;
@@ -1279,40 +1278,6 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 
   .screencast-indicator { color: $error_color; }
   .remote-access-indicator { color: $warning_color; } // > 3.29.4
-
-  &.solid {
-    background-color: $panel_bg;
-    /* transition from transparent to solid */
-    transition-duration: 250ms;
-    background-gradient-direction: none; // for Ubuntu session
-    text-shadow: none; // for Ubuntu session
-
-    &:overview { background-color: transparent; } // for Ubuntu session
-
-    .panel-corner {
-      -panel-corner-background-color: $panel_bg_color;
-    }
-
-    .panel-button {
-      color: $panel_fg_color;
-      text-shadow: none;
-
-      &:active, &:overview, &:focus, &:checked {
-        color: $inverse_fg_color;
-        text-shadow: none;
-      }
-    }
-
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: none;
-
-      &:active, &:overview, &:focus, &:checked {
-        icon-shadow: none;
-      }
-    }
-  }
 }
 
 $size_suffix: if($laptop == 'true', '-small', '');
@@ -1337,6 +1302,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   transition-duration: 0ms !important;
   box-shadow: none !important;
   color: transparent !important;
+
+  > * { width: $medium_size; }
 
   &:hover, &:active, &:overview, &:focus, &:checked {
     background-color: transparent;

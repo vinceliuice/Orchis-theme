@@ -148,7 +148,7 @@ $popover_arrow_height: 12px;
   border: none;
   padding: 0 0;
   margin: 0 0;
-  height: $container_padding - 2px;
+  height: 4px;
 
   .popup-separator-menu-item-separator {
     //-margin-horizontal: 24px;
@@ -173,7 +173,7 @@ $popover_arrow_height: 12px;
 
 // system status menu
 .aggregate-menu {
-  min-width: 21em;
+  min-width: if($laptop == 'true', 19em, 21em);
 
   .popup-menu-icon {
     padding: 0;

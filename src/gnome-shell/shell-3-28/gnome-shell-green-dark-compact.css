@@ -1104,21 +1104,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   padding: 0 0;
   margin: 0 0;
-  height: 0;
+  height: 4px;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
   padding: 0 0;
   margin: 0 0;
-  height: 0;
+  height: 1px;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   background: none;
   padding: 0 0;
   margin: 0 0;
-  height: 0;
 }
 
 .system-switch-user-submenu-icon.user-icon {
@@ -1141,7 +1140,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .aggregate-menu {
-  min-width: 21em;
+  min-width: 19em;
 }
 
 .aggregate-menu .popup-menu-icon {
@@ -1503,50 +1502,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #FF6D00;
 }
 
-#panel.solid {
-  background-color: #000000;
-  /* transition from transparent to solid */
-  transition-duration: 250ms;
-  background-gradient-direction: none;
-  text-shadow: none;
-}
-
-#panel.solid:overview {
-  background-color: transparent;
-}
-
-#panel.solid .panel-corner {
-  -panel-corner-background-color: rgba(0, 0, 0, 0.5);
-}
-
-#panel.solid .panel-button {
-  color: #dedede;
-  text-shadow: none;
-}
-
-#panel.solid .panel-button:active, #panel.solid .panel-button:overview, #panel.solid .panel-button:focus, #panel.solid .panel-button:checked {
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: none;
-}
-
-#panel.solid .system-status-icon,
-#panel.solid .app-menu-icon > StIcon,
-#panel.solid .popup-menu-arrow {
-  icon-shadow: none;
-}
-
-#panel.solid .system-status-icon:active, #panel.solid .system-status-icon:overview, #panel.solid .system-status-icon:focus, #panel.solid .system-status-icon:checked,
-#panel.solid .app-menu-icon > StIcon:active,
-#panel.solid .app-menu-icon > StIcon:overview,
-#panel.solid .app-menu-icon > StIcon:focus,
-#panel.solid .app-menu-icon > StIcon:checked,
-#panel.solid .popup-menu-arrow:active,
-#panel.solid .popup-menu-arrow:overview,
-#panel.solid .popup-menu-arrow:focus,
-#panel.solid .popup-menu-arrow:checked {
-  icon-shadow: none;
-}
-
 Gjs_AggregateMenu.panel-button,
 Gjs_ui_panel_AggregateMenu.panel-button,
 Gjs_ArcMenu_ApplicationsButton.panel-button,
@@ -1566,6 +1521,10 @@ Gjs_ui_panel_ActivitiesButton.panel-button {
   transition-duration: 0ms !important;
   box-shadow: none !important;
   color: transparent !important;
+}
+
+Gjs_ui_panel_ActivitiesButton.panel-button > * {
+  width: 32px;
 }
 
 Gjs_ui_panel_ActivitiesButton.panel-button:hover, Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton.panel-button:overview, Gjs_ui_panel_ActivitiesButton.panel-button:focus, Gjs_ui_panel_ActivitiesButton.panel-button:checked {

@@ -12,14 +12,14 @@
 
 // app icons
 .icon-grid {
-  row-spacing: $container_padding * 2;
-  column-spacing: $container_padding * 2;
-  max-row-spacing: $container_padding * 12;
-  max-column-spacing: $container_padding * 12;
-  page-padding-top: $container_padding * 4;
-  page-padding-bottom: $container_padding * 4;
-  page-padding-left: $container_padding * 2;
-  page-padding-right: $container_padding * 2;
+  row-spacing: 12px;
+  column-spacing: 12px;
+  max-row-spacing: 72px;
+  max-column-spacing: 72px;
+  page-padding-top: 24px;
+  page-padding-bottom: 24px;
+  page-padding-left: 12px;
+  page-padding-right: 12px;
 }
 
 /* App Icons */
@@ -52,7 +52,7 @@
     padding: 10px 8px 5px 8px;
 
     > StBoxLayout {
-      spacing: $container_padding;
+      spacing: 6px;
     }
   }
 }
@@ -60,6 +60,7 @@
 /* App Folders */
 .app-well-app.app-folder {
   background: none;
+  border-radius: $buttons_radius * 2;
 
   .overview-icon {
     background-color: $inverse_bg_color;
@@ -76,6 +77,7 @@
   border-radius: $buttons_radius * 4;
   border: 0 solid rgba(white, 0.15);
   background-color: rgba(#222, 0.95);
+  spacing: $container_padding;
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -88,9 +90,12 @@
     }
 
     & .folder-name-entry {
+      min-height: 28px;
+      padding: $container_padding;
       border: none;
       color: $light_fg_color;
       background-color: rgba(white, 0.15);
+      caret-color: $light_fg_color;
       selection-background-color: $primary_color;
       selected-color: $light_fg_color;
       width: 300px;
@@ -118,7 +123,6 @@
       background-color: $inverse_divider_color;
       color: $inverse_secondary_fg_color;
       border: none;
-
       padding: 0;
       width: 36px;
       height: 36px;
