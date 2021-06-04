@@ -2,6 +2,22 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
+/* Main menu fxa */
+#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-label {
+	padding-left: 22px !important;
+	margin-inline-start: -22px !important;
+}
+#appMenu-fxa-status[fxastatus="signedin"] > #appMenu-fxa-avatar {
+	margin-inline-start: 5px !important;
+}
+#appMenu-fxa-status2[fxastatus] > #appMenu-fxa-label2 > vbox > #appMenu-header-description, #appMenu-fxa-text {
+	font-weight: 400 !important;
+}
+#appMenu-fxa-label2 {
+	padding: 0 !important;
+	background: none !important;
+}
+
 /* Style main context menu & buttons */
 #context-navigation {
 	padding: 2px 6px 6px;
@@ -148,92 +164,105 @@
 	margin-left: 1.4em !important;
 }
 
-#identity-popup-content-blocking-category-list, #identity-popup-permission-list {
-	margin-inline-start: 0 !important;
-}
-
-.identity-popup-security-connection {	/* FF70 */
-	background-position: 0 50% !important;
-	padding-inline-start: 16px !important;
-}
-#identity-popup-security-description { /* FF70 */
-	padding-inline-start: 0 !important;
-}
-
-.identity-popup-content-blocking-category-icon, .identity-popup-permission-icon {
-	margin-inline-start: 0 !important;
-}
-.identity-popup-content-blocking-category-label {
-	margin-inline-start: 6px !important;
-}
-.identity-popup-content-blocking-category-state-label {
-	opacity: 0.7;
-}
-
-#identity-popup-permissions-content {
-	padding-right: 0 !important;
-}
-#identity-popup-permissions-content description  {
-	margin-inline-start: 0 !important;
-}
-#identity-popup-permissions-content {
-	padding-bottom: 10px !important;
-}
-
-/* TODO: create custom --gnome-list vars */
-#identity-popup-permission-list:not(:empty) {
-	border: 1px solid var(--gnome-button-border-color);
-	border-bottom: 0 !important;
+/* Permission popup */
+#permission-popup-permissions-content {
 	padding: 0 !important;
 }
-.identity-popup-permission-item {
+
+.permission-popup-permission-item, #permission-popup-storage-access-permission-list-header {
+	margin-top: 0 !important;
+}
+
+#permission-popup-permission-list {
 	background: var(--gnome-menu-background);
-	border-bottom: 1px solid var(--gnome-button-border-color);
+	border: 1px solid var(--gnome-button-border-color);
+	border-radius: 6px;
+	padding: 0 !important;
+}
+
+.permission-popup-permission-list-anchor {
 	padding: 6px !important;
 	margin: 0 !important;
 }
+.permission-popup-permission-list-anchor:not(:last-child) {
+	border-bottom: 1px solid var(--gnome-button-border-color);
+}
+
+.permission-popup-permission-remove-button {
+	opacity: 1 !important;
+}
+
+.permission-popup-permission-state-label {
+	display: none !important;
+}
+
 
 /* Protections popup */
 .protections-popup-section,
-#protections-popup-not-blocking-section-header {
+#protections-popup-not-blocking-section-header {	
 	border: 0 !important;
+}
+#protections-popup-mainView-panel-header-section {
+	background: transparent !important;
 }
 
 #protections-popup-mainView-panel-header {
-	background: var(--gnome-button-suggested-action-background) !important;
-	border: 1px solid var(--gnome-button-suggested-action-border-color) !important;
-	border-radius: 5px 5px 0 0;
-	min-height: 34px !important;
+	color: var(--gnome-toolbar-color) !important;
+	padding: 0 !important;
 }
-#protections-popup[toast] #protections-popup-mainView-panel-header {
-	border-radius: 5px !important;
+#protections-popup[hasException] #protections-popup-mainView-panel-header {
+	background: none !important;
 }
 
+#protections-popup-main-header-label {
+	height: auto !important;
+	margin-inline-start: 6px !important;
+	text-align: left !important;
+}
+#protections-popup-mainView-panel-header-span {
+	margin: 0 !important;
+	margin-inline-start: 0 !important
+}
+#protections-popup[toast] #protections-popup-mainView-panel-header {
+	border-bottom-width: 1px !important;
+	border-radius: 5px !important;
+	padding: 0px !important;
+}
+
+#messaging-system-message-container {
+    height: 150px !important;
+	border: 0 !important;
+}
+#protections-popup #messaging-system-message-container[disabled] {
+    margin-bottom: -150px !important;
+}
 #protections-popup-message {
+	background: none !important;
+	border: 0 !important;
+	color: var(--gnome-toolbar-color) !important;
 	height: 100% !important;
 	margin: 0 !important;
-	border-radius: 0 !important;
+}
+#protections-popup-message .text-link {
+	color: var(--gnome-toolbar-color) !important;
 }
 
 #protections-popup-tp-switch-section {
-	background: var(--gnome-button-background) !important;
+	background: var(--gnome-menu-background);
 	border: 1px solid var(--gnome-button-border-color) !important;
-	border-top: 0 !important;
-	border-radius: 0 0 5px 5px;
+	border-radius: 6px;
+	padding: 12px !important;
 }
 #protections-popup[hasException] #protections-popup-tp-switch-section {
-	margin-bottom: 10px !important;
-	color: white !important;
+	background: var(--gnome-menu-background) !important;
 }
-
-#protections-popup[hasException] #protections-popup-tp-switch-section,
-#protections-popup[hasException] #protections-popup-mainView-panel-header{
-	background: var(--gnome-button-destructive-action-background) !important;
-	border-color: var(--gnome-button-destructive-action-border-color) !important;
+.protections-popup-tp-switch-label-box label {
+	font-weight: normal !important;
 }
 
 #protections-popup-no-trackers-found-description {
-	margin: 10px 0 !important;
+	margin: 12px 0 !important;
+	text-align: left !important;
 }
 
 #protections-popup-blocking-section-header,
@@ -261,9 +290,9 @@
 
 #protections-popup-footer  {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	flex-wrap: wrap;
-	margin-top: 3px;
+	margin-top: 12px;
 }
 #protections-popup-show-report-stack {
 	width: 100% !important;
@@ -277,6 +306,27 @@
 	margin-inline-end: 0 !important;
 }
 
+.protections-popup-description {
+	border-bottom: 0 !important;
+}
+.protections-popup-description > description {
+	margin: 8px !important;
+}
+
+/* Feature recommendation notification, fix width */
+#contextual-feature-recommendation-notification {
+	width: auto !important;
+}
+
+/* Notification popups */
+.popup-notification-learnmore-link {
+	margin-top: 40px !important;
+}
+
+/* Extensions sometimes assume a white background */
+.webextension-popup-browser {
+	background-color: #fff !important;
+}
 /* TODO: consider switchers section */
 .protections-popup-tp-switch-box {
 	margin-top: 16px;
@@ -298,9 +348,6 @@
 	display: block !important;
 	margin: 4px !important;
 }
-/*#protections-popup-tp-switch:hover {*/
-/*	border-color: var(--gnome-switch-border-color) !important;*/
-/*}*/
 #protections-popup-tp-switch::before {
 	position: absolute !important;
 	top: 0px;
@@ -318,8 +365,6 @@
 	background: var(--gnome-switch-active-background) !important;
 	padding-inline-start: 24px !important;
 }
-/*#protections-popup-tp-switch[enabled]:hover {*/
-/*}*/
 #protections-popup-tp-switch[enabled]::before {
 	background: var(--gnome-switch-slider-active-background) !important;
 	box-shadow: var(--gnome-switch-slider-active-box-shadow);
@@ -330,9 +375,4 @@
 }
 #protections-popup-tp-switch[enabled]:hover:before{
 	box-shadow: var(--gnome-switch-slider-active-hover-box-shadow);
-}
-
-/* Feature recommendation notification, fix width */
-#contextual-feature-recommendation-notification {
-	width: auto !important;
 }

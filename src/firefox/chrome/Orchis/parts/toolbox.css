@@ -76,14 +76,15 @@ findbar:-moz-window-inactive label,
 	margin-bottom: 0 !important;
 }
 
+/*bookmark toolbar*/
 #PersonalToolbar {
-	padding-top: 2px !important;
+	padding: 2px !important;
 	height: 28px;
 	border-bottom: 1px solid var(--gnome-inactive-toolbar-border-color) !important;
 }
 
 toolbarbutton.bookmark-item:not(.subviewbutton) {
-	padding: 2px 8px !important;
+	padding: 0 8px !important;
 	margin: 0 0 !important;
 	color: var(--gnome-button-color) !important;
 	border-radius: 100px !important;

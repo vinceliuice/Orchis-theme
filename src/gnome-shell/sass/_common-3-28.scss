@@ -119,12 +119,12 @@ StScrollBar {
 
   StBin#trough {
     margin: 6px;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     background-color: $divider_color;
   }
 
   StButton#vhandle, StButton#hhandle {
-    border-radius: 100px;
+    border-radius: $circular_radius;
     background-color: $hint_fg_color;
     //border: 4px solid transparent; //would be nice to margin or at least to transparent
     margin: 6px;
@@ -2401,7 +2401,6 @@ StWidget.focused .app-well-app-running-dot {
 
 //Some hacks I don't even
 .all-apps,
-.search-display > StBoxLayout,
 .frequent-apps > StBoxLayout {
   // horizontal padding to make sure scrollbars or dash don't overlap content
   padding: 0px 88px 10px 88px;

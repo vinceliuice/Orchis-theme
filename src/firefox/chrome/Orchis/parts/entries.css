@@ -50,8 +50,6 @@
 	color: var(--gnome-inactive-urlbar-color) !important;
 }
 
-#urlbar.megabar #urlbar-input-container:-moz-window-inactive,
-#urlbar:not(.megabar):-moz-window-inactive,
 #searchbar:-moz-window-inactive,
 #urlbar:-moz-window-inactive {
 	background: var(--gnome-inactive-button-background) !important;
@@ -70,13 +68,8 @@
 }
 
 /* Entries fixes */
-#urlbar-container, #search-container {
-	padding: 0 !important;
-	margin: 0 3px !important;
-}
-
-#urlbar, #searchbar {
-	margin: 0 3px !important;
+#search-container,
+#searchbar {
 	padding: 0 !important;
 }
 

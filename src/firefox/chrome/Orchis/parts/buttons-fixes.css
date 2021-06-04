@@ -141,9 +141,6 @@
 }
 
 /* Menulist */
-menulist {
-	-moz-appearance: none !important;
-}
 #identity-popup-popup-menulist {
 	margin-right: 0 !important;
 }

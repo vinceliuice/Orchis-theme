@@ -3,8 +3,11 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 #urlbar {
-	--urlbar-height: 32.00px;
+	--urlbar-height: 32.00px !important;
+	--urlbar-min-height: 32.00px !important;
 	--urlbar-toolbar-height: 32.00px !important;
+	--urlbar-icon-border-radius: 1000px !important;
+	--urlbar-icon-padding: 6px !important;
 }
 
 /* Center the URL bar */
@@ -17,9 +20,10 @@ toolbarspring {
 	box-shadow: none !important;
 	background: var(--gnome-urlbar-background) !important;
 	border-radius: 16px !important;
-	padding: 0 6px !important;
+	padding: 0 0 !important;
 }
 #urlbar-background {
+	--urlbar-container-height: 32.00px !important;
 	box-shadow: none !important;
 	border: 0 !important;
 	background: transparent !important;
@@ -30,7 +34,7 @@ toolbarspring {
 	top: 0 !important;
 	width: 100% !important;
 	z-index: 5 !important;
-	padding: 0 6px !important;
+	padding: 0 0 !important;
 }
 
 #urlbar[breakout][breakout-extend][open] {
@@ -39,9 +43,10 @@ toolbarspring {
 }
 
 #urlbar[breakout][breakout-extend] #urlbar-input-container {
-	height: 30px !important;
-	max-height: 30px !important;
-	padding: 0 0 !important;
+	height: 32px !important;
+	max-height: 32px !important;
+	padding: 2px !important;
+	border: none !important;
 }
 
 /* URL bar and Search bar's icons */
@@ -56,6 +61,7 @@ toolbarspring {
 .searchbar-search-button:hover:active .searchbar-search-icon {
 	background-color: transparent !important;
 	fill-opacity: 1 !important;
+	border-radius: 1000px !important;
 }
 
 /* URL bar results */

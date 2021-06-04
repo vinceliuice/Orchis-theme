@@ -12,29 +12,32 @@ menupopup {
 	padding: 4px 0 !important;
 	color: var(--gnome-button-color) !important;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
+	transition: none !important;
+	animation: none !important;
 }
 menupopup menupopup {
 	margin: -5px 0 0 -4px;
 }
 
-menubar > menu > menupopup {
-	border-top-left-radius: 0 !important;
-	border-top-right-radius: 0 !important;
-}
-
 menuitem, menupopup menu {
 	-moz-appearance: none !important;
 	padding: 4px 8px !important;
+	transition: none !important;
+	animation: none !important;
 }
 
 menuitem[type="checkbox"] image, menuitem[type="radio"] image {
 	visibility: visible !important;
+	transition: none !important;
+	animation: none !important;
 }
 
 menuitem:hover, menupopup menu:hover,
 menubar > menu:hover {
 	color: var(--gnome-button-color) !important;
 	background: var(--gnome-button-hover-background) !important;
+	transition: none !important;
+	animation: none !important;
 }
 
 menuitem[disabled="true"], menupopup menu[disabled="true"] {
@@ -43,6 +46,7 @@ menuitem[disabled="true"], menupopup menu[disabled="true"] {
 
 menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	background: transparent !important;
+	color: var(--gnome-button-disabled-color) !important;
 }
 
 /* Adjust popovers position */
