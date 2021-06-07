@@ -178,12 +178,12 @@ StScrollView StScrollBar {
 
 StScrollBar StBin#trough {
   margin: 6px;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.06);
 }
 
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.5);
   margin: 6px;
 }
@@ -1020,7 +1020,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked.selected {
   background-color: #e5e5e5;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -1030,7 +1030,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu .popup-menu-item.selected:checked:active {
+.popup-menu .popup-menu-item:checked.selected:active {
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.75);
 }
@@ -2775,7 +2775,6 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .all-apps,
-.search-display > StBoxLayout,
 .frequent-apps > StBoxLayout {
   padding: 0px 88px 10px 88px;
 }

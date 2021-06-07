@@ -180,13 +180,16 @@
 
             &:disabled { color: $text-disabled; }
 
-            button.flat {
-              @extend %button-flat-simple;
-            }
+            button.flat { @extend %button-flat-simple; }
           }
 
           button.flat {
-            @extend %button-on-dark;
+            @if $topbar == 'dark' {
+              @extend %button-on-dark;
+            }
+            @else {
+              @extend %button-flat-simple;
+            }
           }
         }
       }
