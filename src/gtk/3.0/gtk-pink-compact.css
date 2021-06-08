@@ -44,7 +44,7 @@
 XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, box.vertical > widget > widget:selected, calendar:selected, row:selected, treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view:selected, modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: rgba(0, 0, 0, 0.87);
-  background-color: alpha(currentColor, 0.06);
+  background-color: rgba(235, 235, 235, 0.987);
 }
 
 .nemo-window .view selection, .nemo-window filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow .nemo-window treeview.view selection, .nemo-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nemo-window treeview.view:not(.progressbar):not(.trough) selection, .nemo-window .view:selected, .nemo-window filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .nemo-window treeview.view:selected, .nautilus-window notebook .view:not(treeview) selection, .nautilus-window notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(treeview):not(.progressbar):not(.trough) selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window notebook treeview.view:not(treeview):not(.progressbar):not(.trough) selection, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview) selection, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview) selection, .nautilus-window notebook .view:not(treeview):selected, .nautilus-window notebook filechooser stack.view scrolledwindow treeview.view:not(treeview):selected, filechooser stack.view scrolledwindow .nautilus-window notebook treeview.view:not(treeview):selected, .nautilus-window flowboxchild:selected .icon-item-background, flowbox flowboxchild:selected, .background.csd .view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), .background.csd filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow .background.csd treeview.view:selected {
@@ -1702,19 +1702,19 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   }
 }
 
-.xfce4-panel.background button, .raven-mpris button.image-button, .budgie-panel button, .mate-panel-menu-bar button, .nautilus-window.csd notebook > header tab button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
+.xfce4-panel.background button, .raven-mpris button.image-button, .budgie-panel button, .mate-panel-menu-bar button, .nautilus-window.background.csd notebook > header tab button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.xfce4-panel.background button:focus, .raven-mpris button.image-button:focus, .budgie-panel button:focus, .mate-panel-menu-bar button:focus, .nautilus-window.csd notebook > header tab button.flat:focus, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:focus, infobar.warning > revealer > box button:focus, .xfce4-panel.background button:hover, .raven-mpris button.image-button:hover, .budgie-panel button:hover, .mate-panel-menu-bar button:hover, .nautilus-window.csd notebook > header tab button.flat:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:hover, infobar.warning > revealer > box button:hover, .xfce4-panel.background button:active, .raven-mpris button.image-button:active, .budgie-panel button:active, .mate-panel-menu-bar button:active, .nautilus-window.csd notebook > header tab button.flat:active, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:active, infobar.warning > revealer > box button:active, .xfce4-panel.background button:checked, .raven-mpris button.image-button:checked, .budgie-panel button:checked, .mate-panel-menu-bar button:checked, .nautilus-window.csd notebook > header tab button.flat:checked, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked, infobar.warning > revealer > box button:checked {
+.xfce4-panel.background button:focus, .raven-mpris button.image-button:focus, .budgie-panel button:focus, .mate-panel-menu-bar button:focus, .nautilus-window.background.csd notebook > header tab button.flat:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:focus, infobar.warning > revealer > box button:focus, .xfce4-panel.background button:hover, .raven-mpris button.image-button:hover, .budgie-panel button:hover, .mate-panel-menu-bar button:hover, .nautilus-window.background.csd notebook > header tab button.flat:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:hover, infobar.warning > revealer > box button:hover, .xfce4-panel.background button:active, .raven-mpris button.image-button:active, .budgie-panel button:active, .mate-panel-menu-bar button:active, .nautilus-window.background.csd notebook > header tab button.flat:active, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:active, infobar.warning > revealer > box button:active, .xfce4-panel.background button:checked, .raven-mpris button.image-button:checked, .budgie-panel button:checked, .mate-panel-menu-bar button:checked, .nautilus-window.background.csd notebook > header tab button.flat:checked, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked, infobar.warning > revealer > box button:checked {
   color: white;
 }
 
-.xfce4-panel.background button:disabled, .raven-mpris button.image-button:disabled, .budgie-panel button:disabled, .mate-panel-menu-bar button:disabled, .nautilus-window.csd notebook > header tab button.flat:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:disabled, infobar.warning > revealer > box button:disabled {
+.xfce4-panel.background button:disabled, .raven-mpris button.image-button:disabled, .budgie-panel button:disabled, .mate-panel-menu-bar button:disabled, .nautilus-window.background.csd notebook > header tab button.flat:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:disabled, infobar.warning > revealer > box button:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.xfce4-panel.background button:checked:disabled, .raven-mpris button.image-button:checked:disabled, .budgie-panel button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nautilus-window.csd notebook > header tab button.flat:checked:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked:disabled, infobar.warning > revealer > box button:checked:disabled {
+.xfce4-panel.background button:checked:disabled, .raven-mpris button.image-button:checked:disabled, .budgie-panel button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nautilus-window.background.csd notebook > header tab button.flat:checked:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked:disabled, infobar.warning > revealer > box button:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1807,7 +1807,7 @@ button:drop(active) {
 
 .budgie-session-dialog .linked.horizontal > button,
 .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, .nautilus-window.csd notebook > header tab:checked button.flat, .nautilus-window.csd notebook > header tab:active button.flat, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
+.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, .nautilus-window.background.csd notebook > header tab:checked button.flat, .nautilus-window.background.csd notebook > header tab:active button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
 .menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .budgie-panel button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button, layouttabbar button, filechooser #pathbarbox > stack > box > button, messagedialog.csd .dialog-action-box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
@@ -1826,7 +1826,7 @@ popover.background button.model, .caja-pathbar button,
 
 .budgie-session-dialog .linked.horizontal > button:focus,
 .budgie-polkit-dialog .linked.horizontal > button:focus,
-.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, .nautilus-window.csd notebook > header tab:checked button.flat:focus, .nautilus-window.csd notebook > header tab:active button.flat:focus, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, check:focus,
+.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, .nautilus-window.background.csd notebook > header tab:checked button.flat:focus, .nautilus-window.background.csd notebook > header tab:active button.flat:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:focus, treeview.view header button button.circular:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:focus, filechooser stack.view scrolledwindow treeview.view header button button.circular:focus, row.activatable button.circular:focus, check:focus,
 radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
 .menuitem.button.flat:focus, .nemo-window .toolbar button:focus, #buttonbox_frame button:focus, .xfce4-panel.background button:focus, .raven stackswitcher.linked > button:focus, .budgie-panel button:focus, .lock-dialog button:focus, .mate-panel-menu-bar button:focus, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus, layouttabbar button:focus, filechooser #pathbarbox > stack > box > button:focus, messagedialog.csd .dialog-action-box button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), popover.background.menu button:focus,
@@ -1838,7 +1838,7 @@ popover.background button.model:focus, .caja-pathbar button:focus,
 
 .budgie-session-dialog .linked.horizontal > button:hover,
 .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, .nautilus-window.csd notebook > header tab:checked button.flat:hover, .nautilus-window.csd notebook > header tab:active button.flat:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, check:hover,
+.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, .nautilus-window.background.csd notebook > header tab:checked button.flat:hover, .nautilus-window.background.csd notebook > header tab:active button.flat:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:hover, treeview.view header button button.circular:hover, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:hover, filechooser stack.view scrolledwindow treeview.view header button button.circular:hover, row.activatable button.circular:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
 .menuitem.button.flat:hover, .nemo-window .toolbar button:hover, #buttonbox_frame button:hover, .xfce4-panel.background button:hover, .raven stackswitcher.linked > button:hover, .budgie-panel button:hover, .lock-dialog button:hover, .mate-panel-menu-bar button:hover, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover, layouttabbar button:hover, filechooser #pathbarbox > stack > box > button:hover, messagedialog.csd .dialog-action-box button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), popover.background.menu button:hover,
@@ -1850,7 +1850,7 @@ popover.background button.model:hover, .caja-pathbar button:hover,
 
 .budgie-session-dialog .linked.horizontal > button:active,
 .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, .nautilus-window.csd notebook > header tab:checked button.flat:active, .nautilus-window.csd notebook > header tab:active button.flat:active, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, check:active,
+.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, .nautilus-window.background.csd notebook > header tab:checked button.flat:active, .nautilus-window.background.csd notebook > header tab:active button.flat:active, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:active, treeview.view header button button.circular:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:active, filechooser stack.view scrolledwindow treeview.view header button button.circular:active, row.activatable button.circular:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
 .menuitem.button.flat:active, .nemo-window .toolbar button:active, #buttonbox_frame button:active, .xfce4-panel.background button:active, .raven stackswitcher.linked > button:active, .budgie-panel button:active, .lock-dialog button:active, .mate-panel-menu-bar button:active, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active, layouttabbar button:active, filechooser #pathbarbox > stack > box > button:active, messagedialog.csd .dialog-action-box button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), popover.background.menu button:active,
@@ -1866,7 +1866,7 @@ popover.background button.model:active, .caja-pathbar button:active,
 
 .budgie-session-dialog .linked.horizontal > button:disabled,
 .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, .nautilus-window.csd notebook > header tab:checked button.flat:disabled, .nautilus-window.csd notebook > header tab:active button.flat:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
+.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, .nautilus-window.background.csd notebook > header tab:checked button.flat:disabled, .nautilus-window.background.csd notebook > header tab:active button.flat:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular:disabled, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular:disabled, treeview.view header button button.circular:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular:disabled, filechooser stack.view scrolledwindow treeview.view header button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, .nemo-window .toolbar button:disabled, #buttonbox_frame button:disabled, .xfce4-panel.background button:disabled, .raven stackswitcher.linked > button:disabled, .budgie-panel button:disabled, .lock-dialog button:disabled, .mate-panel-menu-bar button:disabled, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled, layouttabbar button:disabled, filechooser #pathbarbox > stack > box > button:disabled, messagedialog.csd .dialog-action-box button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), popover.background.menu button:disabled,
@@ -5209,92 +5209,92 @@ popover.emoji-completion .emoji:hover {
 /************
  * Nautilus *
  ************/
-.nautilus-window.csd {
+.nautilus-window.background.csd {
   background-color: #2C2C2C;
   border-radius: 0 0 18px 18px;
 }
 
-.nautilus-window.csd headerbar {
+.nautilus-window.background.csd headerbar {
   padding-left: 12px;
   background-color: #2C2C2C;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-.nautilus-window.csd > grid.horizontal > paned.horizontal > separator,
-.nautilus-window.csd > deck > box.vertical > paned.horizontal > separator {
+.nautilus-window.background.csd > grid.horizontal > paned.horizontal > separator,
+.nautilus-window.background.csd > deck > box.vertical > paned.horizontal > separator {
   margin-left: -1px;
 }
 
-.nautilus-window.csd placessidebar {
+.nautilus-window.background.csd placessidebar {
   background-color: transparent;
   border-radius: 18px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.csd placessidebar > viewport.frame {
+.nautilus-window.background.csd placessidebar > viewport.frame {
   margin: 8px 0 12px 12px;
   border-radius: 12px;
   background-color: transparent;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list {
+.nautilus-window.background.csd placessidebar > viewport.frame > list {
   padding: 12px 0 12px 0;
   background: none;
   border-radius: 12px;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable {
   border-radius: 0;
   margin: -8px 0 -8px 0;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:focus, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:active {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:active {
   background-image: none;
   box-shadow: none;
   animation: none;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable label.sidebar-label {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable image.sidebar-icon, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable label.sidebar-label {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable image.sidebar-icon {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable image.sidebar-icon {
   padding-right: 8px;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable label.sidebar-label {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable label.sidebar-label {
   color: inherit;
   min-height: 54px;
   padding: 0 0 0 4px;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable.sidebar-placeholder-row {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable.sidebar-placeholder-row {
   background-color: transparent;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:drop(active) {
   border-radius: 9999px 0 0 9999px;
   background-color: rgba(255, 112, 67, 0.1);
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active), .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:drop(active) label.sidebar-label {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:drop(active), .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:drop(active) image.sidebar-icon, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:drop(active) label.sidebar-label {
   color: #FF7043;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:hover label.sidebar-label {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:hover image.sidebar-icon, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:hover label.sidebar-label {
   color: #EC407A;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected {
   background-color: transparent;
   font-weight: 700;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected image.sidebar-icon {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected image.sidebar-icon {
   color: #EC407A;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected label.sidebar-label {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected label.sidebar-label {
   color: #EC407A;
   background-color: #FFFFFF;
   box-shadow: 4px 0 #FFFFFF;
@@ -5305,112 +5305,116 @@ popover.emoji-completion .emoji:hover {
   border-image-source: -gtk-scaled(url("assets/row-selected.png"), url("assets/row-selected@2.png"));
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected revealer.sidebar-revealer {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected revealer.sidebar-revealer {
   padding-right: 0;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button {
   margin-right: 8px;
   margin-left: -32px;
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled image.sidebar-icon, .nautilus-window.csd placessidebar > viewport.frame > list > row.activatable:disabled label.sidebar-label {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:disabled image.sidebar-icon, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:disabled label.sidebar-label {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.nautilus-window.csd placessidebar > viewport.frame > list > separator {
+.nautilus-window.background.csd placessidebar > viewport.frame > list > separator {
   background: none;
 }
 
-.nautilus-window.csd placessidebar scrollbar {
+.nautilus-window.background.csd placessidebar scrollbar {
   background: none;
   border: none;
 }
 
-.nautilus-window.csd placessidebar > undershoot.top {
+.nautilus-window.background.csd placessidebar > undershoot.top {
   background: none;
 }
 
-.nautilus-window.csd placessidebar > undershoot.bottom {
+.nautilus-window.background.csd placessidebar > undershoot.bottom {
   background: none;
 }
 
-.nautilus-window.csd .nautilus-list-view {
+.nautilus-window.background.csd .nautilus-list-view {
   background-color: transparent;
   border-radius: 18px;
 }
 
-.nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected), .nautilus-window.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), .nautilus-window.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected), filechooser stack.view scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) {
+.nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected), .nautilus-window.background.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough), .nautilus-window.background.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected), filechooser stack.view scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
   border-radius: 0;
 }
 
-.nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child, .nautilus-window.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:first-child, .nautilus-window.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child, filechooser stack.view scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child {
+.nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child, .nautilus-window.background.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:first-child, .nautilus-window.background.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child, filechooser stack.view scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:first-child {
   border-top-left-radius: 18px;
 }
 
-.nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child, .nautilus-window.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:last-child, .nautilus-window.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child, filechooser stack.view scrolledwindow .nautilus-window.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child {
+.nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child, .nautilus-window.background.csd .nautilus-list-view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected):not(.progressbar):not(.trough) > header > button:last-child, .nautilus-window.background.csd .nautilus-list-view filechooser stack.view scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child, filechooser stack.view scrolledwindow .nautilus-window.background.csd .nautilus-list-view treeview.view:not(:hover):not(:active):not(:selected) > header > button:last-child {
   border-top-right-radius: 18px;
 }
 
-.nautilus-window.csd notebook {
+.nautilus-window.background.csd notebook {
   background: none;
   margin: 0 6px 6px 0;
 }
 
-.nautilus-window.csd notebook > header {
+.nautilus-window.background.csd notebook > header {
   padding: 0 16px;
   background: none;
 }
 
-.nautilus-window.csd notebook > header tab {
+.nautilus-window.background.csd notebook > header tab {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.csd notebook > header tab:hover:not(:checked):not(:active) {
+.nautilus-window.background.csd notebook > header tab:hover:not(:checked):not(:active) {
   color: white;
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.nautilus-window.csd notebook > header tab:disabled {
+.nautilus-window.background.csd notebook > header tab:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.nautilus-window.csd notebook > header tab:checked, .nautilus-window.csd notebook > header tab:active {
+.nautilus-window.background.csd notebook > header tab:checked, .nautilus-window.background.csd notebook > header tab:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.nautilus-window.csd notebook > header tab:checked:disabled, .nautilus-window.csd notebook > header tab:active:disabled {
+.nautilus-window.background.csd notebook > header tab:checked:disabled, .nautilus-window.background.csd notebook > header tab:active:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.nautilus-window.csd notebook > stack {
+.nautilus-window.background.csd notebook > stack {
   background-color: #FFFFFF;
   border-radius: 16px;
 }
 
-.nautilus-window.csd notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.csd notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked):not(.progressbar):not(.trough), .nautilus-window.csd notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), filechooser stack.view .nautilus-window.csd notebook scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
+.nautilus-window.background.csd notebook scrolledwindow > .view:not(:selected):not(:hover):not(:checked), .nautilus-window.background.csd notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked):not(.progressbar):not(.trough), .nautilus-window.background.csd notebook filechooser stack.view scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked), filechooser stack.view .nautilus-window.background.csd notebook scrolledwindow > treeview.view:not(:selected):not(:hover):not(:checked) {
   background-color: transparent;
 }
 
-.nautilus-window.csd notebook placesview > stack > frame > scrolledwindow > viewport > list {
+.nautilus-window.background.csd notebook scrolledwindow .view:selected, .nautilus-window.background.csd notebook window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), .nautilus-window.background.csd notebook filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view .nautilus-window.background.csd notebook scrolledwindow treeview.view:selected {
+  background-color: #fce2eb;
+}
+
+.nautilus-window.background.csd notebook placesview > stack > frame > scrolledwindow > viewport > list {
   background-color: transparent;
 }
 
-.nautilus-window.csd notebook placesview > actionbar {
+.nautilus-window.background.csd notebook placesview > actionbar {
   background-color: transparent;
   border-radius: 0 0 18px 18px;
 }
 
-.nautilus-window.csd notebook placesview > actionbar > revealer > box {
+.nautilus-window.background.csd notebook placesview > actionbar > revealer > box {
   background-color: transparent;
 }
 
-.nautilus-window.csd paned > separator {
+.nautilus-window.background.csd paned > separator {
   background: none;
 }
 
-.nautilus-window.csd paned > separator.wide {
+.nautilus-window.background.csd paned > separator.wide {
   min-width: 0;
   min-height: 0;
   background: none;

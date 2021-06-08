@@ -7,7 +7,7 @@
 // https://gitlab.gnome.org/GNOME/nautilus/blob/master/src/resources/css/nautilus.css
 
 .nautilus-window {
-  &.csd {
+  &.background.csd {
     background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
     border-radius: 0 0 $window-radius $window-radius;
 
@@ -201,6 +201,10 @@
 
       scrolledwindow > .view:not(:selected):not(:hover):not(:checked) {
         background-color: transparent;
+      }
+
+      scrolledwindow .view:selected {
+        background-color: mix($primary, $base, 15%);
       }
 
       placesview {

@@ -37,7 +37,7 @@
 
 %selected_items {
   color: $text;
-  background-color: $overlay-selected;
+  background-color: mix($text, $base, 10%);
 }
 
 %selected_items_color {
