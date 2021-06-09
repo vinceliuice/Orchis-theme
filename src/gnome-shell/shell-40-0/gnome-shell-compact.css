@@ -850,6 +850,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .events-section-title {
   color: rgba(0, 0, 0, 0.38);
   font-weight: bold;
+  font-size: 0.9em;
 }
 
 .events-button .events-box {
@@ -869,14 +870,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button .world-clocks-city {
   color: rgba(0, 0, 0, 0.38);
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .world-clocks-button .world-clocks-time {
   color: rgba(0, 0, 0, 0.38);
   font-feature-settings: "tnum";
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .world-clocks-button .world-clocks-time:ltr {
@@ -890,7 +891,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button .world-clocks-timezone {
   color: rgba(0, 0, 0, 0.38);
   font-feature-settings: "tnum";
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .weather-button .weather-box {
@@ -904,16 +905,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-button .weather-header.location {
   font-weight: normal;
   color: rgba(0, 0, 0, 0.38);
+  font-size: 0.8em;
 }
 
 .weather-button .weather-forecast-icon {
-  icon-size: 32px;
+  icon-size: 24px;
   color: rgba(0, 0, 0, 0.38);
 }
 
 .weather-button .weather-forecast-time {
   color: rgba(0, 0, 0, 0.38);
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-feature-settings: "tnum";
   font-weight: normal;
   padding-top: 0.2em;

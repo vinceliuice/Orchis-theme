@@ -262,6 +262,7 @@
 .events-section-title {
   color: $hint_fg_color;
   font-weight: bold;
+  font-size: if($laptop == 'true', 0.9em, 1em);
 }
 
 // Events button
@@ -286,14 +287,14 @@
   .world-clocks-city {
     color: $hint_fg_color;
     font-weight: normal;
-    font-size: 1em;
+    font-size: if($laptop == 'true', 0.9em, 1em);
   }
 
   .world-clocks-time {
     color: $hint_fg_color;
     font-feature-settings: "tnum";
     font-weight: bold;
-    font-size: 1em;
+    font-size: if($laptop == 'true', 0.9em, 1em);
 
     &:ltr { text-align: right; }
     &:rtl { text-align: left; }
@@ -302,7 +303,7 @@
   .world-clocks-timezone {
     color: $hint_fg_color;
     font-feature-settings: "tnum";
-    font-size: 1em;
+    font-size: if($laptop == 'true', 0.9em, 1em);
   }
 }
 
@@ -319,16 +320,17 @@
   .weather-header.location {
     font-weight: normal;
     color: $hint_fg_color;
+    font-size: if($laptop == 'true', 0.8em, 0.9em);
   }
 
   .weather-forecast-icon {
-    icon-size: 32px;
+    icon-size: if($laptop == 'true', 24px, 32px);
     color: $hint_fg_color;
   }
 
   .weather-forecast-time {
     color: $hint_fg_color;
-    font-size: 0.8em;
+    font-size: if($laptop == 'true', 0.7em, 0.8em);
     font-feature-settings: "tnum";
     font-weight: normal;
     padding-top: 0.2em;

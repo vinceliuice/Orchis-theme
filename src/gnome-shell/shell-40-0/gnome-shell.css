@@ -850,6 +850,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .events-section-title {
   color: rgba(0, 0, 0, 0.38);
   font-weight: bold;
+  font-size: 1em;
 }
 
 .events-button .events-box {
@@ -904,6 +905,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-button .weather-header.location {
   font-weight: normal;
   color: rgba(0, 0, 0, 0.38);
+  font-size: 0.9em;
 }
 
 .weather-button .weather-forecast-icon {
