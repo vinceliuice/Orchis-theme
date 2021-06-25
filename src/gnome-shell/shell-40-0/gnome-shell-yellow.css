@@ -2123,9 +2123,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash */
 #dash {
-  font-size: 1em;
   margin-top: 12px;
-  padding: 0 3px;
+  padding: 0 2px;
 }
 
 #dash .placeholder {
@@ -2140,24 +2139,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dash .overview-icon {
-  padding: 6px;
+  padding: 5px;
   border-radius: 9999px;
 }
 
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 16px;
-  padding: 9px;
+  padding: 10px;
   border-radius: 9999px;
 }
 
 .dash-item-container .app-well-app, .show-apps {
-  padding: 9px 3px 25px;
+  padding: 10px 2px 26px;
 }
 
 .dash-separator {
   width: 1px;
-  margin: 0 7.5px 16px;
+  margin: 0 7px 16px;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -3286,7 +3285,7 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer #dash .dash-background {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 9px;
+  padding: 10px;
 }
 
 #dashtodockContainer.opaque #dash .dash-background {

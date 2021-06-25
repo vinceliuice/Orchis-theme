@@ -2123,7 +2123,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash */
 #dash {
-  font-size: 1em;
   margin-top: 8px;
   padding: 0 2px;
 }
@@ -2140,24 +2139,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dash .overview-icon {
-  padding: 4px;
+  padding: 5px;
   border-radius: 9999px;
 }
 
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 16px;
-  padding: 6px;
+  padding: 10px;
   border-radius: 9999px;
 }
 
 .dash-item-container .app-well-app, .show-apps {
-  padding: 6px 2px 22px;
+  padding: 10px 2px 26px;
 }
 
 .dash-separator {
   width: 1px;
-  margin: 0 5px 16px;
+  margin: 0 7px 16px;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -2256,7 +2255,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 48px;
   border: 0 solid rgba(255, 255, 255, 0.15);
   background-color: rgba(34, 34, 34, 0.95);
-  spacing: 4px;
+  spacing: 6px;
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2327,8 +2326,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog .icon-grid {
-  row-spacing: 8px;
-  column-spacing: 20px;
+  row-spacing: 12px;
+  column-spacing: 30px;
   page-padding-top: 0;
   page-padding-bottom: 0;
   page-padding-left: 0;
@@ -3286,7 +3285,7 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer #dash .dash-background {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 6px;
+  padding: 10px;
 }
 
 #dashtodockContainer.opaque #dash .dash-background {

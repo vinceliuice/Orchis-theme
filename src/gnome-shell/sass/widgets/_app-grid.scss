@@ -77,7 +77,7 @@
   border-radius: $buttons_radius * 4;
   border: 0 solid rgba(white, 0.15);
   background-color: rgba(#222, 0.95);
-  spacing: $container_padding;
+  spacing: 6px;
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -136,8 +136,8 @@
   }
 
   & .icon-grid {
-    row-spacing: $container_padding * 2;
-    column-spacing: $container_padding * 5;
+    row-spacing: 12px;
+    column-spacing: 30px;
     page-padding-top: 0;
     page-padding-bottom: 0;
     page-padding-left: 0;
