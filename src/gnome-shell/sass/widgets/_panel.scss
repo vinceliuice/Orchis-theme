@@ -4,15 +4,26 @@
 $panel_transition_duration: 250ms; // same as the overview transition duration
 
 #panel {
-  background-color: $panel_bg_color;
   font-weight: bold;
-  height: $medium_size + 2px;
   font-feature-settings: "tnum";
-  border-radius: $circular_radius;
-  margin: $container_padding / 2;
   padding: 0 $container_padding / 2 !important;
   transition-duration: $panel_transition_duration;
 
+  @if $opacity == 'solid' {
+    background-color: $panel_bg;
+  } @else {
+    background-color: $panel_bg_color;
+  }
+
+  @if $panel_style == 'compact' {
+    margin: 0;
+    border-radius: 0;
+    height: $medium_size - 2px;
+  } @else {
+    margin: $container_padding / 2;
+    border-radius: $circular_radius;
+    height: $medium_size + 2px;
+  }
   // transparent panel on lock & login screens
   &.unlock-screen,
   &.login-screen,

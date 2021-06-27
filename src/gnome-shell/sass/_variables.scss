@@ -1,3 +1,6 @@
+
+@import 'tweaks';
+
 $asset_suffix: if($variant == 'dark', '-dark', '');
 $extra_background_clip: if($variant == 'light', padding-box, border-box);
 
