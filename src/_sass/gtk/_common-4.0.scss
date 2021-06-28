@@ -1232,15 +1232,15 @@ searchbar > revealer > box {
   }
 
   // squared corners when the window is maximized, tiled, or fullscreen
-  // .tiled &,
-  // .tiled-top &,
-  // .tiled-right &,
-  // .tiled-bottom &,
-  // .tiled-left &,
-  // .maximized &,
-  // .fullscreen & {
-  //   border-radius: 0;
-  // }
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .maximized &,
+  .fullscreen & {
+    border-radius: 0;
+  }
 
   &.default-decoration {
     background-color: $titlebar-decoration;
@@ -1272,7 +1272,7 @@ searchbar > revealer > box {
 
     // workaround for non-animatable buttons
     .background:not(.csd) & windowcontrols button:active,
-    .background:not(.csd) & windowcontrols menubutton:active, { background-size: 1000% 1000%; }
+    .background:not(.csd) & windowcontrols menubutton:active {background-size: 1000% 1000%};
   }
 
   .solid-csd & {
@@ -3683,8 +3683,6 @@ window {
 
     // FIXME rationalize shadows
 
-    // this is used for the resize cursor area
-    margin: 8px;
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
