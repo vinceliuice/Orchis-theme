@@ -2013,3 +2013,26 @@ dialog.background.csd {
     }
   }
 }
+
+// unified window
+window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) {
+  // Remove the sheen on headerbar...
+  headerbar {
+    box-shadow: none;
+
+    &.selection-mode {
+      box-shadow: none;
+    }
+  }
+
+  // ...and add it on the window itself
+  > decoration-overlay {
+    box-shadow: inset 0 1px highlight($titlebar);
+  }
+
+  &,
+  > decoration,
+  > decoration-overlay {
+    border-radius: $window-radius;
+  }
+}
