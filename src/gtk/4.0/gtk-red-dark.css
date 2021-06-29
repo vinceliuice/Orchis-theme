@@ -866,13 +866,13 @@ list > row button.image-button:not(.flat):checked {
 }
 
 
-list > row button.image-button:not(.flat).suggested-action {
+list > row button.image-button.suggested-action:not(.flat) {
   background-color: #F44336;
   color: white;
 }
 
 
-list > row button.image-button:not(.flat).destructive-action {
+list > row button.image-button.destructive-action:not(.flat) {
   background-color: #F28B82;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -1382,7 +1382,7 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
   border-radius: 9999px;
 }
 
-.titlebar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+.titlebar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   border-radius: 9999px;
 }
 
@@ -1413,6 +1413,10 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
 .titlebar .selection-mode {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
   background-color: #F44336;
+}
+
+.tiled .titlebar, .tiled-top .titlebar, .tiled-right .titlebar, .tiled-bottom .titlebar, .tiled-left .titlebar, .maximized .titlebar, .fullscreen .titlebar {
+  border-radius: 0;
 }
 
 .titlebar.default-decoration {
@@ -1598,13 +1602,13 @@ treeview.view:drop(active) {
   box-shadow: none;
 }
 
-columnview.view:drop(active).after,
-treeview.view:drop(active).after {
+columnview.view.after:drop(active),
+treeview.view.after:drop(active) {
   border-top-style: none;
 }
 
-columnview.view:drop(active).before,
-treeview.view:drop(active).before {
+columnview.view.before:drop(active),
+treeview.view.before:drop(active) {
   border-bottom-style: none;
 }
 
@@ -1615,13 +1619,13 @@ treeview.view > dndtarget:drop(active) {
   border-color: alpha(currentColor, 0.06);
 }
 
-columnview.view > dndtarget:drop(active).after,
-treeview.view > dndtarget:drop(active).after {
+columnview.view > dndtarget.after:drop(active),
+treeview.view > dndtarget.after:drop(active) {
   border-top-style: none;
 }
 
-columnview.view > dndtarget:drop(active).before,
-treeview.view > dndtarget:drop(active).before {
+columnview.view > dndtarget.before:drop(active),
+treeview.view > dndtarget.before:drop(active) {
   border-bottom-style: none;
 }
 
@@ -2010,7 +2014,7 @@ notebook > header tab:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-notebook > header tab:checked.reorderable-page {
+notebook > header tab.reorderable-page:checked {
   background-color: #2C2C2C;
 }
 
@@ -2305,19 +2309,19 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal > range > trough > slider {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) > range > trough > slider {
   min-width: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal button {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) button {
   min-width: 8px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical > range > trough > slider {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) > range > trough > slider {
   min-height: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical button {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) button {
   min-height: 8px;
 }
 
@@ -3054,40 +3058,40 @@ stack scrolledwindow.frame viewport.frame list {
 }
 
 overshoot.top {
-  background-image: radial-gradient(farthest-side at top, rgba(255, 255, 255, 0.12) 85%, rgba(255, 255, 255, 0)), radial-gradient(farthest-side at top, #F44336, rgba(244, 67, 54, 0));
-  background-size: 100% 3%, 100% 50%;
+  background-size: 200% 70%;
+  background-image: radial-gradient(farthest-side at top, rgba(244, 67, 54, 0.24) 99%, rgba(244, 67, 54, 0) 100%);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center top;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 overshoot.bottom {
-  background-image: radial-gradient(farthest-side at bottom, rgba(255, 255, 255, 0.12) 85%, rgba(255, 255, 255, 0)), radial-gradient(farthest-side at bottom, #F44336, rgba(244, 67, 54, 0));
-  background-size: 100% 3%, 100% 50%;
+  background-size: 200% 70%;
+  background-image: radial-gradient(farthest-side at bottom, rgba(244, 67, 54, 0.24) 99%, rgba(244, 67, 54, 0) 100%);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center bottom;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 overshoot.left {
-  background-image: radial-gradient(farthest-side at left, rgba(255, 255, 255, 0.12) 85%, rgba(255, 255, 255, 0)), radial-gradient(farthest-side at left, #F44336, rgba(244, 67, 54, 0));
-  background-size: 3% 100%, 50% 100%;
+  background-size: 200% 70%;
+  background-image: radial-gradient(farthest-side at left, rgba(244, 67, 54, 0.24) 99%, rgba(244, 67, 54, 0) 100%);
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: left center;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
 overshoot.right {
-  background-image: radial-gradient(farthest-side at right, rgba(255, 255, 255, 0.12) 85%, rgba(255, 255, 255, 0)), radial-gradient(farthest-side at right, #F44336, rgba(244, 67, 54, 0));
-  background-size: 3% 100%, 50% 100%;
+  background-size: 200% 70%;
+  background-image: radial-gradient(farthest-side at right, rgba(244, 67, 54, 0.24) 99%, rgba(244, 67, 54, 0) 100%);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right center;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -3492,12 +3496,12 @@ filechooserbutton:drop(active) {
   background-color: #242424;
 }
 
-.sidebar:not(separator):dir(ltr), .sidebar:not(separator).left, .sidebar:not(separator).left:dir(rtl) {
+.sidebar:not(separator):dir(ltr), .sidebar.left:not(separator), .sidebar.left:not(separator):dir(rtl) {
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   border-left-style: none;
 }
 
-.sidebar:not(separator):dir(rtl), .sidebar:not(separator).right {
+.sidebar:not(separator):dir(rtl), .sidebar.right:not(separator) {
   border-left: 1px solid rgba(255, 255, 255, 0.12);
   border-right-style: none;
 }
@@ -3951,7 +3955,6 @@ window.csd {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 18px;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
-  margin: 8px;
 }
 
 window.csd:backdrop {
@@ -3984,11 +3987,11 @@ windowcontrols {
   border-spacing: 6px;
 }
 
-windowcontrols:not(.empty).start:dir(ltr), windowcontrols:not(.empty).end:dir(rtl) {
+windowcontrols.start:not(.empty):dir(ltr), windowcontrols.end:not(.empty):dir(rtl) {
   margin-right: 6px;
 }
 
-windowcontrols:not(.empty).start:dir(rtl), windowcontrols:not(.empty).end:dir(ltr) {
+windowcontrols.start:not(.empty):dir(rtl), windowcontrols.end:not(.empty):dir(ltr) {
   margin-left: 6px;
 }
 
@@ -4068,7 +4071,7 @@ stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destruc
   background-color: transparent;
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 100px;
 }
 

@@ -154,7 +154,7 @@
 }
 
 
-@mixin overshoot($p, $t:normal, $c:$text) {
+@mixin overshoot($p) {
 //
 // overshoot
 //
@@ -169,47 +169,23 @@
 // normal, backdrop
 //
 
-  $_small_gradient_length: 3%;
-  $_big_gradient_length: 50%;
+  $_position: center $p;
 
-  $_small_gradient_size: 100% $_small_gradient_length;
-  $_big_gradient_size: 100% $_big_gradient_length;
-
-  @if $p==right or $p==left {
-    $_small_gradient_size: $_small_gradient_length 100%;
-    $_big_gradient_size: $_big_gradient_length 100%;
+  @if ($p == left) or ($p == right) {
+    $_position: $p center;
   }
 
-  $_small_gradient_color: $c;
-  $_big_gradient_color: transparentize($c, 0.93);
-
-  @if $c==$text {
-    $_small_gradient_color: $divider;
-    $_big_gradient_color: $primary;
-
-    @if $t==backdrop { $_small_gradient_color: $fill; }
-  }
-
-  $_small_gradient: radial-gradient(farthest-side at $p,
-                                    $_small_gradient_color 85%,
-                                    transparentize($_small_gradient_color, 1));
-
-  $_big_gradient: radial-gradient(farthest-side at $p,
-                                  $_big_gradient_color,
-                                  transparentize($_big_gradient_color, 1));
-
-  @if $t==normal {
-    background-image: $_small_gradient, $_big_gradient;
-    background-size: $_small_gradient_size, $_big_gradient_size;
-  }
-
-  @else if $t==backdrop {
-    background-image: $_small_gradient;
-    background-size: $_small_gradient_size;
-  }
+  background-size: 200% 70%;
+    
+  background-image:
+    radial-gradient(
+      farthest-side at $p,
+      rgba($primary, .24) 99%,
+      rgba($primary, 0) 100%
+    );
 
   background-repeat: no-repeat;
-  background-position: $p;
+  background-position: $_position;
 
   background-color: transparent; // reset some properties to be sure to not inherit them somehow
   border: none;                  //
