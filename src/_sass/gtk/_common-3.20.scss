@@ -2620,13 +2620,13 @@ progressbar {
   }
 
   &.osd { // progressbar.osd used for epiphany page loading progress
-    // min-width: $bar-size;
-    // min-height: $bar-size;
-    // background-color: transparent;
+    min-width: $bar-size;
+    min-height: $bar-size;
+    background-color: transparent;
 
-    // trough { background-color: transparent; }
+    trough { background-color: transparent; }
 
-    // progress { background-color: $primary; }
+    progress { background-color: $primary; }
   }
 
   trough.empty progress { all: unset; } // makes the progress indicator disappear, when the fraction is 0
