@@ -6949,7 +6949,7 @@ dialog.background.csd stack scrolledwindow viewport.frame.view, dialog.backgroun
 }
 
 window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) headerbar {
-  box-shadow: none;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) headerbar.selection-mode {
