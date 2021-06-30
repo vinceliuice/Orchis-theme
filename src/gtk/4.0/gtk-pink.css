@@ -456,7 +456,7 @@ actionbar > revealer > box .linked > button:not(.suggested-action):not(.destruct
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
-  background-color: alpha(currentColor, 0.05);
+  background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -1251,7 +1251,7 @@ searchbar > revealer > box {
  * Header bars *
  ***************/
 headerbar button:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
@@ -1259,79 +1259,79 @@ headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructiv
 }
 
 headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.26);
 }
 
 headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.26);
 }
 
 headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.26);
 }
 
 .titlebar entry {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .titlebar entry:disabled {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .titlebar entry image {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .titlebar entry image:hover, .titlebar entry image:active {
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .titlebar entry image:disabled {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .titlebar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
   border-radius: 18px 18px 0 0;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #2C2C2C;
-  color: white;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  background-color: #F2F2F2;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .titlebar:disabled {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .titlebar:backdrop {
-  background-color: #2C2C2C;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #F2F2F2;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .titlebar:backdrop:disabled {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.26);
 }
 
 .titlebar .title {
@@ -1347,12 +1347,12 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
 .titlebar .subtitle,
 .titlebar .dim-label {
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .titlebar .subtitle:backdrop,
 .titlebar .dim-label:backdrop {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .titlebar .titlebar {
@@ -1361,7 +1361,7 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
 }
 
 .titlebar headerbar + separator {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .titlebar .linked:not(.vertical) > entry:not(:only-child) {
@@ -1369,8 +1369,8 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
 }
 
 .titlebar button.suggested-action:disabled, .titlebar button.destructive-action:disabled {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .titlebar button.toggle {
@@ -1420,15 +1420,10 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
 }
 
 .titlebar.default-decoration {
-  background-color: #2C2C2C;
   min-height: 24px;
   padding: 6px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   border-radius: 12px 12px 0 0;
-}
-
-.titlebar.default-decoration:backdrop {
-  background-color: #2C2C2C;
 }
 
 .titlebar.default-decoration windowcontrols button,
@@ -1458,7 +1453,7 @@ headerbar:not(.titlebar) {
 }
 
 box.vertical headerbar {
-  background-color: #2C2C2C;
+  background-color: #F2F2F2;
 }
 
 headerbar > windowhandle > box,
@@ -1477,7 +1472,7 @@ headerbar button {
 headerbar separator:not(.sidebar) {
   margin-top: 12px;
   margin-bottom: 12px;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 headerbar switch {
@@ -1523,11 +1518,11 @@ headerbar.windowhandle viewswitchertitle > squeezer > viewswitcher > box.horizon
 }
 
 window.devel headerbar.titlebar {
-  background: #2C2C2C cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, rgba(236, 64, 122, 0.2)), linear-gradient(to top, #242424, #2C2C2C 3px, #3b3b3b);
+  background: #F2F2F2 cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, rgba(236, 64, 122, 0.2)), linear-gradient(to top, #eaeaea, #F2F2F2 3px, white);
 }
 
 window.devel headerbar.titlebar:backdrop {
-  background: #2C2C2C cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, image(#2C2C2C);
+  background: #F2F2F2 cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, image(#F2F2F2);
   /* background-color would flash */
 }
 
@@ -1744,13 +1739,13 @@ treeview.view acceleditor > label {
  *********/
 menubar {
   padding: 0;
-  background-color: #2C2C2C;
-  color: white;
+  background-color: #F2F2F2;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 menubar:backdrop {
-  background-color: #2C2C2C;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #F2F2F2;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .csd menubar {
@@ -1761,17 +1756,17 @@ menubar > item {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 20px;
   padding: 4px 8px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 menubar > item:selected {
   transition: none;
   background-color: alpha(currentColor, 0.1);
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 menubar > item:disabled {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.26);
 }
 
 menubar > item label:disabled {
@@ -3989,12 +3984,12 @@ window.csd.dialog.message {
   padding: 2px;
   border-radius: 0;
   box-shadow: none;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #2C2C2C;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  background-color: #F2F2F2;
 }
 
 .solid-csd window.csd:backdrop {
-  background-color: #2C2C2C;
+  background-color: #F2F2F2;
 }
 
 windowcontrols {
@@ -4264,11 +4259,11 @@ these are pretty self explicative */
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
-@define-color wm_title white;
-@define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
-@define-color wm_highlight rgba(255, 255, 255, 0.1);
-@define-color wm_bg #2C2C2C;
-@define-color wm_unfocused_bg #2C2C2C;
+@define-color wm_title rgba(0, 0, 0, 0.87);
+@define-color wm_unfocused_title rgba(0, 0, 0, 0.6);
+@define-color wm_highlight rgba(255, 255, 255, 0.4);
+@define-color wm_bg #F2F2F2;
+@define-color wm_unfocused_bg #F2F2F2;
 /*
 FIXME this is really an API */
 @define-color content_view_bg #FFFFFF;

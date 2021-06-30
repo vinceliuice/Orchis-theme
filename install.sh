@@ -44,7 +44,7 @@ OPTIONS:
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
   -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
-  --tweaks                Specify versions for tweaks [solid|compact] (solid: no transparency variant, compact: no floating panel)
+  --tweaks                Specify versions for tweaks [solid|compact|black] (solid: no transparency variant, compact: no floating panel, black: full black version)
   --radio-color           Change radio button checked color to default primary color (Default is Green)
   -h, --help              Show help
 
@@ -90,10 +90,10 @@ install() {
   echo "CursorTheme=Vimix${ELSE_DARK:-}" >>                                     "$THEME_DIR/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "$THEME_DIR/index.theme"
 
-  mkdir -p                                                                              "$THEME_DIR/gnome-shell"
-  cp -r "$SRC_DIR/gnome-shell/pad-osd.css"                                              "$THEME_DIR/gnome-shell"
+  mkdir -p                                                                      "$THEME_DIR/gnome-shell"
+  cp -r "$SRC_DIR/gnome-shell/pad-osd.css"                                      "$THEME_DIR/gnome-shell"
 
-  if [[ "$panel" == 'compact' || "$opacity" == 'solid' ]]; then
+  if [[ "$panel" == 'compact' || "$opacity" == 'solid' || "$blackness" == 'true' ]]; then
     if [[ "${GS_VERSION:-}" == 'new' ]]; then
       sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell$theme${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
     else
@@ -107,11 +107,11 @@ install() {
     fi
   fi
 
-  cp -r "$SRC_DIR/gnome-shell/common-assets"                                            "$THEME_DIR/gnome-shell/assets"
-  cp -r "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                               "$THEME_DIR/gnome-shell/assets"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"                   "$THEME_DIR/gnome-shell/assets/checkbox.svg"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"               "$THEME_DIR/gnome-shell/assets/more-results.svg"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"                  "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
+  cp -r "$SRC_DIR/gnome-shell/common-assets"                                    "$THEME_DIR/gnome-shell/assets"
+  cp -r "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                       "$THEME_DIR/gnome-shell/assets"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"           "$THEME_DIR/gnome-shell/assets/checkbox.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"       "$THEME_DIR/gnome-shell/assets/more-results.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"          "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
 
   cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -128,7 +128,7 @@ install() {
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-3.0/assets"
   cp -r "$SRC_DIR/gtk/thumbnail${ELSE_DARK:-}.png"                              "$THEME_DIR/gtk-3.0/thumbnail.png"
 
-  if [[ "$opacity" == 'solid' ]]; then
+  if [[ "$opacity" == 'solid' || "$blackness" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$theme$color$size.scss"               "$THEME_DIR/gtk-3.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$theme-dark$size.scss"                "$THEME_DIR/gtk-3.0/gtk-dark.css"
@@ -159,7 +159,13 @@ install() {
   mkdir -p                                                                      "$THEME_DIR/cinnamon"
   cp -r "$SRC_DIR/cinnamon/common-assets"                                       "$THEME_DIR/cinnamon/assets"
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
-  cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.css"                          "$THEME_DIR/cinnamon/cinnamon.css"
+
+  if [[ "$opacity" == 'solid' || "$blackness" == 'true' ]]; then
+    sassc $SASSC_OPT "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.scss"            "$THEME_DIR/cinnamon/cinnamon.css"
+  else
+    cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.css"                        "$THEME_DIR/cinnamon/cinnamon.css"
+  fi
+
   cp -r "$SRC_DIR/cinnamon/thumbnail${ELSE_DARK:-}.png"                         "$THEME_DIR/cinnamon/thumbnail.png"
 
   mkdir -p                                                                      "$THEME_DIR/metacity-1"
@@ -198,6 +204,10 @@ while [[ "$#" -gt 0 ]]; do
             ;;
           compact)
             panel="compact"
+            shift
+            ;;
+          black)
+            blackness="true"
             shift
             ;;
           -*)
@@ -377,12 +387,27 @@ install_solid() {
   echo -e "Install solid version ..."
 }
 
-restore_tweaks() {
+install_black() {
   cd ${SRC_DIR}/gnome-shell/sass
-  [[ -f _tweaks.scss.bak ]] && rm -rf _tweaks.scss && mv _tweaks.scss.bak _tweaks.scss
+  cp -an _tweaks.scss _tweaks.scss.bak
+  sed -i "/\$blackness:/s/false/true/" _tweaks.scss
   cd ${SRC_DIR}/_sass
-  [[ -f _tweaks.scss.bak ]] && rm -rf _tweaks.scss && mv _tweaks.scss.bak _tweaks.scss
-  echo -e "Restore _tweaks.scss file ..."
+  cp -an _tweaks.scss _tweaks.scss.bak
+  sed -i "/\$blackness:/s/false/true/" _tweaks.scss
+  echo -e "Install black version ..."
+}
+
+restore_tweaks() {
+  if [[ -f ${SRC_DIR}/gnome-shell/sass/_tweaks.scss.bak ]]; then
+    rm -rf ${SRC_DIR}/gnome-shell/sass/_tweaks.scss
+    mv ${SRC_DIR}/gnome-shell/sass/_tweaks.scss.bak ${SRC_DIR}/gnome-shell/sass/_tweaks.scss
+  fi
+
+  if  [[ -f ${SRC_DIR}/_sass/_tweaks.scss.bak ]]; then
+    rm -rf ${SRC_DIR}/_sass/_tweaks.scss
+    mv ${SRC_DIR}/_sass/_tweaks.scss.bak ${SRC_DIR}/_sass/_tweaks.scss
+    echo -e "Restore _tweaks.scss file ..."
+  fi
 }
 
 restore_files() {
@@ -423,6 +448,10 @@ fi
 
 if [[ "$opacity" = "solid" ]] ; then
   install_package && install_solid
+fi
+
+if [[ "$blackness" = "true" ]] ; then
+  install_package && install_black
 fi
 
 change_radio_color && install_theme && restore_files && restore_tweaks

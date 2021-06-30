@@ -1,6 +1,7 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
+@import 'tweaks';
 @import 'color-palette';
 
 @function gtkalpha($c, $a) {
@@ -23,6 +24,7 @@
     @if ($state == 'track') { @return rgba(black, 0.26); }
     @if ($state == 'track-disabled') { @return rgba(black, 0.12); }
     @if ($state == 'divider') { @return rgba(black, 0.12); }
+    @if ($state == 'secondary-fill') { @return rgba(black, 0.08); }
     @if ($state == 'fill') { @return rgba(black, 0.04); }
   } @else {
     @if ($state == 'primary') { @return white; }
@@ -32,6 +34,7 @@
     @if ($state == 'track') { @return rgba(white, 0.3); }
     @if ($state == 'track-disabled') { @return rgba(white, 0.12); }
     @if ($state == 'divider') { @return rgba(white, 0.12); }
+    @if ($state == 'secondary-fill') { @return rgba(white, 0.08); }
     @if ($state == 'fill') { @return rgba(white, 0.04); }
   }
 }
@@ -64,6 +67,25 @@
   }
 }
 
+@function background($type) {
+  @if ($variant == 'light') {
+    @if ($type == 'a') { @return #FFFFFF; }
+    @if ($type == 'b') { @return #FAFAFA; }
+    @if ($type == 'c') { @return #F2F2F2; }
+    @if ($type == 'd') { @return #CCCCCC; }
+  } @else if ($blackness == 'false') {
+    @if ($type == 'a') { @return #212121; }
+    @if ($type == 'b') { @return #242424; }
+    @if ($type == 'c') { @return #2C2C2C; }
+    @if ($type == 'd') { @return #3C3C3C; }
+  } @else {
+    @if ($type == 'a') { @return #000000; }
+    @if ($type == 'b') { @return #030303; }
+    @if ($type == 'c') { @return #0F0F0F; }
+    @if ($type == 'd') { @return #121212; }
+  }
+}
+
 //
 // Basic colors
 //
@@ -71,23 +93,23 @@
 $primary:                               theme(color);
 $drop_target_color:                     #FF7043;
 
-$background:                            if($variant == 'light', #F2F2F2, #212121);
-$surface:                               if($variant == 'light', #FFFFFF, #3C3C3C);
-$base:                                  if($variant == 'light', #FFFFFF, #2C2C2C); // semi-surface with 1dp elevation
-$base-alt:                              if($variant == 'light', #FAFAFA, #242424);
+$background:                            if($variant == 'light', background(c), background(a));
+$surface:                               if($variant == 'light', background(a), background(d));
+$base:                                  if($variant == 'light', background(a), background(c));
+$base-alt:                              if($variant == 'light', background(b), background(b));
 
-$os-background:                         #212121;
-$tooltip:                               rgba(#363636, 0.9);
+$tooltip:                               if($blackness == 'true' and $variant == 'dark', rgba(#101010, 0.9), rgba(#363636, 0.9));
 $scrim:                                 rgba(black, 0.6);
 $scrim-alt:                             rgba(black, 0.3);
 $scrim-inverse:                         rgba(white, 0.1);
-$titlebar:                              if($topbar == 'dark', #2C2C2C, #FFFFFF);
-$titlebar-backdrop:                     if($topbar == 'dark', #2C2C2C, #FFFFFF);
-$titlebar-decoration:                   if($topbar == 'dark', #2C2C2C, #FFFFFF);
-$titlebar-decoration-backdrop:          if($topbar == 'dark', #2C2C2C, #FFFFFF);
+$titlebar:                              if($topbar == 'dark', background(c), background(a));
+$titlebar-backdrop:                     if($topbar == 'dark', background(c), background(a));
 
-$panel:                                 if($topbar == 'dark', #1F1F1F, $scrim);
-$panel-solid:                           if($topbar == 'dark', #1F1F1F, #CCCCCC); // for Unity panel which doesn't allow translucent colors
+$panel-solid:                           if($blackness == 'true' and $variant == 'dark', #000000, #1F1F1F); // for Unity panel which doesn't allow translucent colors
+$panel:                                 if($topbar == 'dark', $panel-solid, $scrim);
+
+$button:                                if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
+$entry:                                 if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
 
 //
 // Misc colors

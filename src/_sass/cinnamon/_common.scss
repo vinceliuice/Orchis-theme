@@ -5,8 +5,8 @@
 
 $asset_path: assets;
 $font-size: 9;
-$panel_bg: rgba(#222, 0.75);
-$panel_fg: on(#222, secondary);
+$panel_bg: rgba($panel-solid, 0.75);
+$panel_fg: on($panel-solid, secondary);
 
 stage {
   @include fontsize($font-size);
@@ -90,7 +90,7 @@ stage {
 %osd_entry {
   padding: $container-padding/2 $container-padding*2;
   caret-size: 1px;
-  caret-color: on($os-background);
+  caret-color: on($tooltip);
   selection-background-color: $primary;
   selected-color: on($primary);
   transition-duration: 300ms;
@@ -256,8 +256,8 @@ StScrollBar {
 #Tooltip {
   border-radius: $circular-radius;
   padding: $container-padding $container-padding * 2;
-  background-color: $os-background;
-  color: on($os-background);
+  background-color: $tooltip;
+  color: on($tooltip);
   margin: $container-padding;
   box-shadow: $shadow-z4;
   font-size: 1em;
@@ -493,9 +493,9 @@ $menu_item_radius: $window-radius - $container-padding;
 #overview { spacing: 12px; }
 
 .window-caption {
-  background-color: $os-background;
-  border: 1px solid $os-background;
-  color: on($os-background);
+  background-color: $tooltip;
+  border: 1px solid $tooltip;
+  color: on($tooltip);
   spacing: 25px;
   border-radius: $corner-radius;
   font-size: 9pt;
@@ -543,7 +543,7 @@ $menu_item_radius: $window-radius - $container-padding;
 }
 
 .expo-background {
-  background-color: opacify($os-background, 1);
+  background-color: opacify($tooltip, 1);
 }
 
 .workspace {
@@ -905,7 +905,7 @@ $menu_item_radius: $window-radius - $container-padding;
 
 .switcher-arrow {
   border-color: rgba(0,0,0,0);
-  color: on($os-background);
+  color: on($tooltip);
 
   &:highlighted {
     border-color: rgba(0,0,0,0);
@@ -948,8 +948,8 @@ $menu_item_radius: $window-radius - $container-padding;
 .flashspot { background-color: white; }
 
 .modal-dialog {
-  color: on($os-background);
-  background-color: rgba(darken($os-background, 3%), 0.95);
+  color: on($tooltip);
+  background-color: rgba(darken($tooltip, 3%), 0.95);
   border: 1px solid rgba(black, 0.65);
   padding: 0 5px 6px 5px;
   border-radius: $corner-radius;
@@ -980,17 +980,17 @@ $menu_item_radius: $window-radius - $container-padding;
 // Run dialog
 //
 .run-dialog {
-  padding: $container-padding $container-padding*2;
-  background-color: $os-background;
+  padding: $container-padding $container-padding * 2;
+  background-color: $tooltip;
   border-radius: $corner-radius;
-  color: on($os-background);
+  color: on($tooltip);
 
   > * { padding: 0; }
 
   &-label {
     font-size: 0;
     font-weight: bold;
-    color: on($os-background);
+    color: on($tooltip);
     padding-bottom: 0;
   }
 
@@ -1008,9 +1008,9 @@ $menu_item_radius: $window-radius - $container-padding;
 
   &-entry {
     width: 21em;
-    padding: $container-padding/2 $container-padding*2;
+    padding: $container-padding / 2 $container-padding * 2;
     border-radius: $corner-radius;
-    caret-color: on($os-background);
+    caret-color: on($tooltip);
     selected-color: on($primary);
     selection-background-color: $primary;
     @include entry(osd);
@@ -1096,7 +1096,7 @@ $menu_item_radius: $window-radius - $container-padding;
 // On-Screen Keyboard
 //
 #keyboard {
-  background-color: $os-background;
+  background-color: $tooltip;
   border-width: 0;
   border-top-width: 1px;
   border-color: transparentize(black, 0.6);
@@ -1128,10 +1128,10 @@ $menu_item_radius: $window-radius - $container-padding;
 }
 
 .keyboard-subkeys { //long press on a key popup
-  color: on($os-background);
+  color: on($tooltip);
   padding: 5px;
   -arrow-border-radius: $corner-radius;
-  -arrow-background-color: $os-background;
+  -arrow-background-color: $tooltip;
   -arrow-border-width: 1px;
   -arrow-border-color: transparentize(black, 0.6);;
   -arrow-base: 20px;
@@ -1702,7 +1702,7 @@ $menu_item_radius: $window-radius - $container-padding;
   .slider {
     height: 0.5em;
     padding: 0;
-    border: 0px solid darken($os-background, 8%);
+    border: 0px solid darken($tooltip, 8%);
     border-bottom: 1px;
     -slider-height: 0.5em;
     -slider-background-color: if($variant == 'light', $divider, darken($background, 5%));
@@ -1907,15 +1907,15 @@ $menu_item_radius: $window-radius - $container-padding;
 // Desklets (desklet.js)
 //
 .desklet {
-  color: on($os-background);
+  color: on($tooltip);
 
   &:highlight {
     background-color: transparentize($error, 0.5);
   }
 
   &-with-borders {
-    color: on($os-background);
-    background-color: $os-background;
+    color: on($tooltip);
+    background-color: $tooltip;
     padding: 12px;
     padding-bottom: 16px;
 
@@ -1925,8 +1925,8 @@ $menu_item_radius: $window-radius - $container-padding;
   }
 
   &-with-borders-and-header {
-    color: on($os-background);
-    background-color: $os-background;
+    color: on($tooltip);
+    background-color: $tooltip;
     border-radius: 6px;
     border-radius-topleft: 0;
     border-radius-topright: 0;
@@ -1938,8 +1938,8 @@ $menu_item_radius: $window-radius - $container-padding;
     }
   }
   &-header {
-    color: on($os-background);
-    background-color: $os-background;
+    color: on($tooltip);
+    background-color: $tooltip;
     border-radius: 0;
     border-radius-topleft: 6px;
     border-radius-topright: 6px;
@@ -1954,8 +1954,8 @@ $menu_item_radius: $window-radius - $container-padding;
 }
 
 .photoframe-box {
-  color: on($os-background);
-  background-color: $os-background;
+  color: on($tooltip);
+  background-color: $tooltip;
   padding: 12px;
   padding-bottom: 16px;
 }

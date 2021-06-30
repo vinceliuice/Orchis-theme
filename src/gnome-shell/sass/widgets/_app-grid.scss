@@ -76,7 +76,7 @@
 .app-folder-dialog { //style like the dash
   border-radius: $buttons_radius * 4;
   border: 0 solid rgba(white, 0.15);
-  background-color: rgba(#222, 0.95);
+  background-color: rgba($system_bg_color, 0.95);
   spacing: 6px;
 
   & .folder-name-container {

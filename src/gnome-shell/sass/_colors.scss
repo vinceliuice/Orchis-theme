@@ -1,6 +1,7 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
+@import 'tweaks';
 @import 'color-palette';
 
 @function fade($c) {
@@ -60,43 +61,43 @@ $inverse_track_color:                 rgba($white, 0.3);
 $inverse_divider_color:               rgba($white, 0.15);
 
 // Background colors
-$base_color:     if($variant =='dark', #202020, #ffffff);
-$alt_base_color: if($variant =='dark', lighten($base_color, 25%), darken($base_color, 25%));
+$dark_color:            if($blackness == 'true' and $variant == 'dark', #000000, #202020);
+$base_color:            if($variant =='dark', $dark_color, #ffffff);
+$alt_base_color:        if($variant =='dark', lighten($base_color, 25%), darken($base_color, 25%));
 
-$dark_bg_color:         rgba(#202020, 0.9);
-$alt_dark_bg_color:     rgba(#202020, 0.75);
-$inverse_bg_color: rgba($inverse_fg_color, 0.13);
-$button_bg_color:  if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
-$keyboard_bg_color:  if($variant == 'light', $grey_50, fade($grey_700)); // for gnome-shell keyboard
-$alt_keyboard_bg_color:  if($variant == 'light', $grey_300, fade($grey_900)); // for gnome-shell keyboard
+$dark_bg_color:         rgba($dark_color, 0.9);
+$alt_dark_bg_color:     rgba($dark_color, 0.75);
+$inverse_bg_color:      rgba($inverse_fg_color, 0.13);
+$button_bg_color:       if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
+$keyboard_bg_color:     if($variant == 'light', $grey_50, fade($grey_700)); // for gnome-shell keyboard
+$alt_keyboard_bg_color: if($variant == 'light', $grey_300, fade($grey_900)); // for gnome-shell keyboard
 
 // Misc colors
+$primary_color:         theme(color);
+$alt_primary_color:     darken($primary_color, 3%);
+$accent_color:          lighten($primary_color, 3%);
 
-$primary_color: theme(color);
-$alt_primary_color: darken($primary_color, 3%);
-$accent_color: lighten($primary_color, 3%);
+$panel_bg:              if($variant == 'light', #000000, #000000);
+$panel_bg_color:        if($trans == 'true', rgba($panel_bg, 0.5), $panel_bg);
+$panel_fg_color:        if($panel == 'dark', #dedede, #dedede);
+$menu_bg_color:         if($trans == 'true', rgba($base_color, 0.95), $base_color);
+$system_bg_color:       if($blackness == 'true' and $variant == 'dark', #121212, #222222);
 
-$panel_bg: if($variant == 'light', #000000, #000000);
-$panel_bg_color: if($trans == 'true', rgba($panel_bg, 0.5), $panel_bg);
-$panel_fg_color: if($panel == 'dark', #dedede, #dedede);
-$menu_bg_color: if($trans == 'true', rgba($base_color, 0.95), $base_color);
-$system_bg_color: #222222;
+$link_color:            $primary_color;
+$visited_link_color:    if($variant == 'light', $purple-500, $purple-200);
 
-$link_color:         $primary_color;
-$visited_link_color: if($variant == 'light', $purple-500, $purple-200);
+$warning_color:         $orange_a700;
+$error_color:           $deep_orange_a700;
+$success_color:         $green_a700;
 
-$warning_color: $orange_a700;
-$error_color:   $deep_orange_a700;
-$success_color: $green_a700;
+$suggested_color:       $accent_color;
+$destructive_color:     $red_a200;
 
-$suggested_color:   $accent_color;
-$destructive_color: $red_a200;
+$info_bg_color:         $green_400;
+$question_bg_color:     $blue_400;
+$warning_bg_color:      $orange_400;
+$error_bg_color:        $red_400;
 
-$info_bg_color:     $green_400;
-$question_bg_color: $blue_400;
-$warning_bg_color:  $orange_400;
-$error_bg_color:    $red_400;
-
-$border_color:        if($variant == 'light', rgba($black, 0.12), rgba($white, 0.12));
-$highlight_color:     if($variant == 'light', rgba($white, 0.4),  rgba($white, 0.1));
-$alt_highlight_color: rgba($white, 0.2);
+$border_color:          if($variant == 'light', rgba($black, 0.12), rgba($white, 0.12));
+$highlight_color:       if($variant == 'light', rgba($white, 0.4),  rgba($white, 0.1));
+$alt_highlight_color:   rgba($white, 0.2);

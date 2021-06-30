@@ -1269,15 +1269,10 @@ searchbar > revealer > box {
   }
 
   &.default-decoration {
-    background-color: $titlebar-decoration;
     min-height: $small-size;
     padding: $container-padding;
     box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $corner-radius $corner-radius 0 0;
-
-    &:backdrop {
-      background-color: $titlebar-decoration-backdrop;
-    }
 
     .tiled &,
     .maximized &,
