@@ -5370,6 +5370,7 @@ popover.emoji-completion .emoji:hover {
 .nautilus-window.background.csd notebook > header {
   padding: 0 16px;
   background: none;
+  border-color: #404040;
 }
 
 .nautilus-window.background.csd notebook > header tab {
@@ -5387,6 +5388,7 @@ popover.emoji-completion .emoji:hover {
 
 .nautilus-window.background.csd notebook > header tab:checked, .nautilus-window.background.csd notebook > header tab:active {
   color: white;
+  border-color: #404040;
 }
 
 .nautilus-window.background.csd notebook > header tab:checked:disabled, .nautilus-window.background.csd notebook > header tab:active:disabled {

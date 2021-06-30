@@ -68,21 +68,21 @@
 }
 
 @function background($type) {
-  @if ($variant == 'light') {
-    @if ($type == 'a') { @return #FFFFFF; }
-    @if ($type == 'b') { @return #FAFAFA; }
-    @if ($type == 'c') { @return #F2F2F2; }
-    @if ($type == 'd') { @return #CCCCCC; }
-  } @else if ($blackness == 'false') {
-    @if ($type == 'a') { @return #212121; }
-    @if ($type == 'b') { @return #242424; }
-    @if ($type == 'c') { @return #2C2C2C; }
-    @if ($type == 'd') { @return #3C3C3C; }
+  @if ($type == 'a') { @return #FFFFFF; }
+  @if ($type == 'b') { @return #FAFAFA; }
+  @if ($type == 'c') { @return #F2F2F2; }
+  @if ($type == 'd') { @return #CCCCCC; }
+
+  @if ($blackness == 'false') {
+    @if ($type == 'e') { @return #212121; }
+    @if ($type == 'f') { @return #242424; }
+    @if ($type == 'g') { @return #2C2C2C; }
+    @if ($type == 'h') { @return #3C3C3C; }
   } @else {
-    @if ($type == 'a') { @return #000000; }
-    @if ($type == 'b') { @return #030303; }
-    @if ($type == 'c') { @return #0F0F0F; }
-    @if ($type == 'd') { @return #121212; }
+    @if ($type == 'e') { @return #000000; }
+    @if ($type == 'f') { @return #030303; }
+    @if ($type == 'g') { @return #0F0F0F; }
+    @if ($type == 'h') { @return #121212; }
   }
 }
 
@@ -93,17 +93,17 @@
 $primary:                               theme(color);
 $drop_target_color:                     #FF7043;
 
-$background:                            if($variant == 'light', background(c), background(a));
-$surface:                               if($variant == 'light', background(a), background(d));
-$base:                                  if($variant == 'light', background(a), background(c));
-$base-alt:                              if($variant == 'light', background(b), background(b));
+$background:                            if($variant == 'light', background(c), background(e));
+$surface:                               if($variant == 'light', background(a), background(h));
+$base:                                  if($variant == 'light', background(a), background(g));
+$base-alt:                              if($variant == 'light', background(b), background(f));
 
 $tooltip:                               if($blackness == 'true' and $variant == 'dark', rgba(#101010, 0.9), rgba(#363636, 0.9));
 $scrim:                                 rgba(black, 0.6);
 $scrim-alt:                             rgba(black, 0.3);
 $scrim-inverse:                         rgba(white, 0.1);
-$titlebar:                              if($topbar == 'dark', background(c), background(a));
-$titlebar-backdrop:                     if($topbar == 'dark', background(c), background(a));
+$titlebar:                              if($topbar == 'dark', background(g), background(a));
+$titlebar-backdrop:                     if($topbar == 'dark', background(g), background(a));
 
 $panel-solid:                           if($blackness == 'true' and $variant == 'dark', #000000, #1F1F1F); // for Unity panel which doesn't allow translucent colors
 $panel:                                 if($topbar == 'dark', $panel-solid, $scrim);

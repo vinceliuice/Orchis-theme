@@ -25,3 +25,5 @@ scale-vert-marks-after-slider-disabled-dark
 row-selected
 row-selected-light
 row-selected-dark
+row-selected-blackness
+row-selected-blackness-dark

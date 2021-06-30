@@ -98,8 +98,8 @@
                 border-image-width: 10px 10px 10px 18px;
                 border-image-slice: 10 10 10 18;
                 border-image-repeat: stretch;
-                border-image-source: -gtk-scaled(url("assets/row-selected#{$theme-asset-suffix}.png"),
-                                                 url("assets/row-selected#{$theme-asset-suffix}@2.png"));
+                border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
+                                                 url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
               }
 
               revealer.sidebar-revealer {
@@ -164,6 +164,7 @@
       > header {
         padding: 0 16px;
         background: none;
+        border-color: if($topbar == 'dark' and $variant == 'light', transparent, $solid-border);
 
         tab {
           color: $titlebar-text-secondary;
@@ -177,6 +178,7 @@
 
           &:checked, &:active {
             color: $text;
+            border-color: if($topbar == 'dark' and $variant == 'light', transparent, $solid-border);
 
             &:disabled { color: $text-disabled; }
 
