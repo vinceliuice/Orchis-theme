@@ -5218,6 +5218,10 @@ popover.emoji-completion .emoji:hover {
 /************
  * Nautilus *
  ************/
+.nautilus-window.background.csd.unified headerbar {
+  box-shadow: none;
+}
+
 .nautilus-window.background.csd {
   background-color: #2C2C2C;
   border-radius: 0 0 18px 18px;
@@ -6949,22 +6953,44 @@ dialog.background.csd stack scrolledwindow viewport.frame.view, dialog.backgroun
   border-radius: 12px;
 }
 
-window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) headerbar {
+window.background.csd.unified headerbar {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
-window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) headerbar.selection-mode {
+window.background.csd.unified headerbar.selection-mode {
   box-shadow: none;
 }
 
-window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) > decoration-overlay {
+window.background.csd.unified > decoration-overlay {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right),
-window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) > decoration,
-window.csd.unified:not(.solid-csd):not(.maximized):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right) > decoration-overlay {
+window.background.csd.unified,
+window.background.csd.unified > decoration,
+window.background.csd.unified > decoration-overlay {
   border-radius: 18px;
+}
+
+window.background.csd.unified.tiled > decoration-overlay, window.background.csd.unified.tiled-top > decoration-overlay, window.background.csd.unified.tiled-right > decoration-overlay, window.background.csd.unified.tiled-bottom > decoration-overlay, window.background.csd.unified.tiled-left > decoration-overlay, window.background.csd.unified.maximized > decoration-overlay, window.background.csd.unified.fullscreen > decoration-overlay {
+  box-shadow: none;
+}
+
+window.background.csd.unified.tiled,
+window.background.csd.unified.tiled > decoration,
+window.background.csd.unified.tiled > decoration-overlay, window.background.csd.unified.tiled-top,
+window.background.csd.unified.tiled-top > decoration,
+window.background.csd.unified.tiled-top > decoration-overlay, window.background.csd.unified.tiled-right,
+window.background.csd.unified.tiled-right > decoration,
+window.background.csd.unified.tiled-right > decoration-overlay, window.background.csd.unified.tiled-bottom,
+window.background.csd.unified.tiled-bottom > decoration,
+window.background.csd.unified.tiled-bottom > decoration-overlay, window.background.csd.unified.tiled-left,
+window.background.csd.unified.tiled-left > decoration,
+window.background.csd.unified.tiled-left > decoration-overlay, window.background.csd.unified.maximized,
+window.background.csd.unified.maximized > decoration,
+window.background.csd.unified.maximized > decoration-overlay, window.background.csd.unified.fullscreen,
+window.background.csd.unified.fullscreen > decoration,
+window.background.csd.unified.fullscreen > decoration-overlay {
+  border-radius: 0;
 }
 
 /*********
