@@ -3200,6 +3200,10 @@ list > row.expander .row-header {
   padding: 2px;
 }
 
+list.frame {
+  border-radius: 12px;
+}
+
 columnview.view > header > button,
 treeview.view > header > button, row.activatable {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);

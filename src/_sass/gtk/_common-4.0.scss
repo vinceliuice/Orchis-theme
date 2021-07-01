@@ -2848,6 +2848,8 @@ list {
   > row.expander .row-header { padding: 2px; }
 }
 
+list.frame { border-radius: $corner-radius; }
+
 row {
   @at-root %row_activatable, &.activatable {
     transition: $transition;
@@ -3675,9 +3677,6 @@ window {
     transition: $transition-shadow;
     border-radius: $window-radius;
     box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
-
-    // FIXME rationalize shadows
-
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
