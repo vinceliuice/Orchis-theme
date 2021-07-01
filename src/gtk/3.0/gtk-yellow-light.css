@@ -3194,7 +3194,7 @@ tabbox > tab, notebook > header tab {
 }
 
 tabbox > tab:hover, notebook > header tab:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -3206,7 +3206,7 @@ tabbox > tab:checked, notebook > header tab:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: #FFFFFF;
   background-clip: padding-box;
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: #dedede;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -3242,7 +3242,7 @@ notebook:focus tab:checked {
 
 notebook > header {
   border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: #dedede;
   background-color: #F2F2F2;
   background-clip: border-box;
 }
@@ -5382,7 +5382,7 @@ popover.emoji-completion .emoji:hover {
 
 .nautilus-window.background.csd notebook > header tab:hover:not(:checked):not(:active) {
   color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .nautilus-window.background.csd notebook > header tab:disabled {

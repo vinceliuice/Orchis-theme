@@ -175,7 +175,7 @@
 
           &:hover:not(:checked):not(:active) {
             color: $titlebar-text;
-            background-color: if($topbar == 'dark', rgba($titlebar-text, 0.08), $frame);
+            background-color: if($topbar == 'dark', rgba($titlebar-text, 0.05), $fill);
           }
 
           &:disabled { color: $titlebar-text-secondary-disabled; }

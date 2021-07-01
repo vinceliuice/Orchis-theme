@@ -1753,7 +1753,7 @@ popover.background {
   font-weight: 500;
 
   &:hover {
-    background-color: $frame;
+    background-color: $fill;
     color: $text;
   }
 
@@ -1763,7 +1763,7 @@ popover.background {
     transition: $transition;
     background-color: $base;
     background-clip: padding-box;
-    border-color: $frame;
+    border-color: $solid-border;
     color: $text;
 
     &:disabled { color: $text-disabled; }
@@ -1800,7 +1800,7 @@ notebook {
 
   > header {
     border-width: 1px;
-    border-color: $frame;
+    border-color: $solid-border;
     background-color: $background;
     background-clip: border-box;
 

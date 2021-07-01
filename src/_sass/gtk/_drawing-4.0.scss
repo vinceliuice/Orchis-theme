@@ -70,7 +70,7 @@
 
   @if $t == normal {
     transition: $transition,
-                background-size $ripple-fade-out-duration $ease-out;
+                box-shadow $ripple-fade-in-duration $ease-out;
     outline: none;
     box-shadow: inset 0 0 0 9999px transparent;
     background-color: $button;
@@ -82,11 +82,12 @@
   }
 
   @if $t == focus {
-    box-shadow: inset 0 0 0 2px $overlay-focus;
+    box-shadow: inset 0 0 0 2px $overlay-focus, inset 0 0 0 9999px transparent;
   }
 
   @if $t == active {
-    transition: $transition;
+    transition: box-shadow $ripple-fade-in-duration $ease-out,
+                background-color $ripple-fade-in-duration $ease-out;
     box-shadow: inset 0 0 0 9999px $overlay-active;
   }
 
