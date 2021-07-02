@@ -38,13 +38,7 @@ Run the following commands in the terminal:
 
 > For more information, run: `./install.sh --help`
 
-> Install different accent color version, run: `./install.sh -t [color name]`
-
-![theme-color](theme-color.png?raw=true)
-
-```
-./install.sh -t purple # install purple accent color version
-```
+![1](images/tweaks-view.svg?raw=true)
 
 ### On Snapcraft
 
@@ -80,4 +74,4 @@ Go to `src/gnome-shell/extensions/dash-to-panel` [dash-to-panel](src/gnome-shell
 ```
 
 ## Preview
-![1](preview.jpg?raw=true)
+![1](images/preview.jpg?raw=true)
