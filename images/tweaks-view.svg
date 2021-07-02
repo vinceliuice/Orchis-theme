@@ -25,9 +25,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      units="px"
-     inkscape:zoom="0.16841121"
-     inkscape:cx="-56.409547"
-     inkscape:cy="2280.1333"
+     inkscape:zoom="0.33682242"
+     inkscape:cx="693.24364"
+     inkscape:cy="1656.6593"
      inkscape:window-width="1920"
      inkscape:window-height="1000"
      inkscape:window-x="0"
@@ -301,7 +301,7 @@
        clip-path="url(#clipPath1102)"
        transform="translate(0,5.2916669)" />
     <circle
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#9a9a9a;stroke-width:0.529167;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.2"
        id="path133174"
        cx="44.450005"
        cy="344.78329"
@@ -485,7 +485,7 @@
        rx="0"
        ry="0" />
     <circle
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#9a9a9a;stroke-width:0.529167;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.2"
        id="circle10126"
        cx="44.450005"
        cy="566.32135"
@@ -700,7 +700,7 @@
          x="176.76994"
          y="732.53943">./install.sh --tweaks compact</tspan></text>
     <circle
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#9a9a9a;stroke-width:0.529167;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.2;paint-order:normal"
        id="circle16070"
        cx="44.450005"
        cy="781.55896"
