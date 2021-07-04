@@ -2801,6 +2801,14 @@ list {
   background-color: $base;
 
   row { padding: 2px; }
+
+  &.content:not(.conversation-listbox) {
+    @extend %circular_list;
+
+    > row {
+      @extend %circular_row;
+    }
+  }
 }
 
 row {

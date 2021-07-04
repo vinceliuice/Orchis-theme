@@ -103,6 +103,14 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     //   margin: 0 3px;
     // }
 
+    .appindicator-trayicons-box {
+      margin: 0 6px;
+    }
+
+    .appindicator-box {
+      margin: 0 3px;
+    }
+
     // app menu icon
     .app-menu-icon {
       -st-icon-style: symbolic;
