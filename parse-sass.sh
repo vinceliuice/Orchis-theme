@@ -1,5 +1,4 @@
 #!/bin/bash
-set -ueo pipefail
 
 if [[ ! "$(command -v sassc)" ]]; then
   echo "'sassc' needs to be installed to generate the CSS."

@@ -1,6 +1,4 @@
 #!/bin/bash
-set -eo pipefail
-#set -x
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 SRC_DIR="$REPO_DIR/src"

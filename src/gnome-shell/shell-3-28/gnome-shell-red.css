@@ -1363,12 +1363,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel {
-  background-color: rgba(0, 0, 0, 0.5);
   transition-duration: 250ms;
   font-weight: bold;
   height: 38px;
-  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 3px;
+  border-radius: 9999px;
+  height: 38px;
 }
 
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {

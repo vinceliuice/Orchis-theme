@@ -1154,13 +1154,25 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 // TOP BAR
 //
 #panel {
-  background-color: $panel_bg_color;
   transition-duration: 250ms; // transition from solid to transparent
   font-weight: bold;
   height: $medium_size + 2px;
-  border-radius: $circular_radius;
-  margin: $container_padding / 2;
-  // margin-bottom: 0;
+
+  @if $opacity == 'solid' {
+    background-color: $panel_bg;
+  } @else {
+    background-color: $panel_bg_color;
+  }
+
+  @if $panel_style == 'compact' {
+    margin: 0;
+    border-radius: 0;
+    height: $medium_size - 2px;
+  } @else {
+    margin: $container_padding / 2;
+    border-radius: $circular_radius;
+    height: $medium_size + 2px;
+  }
 
   &:overview,
   &.unlock-screen,
