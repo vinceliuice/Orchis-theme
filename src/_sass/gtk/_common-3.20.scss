@@ -1347,10 +1347,17 @@ headerbar {
   }
 
   &.windowhandle {
-    > viewswitcher > box > button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+    viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
       border-radius: 0;
       margin-top: 0;
       margin-bottom: 0;
+      min-width: 120px;
+      padding: 0;
+
+      label { margin-right: 12px; }
+      image { margin-left: 12px; }
+
+      &:focus { box-shadow: none; }
     }
 
     > button.popup {
