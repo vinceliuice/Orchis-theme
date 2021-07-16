@@ -1169,7 +1169,14 @@ searchbar > revealer > box {
 
   entry { @extend %titlebar-entry; }
 
-  .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
+  .linked:not(.vertical) > entry:not(:only-child) {
+    border-radius: $corner-radius;
+
+    & + button {
+      border-radius: $corner-radius;
+      margin-left: $container-padding / 2;
+    }
+  }
 
   button.suggested-action, button.destructive-action {
     &:disabled {

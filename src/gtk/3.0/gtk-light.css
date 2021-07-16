@@ -3557,6 +3557,11 @@ searchbar > revealer > box {
   border-radius: 12px;
 }
 
+.titlebar .linked:not(.vertical) > entry:not(:only-child) + button {
+  border-radius: 12px;
+  margin-left: 3px;
+}
+
 .titlebar button.suggested-action:disabled, .titlebar button.destructive-action:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
