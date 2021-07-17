@@ -35,13 +35,13 @@ Run the following commands in the terminal:
                         1. solid:    no transparency panel variant
                         2. compact:  no floating panel variant
                         3. black:    full black variant
---radio-color           Change radio button checked color to default primary color (Default is Green)
+                        4. primary:  Change radio icon checked color to primary theme color (Default is Green)
 -h, --help              Show help
 ```
 
 > For more information, run: `./install.sh --help`
 
-![1](images/tweaks-view.svg?raw=true)
+![1](images/tweaks-view.png?raw=true)
 
 ### On Snapcraft
 
