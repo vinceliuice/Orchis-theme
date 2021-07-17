@@ -42,7 +42,10 @@ OPTIONS:
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
   -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
-  --tweaks                Specify versions for tweaks [solid|compact|black] (solid: no transparency variant, compact: no floating panel, black: full black version)
+  --tweaks                Specify versions for tweaks [solid|compact|black] (Options can mix use)
+                          1. solid:    no transparency variant
+                          2. compact:  no floating panel variant
+                          3. black:    full black variant
   --radio-color           Change radio button checked color to default primary color (Default is Green)
   -h, --help              Show help
 

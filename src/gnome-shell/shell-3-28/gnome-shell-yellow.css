@@ -3915,7 +3915,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer.opaque #dash {
-  background-color: #000000;
+  background-color: #202020;
 }
 
 #dashtodockContainer.transparent #dash {
