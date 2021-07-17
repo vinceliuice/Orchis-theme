@@ -4198,6 +4198,60 @@ popover.entry-completion > contents {
   padding: 0;
 }
 
+window.background.csd stack stack stack frame > list,
+window.background.csd > stack > stack > box > frame > list,
+window.background.csd > stack > stack > box > box > frame > list,
+window.background.csd > stack > box > stack > box > frame > list,
+window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
+window.background.csd > stack > scrolledwindow > viewport > box > list,
+window.background.csd > box > stack > scrolledwindow > viewport > box > list {
+  border-radius: 13px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child {
+  border-radius: 12px;
+}
+
+window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus {
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
+}
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd stack stack stack frame > border,
+window.background.csd > stack > stack > box > frame > border,
+window.background.csd > stack > stack > box > box > frame > border,
+window.background.csd > stack > box > stack > box > frame > border,
+window.background.csd > stack > box > stack > scrolledwindow > viewport frame > border,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > border,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > border {
+  border: none;
+}
+
+window.background.csd > stack > box > box > list,
+window.background.csd > stack > box > stack > scrolledwindow > viewport > list {
+  border-bottom-left-radius: 18px;
+}
+
+window.background.csd > stack > box > .sidebar > scrolledwindow > viewport > list {
+  padding: 0 0;
+}
+
 /* GTK NAMED COLORS
    ----------------
    use responsibly! */

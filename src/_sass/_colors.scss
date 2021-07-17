@@ -125,6 +125,8 @@ $success:                               if($variant == 'light', #0F9D58, #81C995
 $suggested:                             $primary;
 $destructive:                           $error;
 
+$check_radio_primary:                   if($check_radio == 'default', $success, $primary);
+
 $frame:                                 if($variant == 'light', rgba(black, 0.08), rgba(black, 0.16)); // instead of shadows
 $solid-border:                          if($variant == 'light', darken($background, 8%), lighten($background, 12%));
 $border-alt:                            rgba(black, 0.16); // darker border color for Chrome and Firefox

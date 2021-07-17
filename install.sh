@@ -39,14 +39,14 @@ Usage: $0 [OPTION]...
 OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
+  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey] (Default: blue)
   -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
-  --tweaks                Specify versions for tweaks [solid|compact|black] (Options can mix use)
-                          1. solid:    no transparency variant
+  --tweaks                Specify versions for tweaks [solid|compact|black|primary] (Options can mix)
+                          1. solid:    no transparency panel variant
                           2. compact:  no floating panel variant
                           3. black:    full black variant
-  --radio-color           Change radio button checked color to default primary color (Default is Green)
+                          4. primary:  Change radio icon checked color to primary theme color (Default is Green)
   -h, --help              Show help
 
 INSTALLATION EXAMPLES:
@@ -94,25 +94,31 @@ install() {
   mkdir -p                                                                      "$THEME_DIR/gnome-shell"
   cp -r "$SRC_DIR/gnome-shell/pad-osd.css"                                      "$THEME_DIR/gnome-shell"
 
-  if [[ "$panel" == 'compact' || "$opacity" == 'solid' || "$blackness" == 'true' ]]; then
+  if [[ "$panel" == 'compact' || "$opacity" == 'solid' || "$blackness" == 'true' || "$theme" != 'default' ]]; then
     if [[ "${GS_VERSION:-}" == 'new' ]]; then
-      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell$theme${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
+      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
     else
-      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell$theme${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
+      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
     fi
   else
     if [[ "${GS_VERSION:-}" == 'new' ]]; then
-      cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell$theme${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
+      cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
     else
-      cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell$theme${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
+      cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
     fi
   fi
 
   cp -r "$SRC_DIR/gnome-shell/common-assets"                                    "$THEME_DIR/gnome-shell/assets"
   cp -r "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                       "$THEME_DIR/gnome-shell/assets"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"           "$THEME_DIR/gnome-shell/assets/checkbox.svg"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"       "$THEME_DIR/gnome-shell/assets/more-results.svg"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"          "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
+
+  if [[ "$primary" == 'true' ]]; then
+    cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"         "$THEME_DIR/gnome-shell/assets/checkbox.svg"
+  fi
+
+  if [[ "$theme" != '' ]]; then
+    cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"     "$THEME_DIR/gnome-shell/assets/more-results.svg"
+    cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"        "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
+  fi
 
   cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -129,28 +135,28 @@ install() {
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-3.0/assets"
   cp -r "$SRC_DIR/gtk/thumbnail${ELSE_DARK:-}.png"                              "$THEME_DIR/gtk-3.0/thumbnail.png"
 
-  if [[ "$opacity" == 'solid' || "$blackness" == 'true' ]]; then
-    sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$theme$color$size.scss"               "$THEME_DIR/gtk-3.0/gtk.css"
+  if [[ "$opacity" == 'solid' || "$blackness" == 'true' || "$accent" == 'true' || "$primary" == 'true' ]]; then
+    sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-3.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
-    sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$theme-dark$size.scss"                "$THEME_DIR/gtk-3.0/gtk-dark.css"
+    sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-3.0/gtk-dark.css"
   else
-    cp -r "$SRC_DIR/gtk/3.0/gtk$theme$color$size.css"                           "$THEME_DIR/gtk-3.0/gtk.css"
+    cp -r "$SRC_DIR/gtk/3.0/gtk$color$size.css"                                 "$THEME_DIR/gtk-3.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
-    cp -r "$SRC_DIR/gtk/3.0/gtk$theme-dark$size.css"                            "$THEME_DIR/gtk-3.0/gtk-dark.css"
+    cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                  "$THEME_DIR/gtk-3.0/gtk-dark.css"
   fi
 
   mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
   cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-4.0/assets"
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-4.0/assets"
 
-  if [[ "$opacity" == 'solid' ]]; then
-    sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk$theme$color$size.scss"               "$THEME_DIR/gtk-4.0/gtk.css"
+  if [[ "$opacity" == 'solid' || "$blackness" == 'true' || "$accent" == 'true' || "$primary" == 'true' ]]; then
+    sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-4.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
-    sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk$theme-dark$size.scss"                "$THEME_DIR/gtk-4.0/gtk-dark.css"
+    sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-4.0/gtk-dark.css"
   else
-    cp -r "$SRC_DIR/gtk/4.0/gtk$theme$color$size.css"                           "$THEME_DIR/gtk-4.0/gtk.css"
+    cp -r "$SRC_DIR/gtk/4.0/gtk$color$size.css"                                 "$THEME_DIR/gtk-4.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
-    cp -r "$SRC_DIR/gtk/4.0/gtk$theme-dark$size.css"                            "$THEME_DIR/gtk-4.0/gtk-dark.css"
+    cp -r "$SRC_DIR/gtk/4.0/gtk-dark$size.css"                                  "$THEME_DIR/gtk-4.0/gtk-dark.css"
   fi
 
   mkdir -p                                                                      "$THEME_DIR/xfwm4"
@@ -161,7 +167,7 @@ install() {
   cp -r "$SRC_DIR/cinnamon/common-assets"                                       "$THEME_DIR/cinnamon/assets"
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
 
-  if [[ "$opacity" == 'solid' || "$blackness" == 'true' ]]; then
+  if [[ "$opacity" == 'solid' || "$blackness" == 'true' || "$accent" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.scss"            "$THEME_DIR/cinnamon/cinnamon.css"
   else
     cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.css"                        "$THEME_DIR/cinnamon/cinnamon.css"
@@ -211,20 +217,20 @@ while [[ "$#" -gt 0 ]]; do
             blackness="true"
             shift
             ;;
+          primary)
+            primary="true"
+            shift
+            ;;
           -*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized panel variant '$1'."
+            echo "ERROR: Unrecognized tweaks variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
         esac
       done
-      ;;
-    --radio-color)
-      radio="true"
-      shift
       ;;
     -t|--theme)
       accent='true'
@@ -233,45 +239,49 @@ while [[ "$#" -gt 0 ]]; do
         case "$variant" in
           default)
             themes+=("${THEME_VARIANTS[0]}")
+            theme_color='default'
             shift
             ;;
           purple)
             themes+=("${THEME_VARIANTS[1]}")
+            theme_color='purple'
             shift
             ;;
           pink)
             themes+=("${THEME_VARIANTS[2]}")
+            theme_color='pink'
             shift
             ;;
           red)
             themes+=("${THEME_VARIANTS[3]}")
+            theme_color='red'
             shift
             ;;
           orange)
             themes+=("${THEME_VARIANTS[4]}")
+            theme_color='orange'
             shift
             ;;
           yellow)
             themes+=("${THEME_VARIANTS[5]}")
+            theme_color='yellow'
             shift
             ;;
           green)
             themes+=("${THEME_VARIANTS[6]}")
+            theme_color='green'
             shift
             ;;
           grey)
             themes+=("${THEME_VARIANTS[7]}")
-            shift
-            ;;
-          all)
-            themes+=("${THEME_VARIANTS[@]}")
+            theme_color='grey'
             shift
             ;;
           -*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized color variant '$1'."
+            echo "ERROR: Unrecognized theme variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -340,19 +350,6 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
-parse_sass() {
-  cd ${REPO_DIR} && ./parse-sass.sh
-}
-
-change_radio_color() {
-  if [[ "${radio:-}" == 'true' ]]; then
-    cd $SRC_DIR/_sass/gtk
-    sed -i.bak "/\$check_radio_primary/s/success/primary/" _common-3.20.scss
-    echo "Change radio color ..."
-    parse_sass
-  fi
-}
-
 #  Install needed packages
 install_package() {
   if [ ! "$(which sassc 2> /dev/null)" ]; then
@@ -369,6 +366,23 @@ install_package() {
       sudo pacman -S --noconfirm sassc
     fi
   fi
+}
+
+change_radio_color() {
+  cd ${SRC_DIR}/_sass
+  cp -an _tweaks.scss _tweaks.scss.bak
+  sed -i "/\$check_radio:/s/default/primary/" _tweaks.scss
+  echo "Change radio color ..."
+}
+
+install_theme_color() {
+  cd ${SRC_DIR}/gnome-shell/sass
+  cp -an _tweaks.scss _tweaks.scss.bak
+  sed -i "/\$theme:/s/default/${theme_color}/" _tweaks.scss
+  cd ${SRC_DIR}/_sass
+  cp -an _tweaks.scss _tweaks.scss.bak
+  sed -i "/\$theme:/s/default/${theme_color}/" _tweaks.scss
+  echo -e "Install ${theme_color} color version ..."
 }
 
 install_compact_panel() {
@@ -411,16 +425,6 @@ restore_tweaks() {
   fi
 }
 
-restore_files() {
-  if [[ -f $SRC_DIR/_sass/gtk/_common-3.20.scss.bak ]]; then
-    cd $SRC_DIR/_sass/gtk
-    rm -rf _common-3.20.scss
-    mv -f _common-3.20.scss.bak _common-3.20.scss
-    echo "Restore _common-3.20.scss file ..."
-    parse_sass
-  fi
-}
-
 install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
@@ -443,19 +447,27 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-if [[ "$panel" = "compact" ]] ; then
+if [[ "$accent" == 'true' ]] ; then
+  install_package && install_theme_color
+fi
+
+if [[ "$panel" == "compact" ]] ; then
   install_package && install_compact_panel
 fi
 
-if [[ "$opacity" = "solid" ]] ; then
+if [[ "$opacity" == "solid" ]] ; then
   install_package && install_solid
 fi
 
-if [[ "$blackness" = "true" ]] ; then
+if [[ "$blackness" == "true" ]] ; then
   install_package && install_black
 fi
 
-change_radio_color && install_theme && restore_files && restore_tweaks
+if [[ "$primary" == "true" ]] ; then
+  install_package && change_radio_color
+fi
+
+install_theme && restore_tweaks
 
 echo
 echo "Done."

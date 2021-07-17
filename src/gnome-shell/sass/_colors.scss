@@ -78,9 +78,9 @@ $alt_primary_color:     darken($primary_color, 3%);
 $accent_color:          lighten($primary_color, 3%);
 
 $panel_bg:              if($blackness == 'true', #000000, #202020);
-$panel_bg_color:        if($trans == 'true', rgba(black, 0.5), $panel_bg);
+$panel_bg_color:        if($opacity == 'default', rgba(black, 0.5), $panel_bg);
 $panel_fg_color:        if($panel == 'dark', #dedede, #dedede);
-$menu_bg_color:         if($trans == 'true', rgba($base_color, 0.95), $base_color);
+$menu_bg_color:         if($opacity == 'default', rgba($base_color, 0.95), $base_color);
 $system_bg_color:       if($blackness == 'true' and $variant == 'dark', #121212, #222222);
 
 $link_color:            $primary_color;
