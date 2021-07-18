@@ -40,6 +40,8 @@
   &:hover, &:focus { background-color: $divider_color; }
   &:active { background-color: $track_color; }
 
+  .popup-menu & { box-shadow: none; }
+
   // icon container
   .message-icon-bin {
   padding: $container_padding*2  0px $container_padding*2 $container_padding*2;

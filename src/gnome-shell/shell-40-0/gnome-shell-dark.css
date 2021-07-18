@@ -362,10 +362,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-content {
   padding: 6px 0;
-  margin-left: 9px;
+  margin: 0 0 12px 12px;
   background-color: rgba(32, 32, 32, 0.95);
   border-radius: 12px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup-menu-item {
@@ -970,6 +970,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message:active {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.popup-menu .message {
+  box-shadow: none;
 }
 
 .message .message-icon-bin {
@@ -2021,17 +2025,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 100px;
   border-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   selection-background-color: #3281ea;
   selected-color: #FFFFFF !important;
-  margin-top: 12px;
-  margin-bottom: 6px;
+  margin: 12px 0 6px;
 }
 
 #overview .search-entry:hover {
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
 }
 
 #overview .search-entry:focus {
@@ -2039,7 +2042,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
   border: none;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.55);
+  box-shadow: none;
   padding: 0 8px;
   selection-background-color: #3281ea;
   selected-color: #FFFFFF !important;
