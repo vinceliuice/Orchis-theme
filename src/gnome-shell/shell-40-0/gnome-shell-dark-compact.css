@@ -1100,8 +1100,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .candidate-popup-content {
   background-color: rgba(32, 32, 32, 0.95);
   border-radius: 12px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
-  margin: 2px 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  margin: 2px 12px 12px;
   padding: 4px;
   spacing: 4px;
 }
