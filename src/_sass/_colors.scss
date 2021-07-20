@@ -1,7 +1,7 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
-@import 'tweaks';
+@import 'tweaks-temp';
 @import 'color-palette';
 
 @function gtkalpha($c, $a) {

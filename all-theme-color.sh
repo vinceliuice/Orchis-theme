@@ -10,7 +10,6 @@ Usage: $0 [OPTION]...
 OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
   -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
   --tweaks                Specify versions for tweaks [solid|compact|black|primary] (Options can mix)
@@ -31,6 +30,7 @@ EOF
 }
 
 themes=()
+themecolors=()
 colors=()
 sizes=()
 
@@ -70,62 +70,6 @@ while [[ "$#" -gt 0 ]]; do
             ;;
           *)
             echo "ERROR: Unrecognized tweaks variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
-      ;;
-    -t|--theme)
-      accent='true'
-      shift
-      for variant in "$@"; do
-        case "$variant" in
-          default)
-            themes+=("${THEME_VARIANTS[0]}")
-            theme_color='default'
-            shift
-            ;;
-          purple)
-            themes+=("${THEME_VARIANTS[1]}")
-            theme_color='purple'
-            shift
-            ;;
-          pink)
-            themes+=("${THEME_VARIANTS[2]}")
-            theme_color='pink'
-            shift
-            ;;
-          red)
-            themes+=("${THEME_VARIANTS[3]}")
-            theme_color='red'
-            shift
-            ;;
-          orange)
-            themes+=("${THEME_VARIANTS[4]}")
-            theme_color='orange'
-            shift
-            ;;
-          yellow)
-            themes+=("${THEME_VARIANTS[5]}")
-            theme_color='yellow'
-            shift
-            ;;
-          green)
-            themes+=("${THEME_VARIANTS[6]}")
-            theme_color='green'
-            shift
-            ;;
-          grey)
-            themes+=("${THEME_VARIANTS[7]}")
-            theme_color='grey'
-            shift
-            ;;
-          -*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized theme variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -194,8 +138,8 @@ while [[ "$#" -gt 0 ]]; do
   esac
 done
 
-if [[ "${#themes[@]}" -eq 0 ]] ; then
-  themes=("${THEME_VARIANTS[0]}")
+if [[ "${#themecolors[@]}" -eq 0 ]] ; then
+  themecolors=("${THEME_COLORS[@]}")
 fi
 
 if [[ "${#colors[@]}" -eq 0 ]] ; then
@@ -206,14 +150,56 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
+install_all_color() {
+  for theme_color in "${themecolors[@]}"; do
+    if [[ "$theme_color" != "default" ]]; then
+      accent='true'
+    fi
 
-install_package; tweaks_temp
+    tweaks_temp; install_theme_color "$theme_color"
+    customize_theme
 
-if [[ "$accent" == 'true' && "$theme_color" != 'default' ]] ; then
-  install_theme_color
-fi
+    case "$theme_color" in
+      default)
+        theme=("${THEME_VARIANTS[0]}")
+        shift
+        ;;
+      purple)
+        theme=("${THEME_VARIANTS[1]}")
+        shift
+        ;;
+      pink)
+        theme=("${THEME_VARIANTS[2]}")
+        shift
+        ;;
+      red)
+        theme=("${THEME_VARIANTS[3]}")
+        shift
+        ;;
+      orange)
+        theme=("${THEME_VARIANTS[4]}")
+        shift
+        ;;
+      yellow)
+        theme=("${THEME_VARIANTS[5]}")
+        shift
+        ;;
+      green)
+        theme=("${THEME_VARIANTS[6]}")
+        shift
+        ;;
+      grey)
+        theme=("${THEME_VARIANTS[7]}")
+        shift
+        ;;
+    esac
 
-customize_theme; install_theme
+    for color in "${colors[@]}"; do
+      for size in "${sizes[@]}"; do
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+      done
+    done
+  done
+}
 
-echo
-echo "Done."
+install_all_color "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
