@@ -5,14 +5,14 @@ Based on nana-4 --  [materia-theme](https://github.com/nana-4/materia-theme)
 
 ## Requirements
 
-- GTK `>=3.20`
-- `gnome-themes-extra` (or `gnome-themes-standard`)
+- GTK `>=3.20`  (Check it using `dpkg -l libgtk-3-0` in UBUNTU)
+- `gnome-themes-extra` (or `gnome-themes-standard`)  (Install it using `sudo apt install gnome-themes-standard` in UBUNTU)
 - Murrine engine — The package name depends on the distro.
   - `gtk-engine-murrine` on Arch Linux
   - `gtk-murrine-engine` on Fedora
   - `gtk2-engine-murrine` on openSUSE
   - `gtk2-engines-murrine` on Debian, Ubuntu, etc.
-- `sassc` — build dependency
+- `sassc` — build dependency (Install it using `sudo apt install sassc` in UBUNTU)
 
 ## Installation
 
