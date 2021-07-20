@@ -7,7 +7,6 @@ THEME_NAME=Orchis
 _COLOR_VARIANTS=('' '-light' '-dark')
 _COMPA_VARIANTS=('' '-compact')
 _THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
-_THEME_COLOR=('default' 'purple' 'pink' 'red' 'orange' 'yellow' 'green' 'grey')
 
 if [ ! -z "${COMPA_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _COMPA_VARIANTS <<< "${COMPA_VARIANTS:-}"
@@ -43,9 +42,8 @@ done
 
 cd ..
 
-for theme_color in "${_THEME_COLOR[@]}"; do
-  ./install.sh -d $THEME_DIR -t $theme_color
-done
+
+./install-all.sh -d $THEME_DIR
 
 cd $THEME_DIR && Tar_themes && Clear_theme
 
