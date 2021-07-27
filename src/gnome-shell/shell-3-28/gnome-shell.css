@@ -1020,7 +1020,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu .popup-menu-item:checked.selected {
+.popup-menu .popup-menu-item.selected:checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.85);
 }
@@ -1030,7 +1030,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu .popup-menu-item:checked.selected:active {
+.popup-menu .popup-menu-item.selected:checked:active {
   background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
@@ -2254,7 +2254,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 100px;
   border-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   selection-background-color: #1A73E8;
   selected-color: #FFFFFF !important;
 }
@@ -2264,7 +2264,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
   border: none;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.55);
+  box-shadow: none;
   padding: 0 8px;
   selection-background-color: #1A73E8;
   selected-color: #FFFFFF !important;
@@ -3915,7 +3915,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer.opaque #dash {
-  background-color: #000000;
+  background-color: #202020;
 }
 
 #dashtodockContainer.transparent #dash {

@@ -10,11 +10,6 @@ SASSC_OPT=('-M' '-t' 'expanded')
 _COLOR_VARIANTS=('' '-light' '-dark')
 _GCOLOR_VARIANTS=('' '-dark')
 _SIZE_VARIANTS=('' '-compact')
-_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
-
-if [[ -n "${THEME_VARIANTS:-}" ]]; then
-  IFS=', ' read -r -a _THEME_VARIANTS <<< "${THEME_VARIANTS:-}"
-fi
 
 if [[ -n "${COLOR_VARIANTS:-}" ]]; then
   IFS=', ' read -r -a _COLOR_VARIANTS <<< "${COLOR_VARIANTS:-}"
@@ -30,22 +25,18 @@ fi
 
 echo "== Generating the CSS..."
 
-for theme in "${_THEME_VARIANTS[@]}"; do
 for color in "${_COLOR_VARIANTS[@]}"; do
   for size in "${_SIZE_VARIANTS[@]}"; do
-    sassc "${SASSC_OPT[@]}" "src/gtk/3.0/gtk$theme$color$size."{scss,css}
-    sassc "${SASSC_OPT[@]}" "src/gtk/4.0/gtk$theme$color$size."{scss,css}
+    sassc "${SASSC_OPT[@]}" "src/gtk/3.0/gtk$color$size."{scss,css}
+    sassc "${SASSC_OPT[@]}" "src/gtk/4.0/gtk$color$size."{scss,css}
   done
-done
 done
 
-for theme in "${_THEME_VARIANTS[@]}"; do
 for color in "${_GCOLOR_VARIANTS[@]}"; do
   for size in "${_SIZE_VARIANTS[@]}"; do
-    sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-3-28/gnome-shell$theme$color$size."{scss,css}
-    sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-40-0/gnome-shell$theme$color$size."{scss,css}
+    sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-3-28/gnome-shell$color$size."{scss,css}
+    sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-40-0/gnome-shell$color$size."{scss,css}
   done
-done
 done
 
 echo "== done!"

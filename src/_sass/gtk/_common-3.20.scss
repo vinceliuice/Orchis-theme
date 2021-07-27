@@ -1168,7 +1168,14 @@ searchbar > revealer > box {
 
   entry { @extend %titlebar-entry; }
 
-  .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
+  .linked:not(.vertical) > entry:not(:only-child) {
+    border-radius: $corner-radius;
+
+    & + button {
+      border-radius: $corner-radius;
+      margin-left: $container-padding / 2;
+    }
+  }
 
   button.suggested-action, button.destructive-action {
     &:disabled {
@@ -1346,10 +1353,17 @@ headerbar {
   }
 
   &.windowhandle {
-    > viewswitcher > box > button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+    viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
       border-radius: 0;
       margin-top: 0;
       margin-bottom: 0;
+      min-width: 120px;
+      padding: 0;
+
+      label { margin-right: 12px; }
+      image { margin-left: 12px; }
+
+      &:focus { box-shadow: none; }
     }
 
     > button.popup {
@@ -2216,7 +2230,6 @@ radiobutton.text-button {
 }
 
 $check_radio_size: 40px;
-$check_radio_primary: $success;
 
 check,
 radio {

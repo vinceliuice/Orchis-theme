@@ -134,7 +134,7 @@
     background-color: rgba(white, 0.75);
     border-radius: 100px;
     border-color: transparent;
-    box-shadow: 0 1px 2px rgba(black, 0.35);
+    box-shadow: none;
   }
 
   @if $t == focus {
@@ -142,13 +142,13 @@
     border-color: transparent;
     background-color: rgba(white, 0.95);
     border: none;
-    box-shadow: 2px 3px 5px rgba(black, 0.55);
+    box-shadow: none;
   }
 
   @if $t == hover {
     color: rgba(black, 0.75);
     background-color: rgba(white, 0.85);
-    box-shadow: 1px 2px 3px rgba(black, 0.35);
+    box-shadow: none;
   }
 
   @if $t == insensitive {

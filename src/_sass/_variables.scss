@@ -1,4 +1,4 @@
-@import 'tweaks';
+@import 'tweaks-temp';
 
 $asset-suffix: if($variant == 'dark', '-dark', '');
 $theme-asset-suffix: if($topbar == 'dark', if($variant == 'dark', '-dark', ''), '-light');

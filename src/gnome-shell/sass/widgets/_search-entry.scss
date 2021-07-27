@@ -9,8 +9,7 @@ $search_entry_width: 320px;
   @include search_entry(normal);
   selection-background-color: $primary_color;
   selected-color: $light_fg_color !important;
-  margin-top: $container_padding * 2;
-  margin-bottom: $container_padding;
+  margin: $container_padding * 2 0 $container_padding;
 
   &:hover {
     @include search_entry(hover);
