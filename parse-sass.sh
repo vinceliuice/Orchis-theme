@@ -23,6 +23,9 @@ if [[ -n "${SIZE_VARIANTS:-}" ]]; then
   IFS=', ' read -r -a _SIZE_VARIANTS <<< "${SIZE_VARIANTS:-}"
 fi
 
+cp -rf src/_sass/_tweaks.scss src/_sass/_tweaks-temp.scss
+cp -rf src/gnome-shell/sass/_tweaks.scss src/gnome-shell/sass/_tweaks-temp.scss
+
 echo "== Generating the CSS..."
 
 for color in "${_COLOR_VARIANTS[@]}"; do
