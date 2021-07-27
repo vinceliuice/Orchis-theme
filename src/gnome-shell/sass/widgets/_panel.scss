@@ -24,6 +24,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     border-radius: $circular_radius;
     height: $medium_size + 2px;
   }
+
   // transparent panel on lock & login screens
   &.unlock-screen,
   &.login-screen,

@@ -1264,10 +1264,6 @@ searchbar > revealer > box {
         padding: 0;
       }
     }
-
-    // workaround for non-animatable buttons
-    .background:not(.csd) & windowcontrols button:active,
-    .background:not(.csd) & windowcontrols menubutton:active {background-size: 1000% 1000%};
   }
 
   .solid-csd & {
@@ -3706,13 +3702,13 @@ window {
       &:backdrop { background-color: $titlebar-backdrop; }
     }
 
-    // .maximized &,
-    // .fullscreen &,
-    // .tiled &,
-    // .tiled-top &,
-    // .tiled-right &,
-    // .tiled-bottom &,
-    // .tiled-left & { border-radius: 0; }
+    &.maximized,
+    &.fullscreen,
+    &.tiled,
+    &.tiled-top,
+    &.tiled-right,
+    &.tiled-bottom,
+    &.tiled-left { border-radius: 0; }
   }
 }
 
