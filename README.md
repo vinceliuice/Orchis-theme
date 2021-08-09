@@ -43,6 +43,12 @@ Run the following commands in the terminal:
 
 ![1](images/tweaks-view.png?raw=true)
 
+### Flatpak Installation
+
+Automatically install your host GTK+ theme as a Flatpak. Use this:
+
+- [pakitheme](https://github.com/refi64/pakitheme)
+
 ### On Snapcraft
 
 <a href="https://snapcraft.io/orchis-themes">
