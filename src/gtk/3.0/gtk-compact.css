@@ -2401,7 +2401,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
   padding: 4px;
   border-style: solid;
   border-width: 0 1px 1px;
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
   background-color: #FAFAFA;
 }
 
@@ -3384,7 +3384,7 @@ notebook > header tab > box {
 }
 
 notebook > header tab > box:drop(active) {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -4242,7 +4242,7 @@ frame > border,
 .frame {
   margin: 0;
   padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0;
   box-shadow: none;
 }
@@ -4265,7 +4265,7 @@ frame.flat > border, statusbar frame > border {
 
 actionbar > revealer > box {
   padding: 4px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   background-clip: border-box;
 }
@@ -4392,7 +4392,7 @@ stacksidebar.sidebar separator.horizontal, button.font separator, button.file se
  * Lists *
  *********/
 list {
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
 }
 
@@ -4495,7 +4495,7 @@ expander title > arrow:disabled {
  ************/
 calendar {
   padding: 1px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -5111,9 +5111,9 @@ cursor-handle.insertion-cursor:dir(ltr), cursor-handle.insertion-cursor:dir(rtl)
   padding-bottom: 2px;
   padding-left: 8px;
   padding-right: 8px;
-  border: solid 1px rgba(0, 0, 0, 0.08);
+  border: solid 1px rgba(0, 0, 0, 0.12);
   border-radius: 13px;
-  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
   font-size: smaller;
@@ -6887,6 +6887,29 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
   margin: -1px 0;
 }
 
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom-width: 0;
+  background-color: #FFFFFF;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content > row.activatable:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content .geary-attachment-pane {
+  border-radius: 0 0 8px 8px;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content .geary-attachment-pane actionbar.background {
+  background-color: transparent;
+}
+
+.geary-main-window geary-conversation-viewer#conversation_viewer list.background.conversation-listbox.content .geary-attachment-pane actionbar.background > revealer > box {
+  border-radius: 0 0 6px 6px;
+}
+
 /**************
  * Extensions *
  **************/
@@ -7992,6 +8015,10 @@ MsdOsdWindow.background.osd .progressbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.budgie-popover button {
+  border-radius: 8px;
+}
+
 .budgie-popover button.flat:not(.image-button) {
   min-height: 24px;
   padding: 0 8px;
@@ -8370,9 +8397,9 @@ frame.raven-frame > border {
 
 .raven {
   background-color: #FFFFFF;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
   margin: 8px 6px 6px;
   border-radius: 12px;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
 }
 
 .raven > box {

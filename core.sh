@@ -46,6 +46,8 @@ install() {
 
   [[ -d "$THEME_DIR" ]] && rm -rf "${THEME_DIR:?}"
 
+  theme_tweaks && install_theme_color
+
   echo "Installing '$THEME_DIR'..."
 
   mkdir -p                                                                      "$THEME_DIR"
@@ -67,7 +69,7 @@ install() {
   mkdir -p                                                                      "$THEME_DIR/gnome-shell"
   cp -r "$SRC_DIR/gnome-shell/pad-osd.css"                                      "$THEME_DIR/gnome-shell"
 
-  if [[ "$panel" == 'compact' || "$opacity" == 'solid' || "$blackness" == 'true' || "$theme" != 'default' ]]; then
+  if [[ "$tweaks" == 'true' ]]; then
     if [[ "${GS_VERSION:-}" == 'new' ]]; then
       sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
     else
@@ -108,7 +110,7 @@ install() {
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-3.0/assets"
   cp -r "$SRC_DIR/gtk/thumbnail${ELSE_DARK:-}.png"                              "$THEME_DIR/gtk-3.0/thumbnail.png"
 
-  if [[ "$opacity" == 'solid' || "$blackness" == 'true' || "$accent" == 'true' || "$primary" == 'true' ]]; then
+  if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-3.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-3.0/gtk-dark.css"
@@ -122,7 +124,7 @@ install() {
   cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-4.0/assets"
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-4.0/assets"
 
-  if [[ "$opacity" == 'solid' || "$blackness" == 'true' || "$accent" == 'true' || "$primary" == 'true' ]]; then
+  if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-4.0/gtk.css"
     [[ "$color" != '-dark' ]] && \
     sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-4.0/gtk-dark.css"
@@ -140,7 +142,7 @@ install() {
   cp -r "$SRC_DIR/cinnamon/common-assets"                                       "$THEME_DIR/cinnamon/assets"
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
 
-  if [[ "$opacity" == 'solid' || "$blackness" == 'true' || "$accent" == 'true' ]]; then
+  if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.scss"            "$THEME_DIR/cinnamon/cinnamon.css"
   else
     cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.css"                        "$THEME_DIR/cinnamon/cinnamon.css"
@@ -187,12 +189,6 @@ change_radio_color() {
   echo "Change radio color ..."
 }
 
-install_theme_color() {
-  sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
-  sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
-  echo -e "Install ${theme_color} color version ..."
-}
-
 install_compact_panel() {
   sed -i "/\$panel_style:/s/float/compact/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
   echo -e "Install compact panel version ..."
@@ -210,17 +206,43 @@ install_black() {
   echo -e "Install black version ..."
 }
 
-install_theme() {
-  for theme in "${themes[@]}"; do
-    for color in "${colors[@]}"; do
-      for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
-      done
-    done
-  done
+install_theme_color() {
+  if [[ "$theme" != '' ]]; then
+    case "$theme" in
+      -purple)
+        theme_color='purple'
+        ;;
+      -pink)
+        theme_color='pink'
+        ;;
+      -red)
+        theme_color='red'
+        ;;
+      -orange)
+        theme_color='orange'
+        ;;
+      -yellow)
+        theme_color='yellow'
+        ;;
+      -green)
+        theme_color='green'
+        ;;
+      -grey)
+        theme_color='grey'
+        ;;
+    esac
+    sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
+    sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+  fi
 }
 
-customize_theme() {
+theme_tweaks() {
+  install_package; tweaks_temp
+
+  if [[ "$panel" = "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" ]]; then
+    tweaks='true'
+  fi
+
 if [[ "$panel" == "compact" ]] ; then
   install_compact_panel
 fi
@@ -236,4 +258,14 @@ fi
 if [[ "$primary" == "true" ]] ; then
   change_radio_color
 fi
+}
+
+install_theme() {
+  for theme in "${themes[@]}"; do
+    for color in "${colors[@]}"; do
+      for size in "${sizes[@]}"; do
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+      done
+    done
+  done
 }

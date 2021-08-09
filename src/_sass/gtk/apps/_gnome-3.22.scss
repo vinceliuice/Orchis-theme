@@ -1900,6 +1900,33 @@ preferencesgroup, .geary-accounts-editor-pane {
       }
     }
   }
+
+  geary-conversation-viewer#conversation_viewer { // right side
+    list.background.conversation-listbox.content {
+      > row.activatable {
+        border: 1px solid $divider;
+        border-bottom-width: 0;
+        background-color: $base;
+
+        &:first-child {
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+      }
+
+      .geary-attachment-pane {
+        border-radius: 0 0 8px 8px;
+
+        actionbar.background {
+          background-color: transparent;
+
+          > revealer > box {
+            border-radius: 0 0 6px 6px;
+          }
+        }
+      }
+    }
+  }
 }
 
 

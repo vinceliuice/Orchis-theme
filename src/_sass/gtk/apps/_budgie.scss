@@ -88,6 +88,8 @@
     }
   }
 
+  button { border-radius: $corner-radius - $container-padding; }
+
   button.flat:not(.image-button) {
     min-height: $menuitem-size;
     padding: 0 8px;
@@ -465,9 +467,12 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 // Raven
 .raven {
   background-color: $surface;
-  margin: 8px 6px 6px;
-  border-radius: $corner-radius;
   box-shadow: $shadow-z16;
+
+  @if $panel_style == "float" {
+    margin: 8px 6px 6px;
+    border-radius: $corner-radius;
+  }
 
   > box { margin-bottom: -10px; } // remove extra space between box and .raven-header.bottom
 

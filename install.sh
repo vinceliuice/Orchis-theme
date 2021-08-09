@@ -4,7 +4,7 @@ REPO_DIR="$(dirname "$(readlink -m "${0}")")"
 source "${REPO_DIR}/core.sh"
 
 usage() {
-  cat << EOF
+cat << EOF
 Usage: $0 [OPTION]...
 
 OPTIONS:
@@ -19,14 +19,6 @@ OPTIONS:
                           3. black:    full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
   -h, --help              Show help
-
-INSTALLATION EXAMPLES:
-Install all theme variants into ~/.themes
-  $0 --dest ~/.themes
-Install standard theme variant only
-  $0 --color standard
-Install specific theme variants with different name into ~/.themes
-  $0 --dest ~/.themes --name MyTheme --color dark
 EOF
 }
 
@@ -83,42 +75,38 @@ while [[ "$#" -gt 0 ]]; do
         case "$variant" in
           default)
             themes+=("${THEME_VARIANTS[0]}")
-            theme_color='default'
             shift
             ;;
           purple)
             themes+=("${THEME_VARIANTS[1]}")
-            theme_color='purple'
             shift
             ;;
           pink)
             themes+=("${THEME_VARIANTS[2]}")
-            theme_color='pink'
             shift
             ;;
           red)
             themes+=("${THEME_VARIANTS[3]}")
-            theme_color='red'
             shift
             ;;
           orange)
             themes+=("${THEME_VARIANTS[4]}")
-            theme_color='orange'
             shift
             ;;
           yellow)
             themes+=("${THEME_VARIANTS[5]}")
-            theme_color='yellow'
             shift
             ;;
           green)
             themes+=("${THEME_VARIANTS[6]}")
-            theme_color='green'
             shift
             ;;
           grey)
             themes+=("${THEME_VARIANTS[7]}")
-            theme_color='grey'
+            shift
+            ;;
+          all)
+            themes+=("${THEME_VARIANTS[@]}")
             shift
             ;;
           -*)
@@ -206,14 +194,7 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-
-install_package; tweaks_temp
-
-if [[ "$accent" == 'true' && "$theme_color" != 'default' ]] ; then
-  install_theme_color
-fi
-
-customize_theme; install_theme
+install_theme
 
 echo
 echo "Done."
