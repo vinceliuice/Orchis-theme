@@ -2536,11 +2536,11 @@ searchbar > revealer > box {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.titlebar .linked:not(.vertical) > entry:not(:only-child) {
+.titlebar .linked:not(.vertical) > entry.search {
   border-radius: 12px;
 }
 
-.titlebar .linked:not(.vertical) > entry:not(:only-child) + button {
+.titlebar .linked:not(.vertical) > entry.search + button {
   border-radius: 12px;
   margin-left: 3px;
 }
