@@ -44,33 +44,30 @@
 
   // icon container
   .message-icon-bin {
-  padding: $container_padding*2  0px $container_padding*2 $container_padding*2;
-
-  &:rtl { padding: $container_padding*2 $container_padding*2 $container_padding*2 0px; }
+    padding: $container_padding * 3 0;
+    margin-left: $container_padding * 2;
 
     // icon size and color
     > StIcon {
-      icon-size: 32px; // 32px
-      -st-icon-style: symbolic;
+      icon-size: 36px;
+      // -st-icon-style: symbolic;
     }
 
     // fallback
     > .fallback-app-icon {
-      width: 16px;
-      height: 16px;
     }
   }
 
   // content
   .message-content {
-    padding: $container_padding + $container_margin * 2;
-    spacing: $container_margin;
+    padding: $container_padding * 2;
     color: $secondary_fg_color;
   }
 
   // title
   .message-title {
     font-weight: bold;
+    // margin-top: $container_padding;
   }
 
   // secondary container in title box
@@ -90,15 +87,15 @@
 
   // close button
   .message-close-button {
-  color: $secondary_fg_color;
-  padding: 0;
-  height: 24px;
-  width: 24px;
-  border-radius: 100px;
+    color: $secondary_fg_color;
+    padding: 0;
+    height: $menuitem-size - 4px;
+    width: $menuitem-size - 4px;
+    border-radius: $circular_radius;
 
-  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
-  &:active { color: $fg_color; background-color: $track_color; }
-  &:insensitive { color: $disabled_secondary_fg_color; }
+    &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
+    &:active { color: $fg_color; background-color: $track_color; }
+    &:insensitive { color: $disabled_secondary_fg_color; }
   }
 
   // body
@@ -114,29 +111,31 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: 16px 4px;
-  padding: 8px;
-  border-radius: 100px;
+  margin: ($container_padding * 2 + 10px) 4px;
+  padding: $container_padding * 1.5;
+  border-radius: $circular_radius;
   color: $secondary_fg_color;
-  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
   &:active { color: $fg_color; background-color: $track_color; }
   &:insensitive { color: $disabled_secondary_fg_color; }
 
-  &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
-  &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+  &:last-child:ltr { margin-right: 16px; }
+  &:last-child:rtl { margin-left: 16px; }
 }
 
 // album-art
 .media-message-cover-icon {
-  icon-size: 32px !important; // 48px
-  border-radius: $buttons_radius;
+  icon-size: 32px !important;
+  margin: 0;
+  padding: 0;
 
   // when there is no artwork
   &.fallback {
-    color: $hint_fg_color;
     background-color: $divider_color;
-    border: 1px solid transparent;
-    border-radius: $buttons_radius;
-    icon-size: 32px !important;
+    padding: 8px;
+    color: $hint_fg_color;
+    border: none;
+    border-radius: $circular_radius;
+    icon-size: 24px !important;
   }
 }

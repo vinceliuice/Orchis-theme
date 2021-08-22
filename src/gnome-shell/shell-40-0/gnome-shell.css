@@ -362,7 +362,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-content {
   padding: 6px 0;
-  margin: 0 0 12px 12px;
+  margin: 0 10px 13px 10px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
@@ -374,7 +374,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0 6px;
   color: rgba(0, 0, 0, 0.87);
   transition-duration: 100ms;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-image: none;
 }
 
@@ -483,10 +483,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-sub-menu .popup-menu-item.selected:active {
   color: rgba(0, 0, 0, 0.75);
-}
-
-.popup-sub-menu .popup-menu-item:not(:first-child):last-child {
-  border-radius: 0 0 12px 12px;
 }
 
 .popup-menu-ornament {
@@ -977,26 +973,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 12px 0px 12px 12px;
-}
-
-.message .message-icon-bin:rtl {
-  padding: 12px 12px 12px 0px;
+  padding: 18px 0;
+  margin-left: 12px;
 }
 
 .message .message-icon-bin > StIcon {
-  icon-size: 32px;
-  -st-icon-style: symbolic;
-}
-
-.message .message-icon-bin > .fallback-app-icon {
-  width: 16px;
-  height: 16px;
+  icon-size: 36px;
 }
 
 .message .message-content {
-  padding: 14px;
-  spacing: 4px;
+  padding: 12px;
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -1025,9 +1011,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message .message-close-button {
   color: rgba(0, 0, 0, 0.54);
   padding: 0;
-  height: 24px;
-  width: 24px;
-  border-radius: 100px;
+  height: 28px;
+  width: 28px;
+  border-radius: 9999px;
 }
 
 .message .message-close-button:hover, .message .message-close-button:focus {
@@ -1054,9 +1040,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  margin: 16px 4px;
-  padding: 8px;
-  border-radius: 100px;
+  margin: 22px 4px;
+  padding: 9px;
+  border-radius: 9999px;
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -1076,32 +1062,32 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-media-control:last-child:ltr {
   margin-right: 16px;
-  padding-right: 8px;
 }
 
 .message-media-control:last-child:rtl {
   margin-left: 16px;
-  padding-left: 8px;
 }
 
 .media-message-cover-icon {
   icon-size: 32px !important;
-  border-radius: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .media-message-cover-icon.fallback {
-  color: rgba(0, 0, 0, 0.38);
   background-color: rgba(0, 0, 0, 0.12);
-  border: 1px solid transparent;
-  border-radius: 12px;
-  icon-size: 32px !important;
+  padding: 8px;
+  color: rgba(0, 0, 0, 0.38);
+  border: none;
+  border-radius: 9999px;
+  icon-size: 24px !important;
 }
 
 .candidate-popup-content {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  margin: 3px 12px 12px;
+  margin: 3px 10px 13px;
   padding: 6px;
   spacing: 6px;
 }
