@@ -86,17 +86,17 @@ $system_bg_color:       if($blackness == 'true' and $variant == 'dark', #121212,
 $link_color:            $primary_color;
 $visited_link_color:    if($variant == 'light', $purple-500, $purple-200);
 
-$warning_color:         $orange_a700;
-$error_color:           $deep_orange_a700;
-$success_color:         $green_a700;
+$warning_color:         $orange-a700;
+$error_color:           $deep-orange-a700;
+$success_color:         $green-a700;
 
 $suggested_color:       $accent_color;
-$destructive_color:     $red_a200;
+$destructive_color:     $red-a200;
 
-$info_bg_color:         $green_400;
-$question_bg_color:     $blue_400;
-$warning_bg_color:      $orange_400;
-$error_bg_color:        $red_400;
+$info_bg_color:         $green-400;
+$question_bg_color:     $blue-400;
+$warning_bg_color:      $orange-400;
+$error_bg_color:        $red-400;
 
 $border_color:          if($variant == 'light', rgba($black, 0.12), rgba($white, 0.12));
 $highlight_color:       if($variant == 'light', rgba($white, 0.4),  rgba($white, 0.1));

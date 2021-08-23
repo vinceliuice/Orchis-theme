@@ -1356,7 +1356,7 @@ style "default" {
       state    = ACTIVE
       detail   = "entry"
       file     = "assets/entry-active.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1365,7 +1365,7 @@ style "default" {
       state    = INSENSITIVE
       detail   = "entry"
       file     = "assets/entry-disabled.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1373,7 +1373,7 @@ style "default" {
       function = SHADOW
       detail   = "entry"
       file     = "assets/entry.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1928,8 +1928,8 @@ style "normal_button_label" {
 }
 
 style "button" {
-  xthickness = 4
-  ythickness = 4
+  xthickness = 6
+  ythickness = 6
 
   # For the sake of sanity style buttons this way
   engine "pixmap" {
@@ -1942,7 +1942,7 @@ style "button" {
       function = BOX
       state    = NORMAL
       file     = "assets/button.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1951,7 +1951,7 @@ style "button" {
       state    = PRELIGHT
       shadow   = OUT
       file     = "assets/button-hover.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1961,7 +1961,7 @@ style "button" {
       state    = PRELIGHT
       shadow   = IN
       file     = "assets/button-active.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1969,7 +1969,7 @@ style "button" {
       function = BOX
       state    = ACTIVE
       file     = "assets/button-active.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -1977,7 +1977,7 @@ style "button" {
       function = BOX
       state    = INSENSITIVE
       file     = "assets/button-disabled.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
   }
@@ -2022,7 +2022,7 @@ style "combobox" {
       function = BOX
       state    = NORMAL
       file     = "assets/entry.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2030,7 +2030,7 @@ style "combobox" {
       function = BOX
       state    = PRELIGHT
       file     = "assets/entry-hover.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2038,7 +2038,7 @@ style "combobox" {
       function = BOX
       state    = ACTIVE
       file     = "assets/entry-active.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2046,7 +2046,7 @@ style "combobox" {
       function = BOX
       state    = INSENSITIVE
       file     = "assets/entry-disabled.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
   }
@@ -2061,6 +2061,9 @@ style "combobox_entry" {
   # Since one side of the button is missing, we need to shift the arrow a little to the right
   GtkButton::inner-border = {0, 2, 0, 0}
 
+  base[NORMAL] = @base_color
+  base[ACTIVE] = @base_color
+
   engine "pixmap" {
 
     #############
@@ -2072,7 +2075,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "entry"
       file      = "assets/combo-left-entry.png"
-      border    = {8, 8, 8, 8}
+      border    = {6, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2082,7 +2085,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "entry"
       file      = "assets/combo-left-entry-active.png"
-      border    = {8, 8, 8, 8}
+      border    = {6, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2092,7 +2095,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "entry"
       file      = "assets/combo-left-entry-disabled.png"
-      border    = {8, 8, 8, 8}
+      border    = {6, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2106,7 +2109,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "entry"
       file      = "assets/combo-right-entry.png"
-      border    = {8, 8, 8, 8}
+      border    = {6, 6, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2116,7 +2119,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "entry"
       file      = "assets/combo-right-entry-active.png"
-      border    = {8, 8, 8, 8}
+      border    = {6, 6, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2126,7 +2129,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "entry"
       file      = "assets/combo-right-entry-disabled.png"
-      border    = {8, 8, 8, 8}
+      border    = {6, 6, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2140,7 +2143,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "button"
       file      = "assets/combo-right-entry.png"
-      border    = {0, 8, 8, 8}
+      border    = {0, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2150,7 +2153,7 @@ style "combobox_entry" {
       state     = PRELIGHT
       detail    = "button"
       file      = "assets/combo-right-entry-hover.png"
-      border    = {0, 8, 8, 8}
+      border    = {0, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2160,7 +2163,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "button"
       file      = "assets/combo-right-entry-active.png"
-      border    = {0, 8, 8, 8}
+      border    = {0, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2170,7 +2173,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "button"
       file      = "assets/combo-right-entry-disabled.png"
-      border    = {0, 8, 8, 8}
+      border    = {0, 6, 6, 6}
       stretch   = TRUE
       direction = LTR
     }
@@ -2184,7 +2187,7 @@ style "combobox_entry" {
       state     = NORMAL
       detail    = "button"
       file      = "assets/combo-left-entry.png"
-      border    = {8, 0, 8, 8}
+      border    = {6, 0, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2194,7 +2197,7 @@ style "combobox_entry" {
       state     = PRELIGHT
       detail    = "button"
       file      = "assets/combo-left-entry-hover.png"
-      border    = {8, 0, 8, 8}
+      border    = {6, 0, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2204,7 +2207,7 @@ style "combobox_entry" {
       state     = ACTIVE
       detail    = "button"
       file      = "assets/combo-left-entry-active.png"
-      border    = {8, 0, 8, 8}
+      border    = {6, 0, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2214,7 +2217,7 @@ style "combobox_entry" {
       state     = INSENSITIVE
       detail    = "button"
       file      = "assets/combo-left-entry-disabled.png"
-      border    = {8, 0, 8, 8}
+      border    = {6, 0, 6, 6}
       stretch   = TRUE
       direction = RTL
     }
@@ -2502,7 +2505,7 @@ style "tool_button" {
       function = BOX
       state    = NORMAL
       file     = "assets/flat-button.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2511,7 +2514,7 @@ style "tool_button" {
       state    = PRELIGHT
       shadow   = OUT
       file     = "assets/flat-button-hover.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2521,7 +2524,7 @@ style "tool_button" {
       state    = PRELIGHT
       shadow   = IN
       file     = "assets/flat-button-active.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2529,7 +2532,7 @@ style "tool_button" {
       function = BOX
       state    = ACTIVE
       file     = "assets/flat-button-active.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2538,7 +2541,7 @@ style "tool_button" {
       state    = INSENSITIVE
       shadow   = OUT
       file     = "assets/flat-button-disabled.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
 
@@ -2547,7 +2550,7 @@ style "tool_button" {
       state    = INSENSITIVE
       shadow   = IN
       file     = "assets/button-disabled.png"
-      border   = {8, 8, 8, 8}
+      border   = {6, 6, 6, 6}
       stretch  = TRUE
     }
   }

@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /usr/bin/env bash
+
 set -ueo pipefail
 
 # Make sure that parallel is GNU parallel and not moreutils.
