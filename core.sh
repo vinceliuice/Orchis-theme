@@ -20,6 +20,11 @@ THEME_COLORS=('default' 'purple' 'pink' 'red' 'orange' 'yellow' 'green' 'grey')
 COLOR_VARIANTS=('' '-light' '-dark')
 SIZE_VARIANTS=('' '-compact')
 
+# Check command availability
+function has_command() {
+  command -v $1 > /dev/null
+}
+
 if [[ "$(command -v gnome-shell)" ]]; then
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
   if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
