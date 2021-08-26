@@ -983,6 +983,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
+.popup-menu .popup-sub-menu .popup-menu-item:insensitive {
+  color: rgba(0, 0, 0, 0.35);
+}
+
 .popup-menu .popup-sub-menu .popup-menu-item:not(:first-child):last-child {
   border-radius: 0 0 12px 12px;
 }
@@ -997,7 +1001,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px;
   color: rgba(0, 0, 0, 0.87);
   transition-duration: 100ms;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-image: none;
 }
 

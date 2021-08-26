@@ -129,6 +129,8 @@ $submenu_item_radius: $buttons_radius;
     }
 
     &.selected:active { color: rgba(black, 0.75); }
+
+    &:insensitive { color: rgba(black, 0.35); }
   }
 }
 

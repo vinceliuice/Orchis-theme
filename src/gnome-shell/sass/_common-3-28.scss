@@ -800,6 +800,8 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
 
       &.selected:active { color: rgba(black, 0.75); }
 
+      &:insensitive { color: rgba(black, 0.35); }
+
       &:not(:first-child):last-child {
         border-radius: 0 0 $buttons_radius $buttons_radius;
       }
@@ -814,7 +816,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
     padding: 6px;
     color: $fg_color;
     transition-duration: $shorter_duration;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     background-image: none;
 
     &:ltr { padding-right: 1.5em; padding-left: 0; }
@@ -861,6 +863,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
     }
 
     &.selected:active { color: $fg_color; }
+
     &:insensitive { color: $disabled_fg_color; }
   }
 
