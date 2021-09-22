@@ -1,7 +1,5 @@
 /* Popovers/Menus */
 
-$popover_arrow_height: 12px;
-
 //.the popover itself
 .popup-menu-boxpointer {
   -arrow-border-radius: 3px;
@@ -9,12 +7,8 @@ $popover_arrow_height: 12px;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 64px;
-  -arrow-rise: 6px;
+  -arrow-rise: 0;
   -arrow-box-shadow: none; //dreaming. bug #689995
-  margin: 0;
-  background-image: none;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 // container of the popover menu
@@ -31,7 +25,7 @@ $popover_arrow_height: 12px;
 
 .popup-menu-content {
   padding: $container_padding 0;
-  margin: 0 10px 13px 10px;
+  margin: $container_padding 10px 13px 10px;
   background-color: $menu_bg_color;
   border-radius: $buttons_radius;
   box-shadow: 0 3px 8px rgba(black, 0.2);
