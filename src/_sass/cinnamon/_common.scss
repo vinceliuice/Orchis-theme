@@ -1829,7 +1829,7 @@ $menu_item_radius: $window-radius - $container-padding;
 // Applets (applet.js)
 //
 .applet {
-  &-separator { padding: 1px 4px; }
+  &-separator { padding: 1px $container-padding / 2; }
 
   &-separator-line {
     width: 1px;
@@ -1837,14 +1837,14 @@ $menu_item_radius: $window-radius - $container-padding;
   }
 
   &-box {
-    padding: 0 8px;
+    padding: 0 $container-padding / 2;
     color: $panel_fg;
     text-shadow: none;
     transition-duration: 100ms;
     border-radius: 0;
 
     &.vertical {
-      padding: 8px 0;
+      padding: $container-padding / 2 0;
     }
 
     &:hover {
