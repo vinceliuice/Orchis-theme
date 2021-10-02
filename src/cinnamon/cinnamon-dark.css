@@ -2030,7 +2030,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box {
-  padding: 0 8px;
+  padding: 0 4px;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
   transition-duration: 100ms;
@@ -2038,7 +2038,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box.vertical {
-  padding: 8px 0;
+  padding: 4px 0;
 }
 
 .applet-box:hover {
