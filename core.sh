@@ -152,9 +152,9 @@ install() {
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
 
   if [[ "$tweaks" == 'true' ]]; then
-    sassc $SASSC_OPT "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.scss"            "$THEME_DIR/cinnamon/cinnamon.css"
+    sassc $SASSC_OPT "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}$size.scss"       "$THEME_DIR/cinnamon/cinnamon.css"
   else
-    cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}.css"                        "$THEME_DIR/cinnamon/cinnamon.css"
+    cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}$size.css"                   "$THEME_DIR/cinnamon/cinnamon.css"
   fi
 
   cp -r "$SRC_DIR/cinnamon/thumbnail${ELSE_DARK:-}.png"                         "$THEME_DIR/cinnamon/thumbnail.png"

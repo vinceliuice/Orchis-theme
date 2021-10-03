@@ -271,7 +271,7 @@ StScrollBar {
 
 $menu_bg: if($variant=='light', rgba($base, 0.95), rgba($background, 0.95));
 $sub_menu_bg: if($variant == 'light', #555555, #eaeaea);
-$menu_item_radius: $window-radius - $container-padding;
+$menu_item_radius: $corner-radius - $container-padding;
 
 .menu,
 .popup-menu,
@@ -279,7 +279,7 @@ $menu_item_radius: $window-radius - $container-padding;
   padding: $container-padding / 2;
   color: $text;
   background-color: $menu_bg;
-  border-radius: $window-radius;
+  border-radius: $corner-radius;
   margin: $container-padding;
   box-shadow: 0 5px 12px rgba(black, 0.35);
 
@@ -1149,6 +1149,7 @@ $menu_item_radius: $window-radius - $container-padding;
 .menu {
   &-favorites-box {
     margin: auto;
+    margin-bottom: $container-padding;
     padding: $container-padding;
     transition-duration: 300;
     background-color: rgba($text, 0.05);
@@ -1170,17 +1171,17 @@ $menu_item_radius: $window-radius - $container-padding;
   &-places {
     &-box {
       margin: auto;
-      padding: $container-padding*1.5;
+      padding: $container-padding * 1.5;
       border: 1px solid rgba(0,0,0,0);
     }
 
-    &-button { padding: $container-padding*1.5; }
+    &-button { padding: $container-padding * 1.5; }
   }
 
-  &-categories-box { padding: $container-padding*1.5 $container-padding*5; }
+  &-categories-box { padding: $container-padding * 1.5 $container-padding * 5; }
 
   &-applications-inner-box,
-  &-applications-outer-box { padding: $container-padding*1.5 $container-padding*1.5 0 $container-padding*1.5; }
+  &-applications-outer-box { padding: $container-padding * 1.5 $container-padding * 1.5 0 $container-padding * 1.5; }
 
   &-application-button {
     padding: $container-padding;
@@ -1204,7 +1205,7 @@ $menu_item_radius: $window-radius - $container-padding;
   }
 
   StScrollView.menu-application-button { // extracted submenu container
-    padding: $container-padding/2 0;
+    padding: $container-padding / 2 0;
     border-radius: $corner-radius;
     background-color: $sub_menu_bg;
     color: on($sub_menu_bg);
@@ -1212,7 +1213,7 @@ $menu_item_radius: $window-radius - $container-padding;
     .popup-menu-item {
       padding: 0;
       spacing: 0;
-      margin: 0 $container-padding/2;
+      margin: 0 $container-padding / 2;
       border-radius: $corner-radius;
       color: on($sub_menu_bg);
 
@@ -1272,7 +1273,7 @@ $menu_item_radius: $window-radius - $container-padding;
 
   &-selected-app-title { font-weight: bold; }
 
-  &-selected-app-description { max-width: 150px; }
+  &-selected-app-description { max-width: 150px; margin-bottom: $container-padding; }
 
   &-search-box:ltr { padding-left: 30px; }
   &-search-box-rtl { padding-right: 30px; }
@@ -1837,14 +1838,14 @@ $menu_item_radius: $window-radius - $container-padding;
   }
 
   &-box {
-    padding: 0 $container-padding / 2;
+    padding: 0 $container-padding;
     color: $panel_fg;
     text-shadow: none;
     transition-duration: 100ms;
     border-radius: 0;
 
     &.vertical {
-      padding: $container-padding / 2 0;
+      padding: $container-padding 0;
     }
 
     &:hover {

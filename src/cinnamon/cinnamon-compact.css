@@ -72,7 +72,7 @@ stage {
 
 .modal-dialog-button-box .modal-dialog-button {
   min-height: 24px;
-  padding: 6px 30px;
+  padding: 4px 20px;
   transition-duration: 100ms;
   border-radius: 12px;
   color: rgba(255, 255, 255, 0.7);
@@ -99,8 +99,8 @@ stage {
 }
 
 #menu-search-entry, .notification StEntry, .menu #notification StEntry, .popup-menu #notification StEntry, #notification StEntry {
-  padding: 3px 12px;
-  min-height: 24px;
+  padding: 2px 8px;
+  min-height: 22px;
   caret-size: 1px;
   selection-background-color: #1A73E8;
   selected-color: white;
@@ -126,7 +126,7 @@ stage {
 #menu-search-entry StIcon.capslock-warning, .notification StEntry StIcon.capslock-warning, .menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning, #notification StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #F4B400;
-  padding: 0 6px;
+  padding: 0 4px;
 }
 
 StScrollView.vfade {
@@ -279,10 +279,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #Tooltip {
   border-radius: 9999px;
-  padding: 6px 12px;
+  padding: 4px 8px;
   background-color: rgba(54, 54, 54, 0.9);
   color: white;
-  margin: 6px;
+  margin: 4px;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   font-size: 1em;
   font-weight: normal;
@@ -292,11 +292,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu,
 .popup-menu,
 .popup-combo-menu {
-  padding: 3px;
+  padding: 2px;
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
-  margin: 6px;
+  margin: 4px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
 }
 
@@ -308,7 +308,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-sub-menu,
 .popup-menu .popup-sub-menu,
 .popup-combo-menu .popup-sub-menu {
-  border-radius: 6px;
+  border-radius: 8px;
   background-gradient-direction: none;
   box-shadow: none;
   background-color: #555555;
@@ -339,15 +339,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-menu-content,
 .popup-menu .popup-menu-content,
 .popup-combo-menu .popup-menu-content {
-  padding: 3px;
+  padding: 2px;
 }
 
 .menu .popup-menu-item,
 .popup-menu .popup-menu-item,
 .popup-combo-menu .popup-menu-item {
-  padding: 6px 12px;
-  spacing: 12px;
-  border-radius: 6px;
+  padding: 4px 8px;
+  spacing: 8px;
+  border-radius: 8px;
 }
 
 .menu .popup-menu-item:hover, .menu .popup-menu-item:active,
@@ -399,7 +399,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-combo-menu {
-  padding: 12px;
+  padding: 8px;
 }
 
 .popup-combobox-item {
@@ -438,8 +438,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel {
   font-weight: bold;
-  height: 36px;
-  width: 42px;
+  height: 32px;
+  width: 36px;
 }
 
 #panel:highlight {
@@ -484,12 +484,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panelRight:ltr {
-  padding-left: 6px;
+  padding-left: 4px;
   spacing: 0px;
 }
 
 #panelRight:rtl {
-  padding-right: 6px;
+  padding-right: 4px;
   spacing: 0px;
 }
 
@@ -871,10 +871,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #notification {
   border-radius: 18px;
-  padding: 12px;
-  spacing-rows: 9px;
-  spacing-columns: 9px;
-  margin-from-right-edge-of-screen: 18px;
+  padding: 8px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
+  margin-from-right-edge-of-screen: 12px;
   width: 28em;
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(255, 255, 255, 0.8);
@@ -883,7 +883,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #notification .notification-button, #notification .notification-icon-button {
-  padding: 6px;
+  padding: 4px;
 }
 
 .menu #notification, .popup-menu #notification {
@@ -904,11 +904,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu #notification .notification-button, .menu #notification .notification-icon-button, .popup-menu #notification .notification-button, .popup-menu #notification .notification-icon-button {
-  padding: 6px;
+  padding: 4px;
 }
 
 #notification.multi-line-notification {
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -921,19 +921,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #notification-scrollview:ltr > StScrollBar {
-  padding-left: 6px;
+  padding-left: 4px;
 }
 
 #notification-scrollview:rtl > StScrollBar {
-  padding-right: 6px;
+  padding-right: 4px;
 }
 
 #notification-body {
-  spacing: 6px;
+  spacing: 4px;
 }
 
 #notification-actions {
-  spacing: 9px;
+  spacing: 6px;
 }
 
 .notification-with-image {
@@ -942,7 +942,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .notification-button, .notification-icon-button {
-  padding: 6px;
+  padding: 4px;
 }
 
 .notification-icon-button > StIcon {
@@ -1069,7 +1069,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .run-dialog {
-  padding: 6px 12px;
+  padding: 4px 8px;
   background-color: rgba(54, 54, 54, 0.9);
   border-radius: 12px;
   color: white;
@@ -1102,7 +1102,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .run-dialog-entry {
   width: 21em;
-  padding: 3px 12px;
+  padding: 2px 8px;
   border-radius: 12px;
   caret-color: white;
   selected-color: white;
@@ -1267,8 +1267,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu-favorites-box {
   margin: auto;
-  margin-bottom: 6px;
-  padding: 6px;
+  margin-bottom: 4px;
+  padding: 4px;
   transition-duration: 300;
   background-color: rgba(0, 0, 0, 0.05);
   border: none;
@@ -1276,7 +1276,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-favorites-button {
-  padding: 9px;
+  padding: 6px;
   border: none;
   border-radius: 12px;
 }
@@ -1288,24 +1288,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu-places-box {
   margin: auto;
-  padding: 9px;
+  padding: 6px;
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .menu-places-button {
-  padding: 9px;
+  padding: 6px;
 }
 
 .menu-categories-box {
-  padding: 9px 30px;
+  padding: 6px 20px;
 }
 
 .menu-applications-inner-box, .menu-applications-outer-box {
-  padding: 9px 9px 0 9px;
+  padding: 6px 6px 0 6px;
 }
 
 .menu-application-button {
-  padding: 6px;
+  padding: 4px;
   border-radius: 12px;
   border: none;
 }
@@ -1317,7 +1317,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu-application-button-selected {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.12);
-  padding: 6px;
+  padding: 4px;
   border-radius: 12px;
   border: none;
 }
@@ -1327,15 +1327,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-application-button-label:ltr {
-  padding-left: 6px;
+  padding-left: 4px;
 }
 
 .menu-application-button-label:rtl {
-  padding-right: 6px;
+  padding-right: 4px;
 }
 
 .menu StScrollView.menu-application-button {
-  padding: 3px 0;
+  padding: 2px 0;
   border-radius: 12px;
   background-color: #555555;
   color: white;
@@ -1344,17 +1344,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu StScrollView.menu-application-button .popup-menu-item {
   padding: 0;
   spacing: 0;
-  margin: 0 3px;
+  margin: 0 2px;
   border-radius: 12px;
   color: white;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item:ltr {
-  padding-left: 6px;
+  padding-left: 4px;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item:rtl {
-  padding-right: 6px;
+  padding-right: 4px;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item:active {
@@ -1368,20 +1368,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item StLabel:ltr {
-  padding: 6px 0 6px 6px;
+  padding: 4px 0 4px 4px;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item StLabel:rtl {
-  padding: 6px 6px 6px 0;
+  padding: 4px 4px 4px 0;
 }
 
 .menu-category-button {
-  padding: 6px;
+  padding: 4px;
   border-radius: 12px;
 }
 
 .menu-category-button-selected {
-  padding: 6px;
+  padding: 4px;
 }
 
 .menu-category-button-hover, .menu-category-button-selected {
@@ -1391,16 +1391,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .menu-category-button-greyed {
-  padding: 6px;
+  padding: 4px;
   color: rgba(0, 0, 0, 0.38);
 }
 
 .menu-category-button-label:ltr {
-  padding-left: 6px;
+  padding-left: 4px;
 }
 
 .menu-category-button-label:rtl {
-  padding-right: 6px;
+  padding-right: 4px;
 }
 
 .menu-selected-app-box {
@@ -1421,7 +1421,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu-selected-app-description {
   max-width: 150px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .menu-search-box:ltr {
@@ -1522,19 +1522,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .panel-bottom .window-list-item-box StLabel {
-  padding-left: 6px;
+  padding-left: 4px;
 }
 
 .panel-top .window-list-item-box StLabel {
-  padding-left: 6px;
+  padding-left: 4px;
 }
 
 .panel-left .window-list-item-box StLabel {
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 .panel-right .window-list-item-box StLabel {
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 .panel-top .window-list-item-box {
@@ -1637,8 +1637,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .window-list-preview {
-  padding: 12px;
-  spacing: 6px;
+  padding: 8px;
+  spacing: 4px;
   border: none;
   background-color: #FFFFFF;
   border-radius: 12px;
@@ -1655,13 +1655,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grouped-window-list-thumbnail-menu {
-  padding: 6px;
+  padding: 4px;
 }
 
 .grouped-window-list-thumbnail-menu .item-box {
-  padding: 6px;
+  padding: 4px;
   border-radius: 12px;
-  spacing: 6px;
+  spacing: 4px;
   margin: 1px;
 }
 
@@ -1705,7 +1705,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0;
   color: rgba(255, 255, 255, 0.6);
   border-radius: 0;
-  spacing: 6px;
+  spacing: 4px;
   border-bottom: 2px solid transparent;
 }
 
@@ -1861,8 +1861,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .sound-player-overlay {
   width: 290px;
   height: 80px;
-  padding: 12px 18px;
-  spacing: 6px;
+  padding: 8px 12px;
+  spacing: 4px;
   background-color: rgba(0, 0, 0, 0.45);
   border: none;
   border-radius: 0 0 12px 12px;
@@ -1874,7 +1874,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 16px;
   height: 16px;
   padding: 8px;
-  margin: 0 6px 6px;
+  margin: 0 4px 4px;
   color: white;
   border-radius: 9999px;
   border: none;
@@ -1899,7 +1899,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .sound-player-overlay StLabel {
-  padding: 0 6px;
+  padding: 0 4px;
 }
 
 .sound-player-overlay StBoxLayout {
@@ -2023,7 +2023,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-separator {
-  padding: 1px 3px;
+  padding: 1px 2px;
 }
 
 .applet-separator-line {
@@ -2032,7 +2032,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box {
-  padding: 0 6px;
+  padding: 0 4px;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
   transition-duration: 100ms;
@@ -2040,7 +2040,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .applet-box.vertical {
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 .applet-box:hover {
