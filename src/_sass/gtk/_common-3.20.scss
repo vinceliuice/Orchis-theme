@@ -1360,14 +1360,17 @@ headerbar {
       min-width: 120px;
       padding: 0;
 
-      label { margin-right: 12px; }
-      image { margin-left: 12px; }
+      > stack > box {
+        padding: 0 $container-padding * 2;
+
+        &.narrow {
+          font-size: 10px;
+
+          image { margin-top: $container-padding / 2; }
+        }
+      }
 
       &:focus { box-shadow: none; }
-    }
-
-    > button.popup {
-      label, image { min-height: 0; }
     }
 
     viewswitchertitle > squeezer {

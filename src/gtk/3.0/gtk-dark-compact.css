@@ -2717,20 +2717,20 @@ headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-acti
   padding: 0;
 }
 
-headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) label {
-  margin-right: 12px;
+headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) > stack > box {
+  padding: 0 8px;
 }
 
-headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) image {
-  margin-left: 12px;
+headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) > stack > box.narrow {
+  font-size: 10px;
+}
+
+headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action) > stack > box.narrow image {
+  margin-top: 2px;
 }
 
 headerbar.windowhandle viewswitcher button:not(.titlebutton):not(.suggested-action):not(.destructive-action):focus {
   box-shadow: none;
-}
-
-headerbar.windowhandle > button.popup label, headerbar.windowhandle > button.popup image {
-  min-height: 0;
 }
 
 headerbar.windowhandle viewswitchertitle > squeezer {
