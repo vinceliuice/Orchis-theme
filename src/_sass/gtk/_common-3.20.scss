@@ -140,7 +140,7 @@
   // &:hover, &:selected { border-radius: $corner-radius; }
 
   &:selected {
-    @extend %selected_items_primary;
+    @extend %selected_items;
 
     &:hover { box-shadow: none; }
   }
@@ -1791,10 +1791,12 @@ popover.background {
 }
 
 notebook {
+  background-color: $base;
+
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
 
-  &, &.frame {
+  .background.csd &, &.frame {
     background-color: $base;
     border-radius: $corner-radius;
   }

@@ -343,3 +343,16 @@ window.background.csd {
 //
 // LibreOffice
 //
+
+#combobox {
+  background-color: $base;
+}
+
+#gtk-combobox-popup-menu {
+  .view {
+    &:selected, &:hover {
+      background-image: image($primary);
+      color: on($primary);
+    }
+  }
+}
