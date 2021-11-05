@@ -4330,7 +4330,7 @@ FIXME this is really an API */
 @define-color text_view_bg #1d1d1d;
 @define-color budgie_tasklist_indicator_color white;
 @define-color budgie_tasklist_indicator_color_active white;
-@define-color budgie_tasklist_indicator_color_active_window #989898;
+@define-color budgie_tasklist_indicator_color_active_window rgba(190, 190, 190, 0.839);
 @define-color budgie_tasklist_indicator_color_attention #FDD633;
 @define-color STRAWBERRY_100 #FF9262;
 @define-color STRAWBERRY_300 #FF793E;

@@ -2090,4 +2090,10 @@ window.background.csd.unified {
       border-radius: 0;
     }
   }
+
+  > deck > .view > notebook {
+    > header.top {
+      border-radius: 0;
+    }
+  }
 }

@@ -14,13 +14,15 @@
  ***************/
 .xfce4-panel.background {
   border: none; // Sadly the border is hard-coded
+  border-color: transparent;
   background-color: $panel;
   color: on($panel, secondary);
   font-weight: 500;
 
-  button {
+  button, button.flat {
     @extend %button-flat;
     @extend %button-on-dark;
+    color: on($panel, secondary);
 
     min-height: 16px;
     min-width: 16px;
@@ -29,9 +31,10 @@
   }
 
   .tasklist button {
+    color: on($panel, secondary);
     border-image: image(transparent) 0 0 2 / 0 0 2px;
 
-    &:checked { border-image: image(currentColor) 0 0 2 / 0 0 2px; }
+    &:checked { border-image: image($primary) 0 0 2 / 0 0 2px; }
 
     image { padding: 4px; }
   }

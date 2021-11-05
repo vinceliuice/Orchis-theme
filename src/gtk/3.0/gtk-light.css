@@ -1702,7 +1702,7 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   }
 }
 
-.xfce4-panel.background button, .raven-mpris button.image-button, .mate-panel-menu-bar button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
+.xfce4-panel.background button, .xfce4-panel.background button.flat, .raven-mpris button.image-button, .mate-panel-menu-bar button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1809,7 +1809,7 @@ button:drop(active) {
 .budgie-polkit-dialog .linked.horizontal > button,
 .budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, .nautilus-window.background.csd notebook > header tab button.flat, .nautilus-window.background.csd notebook > header tab:checked button.flat, .nautilus-window.background.csd notebook > header tab:active button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) button.circular, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable button.circular, treeview.view header button button.circular, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) header button button.circular, filechooser stack.view scrolledwindow treeview.view header button button.circular, row.activatable button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
-.menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .raven stackswitcher.linked > button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
+.menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .xfce4-panel.background button.flat, .raven stackswitcher.linked > button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button, layouttabbar button, filechooser #pathbarbox > stack > box > button, messagedialog.csd .dialog-action-box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), popover.background.menu button,
 popover.background button.model, .caja-pathbar button,
 .path-bar.linked:not(.vertical) > button, .nemo-window .primary-toolbar button:not(.text-button), headerbar button:not(.suggested-action):not(.destructive-action), toolbar button, combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
@@ -7037,6 +7037,10 @@ window.background.csd.unified.fullscreen > decoration-overlay {
   border-radius: 0;
 }
 
+window.background.csd.unified > deck > .view > notebook > header.top, filechooser stack.view scrolledwindow window.background.csd.unified > deck > treeview.view > notebook > header.top, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow window.background.csd.unified > deck > treeview.view:not(.progressbar):not(.trough) > notebook > header.top {
+  border-radius: 0;
+}
+
 /*********
  * Tilix *
  *********/
@@ -7479,7 +7483,7 @@ UnityPanelWidget:backdrop,
 }
 
 .mate-panel-menu-bar {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(31, 31, 31, 0.65);
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
@@ -8227,7 +8231,7 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-panel {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(31, 31, 31, 0.65);
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
@@ -8641,12 +8645,14 @@ calendar.raven-calendar:selected {
  ***************/
 .xfce4-panel.background {
   border: none;
-  background-color: rgba(0, 0, 0, 0.6);
+  border-color: transparent;
+  background-color: rgba(31, 31, 31, 0.65);
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
-.xfce4-panel.background button {
+.xfce4-panel.background button, .xfce4-panel.background button.flat {
+  color: rgba(255, 255, 255, 0.7);
   min-height: 16px;
   min-width: 16px;
   padding: 0;
@@ -8654,11 +8660,12 @@ calendar.raven-calendar:selected {
 }
 
 .xfce4-panel.background .tasklist button {
+  color: rgba(255, 255, 255, 0.7);
   border-image: image(transparent) 0 0 2/0 0 2px;
 }
 
 .xfce4-panel.background .tasklist button:checked {
-  border-image: image(currentColor) 0 0 2/0 0 2px;
+  border-image: image(#1A73E8) 0 0 2/0 0 2px;
 }
 
 .xfce4-panel.background .tasklist button image {
@@ -8937,7 +8944,7 @@ FIXME this is really an API */
 @define-color text_view_bg #FFFFFF;
 @define-color budgie_tasklist_indicator_color white;
 @define-color budgie_tasklist_indicator_color_active white;
-@define-color budgie_tasklist_indicator_color_active_window rgba(187, 187, 187, 0.816);
+@define-color budgie_tasklist_indicator_color_active_window rgba(190, 190, 190, 0.839);
 @define-color budgie_tasklist_indicator_color_attention #F4B400;
 @define-color STRAWBERRY_100 #FF9262;
 @define-color STRAWBERRY_300 #FF793E;

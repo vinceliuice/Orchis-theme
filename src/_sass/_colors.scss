@@ -105,8 +105,8 @@ $scrim-inverse:                         rgba(white, 0.1);
 $titlebar:                              if($topbar == 'dark', background(g), background(a));
 $titlebar-backdrop:                     if($topbar == 'dark', background(g), background(a));
 
-$panel-solid:                           if($blackness == 'true' and $variant == 'dark', #000000, #1F1F1F); // for Unity panel which doesn't allow translucent colors
-$panel:                                 if($topbar == 'dark', $panel-solid, $scrim);
+$panel-solid:                           if($blackness == 'true', black, #1F1F1F); // for Unity panel which doesn't allow translucent colors
+$panel:                                 if($opacity == 'default', rgba($panel-solid, 0.65), $panel-solid);
 
 $button:                                if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
 $entry:                                 if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
