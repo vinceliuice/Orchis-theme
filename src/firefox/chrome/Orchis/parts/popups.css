@@ -9,7 +9,7 @@ menupopup {
 	background: var(--gnome-menu-background) !important;
 	border: 1px solid var(--gnome-menu-border-color) !important;
 	border-radius: 9px;
-	padding: 4px 0 !important;
+	padding: 6px 0 !important;
 	color: var(--gnome-button-color) !important;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
 	transition: none !important;
@@ -37,7 +37,7 @@ menupopup menupopup {
 #PlacesToolbar menupopup {
 	background: none !important;
 	padding: 3px 6px 8px !important;
-	margin-top: 0 !important;
+	margin: 0 0 0 -6px !important;
 	border: none !important;
 	box-shadow: none !important;
 }
