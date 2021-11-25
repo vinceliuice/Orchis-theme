@@ -161,3 +161,39 @@ $icon_padding: 9px;
     }
   }
 }
+
+//
+// Pop_OS cosmic widget styling
+//
+
+.cosmic-solid-bg {
+  background-color: $system_bg_color;
+}
+
+.cosmic-dock {
+  #dock {
+    background-color: transparent;
+
+    .dash-background {
+      background-color: $panel_bg_color;
+    }
+  }
+
+  &.extended {
+    #dash {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 0;
+
+      .dash-background {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

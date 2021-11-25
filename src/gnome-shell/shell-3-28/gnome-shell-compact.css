@@ -4045,3 +4045,31 @@ StWidget.focused .app-well-app-running-dot {
 .popup-menu .search-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon {
   color: rgba(0, 0, 0, 0.87);
 }
+
+.cosmic-solid-bg {
+  background-color: #222222;
+}
+
+.cosmic-dock #dock {
+  background-color: transparent;
+}
+
+.cosmic-dock #dock .dash-background {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cosmic-dock.extended #dash {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0;
+}
+
+.cosmic-dock.extended #dash .dash-background {
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
