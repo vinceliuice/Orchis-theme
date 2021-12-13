@@ -25,18 +25,6 @@ function has_command() {
   command -v $1 > /dev/null
 }
 
-if [[ "$(command -v gnome-shell)" ]]; then
-  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-    GS_VERSION="new"
-  else
-    GS_VERSION="old"
-  fi
-  else
-    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-    GS_VERSION="new"
-fi
-
 install() {
   local dest="$1"
   local name="$2"
@@ -252,24 +240,47 @@ theme_tweaks() {
     tweaks='true'
   fi
 
-if [[ "$panel" == "compact" ]] ; then
-  install_compact_panel
-fi
+  if [[ "$panel" == "compact" ]] ; then
+    install_compact_panel
+  fi
 
-if [[ "$opacity" == "solid" ]] ; then
-  install_solid
-fi
+  if [[ "$opacity" == "solid" ]] ; then
+    install_solid
+  fi
 
-if [[ "$blackness" == "true" ]] ; then
-  install_black
-fi
+  if [[ "$blackness" == "true" ]] ; then
+    install_black
+  fi
 
-if [[ "$primary" == "true" ]] ; then
-  change_radio_color
-fi
+  if [[ "$primary" == "true" ]] ; then
+    change_radio_color
+  fi
+}
+
+check_shell() {
+  if [[ "$shell" == "old" ]]; then
+    GS_VERSION="old"
+    echo "Install for old gnome-shell version"
+  elif [[ "$shell" == "new" ]]; then
+    GS_VERSION="new"
+    echo "Install for new gnome-shell version"
+  elif [[ "$(command -v gnome-shell)" ]]; then
+    SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
+    echo "Your gnome-shell version is $(gnome-shell --version)"
+    if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+      GS_VERSION="new"
+    else
+      GS_VERSION="old"
+    fi
+    else
+      echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+      GS_VERSION="new"
+  fi
 }
 
 install_theme() {
+  check_shell
+
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do

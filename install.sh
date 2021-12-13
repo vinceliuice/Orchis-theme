@@ -18,6 +18,9 @@ OPTIONS:
                           2. compact:  no floating panel variant
                           3. black:    full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
+  --shell                 install gnome-shell version [old|new]
+                          1. old:      gnome-shell version < 40.0
+                          2. new:      gnome-shell version >= 40.0
   -h, --help              Show help
 EOF
 }
@@ -36,6 +39,29 @@ while [[ "$#" -gt 0 ]]; do
     -n|--name)
       _name="$2"
       shift 2
+      ;;
+    --shell)
+      shift
+      for variant in $@; do
+        case "$variant" in
+          old)
+            shell="old"
+            shift
+            ;;
+          new)
+            shell="new"
+            shift
+            ;;
+          -*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized shell variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
       ;;
     --tweaks)
       shift
@@ -163,7 +189,7 @@ while [[ "$#" -gt 0 ]]; do
             break
             ;;
           *)
-            echo "ERROR: Unrecognized size variant '${1:-}'."
+            echo "ERROR: Unrecognized size variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -175,7 +201,7 @@ while [[ "$#" -gt 0 ]]; do
       exit 0
       ;;
     *)
-      echo "ERROR: Unrecognized installation option '${1:-}'."
+      echo "ERROR: Unrecognized installation option '$1'."
       echo "Try '$0 --help' for more information."
       exit 1
       ;;

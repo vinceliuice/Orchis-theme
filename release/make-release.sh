@@ -43,7 +43,7 @@ done
 cd ..
 
 
-./install.sh -t all -d $THEME_DIR
+./install.sh -t all -d $THEME_DIR --shell new
 
 cd $THEME_DIR && Tar_themes && Clear_theme
 
