@@ -1,3 +1,0 @@
-version=4
-opts="uversionmangle=s/-//g,oversionmangle=s/^/0~/,filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/orchis-gtk-theme-$1\.tar\.gz/" \
-   https://github.com/vinceliuice/Orchis-theme/tags .*/v?(\d\S*)\.tar\.gz
