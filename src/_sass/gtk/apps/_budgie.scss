@@ -57,6 +57,20 @@
     background-color: $fill;
   }
 
+  treeview.view.sidebar { //AppMenu (Elementary) old version
+    // min-height: 36px;
+    background: none;
+    border-right: none;
+    color: $text;
+    padding: $container-padding / 2;
+
+    // label { padding: $container-padding / 2 $container-padding * 1.5; }
+
+    &:hover { background-color: $overlay-hover; }
+
+    &:selected { background-color: $overlay-active; }
+  }
+
   // AppMenu (Elementary)
   scrolledwindow.sidebar:not(.categories) {
     background-color: $fill;
@@ -587,6 +601,43 @@ calendar.raven-calendar {
     padding: ($large-size - 24px) / 2;
 
     @extend %button-on-dark;
+  }
+}
+
+// notification list
+.raven-notifications-view {
+  > .raven-background > viewport.frame {
+    padding: 0; // reset padding for full-width list node
+
+    > list > row.activatable {
+      margin-left: -$container-padding;
+      margin-right: -$container-padding / 2;
+
+      .raven-notifications-group-header { padding: 0 $container-padding * 2; }
+
+      // sub-list rows grouping
+      list {
+        padding: $container-padding;
+        background: none;
+
+        > row.activatable {
+          border: none;
+          padding: $container-padding $container-padding $container-padding $container-padding * 2;
+          margin: $container-padding / 2;
+          border-radius: $corner-radius;
+          background-color: $fill;
+
+          &:hover, &:selected {
+            background-color: $divider;
+          }
+        }
+      }
+
+      &:selected, &:selected:hover, &:hover, &:active, &:focus {
+        background: none;
+        box-shadow: none;
+      }
+    }
   }
 }
 
