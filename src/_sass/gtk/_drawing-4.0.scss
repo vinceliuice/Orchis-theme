@@ -177,14 +177,7 @@
   }
 
   background-size: 200% 70%;
-
-  background-image:
-    radial-gradient(
-      farthest-side at $p,
-      rgba($primary, .24) 99%,
-      rgba($primary, 0) 100%
-    );
-
+  background-image: radial-gradient( farthest-side at $p, $fill 99%, transparent 100%);
   background-repeat: no-repeat;
   background-position: $_position;
 

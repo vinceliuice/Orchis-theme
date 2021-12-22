@@ -626,10 +626,6 @@ frame.gedit-map-frame > border {
    &:only-child {
      border-radius: $corner-radius;
    }
-
-   &:focus {
-     box-shadow: inset 0 0 0 2px $overlay-focus;
-   }
  }
 
  %sidebar_row {

@@ -220,7 +220,7 @@
   background-image: -gtk-gradient(radial,
                                   $_position, 0,
                                   $_position, 0.75,
-                                  to(rgba($primary, 0.24)),
+                                  to($fill),
                                   to(transparent));
 
   background-repeat: no-repeat;

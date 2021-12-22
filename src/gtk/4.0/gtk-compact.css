@@ -3064,7 +3064,7 @@ stack scrolledwindow.frame viewport.frame list {
 
 overshoot.top {
   background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at top, rgba(26, 115, 232, 0.24) 99%, rgba(26, 115, 232, 0) 100%);
+  background-image: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
   background-position: center top;
   background-color: transparent;
@@ -3074,7 +3074,7 @@ overshoot.top {
 
 overshoot.bottom {
   background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at bottom, rgba(26, 115, 232, 0.24) 99%, rgba(26, 115, 232, 0) 100%);
+  background-image: radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-color: transparent;
@@ -3084,7 +3084,7 @@ overshoot.bottom {
 
 overshoot.left {
   background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at left, rgba(26, 115, 232, 0.24) 99%, rgba(26, 115, 232, 0) 100%);
+  background-image: radial-gradient(farthest-side at left, rgba(0, 0, 0, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
   background-position: left center;
   background-color: transparent;
@@ -3094,7 +3094,7 @@ overshoot.left {
 
 overshoot.right {
   background-size: 200% 70%;
-  background-image: radial-gradient(farthest-side at right, rgba(26, 115, 232, 0.24) 99%, rgba(26, 115, 232, 0) 100%);
+  background-image: radial-gradient(farthest-side at right, rgba(0, 0, 0, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
   background-position: right center;
   background-color: transparent;

@@ -1706,6 +1706,18 @@ popover.background {
     border-radius: $corner-radius;
   }
 
+  &.combo {
+    padding: $container-padding;
+
+    > scrolledwindow > viewport.frame > list {
+      > row.activatable {
+        border-radius: $corner-radius - $container-padding;
+        margin: 2px;
+        padding: $container-padding;
+      }
+    }
+  }
+
   > stack { margin: -4px; } // remove extra padding from menu style popovers
 
   > toolbar { margin: -2px; }
@@ -2776,15 +2788,15 @@ scrolledwindow {
   }
 
   // Overflow indication, works similarly to the overshoot, the size if fixed tho.
-  @at-root undershoot {
-    &.top { @include undershoot(top); }
-
-    &.bottom { @include undershoot(bottom); }
-
-    &.left { @include undershoot(left); }
-
-    &.right { @include undershoot(right); }
-  }
+  // @at-root undershoot {
+  //   &.top { @include undershoot(top); }
+  //
+  //   &.bottom { @include undershoot(bottom); }
+  //
+  //   &.left { @include undershoot(left); }
+  //
+  //   &.right { @include undershoot(right); }
+  // }
 
   @at-root junction { // the small square between two scrollbars
     border-style: solid none none solid;
