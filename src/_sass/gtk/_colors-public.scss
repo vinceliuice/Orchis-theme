@@ -104,11 +104,11 @@ FIXME this is really an API */
 // Budgie-desktop specific indicator colours
 
 // unfocused window 'dot(s)'
-@define-color budgie_tasklist_indicator_color #{"" + white};
+@define-color budgie_tasklist_indicator_color #{"" + on($panel, secondary)};
 // focused window 'line'
-@define-color budgie_tasklist_indicator_color_active #{"" + white};
+@define-color budgie_tasklist_indicator_color_active #{"" + $primary};
 // group-ed and unfocused window 'line(s)'
-@define-color budgie_tasklist_indicator_color_active_window #{"" + mix(white, $panel, 54%)};
+@define-color budgie_tasklist_indicator_color_active_window #{"" + mix($primary, $panel, 45%)};
 // attention 'dot'
 // FIXME: we can't fill whole widget backgrounds with our suggestion colour
 //        because of lacking specific style-class on 'needs_attention' state,

@@ -7914,8 +7914,13 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: transparent;
 }
 
-.budgie-settings-window list.sidebar {
-  border-radius: 0 0 0 18px;
+.budgie-settings-window > box > scrolledwindow {
+  background-color: #242424;
+  border-bottom-left-radius: 18px;
+}
+
+.budgie-settings-window > box > scrolledwindow list.sidebar {
+  background-color: transparent;
 }
 
 .budgie-settings-window buttonbox.inline-toolbar {
@@ -7927,12 +7932,11 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
+  border: none;
   border-radius: 12px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2), 0 3px 2.4px 0 rgba(0, 0, 0, 0.14), 0 1px 4.8px 0 rgba(0, 0, 0, 0.12);
   background-color: #3C3C3C;
+  border-color: #3C3C3C;
 }
 
 .budgie-popover .container {
@@ -7960,6 +7964,10 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover row button {
+  border-radius: 8px;
+}
+
+.budgie-popover calendar:not(.header) {
   border-radius: 8px;
 }
 
@@ -8207,13 +8215,53 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-panel {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: rgba(31, 31, 31, 0.65);
+  background-color: #1F1F1F;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
 .budgie-panel.transparent {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bottom .budgie-panel.dock-mode {
+  border-radius: 18px 18px 0 0;
+}
+
+.bottom .budgie-panel.dock-mode .icon-tasklist button.launcher:checked, .bottom .budgie-panel.dock-mode .icon-tasklist button.launcher:active {
+  color: white;
+}
+
+.bottom .budgie-panel.dock-mode .icon-tasklist > box > revealer:first-child > button.launcher {
+  border-top-left-radius: 18px;
+}
+
+.bottom .budgie-panel.dock-mode .icon-tasklist > box > revealer:last-child > button.launcher {
+  border-top-right-radius: 18px;
+}
+
+.left .budgie-panel.dock-mode {
+  border-radius: 0 18px 18px 0;
+}
+
+.left .budgie-panel.dock-mode .icon-tasklist .launcher:first-child {
+  border-top-right-radius: 18px;
+}
+
+.left .budgie-panel.dock-mode .icon-tasklist .launcher:last-child {
+  border-bottom-right-radius: 18px;
+}
+
+.right .budgie-panel.dock-mode {
+  border-radius: 18px 0 0 18px;
+}
+
+.right .budgie-panel.dock-mode .icon-tasklist .launcher:first-child {
+  border-top-left-radius: 18px;
+}
+
+.right .budgie-panel.dock-mode .icon-tasklist .launcher:last-child {
+  border-bottom-left-radius: 18px;
 }
 
 .budgie-panel button {
@@ -8953,9 +9001,9 @@ FIXME this is really an API */
 @define-color placeholder_text_color silver;
 /* Very contrasty background for text views (@theme_text_color foreground) */
 @define-color text_view_bg #1d1d1d;
-@define-color budgie_tasklist_indicator_color white;
-@define-color budgie_tasklist_indicator_color_active white;
-@define-color budgie_tasklist_indicator_color_active_window rgba(190, 190, 190, 0.839);
+@define-color budgie_tasklist_indicator_color rgba(255, 255, 255, 0.7);
+@define-color budgie_tasklist_indicator_color_active #3281ea;
+@define-color budgie_tasklist_indicator_color_active_window rgba(43, 93, 159, 0.8075);
 @define-color budgie_tasklist_indicator_color_attention #FDD633;
 @define-color STRAWBERRY_100 #FF9262;
 @define-color STRAWBERRY_300 #FF793E;

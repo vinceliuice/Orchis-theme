@@ -10,8 +10,13 @@
 
 // Budgie setting
 .budgie-settings-window {
-  list.sidebar {
-    border-radius: 0 0 0 $window-radius;
+  > box > scrolledwindow {
+    background-color: $base-alt;
+    border-bottom-left-radius: $window-radius;
+
+    list.sidebar {
+      background-color: transparent;
+    }
   }
 
   buttonbox.inline-toolbar {
@@ -27,12 +32,11 @@
 
 // Budgie popover
 .budgie-popover {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.3);
+  border: none;
   border-radius: $corner-radius;
-  box-shadow: $shadow-z4;
+  box-shadow: $shadow-z3;
   background-color: $surface;
+  border-color: $surface;
 
   .container { padding: $container-padding; }
 
@@ -52,6 +56,8 @@
       border-radius: $corner-radius - $container-padding;
     }
   }
+
+  calendar:not(.header) { border-radius: $corner-radius - $container-padding; }
 
   scrolledwindow.sidebar.categories { // AppMenu
     background-color: $fill;
@@ -305,11 +311,54 @@
 // Panel
 .budgie-panel {
   transition: background-color $duration $ease-out;
-  background-color: $panel;
+  background-color: $panel-solid;
   color: on($panel, secondary);
   font-weight: 500;
 
   &.transparent { background-color: $scrim; }
+
+  .bottom & {
+    &.dock-mode {
+      border-radius: $window-radius $window-radius 0 0;
+
+      .icon-tasklist {
+        button.launcher {
+          &:checked, &:active { color: on($panel); }
+        }
+
+        > box > revealer {
+          &:first-child > button.launcher { border-top-left-radius: $window-radius; }
+          &:last-child > button.launcher { border-top-right-radius: $window-radius; }
+        }
+      }
+    }
+  }
+
+  .left & {
+    &.dock-mode {
+      border-radius: 0 $window-radius $window-radius 0;
+
+      .icon-tasklist {
+        .launcher {
+          &:first-child { border-top-right-radius: $window-radius; }
+          &:last-child { border-bottom-right-radius: $window-radius; }
+        }
+      }
+    }
+  }
+
+  .right & {
+    &.dock-mode {
+      border-radius: $window-radius 0 0 $window-radius;
+
+      .icon-tasklist {
+        .launcher {
+          &:first-child { border-top-left-radius: $window-radius; }
+          &:last-child { border-bottom-left-radius: $window-radius; }
+        }
+      }
+    }
+  }
 
   button {
     @extend %button-flat-simple;
@@ -325,12 +374,8 @@
 
     // Menu Button
     &.budgie-menu-launcher {
-      // padding: 0 2px;
       @extend %panel_circular_button;
-      // @extend %button-flat;
-      // @extend %button-on-dark;
       color: on($panel, secondary);
-      // border-radius: $menu-radius;
 
       &:focus { // Fixed issues when global menubar item is hovering
         background: none;
@@ -356,9 +401,7 @@
   .alert { color: $destructive; }
 
   // End Section needs to be fancy
-  .end-region {
-    // background-color: rgba(0,0,0, 0.2);
-  }
+  // .end-region { }
 
   // budgie-pixel-saver-applet
   .titlebar:not(headerbar) {
@@ -402,8 +445,6 @@
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
-
-    // @extend %underscores;
 
     // for indicator colors
     &:not(:checked) {
@@ -458,23 +499,16 @@
 
 frame.raven-frame > border {
   border-style: none;
-  // box-shadow: $shadow-z16;
 }
 
 $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
 @each $pos, $b_pos in $pos_list {
-  // Panel borders
-  // .#{$pos} .budgie-panel { border-#{$b_pos}: 4px solid transparent; }
 
   // Raven borders
   .#{$pos} frame.raven-frame > border {
     margin-#{$b_pos}: 32px;
-    // border-#{$b_pos}: 1px solid $frame;
   }
-
-  // Shadows
-  // .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, $frame, transparent); }
 }
 
 // Raven

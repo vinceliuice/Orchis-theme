@@ -4328,9 +4328,9 @@ FIXME this is really an API */
 @define-color placeholder_text_color #666666;
 /* Very contrasty background for text views (@theme_text_color foreground) */
 @define-color text_view_bg #FFFFFF;
-@define-color budgie_tasklist_indicator_color white;
-@define-color budgie_tasklist_indicator_color_active white;
-@define-color budgie_tasklist_indicator_color_active_window rgba(190, 190, 190, 0.839);
+@define-color budgie_tasklist_indicator_color rgba(255, 255, 255, 0.7);
+@define-color budgie_tasklist_indicator_color_active #1A73E8;
+@define-color budgie_tasklist_indicator_color_active_window rgba(28, 84, 158, 0.8075);
 @define-color budgie_tasklist_indicator_color_attention #F4B400;
 @define-color STRAWBERRY_100 #FF9262;
 @define-color STRAWBERRY_300 #FF793E;
