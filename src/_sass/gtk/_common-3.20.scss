@@ -588,7 +588,7 @@ button {
   &.osd {
     padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
 
-    &.image-button { padding: ($large-size - 24px) / 2; }
+    &.image-button, &.circular { padding: ($large-size - 24px) / 2; }
 
     &:disabled { opacity: 0; }
   }

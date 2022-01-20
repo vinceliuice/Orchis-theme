@@ -1952,7 +1952,7 @@ button.osd {
   padding: 8px 12px;
 }
 
-button.osd.image-button {
+button.osd.image-button, button.osd.circular {
   padding: 8px;
 }
 
@@ -5272,6 +5272,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:drop(active) {
+  border-radius: 0;
   background-color: rgba(255, 112, 67, 0.1);
 }
 

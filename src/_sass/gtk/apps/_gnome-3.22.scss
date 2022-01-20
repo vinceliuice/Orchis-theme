@@ -66,7 +66,7 @@
             &.sidebar-placeholder-row { background-color: transparent; }
 
             &:drop(active) {
-              // border-radius: $window-radius - 6px;
+              border-radius: 0;
 
               @if $topbar == 'dark' {
                 border-radius: $circular_radius 0 0 $circular_radius;
