@@ -9,7 +9,7 @@ $mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
   color: $fg_color;
   background-color: $base_color;
   border: 0 solid $mdborder_color;
-  box-shadow: $shadow_0;
+  box-shadow: inset 0 1px rgba(white, 0.1);
 
   .modal-dialog-content-box {
     margin: 32px 40px;
