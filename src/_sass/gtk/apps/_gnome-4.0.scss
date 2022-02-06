@@ -1,23 +1,23 @@
 
  %circular_list {
-   border-radius: $corner-radius + 1px;
+   border-radius: $corner-radius;
    box-shadow: none;
-   border: 1px solid $divider;
+   // border: 1px solid $divider;
  }
 
  %circular_row {
    &:first-child {
-     border-top-left-radius: $corner-radius;
-     border-top-right-radius: $corner-radius;
+     border-top-left-radius: $corner-radius - 1px;
+     border-top-right-radius: $corner-radius - 1px;
    }
 
    &:last-child { // Not use ?
-     border-bottom-left-radius: $corner-radius;
-     border-bottom-right-radius: $corner-radius;
+     border-bottom-left-radius: $corner-radius - 1px;
+     border-bottom-right-radius: $corner-radius - 1px;
    }
 
    &:only-child {
-     border-radius: $corner-radius;
+     border-radius: $corner-radius - 1px;
    }
 
    &:focus {
@@ -64,4 +64,3 @@ window.background.csd {
     padding: 0 0;
   }
 }
-

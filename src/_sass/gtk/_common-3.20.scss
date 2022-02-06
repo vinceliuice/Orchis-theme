@@ -874,21 +874,10 @@ combobox {
   }
 
   menu {
-    padding: 2px 0;
-
-    menuitem {
-      min-height: $medium-size - 2px * 2;
-      padding: 0 8px;
-    }
-
-    // overflow arrows
-    > arrow {
-      &.top { margin-top: -2px; }
-
-      &.bottom {
-        margin-top: 2px * 2;
-        margin-bottom: -2px * 3;
-      }
+    menuitem { // reset
+      min-height: 20px;
+      min-width: 40px;
+      padding: $container-padding / 2 $container-padding * 1.5;
     }
   }
 
@@ -1588,8 +1577,8 @@ menubar,
 menu,
 .menu,
 .context-menu {
-  margin: $menu-radius 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
-  padding: $menu-radius 0;
+  margin: 3px 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
+  padding: 3px;
   box-shadow: inset 0 1px highlight($surface);
   background-color: $surface;
   background-clip: border-box;
@@ -1604,10 +1593,11 @@ menu,
     transition: background-color $duration $ease-out;
     min-height: 20px;
     min-width: 40px;
-    padding: 4px 8px;
+    padding: ($container-padding / 2 + 1px) $container-padding * 1.5;
     color: $text;
     font: initial;
     text-shadow: none;
+    border-radius: $menu-radius - 3px;
 
     &:hover {
       transition: none;
@@ -1646,22 +1636,18 @@ menu,
   > arrow {
     min-height: 16px;
     min-width: 16px;
-    padding: 4px;
+    padding: $container-padding / 2 + 1px;
     background-color: $surface;
     color: $text-secondary;
+    border-radius: $menu-radius - 3px;
 
     &.top {
-      margin-top: -4px;
-      border-bottom: 1px solid $divider;
-      border-radius: $corner-radius $corner-radius 0 0;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
       margin-top: 4px * 2;
-      margin-bottom: -4px * 3;
-      border-top: 1px solid $divider;
-      border-radius: 0 0 $corner-radius $corner-radius;
+      margin-bottom: -6px;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
 
@@ -1678,7 +1664,7 @@ menu,
     }
   }
 
-  separator { margin: 4px 0; }
+  separator { margin: 3px 0; }
 }
 
 menuitem {

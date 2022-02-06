@@ -337,7 +337,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu-boxpointer, .candidate-popup-boxpointer {
-  -arrow-border-radius: 9px;
+  -arrow-border-radius: 8px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;

@@ -2226,22 +2226,10 @@ combobox button.combo cellview:dir(rtl) {
   margin-right: 0px;
 }
 
-combobox menu {
-  padding: 2px 0;
-}
-
 combobox menu menuitem {
-  min-height: 28px;
-  padding: 0 8px;
-}
-
-combobox menu > arrow.top {
-  margin-top: -2px;
-}
-
-combobox menu > arrow.bottom {
-  margin-top: 4px;
-  margin-bottom: -6px;
+  min-height: 20px;
+  min-width: 40px;
+  padding: 2px 6px;
 }
 
 combobox.linked button:nth-child(2):dir(ltr) {
@@ -2974,8 +2962,8 @@ menubar > menuitem label:disabled,
 menu,
 .menu,
 .context-menu {
-  margin: 8px 0;
-  padding: 8px 0;
+  margin: 3px 0;
+  padding: 3px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #3C3C3C;
   background-clip: border-box;
@@ -2993,10 +2981,11 @@ menu menuitem,
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 20px;
   min-width: 40px;
-  padding: 4px 8px;
+  padding: 3px 6px;
   color: white;
   font: initial;
   text-shadow: none;
+  border-radius: 5px;
 }
 
 menu menuitem:hover,
@@ -3061,17 +3050,15 @@ menu > arrow,
 .context-menu > arrow {
   min-height: 16px;
   min-width: 16px;
-  padding: 4px;
+  padding: 3px;
   background-color: #3C3C3C;
   color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
 }
 
 menu > arrow.top,
 .menu > arrow.top,
 .context-menu > arrow.top {
-  margin-top: -4px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px 12px 0 0;
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
@@ -3079,9 +3066,7 @@ menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom {
   margin-top: 8px;
-  margin-bottom: -12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0 0 12px 12px;
+  margin-bottom: -6px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
@@ -3103,7 +3088,7 @@ menu > arrow:disabled,
 menu separator,
 .menu separator,
 .context-menu separator {
-  margin: 4px 0;
+  margin: 3px 0;
 }
 
 menuitem accelerator {

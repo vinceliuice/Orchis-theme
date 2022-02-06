@@ -4207,23 +4207,22 @@ window.background.csd > stack > box > stack > box > scrolledwindow > viewport > 
 window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
 window.background.csd > stack > scrolledwindow > viewport > box > list,
 window.background.csd > box > stack > scrolledwindow > viewport > box > list {
-  border-radius: 13px;
+  border-radius: 12px;
   box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
 }
 
 window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
 }
 
 window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child {
-  border-radius: 12px;
+  border-radius: 11px;
 }
 
 window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus {
