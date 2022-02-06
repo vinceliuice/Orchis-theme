@@ -141,10 +141,8 @@ $submenu_item_radius: $popup_radius - $container_padding;
   border: none;
   padding: 0 0;
   margin: 0 0;
-  // height: 4px;
 
   .popup-separator-menu-item-separator {
-    //-margin-horizontal: 24px;
     height: 1px; //not really the whole box
     margin: 0 0;
     padding: 0 0;
@@ -156,12 +154,22 @@ $submenu_item_radius: $popup_radius - $container_padding;
       background-color: rgba(black, 0.10);
     }
   }
+}
 
-  .panel-menu & .popup-separator-menu-item-separator {
-    background-color: transparent;
+.panel-menu,
+.background-menu,
+.aggregate-menu,
+.app-well-menu,
+.app-menu {
+  .popup-separator-menu-item {
+    height: $container_padding;
 
-    .popup-sub-menu & {
+    .popup-separator-menu-item-separator {
       background-color: transparent;
+
+      .popup-sub-menu & {
+        background-color: transparent;
+      }
     }
   }
 }

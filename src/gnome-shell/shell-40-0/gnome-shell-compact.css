@@ -516,11 +516,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.panel-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
+.panel-menu .popup-separator-menu-item,
+.background-menu .popup-separator-menu-item,
+.aggregate-menu .popup-separator-menu-item,
+.app-well-menu .popup-separator-menu-item,
+.app-menu .popup-separator-menu-item {
+  height: 4px;
+}
+
+.panel-menu .popup-separator-menu-item .popup-separator-menu-item-separator,
+.background-menu .popup-separator-menu-item .popup-separator-menu-item-separator,
+.aggregate-menu .popup-separator-menu-item .popup-separator-menu-item-separator,
+.app-well-menu .popup-separator-menu-item .popup-separator-menu-item-separator,
+.app-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   background-color: transparent;
 }
 
-.popup-sub-menu .panel-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
+.popup-sub-menu .panel-menu .popup-separator-menu-item .popup-separator-menu-item-separator, .popup-sub-menu .background-menu .popup-separator-menu-item .popup-separator-menu-item-separator, .popup-sub-menu .aggregate-menu .popup-separator-menu-item .popup-separator-menu-item-separator, .popup-sub-menu .app-well-menu .popup-separator-menu-item .popup-separator-menu-item-separator, .popup-sub-menu .app-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   background-color: transparent;
 }
 
@@ -3306,6 +3318,11 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer.opaque.extended:overview #dash .dash-background, #dashtodockContainer.transparent.extended:overview #dash .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dashtodock-app-well-preview-menu-item {
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
 }
 
 .openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
