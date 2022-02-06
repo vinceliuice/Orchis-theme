@@ -2,7 +2,7 @@
 
 //.the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: 3px;
+  -arrow-border-radius: $buttons_radius - 3px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
@@ -138,23 +138,30 @@ $submenu_item_radius: $buttons_radius;
 
 // separator
 .popup-separator-menu-item {
-  background: none;
   border: none;
   padding: 0 0;
   margin: 0 0;
-  height: 4px;
+  // height: 4px;
 
   .popup-separator-menu-item-separator {
     //-margin-horizontal: 24px;
     height: 1px; //not really the whole box
     margin: 0 0;
     padding: 0 0;
-    background: none;
+    background-color: $border_color;
 
     .popup-sub-menu & { //submenu separators
       margin: 0 0;
       padding: 0 0;
-      background: none;
+      background-color: rgba(black, 0.10);
+    }
+  }
+
+  .panel-menu & .popup-separator-menu-item-separator {
+    background-color: transparent;
+
+    .popup-sub-menu & {
+      background-color: transparent;
     }
   }
 }
