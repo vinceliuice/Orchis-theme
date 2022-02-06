@@ -1302,10 +1302,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .modal-dialog {
-  border-radius: 16px;
+  border-radius: 26px;
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
-  border: 0 solid transparent;
+  border: 0 none rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
