@@ -1264,7 +1264,7 @@ searchbar > revealer > box {
   }
 
   &.default-decoration {
-    min-height: $small-size;
+    min-height: 24px;
     padding: $container-padding;
     box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $corner-radius $corner-radius 0 0;
@@ -1277,8 +1277,8 @@ searchbar > revealer > box {
     }
 
     button.titlebutton {
-      min-height: $small-size;
-      min-width: $small-size;
+      min-height: 24px;
+      min-width: 24px;
       margin: 0;
       padding: 0;
     }
@@ -1540,8 +1540,8 @@ treeview.view {
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: 0;
-  // box-shadow: inset 0 -1px $divider;
+  padding: $container-padding / 2;
+  box-shadow: inset 0 -1px $divider;
   background-color: $titlebar;
   color: $titlebar-text;
 
@@ -1555,8 +1555,9 @@ menubar,
   > menuitem {
     transition: $transition;
     min-height: 20px;
-    padding: 4px 8px;
+    padding: 2px 8px;
     color: $titlebar-text-secondary;
+    border-radius: 5px;
 
     &:hover { // Seems like it :hover even with keyboard focus
       transition: none;

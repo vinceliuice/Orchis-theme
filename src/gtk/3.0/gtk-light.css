@@ -2915,7 +2915,8 @@ treeview.view acceleditor > label, window#gnome-system-monitor.background.csd > 
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: 0;
+  padding: 3px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -2934,8 +2935,9 @@ menubar > menuitem,
 .menubar > menuitem {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 20px;
-  padding: 4px 8px;
+  padding: 2px 8px;
   color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
 }
 
 menubar > menuitem:hover,
