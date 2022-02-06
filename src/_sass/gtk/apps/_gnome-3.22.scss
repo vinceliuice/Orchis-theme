@@ -947,6 +947,18 @@ tabbox { // Gnome 40.0
   border-bottom-left-radius: $window-radius;
 }
 
+statuspage.search-view {
+  entry.search {
+    @if $variant == 'light' { background-color: $base; }
+
+    &:focus { box-shadow: none; }
+
+    > window.background treeview.view:selected {
+      @extend %selected_items_primary;
+    }
+  }
+}
+
 
 /***************
  * Gnome Music *

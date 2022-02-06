@@ -35,18 +35,20 @@
 
 %search-section-content-item {
   @extend %icon_tile;
-  border-radius: $circular_radius;
+  border-radius: $buttons_radius;
 
   &:focus,
   &:hover,
   &:selected {
     background-color: $inverse_divider_color;
     transition-duration: 200ms;
+    border-radius: $buttons_radius;
   }
 
   &:active,
   &:checked {
     background-color: $inverse_track_color;
+    border-radius: $buttons_radius;
   }
 }
 

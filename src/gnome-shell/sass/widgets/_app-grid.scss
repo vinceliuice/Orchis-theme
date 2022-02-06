@@ -2,7 +2,7 @@
 
 %icon_tile {
   color: $inverse_fg_color;
-  border-radius: $buttons_radius;
+  border-radius: $buttons_radius * 1.5;
   padding: 6px;
   border: none;
   transition-duration: $longer_duration;
@@ -91,7 +91,7 @@
 
     & .folder-name-entry {
       min-height: 28px;
-      padding: $container_padding;
+      padding: 6px;
       border: none;
       color: $light_fg_color;
       background-color: rgba(white, 0.15);
@@ -123,10 +123,10 @@
       background-color: $inverse_divider_color;
       color: $inverse_secondary_fg_color;
       border: none;
-      padding: 0;
+      padding: 4px;
       width: 36px;
       height: 36px;
-      border-radius: 18px;
+      border-radius: $circular-radius;
 
       & > StIcon { icon-size: 16px }
 

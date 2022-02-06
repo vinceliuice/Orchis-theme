@@ -2,7 +2,7 @@
 
 //.the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: $buttons_radius;
+  -arrow-border-radius: $popup_radius;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
@@ -27,11 +27,11 @@
   padding: $container_padding 0;
   margin: $container_padding 10px 13px 10px;
   background-color: $menu_bg_color;
-  border-radius: $buttons_radius;
+  border-radius: $popup_radius;
   box-shadow: 0 3px 8px rgba(black, 0.2);
 }
 
-$submenu_item_radius: $buttons_radius;
+$submenu_item_radius: $popup_radius - $container_padding;
 
 // menu items
 .popup-menu-item {

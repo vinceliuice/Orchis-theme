@@ -52,7 +52,7 @@ XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover
   background-color: rgba(26, 115, 232, 0.2);
 }
 
-.nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
+.nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, statuspage.search-view entry.search > window.background treeview.view:selected, statuspage.search-view entry.search > window.background filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow statuspage.search-view entry.search > window.background treeview.view:selected, statuspage.search-view entry.search > window.background window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow statuspage.search-view entry.search > window.background treeview.view:selected:not(.progressbar):not(.trough), spinbutton.vertical selection, spinbutton:not(.vertical) selection,
 entry selection, label selection, textview text selection:focus, textview text selection, widget.view:selected {
   color: white;
   background-color: #1A73E8;
@@ -6005,6 +6005,14 @@ tabbox > tab button {
 #weather-page-content-view {
   border-bottom-right-radius: 18px;
   border-bottom-left-radius: 18px;
+}
+
+statuspage.search-view entry.search {
+  background-color: #FFFFFF;
+}
+
+statuspage.search-view entry.search:focus {
+  box-shadow: none;
 }
 
 /***************
