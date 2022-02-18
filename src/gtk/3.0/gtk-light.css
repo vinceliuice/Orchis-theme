@@ -5742,23 +5742,23 @@ window.background.csd > stack > box > stack > scrolledwindow > viewport frame > 
 window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
 window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
 window.background.csd > stack > scrolledwindow > viewport > box > list,
-window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet list.view, hdyleaflet list.frame, leaflet list.view, leaflet list.frame, box.horizontal > stack.background list.view, box.horizontal > stack.background list.frame, hdyleaflet frame.view, leaflet frame.view, box.horizontal > stack.background frame.view, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, box.horizontal > stack.background stack.background scrolledwindow > viewport list, box.horizontal > stack.background overlay scrolledwindow > viewport list, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list), box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list), list.tweak-group list, .tweak-group-startup, list.content:not(.conversation-listbox) {
+window.background.csd > box > stack > scrolledwindow > viewport > box > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet list.view, hdyleaflet list.frame, leaflet list.view, leaflet list.frame, box.horizontal > stack.background list.view, box.horizontal > stack.background list.frame, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, box.horizontal > stack.background stack.background scrolledwindow > viewport list, box.horizontal > stack.background overlay scrolledwindow > viewport list, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list), box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list), list.tweak-group list, .tweak-group-startup, list.content:not(.conversation-listbox) {
   border-radius: 13px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet list.view row.activatable:first-child, hdyleaflet list.frame row.activatable:first-child, leaflet list.view row.activatable:first-child, leaflet list.frame row.activatable:first-child, box.horizontal > stack.background list.view row.activatable:first-child, box.horizontal > stack.background list.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, leaflet frame.view list row.activatable:first-child, box.horizontal > stack.background frame.view list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:first-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, list.tweak-group list row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.content:not(.conversation-listbox) > row:first-child {
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet list.view row.activatable:first-child, hdyleaflet list.frame row.activatable:first-child, leaflet list.view row.activatable:first-child, leaflet list.frame row.activatable:first-child, box.horizontal > stack.background list.view row.activatable:first-child, box.horizontal > stack.background list.frame row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:first-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, list.tweak-group list row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.content:not(.conversation-listbox) > row:first-child {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet list.view row.activatable:last-child, hdyleaflet list.frame row.activatable:last-child, leaflet list.view row.activatable:last-child, leaflet list.frame row.activatable:last-child, box.horizontal > stack.background list.view row.activatable:last-child, box.horizontal > stack.background list.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, leaflet frame.view list row.activatable:last-child, box.horizontal > stack.background frame.view list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:last-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, list.tweak-group list row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.content:not(.conversation-listbox) > row:last-child {
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet list.view row.activatable:last-child, hdyleaflet list.frame row.activatable:last-child, leaflet list.view row.activatable:last-child, leaflet list.frame row.activatable:last-child, box.horizontal > stack.background list.view row.activatable:last-child, box.horizontal > stack.background list.frame row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:last-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, list.tweak-group list row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.content:not(.conversation-listbox) > row:last-child {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet list.view row.activatable:only-child, hdyleaflet list.frame row.activatable:only-child, leaflet list.view row.activatable:only-child, leaflet list.frame row.activatable:only-child, box.horizontal > stack.background list.view row.activatable:only-child, box.horizontal > stack.background list.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, leaflet frame.view list row.activatable:only-child, box.horizontal > stack.background frame.view list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:only-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, list.tweak-group list row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.content:not(.conversation-listbox) > row:only-child {
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet list.view row.activatable:only-child, hdyleaflet list.frame row.activatable:only-child, leaflet list.view row.activatable:only-child, leaflet list.frame row.activatable:only-child, box.horizontal > stack.background list.view row.activatable:only-child, box.horizontal > stack.background list.frame row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, box.horizontal > stack.background stack.background scrolledwindow > viewport list row.activatable:only-child, box.horizontal > stack.background overlay scrolledwindow > viewport list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, box.horizontal > stack.background frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, list.tweak-group list row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.content:not(.conversation-listbox) > row:only-child {
   border-radius: 12px;
 }
 
@@ -5890,6 +5890,13 @@ filechooser stack.view window.background.csd > box.horizontal > stack.background
   background: none;
 }
 
+window.background.csd > leaflet > stack.background frame.view,
+window.background.csd > hdyleaflet > stack.background frame.view,
+window.background.csd > box.horizontal > stack.background frame.view {
+  border-radius: 12px;
+  background: none;
+}
+
 window.background.csd > leaflet > box.vertical > scrolledwindow.view,
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {
@@ -5915,21 +5922,37 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > vi
   background-color: transparent;
 }
 
+window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical > list {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical > list, window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical > list > row {
+  border-radius: 0;
+}
+
+window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical:first-child > list {
+  border-top-width: 1px;
+}
+
+window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical:first-child > list, window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical:first-child > list > row {
+  border-radius: 12px 12px 0 0;
+}
+
+window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical:last-child > list {
+  border-bottom-width: 1px;
+}
+
+window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical:last-child > list, window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical:last-child > list > row {
+  border-radius: 0 0 12px 12px;
+}
+
 dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizontal > notebook > stack {
   border-radius: 0 0 18px 18px;
 }
 
 hdyleaflet frame > border, leaflet frame > border, box.horizontal > stack.background frame > border {
   border: none;
-}
-
-hdyleaflet frame.view list, leaflet frame.view list, box.horizontal > stack.background frame.view list {
-  background: none;
-}
-
-hdyleaflet frame.view list > separator, leaflet frame.view list > separator, box.horizontal > stack.background frame.view list > separator {
-  background: none;
-  min-height: 0;
 }
 
 /************************

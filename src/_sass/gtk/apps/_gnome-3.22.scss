@@ -770,6 +770,11 @@ window.background.csd {
           }
         }
       }
+
+      frame.view { // Wifi setting
+        border-radius: $corner-radius;
+        background: none;
+      }
     }
 
     > box.vertical > scrolledwindow.view { // > 3.25.90
@@ -785,6 +790,33 @@ window.background.csd {
           row.activatable:not(:hover):not(:active):not(:selected) {
             background-color: transparent;
           }
+        }
+      }
+    }
+  }
+
+  stack.background clamp.medium {
+    frame > box.vertical > box.vertical { // VPN setting
+      > list {
+        border-top-width: 0;
+        border-bottom-width: 0;
+
+        &, > row { border-radius: 0; }
+      }
+
+      &:first-child {
+        > list {
+          border-top-width: 1px;
+
+          &, > row { border-radius: $corner-radius $corner-radius 0 0; }
+        }
+      }
+
+      &:last-child {
+        > list {
+          border-bottom-width: 1px;
+
+          &, > row { border-radius:  0 0 $corner-radius $corner-radius; }
         }
       }
     }
@@ -823,21 +855,6 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
       row.activatable {
         @extend %sidebar_row;
       }
-    }
-  }
-
-  frame.view {
-    @extend %circular_list;
-
-    list {
-      background: none;
-
-      > separator {
-        background: none;
-        min-height: 0;
-      }
-
-      row.activatable { @extend %circular_row; }
     }
   }
 
