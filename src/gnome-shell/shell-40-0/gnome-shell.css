@@ -574,7 +574,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #calendarArea {
-  padding: 6px 0 !important;
+  padding: 8px 0;
 }
 
 .calendar {
@@ -817,7 +817,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button,
 .weather-button,
 .events-button {
-  padding: 6px 8px;
+  padding: 6px 12px;
   border-radius: 8px;
   border: none;
   box-shadow: none;
@@ -991,21 +991,34 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 18px 0;
-  margin-left: 12px;
+  padding: 18px;
+  padding-right: 6px;
+}
+
+.message .message-icon-bin:rtl {
+  padding-right: 6px;
 }
 
 .message .message-icon-bin > StIcon {
   icon-size: 36px;
+  -st-icon-style: symbolic;
+}
+
+.message .message-icon-bin > .fallback-app-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .message .message-content {
-  padding: 12px;
+  spacing: 4px;
+  padding: 9px;
+  margin-bottom: 8px;
   color: rgba(0, 0, 0, 0.54);
 }
 
 .message .message-title {
   font-weight: bold;
+  padding-top: 0.57em;
 }
 
 .message .message-secondary-bin {
@@ -1014,7 +1027,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message .message-secondary-bin > .event-time {
   color: rgba(0, 0, 0, 0.54);
-  font-size: 1em;
+  font-size: 0.9em;
   padding-bottom: 0.13em;
 }
 
@@ -1059,7 +1072,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Media Controls */
 .message-media-control {
   margin: 22px 4px;
-  padding: 9px;
+  padding: 12px;
   border-radius: 9999px;
   color: rgba(0, 0, 0, 0.54);
 }
@@ -1094,10 +1107,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .media-message-cover-icon.fallback {
   background-color: rgba(0, 0, 0, 0.12);
-  padding: 8px;
+  padding: 12px;
   color: rgba(0, 0, 0, 0.38);
   border: none;
-  border-radius: 9999px;
+  border-radius: 8px;
   icon-size: 24px !important;
 }
 

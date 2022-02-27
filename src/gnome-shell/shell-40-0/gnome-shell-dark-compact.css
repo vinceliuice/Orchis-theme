@@ -574,7 +574,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #calendarArea {
-  padding: 4px 0 !important;
+  padding: 8px 0;
 }
 
 .calendar {
@@ -991,21 +991,34 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin {
-  padding: 12px 0;
-  margin-left: 8px;
+  padding: 12px;
+  padding-right: 4px;
+}
+
+.message .message-icon-bin:rtl {
+  padding-right: 4px;
 }
 
 .message .message-icon-bin > StIcon {
   icon-size: 36px;
+  -st-icon-style: symbolic;
+}
+
+.message .message-icon-bin > .fallback-app-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .message .message-content {
-  padding: 8px;
+  spacing: 4px;
+  padding: 6px;
+  margin-bottom: 4px;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .message .message-title {
   font-weight: bold;
+  padding-top: 0.57em;
 }
 
 .message .message-secondary-bin {
@@ -1014,7 +1027,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message .message-secondary-bin > .event-time {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1em;
+  font-size: 0.9em;
   padding-bottom: 0.13em;
 }
 
@@ -1059,7 +1072,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Media Controls */
 .message-media-control {
   margin: 18px 4px;
-  padding: 6px;
+  padding: 8px;
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1097,7 +1110,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 8px;
   color: rgba(255, 255, 255, 0.5);
   border: none;
-  border-radius: 9999px;
+  border-radius: 8px;
   icon-size: 24px !important;
 }
 

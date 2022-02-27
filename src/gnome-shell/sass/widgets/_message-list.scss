@@ -44,29 +44,38 @@
 
   // icon container
   .message-icon-bin {
-    padding: $container_padding * 3 0;
-    margin-left: $container_padding * 2;
+    padding: $container_padding * 3;
+    padding-right: $container_padding;
+
+    &:rtl {
+      padding-right: $container_padding;
+    }
 
     // icon size and color
     > StIcon {
       icon-size: 36px;
-      // -st-icon-style: symbolic;
+      -st-icon-style: symbolic;
     }
 
     // fallback
     > .fallback-app-icon {
+      width: 16px;
+      height: 16px;
     }
   }
 
   // content
   .message-content {
-    padding: $container_padding * 2;
+    spacing: 4px;
+    padding: $container_padding * 1.5;
+    margin-bottom: $container_margin * 2;
     color: $secondary_fg_color;
   }
 
   // title
   .message-title {
     font-weight: bold;
+    padding-top: 0.57em;
     // margin-top: $container_padding;
   }
 
@@ -77,7 +86,7 @@
     // notification time stamp
     > .event-time {
       color: $secondary_fg_color;
-      font-size: 1em;
+      font-size: 0.9em;
       padding-bottom: 0.13em;
 
       &:ltr { text-align: right };
@@ -112,7 +121,7 @@
 /* Media Controls */
 .message-media-control {
   margin: ($container_padding * 2 + 10px) 4px;
-  padding: $container_padding * 1.5;
+  padding: $container_padding * 2;
   border-radius: $circular_radius;
   color: $secondary_fg_color;
   &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
@@ -132,10 +141,10 @@
   // when there is no artwork
   &.fallback {
     background-color: $divider_color;
-    padding: 8px;
+    padding: $container_padding * 2;
     color: $hint_fg_color;
     border: none;
-    border-radius: $circular_radius;
+    border-radius: $buttons_radius;
     icon-size: 24px !important;
   }
 }

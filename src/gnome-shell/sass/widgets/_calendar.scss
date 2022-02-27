@@ -11,7 +11,7 @@
 
 // overall menu
 #calendarArea {
-  padding: $container_padding 0 !important;
+  padding: 8px 0;
 }
 
 .calendar {
@@ -221,7 +221,7 @@
 .world-clocks-button,
 .weather-button,
 .events-button {
-  padding: $container_padding 8px;
+  padding: $container_padding $container_padding * 2;
   border-radius: $material_radius;
   border: none;
   box-shadow: none;
