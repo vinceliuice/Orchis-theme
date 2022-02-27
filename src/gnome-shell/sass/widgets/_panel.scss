@@ -53,38 +53,38 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     -natural-hpadding: $container_padding;
     -minimum-hpadding: $container_padding;
     transition-duration: 150ms;
-    border: none;
+    border: $container_padding / 2 solid transparent;
     border-radius: $circular_radius;
-    margin: $container_padding / 2 0;
+    margin: 0;
 
     &:hover {
-      background-color: $inverse_divider_color;
-      box-shadow: none;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 1000px $inverse_divider_color;
 
       // The clock display needs to have the background on .clock because
       // we want to exclude the do-not-disturb indicator from the background
       &.clock-display {
         box-shadow: none;
+        background-color: transparent;
 
         .clock {
-          background-color: none;
-          box-shadow: none;
+          box-shadow: inset 0 0 0 1000px $inverse_divider_color;
         }
       }
     }
 
     &:active, &:overview, &:focus, &:checked {
-      background-color: $inverse_track_color;
-      box-shadow: none;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 1000px $inverse_track_color;
 
       // The clock display needs to have the background on .clock because
       // we want to exclude the do-not-disturb indicator from the background
       &.clock-display {
         box-shadow: none;
+        background-color: transparent;
 
         .clock {
-          background-color: none;
-          box-shadow: none;
+          box-shadow: inset 0 0 0 1000px $inverse_track_color;
         }
       }
     }
@@ -143,21 +143,20 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
   }
 
-  Gjs_ui_panel_AggregateMenu.panel-button,
+  // Gjs_ui_panel_AggregateMenu.panel-button,
   Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
+    border: none !important;
     margin: $container_padding / 2 !important;
-    // background-color: rgba(white, 0.1);
 
-   //  .arc-menu-icon {
-   //    background-color: rgba(white, 0.1);
-   //    padding: 0 0 !important;
-   //    margin: $container_padding / 2 !important;
-   //    border-radius: $circular_radius;
-   //    width: $medium-size - $container_padding / 2 !important;
-   //  }
-   //
-   // &:hover .arc-menu-icon { background-color: rgba(white, 0.18) !important; }
-   // &:active, &:overview, &:focus, &:checked { .arc-menu-icon { background-color: rgba(white, 0.28) !important; }}
+    &:hover {
+      background-color: $inverse_divider_color;
+      box-shadow: none;
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      background-color: $inverse_track_color;
+      box-shadow: none;
+    }
   }
 
   Gjs_ui_panel_AggregateMenu.panel-button {
@@ -171,24 +170,6 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     .arc-menu-icon {
       margin: 0 0 !important;
       padding: 0 !important;
-    }
-  }
-
-  &.unlock-screen,
-  &.login-screen,
-  &:overview {
-    .panel-button {
-      &:hover, &:active, &:overview, &:focus, &:checked {
-        box-shadow: none;
-
-        &.clock-display {
-          box-shadow: none;
-
-          .clock {
-            box-shadow: none;
-          }
-        }
-      }
     }
   }
 

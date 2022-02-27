@@ -1824,37 +1824,37 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -natural-hpadding: 4px;
   -minimum-hpadding: 4px;
   transition-duration: 150ms;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 9999px;
-  margin: 2px 0;
+  margin: 0;
 }
 
 #panel .panel-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  box-shadow: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
 #panel .panel-button:hover.clock-display {
   box-shadow: none;
+  background-color: transparent;
 }
 
 #panel .panel-button:hover.clock-display .clock {
-  background-color: none;
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
 #panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
   box-shadow: none;
+  background-color: transparent;
 }
 
 #panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:focus.clock-display .clock, #panel .panel-button:checked.clock-display .clock {
-  background-color: none;
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
 #panel .panel-button .system-status-icon {
@@ -1902,9 +1902,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-#panel Gjs_ui_panel_AggregateMenu.panel-button,
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
+  border: none !important;
   margin: 2px !important;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:active, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:overview, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:focus, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:checked {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
 }
 
 #panel Gjs_ui_panel_AggregateMenu.panel-button .system-status-icon {
@@ -1915,18 +1925,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon {
   margin: 0 0 !important;
   padding: 0 !important;
-}
-
-#panel.unlock-screen .panel-button:hover, #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button:hover, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:checked, #panel:overview .panel-button:hover, #panel:overview .panel-button:active, #panel:overview .panel-button:overview, #panel:overview .panel-button:focus, #panel:overview .panel-button:checked {
-  box-shadow: none;
-}
-
-#panel.unlock-screen .panel-button:hover.clock-display, #panel.unlock-screen .panel-button:active.clock-display, #panel.unlock-screen .panel-button:overview.clock-display, #panel.unlock-screen .panel-button:focus.clock-display, #panel.unlock-screen .panel-button:checked.clock-display, #panel.login-screen .panel-button:hover.clock-display, #panel.login-screen .panel-button:active.clock-display, #panel.login-screen .panel-button:overview.clock-display, #panel.login-screen .panel-button:focus.clock-display, #panel.login-screen .panel-button:checked.clock-display, #panel:overview .panel-button:hover.clock-display, #panel:overview .panel-button:active.clock-display, #panel:overview .panel-button:overview.clock-display, #panel:overview .panel-button:focus.clock-display, #panel:overview .panel-button:checked.clock-display {
-  box-shadow: none;
-}
-
-#panel.unlock-screen .panel-button:hover.clock-display .clock, #panel.unlock-screen .panel-button:active.clock-display .clock, #panel.unlock-screen .panel-button:overview.clock-display .clock, #panel.unlock-screen .panel-button:focus.clock-display .clock, #panel.unlock-screen .panel-button:checked.clock-display .clock, #panel.login-screen .panel-button:hover.clock-display .clock, #panel.login-screen .panel-button:active.clock-display .clock, #panel.login-screen .panel-button:overview.clock-display .clock, #panel.login-screen .panel-button:focus.clock-display .clock, #panel.login-screen .panel-button:checked.clock-display .clock, #panel:overview .panel-button:hover.clock-display .clock, #panel:overview .panel-button:active.clock-display .clock, #panel:overview .panel-button:overview.clock-display .clock, #panel:overview .panel-button:focus.clock-display .clock, #panel:overview .panel-button:checked.clock-display .clock {
-  box-shadow: none;
 }
 
 #panel .panel-status-indicators-box,
