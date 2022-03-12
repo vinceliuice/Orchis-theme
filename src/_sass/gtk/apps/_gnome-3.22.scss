@@ -1648,10 +1648,10 @@ window.background.csd {
 }
 
 
-/*******************
- * Archive Manager *
- *******************/
-.background.csd {
+/*********************************
+ * Archive Manager (File roller) *
+ *********************************/
+window.background.csd {
   > grid.horizontal > paned.horizontal {
     > scrolledwindow {
       border-radius: 0 0 $window-radius $window-radius;
@@ -1659,6 +1659,10 @@ window.background.csd {
 
       treeview.view:not(:hover):not(:selected) {
         background-color: transparent;
+      }
+
+      > treeview.view:not(:hover):not(:selected) {
+        background-color: $base;
       }
     }
 
