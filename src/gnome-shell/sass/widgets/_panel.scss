@@ -96,6 +96,10 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       margin: 0 3px;
     }
 
+    .system-tray-icons {
+      padding: $container_padding * 2;
+    }
+
     .panel-status-menu-box .system-status-icon {
       margin: 0;
     }

@@ -574,7 +574,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #calendarArea {
-  padding: 8px 0;
+  padding: 12px 0;
 }
 
 .calendar {
@@ -996,7 +996,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin:rtl {
-  padding-right: 6px;
+  padding-left: 6px;
 }
 
 .message .message-icon-bin > StIcon {
@@ -1861,6 +1861,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
   padding: 6px;
   margin: 0 3px;
+}
+
+#panel .panel-button .system-tray-icons {
+  padding: 12px;
 }
 
 #panel .panel-button .panel-status-menu-box .system-status-icon {

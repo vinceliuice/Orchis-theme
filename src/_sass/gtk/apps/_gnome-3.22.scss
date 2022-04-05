@@ -855,6 +855,8 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
       row.activatable {
         @extend %sidebar_row;
       }
+
+      > separator { margin: $container-padding / 2 0; }
     }
   }
 

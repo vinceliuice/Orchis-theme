@@ -1644,17 +1644,20 @@ menu,
 
     &.top {
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+      border-image: image($divider) 0 0 1 / 0 0 1px;
     }
 
     &.bottom {
       margin-top: 4px * 2;
       margin-bottom: -6px;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+      border-image: image($divider) 1 0 0 / 1px 0 0;
     }
 
     &:hover {
       background-image: image($overlay-hover);
       color: $text;
+      border-image: none;
     }
 
     &:disabled {

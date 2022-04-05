@@ -3062,6 +3062,7 @@ menu > arrow.top,
 .menu > arrow.top,
 .context-menu > arrow.top {
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+  border-image: image(rgba(0, 0, 0, 0.12)) 0 0 1/0 0 1px;
 }
 
 menu > arrow.bottom,
@@ -3070,6 +3071,7 @@ menu > arrow.bottom,
   margin-top: 8px;
   margin-bottom: -6px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  border-image: image(rgba(0, 0, 0, 0.12)) 1 0 0/1px 0 0;
 }
 
 menu > arrow:hover,
@@ -3077,6 +3079,7 @@ menu > arrow:hover,
 .context-menu > arrow:hover {
   background-image: image(alpha(currentColor, 0.08));
   color: rgba(0, 0, 0, 0.87);
+  border-image: none;
 }
 
 menu > arrow:disabled,
@@ -5954,6 +5957,10 @@ dialog.background.csd > box.vertical.dialog-vbox > notebook > stack > box.horizo
 
 hdyleaflet frame > border, leaflet frame > border, box.horizontal > stack.background frame > border {
   border: none;
+}
+
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) > separator, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) > separator, box.horizontal > stack.background > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) > separator {
+  margin: 3px 0;
 }
 
 /************************

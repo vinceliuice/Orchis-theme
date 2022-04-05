@@ -996,7 +996,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-icon-bin:rtl {
-  padding-right: 4px;
+  padding-left: 4px;
 }
 
 .message .message-icon-bin > StIcon {
@@ -1861,6 +1861,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
   padding: 4px;
   margin: 0 3px;
+}
+
+#panel .panel-button .system-tray-icons {
+  padding: 8px;
 }
 
 #panel .panel-button .panel-status-menu-box .system-status-icon {
