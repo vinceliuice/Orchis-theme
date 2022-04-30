@@ -460,7 +460,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog-linked-button:hover {
   color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.1);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -468,8 +468,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .modal-dialog-linked-button:active {
-  color: white;
-  background-color: #1A73E8;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -2969,7 +2969,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .hotplug-notification-item:hover {
   color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.1);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -2987,8 +2987,8 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .hotplug-notification-item:active {
-  color: white;
-  background-color: #1A73E8;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.2);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -3377,7 +3377,7 @@ StWidget.focused .app-well-app-running-dot {
 .unlock-dialog .modal-dialog-button:default:hover,
 .unlock-dialog .modal-dialog-button:default:focus {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(40, 124, 233, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -3386,8 +3386,8 @@ StWidget.focused .app-well-app-running-dot {
 
 .login-dialog .modal-dialog-button:default:active,
 .unlock-dialog .modal-dialog-button:default:active {
-  color: white;
-  background-color: #1A73E8;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.2);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;

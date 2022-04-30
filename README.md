@@ -27,16 +27,22 @@ Run the following commands in the terminal:
 > Tip: `./install.sh` allows the following options:
 
 ```
--d, --dest DIR          Specify destination directory (Default: /usr/share/themes)
--n, --name NAME         Specify theme name (Default: Orchis)
--t, --theme VARIANT...  Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey] (Default: blue)
--c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
---tweaks                Specify versions for tweaks [solid|compact|black] (Options can mix use)
-                        1. solid:    no transparency panel variant
-                        2. compact:  no floating panel variant
-                        3. black:    full black variant
-                        4. primary:  Change radio icon checked color to primary theme color (Default is Green)
--h, --help              Show help
+OPTIONS:
+  -d, --dest DIR          Specify destination directory (Default: $HOME/.themes)
+  -n, --name NAME         Specify theme name (Default: Orchis)
+  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
+  -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
+  -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
+  --tweaks                Specify versions for tweaks [solid|compact|black|primary] (Options can mix)
+                          1. solid:    no transparency panel variant
+                          2. compact:  no floating panel variant
+                          3. black:    full black variant
+                          4. primary:  Change radio icon checked color to primary theme color (Default is Green)
+  --shell                 install gnome-shell version [38|40|42]
+                          1. 38:       gnome-shell version < 40.0
+                          2. 40:       gnome-shell version = 40.0
+                          3. 42:       gnome-shell version = 42.0
+  -h, --help              Show help
 ```
 
 > For more information, run: `./install.sh --help`

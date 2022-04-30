@@ -1,10 +1,10 @@
-$variant: 'dark';
-$laptop: 'true';
+$variant: 'light';
+$laptop: 'false';
 $panel: 'dark';
 
 @import '../sass/variables';
 @import '../sass/colors';
 @import '../sass/drawing';
 @import '../sass/common';
-@import '../sass/widgets';
+@import '../sass/widgets-42-0';
 @import '../sass/extensions-40-0';

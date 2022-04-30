@@ -4,11 +4,26 @@
 // main list
 .message-list {
   width: 31.5em;
-  padding: 0 $container_padding * 2;
+  padding: 0 $container_padding;
   color: $secondary_fg_color;
   text-shadow: none;
+  border: solid $border_color;
 
-  .message-list-placeholder { spacing: 12px; }
+  // padding and margins to account for scrollbar
+  &:ltr {margin-left: 0; margin-right: $container_margin; padding-right: $container_padding; border-right-width: 1px; }
+  &:rtl {margin-right: 0; margin-left: $container_margin; padding-left: $container_padding; border-left-width: 1px; }
+
+  .message-list-placeholder {
+    spacing: $container_padding * 2;
+    color: $disabled_secondary_fg_color;
+
+    // icon size and color
+    > StIcon {
+      icon-size: 48px; // 48px
+      margin-bottom: $container_margin * 3;
+      -st-icon-style: symbolic;
+    }
+  }
 }
 
 .message-list-sections {

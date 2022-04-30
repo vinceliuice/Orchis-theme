@@ -32,7 +32,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:hover, .hotplug-notification-item:hover {
   color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -40,8 +40,8 @@ stage {
 }
 
 .modal-dialog .modal-dialog-linked-button:active, .hotplug-notification-item:active {
-  color: white;
-  background-color: #3281ea;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.2);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -84,6 +84,15 @@ stage {
   margin: 0 6px 6px 6px;
   border-right-width: 0;
   border-radius: 9999px;
+}
+
+.workspace-switcher-container, .switcher-list, .resize-popup, .osd-window {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: #222222;
+  border: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
+  border-radius: 8px;
+  padding: 12px;
 }
 
 /* WIDGETS */
@@ -186,6 +195,15 @@ StEntry StLabel.hint-text {
 }
 
 .button:active {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.button:checked {
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
@@ -670,7 +688,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 32px;
   height: 32px;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -802,10 +820,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-week-number {
-  height: 1.8em;
-  width: 2em;
-  margin: 6px 0;
-  border-radius: 100px;
+  height: 28px !important;
+  width: 28px !important;
+  margin: 4px !important;
+  padding: 0 !important;
+  border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.03);
   color: rgba(255, 255, 255, 0.5);
   font-size: inherit;
@@ -945,13 +964,35 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Message List */
 .message-list {
   width: 31.5em;
-  padding: 0 12px;
+  padding: 0 6px;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
+  border: solid rgba(255, 255, 255, 0.12);
+}
+
+.message-list:ltr {
+  margin-left: 0;
+  margin-right: 4px;
+  padding-right: 6px;
+  border-right-width: 1px;
+}
+
+.message-list:rtl {
+  margin-right: 0;
+  margin-left: 4px;
+  padding-left: 6px;
+  border-left-width: 1px;
 }
 
 .message-list .message-list-placeholder {
   spacing: 12px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.message-list .message-list-placeholder > StIcon {
+  icon-size: 48px;
+  margin-bottom: 12px;
+  -st-icon-style: symbolic;
 }
 
 .message-list-sections {
@@ -1644,15 +1685,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 /* OSD */
-.workspace-switcher-container, .switcher-list, .resize-popup, .osd-window {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: #202020;
-  border: none;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
-  border-radius: 8px;
-  padding: 12px;
-}
-
 .osd-window {
   text-align: center;
   font-weight: bold;
@@ -1906,17 +1938,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
   border: none !important;
   margin: 3px !important;
 }
 
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover {
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:hover {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: none;
 }
 
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:active, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:overview, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:focus, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:checked {
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:active, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:overview, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:focus, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:checked,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:active,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:overview,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:focus,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:checked {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
 }
@@ -1926,7 +1964,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px !important;
 }
 
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon {
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon {
   margin: 0 0 !important;
   padding: 0 !important;
 }
@@ -2959,7 +2998,7 @@ StWidget.focused .app-well-app-running-dot {
 .unlock-dialog .modal-dialog-button:default:hover,
 .unlock-dialog .modal-dialog-button:default:focus {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(64, 138, 235, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -2968,8 +3007,8 @@ StWidget.focused .app-well-app-running-dot {
 
 .login-dialog .modal-dialog-button:default:active,
 .unlock-dialog .modal-dialog-button:default:active {
-  color: white;
-  background-color: #3281ea;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.2);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;

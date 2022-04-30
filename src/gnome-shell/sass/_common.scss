@@ -45,3 +45,24 @@ stage {
     border-radius: $circular_radius;
   }
 }
+
+%osd_button {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+
+  &:insensitive { @include button(insensitive, $c:$system_bg_color, $tc: $inverse_disabled_secondary_fg_color); }
+  &:focus { @include button(focus, $c:$system_bg_color, $tc: $inverse_fg_color); }
+  &:hover { @include button(hover, $c:$system_bg_color, $tc: $inverse_fg_color); }
+  &:active { @include button(active, $c:$system_bg_color, $tc: $inverse_fg_color); }
+  &:outlined, &:checked { @include button(checked); }
+}
+
+%osd_panel {
+  color: $inverse_fg_color;
+  background-color: $system_bg_color;
+  border: none;
+  box-shadow: $shadow_2;
+  border-radius: $buttons_radius;
+  padding: $container_padding * 2;
+}

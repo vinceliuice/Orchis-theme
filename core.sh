@@ -63,17 +63,9 @@ install() {
   cp -r "$SRC_DIR/gnome-shell/pad-osd.css"                                      "$THEME_DIR/gnome-shell"
 
   if [[ "$tweaks" == 'true' ]]; then
-    if [[ "${GS_VERSION:-}" == 'new' ]]; then
-      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
-    else
-      sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
-    fi
+    sassc $SASSC_OPT "$SRC_DIR/gnome-shell/shell-$GS_VERSION/gnome-shell${ELSE_DARK:-}$size.scss" "$THEME_DIR/gnome-shell/gnome-shell.css"
   else
-    if [[ "${GS_VERSION:-}" == 'new' ]]; then
-      cp -r "$SRC_DIR/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
-    else
-      cp -r "$SRC_DIR/gnome-shell/shell-3-28/gnome-shell${ELSE_DARK:-}$size.css"    "$THEME_DIR/gnome-shell/gnome-shell.css"
-    fi
+    cp -r "$SRC_DIR/gnome-shell/shell-$GS_VERSION/gnome-shell${ELSE_DARK:-}$size.css" "$THEME_DIR/gnome-shell/gnome-shell.css"
   fi
 
   cp -r "$SRC_DIR/gnome-shell/common-assets"                                    "$THEME_DIR/gnome-shell/assets"
@@ -258,23 +250,28 @@ theme_tweaks() {
 }
 
 check_shell() {
-  if [[ "$shell" == "old" ]]; then
-    GS_VERSION="old"
-    echo "Install for old gnome-shell version"
-  elif [[ "$shell" == "new" ]]; then
-    GS_VERSION="new"
-    echo "Install for new gnome-shell version"
+  if [[ "$shell" == "38" ]]; then
+    GS_VERSION="3-28"
+    echo "Install for gnome-shell version < 40.0"
+  elif [[ "$shell" == "40" ]]; then
+    GS_VERSION="40-0"
+    echo "Install for gnome-shell version = 40.0"
+  elif [[ "$shell" == "42" ]]; then
+    GS_VERSION="42-0"
+    echo "Install for gnome-shell version = 42.0"
   elif [[ "$(command -v gnome-shell)" ]]; then
+    gnome-shell --version
     SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-    echo "Your gnome-shell version is $(gnome-shell --version)"
-    if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-      GS_VERSION="new"
+    if [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
+      GS_VERSION="42-0"
+    elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+      GS_VERSION="40-0"
     else
-      GS_VERSION="old"
+      GS_VERSION="3-28"
     fi
     else
       echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-      GS_VERSION="new"
+      GS_VERSION="42-0"
   fi
 }
 

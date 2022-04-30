@@ -7,15 +7,20 @@ $osd_levelbar_height: 4px;
   text-align: center;
   font-weight: bold;
   spacing: $container_padding * 2; // 12px
-  margin: $container_margin * 8; // 32px
-  min-width: 64px;
-  min-height: 64px;
+  padding: $container_padding * 2 $container_padding * 3;
+  & > * { spacing: 8px; }
+  margin-bottom: $container_margin;
 
   StIcon {
     icon-size: 96px;
   }
 
   .osd-monitor-label { font-size: 3em; }
+
+  StLabel {
+    &:ltr { margin-right: $container_padding; }
+    &:rtl { margin-left: $container_padding; }
+  }
 
   .level {
     height: $osd_levelbar_height;
@@ -25,6 +30,8 @@ $osd_levelbar_height: 4px;
     -barlevel-overdrive-color: $destructive_color;
     -barlevel-overdrive-separator-width: 3px;
     -barlevel-border-width: 0;
+    &:ltr { margin-right: $container_padding; }
+    &:rtl { margin-left: $container_padding; }
   }
 }
 
@@ -34,8 +41,8 @@ $osd_levelbar_height: 4px;
   background-color: transparentize(#000, 0.2);
   border: none;
 
-  .pad-osd-title-box { spacing: 12px; }
-  .pad-osd-title-menu-box { spacing: 6px; }
+  .pad-osd-title-box { spacing: $container_padding * 2; }
+  .pad-osd-title-menu-box { spacing: $container_padding; }
 }
 
 .combo-box-label {

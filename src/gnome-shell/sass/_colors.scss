@@ -35,14 +35,14 @@ $dark_fg_color:   rgba($black, 0.87);
 $light_fg_color:  $white;
 $button_fg_color: if($variant == 'light', rgba($black, 0.62), rgba($white, 0.8)); // extra fg color for raised buttons
 
-$fg_color:                    if($variant == 'light', rgba($black, 0.87), rgba($white, 0.9));
-$secondary_fg_color:          if($variant == 'light', rgba($black, 0.54), rgba($white, 0.7));
-$hint_fg_color:               if($variant == 'light', rgba($black, 0.38), rgba($white, 0.5));
-$disabled_fg_color:           if($variant == 'light', rgba($black, 0.38), rgba($white, 0.5));
-$disabled_secondary_fg_color: if($variant == 'light', rgba($black, 0.26), rgba($white, 0.3));
-$track_color:                 if($variant == 'light', rgba($black, 0.2), rgba($white, 0.1));
-$visit_color:                 if($variant == 'light', rgba($black, 0.16), rgba($white, 0.08));
-$divider_color:               if($variant == 'light', rgba($black, 0.12), rgba($white, 0.06));
+$fg_color:                             if($variant == 'light', rgba($black, 0.87), rgba($white, 0.9));
+$secondary_fg_color:                   if($variant == 'light', rgba($black, 0.54), rgba($white, 0.7));
+$hint_fg_color:                        if($variant == 'light', rgba($black, 0.38), rgba($white, 0.5));
+$disabled_fg_color:                    if($variant == 'light', rgba($black, 0.38), rgba($white, 0.5));
+$disabled_secondary_fg_color:          if($variant == 'light', rgba($black, 0.26), rgba($white, 0.3));
+$track_color:                          if($variant == 'light', rgba($black, 0.2), rgba($white, 0.1));
+$visit_color:                          if($variant == 'light', rgba($black, 0.16), rgba($white, 0.08));
+$divider_color:                        if($variant == 'light', rgba($black, 0.12), rgba($white, 0.06));
 
 $titlebar_fg_color:                    if($panel == 'light', rgba($black, 0.87), $white);
 $titlebar_secondary_fg_color:          if($panel == 'light', rgba($black, 0.54), rgba($white, 0.7));
@@ -52,13 +52,13 @@ $titlebar_disabled_secondary_fg_color: if($panel == 'light', rgba($black, 0.26),
 $titlebar_track_color:                 if($panel == 'light', rgba($black, 0.26), rgba($white, 0.1));
 $titlebar_divider_color:               if($panel == 'light', rgba($black, 0.12), rgba($white, 0.06));
 
-$inverse_fg_color:                    rgba($white, 0.85);
-$inverse_secondary_fg_color:          rgba($white, 0.7);
-$inverse_hint_fg_color:               rgba($white, 0.5);
-$inverse_disabled_fg_color:           rgba($white, 0.5);
-$inverse_disabled_secondary_fg_color: rgba($white, 0.3);
-$inverse_track_color:                 rgba($white, 0.3);
-$inverse_divider_color:               rgba($white, 0.15);
+$inverse_fg_color:                     rgba($white, 0.85);
+$inverse_secondary_fg_color:           rgba($white, 0.7);
+$inverse_hint_fg_color:                rgba($white, 0.5);
+$inverse_disabled_fg_color:            rgba($white, 0.5);
+$inverse_disabled_secondary_fg_color:  rgba($white, 0.3);
+$inverse_track_color:                  rgba($white, 0.3);
+$inverse_divider_color:                rgba($white, 0.15);
 
 // Background colors
 $dark_color:            if($blackness == 'true' and $variant == 'dark', #000000, #202020);

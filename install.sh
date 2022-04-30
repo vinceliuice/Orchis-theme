@@ -18,9 +18,10 @@ OPTIONS:
                           2. compact:  no floating panel variant
                           3. black:    full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
-  --shell                 install gnome-shell version [old|new]
-                          1. old:      gnome-shell version < 40.0
-                          2. new:      gnome-shell version >= 40.0
+  --shell                 install gnome-shell version [38|40|42]
+                          1. 38:       gnome-shell version < 40.0
+                          2. 40:       gnome-shell version = 40.0
+                          3. 42:       gnome-shell version = 42.0
   -h, --help              Show help
 EOF
 }
@@ -44,12 +45,16 @@ while [[ "$#" -gt 0 ]]; do
       shift
       for variant in $@; do
         case "$variant" in
-          old)
-            shell="old"
+          38)
+            shell="32-8"
             shift
             ;;
-          new)
-            shell="new"
+          40)
+            shell="40-0"
+            shift
+            ;;
+          42)
+            shell="42-0"
             shift
             ;;
           -*)

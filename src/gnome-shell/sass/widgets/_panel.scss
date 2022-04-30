@@ -148,7 +148,8 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   }
 
   // Gjs_ui_panel_AggregateMenu.panel-button,
-  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
     border: none !important;
     margin: $container_padding / 2 !important;
 
@@ -170,7 +171,8 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
   }
 
-  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button {
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
     .arc-menu-icon {
       margin: 0 0 !important;
       padding: 0 !important;

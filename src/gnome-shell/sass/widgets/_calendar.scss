@@ -95,7 +95,7 @@
   width: $menuitem_size;
   height: $menuitem_size;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: $circular_radius;
   background-color: transparent;
   color: $secondary_fg_color;
 
@@ -205,10 +205,11 @@
 }
 
 .calendar-week-number {
-  height: 1.8em;
-  width: 2em;
-  margin: $container_padding 0;
-  border-radius: 100px;
+  height: 28px !important;
+  width: 28px !important;
+  margin: $container_margin !important;
+  padding: 0 !important;
+  border-radius: $circular_radius;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $hint_fg_color;
   font-size: inherit;

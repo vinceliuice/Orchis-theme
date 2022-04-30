@@ -9,6 +9,7 @@
   @include button(flat-normal);
   &:hover { @include button(flat-hover); }
   &:active { @include button(flat-active); }
+  &:checked { @include button(flat-checked); }
   &:insensitive { @include button(flat-insensitive); }
   &:focus { @include button(flat-focus); }
 }
