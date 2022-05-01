@@ -225,6 +225,8 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
+./clean-old-theme.sh
+
 install_theme && link_theme
 
 echo

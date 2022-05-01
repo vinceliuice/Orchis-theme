@@ -15,10 +15,9 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Orchis
-THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
-THEME_COLORS=('default' 'purple' 'pink' 'red' 'orange' 'yellow' 'green' 'grey')
-COLOR_VARIANTS=('' '-light' '-dark')
-SIZE_VARIANTS=('' '-compact')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Grey')
+COLOR_VARIANTS=('' '-Light' '-Dark')
+SIZE_VARIANTS=('' '-Compact')
 
 # Check command availability
 function has_command() {
@@ -32,8 +31,8 @@ install() {
   local color="$4"
   local size="$5"
 
-  [[ "$color" == '-dark' ]] && local ELSE_DARK="$color"
-  [[ "$color" == '-light' ]] && local ELSE_LIGHT="$color"
+  [[ "$color" == '-Dark' ]] && local ELSE_DARK="$color"
+  [[ "$color" == '-Light' ]] && local ELSE_LIGHT="$color"
 
   local THEME_DIR="$dest/$name$theme$color$size"
 
@@ -101,10 +100,10 @@ install() {
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-3.0/gtk.css"
-    sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-3.0/gtk-dark.css"
+    sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk-Dark$size.scss"                      "$THEME_DIR/gtk-3.0/gtk-dark.css"
   else
     cp -r "$SRC_DIR/gtk/3.0/gtk$color$size.css"                                 "$THEME_DIR/gtk-3.0/gtk.css"
-    cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                  "$THEME_DIR/gtk-3.0/gtk-dark.css"
+    cp -r "$SRC_DIR/gtk/3.0/gtk-Dark$size.css"                                  "$THEME_DIR/gtk-3.0/gtk-dark.css"
   fi
 
   mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
@@ -113,10 +112,10 @@ install() {
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-4.0/gtk.css"
-    sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-4.0/gtk-dark.css"
+    sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk-Dark$size.scss"                      "$THEME_DIR/gtk-4.0/gtk-dark.css"
   else
     cp -r "$SRC_DIR/gtk/4.0/gtk$color$size.css"                                 "$THEME_DIR/gtk-4.0/gtk.css"
-    cp -r "$SRC_DIR/gtk/4.0/gtk-dark$size.css"                                  "$THEME_DIR/gtk-4.0/gtk-dark.css"
+    cp -r "$SRC_DIR/gtk/4.0/gtk-Dark$size.css"                                  "$THEME_DIR/gtk-4.0/gtk-dark.css"
   fi
 
   mkdir -p                                                                      "$THEME_DIR/xfwm4"
@@ -211,25 +210,25 @@ install_black() {
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
-      -purple)
+      -Purple)
         theme_color='purple'
         ;;
-      -pink)
+      -Pink)
         theme_color='pink'
         ;;
-      -red)
+      -Red)
         theme_color='red'
         ;;
-      -orange)
+      -Orange)
         theme_color='orange'
         ;;
-      -yellow)
+      -Yellow)
         theme_color='yellow'
         ;;
-      -green)
+      -Green)
         theme_color='green'
         ;;
-      -grey)
+      -Grey)
         theme_color='grey'
         ;;
     esac

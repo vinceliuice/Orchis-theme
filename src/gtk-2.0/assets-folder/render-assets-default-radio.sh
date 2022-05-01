@@ -6,7 +6,7 @@ OPTIPNG="$(command -v optipng)" || true
 
 INDEX="assets-default-radio.txt"
 
-for color in '' '-dark'; do
+for color in '' '-Dark'; do
 
 ASSETS_DIR="assets-default-radio${color}"
 SRC_FILE="assets-default-radio${color}.svg"
