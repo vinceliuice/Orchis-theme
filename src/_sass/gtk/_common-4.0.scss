@@ -1158,7 +1158,7 @@ headerbar {
   color: $titlebar-text;
   // The sizing factor needs to be defined in the headerbar node for the case of split headerbars
   min-height: $large-size;
-  padding: 0 $container-padding;
+  padding: 0;
   border-radius: $window-radius $window-radius 0 0;
 
   &:disabled { color: $titlebar-text-disabled; }
@@ -1226,7 +1226,7 @@ headerbar {
   }
 
   > windowhandle > box {
-    padding: 0 $container-padding / 2;
+    padding: 0 $container-padding;
 
     &,
     > box.start,
@@ -3324,8 +3324,8 @@ window.dialog.message { // Message Dialog styling
     }
 
     .dialog-action-area {
-      margin-top: -$container-padding;
-      // padding: $container-padding;
+      // margin-top: -$container-padding;
+      padding: $container-padding;
 
       > button {
         @extend %button-flat;

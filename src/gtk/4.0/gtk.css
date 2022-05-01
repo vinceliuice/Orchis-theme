@@ -1405,7 +1405,7 @@ headerbar {
   background-color: #2C2C2C;
   color: white;
   min-height: 48px;
-  padding: 0 6px;
+  padding: 0;
   border-radius: 18px 18px 0 0;
 }
 
@@ -1485,7 +1485,7 @@ box.vertical headerbar {
 }
 
 headerbar > windowhandle > box {
-  padding: 0 3px;
+  padding: 0 6px;
 }
 
 headerbar > windowhandle > box,
@@ -3715,7 +3715,7 @@ window.dialog.message.csd.background {
 }
 
 window.dialog.message.csd .dialog-action-area {
-  margin-top: -6px;
+  padding: 6px;
 }
 
 window.dialog.message.csd .dialog-action-area > button, window.dialog.message.csd .dialog-action-area > button:first-child, window.dialog.message.csd .dialog-action-area > button:last-child {
