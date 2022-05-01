@@ -2964,8 +2964,8 @@ menubar > menuitem label:disabled,
 menu,
 .menu,
 .context-menu {
-  margin: 3px 0;
-  padding: 3px;
+  margin: 3px;
+  padding: 6px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #3C3C3C;
   background-clip: border-box;
@@ -2974,7 +2974,7 @@ menu,
 
 .csd menu, .csd .menu, .csd .context-menu {
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 menu menuitem,
@@ -2987,7 +2987,7 @@ menu menuitem,
   color: white;
   font: initial;
   text-shadow: none;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 menu menuitem:hover,
@@ -3055,7 +3055,7 @@ menu > arrow,
   padding: 4px;
   background-color: #3C3C3C;
   color: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
+  border-radius: 9px;
 }
 
 menu > arrow.top,
@@ -4886,43 +4886,43 @@ tooltip > box {
  * Color Chooser *
  *****************/
 colorswatch.top {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 colorswatch.top overlay {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 colorswatch.bottom {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 colorswatch.bottom overlay {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 colorswatch.left, colorswatch:first-child:not(.top) {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 colorswatch.left overlay, colorswatch:first-child:not(.top) overlay {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 colorswatch.right, colorswatch:last-child:not(.bottom) {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 colorswatch.right overlay, colorswatch:last-child:not(.bottom) overlay {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 colorswatch.dark {
@@ -4934,12 +4934,12 @@ colorswatch.light {
 }
 
 colorswatch#add-color-button {
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 12px 0 0;
   color: white;
 }
 
 colorswatch#add-color-button:only-child {
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 colorswatch#add-color-button overlay {
@@ -4955,11 +4955,11 @@ colorswatch:disabled overlay {
 }
 
 colorswatch#editor-color-sample {
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 colorswatch#editor-color-sample overlay {
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 colorchooser .popover.osd {
@@ -5418,11 +5418,11 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window .floating-bar {
-  min-height: 32px;
-  padding: 0;
+  min-height: 24px;
+  padding: 2px;
   margin: 6px;
   border-style: none;
-  border-radius: 18px;
+  border-radius: 9999px;
   background-color: rgba(33, 33, 33, 0.95);
 }
 

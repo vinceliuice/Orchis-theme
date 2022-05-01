@@ -21,9 +21,9 @@ $menuitem-size: if($compact == 'false', 28px, 24px);
 // Radii
 //
 
-$window-radius: 18px;
-$corner-radius: 12px;
-$menu-radius: 8px;
+$window-radius: if($compact == 'false', 18px, 14px);
+$corner-radius: if($compact == 'false', 12px, 10px);
+$menu-radius: if($compact == 'false', 12px, 9px);
 $circular-radius: 9999px;
 
 //

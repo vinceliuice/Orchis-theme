@@ -1,0 +1,732 @@
+avatar {
+  border-radius: $circular-radius;
+  font-weight: bold;
+
+  // The list of colors to generate avatars.
+  // Each avatar color is represented by a font color, a gradient start color and a gradient stop color.
+  // There are 8 different colors for avtars in the list if you change the number of them you
+  // need to update the NUMBER_OF_COLORS in src/adw-avatar.c.
+  // The 2D list has this form: ((font-color, gradient-top-color, gradient-bottom-color)).
+  $avatarcolorlist: (
+   (#cfe1f5, #83b6ec, #337fdc), // blue
+   (#caeaf2, #7ad9f1, #0f9ac8), // cyan
+   (#cef8d8, #8de6b1, #29ae74), // green
+   (#e6f9d7, #b5e98a, #6ab85b), // lime
+   (#f9f4e1, #f8e359, #d29d09), // yellow
+   (#ffead1, #ffcb62, #d68400), // gold
+   (#ffe5c5, #ffa95a, #ed5b00), // orange
+   (#f8d2ce, #f78773, #e62d42), // raspberry
+   (#fac7de, #e973ab, #e33b6a), // magenta
+   (#e7c2e8, #cb78d4, #9945b5), // purple
+   (#d5d2f5, #9e91e8, #7a59ca), // violet
+   (#f2eade, #e3cf9c, #b08952), // beige
+   (#e5d6ca, #be916d, #785336), // brown
+   (#d8d7d3, #c0bfbc, #6e6d71), // gray
+  );
+
+  @for $i from 1 through length($avatarcolorlist) {
+    &.color#{$i} {
+      $avatarcolor: nth($avatarcolorlist, $i);
+      background-image: linear-gradient(nth($avatarcolor, 2), nth($avatarcolor, 3));
+      color: nth($avatarcolor, 1);
+    }
+  }
+
+  &.contrasted { color: white; }
+
+  &.image { background: none; }
+}
+
+$opaque_button_default_bg: gtkmix($base, $text, 85%);
+
+button {
+  @at-root %opaque-button {
+    box-shadow: none;
+    transition: $transition,
+                box-shadow $ripple-fade-in-duration $ease-out;
+
+    .osd &:focus:focus-visible {
+      outline: none;
+    }
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, .1));
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-image: image(transparentize(black, .8));
+    }
+
+    &:checked {
+      background-image: image(transparentize(black, .85));
+
+      &:hover {
+        background-image: image(transparentize(black, .95));
+      }
+
+      &.keyboard-activating,
+      &:active {
+        background-image: image(transparentize(black, .7));
+      }
+    }
+  }
+
+  &.opaque {
+    @extend %opaque-button;
+
+    background-color: $opaque_button_default_bg;
+    color: $text;
+  }
+
+  &.destructive-action {
+    @extend %opaque-button;
+
+    color: on($destructive);
+
+    &, &:checked {
+      background-color: $destructive;
+    }
+  }
+
+  &.suggested-action {
+    @extend %opaque-button;
+
+    color: on($suggested);
+
+    &, &:checked {
+      background-color: $suggested;
+    }
+  }
+
+  // hide separators
+  &.font {
+    separator { background-color: transparent; }
+    > box { border-spacing: $container-padding; }
+    > box > box > label { font-weight: bold; }
+  }
+
+  @at-root %pill-button,
+  &.pill {
+    padding: 10px 32px;
+    border-radius: $circular-radius;
+  }
+
+  &.card {
+    background-clip: padding-box;
+    font-weight: inherit;
+    padding: 0;
+    box-shadow: none;
+    transition: $transition;
+
+    &:hover {
+      @include button(hover);
+    }
+
+    &.keyboard-activating,
+    &:active {
+      @include button(active);
+    }
+
+    &:checked {
+      @include button(active);
+    }
+
+    &:drop(active) {
+      color: $drop_target_color;
+      box-shadow: inset 0 0 0 1px $drop_target_color;
+    }
+  }
+}
+
+menubutton {
+  &.osd {
+    background: none;
+    color: inherit;
+  }
+
+  &.circular > button { @extend %circular-button; }
+  &.flat > button { @extend %button-flat; }
+  &.pill > button { @extend %pill-button; }
+
+  &.suggested-action {
+    background-color: $suggested;
+    color: on($suggested);
+  }
+
+  &.destructive-action {
+    background-color: $destructive;
+    color: on($destructive);
+  }
+
+  &.opaque {
+    background-color: $opaque_button_default_bg;
+    color: $text;
+  }
+
+  &.suggested-action,
+  &.destructive-action,
+  &.opaque {
+    border-radius: $corner-radius;
+
+    &.circular, &.pill {
+      border-radius: $circular-radius;
+    }
+
+    > button {
+      @extend %opaque-button;
+
+      &, &:checked {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+
+  &.image-button > button {
+    min-width: 24px;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+
+  arrow {
+    min-height: 16px;
+    min-width: 16px;
+    &.none {
+      -gtk-icon-source: -gtk-icontheme('open-menu-symbolic');
+    }
+    &.down {
+      -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+    }
+    &.up {
+      -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+    }
+    &.left {
+      -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
+    }
+    &.right {
+      -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+    }
+  }
+}
+
+splitbutton {
+  border-radius: $corner-radius;
+
+  &, & > separator {
+    transition: $transition;
+    transition-property: background;
+  }
+
+  > separator {
+    margin-top: $container-padding;
+    margin-bottom: $container-padding;
+    background: none;
+  }
+
+  > menubutton > button {
+    padding-left: $container-padding - 2px;
+    padding-right: $container-padding - 2px;
+  }
+
+  // Since the inner button doesn't have any style classes on it,
+  // we have to add them manually
+  &.image-button > button {
+    min-width: 24px;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+
+  &.text-button.image-button > button,
+  &.image-text-button > button {
+    padding-left: $container-padding * 1.5;
+    padding-right: $container-padding * 1.5;
+
+    > box {
+      border-spacing: $container-padding;
+    }
+  }
+
+  // Reimplementing linked so we don't blow up css
+  > button:dir(ltr),
+  > menubutton > button:dir(rtl) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -1px;
+  }
+
+  > button:dir(rtl),
+  > menubutton > button:dir(ltr) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  @at-root %flat_split_button,
+  &.flat {
+    > separator {
+      background: $divider;
+    }
+
+    &:hover,
+    &:active,
+    &:checked {
+      background: gtkalpha(currentColor, 0.1);
+      color: $text;
+
+      > separator {
+        background: none;
+      }
+    }
+
+    &:focus-within:focus-visible > separator {
+      background: none;
+    }
+
+    > button,
+    > menubutton > button {
+      @extend %button-flat;
+
+      border-radius: $corner-radius;
+    }
+  }
+
+  &.suggested-action {
+    background-color: $suggested;
+    color: on($suggested);
+  }
+
+  &.destructive-action {
+    background-color: $destructive;
+    color: on($destructive);
+  }
+
+  &.opaque {
+    background-color: $opaque_button_default_bg;
+    color: $text;
+  }
+
+  &.suggested-action,
+  &.destructive-action,
+  &.opaque {
+    > button, > menubutton > button {
+      @extend %opaque-button;
+
+      &, &:checked {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+
+    > menubutton > button {
+      &:dir(ltr) { box-shadow: inset 1px 0 $divider; }
+      &:dir(rtl) { box-shadow: inset -1px 0 $divider; }
+    }
+  }
+
+  > menubutton > button > arrow.none {
+    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+  }
+}
+
+buttoncontent {
+  border-spacing: $container-padding;
+
+  > label {
+    font-weight: bold;
+
+    &:dir(ltr) { padding-right: 2px; }
+    &:dir(rtl) { padding-left: 2px; }
+  }
+
+  .arrow-button > box > &,
+  splitbutton > button > & {
+    > label {
+      &:dir(ltr) { padding-right: 0; }
+      &:dir(rtl) { padding-left: 0; }
+    }
+  }
+}
+
+//
+// Toasts
+//
+
+toast {
+  @extend %osd;
+  margin: $container-padding * 2;
+  margin-bottom: 24px;
+  border-radius: $circular-radius;
+  border-spacing: $container-padding;
+  padding: $container-padding;
+  box-shadow: $shadow-z6, inset 0 1px highlight($base);
+  color: $text-secondary;
+  font-weight: normal;
+
+  &:dir(ltr) { padding-left: $container-padding * 2; }
+  &:dir(rtl) { padding-right: $container-padding * 2; }
+
+  > widget {
+    margin: 0 $container-padding;
+  }
+}
+
+//
+// AdwStatusPage
+//
+
+statuspage {
+  > scrolledwindow > viewport > box {
+    margin: $container-padding * 6 $container-padding * 2;
+    border-spacing: 36px;
+
+    > clamp > box {
+      border-spacing: $container-padding * 2;
+
+      > .icon {
+        -gtk-icon-size: 128px;
+
+        color: gtkalpha(currentColor, 0.45);
+
+        &:disabled {
+          opacity: 0.45;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: $container-padding * 4;
+        }
+      }
+    }
+  }
+
+  &.compact > scrolledwindow > viewport > box {
+    margin: $container-padding * 4 $container-padding * 2;
+    border-spacing: $container-padding * 4;
+
+    > clamp > box {
+      > .icon {
+        -gtk-icon-size: 96px;
+
+        &:not(:last-child) {
+          margin-bottom: $container-padding * 2;
+        }
+      }
+
+      > .title {
+        font-size: 18pt;
+      }
+    }
+  }
+}
+
+// Cards
+.card {
+  @at-root %card, & {
+    border-radius: $corner-radius;
+    box-shadow: none;
+    border: 1px solid $divider;
+    background-clip: padding-box;
+    background-color: $base;
+    color: $text-secondary;
+
+    // .osd &, &.osd {
+    // }
+  }
+}
+
+// preferences
+preferencespage > scrolledwindow > viewport > clamp > box {
+  margin: $container-padding * 4 $container-padding * 2;
+  border-spacing: $container-padding * 4;
+}
+
+preferencesgroup > box {
+  &, .labels {
+    border-spacing: $container-padding;
+  }
+
+  > box.header:not(.single-line) {
+    margin-bottom: $container-padding;
+  }
+
+  > box.single-line {
+    min-height: $medium-size;
+  }
+
+  button.background-preview-button.toggle {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    outline-color: transparent;
+    outline-width: 2px;
+    outline-offset: $container-padding / 2;
+    outline-style: solid;
+
+    &, > background-preview {
+      border-radius: 6px;
+    }
+
+    &:hover {
+      outline-color: $fill;
+    }
+
+    &:active {
+      outline-color: $track;
+    }
+
+    &:checked {
+      outline-color: $primary;
+    }
+  }
+}
+
+//
+// viewswitcher
+//
+
+viewswitcher {
+  margin: 0;
+
+  &.wide {
+    border-spacing: $container-padding / 2;
+    border-radius: $circular-radius;
+    background-color: $fill;
+    margin-top: $container-padding;
+    margin-bottom: $container-padding;
+
+    button.toggle:checked, button.toggle.flat:checked {
+      background-color: $primary;
+      color: on($primary);
+
+      &:backdrop { color: on($primary, disabled); }
+
+      indicatorbin.needs-attention > indicator {
+        > label { color: $primary; }
+        background-color: on($primary);
+      }
+    }
+  }
+
+  &.narrow button.toggle {
+    border-radius: 0;
+    margin: 0;
+    border: none;
+  }
+
+  button.toggle {
+    font-weight: bold;
+    padding: 0;
+    min-height: 0;
+    margin: 0;
+
+    > stack > box {
+      &.narrow {
+        font-size: 0.75rem;
+        padding-top: $container-padding + 1px;
+        padding-bottom: $container-padding - 1px;
+        border-spacing: $container-padding - 2px;
+
+        > stack > label {
+          padding-left: $container-padding + 2px;
+          padding-right: $container-padding + 2px;
+        }
+      }
+
+      &.wide {
+        padding: 0 $container-padding * 2;
+        border-spacing: $container-padding;
+      }
+    }
+  }
+}
+
+// AdwViewSwitcherBar
+viewswitcherbar actionbar > revealer > box {
+  padding: 0;
+}
+
+// AdwViewSwitcherTitle
+viewswitchertitle viewswitcher {
+  margin-left: $container-padding * 2;
+  margin-right: $container-padding * 2;
+}
+
+// AdwIndicatorBin
+indicatorbin {
+  > indicator, > mask {
+    min-width: $container-padding;
+    min-height: $container-padding;
+    border-radius: $circular-radius;
+  }
+
+  > indicator {
+    margin: 1px;
+    padding: 0;
+    background: gtkalpha(currentColor, .4);
+
+    > label {
+      font-size: 0.6rem;
+      font-weight: bold;
+      padding: 2px 5px;
+      color: white;
+    }
+  }
+
+  > mask {
+    padding: 1px;
+    background: black;
+  }
+
+  &.needs-attention > indicator {
+    background-color: $primary;
+
+    > label { color: on($primary); }
+  }
+}
+
+//
+// tab-view
+//
+
+tabbar {
+  .box {
+    min-height: $menuitem-size;
+  }
+
+  tabbox {
+    > tabboxchild {
+      border-radius: $corner-radius;
+      margin: $container-padding / 2;
+    }
+
+    > separator {
+      margin-top: $container-padding * 1.5;
+      margin-bottom: $container-padding * 1.5;
+      transition: opacity 150ms ease-in-out;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    > revealer > indicator {
+      min-width: 2px;
+      border-radius: 2px;
+      margin: $container-padding * 1.5 $container-padding;
+      background: gtkalpha($primary, 0.5);
+    }
+  }
+
+  tab {
+    transition: background 150ms ease-in-out;
+
+    &:selected, &:checked, &:active, &:active:hover, &:checked:hover {
+      background-color: $divider;
+      box-shadow: none;
+      color: $text;
+    }
+
+    &:hover {
+      background-color: $fill;
+      box-shadow: none;
+      color: $text;
+    }
+  }
+
+  .start-action,
+  .end-action {
+    padding: 5px;
+  }
+
+  .start-action:dir(ltr),
+  .end-action:dir(rtl) {
+    padding-right: 0;
+  }
+
+  .start-action:dir(rtl),
+  .end-action:dir(ltr) {
+    padding-left: 0;
+  }
+
+  &:not(.inline) {
+    .box {
+      background-color: $background;
+      color: $text-secondary;
+      padding: $container-padding / 2;
+      box-shadow: none;
+      border-bottom: 1px solid $divider;
+    }
+
+    &:backdrop .box {
+      > scrolledwindow,
+      > .start-action,
+      > .end-action {
+        filter: opacity(0.5);
+      }
+    }
+  }
+}
+
+dnd tab {
+  background-color: $background;
+  color: $text-secondary;
+  box-shadow: none;
+  margin: $container-padding * 4;
+}
+
+tabbar,
+dnd {
+  tab {
+    min-height: $menuitem-size;
+    padding: $container-padding / 2 $container-padding;
+    border-radius: $menu-radius;
+    margin: 0 2px;
+
+    button.image-button {
+      padding: 0;
+      margin: 0;
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: $circular-radius;
+      border: none;
+      @extend %button-flat;
+    }
+
+    indicator {
+      min-height: 2px;
+      border-radius: 2px;
+      background: gtkalpha($primary, 0.5);
+    }
+  }
+}
+
+tabview:drop(active),
+tabbox:drop(active) {
+  box-shadow: none;
+}
+
+// Sidebar
+.unfolded stacksidebar.sidebar { border: none; }
+
+
+//
+// leaflet
+//
+
+leaflet {
+  outline-color: highlight($titlebar);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -1px;
+  border-radius: $window-radius;
+
+  headerbar {
+    border-radius: 0;
+    box-shadow: inset 0 -1px $divider;
+  }
+
+  leaflet {
+    border-radius: 0;
+    outline: none;
+  }
+}

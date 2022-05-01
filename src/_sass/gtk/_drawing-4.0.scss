@@ -11,29 +11,33 @@
   @if $t == normal {
     transition: $transition, box-shadow $ripple-fade-out-duration $ease-out;
     box-shadow: inset 0 0 0 2px transparent;
-    background-color: $entry;
-    color: $text;
+    background-color: if($fc == $primary, $entry, rgba($fc, 0.08));
+    color: if($fc == $primary, $text, $fc);
   }
 
   @if $t == hover {
     background-color: $overlay-hover;
     box-shadow: inset 0 0 0 2px $overlay-hover;
+    color: if($fc == $primary, $text, $fc);
   }
 
   @if $t == focus {
     background-color: $overlay-focus;
     box-shadow: inset 0 0 0 2px if($fc == $primary, $track, $fc);
+    color: if($fc == $primary, $text, $fc);
   }
 
   @if $t == checked {
-    background-color: $entry;
+    background-color: if($fc == $primary, $entry, rgba($fc, 0.08));
     box-shadow: inset 0 0 0 2px if($fc == $primary, $primary, $fc);
+    color: if($fc == $primary, $text, $fc);
   }
 
   @if $t == disabled {
     box-shadow: inset 0 0 0 2px transparent;
-    background-color: $fill;
+    background-color: if($fc == $primary, $fill, rgba($fc, 0.04));
     color: $text-disabled;
+    color: if($fc == $primary, $text-disabled, rgba($fc, 0.35));
   }
 
   @if $t == raised-normal {

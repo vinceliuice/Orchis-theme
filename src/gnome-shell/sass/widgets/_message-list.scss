@@ -4,14 +4,14 @@
 // main list
 .message-list {
   width: 31.5em;
-  padding: 0 $container_padding;
+  padding: 0 $container_margin;
   color: $secondary_fg_color;
   text-shadow: none;
-  border: solid $border_color;
+  border: none;
 
   // padding and margins to account for scrollbar
-  &:ltr {margin-left: 0; margin-right: $container_margin; padding-right: $container_padding; border-right-width: 1px; }
-  &:rtl {margin-right: 0; margin-left: $container_margin; padding-left: $container_padding; border-left-width: 1px; }
+  &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }
+  &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
 
   .message-list-placeholder {
     spacing: $container_padding * 2;

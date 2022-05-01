@@ -101,11 +101,9 @@ install() {
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-3.0/gtk.css"
-    [[ "$color" != '-dark' ]] && \
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-3.0/gtk-dark.css"
   else
     cp -r "$SRC_DIR/gtk/3.0/gtk$color$size.css"                                 "$THEME_DIR/gtk-3.0/gtk.css"
-    [[ "$color" != '-dark' ]] && \
     cp -r "$SRC_DIR/gtk/3.0/gtk-dark$size.css"                                  "$THEME_DIR/gtk-3.0/gtk-dark.css"
   fi
 
@@ -115,11 +113,9 @@ install() {
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-4.0/gtk.css"
-    [[ "$color" != '-dark' ]] && \
     sassc $SASSC_OPT "$SRC_DIR/gtk/4.0/gtk-dark$size.scss"                      "$THEME_DIR/gtk-4.0/gtk-dark.css"
   else
     cp -r "$SRC_DIR/gtk/4.0/gtk$color$size.css"                                 "$THEME_DIR/gtk-4.0/gtk.css"
-    [[ "$color" != '-dark' ]] && \
     cp -r "$SRC_DIR/gtk/4.0/gtk-dark$size.css"                                  "$THEME_DIR/gtk-4.0/gtk-dark.css"
   fi
 
@@ -148,6 +144,23 @@ install() {
 
   mkdir -p                                                                      "$THEME_DIR/plank"
   cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"
+}
+
+link_libadwaita() {
+  local dest="$1"
+  local name="$2"
+  local theme="$3"
+  local color="$4"
+  local size="$5"
+
+  local THEME_DIR="$dest/$name$theme$color$size"
+
+  # link gtk4.0 for libadwaita
+  mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
+  ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk.css"                                         "${HOME}/.config/gtk-4.0/gtk.css"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css"                                    "${HOME}/.config/gtk-4.0/gtk-dark.css"
 }
 
 #  Install needed packages
@@ -282,6 +295,16 @@ install_theme() {
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
         install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+      done
+    done
+  done
+}
+
+link_theme() {
+  for theme in "${themes[@]}"; do
+    for color in "${colors[2]}"; do
+      for size in "${sizes[0]}"; do
+        link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
       done
     done
   done

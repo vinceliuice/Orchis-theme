@@ -68,20 +68,20 @@ stage {
 }
 
 .modal-dialog .modal-dialog-linked-button:first-child, .hotplug-notification-item:first-child {
-  margin-left: 6px;
-  margin-right: 0;
+  margin-left: 6px !important;
+  margin-right: 0 !important;
   border-radius: 9999px 0 0 9999px;
 }
 
 .modal-dialog .modal-dialog-linked-button:last-child, .hotplug-notification-item:last-child {
-  margin-left: 0;
-  margin-right: 6px;
+  margin-left: 0 !important;
+  margin-right: 6px !important;
   border-right-width: 0;
   border-radius: 0 9999px 9999px 0;
 }
 
 .modal-dialog .modal-dialog-linked-button:first-child:last-child, .hotplug-notification-item:first-child:last-child {
-  margin: 0 6px 6px 6px;
+  margin: 0 6px 6px 6px !important;
   border-right-width: 0;
   border-radius: 9999px;
 }
@@ -1019,24 +1019,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Message List */
 .message-list {
   width: 31.5em;
-  padding: 0 6px;
+  padding: 0 4px;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
-  border: solid rgba(255, 255, 255, 0.12);
+  border: none;
 }
 
 .message-list:ltr {
   margin-left: 0;
-  margin-right: 4px;
-  padding-right: 6px;
-  border-right-width: 1px;
+  margin-right: 0;
+  padding-right: 0;
+  border-right-width: 0;
 }
 
 .message-list:rtl {
   margin-right: 0;
-  margin-left: 4px;
-  padding-left: 6px;
-  border-left-width: 1px;
+  margin-left: 0;
+  padding-left: 0;
+  border-left-width: 0;
 }
 
 .message-list .message-list-placeholder {

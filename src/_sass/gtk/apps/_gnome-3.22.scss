@@ -241,11 +241,11 @@
 
   // Floating status bar
   .floating-bar {
-    min-height: 32px;
-    padding: 0;
+    min-height: $small-size;
+    padding: 2px;
     margin: 6px;
     border-style: none;
-    border-radius: $window-radius;
+    border-radius: $circular-radius;
     background-color: rgba($background, 0.95);
 
     button {

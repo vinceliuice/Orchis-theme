@@ -225,7 +225,7 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-install_theme
+install_theme && link_theme
 
 echo
 echo "Done."

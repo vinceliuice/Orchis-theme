@@ -24,7 +24,17 @@ dnd {
 }
 
 .large-icons {
+  -gtk-icon-size: 128px;
+}
+
+.lowres-icon {
   -gtk-icon-size: 32px;
+}
+
+.symbolic-circular {
+  background-color: $fill;
+  border-radius: $circular-radius;
+  padding: $container-padding;
 }
 
 spinner:disabled,
@@ -79,6 +89,12 @@ flowbox {
     border-radius: $corner-radius;
 
     &:selected { @extend %selected_items_color; }
+
+    button.remove-button.osd {
+      min-height: $small-size;
+      min-width: $small-size;
+      padding: $container-padding;
+    }
   }
 }
 
@@ -139,14 +155,26 @@ label {
 
 %dim-label, .dim-label { color: $text-secondary; }
 
+.accent {
+  color: $primary;
+}
+
+.success {
+  color: $success;
+}
+
+.warning {
+  color: $warning;
+}
+
+.error {
+  color: $error;
+}
+
 window.assistant {
   .sidebar {
     padding: 4px 0;
-    // background-color: $base;
-    // border-top: 1px solid $divider;
   }
-
-  // &.csd .sidebar { border-top-style: none; }
 
   .sidebar label {
     min-height: $medium-size;
@@ -264,7 +292,7 @@ entry {
 
     &:disabled { @include entry(disabled); }
 
-    &.search { border-radius: $circular-radius; }
+    // &.search { border-radius: $circular-radius; }
 
     &.flat {
       min-height: 0;
@@ -274,11 +302,6 @@ entry {
     }
 
     image { // icons inside the entry
-      // @extend %button-flat;
-
-      // min-height: $small-size;
-      // min-width: $small-size;
-      // border-radius: $circular-radius;
       color: $text-secondary;
 
       &:hover, &:active { color: $text; }
@@ -306,9 +329,17 @@ entry {
 
     // entry error and warning style
     @each $e_type, $e_color in (error, $error),
+                               (success, $success),
                                (warning, $warning) {
       &.#{$e_type} {
         @include entry(normal, $e_color);
+
+        image { color: $e_color; }
+
+        selection {
+          color: on($e_color);
+          background-color: $e_color;
+        }
 
         &:focus-within { @include entry(checked, $e_color); }
 
@@ -539,15 +570,20 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
+    box-shadow: none;
     padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
+    background-color: $base;
+    border: 1px solid $divider;
+    background-clip: padding-box;
+
+    &:hover { background-color: mix($text, $base, 10%); }
+
+    &:active { background-color: mix($text, $base, 20%); }
 
     &.image-button { padding: ($large-size - 24px) / 2; }
 
     &:disabled { opacity: 0; }
   }
-
-  // overlay / OSD style
-  // .osd & { }
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color in (suggested-action, $suggested),
@@ -691,11 +727,6 @@ button {
 
 /* menu buttons */
 modelbutton.flat {
-  min-height: $menuitem-size;
-  padding: 0 $container-padding * 1.5;
-  border-radius: $corner-radius / 2;
-  color: $text;
-
   @extend %button-flat-simple;
 
   &:selected { @extend %selected_items; }
@@ -826,7 +857,6 @@ spinbutton {
       @extend %button-flat-simple;
       @extend %small-button;
       padding: 0;
-
       border: solid $container-padding transparent;
 
       // Remove unwanted focus indicator
@@ -835,22 +865,23 @@ spinbutton {
         color: $text-secondary;
       }
 
-      &.up { margin: 0 $container-padding/2; }
+      &.up { margin: 0 $container-padding / 2; }
 
-      &.down { margin: 0 $container-padding/2; }
+      &.down { margin: 0 $container-padding / 2; }
     }
   }
 
   // Misc
-  treeview &:not(.vertical),
-  row &:not(.vertical) {
-    min-height: 0;
-    border-style: none;
-    border-radius: 0;
+  // treeview &:not(.vertical),
+  list > row &:not(.vertical) {
+    > button {
+      margin: $container-padding;
 
-    > text {
-      min-height: 0;
-      padding: 1px 2px;
+      &.up:dir(ltr),
+      &.down:dir(rtl) { margin-left: $container-padding / 2; }
+
+      &.up:dir(rtl),
+      &.down:dir(ltr) { margin-right: $container-padding / 2; }
     }
   }
 }
@@ -874,38 +905,22 @@ combobox {
   }
 
   // align menu labels with the button label
-  > popover.menu > contents modelbutton {
-    padding-left: 9px;
-    padding-right: 9px;
+  > popover.menu {
+    margin-top: $container-padding - 2px;
+
+    > contents {
+      padding: $container-padding;
+
+      modelbutton {
+        padding-left: $container-padding * 1.5;
+        padding-right: $container-padding * 1.5;
+      }
+    }
   }
 
   button.combo cellview {
     &:dir(ltr) { margin-left: 8px - ($medium-size - 16px) / 2; }
     &:dir(rtl) { margin-right: 8px - ($medium-size - 16px) / 2; }
-  }
-
-  // newstyle
-  popover {
-   margin-top: $container-padding - 2px;
-   padding: 0;
-
-   listview {
-      margin: $container-padding 0;
-
-      & > row {
-         padding: $container-padding;
-
-         &:selected {
-           color: $text;
-           background-color: $overlay-selected;
-         }
-      }
-   }
-
-    // drodowns with searchboxes on top
-    .dropdown-searchbar {
-      padding: $container-padding;
-    }
   }
 
   &.linked {
@@ -992,6 +1007,15 @@ button.combo:only-child {
   &:disabled { @include button(disabled); }
 }
 
+%toolbar_osd {
+  transition: $transition-shadow;
+  padding: $container-padding;
+  border-radius: $corner-radius;
+  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
+  background-color: $surface;
+
+  &:backdrop { box-shadow: $shadow-z2, inset 0 1px highlight($surface); }
+}
 
 /************
  * Toolbars *
@@ -1008,14 +1032,8 @@ toolbar {
   .osd & { background-color: transparent; }
 
   // stand-alone OSD toolbars
-  @at-root %toolbar_osd, &.osd {
-    transition: $transition-shadow;
-    padding: $container-padding;
-    border-radius: $corner-radius;
-    box-shadow: $shadow-z4, inset 0 1px highlight($surface);
-    background-color: $surface;
-
-    &:backdrop { box-shadow: $shadow-z2, inset 0 1px highlight($surface); }
+  &.osd {
+    @extend %toolbar_osd;
 
     &.left,
     &.right,
@@ -1068,7 +1086,7 @@ toolbar {
 
 // searchbar
 searchbar > revealer > box {
-  padding: $container-padding;
+  padding: $container-padding $container-padding * 2;
   border-spacing: $container-padding;
   border-style: solid;
   border-width: 0 0 1px;
@@ -1133,12 +1151,15 @@ searchbar > revealer > box {
   }
 }
 
-.titlebar {
+headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
-  border-radius: $window-radius $window-radius 0 0;
   box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
   background-color: $titlebar;
   color: $titlebar-text;
+  // The sizing factor needs to be defined in the headerbar node for the case of split headerbars
+  min-height: $large-size;
+  padding: 0 $container-padding;
+  border-radius: $window-radius $window-radius 0 0;
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1150,12 +1171,12 @@ searchbar > revealer > box {
   }
 
   .title {
-    padding: 0 12px;
+    padding: 0 $container-padding * 2;
     font-weight: bold;
   }
 
   .subtitle {
-    padding: 0 12px;
+    padding: 0 $container-padding * 2;
     font-size: smaller;
   }
 
@@ -1168,7 +1189,7 @@ searchbar > revealer > box {
   }
 
   // Don't draw titlebar above titlebar
-  .titlebar {
+  headerbar {
     background-color: transparent;
     box-shadow: none;
   }
@@ -1198,6 +1219,55 @@ searchbar > revealer > box {
     &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
       border-radius: $circular-radius;
     }
+  }
+
+  box.vertical & {
+    background-color: $titlebar;
+  }
+
+  > windowhandle > box {
+    padding: 0 $container-padding / 2;
+
+    &,
+    > box.start,
+    > box.end {
+      border-spacing: $container-padding;
+    }
+  }
+
+  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
+  entry,
+  spinbutton,
+  button,
+  stackswitcher {
+    margin-top: $container-padding;
+    margin-bottom: $container-padding;
+  }
+
+  menubutton.popup {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %titlebar-button;
+  }
+
+  separator:not(.sidebar) {
+    margin-top: $large-size / 4;
+    margin-bottom: $large-size / 4;
+    background-color: $titlebar-divider;
+  }
+
+  switch {
+    margin-top: ($large-size - 24px) / 2;
+    margin-bottom: ($large-size - 24px) / 2;
+  }
+
+  // reset button margins of the spinbutton
+  spinbutton button {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &.selection-mode {
@@ -1245,15 +1315,7 @@ searchbar > revealer > box {
   &.default-decoration {
     min-height: $small-size;
     padding: $container-padding;
-    box-shadow: inset 0 1px highlight($titlebar);
-    border-radius: $corner-radius $corner-radius 0 0;
-
-    // .tiled &,
-    // .maximized &,
-    // .fullscreen & {
-    //   box-shadow: none;
-    //   border-radius: 0;
-    // }
+    box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
 
     windowcontrols {
       button,
@@ -1270,90 +1332,6 @@ searchbar > revealer > box {
     &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;
       box-shadow: none; // just remove the highlight
-    }
-  }
-}
-
-headerbar {
-  // The sizing factor needs to be defined in the headerbar node for the case of split headerbars
-  min-height: $large-size;
-  padding: 0 $container-padding;
-
-  &:not(.titlebar) { box-shadow: none; }
-
-  box.vertical & {
-    background-color: $titlebar;
-  }
-
-  > windowhandle > box {
-    &,
-    > box.start,
-    > box.end {
-      border-spacing: $container-padding;
-    }
-  }
-
-  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
-  entry,
-  spinbutton,
-  button {
-    margin-top: $container-padding;
-    margin-bottom: $container-padding;
-  }
-
-  button:not(.suggested-action):not(.destructive-action) {
-    @extend %titlebar-button;
-  }
-
-  separator:not(.sidebar) {
-    margin-top: $large-size / 4;
-    margin-bottom: $large-size / 4;
-    background-color: $titlebar-divider;
-  }
-
-  switch {
-    margin-top: ($large-size - 24px) / 2;
-    margin-bottom: ($large-size - 24px) / 2;
-  }
-
-  // reset button margins of the spinbutton
-  spinbutton button {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  // FIXME: This is a hacky workaround.
-  .entry-tag {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-
-  &.windowhandle {
-    > viewswitcher > box > button:not(.titlebutton):not(.suggested-action):not(.destructive-action) {
-      border-radius: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    > button.popup {
-      label, image { min-height: 0; }
-    }
-
-    viewswitchertitle > squeezer {
-      margin-top: 0;
-      margin-bottom: 0;
-      background: none;
-
-      > viewswitcher {
-        margin: 0 0;
-        background: none;
-
-        > box.horizontal > button.radio {
-          margin: 0;
-          padding: 0;
-          border-radius: 0;
-        }
-      }
     }
   }
 }
@@ -1384,19 +1362,18 @@ window.devel {
  ************/
 %pathbar_button,
 pathbar > button {
-  @extend %button-flat;
-
   padding-left: ($medium-size - 24px) / 2;
   padding-right: ($medium-size - 24px) / 2;
   border-radius: $corner-radius;
+  border-spacing: $container-padding / 2;
 
-  &:checked {
-    &, &:disabled { background-color: transparent; }
+  label, image {
+    margin-left: $container-padding / 2;
+    margin-right: $container-padding / 2;
   }
 
   label:not(:only-child) {
     &:first-child { margin-left: 0; }
-
     &:last-child { margin-right: 0; }
   }
 
@@ -1460,21 +1437,20 @@ treeview.view {
   &.expander {
     min-width: 16px;
     min-height: 16px;
-    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+    color: $text-secondary;
+    -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
 
     &:dir(rtl) { -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl'); }
 
-    color: $text-secondary;
+    &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
 
     &:hover { color: $text; }
 
     &:selected {
-      color: $text;
+      color: $primary;
 
-      &:hover { color: $text; }
+      &:hover { color: rgba($primary, 0.65); }
     }
-
-    &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
 
     &:disabled { color: $text-secondary-disabled; }
   }
@@ -1513,6 +1489,19 @@ treeview.view {
       &, &:disabled { background-color: $base; }
 
       &:last-child { border-right-style: none; }
+
+      sort-indicator {
+        &.ascending {
+          -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+        }
+
+        &.descending {
+          -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+        }
+
+        min-height: 16px;
+        min-width: 16px;
+      }
     }
   }
 
@@ -1566,19 +1555,13 @@ menubar {
     label:disabled { color: inherit; } // to inherit the above color
   }
 
-  & > item popover.menu.background > contents {
-    padding: $menu-radius;
-    border-radius: $menu-radius;
-  }
-
   //nested submenus
   & > item popover.menu popover.menu {
-    margin-left: $container-padding*1.5;
+    margin-left: $container-padding * 1.5;
   }
 
   & > item popover.menu.background popover.menu.background > contents {
     margin: 0;
-    border-radius: $menu-radius; //including top
   }
 }
 
@@ -1617,8 +1600,8 @@ popover.menu {
 
   & > arrow,
   &.background > contents {
-    padding: $menu-radius;
-    box-shadow: inset 0 1px highlight($surface), $shadow-z6;
+    padding: $container-padding;
+    box-shadow: $shadow-z6;
     background-color: $surface;
     background-clip: border-box;
     border: none; // axes borders in a composited env
@@ -1647,7 +1630,8 @@ popover.menu {
     transition: background-color $duration $ease-out;
     min-height: $menuitem-size - $container-padding;
     min-width: $menuitem-size * 2;
-    padding: $container-padding/2 $container-padding*1.5;
+    padding: $container-padding / 2 $container-padding * 1.5;
+    border-radius: $menu-radius - $container-padding;
     color: $text;
     font: initial;
     text-shadow: none;
@@ -1685,10 +1669,8 @@ popover.background {
     padding: $container-padding;
     box-shadow: $shadow-z6; // TODO: this should really have a highlight
     background-color: $surface;
-    border-style: solid;
-    border-width: 0;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.0) rgba(0, 0, 0, 0.0);
-    border-radius: $corner-radius;
+    border: none;
+    border-radius: $menu-radius;
   }
 
   &:backdrop {
@@ -1699,10 +1681,6 @@ popover.background {
   }
 
   > contents {
-    > stack { margin: -4px; } // remove extra padding from menu style popovers
-
-    > toolbar { margin: -2px; }
-
     > list,
     > .view,
     > toolbar {
@@ -1713,7 +1691,7 @@ popover.background {
 
     separator {
       background-color: $divider;
-      margin: $container-padding/2 0;
+      margin: $container-padding / 2 0;
     }
 
     list separator { margin: 0; }
@@ -1749,15 +1727,19 @@ popover.background {
     > arrow,
     > contents {
       @extend %osd;
-
-      border: none;
-      box-shadow: none;
     }
   }
 
   &.touch-selection,
   &.magnifier {
     button { @extend %button-on-dark; }
+  }
+
+  listview {
+    > row {
+      padding: $container-padding $container-padding * 2;
+      border-radius: $corner-radius / 2;
+    }
   }
 }
 
@@ -1773,15 +1755,13 @@ magnifier {
   transition: $transition;
   min-height: $small-size;
   min-width: $small-size;
-  padding: $container-padding 12px;
-
+  padding: $container-padding $container-padding * 2;
   border-width: 1px;
   border-color: transparent;
   border-style: solid;
-
   outline: none;
   background-clip: padding-box;
-
+  box-shadow: none;
   color: $text-secondary;
   font-weight: 500;
 
@@ -1798,6 +1778,7 @@ magnifier {
     background-clip: padding-box;
     border-color: $solid-border;
     color: $text;
+    box-shadow: none;
 
     &:disabled { color: $text-disabled; }
 
@@ -2045,21 +2026,27 @@ scrollbar {
   &.left { border-right: 1px solid $divider; }
   &.right { border-left: 1px solid $divider; }
 
-  // slider
-  > range > trough > slider {
-    transition: background-color $duration $ease-out;
-    min-width: 8px;
-    min-height: 8px;
-    border: 4px solid transparent;
-    border-radius: $circular-radius;
-    background-clip: padding-box;
-    background-color: $text-disabled;
+  > range > trough {
+    box-shadow: none;
+    outline: none;
 
-    &:hover { background-color: $text-secondary; }
+    > slider {
+      transition: background-color $duration $ease-out;
+      min-width: 8px;
+      min-height: 8px;
+      border: 4px solid transparent;
+      border-radius: $circular-radius;
+      background-clip: padding-box;
+      background-color: $text-disabled;
+      box-shadow: none;
+      outline: none;
 
-    &:active { background-color: $text; }
+      &:hover { background-color: $text-secondary; }
 
-    &:disabled { background-color: $text-secondary-disabled; }
+      &:active { background-color: $text; }
+
+      &:disabled { background-color: $text-secondary-disabled; }
+    }
   }
 
   > range.fine-tune {
@@ -2081,12 +2068,16 @@ scrollbar {
     &:not(.dragging):not(.hovering) {
       border-color: transparent;
       background-color: transparent;
+      box-shadow: none;
+      outline: none;
 
       > range > trough > slider {
         min-width: 4px;
         min-height: 4px;
         margin: 4px - 1px;
         border: 1px solid rgba($base, 0.3);
+        box-shadow: none;
+        outline: none;
       }
 
       button {
@@ -2478,6 +2469,10 @@ scale {
     margin: $slider_margin;
     border-radius: 50%;
     color: $primary;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    border: none;
 
     @each $s, $as in ('', ''),
                      (':disabled', '-disabled') {
@@ -2512,26 +2507,6 @@ scale {
     color: transparent;
   }
 
-  //marks margins
-  @each $scale_orient, $marks_class, $marks_pos, $marks_margin in (horizontal, top, top, bottom),
-                                                                  (horizontal, bottom, bottom, top),
-                                                                  (vertical, top, left, right),
-                                                                  (vertical, bottom, right, left) {
-    &.#{$scale_orient} > marks {
-      &.#{$marks_class} {
-        margin-#{$marks_margin}: $_marks_distance;
-        margin-#{$marks_pos}: -($_marks_distance + $_marks_length);
-      }
-    }
-
-    &.#{$scale_orient}.fine-tune > marks {
-      &.#{$marks_class} {
-        margin-#{$marks_margin}: $_marks_distance - 1px;
-        margin-#{$marks_pos}: -($_marks_distance + $_marks_length - 1px);
-      }
-    }
-  }
-
   &.horizontal {
     indicator {
       min-height: $_marks_length;
@@ -2546,30 +2521,54 @@ scale {
     }
   }
 
-  // *WARNING* scale with marks madness following
+  &.marks-before:not(.marks-after),
+  &.marks-after:not(.marks-before) {
+    > trough > slider {
+      transform: rotate(45deg);
+      background-color: $primary;
+      min-width: 12px;
+      min-height: 12px;
+      margin: -5px;
 
-  @each $dir_class, $dir_infix in ('horizontal', 'horz'),
-                                  ('vertical', 'vert') {
-    @each $marks_infix, $marks_class in ('marks-before', 'marks-before:not(.marks-after)'),
-                                        ('marks-after', 'marks-after:not(.marks-before)') {
-      &.#{$dir_class}.#{$marks_class} {
-        slider {
-          @each $state, $state_infix in ('', ''),
-                                        (':disabled', '-disabled') {
-            &#{$state} {
-              $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}#{$asset-suffix}';
-
-              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
-            }
-          }
-
-          &:active {
-            $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$asset-suffix}';
-
-            background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
-          }
-        }
+      &:hover {
+        min-width: 16px;
+        min-height: 16px;
+        margin: -7px;
       }
+
+      &:active {
+        min-width: 14px;
+        min-height: 14px;
+        margin: -6px;
+      }
+
+      &:disabled {
+        background-color: $track;
+      }
+    }
+  }
+
+  &.horizontal {
+    &.marks-before > trough > slider {
+      border-top-left-radius: 0;
+    }
+
+    &.marks-after > trough > slider {
+      border-bottom-right-radius: 0;
+    }
+
+    &.marks-before.marks-after > trough > slider {
+      border-radius: 100%;
+    }
+  }
+
+  &.vertical {
+    &.marks-before > trough > slider {
+      border-bottom-left-radius: 0;
+    }
+
+    &.marks-after > trough > slider {
+      border-top-right-radius: 0;
     }
   }
 
@@ -2756,15 +2755,9 @@ actionbar > revealer > box {
   background-color: $base;
   background-clip: border-box;
 
-  .background.csd box.vertical > & {
-    border-radius: 0 0 $window-radius $window-radius;
-  }
-
   button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
 
   .linked > button:not(.suggested-action):not(.destructive-action) { @extend %button-basic; }
-
-  // .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 }
 
 statusbar {
@@ -2820,6 +2813,13 @@ separator {
   min-width: 1px;
   min-height: 1px;
   background-color: $divider;
+
+  &.spacer {
+    background: none;
+
+    &.horizontal { min-width: $container-padding * 2; }
+    &.vertical { min-height: $container-padding * 2; }
+  }
 }
 
 %hide_separators {
@@ -2836,16 +2836,33 @@ listview,
 list {
   border-color: $divider;
   background-color: $base;
+  background-clip: padding-box;
+  color: $text-secondary;
 
-  row { padding: 2px; }
+  > row {
+    padding: 2px;
+    background-clip: padding-box;
+  }
 
   > row.expander { padding: 0px; }
   > row.expander .row-header { padding: 2px; }
+
+  &.horizontal row.separator,
+  &.separators.horizontal > row:not(.separator) {
+    border-left: 1px solid $divider;
+  }
+
+  &:not(.horizontal) row.separator,
+  &.separators:not(.horizontal) > row:not(.separator) {
+    border-bottom: 1px solid $divider;
+  }
 }
 
 list.frame { border-radius: $corner-radius; }
 
 row {
+  background-clip: padding-box;
+
   @at-root %row_activatable, &.activatable {
     transition: $transition;
     outline: none;
@@ -2894,6 +2911,53 @@ treeexpander {
 }
 
 columnview {
+  // move padding to child cells
+  > listview > row {
+    padding: 0;
+
+    // align horizontal sizing with header buttons
+    > cell {
+      padding: 8px 6px;
+
+      &:not(:first-child) {
+        border-left: 1px solid transparent;
+      }
+    }
+  }
+
+  > header > button {
+    padding-left: 6px;
+    padding-right: 6px;
+    border-left: 1px solid transparent;
+
+    &:first-child {
+      border-left-width: 0;
+    }
+  }
+
+  // make column separators visible when :show-column-separators is true
+  &.column-separators {
+    > listview > row > cell,
+    > header > button {
+      border-left-color: $divider;
+    }
+  }
+
+  > listview:not(.horizontal).separators > row:not(.separator) {
+    border-top: 1px solid $divider;
+    border-bottom: none;
+  }
+
+  // shrink vertically for .data-table
+  &.data-table > listview > row > cell {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  ~ undershoot.top {
+    box-shadow: inset 0 1px $divider;
+  }
+
   row:not(:selected) cell editablelabel {
     &:not(.editing):focus-within {
       outline: 2px solid $overlay-selected;
@@ -2912,11 +2976,188 @@ columnview {
 
 .rich-list { /* rich lists usually containing other widgets than just labels/text */
   & > row {
-    padding: $container-padding*1.5 $container-padding*2;
+    padding: $container-padding * 1.5 $container-padding * 2;
     min-height: 32px; /* should be tall even when only containing a label */
 
     & > box {
-      border-spacing: $container-padding*2;
+      border-spacing: $container-padding * 2;
+    }
+  }
+}
+
+/****************
+ * AdwActionRow *
+ ****************/
+
+row {
+  label.subtitle {
+    font-size: smaller;
+    @extend .dim-label;
+  }
+
+  > box.header {
+    margin-left: $container-padding * 2;
+    margin-right: $container-padding * 2;
+    min-height: $large-size;
+
+    > .icon:disabled {
+      filter: opacity(0.35);
+    }
+
+    > box.title {
+      margin-top: $container-padding;
+      margin-bottom: $container-padding;
+      border-spacing: $container-padding / 2;
+    }
+  }
+}
+
+/***************
+ * AdwComboRow *
+ ***************/
+
+row.combo {
+  image.dropdown-arrow:disabled {
+    filter: opacity(0.35);
+  }
+
+  listview.inline {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: inherit;
+
+    &, &:disabled {
+      background: none;
+      color: inherit;
+    }
+  }
+
+  popover > contents {
+    min-width: 120px;
+  }
+}
+
+/******************
+ * AdwExpanderRow *
+ ******************/
+
+@mixin margin-start($margin) {
+  &:dir(ltr) {
+    margin-left: $margin;
+  }
+
+  &:dir(rtl) {
+    margin-right: $margin;
+  }
+}
+
+$boxed-radius: $corner-radius - 1px;
+
+%boxed_list_row {
+  transition: 200ms $ease-out;
+  border-bottom: 1px solid $divider;
+  color: $text-secondary;
+
+  .osd &:focus:focus-visible {
+    outline-color: $fill;
+  }
+}
+
+row.expander {
+  // Drop transparent background on expander rows to let nested rows handle it,
+  // avoiding double highlights.
+  background: none;
+  padding: 0px;
+
+  > box > list {
+    background: none;
+    color: inherit;
+  }
+
+  list.nested {
+    background-color: $base;
+    color: inherit;
+  }
+
+  list.nested > row {
+    @extend %boxed_list_row;
+  }
+
+  // AdwExpanderRow arrow rotation
+
+  image.expander-row-arrow {
+    transition: 200ms $ease-out;
+    @include margin-start(6px);
+  }
+
+  &:checked image.expander-row-arrow {
+    -gtk-icon-transform: rotate(0turn);
+  }
+
+  &:not(:checked) image.expander-row-arrow {
+    @extend .dim-label;
+
+    &:dir(ltr) {
+      -gtk-icon-transform: rotate(-0.25turn);
+    }
+
+    &:dir(rtl) {
+      -gtk-icon-transform: rotate(0.25turn);
+    }
+  }
+
+  &:checked image.expander-row-arrow:not(:disabled) {
+    color: $primary;
+  }
+
+  .osd &:checked image.expander-row-arrow:not(:disabled) {
+    color: inherit;
+  }
+
+  image.expander-row-arrow:disabled {
+    filter: opacity(0.35);
+  }
+}
+
+/*****************
+ * Boxed Lists *
+ *****************/
+
+// Deprecated: use .boxed-list instead
+list.content,
+list.boxed-list {
+  @extend %card;
+
+  > row {
+    // Regular rows and expander header rows background
+    &, &.expander row.header {
+      @extend %boxed_list_row;
+    }
+
+    &.expander {
+      border: none;
+    }
+
+    // Rounded top
+    &:first-child {
+      &, &.expander row.header {
+        border-top-left-radius: $boxed-radius;
+        border-top-right-radius: $boxed-radius;
+      }
+    }
+
+    // Rounded bottom
+    &:last-child {
+      &,
+      &.expander:not(:checked),
+      &.expander:not(:checked) row.header,
+      &.expander:checked list.nested,
+      &.expander:checked list.nested > row:last-child {
+        border-bottom-left-radius: $boxed-radius;
+        border-bottom-right-radius: $boxed-radius;
+        border-bottom-width: 0;
+      }
     }
   }
 }
@@ -3216,8 +3457,8 @@ stacksidebar {
     + row { margin-top: 4px; }
 
     > label {
-      padding-left: 6px;
-      padding-right: 6px;
+      padding-left: $container-padding;
+      padding-right: $container-padding;
       color: inherit;
     }
 
@@ -3241,13 +3482,14 @@ separator.sidebar {
  **********************/
 
 .navigation-sidebar {
-  padding: $container-padding; //only vertical padding. horizontal row size would clip
+  padding: $container-padding 0; //only vertical padding. horizontal row size would clip
   border-right: none;
 
   > row {
     min-height: $small-size;
     padding: $container-padding $container-padding * 1.5;
     border-radius: $corner-radius / 2;
+    margin: 0 $container-padding;
 
     &:hover,
     &:focus-visible:focus-within {
@@ -3257,7 +3499,7 @@ separator.sidebar {
     &:selected {
       @extend %selected_items_color;
 
-      label { color: $primary; }
+      label, image { color: $primary; }
 
       &:hover {
         background-color: $overlay-focus-hover;
@@ -3272,6 +3514,8 @@ separator.sidebar {
 
     &:disabled { color: $text-disabled; }
   }
+
+  > separator { margin: $container-padding 0; }
 }
 
 /****************
@@ -3288,58 +3532,60 @@ row image.sidebar-icon {
 placessidebar {
   > viewport.frame { border-style: none; }
 
-  list { padding: 1px 0 4px; }
+  .navigation-sidebar {
+    padding: $container-padding 0;
 
-  .navigation-sidebar > row {
-    // Needs overriding of the GtkListBoxRow padding
-    min-height: 32px;
-    margin: -1px 4px -1px 0; // Remove unwanted hard-coded vertical margins with -1px
-    padding: 0;
-    border-radius: 0 $circular_radius $circular_radius 0;
+    > row {
+      // Needs overriding of the GtkListBoxRow padding
+      min-height: 32px;
+      margin: 0 4px 0 0; // Remove unwanted hard-coded vertical margins with -1px
+      padding: $container-padding / 2;
+      border-radius: 0 $circular_radius $circular_radius 0;
 
-    // Using margins/padding directly in the SidebarRow
-    // will make the animation of the new bookmark row jump
-    > revealer { padding: 0 8px 0 16px; }
+      // Using margins/padding directly in the SidebarRow
+      // will make the animation of the new bookmark row jump
+      > revealer { padding: 0 8px 0 16px; }
 
-    &:selected {
-      background-color: $overlay-checked;
-      color: $primary;
-      font-weight: 500;
+      &:selected {
+        background-color: $overlay-checked;
+        color: $primary;
+        font-weight: 500;
 
-      image.sidebar-icon { color: $primary; }
-    }
+        image.sidebar-icon { color: $primary; }
+      }
 
-    &:disabled { color: $text-disabled; }
+      &:disabled { color: $text-disabled; }
 
-    image.sidebar-icon {
-      &:dir(ltr) { padding-right: 8px; }
-      &:dir(rtl) { padding-left: 8px; }
-    }
+      image.sidebar-icon {
+        &:dir(ltr) { padding-right: 8px; }
+        &:dir(rtl) { padding-left: 8px; }
+      }
 
-    label.sidebar-label {
-      color: inherit;
+      label.sidebar-label {
+        color: inherit;
 
-      &:dir(ltr) { padding-right: 2px; }
-      &:dir(rtl) { padding-left: 2px; }
-    }
+        &:dir(ltr) { padding-right: 2px; }
+        &:dir(rtl) { padding-left: 2px; }
+      }
 
-    button.sidebar-button {
-      @extend %button-flat-simple;
-      @extend %small-button;
-    }
+      button.sidebar-button {
+        @extend %button-flat-simple;
+        @extend %small-button;
+      }
 
-    &.sidebar-placeholder-row { background-color: $overlay-hover; }
+      &.sidebar-placeholder-row { background-color: $overlay-hover; }
 
-    &.sidebar-new-bookmark-row {
-      color: $primary;
+      &.sidebar-new-bookmark-row {
+        color: $primary;
 
-      image.sidebar-icon { color: $primary; }
-    }
+        image.sidebar-icon { color: $primary; }
+      }
 
-    &:drop(active) {
-      transition: $transition,
-                  box-shadow 0ms;
-      box-shadow: inset 0 0 0 9999px $overlay-hover;
+      &:drop(active) {
+        transition: $transition,
+                    box-shadow 0ms;
+        box-shadow: inset 0 0 0 9999px $overlay-hover;
+      }
     }
   }
 }
@@ -3457,6 +3703,7 @@ infobar {
     & > revealer > box,
     &:hover > revealer > box,
     &:backdrop > revealer > box {
+      color: $text;
       background-color: $base;
 
       button {
@@ -3668,47 +3915,45 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 window {
-  &.csd {
-    transition: $transition-shadow;
-    border-radius: $window-radius;
-    box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+  outline: none;
+  transition: $transition-shadow;
+  border-radius: $window-radius;
+  box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
-    &:backdrop {
-      // the transparent shadow here is to enforce that the shadow extents don't
-      // change when we go to backdrop, to prevent jumping windows.
-      // The biggest shadow should be in the same order then in the active state
-      // or the jumping will happen during the transition.
-      box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
-    }
-
-    &.popup {
-      border-radius: $corner-radius;
-      box-shadow: $shadow-z4;
-    }
-
-    &.dialog.message {
-      border-radius: $window-radius;
-    }
-
-    .solid-csd & {
-      margin: 0;
-      padding: 2px;
-      border-radius: 0;
-      box-shadow: none;
-      box-shadow: inset 0 1px highlight($titlebar);
-      background-color: $titlebar;
-
-      &:backdrop { background-color: $titlebar-backdrop; }
-    }
-
-    &.maximized,
-    &.fullscreen,
-    &.tiled,
-    &.tiled-top,
-    &.tiled-right,
-    &.tiled-bottom,
-    &.tiled-left { border-radius: 0; }
+  &:backdrop {
+    // the transparent shadow here is to enforce that the shadow extents don't
+    // change when we go to backdrop, to prevent jumping windows.
+    // The biggest shadow should be in the same order then in the active state
+    // or the jumping will happen during the transition.
+    box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
   }
+
+  &.popup {
+    border-radius: $corner-radius;
+    box-shadow: $shadow-z4;
+  }
+
+  &.dialog.message {
+    border-radius: $window-radius;
+  }
+
+  .solid-csd & {
+    margin: 0;
+    padding: 2px;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: $titlebar;
+
+    &:backdrop { background-color: $titlebar-backdrop; }
+  }
+
+  &.maximized,
+  &.fullscreen,
+  &.tiled,
+  &.tiled-top,
+  &.tiled-right,
+  &.tiled-bottom,
+  &.tiled-left { border-radius: 0; }
 }
 
 // Window button
@@ -3729,6 +3974,11 @@ windowcontrols {
 
   button {
     @extend %circular-button;
+
+    image {
+      background-color: transparent;
+      padding: 0;
+    }
   }
 }
 
@@ -3751,6 +4001,9 @@ windowcontrols {
 
 .monospace { font-family: monospace; }
 
+.numeric {
+  font-feature-settings: "tnum";
+}
 
 /**********************
  * Touch Copy & Paste *
@@ -3786,7 +4039,6 @@ shortcut > .keycap {
   padding-bottom: 2px;
   padding-left: 8px;
   padding-right: 8px;
-
   border: solid 1px $divider;
   border-radius: $corner-radius + 1px;
   box-shadow: inset 0 -2px $divider;

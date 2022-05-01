@@ -27,20 +27,20 @@ stage {
   &:focus { @include button(focus); }
 
   &:first-child {
-    margin-left: $container-padding;
-    margin-right: 0;
+    margin-left: $container-padding !important;
+    margin-right: 0 !important;
     border-radius: $circular_radius 0 0 $circular_radius;
   }
 
   &:last-child {
-    margin-left: 0;
-    margin-right: $container-padding;
+    margin-left: 0 !important;
+    margin-right: $container-padding !important;
     border-right-width: 0;
     border-radius: 0 $circular_radius $circular_radius 0;
   }
 
   &:first-child:last-child {
-    margin: 0 $container-padding $container-padding $container-padding;
+    margin: 0 $container-padding $container-padding $container-padding !important;
     border-right-width: 0;
     border-radius: $circular_radius;
   }
