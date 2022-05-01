@@ -33,7 +33,9 @@ dnd {
 .symbolic-circular {
   background-color: rgba(255, 255, 255, 0.04);
   border-radius: 9999px;
-  padding: 6px;
+  padding: 0;
+  min-height: 32px;
+  min-width: 32px;
 }
 
 spinner:disabled,
