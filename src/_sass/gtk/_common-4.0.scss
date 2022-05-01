@@ -2459,8 +2459,7 @@ scale {
   }
 
   > trough > slider {
-    transition: background-color $duration $ease-out,
-                background-image $ripple-fade-out-opacity-duration $ease-out;
+    transition: $transition;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
@@ -2492,8 +2491,7 @@ scale {
     &:active {
       $_url: 'assets/scale-slider#{$asset-suffix}';
 
-      transition: background-color $duration $ease-out;
-      background-color: $overlay-hover;
+      background-color: $overlay-active;
       background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png'));
       background-size: auto, 0% 0%;
     }
@@ -2502,20 +2500,40 @@ scale {
   > marks,
   > value { color: $text-secondary; }
 
-  indicator {
+  > marks indicator {
     background-color: $track;
     color: transparent;
   }
 
+  //marks margins
+  @each $scale_orient, $marks_class, $marks_pos, $marks_margin in (horizontal, top, top, bottom),
+                                                                  (horizontal, bottom, bottom, top),
+                                                                  (vertical, top, left, right),
+                                                                  (vertical, bottom, right, left) {
+    &.#{$scale_orient} marks {
+      &.#{$marks_class} {
+        margin-#{$marks_margin}: $_marks_distance;
+        margin-#{$marks_pos}: -($_marks_distance + $_marks_length);
+      }
+    }
+
+    &.#{$scale_orient}.fine-tune marks {
+      &.#{$marks_class} {
+        margin-#{$marks_margin}: $_marks_distance - 1px;
+        margin-#{$marks_pos}: -($_marks_distance + $_marks_length - 1px);
+      }
+    }
+  }
+
   &.horizontal {
-    indicator {
+    > marks indicator {
       min-height: $_marks_length;
       min-width: 1px;
     }
   }
 
   &.vertical {
-    indicator {
+    > marks indicator {
       min-height: 1px;
       min-width: $_marks_length;
     }
@@ -2524,51 +2542,41 @@ scale {
   &.marks-before:not(.marks-after),
   &.marks-after:not(.marks-before) {
     > trough > slider {
-      transform: rotate(45deg);
-      background-color: $primary;
-      min-width: 12px;
-      min-height: 12px;
-      margin: -5px;
-
-      &:hover {
-        min-width: 16px;
-        min-height: 16px;
-        margin: -7px;
-      }
-
-      &:active {
-        min-width: 14px;
-        min-height: 14px;
-        margin: -6px;
-      }
+      transform: none;
+      box-shadow: none;
+      border: none;
+      transition: $transition;
 
       &:disabled {
-        background-color: $track;
+        box-shadow: none;
       }
     }
   }
 
-  &.horizontal {
-    &.marks-before > trough > slider {
-      border-top-left-radius: 0;
-    }
+  // *WARNING* scale with marks madness following
 
-    &.marks-after > trough > slider {
-      border-bottom-right-radius: 0;
-    }
+  @each $dir_class, $dir_infix in ('horizontal', 'horz'),
+                                  ('vertical', 'vert') {
+    @each $marks_infix, $marks_class in ('marks-before', 'marks-before:not(.marks-after)'),
+                                        ('marks-after', 'marks-after:not(.marks-before)') {
+      &.#{$dir_class}.#{$marks_class} {
+        > trough > slider {
+          @each $state, $state_infix in ('', ''),
+                                        (':disabled', '-disabled') {
+            &#{$state} {
+              $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}#{$asset-suffix}';
 
-    &.marks-before.marks-after > trough > slider {
-      border-radius: 100%;
-    }
-  }
+              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+            }
+          }
 
-  &.vertical {
-    &.marks-before > trough > slider {
-      border-bottom-left-radius: 0;
-    }
+          &:active {
+            $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$asset-suffix}';
 
-    &.marks-after > trough > slider {
-      border-top-right-radius: 0;
+            background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+          }
+        }
+      }
     }
   }
 
@@ -2579,7 +2587,7 @@ scale {
     &.horizontal {
       padding: 0 0 12px 0;
 
-      slider {
+      > trough > slider {
         &:dir(ltr), &:dir(rtl) { // specificity bump
           margin-bottom: $color_slider_margin;
           margin-top: $color_marks_slider_margin;
@@ -2591,7 +2599,7 @@ scale {
       &:dir(ltr) {
         padding: 0 0 0 12px;
 
-        slider {
+        > trough > slider {
           margin-left: $color_slider_margin;
           margin-right: $color_marks_slider_margin;
         }
@@ -2600,7 +2608,7 @@ scale {
       &:dir(rtl) {
         padding: 0 12px 0 0;
 
-        slider {
+        > trough > slider {
           margin-right: $color_slider_margin;
           margin-left: $color_marks_slider_margin;
         }

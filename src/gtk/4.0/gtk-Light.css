@@ -2786,7 +2786,7 @@ scale > trough > fill:disabled {
 }
 
 scale > trough > slider {
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
@@ -2822,8 +2822,7 @@ scale > trough > slider:focus:hover {
 }
 
 scale > trough > slider:active {
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.12);
   background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png"));
   background-size: auto, 0% 0%;
 }
@@ -2833,63 +2832,118 @@ scale > value {
   color: rgba(0, 0, 0, 0.6);
 }
 
-scale indicator {
+scale > marks indicator {
   background-color: rgba(0, 0, 0, 0.26);
   color: transparent;
 }
 
-scale.horizontal indicator {
+scale.horizontal marks.top {
+  margin-bottom: 7px;
+  margin-top: -15px;
+}
+
+scale.horizontal.fine-tune marks.top {
+  margin-bottom: 6px;
+  margin-top: -14px;
+}
+
+scale.horizontal marks.bottom {
+  margin-top: 7px;
+  margin-bottom: -15px;
+}
+
+scale.horizontal.fine-tune marks.bottom {
+  margin-top: 6px;
+  margin-bottom: -14px;
+}
+
+scale.vertical marks.top {
+  margin-right: 7px;
+  margin-left: -15px;
+}
+
+scale.vertical.fine-tune marks.top {
+  margin-right: 6px;
+  margin-left: -14px;
+}
+
+scale.vertical marks.bottom {
+  margin-left: 7px;
+  margin-right: -15px;
+}
+
+scale.vertical.fine-tune marks.bottom {
+  margin-left: 6px;
+  margin-right: -14px;
+}
+
+scale.horizontal > marks indicator {
   min-height: 8px;
   min-width: 1px;
 }
 
-scale.vertical indicator {
+scale.vertical > marks indicator {
   min-height: 1px;
   min-width: 8px;
 }
 
 scale.marks-before:not(.marks-after) > trough > slider, scale.marks-after:not(.marks-before) > trough > slider {
-  transform: rotate(45deg);
-  background-color: #1A73E8;
-  min-width: 12px;
-  min-height: 12px;
-  margin: -5px;
-}
-
-scale.marks-before:not(.marks-after) > trough > slider:hover, scale.marks-after:not(.marks-before) > trough > slider:hover {
-  min-width: 16px;
-  min-height: 16px;
-  margin: -7px;
-}
-
-scale.marks-before:not(.marks-after) > trough > slider:active, scale.marks-after:not(.marks-before) > trough > slider:active {
-  min-width: 14px;
-  min-height: 14px;
-  margin: -6px;
+  transform: none;
+  box-shadow: none;
+  border: none;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 scale.marks-before:not(.marks-after) > trough > slider:disabled, scale.marks-after:not(.marks-before) > trough > slider:disabled {
-  background-color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
 }
 
-scale.horizontal.marks-before > trough > slider {
-  border-top-left-radius: 0;
+scale.horizontal.marks-before:not(.marks-after) > trough > slider {
+  background-image: -gtk-scaled(url("assets/scale-horz-marks-before-slider.png"), url("assets/scale-horz-marks-before-slider@2.png"));
 }
 
-scale.horizontal.marks-after > trough > slider {
-  border-bottom-right-radius: 0;
+scale.horizontal.marks-before:not(.marks-after) > trough > slider:disabled {
+  background-image: -gtk-scaled(url("assets/scale-horz-marks-before-slider-disabled.png"), url("assets/scale-horz-marks-before-slider-disabled@2.png"));
 }
 
-scale.horizontal.marks-before.marks-after > trough > slider {
-  border-radius: 100%;
+scale.horizontal.marks-before:not(.marks-after) > trough > slider:active {
+  background-image: -gtk-scaled(url("assets/scale-horz-marks-before-slider.png"), url("assets/scale-horz-marks-before-slider@2.png"));
 }
 
-scale.vertical.marks-before > trough > slider {
-  border-bottom-left-radius: 0;
+scale.horizontal.marks-after:not(.marks-before) > trough > slider {
+  background-image: -gtk-scaled(url("assets/scale-horz-marks-after-slider.png"), url("assets/scale-horz-marks-after-slider@2.png"));
 }
 
-scale.vertical.marks-after > trough > slider {
-  border-top-right-radius: 0;
+scale.horizontal.marks-after:not(.marks-before) > trough > slider:disabled {
+  background-image: -gtk-scaled(url("assets/scale-horz-marks-after-slider-disabled.png"), url("assets/scale-horz-marks-after-slider-disabled@2.png"));
+}
+
+scale.horizontal.marks-after:not(.marks-before) > trough > slider:active {
+  background-image: -gtk-scaled(url("assets/scale-horz-marks-after-slider.png"), url("assets/scale-horz-marks-after-slider@2.png"));
+}
+
+scale.vertical.marks-before:not(.marks-after) > trough > slider {
+  background-image: -gtk-scaled(url("assets/scale-vert-marks-before-slider.png"), url("assets/scale-vert-marks-before-slider@2.png"));
+}
+
+scale.vertical.marks-before:not(.marks-after) > trough > slider:disabled {
+  background-image: -gtk-scaled(url("assets/scale-vert-marks-before-slider-disabled.png"), url("assets/scale-vert-marks-before-slider-disabled@2.png"));
+}
+
+scale.vertical.marks-before:not(.marks-after) > trough > slider:active {
+  background-image: -gtk-scaled(url("assets/scale-vert-marks-before-slider.png"), url("assets/scale-vert-marks-before-slider@2.png"));
+}
+
+scale.vertical.marks-after:not(.marks-before) > trough > slider {
+  background-image: -gtk-scaled(url("assets/scale-vert-marks-after-slider.png"), url("assets/scale-vert-marks-after-slider@2.png"));
+}
+
+scale.vertical.marks-after:not(.marks-before) > trough > slider:disabled {
+  background-image: -gtk-scaled(url("assets/scale-vert-marks-after-slider-disabled.png"), url("assets/scale-vert-marks-after-slider-disabled@2.png"));
+}
+
+scale.vertical.marks-after:not(.marks-before) > trough > slider:active {
+  background-image: -gtk-scaled(url("assets/scale-vert-marks-after-slider.png"), url("assets/scale-vert-marks-after-slider@2.png"));
 }
 
 scale.color {
@@ -2901,7 +2955,7 @@ scale.color.horizontal {
   padding: 0 0 12px 0;
 }
 
-scale.color.horizontal slider:dir(ltr), scale.color.horizontal slider:dir(rtl) {
+scale.color.horizontal > trough > slider:dir(ltr), scale.color.horizontal > trough > slider:dir(rtl) {
   margin-bottom: -24px;
   margin-top: 8px;
 }
@@ -2910,7 +2964,7 @@ scale.color.vertical:dir(ltr) {
   padding: 0 0 0 12px;
 }
 
-scale.color.vertical:dir(ltr) slider {
+scale.color.vertical:dir(ltr) > trough > slider {
   margin-left: -24px;
   margin-right: 8px;
 }
@@ -2919,7 +2973,7 @@ scale.color.vertical:dir(rtl) {
   padding: 0 12px 0 0;
 }
 
-scale.color.vertical:dir(rtl) slider {
+scale.color.vertical:dir(rtl) > trough > slider {
   margin-right: -24px;
   margin-left: 8px;
 }
