@@ -2,16 +2,8 @@
  * Base States *
  ***************/
 .background {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
   color: rgba(0, 0, 0, 0.87);
-}
-
-.background.csd {
-  border-radius: 18px;
-}
-
-.background.maximized, .background.tiled, .background.fullscreen, .background.solid-csd {
-  border-radius: 0;
 }
 
 dnd {
@@ -47,12 +39,12 @@ treeview.expander:disabled {
   -gtk-icon-filter: opacity(0.5);
 }
 
-filechooser stack.view scrolledwindow treeview.view, iconview, .view {
+iconview, .view {
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
 }
 
-filechooser stack.view scrolledwindow treeview.view:disabled, iconview:disabled, .view:disabled {
+iconview:disabled, .view:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -267,6 +259,7 @@ entry {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
+  outline: none;
 }
 
 spinbutton.vertical:focus-within, spinbutton:focus-within:not(.vertical),
@@ -274,6 +267,7 @@ entry:focus-within {
   background-color: rgba(0, 0, 0, 0.04);
   box-shadow: inset 0 0 0 2px #1A73E8;
   color: rgba(0, 0, 0, 0.87);
+  outline: none;
 }
 
 spinbutton.vertical:drop(active), spinbutton:drop(active):not(.vertical),
@@ -281,6 +275,7 @@ entry:drop(active) {
   background-color: alpha(currentColor, 0.08);
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
+  outline: none;
 }
 
 spinbutton.vertical:disabled, spinbutton:disabled:not(.vertical),
@@ -289,6 +284,7 @@ entry:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
   color: rgba(0, 0, 0, 0.38);
+  outline: none;
 }
 
 spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
@@ -359,6 +355,7 @@ entry.error {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(217, 48, 37, 0.08);
   color: #D93025;
+  outline: none;
 }
 
 spinbutton.error.vertical image, spinbutton.error:not(.vertical) image,
@@ -377,6 +374,7 @@ entry.error:focus-within {
   background-color: rgba(217, 48, 37, 0.08);
   box-shadow: inset 0 0 0 2px #D93025;
   color: #D93025;
+  outline: none;
 }
 
 spinbutton.error.vertical:disabled, spinbutton.error:disabled:not(.vertical),
@@ -385,6 +383,7 @@ entry.error:disabled {
   background-color: rgba(217, 48, 37, 0.04);
   color: rgba(0, 0, 0, 0.38);
   color: rgba(217, 48, 37, 0.35);
+  outline: none;
 }
 
 spinbutton.success.vertical, spinbutton.success:not(.vertical),
@@ -393,6 +392,7 @@ entry.success {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(15, 157, 88, 0.08);
   color: #0F9D58;
+  outline: none;
 }
 
 spinbutton.success.vertical image, spinbutton.success:not(.vertical) image,
@@ -411,6 +411,7 @@ entry.success:focus-within {
   background-color: rgba(15, 157, 88, 0.08);
   box-shadow: inset 0 0 0 2px #0F9D58;
   color: #0F9D58;
+  outline: none;
 }
 
 spinbutton.success.vertical:disabled, spinbutton.success:disabled:not(.vertical),
@@ -419,6 +420,7 @@ entry.success:disabled {
   background-color: rgba(15, 157, 88, 0.04);
   color: rgba(0, 0, 0, 0.38);
   color: rgba(15, 157, 88, 0.35);
+  outline: none;
 }
 
 spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
@@ -427,6 +429,7 @@ entry.warning {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(244, 180, 0, 0.08);
   color: #F4B400;
+  outline: none;
 }
 
 spinbutton.warning.vertical image, spinbutton.warning:not(.vertical) image,
@@ -445,6 +448,7 @@ entry.warning:focus-within {
   background-color: rgba(244, 180, 0, 0.08);
   box-shadow: inset 0 0 0 2px #F4B400;
   color: #F4B400;
+  outline: none;
 }
 
 spinbutton.warning.vertical:disabled, spinbutton.warning:disabled:not(.vertical),
@@ -453,6 +457,7 @@ entry.warning:disabled {
   background-color: rgba(244, 180, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
   color: rgba(244, 180, 0, 0.35);
+  outline: none;
 }
 
 spinbutton.vertical > progress, spinbutton:not(.vertical) > progress,
@@ -514,6 +519,7 @@ editablelabel > stack > text {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
+  outline: none;
 }
 
 /***********
@@ -1197,6 +1203,7 @@ button.combo:only-child {
   box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
+  outline: none;
 }
 
 button.combo:only-child:focus {
@@ -1326,13 +1333,17 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
 }
 
 searchbar > revealer > box {
-  padding: 6px 12px;
+  padding: 6px;
   border-spacing: 6px;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: rgba(0, 0, 0, 0.12);
   background-color: #F2F2F2;
   background-clip: border-box;
+}
+
+searchbar > revealer > box entry {
+  margin: 0;
 }
 
 /***************
@@ -1979,6 +1990,10 @@ popover.background > contents > toolbar {
   background-color: transparent;
 }
 
+popover.background > contents > scrolledwindow > viewport > stack > box {
+  padding: 0;
+}
+
 popover.background > contents separator {
   background-color: rgba(0, 0, 0, 0.12);
   margin: 3px 0;
@@ -2022,9 +2037,14 @@ popover.background button.model {
   background-color: transparent;
 }
 
+popover.background listview {
+  padding: 0;
+}
+
 popover.background listview > row {
   padding: 6px 12px;
   border-radius: 6px;
+  margin: 0;
 }
 
 magnifier {
@@ -3711,11 +3731,6 @@ window.dialog.message .titlebar:backdrop {
   color: rgba(0, 0, 0, 0.6);
 }
 
-window.dialog.message.csd.background {
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
-}
-
 window.dialog.message.csd .dialog-action-area {
   padding: 6px;
 }
@@ -3736,11 +3751,6 @@ window.dialog.message.csd .dialog-action-area > button.destructive-action:not(:d
   color: #D93025;
 }
 
-.csd filechooser {
-  background-color: #FFFFFF;
-  border-radius: 0 0 18px 18px;
-}
-
 filechooser .dialog-action-box {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -3750,42 +3760,8 @@ filechooser #pathbarbox {
   background-color: #F2F2F2;
 }
 
-filechooser stack.view {
-  background-color: transparent;
-}
-
-filechooser stack.view scrolledwindow {
-  background-color: transparent;
-  border-radius: 0 0 18px 0;
-}
-
-filechooser stack.view scrolledwindow list {
-  background-color: transparent;
-}
-
-filechooser stack.view scrolledwindow treeview.view {
-  background-color: transparent;
-}
-
-filechooser stack.view > placesview {
-  background-color: transparent;
-}
-
-filechooser stack.view > placesview > actionbar, filechooser stack.view > placesview > actionbar > revealer > box {
-  background-color: transparent;
-}
-
 filechooser stack.view frame > border {
   border: none;
-}
-
-.csd filechooser placessidebar {
-  background: none;
-  border-bottom-left-radius: 18px;
-}
-
-filechooser actionbar, filechooser actionbar > revealer > box {
-  background-color: transparent;
 }
 
 filechooserbutton > button > box {
@@ -3795,6 +3771,10 @@ filechooserbutton > button > box {
 filechooserbutton:drop(active) {
   box-shadow: none;
   border-color: transparent;
+}
+
+window.aboutdialog stack scrolledwindow.frame, window.aboutdialog stack scrolledwindow.frame > .view, window.aboutdialog stack scrolledwindow.frame > .view > text {
+  border-radius: 12px;
 }
 
 /***********
@@ -4323,7 +4303,7 @@ gridview > child:selected, modelbutton.flat:selected, row:selected, calendar:sel
   background-color: alpha(currentColor, 0.06);
 }
 
-.view:selected, iconview:selected, flowbox > flowboxchild:selected, calendar > grid > label.today, filechooser stack.view scrolledwindow treeview.view:selected, stacksidebar row:selected, .navigation-sidebar > row:selected {
+.view:selected, iconview:selected, flowbox > flowboxchild:selected, calendar > grid > label.today, stacksidebar row:selected, .navigation-sidebar > row:selected {
   color: #1A73E8;
   background-color: rgba(26, 115, 232, 0.2);
 }
@@ -4460,6 +4440,10 @@ popover.emoji-picker > contents {
   background: none;
 }
 
+.emoji-searchbar entry {
+  margin: 0;
+}
+
 .emoji-searchbar entry text {
   background: none;
   box-shadow: none;
@@ -4470,6 +4454,7 @@ popover.emoji-picker > contents {
   border-spacing: 3px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   background: none;
+  box-shadow: none;
 }
 
 button.emoji-section {
@@ -5231,8 +5216,8 @@ tabbar tab,
 dnd tab {
   min-height: 28px;
   padding: 3px 6px;
-  border-radius: 12px;
-  margin: 0 2px;
+  border-radius: 6px;
+  margin: 0 1px;
 }
 
 tabbar tab button.image-button,
@@ -5277,6 +5262,10 @@ leaflet headerbar {
 leaflet leaflet {
   border-radius: 0;
   outline: none;
+}
+
+leaflet > box > scrolledwindow > viewport > widget > stack {
+  background-color: #FFFFFF;
 }
 
 /* GTK NAMED COLORS

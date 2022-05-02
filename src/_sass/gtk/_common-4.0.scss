@@ -3,16 +3,8 @@
  * Base States *
  ***************/
 .background {
-  background-color: rgba($background, 1);
+  background-color: $background;
   color: $text;
-
-  &.csd { // Set csd windows botttom border radius
-    border-radius: $window-radius;
-  }
-
-  &.maximized, &.tiled, &.fullscreen, &.solid-csd { // No radius when windows maximized
-    border-radius: 0;
-  }
 }
 
 dnd {
@@ -1088,13 +1080,15 @@ toolbar {
 
 // searchbar
 searchbar > revealer > box {
-  padding: $container-padding $container-padding * 2;
+  padding: $container-padding;
   border-spacing: $container-padding;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: $divider;
   background-color: $background;
   background-clip: border-box;
+
+  entry { margin: 0; }
 }
 
 /***************
@@ -1691,6 +1685,10 @@ popover.background {
       background-color: transparent;
     }
 
+    > scrolledwindow > viewport > stack > box {
+      padding: 0;
+    }
+
     separator {
       background-color: $divider;
       margin: $container-padding / 2 0;
@@ -1738,9 +1736,12 @@ popover.background {
   }
 
   listview {
+    padding: 0;
+
     > row {
       padding: $container-padding $container-padding * 2;
       border-radius: $corner-radius / 2;
+      margin: 0;
     }
   }
 }
@@ -3319,12 +3320,6 @@ window.dialog.message { // Message Dialog styling
   }
 
   &.csd { // rounded bottom border styling for csd version
-    &.background {
-      // bigger radius for better antialiasing
-      border-bottom-left-radius: $window-radius;
-      border-bottom-right-radius: $window-radius;
-    }
-
     .dialog-action-area {
       // margin-top: -$container-padding;
       padding: $container-padding;
@@ -3347,11 +3342,6 @@ window.dialog.message { // Message Dialog styling
 }
 
 filechooser {
-  .csd & {
-    background-color: $base;
-    border-radius: 0 0 $window-radius $window-radius;
-  }
-
   .dialog-action-box { border-top: 1px solid $divider; }
 
   #pathbarbox {
@@ -3365,43 +3355,7 @@ filechooser {
   }
 
   stack.view {
-    background-color: transparent;
-
-    scrolledwindow {
-      background-color: transparent;
-      border-radius: 0 0 $window-radius 0;
-
-      list { background-color: transparent; }
-
-      treeview.view {
-        @extend %view;
-        background-color: transparent;
-      }
-    }
-
-    > placesview {
-      background-color: transparent;
-      // border-bottom-right-radius: $window-radius;
-
-      > actionbar {
-        &, > revealer > box {
-          background-color: transparent;
-        }
-      }
-    }
-
     frame > border { border: none; }
-  }
-
-  .csd & placessidebar {
-    background: none;
-    border-bottom-left-radius: $window-radius;
-  }
-
-  actionbar {
-    &, > revealer > box {
-      background-color: transparent;
-    }
   }
 }
 
@@ -3414,6 +3368,14 @@ filechooserbutton:drop(active) {
   border-color: transparent;
 }
 
+// aboutdialog
+window.aboutdialog {
+  stack scrolledwindow.frame {
+    &, > .view, > .view > text {
+      border-radius: $corner-radius;
+    }
+  }
+}
 
 /***********
  * Sidebar *
@@ -4134,6 +4096,8 @@ popover.emoji-picker {
   background: none;
 
   entry {
+    margin: 0;
+
     text {
       background: none;
       box-shadow: none;
@@ -4143,15 +4107,16 @@ popover.emoji-picker {
 
 .emoji-toolbar {
   padding: 0;
-  border-spacing: $container-padding/2;
+  border-spacing: $container-padding / 2;
   border-top: 1px solid $divider;
   background: none;
+  box-shadow: none;
 }
 
 button.emoji-section {
   margin: 0;
   padding: $container-padding;
-  border-radius: $corner-radius -$container-padding/2;
+  border-radius: $corner-radius -$container-padding / 2;
 
   &:checked {
     color: $primary;
@@ -4172,7 +4137,7 @@ popover.emoji-picker emoji {
 
 emoji-completion-row {
   min-height: $menuitem-size;
-  padding: 0 $container-padding*2;
+  padding: 0 $container-padding * 2;
 
   > box {
     border-spacing: $container-padding;

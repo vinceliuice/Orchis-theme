@@ -679,8 +679,8 @@ dnd {
   tab {
     min-height: $menuitem-size;
     padding: $container-padding / 2 $container-padding;
-    border-radius: $menu-radius;
-    margin: 0 2px;
+    border-radius: $corner-radius / 2;
+    margin: 0 1px;
 
     button.image-button {
       padding: 0;
@@ -728,5 +728,9 @@ leaflet {
   leaflet {
     border-radius: 0;
     outline: none;
+  }
+
+  > box > scrolledwindow > viewport > widget > stack {
+    background-color: $base;
   }
 }
