@@ -28,32 +28,53 @@ Run the following commands in the terminal:
 
 ```
 OPTIONS:
-  -d, --dest DIR          Specify destination directory (Default: $HOME/.themes)
+  -d, --dest DIR          Specify destination directory (Default: /home/vince/.themes)
   -n, --name NAME         Specify theme name (Default: Orchis)
+
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
-  -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
+  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
+
+  -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
+
   --tweaks                Specify versions for tweaks [solid|compact|black|primary] (Options can mix)
                           1. solid:    no transparency panel variant
                           2. compact:  no floating panel variant
                           3. black:    full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
+
   --shell                 install gnome-shell version [38|40|42]
                           1. 38:       gnome-shell version < 40.0
                           2. 40:       gnome-shell version = 40.0
                           3. 42:       gnome-shell version = 42.0
+
   -h, --help              Show help
 ```
 
-> For more information, run: `./install.sh --help`
+> For more information, run: `./install.sh -h`
 
 ![1](images/tweaks-view.png?raw=true)
 
 ### Flatpak Installation
 
-Automatically install your host GTK+ theme as a Flatpak. Use this:
+Automatically install your host GTK+ 3.0 theme as a Flatpak. Use this:
 
-- [pakitheme](https://github.com/refi64/pakitheme)
+- [stylepak](https://github.com/refi64/stylepak)
+
+Also if you want to use this theme on a GTK+ 4.0 flatpak app, you can give the permission to access this file
+
+local:
+```
+flatpak override --user --filesystem=xdg-config/gtk-4.0
+```
+
+global:
+```
+flatpak override --filesystem=xdg-config/gtk-4.0
+```
 
 ### On Snapcraft
 

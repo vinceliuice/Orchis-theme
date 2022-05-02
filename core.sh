@@ -145,6 +145,24 @@ install() {
   cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"
 }
 
+uninstall() {
+  local dest="$1"
+  local name="$2"
+  local theme="$3"
+  local color="$4"
+  local size="$5"
+
+  local THEME_DIR="$dest/$name$theme$color$size"
+
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+}
+
+uninstall_link() {
+  [[ -L "${HOME}/.config/gtk-4.0/assets" ]] && rm -rf "${HOME}/.config/gtk-4.0/assets" && echo -e "Removing ${HOME}/.config/gtk-4.0/assets"
+  [[ -L "${HOME}/.config/gtk-4.0/gtk.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk.css"
+  [[ -L "${HOME}/.config/gtk-4.0/gtk-dark.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk-dark.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk-dark.css"
+}
+
 link_libadwaita() {
   local dest="$1"
   local name="$2"
@@ -154,7 +172,8 @@ link_libadwaita() {
 
   local THEME_DIR="$dest/$name$theme$color$size"
 
-  # link gtk4.0 for libadwaita
+  echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
+
   mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
   rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
   ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
@@ -240,7 +259,7 @@ install_theme_color() {
 theme_tweaks() {
   install_package; tweaks_temp
 
-  if [[ "$panel" = "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" ]]; then
+  if [[ "$panel" == "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" ]]; then
     tweaks='true'
   fi
 
@@ -299,9 +318,19 @@ install_theme() {
   done
 }
 
+uninstall_theme() {
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for color in "${colors[@]}"; do
+      for size in "${sizes[@]}"; do
+        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+      done
+    done
+  done
+}
+
 link_theme() {
   for theme in "${themes[@]}"; do
-    for color in "${colors[@]}"; do
+    for color in "${COLOR_VARIANTS[2]}"; do
       for size in "${SIZE_VARIANTS[0]}"; do
         link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
       done

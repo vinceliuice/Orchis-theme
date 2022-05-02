@@ -10,18 +10,27 @@ Usage: $0 [OPTION]...
 OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
+
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
-  -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)s)
+  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
+
+  -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
+
   --tweaks                Specify versions for tweaks [solid|compact|black|primary] (Options can mix)
                           1. solid:    no transparency panel variant
                           2. compact:  no floating panel variant
                           3. black:    full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
+
   --shell                 install gnome-shell version [38|40|42]
                           1. 38:       gnome-shell version < 40.0
                           2. 40:       gnome-shell version = 40.0
                           3. 42:       gnome-shell version = 42.0
+
   -h, --help              Show help
 EOF
 }
@@ -40,6 +49,14 @@ while [[ "$#" -gt 0 ]]; do
     -n|--name)
       _name="$2"
       shift 2
+      ;;
+    -r|-u|--remove|--uninstall)
+      remove="true"
+      shift
+      ;;
+    -l|--libadwaita)
+      libadwaita="true"
+      shift
       ;;
     --shell)
       shift
@@ -227,7 +244,21 @@ fi
 
 ./clean-old-theme.sh
 
-install_theme && link_theme
+if [[ ${remove} == 'true' ]]; then
+  if [[ "$libadwaita" == 'true' ]]; then
+    uninstall_link
+  elif [[ "$all" == 'true' ]]; then
+    uninstall_theme && uninstall_link
+  else
+    uninstall_theme
+  fi
+else
+  install_theme
+
+  if [[ "$libadwaita" == 'true' ]]; then
+    link_theme
+  fi
+fi
 
 echo
 echo "Done."

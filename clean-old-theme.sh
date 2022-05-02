@@ -24,8 +24,10 @@ clean() {
 
   local THEME_DIR="$dest/$name$theme$color$size"
 
-  if [[ -d ${THEME_DIR} ]]; then
-    rm -rf ${THEME_DIR}
+  if [[ "${theme}" == '' && "${color}" == '' && "${size}" == '' ]]; then
+    todo='nothing'
+  elif [[ -d "${THEME_DIR}" ]]; then
+    rm -rf "${THEME_DIR}"
     echo -e "Find: ${THEME_DIR} ! removing it ..."
   fi
 }
