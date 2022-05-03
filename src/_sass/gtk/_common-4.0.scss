@@ -16,11 +16,11 @@ dnd {
 }
 
 .large-icons {
-  -gtk-icon-size: 128px;
+  -gtk-icon-size: 32px;
 }
 
-.lowres-icon {
-  -gtk-icon-size: 32px;
+.lowres-icon:not(.large-icons) {
+  -gtk-icon-size: 16px;
 }
 
 .symbolic-circular {
@@ -1087,6 +1087,7 @@ searchbar > revealer > box {
   border-color: $divider;
   background-color: $background;
   background-clip: border-box;
+  box-shadow: none;
 
   entry { margin: 0; }
 }
@@ -2765,6 +2766,7 @@ actionbar > revealer > box {
   border-top: 1px solid $divider;
   background-color: $base;
   background-clip: border-box;
+  box-shadow: none;
 
   button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
 
@@ -2799,15 +2801,15 @@ scrolledwindow {
   }
 
   // Overflow indication, works similarly to the overshoot, the size if fixed tho.
-  @at-root undershoot {
-    &.top { @include undershoot(top); }
-
-    &.bottom { @include undershoot(bottom); }
-
-    &.left { @include undershoot(left); }
-
-    &.right { @include undershoot(right); }
-  }
+  // @at-root undershoot {
+  //   &.top { @include undershoot(top); }
+  //
+  //   &.bottom { @include undershoot(bottom); }
+  //
+  //   &.left { @include undershoot(left); }
+  //
+  //   &.right { @include undershoot(right); }
+  // }
 
   @at-root junction { // the small square between two scrollbars
     border-style: solid none none solid;
@@ -3374,6 +3376,10 @@ window.aboutdialog {
     &, > .view, > .view > text {
       border-radius: $corner-radius;
     }
+  }
+
+  .large-icons {
+    -gtk-icon-size: 128px;
   }
 }
 

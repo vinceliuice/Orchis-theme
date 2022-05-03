@@ -15,11 +15,11 @@ dnd {
 }
 
 .large-icons {
-  -gtk-icon-size: 128px;
+  -gtk-icon-size: 32px;
 }
 
-.lowres-icon {
-  -gtk-icon-size: 32px;
+.lowres-icon:not(.large-icons) {
+  -gtk-icon-size: 16px;
 }
 
 .symbolic-circular {
@@ -1340,6 +1340,7 @@ searchbar > revealer > box {
   border-color: rgba(0, 0, 0, 0.12);
   background-color: #F2F2F2;
   background-clip: border-box;
+  box-shadow: none;
 }
 
 searchbar > revealer > box entry {
@@ -3155,6 +3156,7 @@ actionbar > revealer > box {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
   background-clip: border-box;
+  box-shadow: none;
 }
 
 statusbar {
@@ -3207,52 +3209,6 @@ overshoot.right {
   background-color: transparent;
   border: none;
   box-shadow: none;
-}
-
-undershoot.top {
-  background-color: transparent;
-  background-image: linear-gradient(to left, transparent 50%, rgba(0, 0, 0, 0.26) 50%);
-  padding-top: 1px;
-  background-size: 12px 1px;
-  background-repeat: repeat-x;
-  background-origin: content-box;
-  background-position: left top;
-  margin: 0 4px;
-}
-
-undershoot.bottom {
-  background-color: transparent;
-  background-image: linear-gradient(to left, transparent 50%, rgba(0, 0, 0, 0.26) 50%);
-  padding-bottom: 1px;
-  background-size: 12px 1px;
-  background-repeat: repeat-x;
-  background-origin: content-box;
-  background-position: left bottom;
-  margin: 0 4px;
-}
-
-undershoot.left {
-  background-color: transparent;
-  background-image: linear-gradient(to top, transparent 50%, rgba(0, 0, 0, 0.26) 50%);
-  padding-left: 1px;
-  background-size: 1px 12px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: left top;
-  margin: 0 4px;
-  margin: 4px 0;
-}
-
-undershoot.right {
-  background-color: transparent;
-  background-image: linear-gradient(to top, transparent 50%, rgba(0, 0, 0, 0.26) 50%);
-  padding-right: 1px;
-  background-size: 1px 12px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: right top;
-  margin: 0 4px;
-  margin: 4px 0;
 }
 
 junction {
@@ -3775,6 +3731,10 @@ filechooserbutton:drop(active) {
 
 window.aboutdialog stack scrolledwindow.frame, window.aboutdialog stack scrolledwindow.frame > .view, window.aboutdialog stack scrolledwindow.frame > .view > text {
   border-radius: 12px;
+}
+
+window.aboutdialog .large-icons {
+  -gtk-icon-size: 128px;
 }
 
 /***********
@@ -4498,57 +4458,30 @@ popover.entry-completion > contents {
   padding: 0;
 }
 
-window.background.csd stack stack stack frame > list,
-window.background.csd > stack > stack > box > frame > list,
-window.background.csd > stack > stack > box > box > frame > list,
-window.background.csd > stack > box > stack > box > frame > list,
-window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list,
-window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
-window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
-window.background.csd > stack > scrolledwindow > viewport > box > list,
-window.background.csd > box > stack > scrolledwindow > viewport > box > list {
-  border-radius: 12px;
+flowboxchild > button.card {
   box-shadow: none;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child {
-  border-top-left-radius: 11px;
-  border-top-right-radius: 11px;
+flowboxchild > button.card .large-icons {
+  -gtk-icon-size: 32px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child {
-  border-bottom-left-radius: 11px;
-  border-bottom-right-radius: 11px;
+flowboxchild > button.card.category-work {
+  background-color: #FFF9C4;
+  color: rgba(0, 0, 0, 0.87);
 }
 
-window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child {
-  border-radius: 11px;
+flowboxchild > button.card.category-develop {
+  background-color: #616161;
+  color: white;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:focus, window.background.csd > stack > list row.activatable:focus {
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
+flowboxchild > button.card.category-tile {
+  padding: 21px;
 }
 
-/**************
- * Extensions *
- **************/
-window.background.csd stack stack stack frame > border,
-window.background.csd > stack > stack > box > frame > border,
-window.background.csd > stack > stack > box > box > frame > border,
-window.background.csd > stack > box > stack > box > frame > border,
-window.background.csd > stack > box > stack > scrolledwindow > viewport frame > border,
-window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > border,
-window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > border {
-  border: none;
-}
-
-window.background.csd > stack > box > box > list,
-window.background.csd > stack > box > stack > scrolledwindow > viewport > list {
-  border-bottom-left-radius: 18px;
-}
-
-window.background.csd > stack > box > .sidebar > scrolledwindow > viewport > list {
-  padding: 0 0;
+flowboxchild > button.card.category-tile-iconless {
+  padding: 9px 15px;
 }
 
 avatar {
@@ -4704,7 +4637,6 @@ menubutton.pill > button, button.pill {
 button.card {
   background-clip: padding-box;
   font-weight: inherit;
-  padding: 0;
   box-shadow: none;
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
 }
