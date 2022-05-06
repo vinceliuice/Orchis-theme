@@ -1745,7 +1745,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   spacing: 8px;
   padding: 8px 12px;
-  margin-bottom: 2px;
+  margin-bottom: 32px;
+  min-height: 24px;
 }
 
 .osd-window > * {
@@ -1753,7 +1754,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .osd-window StIcon {
-  icon-size: 96px;
+  icon-size: 24px;
 }
 
 .osd-window .osd-monitor-label {
