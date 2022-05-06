@@ -9,10 +9,11 @@ $osd_levelbar_height: 4px;
   spacing: $container_padding * 2; // 12px
   padding: $container_padding * 2 $container_padding * 3;
   & > * { spacing: 8px; }
-  margin-bottom: $container_margin;
+  margin-bottom: $container_margin * 16; // 32px
+  min-height: 24px;
 
   StIcon {
-    icon-size: 96px;
+    icon-size: 24px;
   }
 
   .osd-monitor-label { font-size: 3em; }
