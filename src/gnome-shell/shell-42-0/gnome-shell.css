@@ -2524,7 +2524,6 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 99px;
-  icon-size: 8px;
 }
 
 .page-navigation-hint {
