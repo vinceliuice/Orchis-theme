@@ -7133,7 +7133,7 @@ window.background.chromium {
 
 window.background.chromium entry,
 window.background.chromium > button {
-  border: 1px solid #2C2C2C;
+  border: 1px solid #404040;
 }
 
 window.background.chromium > button {
