@@ -1668,6 +1668,7 @@ popover.background {
     background-color: $surface;
     border: none;
     border-radius: $menu-radius;
+    color: $text;
   }
 
   &:backdrop {

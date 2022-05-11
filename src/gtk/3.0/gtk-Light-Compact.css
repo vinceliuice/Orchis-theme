@@ -2630,7 +2630,7 @@ searchbar > revealer > box {
 
 .titlebar.default-decoration {
   min-height: 24px;
-  padding: 4px;
+  padding: 4px 2px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   border-radius: 10px 10px 0 0;
 }
@@ -2643,7 +2643,7 @@ searchbar > revealer > box {
 .titlebar.default-decoration button.titlebutton {
   min-height: 24px;
   min-width: 24px;
-  margin: 0;
+  margin: 0 2px;
   padding: 0;
 }
 
@@ -5288,7 +5288,7 @@ popover.emoji-completion .emoji:hover {
   color: #1A73E8;
   background-color: #FFFFFF;
   box-shadow: 4px 0 #FFFFFF;
-  padding: 0 0 0 14px;
+  padding: 0 24px 0 14px;
   border-image-width: 10px 10px 10px 18px;
   border-image-slice: 10 10 10 18;
   border-image-repeat: stretch;
@@ -5302,6 +5302,7 @@ popover.emoji-completion .emoji:hover {
 .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button {
   margin-right: 8px;
   margin-left: -32px;
+  color: #1A73E8;
 }
 
 .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:disabled image.sidebar-icon, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:disabled label.sidebar-label {
@@ -5427,6 +5428,27 @@ popover.emoji-completion .emoji:hover {
 
 .nautilus-window .floating-bar button {
   margin: 5px;
+}
+
+.windowhandle .linked.nautilus-path-bar {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 9999px;
+  margin: 4px 0;
+}
+
+.windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action) {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 9999px;
+}
+
+.windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).current-dir {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).current-dir:hover, .windowhandle .linked.nautilus-path-bar button:not(.suggested-action):not(.destructive-action).current-dir:active {
+  background: none;
+  box-shadow: none;
 }
 
 .nautilus-canvas-item.dim-label,

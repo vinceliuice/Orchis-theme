@@ -98,7 +98,7 @@
                 color: $primary;
                 background-color: $base;
                 box-shadow: 4px 0 $base;
-                padding: 0 0 0 14px;
+                padding: 0 24px 0 14px;
                 border-image-width: 10px 10px 10px 18px;
                 border-image-slice: 10 10 10 18;
                 border-image-repeat: stretch;
@@ -113,6 +113,7 @@
               button.sidebar-button {
                 margin-right: 8px;
                 margin-left: -32px;
+                color: $primary;
 
                 @extend %button-flat-simple;
               }
@@ -252,6 +253,28 @@
       margin: (32px - $small-size) / 2;
 
       @extend %small-button;
+    }
+  }
+}
+
+// >= 42.0
+.windowhandle .linked.nautilus-path-bar {
+  background-color: $titlebar-fill;
+  border-radius: $circular-radius;
+  margin: $container-padding 0;
+
+  button:not(.suggested-action):not(.destructive-action) {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: $circular-radius;
+
+    &.current-dir {
+      color: $titlebar-text;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
     }
   }
 }

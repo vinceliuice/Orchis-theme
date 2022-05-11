@@ -1976,6 +1976,7 @@ popover.background > contents {
   background-color: #3C3C3C;
   border: none;
   border-radius: 9px;
+  color: white;
 }
 
 popover.background:backdrop > arrow,
