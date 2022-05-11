@@ -76,7 +76,7 @@ window.background.chromium {
   // toolbar's border-bottom refers to button's border
   // FIXME: Chrome's button border ignores theme's alpha value :(
   entry,
-  > button { border: 1px solid $track; }
+  > button { border: 1px solid $titlebar-backdrop; }
 
   > button {
     color: $primary;
