@@ -90,7 +90,7 @@
  * Base States *
  ***************/
 .background {
-  background-color: rgba($background, 0.999);
+  background-color: $background;
   color: $text;
 
   &.csd { // Set csd windows botttom border radius
@@ -140,7 +140,7 @@
   // &:hover, &:selected { border-radius: $corner-radius; }
 
   &:selected {
-    @extend %selected_items;
+    @extend %selected_items_primary;
 
     &:hover { box-shadow: none; }
   }
@@ -1798,7 +1798,7 @@ notebook {
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
 
-  .background.csd &, &.frame {
+  .background.csd &, .background.csd &.frame {
     background-color: $base;
     border-radius: $corner-radius;
   }
@@ -1818,6 +1818,48 @@ notebook {
 
   &:focus tab:checked { box-shadow: none; }
 
+  .background.csd & > header {
+    &.top {
+      border-radius: $corner-radius $corner-radius 0 0;
+
+      > tabs {
+        > tab {
+          border-radius: $corner-radius $corner-radius 0 0;
+        }
+      }
+    }
+
+    &.bottom {
+      border-radius: 0 0 $corner-radius $corner-radius;
+
+      > tabs {
+        > tab {
+          border-radius: 0 0 $corner-radius $corner-radius;
+        }
+      }
+    }
+
+    &.left {
+      border-radius: $corner-radius 0 0 $corner-radius;
+
+      > tabs {
+        > tab {
+          border-radius: $corner-radius 0 0 $corner-radius;
+        }
+      }
+    }
+
+    &.right {
+      border-radius: 0 $corner-radius $corner-radius 0;
+
+      > tabs {
+        > tab {
+          border-radius: 0 $corner-radius $corner-radius 0;
+        }
+      }
+    }
+  }
+
   > header {
     border-width: 1px;
     border-color: $solid-border;
@@ -1826,14 +1868,12 @@ notebook {
 
     &.top {
       border-bottom-style: solid;
-      border-radius: $corner-radius $corner-radius 0 0;
 
       > tabs {
         margin-bottom: -1px;
         margin-top: 4px;
 
         > tab {
-          border-radius: $corner-radius $corner-radius 0 0;
           border-bottom: none;
         }
       }
@@ -1841,14 +1881,12 @@ notebook {
 
     &.bottom {
       border-top-style: solid;
-      border-radius: 0 0 $corner-radius $corner-radius;
 
       > tabs {
         margin-top: -1px;
         margin-bottom: 4px;
 
         > tab {
-          border-radius: 0 0 $corner-radius $corner-radius;
           border-top: none;
         }
       }
@@ -1856,14 +1894,12 @@ notebook {
 
     &.left {
       border-right-style: solid;
-      border-radius: $corner-radius 0 0 $corner-radius;
 
       > tabs {
         margin-left: 4px;
         margin-right: -1px;
 
         > tab {
-          border-radius: $corner-radius 0 0 $corner-radius;
           border-right: none;
         }
       }
@@ -1871,14 +1907,12 @@ notebook {
 
     &.right {
       border-left-style: solid;
-      border-radius: 0 $corner-radius $corner-radius 0;
 
       > tabs {
         margin-left: -1px;
         margin-right: 4px;
 
         > tab {
-          border-radius: 0 $corner-radius $corner-radius 0;
           border-left: none;
         }
       }

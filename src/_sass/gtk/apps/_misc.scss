@@ -344,8 +344,35 @@ window.background.csd {
 // LibreOffice
 //
 
+window.background:not(.solid-csd) {
+  // reserved area at the most-right side of GtkMenuBar
+  > grid.horizontal > grid.horizontal {
+    background-color: $titlebar;
+    box-shadow: inset 0 -1px $divider;
+
+    // > button.flat.small-button { // 'close' button
+    // }
+  }
+}
+
+window.background:not(.solid-csd) {
+  // for 'Notebookbar' toolbar
+  > notebook {
+    border: none; // unset borders
+    background-color: $base;
+    box-shadow: none;
+
+    > stack {
+      border: none;
+      box-shadow: none;
+      background-color: $base;
+    }
+  }
+}
+
 #combobox {
   background-color: $base;
+  border-radius: $corner-radius;
 }
 
 #gtk-combobox-popup-menu {

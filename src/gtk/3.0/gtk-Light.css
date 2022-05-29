@@ -42,7 +42,7 @@
 }
 
 XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, box.vertical > widget > widget:selected, calendar:selected, row:selected, treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view:selected, modelbutton.flat:selected,
-.menuitem.button.flat:selected, .view:selected, filechooser stack.view scrolledwindow treeview.view:selected {
+.menuitem.button.flat:selected {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(235, 235, 235, 0.987);
 }
@@ -52,8 +52,8 @@ XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover
   background-color: rgba(26, 115, 232, 0.2);
 }
 
-.nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, statuspage.search-view entry.search > window.background treeview.view:selected, statuspage.search-view entry.search > window.background filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow statuspage.search-view entry.search > window.background treeview.view:selected, statuspage.search-view entry.search > window.background window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow statuspage.search-view entry.search > window.background treeview.view:selected:not(.progressbar):not(.trough), spinbutton.vertical selection, spinbutton:not(.vertical) selection,
-entry selection, label selection, textview text selection:focus, textview text selection, widget.view:selected {
+.nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, statuspage.search-view entry.search > window.background treeview.view:selected, statuspage.search-view entry.search > window.background filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow statuspage.search-view entry.search > window.background treeview.view:selected, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
+entry selection, label selection, textview text selection:focus, textview text selection, widget.view:selected, .view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), filechooser stack.view scrolledwindow treeview.view:selected {
   color: white;
   background-color: #1A73E8;
 }
@@ -98,7 +98,7 @@ entry selection, label selection, textview text selection:focus, textview text s
  * Base States *
  ***************/
 .background {
-  background-color: rgba(242, 242, 242, 0.999);
+  background-color: #F2F2F2;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -3244,7 +3244,7 @@ frame > paned > notebook > header, notebook.frame > header {
   background-color: #FAFAFA;
 }
 
-.background.csd notebook, notebook.frame {
+.background.csd notebook, .background.csd notebook.frame {
   background-color: #FFFFFF;
   border-radius: 12px;
 }
@@ -3262,6 +3262,38 @@ notebook:focus tab:checked {
   box-shadow: none;
 }
 
+.background.csd notebook > header.top {
+  border-radius: 12px 12px 0 0;
+}
+
+.background.csd notebook > header.top > tabs > tab {
+  border-radius: 12px 12px 0 0;
+}
+
+.background.csd notebook > header.bottom {
+  border-radius: 0 0 12px 12px;
+}
+
+.background.csd notebook > header.bottom > tabs > tab {
+  border-radius: 0 0 12px 12px;
+}
+
+.background.csd notebook > header.left {
+  border-radius: 12px 0 0 12px;
+}
+
+.background.csd notebook > header.left > tabs > tab {
+  border-radius: 12px 0 0 12px;
+}
+
+.background.csd notebook > header.right {
+  border-radius: 0 12px 12px 0;
+}
+
+.background.csd notebook > header.right > tabs > tab {
+  border-radius: 0 12px 12px 0;
+}
+
 notebook > header {
   border-width: 1px;
   border-color: #dedede;
@@ -3271,7 +3303,6 @@ notebook > header {
 
 notebook > header.top {
   border-bottom-style: solid;
-  border-radius: 12px 12px 0 0;
 }
 
 notebook > header.top > tabs {
@@ -3280,13 +3311,11 @@ notebook > header.top > tabs {
 }
 
 notebook > header.top > tabs > tab {
-  border-radius: 12px 12px 0 0;
   border-bottom: none;
 }
 
 notebook > header.bottom {
   border-top-style: solid;
-  border-radius: 0 0 12px 12px;
 }
 
 notebook > header.bottom > tabs {
@@ -3295,13 +3324,11 @@ notebook > header.bottom > tabs {
 }
 
 notebook > header.bottom > tabs > tab {
-  border-radius: 0 0 12px 12px;
   border-top: none;
 }
 
 notebook > header.left {
   border-right-style: solid;
-  border-radius: 12px 0 0 12px;
 }
 
 notebook > header.left > tabs {
@@ -3310,13 +3337,11 @@ notebook > header.left > tabs {
 }
 
 notebook > header.left > tabs > tab {
-  border-radius: 12px 0 0 12px;
   border-right: none;
 }
 
 notebook > header.right {
   border-left-style: solid;
-  border-radius: 0 12px 12px 0;
 }
 
 notebook > header.right > tabs {
@@ -3325,7 +3350,6 @@ notebook > header.right > tabs {
 }
 
 notebook > header.right > tabs > tab {
-  border-radius: 0 12px 12px 0;
   border-left: none;
 }
 
@@ -7397,8 +7421,26 @@ window.background.csd > box.vertical > overlay > stack > scrolledwindow.frame > 
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+window.background:not(.solid-csd) > grid.horizontal > grid.horizontal {
+  background-color: #FFFFFF;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+}
+
+window.background:not(.solid-csd) > notebook {
+  border: none;
+  background-color: #FFFFFF;
+  box-shadow: none;
+}
+
+window.background:not(.solid-csd) > notebook > stack {
+  border: none;
+  box-shadow: none;
+  background-color: #FFFFFF;
+}
+
 #combobox {
   background-color: #FFFFFF;
+  border-radius: 12px;
 }
 
 #gtk-combobox-popup-menu .view:selected, #gtk-combobox-popup-menu window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-menu treeview.view:selected:not(.progressbar):not(.trough), #gtk-combobox-popup-menu .view:hover, #gtk-combobox-popup-menu window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-menu treeview.view:hover:not(.progressbar):not(.trough) {
