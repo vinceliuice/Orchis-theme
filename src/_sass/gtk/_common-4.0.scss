@@ -3602,6 +3602,7 @@ paned {
     background-image: image($divider);
     background-size: 1px 1px;
     background-clip: content-box; // avoids borders image being rendered twice (?)
+    box-shadow: none;
 
     &.wide {
       min-width: 6px;

@@ -1818,6 +1818,40 @@ notebook {
 
   &:focus tab:checked { box-shadow: none; }
 
+  > header {
+    &.top {
+      > tabs {
+        > tab {
+          border-radius: $corner-radius / 2 $corner-radius / 2 0 0;
+        }
+      }
+    }
+
+    &.bottom {
+      > tabs {
+        > tab {
+          border-radius: 0 0 $corner-radius / 2 $corner-radius / 2;
+        }
+      }
+    }
+
+    &.left {
+      > tabs {
+        > tab {
+          border-radius: $corner-radius / 2 0 0 $corner-radius / 2;
+        }
+      }
+    }
+
+    &.right {
+      > tabs {
+        > tab {
+          border-radius: 0 $corner-radius / 2 $corner-radius / 2 0;
+        }
+      }
+    }
+  }
+
   .background.csd & > header {
     &.top {
       border-radius: $corner-radius $corner-radius 0 0;

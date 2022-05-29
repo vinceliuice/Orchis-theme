@@ -19,6 +19,11 @@ THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Grey'
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
+# Old name variants
+OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
+OLD_COLOR_VARIANTS=('' '-light' '-dark')
+OLD_SIZE_VARIANTS=('' '-compact')
+
 # Check command availability
 function has_command() {
   command -v $1 > /dev/null
@@ -155,6 +160,23 @@ uninstall() {
   local THEME_DIR="$dest/$name$theme$color$size"
 
   [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+}
+
+clean() {
+  local dest="$1"
+  local name="$2"
+  local theme="$3"
+  local color="$4"
+  local size="$5"
+
+  local THEME_DIR="$dest/$name$theme$color$size"
+
+  if [[ "${theme}" == '' && "${color}" == '' && "${size}" == '' ]]; then
+    todo='nothing'
+  elif [[ -d "${THEME_DIR}" ]]; then
+    rm -rf "${THEME_DIR}"
+    echo -e "Find: ${THEME_DIR} ! removing it ..."
+  fi
 }
 
 uninstall_link() {
@@ -323,6 +345,16 @@ uninstall_theme() {
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
         uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+      done
+    done
+  done
+}
+
+clean_theme() {
+  for theme in "${othemes[@]}"; do
+    for color in "${ocolors[@]}"; do
+      for size in "${osizes[@]}"; do
+        clean "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
       done
     done
   done

@@ -3262,6 +3262,22 @@ notebook:focus tab:checked {
   box-shadow: none;
 }
 
+notebook > header.top > tabs > tab {
+  border-radius: 6px 6px 0 0;
+}
+
+notebook > header.bottom > tabs > tab {
+  border-radius: 0 0 6px 6px;
+}
+
+notebook > header.left > tabs > tab {
+  border-radius: 6px 0 0 6px;
+}
+
+notebook > header.right > tabs > tab {
+  border-radius: 0 6px 6px 0;
+}
+
 .background.csd notebook > header.top {
   border-radius: 12px 12px 0 0;
 }

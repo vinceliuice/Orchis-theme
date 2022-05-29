@@ -3952,6 +3952,7 @@ paned > separator {
   background-image: image(rgba(255, 255, 255, 0.12));
   background-size: 1px 1px;
   background-clip: content-box;
+  box-shadow: none;
 }
 
 paned > separator.wide {

@@ -38,6 +38,9 @@ EOF
 themes=()
 colors=()
 sizes=()
+othemes=()
+ocolors=()
+osizes=()
 
 while [[ "$#" -gt 0 ]]; do
   case "${1:-}" in
@@ -242,7 +245,19 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-./clean-old-theme.sh
+if [[ "${#othemes[@]}" -eq 0 ]] ; then
+  othemes=("${OLD_THEME_VARIANTS[@]}")
+fi
+
+if [[ "${#ocolors[@]}" -eq 0 ]] ; then
+  ocolors=("${OLD_COLOR_VARIANTS[@]}")
+fi
+
+if [[ "${#osizes[@]}" -eq 0 ]] ; then
+  osizes=("${OLD_SIZE_VARIANTS[@]}")
+fi
+
+clean_theme
 
 if [[ ${remove} == 'true' ]]; then
   if [[ "$libadwaita" == 'true' ]]; then
