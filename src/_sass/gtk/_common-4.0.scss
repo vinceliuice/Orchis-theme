@@ -2034,6 +2034,7 @@ scrollbar {
   > range > trough {
     box-shadow: none;
     outline: none;
+    background: none;
 
     > slider {
       transition: background-color $duration $ease-out;

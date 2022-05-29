@@ -2325,6 +2325,7 @@ scrollbar.right {
 scrollbar > range > trough {
   box-shadow: none;
   outline: none;
+  background: none;
 }
 
 scrollbar > range > trough > slider {

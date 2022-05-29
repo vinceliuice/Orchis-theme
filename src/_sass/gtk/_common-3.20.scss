@@ -3620,11 +3620,7 @@ decoration {
 
 // Window Close button
 button.titlebutton {
-  // @extend %button-flat-simple;
-
   @extend %circular-button;
-
-  // .selection-mode & { }
 }
 
 .monospace { font-family: monospace; }
