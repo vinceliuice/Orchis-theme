@@ -4,9 +4,9 @@ THEME_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Orchis
 
-_COLOR_VARIANTS=('' '-light' '-dark')
-_COMPA_VARIANTS=('' '-compact')
-_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
+_COLOR_VARIANTS=('' '-Light' '-Dark')
+_COMPA_VARIANTS=('' '-Compact')
+_THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Grey')
 
 if [ ! -z "${COMPA_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _COMPA_VARIANTS <<< "${COMPA_VARIANTS:-}"
@@ -26,7 +26,7 @@ for theme in "${_THEME_VARIANTS[@]}"; do
 done
 
 for theme in "${_THEME_VARIANTS[@]}"; do
-  tar -Jcvf ${THEME_NAME}${theme}.tar.xz ${THEME_NAME}${theme} ${THEME_NAME}${theme}-compact ${THEME_NAME}${theme}{-light,-dark} ${THEME_NAME}${theme}{-light,-dark}-compact
+  tar -Jcvf ${THEME_NAME}${theme}.tar.xz ${THEME_NAME}${theme} ${THEME_NAME}${theme}-Compact ${THEME_NAME}${theme}{-Light,-Dark} ${THEME_NAME}${theme}{-Light,-Dark}-Compact
 done
 }
 
