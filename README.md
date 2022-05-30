@@ -56,6 +56,14 @@ OPTIONS:
 
 > For more information, run: `./install.sh -h`
 
+### Fix for libadwaita (Gnome-shell >= 42.0)
+
+run: `./install.sh -l`
+
+![1](images/libadwaita.png?raw=true)
+
+### Tweaks for Orchis
+
 ![1](images/tweaks-view.png?raw=true)
 
 ### Flatpak Installation
