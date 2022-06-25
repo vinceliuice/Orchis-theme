@@ -22,7 +22,7 @@ stage {
   @include button(normal);
 
   &:hover { @include button(hover); }
-  &:active { @include button(active); }
+  &:active { @include button(active); color: $fg_color !important; }
   &:insensitive { @include button(insensitive); }
   &:focus { @include button(focus); }
 

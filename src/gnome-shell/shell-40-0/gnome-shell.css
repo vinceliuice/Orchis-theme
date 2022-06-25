@@ -46,6 +46,7 @@ stage {
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none;
+  color: rgba(0, 0, 0, 0.87) !important;
 }
 
 .modal-dialog .modal-dialog-linked-button:insensitive, .hotplug-notification-item:insensitive {
@@ -1402,7 +1403,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child:active {
-  color: white;
+  color: white !important;
   background-color: #ff3939;
 }
 
@@ -1490,7 +1491,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog .modal-dialog-linked-button:first-child:active {
-  color: white;
+  color: white !important;
   background-color: #FF5252;
 }
 
@@ -1505,7 +1506,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog .modal-dialog-linked-button:last-child:active {
-  color: white;
+  color: white !important;
   background-color: #176ee1;
 }
 

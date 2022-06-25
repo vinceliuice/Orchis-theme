@@ -562,6 +562,14 @@ button {
     &:focus { box-shadow: inset 0 0 0 9999px $overlay-focus; }
   }
 
+  .linked:not(.vertical) > menubutton:first-child > & {
+    border-radius: $corner-radius 0 0 $corner-radius;
+  }
+
+  .linked:not(.vertical) > menubutton:last-child > & {
+    border-radius: 0 $corner-radius $corner-radius 0;
+  }
+
   // big standalone buttons like in Documents pager
   &.osd {
     box-shadow: none;
@@ -2769,10 +2777,6 @@ actionbar > revealer > box {
   background-color: $base;
   background-clip: border-box;
   box-shadow: none;
-
-  button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
-
-  .linked > button:not(.suggested-action):not(.destructive-action) { @extend %button-basic; }
 }
 
 statusbar {

@@ -39,7 +39,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
     }
 
     &:active {
-      color: white;
+      color: white !important;
       background-color: darken($destructive_color, 5%);
     }
   }
@@ -115,7 +115,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
     color: $destructive_color;
 
     &:active {
-      color: white;
+      color: white !important;
       background-color: $destructive_color;
     }
   }
@@ -130,7 +130,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
     }
 
     &:active {
-      color: white;
+      color: white !important;
       background-color: darken($suggested_color, 5%);
     }
 
