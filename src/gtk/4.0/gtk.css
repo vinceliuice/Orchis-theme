@@ -2170,8 +2170,8 @@ notebook > header.left {
 }
 
 notebook > header.left > tabs {
-  margin-left: 4px;
   margin-right: -1px;
+  margin-left: 4px;
 }
 
 notebook > header.left > tabs > tab {
@@ -5209,6 +5209,11 @@ leaflet leaflet {
 
 leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #FFFFFF;
+}
+
+.maximized leaflet, .fullscreen leaflet, .tiled leaflet, .tiled-top leaflet, .tiled-right leaflet, .tiled-bottom leaflet, .tiled-left leaflet {
+  border-radius: 0;
+  outline: none;
 }
 
 /* GTK NAMED COLORS

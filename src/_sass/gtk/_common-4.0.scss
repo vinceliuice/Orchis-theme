@@ -1866,8 +1866,8 @@ notebook {
       border-radius: $corner-radius 0 0 $corner-radius;
 
       > tabs {
-        margin-left: 4px;
         margin-right: -1px;
+        margin-left: 4px;
 
         > tab {
           border-radius: $corner-radius 0 0 $corner-radius;

@@ -732,4 +732,15 @@ leaflet {
   > box > scrolledwindow > viewport > widget > stack {
     background-color: $base;
   }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & {
+    border-radius: 0;
+    outline: none;
+  }
 }
