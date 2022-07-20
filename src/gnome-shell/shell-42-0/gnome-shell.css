@@ -3731,6 +3731,31 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(0, 0, 0, 0.54);
 }
 
+.popup-sub-menu .openweather-current-icon, .popup-sub-menu .openweather-current-summary, .popup-sub-menu .openweather-current-summarybox {
+  background: none;
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.popup-sub-menu .openweather-current-databox-values {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-sub-menu .openweather-current-databox-captions {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-sub-menu .openweather-forecast-icon, .popup-sub-menu .openweather-forecast-summary {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.popup-sub-menu .openweather-forecast-day, .popup-sub-menu .openweather-forecast-temperature {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-sub-menu .openweather-sunrise-icon, .popup-sub-menu .openweather-sunset-icon, .popup-sub-menu .openweather-build-icon {
+  color: rgba(0, 0, 0, 0.85);
+}
+
 .cosmic-solid-bg {
   background-color: #222222;
 }

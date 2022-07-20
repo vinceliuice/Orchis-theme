@@ -135,6 +135,41 @@
   &-build-icon { color: $secondary_fg_color; }
 }
 
+.popup-sub-menu .openweather {
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: rgba(black, 0.95);
+    }
+
+    &-databox-values {
+      color: rgba(black, 0.75);
+    }
+
+    &-databox-captions {
+      color: rgba(black, 0.75);
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      color: rgba(black, 0.85);
+    }
+
+    &-day,
+    &-temperature {
+      color: rgba(black, 0.75);
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon { color: rgba(black, 0.85); }
+}
+
 //
 // Pop_OS cosmic widget styling
 //
