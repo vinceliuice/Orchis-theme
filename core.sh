@@ -213,8 +213,6 @@ install_package() {
       sudo apt-get install sassc
     elif has_command dnf; then
       sudo dnf install sassc
-    elif has_command dnf; then
-      sudo dnf install sassc
     elif has_command pacman; then
       sudo pacman -S --noconfirm sassc
     fi

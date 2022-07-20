@@ -31,6 +31,7 @@ $osd_levelbar_height: 4px;
     -barlevel-overdrive-color: $destructive_color;
     -barlevel-overdrive-separator-width: 3px;
     -barlevel-border-width: 0;
+    min-width: 120px;
     &:ltr { margin-right: $container_padding; }
     &:rtl { margin-left: $container_padding; }
   }
