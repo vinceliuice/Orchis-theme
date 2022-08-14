@@ -15,6 +15,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
     margin: 32px 40px;
     spacing: 32px;
     max-width: 28em;
+    background-color: $base_color;
   }
 
   .modal-dialog-linked-button {
@@ -142,6 +143,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
 
   .modal-dialog-content-box {
     margin-bottom: 24px;
+     background-color: $base_color;
   }
 }
 
