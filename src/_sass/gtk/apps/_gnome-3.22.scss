@@ -1724,20 +1724,20 @@ window.background.csd {
  ************/
 terminal-window {
   &.background.csd {
-    border-radius: 0 0 0 0;
+    border-radius: 0;
   }
 
-  &.background.csd.maximized { border-radius: 0 0 0 0; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
+  &.background.csd.maximized { border-radius: 0; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
 
-  notebook > header > box {
-    // Remove hard-coded margin around button(s)
-    margin: -2px -2px -3px;
-
-    button {
-      // margin-bottom: -1px;
-      border-radius: 0;
-    }
-  }
+  // notebook > header > box {
+  //   // Remove hard-coded margin around button(s)
+  //   margin: -2px -2px -3px;
+  //
+  //   button {
+  //     margin-bottom: -1px;
+  //     border-radius: 0;
+  //   }
+  // }
 }
 
 window.background { // gnome-terminal 3.32 setting

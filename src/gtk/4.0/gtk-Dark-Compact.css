@@ -4326,9 +4326,10 @@ shortcut > .keycap {
   padding-left: 8px;
   padding-right: 8px;
   border: solid 1px rgba(255, 255, 255, 0.12);
-  border-radius: 11px;
+  border-radius: 8px;
   box-shadow: inset 0 -2px rgba(255, 255, 255, 0.12);
   background-color: #3C3C3C;
+  background-clip: border-box;
   color: white;
   font-size: smaller;
 }

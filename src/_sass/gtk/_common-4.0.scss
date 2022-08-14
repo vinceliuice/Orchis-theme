@@ -4025,9 +4025,10 @@ shortcut > .keycap {
   padding-left: 8px;
   padding-right: 8px;
   border: solid 1px $divider;
-  border-radius: $corner-radius + 1px;
+  border-radius: 8px;
   box-shadow: inset 0 -2px $divider;
   background-color: $surface;
+  background-clip: border-box;
   color: $text;
   font-size: smaller;
 }

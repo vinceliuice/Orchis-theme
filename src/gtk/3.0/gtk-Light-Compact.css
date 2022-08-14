@@ -5111,9 +5111,10 @@ cursor-handle.insertion-cursor:dir(ltr), cursor-handle.insertion-cursor:dir(rtl)
   padding-left: 8px;
   padding-right: 8px;
   border: solid 1px rgba(0, 0, 0, 0.12);
-  border-radius: 11px;
+  border-radius: 8px;
   box-shadow: inset 0 -2px rgba(0, 0, 0, 0.12);
   background-color: #FFFFFF;
+  background-clip: border-box;
   color: rgba(0, 0, 0, 0.87);
   font-size: smaller;
 }
@@ -5130,26 +5131,26 @@ stackswitcher {
   background-color: alpha(currentColor, 0.05);
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+stackswitcher > button:not(.suggested-action):not(.destructive-action) {
   margin: 0 0;
   border-radius: 9999px;
   background-color: transparent;
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:not(.circular) {
   min-width: 100px;
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):focus {
+stackswitcher > button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):active {
+stackswitcher > button:not(.suggested-action):not(.destructive-action):active {
   box-shadow: inset 0 0 0 9999px alpha(#1A73E8, 0.08);
   background-image: radial-gradient(circle, alpha(#1A73E8, 0.08) 10%, transparent 0%);
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
+stackswitcher > button:not(.suggested-action):not(.destructive-action):checked {
   background-color: #1A73E8;
   color: white;
 }
@@ -6726,18 +6727,10 @@ window.background.csd > box.vertical > paned.horizontal > scrolledwindow treevie
  * Terminal *
  ************/
 terminal-window.background.csd {
-  border-radius: 0 0 0 0;
+  border-radius: 0;
 }
 
 terminal-window.background.csd.maximized {
-  border-radius: 0 0 0 0;
-}
-
-terminal-window notebook > header > box {
-  margin: -2px -2px -3px;
-}
-
-terminal-window notebook > header > box button {
   border-radius: 0;
 }
 

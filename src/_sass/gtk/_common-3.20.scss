@@ -3726,11 +3726,11 @@ cursor-handle {
   padding-bottom: 2px;
   padding-left: 8px;
   padding-right: 8px;
-
   border: solid 1px $divider;
-  border-radius: $corner-radius + 1px;
+  border-radius: 8px;
   box-shadow: inset 0 -2px $divider;
   background-color: $surface;
+  background-clip: border-box;
   color: $text;
   font-size: smaller;
 }
@@ -3746,14 +3746,14 @@ stackswitcher {
   border-radius: $circular-radius;
   background-color: $overlay-normal;
 
-  &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+  > button:not(.suggested-action):not(.destructive-action) {
     margin: 0 0;
     border-radius: $circular-radius;
     background-color: transparent;
 
-    &.text-button { min-width: 100px; }
+    &.text-button:not(.circular) { min-width: 100px; }
 
-    &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
+    &:focus:not(:hover) { box-shadow: inset 0 0 0 2px $overlay-focus; }
 
     &:active {
       box-shadow: inset 0 0 0 9999px gtkalpha($primary, 0.08);
