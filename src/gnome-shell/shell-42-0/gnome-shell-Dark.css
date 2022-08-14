@@ -1435,6 +1435,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 32px 40px;
   spacing: 32px;
   max-width: 28em;
+  background-color: #202020;
 }
 
 .modal-dialog .modal-dialog-linked-button {
@@ -1572,6 +1573,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .prompt-dialog .modal-dialog-content-box {
   margin-bottom: 24px;
+  background-color: #202020;
 }
 
 .prompt-dialog-password-grid {

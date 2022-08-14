@@ -2178,6 +2178,7 @@ switch {
   // hide on/off icons for >=3.24.5
   image {
     margin: -8px;
+    color: transparent;
   }
 
   > slider {
@@ -3075,8 +3076,8 @@ $boxed-radius: $corner-radius - 1px;
 
 %boxed_list_row {
   transition: 200ms $ease-out;
-  border-bottom: 1px solid $divider;
   color: $text-secondary;
+  border-bottom: 1px solid $divider;
 
   .osd &:focus:focus-visible {
     outline-color: $fill;
@@ -3167,7 +3168,7 @@ list.boxed-list {
     }
 
     // Rounded bottom
-    &:last-child {
+    &:last-child, &:only-child {
       &,
       &.expander:not(:checked),
       &.expander:not(:checked) row.header,
