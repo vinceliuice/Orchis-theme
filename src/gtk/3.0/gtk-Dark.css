@@ -5131,26 +5131,29 @@ stackswitcher {
   background-color: alpha(currentColor, 0.05);
 }
 
-stackswitcher > button:not(.suggested-action):not(.destructive-action) {
+stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
   margin: 0 0;
-  border-radius: 9999px;
   background-color: transparent;
 }
 
-stackswitcher > button:not(.suggested-action):not(.destructive-action).text-button:not(.circular) {
+stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action):first-child, stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action):last-child, stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+  border-radius: 9999px;
+}
+
+stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:not(.circular) {
   min-width: 100px;
 }
 
-stackswitcher > button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
+stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action):focus:not(:hover) {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
-stackswitcher > button:not(.suggested-action):not(.destructive-action):active {
+stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action):active {
   box-shadow: inset 0 0 0 9999px alpha(#3281ea, 0.08);
   background-image: radial-gradient(circle, alpha(#3281ea, 0.08) 10%, transparent 0%);
 }
 
-stackswitcher > button:not(.suggested-action):not(.destructive-action):checked {
+stackswitcher:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
   background-color: #3281ea;
   color: white;
 }
@@ -7038,6 +7041,10 @@ dialog.background.csd stack scrolledwindow.frame treeview.view:not(:hover):not(:
 
 dialog.background.csd stack scrolledwindow viewport.frame.view, dialog.background.csd filechooser stack.view scrolledwindow treeview.frame.view, filechooser dialog.background.csd stack.view scrolledwindow treeview.frame.view, dialog.background.csd window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow scrolledwindow treeview.frame.view:not(.progressbar):not(.trough), dialog.background.csd filechooser stack.view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.frame.view:not(.progressbar):not(.trough), filechooser dialog.background.csd stack.view window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.frame.view:not(.progressbar):not(.trough) {
   border-radius: 12px;
+}
+
+window.background > deck > box > overlay > stack > leaflet > box > scrolledwindow > viewport > box > stack > scrolledwindow {
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 window.background.csd.unified headerbar {

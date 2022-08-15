@@ -2101,6 +2101,15 @@ dialog.background.csd {
   }
 }
 
+//
+// Pamac
+//
+
+window.background {
+  > deck > box > overlay > stack > leaflet > box > scrolledwindow > viewport > box > stack > scrolledwindow {
+    border: 1px solid $divider;
+  }
+}
 
 //
 // unified window

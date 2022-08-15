@@ -157,8 +157,6 @@ widget.view {
 }
 
 textview {
-  // FIXME: we need to override background-color to ensure text rendering
-
   text {
     background-color: $base;
     selection { &:focus, & { @extend %selected_items_primary; }}
@@ -3746,10 +3744,11 @@ stackswitcher {
   border-radius: $circular-radius;
   background-color: $overlay-normal;
 
-  > button:not(.suggested-action):not(.destructive-action) {
+  &:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
     margin: 0 0;
-    border-radius: $circular-radius;
     background-color: transparent;
+
+    &:first-child, &:last-child, & { border-radius: $circular-radius; }
 
     &.text-button:not(.circular) { min-width: 100px; }
 
