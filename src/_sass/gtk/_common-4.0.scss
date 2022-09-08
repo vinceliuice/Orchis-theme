@@ -3906,6 +3906,17 @@ window {
   border-radius: $window-radius;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
+  @if $variant == 'light' and $topbar == 'dark' {
+    &.background {
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,
+                                        $titlebar,
+                                        $titlebar $large-size,
+                                        $background $large-size,
+                                        $background);
+    }
+  }
+
   &:backdrop {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows.

@@ -360,7 +360,7 @@ clean_theme() {
 
 link_theme() {
   for theme in "${themes[@]}"; do
-    for color in "${colors[2]}"; do
+    for color in "${lcolors[@]}"; do
       for size in "${sizes[0]}"; do
         link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
       done
