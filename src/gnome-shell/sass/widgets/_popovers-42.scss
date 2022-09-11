@@ -25,7 +25,7 @@
 }
 
 .popup-menu-content {
-  padding: $container_padding 0;
+  padding: $container_padding;
   margin: $container_padding 10px 13px 10px;
   background-color: $menu_bg_color;
   border-radius: $popup_radius;
@@ -39,7 +39,6 @@ $submenu_item_radius: $popup_radius - $container_padding;
 .popup-menu-item {
   spacing: $container_padding;
   padding: $container_padding;
-  margin: 0 $container_padding;
   color: $fg_color !important;
   transition-duration: $shorter_duration;
   border-radius: $circular_radius;
@@ -109,7 +108,7 @@ $submenu_item_radius: $popup_radius - $container_padding;
 
 // popover submenus
 .popup-sub-menu {
-  margin: 0 $container_padding;
+  margin: 0;
   color: rgba(black, 0.75) !important;
   background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
   border-radius: 0 0 $submenu_item_radius $submenu_item_radius;
@@ -142,45 +141,25 @@ $submenu_item_radius: $popup_radius - $container_padding;
 // container for radio and check boxes
 .popup-menu-ornament {
   width: 1.2em;
+  text-align: center !important;
 
-  &:ltr { text-align: right };
-  &:rtl { text-align: left };
+  &:ltr { text-align: right; }
+  &:rtl { text-align: left; }
 }
 
 // separator
 .popup-separator-menu-item {
+  background: none;
   border: none;
-  padding: 0 0;
-  margin: 0 0;
 
   .popup-separator-menu-item-separator {
     height: 1px; //not really the whole box
-    margin: 0 0;
-    padding: 0 0;
+    margin: $container_padding $container_padding * 8;
     background-color: $border_color;
 
     .popup-sub-menu & { //submenu separators
-      margin: 0 0;
-      padding: 0 0;
+      margin: $container_padding $container_padding * 9 $container_padding $container_padding * 4;
       background-color: rgba(black, 0.10);
-    }
-  }
-}
-
-.panel-menu,
-.background-menu,
-.aggregate-menu,
-.app-well-menu,
-.app-menu {
-  .popup-separator-menu-item {
-    height: $container_padding;
-
-    .popup-separator-menu-item-separator {
-      background-color: transparent;
-
-      .popup-sub-menu & {
-        background-color: transparent;
-      }
     }
   }
 }
@@ -195,6 +174,9 @@ $submenu_item_radius: $popup_radius - $container_padding;
 .aggregate-menu {
   min-width: if($laptop == 'true', 19em, 21em);
 
+  // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament, .popup-sub-menu .popup-menu-ornament { width: 0 !important; }
+
   .popup-menu-icon {
     padding: 0;
     margin: 0 $container_margin;
@@ -207,6 +189,22 @@ $submenu_item_radius: $popup_radius - $container_padding;
     }
     &:rtl { /* 12px spacing + 2*4px padding */
       padding-right: $container_padding * 2 + $container_margin; margin-right: 0;
+    }
+  }
+}
+
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
+
+  // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament { width: 0 !important; }
+
+  .popup-inactive-menu-item:first-child {
+    // "Open Windows" label
+    > StLabel {
+      &:ltr { margin-right: $container_margin * 2; }
+      &:rtl { margin-left: $container_margin * 2; }
     }
   }
 }

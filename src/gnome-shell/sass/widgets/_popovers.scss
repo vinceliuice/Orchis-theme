@@ -138,38 +138,19 @@ $submenu_item_radius: $popup_radius - $container_padding;
 
 // separator
 .popup-separator-menu-item {
+  background: none;
   border: none;
-  padding: 0 0;
-  margin: 0 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 
   .popup-separator-menu-item-separator {
     height: 1px; //not really the whole box
     margin: 0 0;
-    padding: 0 0;
     background-color: $border_color;
 
     .popup-sub-menu & { //submenu separators
-      margin: 0 0;
-      padding: 0 0;
+      margin: 0 32px 0 0;
       background-color: rgba(black, 0.10);
-    }
-  }
-}
-
-.panel-menu,
-.background-menu,
-.aggregate-menu,
-.app-well-menu,
-.app-menu {
-  .popup-separator-menu-item {
-    height: $container_padding;
-
-    .popup-separator-menu-item-separator {
-      background-color: transparent;
-
-      .popup-sub-menu & {
-        background-color: transparent;
-      }
     }
   }
 }
