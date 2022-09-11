@@ -41,6 +41,7 @@ sizes=()
 othemes=()
 ocolors=()
 osizes=()
+lcolors=()
 
 while [[ "$#" -gt 0 ]]; do
   case "${1:-}" in
@@ -177,14 +178,17 @@ while [[ "$#" -gt 0 ]]; do
         case "$variant" in
           standard)
             colors+=("${COLOR_VARIANTS[0]}")
+            lcolors+=("${COLOR_VARIANTS[0]}")
             shift
             ;;
           light)
             colors+=("${COLOR_VARIANTS[1]}")
+            lcolors+=("${COLOR_VARIANTS[1]}")
             shift
             ;;
           dark)
             colors+=("${COLOR_VARIANTS[2]}")
+            lcolors+=("${COLOR_VARIANTS[2]}")
             shift
             ;;
           -*)
@@ -255,6 +259,10 @@ fi
 
 if [[ "${#osizes[@]}" -eq 0 ]] ; then
   osizes=("${OLD_SIZE_VARIANTS[@]}")
+fi
+
+if [[ "${#lcolors[@]}" -eq 0 ]] ; then
+  lcolors=("${COLOR_VARIANTS[1]}")
 fi
 
 clean_theme

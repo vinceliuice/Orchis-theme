@@ -4502,6 +4502,22 @@ flowboxchild > button.card.category-tile-iconless {
   padding: 6px 10px;
 }
 
+app-context-bar > box:not(:first-child) > button.flat {
+  border-radius: 0;
+}
+
+app-context-bar > box:not(:first-child) > button.flat:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+app-context-bar > box:first-child > button.flat {
+  border-radius: 0;
+}
+
+app-context-bar > box:first-child > button.flat:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
 avatar {
   border-radius: 9999px;
   font-weight: bold;

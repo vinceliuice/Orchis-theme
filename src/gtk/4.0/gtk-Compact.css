@@ -4230,6 +4230,11 @@ window {
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
 }
 
+window.background {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 40px, #F2F2F2 40px, #F2F2F2);
+}
+
 window:backdrop {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
 }
@@ -4500,6 +4505,22 @@ flowboxchild > button.card.category-tile {
 
 flowboxchild > button.card.category-tile-iconless {
   padding: 6px 10px;
+}
+
+app-context-bar > box:not(:first-child) > button.flat {
+  border-radius: 0;
+}
+
+app-context-bar > box:not(:first-child) > button.flat:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+app-context-bar > box:first-child > button.flat {
+  border-radius: 0;
+}
+
+app-context-bar > box:first-child > button.flat:first-child {
+  border-radius: 10px 0 0 10px;
 }
 
 avatar {
