@@ -2524,7 +2524,7 @@ searchbar > revealer > box {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.titlebar .linked:not(.vertical) > entry.search {
+.titlebar .linked:not(.vertical) > entry {
   border-radius: 10px;
 }
 
@@ -7454,13 +7454,23 @@ window.background:not(.solid-csd) > notebook > stack {
   background-color: #FFFFFF;
 }
 
-#combobox {
-  background-color: #FFFFFF;
-  border-radius: 10px;
+#combobox > entry {
+  border-radius: 2px 0 0 2px;
 }
 
-#gtk-combobox-popup-menu .view:selected, #gtk-combobox-popup-menu window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-menu treeview.view:selected:not(.progressbar):not(.trough), #gtk-combobox-popup-menu .view:hover, #gtk-combobox-popup-menu window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-menu treeview.view:hover:not(.progressbar):not(.trough) {
+#combobox > button {
+  border-radius: 0 2px 2px 0;
+}
+
+#gtk-combobox-popup-window scrolledwindow.frame {
+  border: none;
+}
+
+#gtk-combobox-popup-window treeview.view:selected, #gtk-combobox-popup-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-window treeview.view:selected:not(.progressbar):not(.trough), #gtk-combobox-popup-window treeview.view:hover, #gtk-combobox-popup-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-window treeview.view:hover:not(.progressbar):not(.trough) {
   background-image: image(#1A73E8);
+}
+
+#gtk-combobox-popup-window treeview.view:selected, #gtk-combobox-popup-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-window treeview.view:selected:not(.progressbar):not(.trough), #gtk-combobox-popup-window treeview.view:selected label, #gtk-combobox-popup-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:not(.progressbar):not(.trough) label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-window treeview.view:selected:not(.progressbar):not(.trough) label, #gtk-combobox-popup-window treeview.view:hover, #gtk-combobox-popup-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover:not(.progressbar):not(.trough), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-window treeview.view:hover:not(.progressbar):not(.trough), #gtk-combobox-popup-window treeview.view:hover label, #gtk-combobox-popup-window window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover:not(.progressbar):not(.trough) label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow #gtk-combobox-popup-window treeview.view:hover:not(.progressbar):not(.trough) label {
   color: white;
 }
 

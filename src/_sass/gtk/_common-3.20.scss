@@ -1155,10 +1155,10 @@ searchbar > revealer > box {
 
   entry { @extend %titlebar-entry; }
 
-  .linked:not(.vertical) > entry.search {
+  .linked:not(.vertical) > entry {
     border-radius: $corner-radius;
 
-    & + button {
+    &.search + button {
       border-radius: $corner-radius;
       margin-left: $container-padding / 2;
     }
