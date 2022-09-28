@@ -35,6 +35,7 @@ install() {
   local theme="$3"
   local color="$4"
   local size="$5"
+  local corner="$6"
 
   [[ "$color" == '-Dark' ]] && local ELSE_DARK="$color"
   [[ "$color" == '-Light' ]] && local ELSE_LIGHT="$color"
@@ -246,6 +247,12 @@ install_black() {
   echo -e "Install black version ..."
 }
 
+round_corner() {
+  sed -i "/\$default_corner:/s/12px/${corner}/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
+  sed -i "/\$default_corner:/s/12px/${corner}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+  echo -e "Change round corner ${corner} value ..."
+}
+
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -279,7 +286,7 @@ install_theme_color() {
 theme_tweaks() {
   install_package; tweaks_temp
 
-  if [[ "$panel" == "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" ]]; then
+  if [[ "$panel" == "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" || "$round" == "true" ]]; then
     tweaks='true'
   fi
 
@@ -297,6 +304,10 @@ theme_tweaks() {
 
   if [[ "$primary" == "true" ]] ; then
     change_radio_color
+  fi
+
+  if [[ "$round" == "true" ]] ; then
+    round_corner
   fi
 }
 
@@ -332,7 +343,7 @@ install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$corner"
       done
     done
   done

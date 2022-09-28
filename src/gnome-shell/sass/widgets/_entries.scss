@@ -3,7 +3,7 @@
 StEntry {
   min-height: $medium_size;
   padding: 0 8px;
-  border-radius: 0;
+  border-radius: if($corner-style == 'circular', $circular_radius, $buttons_radius);
   border-width: 0;
   selection-background-color: $primary_color;
   selected-color: $light_fg_color !important;

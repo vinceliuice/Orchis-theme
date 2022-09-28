@@ -371,15 +371,17 @@ window.background:not(.solid-csd) {
 }
 
 #combobox {
-  background-color: $base;
-  border-radius: $corner-radius;
+  > entry { border-radius: 2px 0 0 2px; }
+  > button { border-radius: 0 2px 2px 0; }
 }
 
-#gtk-combobox-popup-menu {
-  .view {
+#gtk-combobox-popup-window {
+  scrolledwindow.frame { border: none; }
+
+  treeview.view {
     &:selected, &:hover {
       background-image: image($primary);
-      color: on($primary);
+      &, label { color: on($primary); }
     }
   }
 }

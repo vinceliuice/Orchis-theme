@@ -177,7 +177,7 @@ stage {
 StEntry {
   min-height: 36px;
   padding: 0 8px;
-  border-radius: 0;
+  border-radius: 9999px;
   border-width: 0;
   selection-background-color: #3281ea;
   selected-color: #FFFFFF !important;
@@ -186,7 +186,6 @@ StEntry {
   caret-color: rgba(255, 255, 255, 0.7);
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
@@ -431,7 +430,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu-content {
   padding: 6px;
   margin: 6px 10px 13px 10px;
-  background-color: rgba(32, 32, 32, 0.95);
+  background-color: rgba(32, 32, 32, 0.97);
   border-radius: 14px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   border: none;
@@ -692,7 +691,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-today-button {
   min-height: 56px;
   padding: 6px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -890,7 +889,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-button,
 .events-button {
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -1067,7 +1066,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message {
   background-color: rgba(255, 255, 255, 0.03);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
 }
@@ -1209,7 +1208,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-popup-content {
-  background-color: rgba(32, 32, 32, 0.95);
+  background-color: rgba(32, 32, 32, 0.97);
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   margin: 3px 10px 13px;
@@ -1937,6 +1936,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0;
 }
 
+#panel .panel-button.clock-display .clock {
+  border-radius: 9999px;
+}
+
 #panel .panel-button:hover {
   background-color: transparent;
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
@@ -2018,6 +2021,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
   border: none !important;
   margin: 3px !important;
+  border-radius: 9999px;
 }
 
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover,
@@ -2106,7 +2110,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .window-caption {
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(32, 32, 32, 0.9);
-  border-radius: 99px;
+  border-radius: 9999px;
   padding: 6px 12px;
 }
 
@@ -2147,7 +2151,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 100px;
   border-color: transparent;
   box-shadow: none;
   selection-background-color: #3281ea;
@@ -2283,7 +2286,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 16px;
-  padding: 10px;
+  padding: 12px 10px;
   border-radius: 9999px;
 }
 
@@ -2444,9 +2447,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.7);
   border: none;
-  padding: 4px;
-  width: 36px;
-  height: 36px;
+  height: 32px;
+  width: 32px;
+  padding: 6px;
   border-radius: 9999px;
 }
 
@@ -3201,7 +3204,6 @@ StWidget.focused .app-well-app-running-dot {
   caret-color: rgba(255, 255, 255, 0.7);
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);

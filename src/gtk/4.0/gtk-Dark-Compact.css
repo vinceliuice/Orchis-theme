@@ -1428,7 +1428,7 @@ headerbar {
   color: white;
   min-height: 40px;
   padding: 0;
-  border-radius: 14px 14px 0 0;
+  border-radius: 16px 16px 0 0;
 }
 
 headerbar:disabled {
@@ -4226,7 +4226,7 @@ colorchooser .popover.osd:backdrop {
 window {
   outline: none;
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
 }
 
@@ -4235,12 +4235,12 @@ window:backdrop {
 }
 
 window.popup {
-  border-radius: 10px;
+  border-radius: 9px;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 window.dialog.message {
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .solid-csd window {
@@ -5217,7 +5217,7 @@ leaflet {
   outline-width: 1px;
   outline-style: solid;
   outline-offset: -1px;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 leaflet headerbar {

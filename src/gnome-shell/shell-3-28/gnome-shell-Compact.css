@@ -110,7 +110,6 @@ StEntry {
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   background-color: #ffffff;
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
@@ -1098,7 +1097,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-boxpointer .popup-menu-content {
   margin-left: 6px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   border-radius: 8px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
 }
@@ -1605,7 +1604,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 .datemenu-today-button {
   min-height: 48px;
   padding: 4px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -1802,7 +1801,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 .weather-button,
 .events-button {
   padding: 4px 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -1963,7 +1962,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 .message {
   background-color: rgba(0, 0, 0, 0.04);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: rgba(0, 0, 0, 0.54);
   text-shadow: none;
 }
@@ -2256,7 +2255,6 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 100px;
   border-color: transparent;
   box-shadow: none;
   selection-background-color: #1A73E8;
@@ -2310,7 +2308,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 
 .window-clone-border {
   border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
@@ -3196,7 +3194,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-popup-content {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   border-radius: 8px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
   margin: 2px 8px;
@@ -3298,7 +3296,6 @@ StWidget.focused .app-well-app-running-dot {
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   background-color: #ffffff;
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
@@ -4025,7 +4022,6 @@ StWidget.focused .app-well-app-running-dot {
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   background-color: #ffffff;
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);

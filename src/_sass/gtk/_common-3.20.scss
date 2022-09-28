@@ -697,7 +697,7 @@ modelbutton.flat,
 .menuitem.button.flat {
   min-height: $menuitem-size;
   padding: 0 8px;
-  border-radius: $corner-radius - $container-padding;
+  border-radius: $menuitem-radius;
   color: $text;
 
   @extend %button-flat-simple;
@@ -1155,10 +1155,10 @@ searchbar > revealer > box {
 
   entry { @extend %titlebar-entry; }
 
-  .linked:not(.vertical) > entry.search {
+  .linked:not(.vertical) > entry {
     border-radius: $corner-radius;
 
-    & + button {
+    &.search + button {
       border-radius: $corner-radius;
       margin-left: $container-padding / 2;
     }
@@ -1681,7 +1681,7 @@ menuitem {
  ************/
 popover.background {
   transition: $transition-shadow;
-  padding: 2px;
+  padding: 0;
   box-shadow: $shadow-z4; // TODO: this should really have a highlight
   background-color: $surface;
 
@@ -1691,7 +1691,7 @@ popover.background {
     border-style: solid;
     border-width: 0;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.0) rgba(0, 0, 0, 0.0);
-    border-radius: $corner-radius;
+    border-radius: $menu-radius;
   }
 
   &.combo {
@@ -1699,16 +1699,16 @@ popover.background {
 
     > scrolledwindow > viewport.frame > list {
       > row.activatable {
-        border-radius: $corner-radius - $container-padding;
+        border-radius: $menuitem-radius;
         margin: 2px;
         padding: $container-padding;
       }
     }
   }
 
-  > stack { margin: -4px; } // remove extra padding from menu style popovers
+  > stack { margin: 4px - $container-padding; } // remove extra padding from menu style popovers
 
-  > toolbar { margin: -2px; }
+  // > toolbar { margin: 0; }
 
   > list,
   > .view,
@@ -1723,25 +1723,29 @@ popover.background {
   .view:not(:selected),
   toolbar { background-color: $surface; }
 
-  .linked > button:not(.radio) {
-    border-radius: $corner-radius;
-    &:first-child { border-radius: $corner-radius; }
-    &:last-child { border-radius: $corner-radius; }
-    &:only-child { border-radius: $corner-radius; }
+  button, entry, spinbutton {
+    border-radius: $menuitem-radius;
   }
 
-  &.menu button,
+  .linked > button,
   button.model {
-    @extend %button-flat;
+    border-radius: 0;
+    &:first-child { border-radius: $menuitem-radius 0 0 $menuitem-radius; }
+    &:last-child { border-radius: 0 $menuitem-radius $menuitem-radius 0; }
+    &:only-child { border-radius: $menuitem-radius; }
+  }
 
+  button.model {
     min-height: 32px;
     padding: 0 8px;
-    border-radius: $corner-radius;
+    margin: 0;
+    // @extend %button-flat;
+    // border-radius: $menuitem-radius;
 
     // &:checked { color: $primary; }
   }
 
-  separator { margin: 4px 0; }
+  separator { margin: $container-padding / 2 0; }
 
   list separator { margin: 0; }
 }
@@ -3656,7 +3660,7 @@ decoration {
   }
 
   .csd.popup & {
-    border-radius: $corner-radius;
+    border-radius: $menu-radius;
     box-shadow: $shadow-z4;
   }
 
@@ -3808,7 +3812,8 @@ popover.emoji-picker {
 }
 
 button.emoji-section {
-  margin: 4px;
+  margin: $container-padding / 2;
+  border-radius: $menu-radius - $container-padding / 2;
 
   &:checked {
     // background-color: transparent;

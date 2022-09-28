@@ -177,7 +177,7 @@ stage {
 StEntry {
   min-height: 32px;
   padding: 0 8px;
-  border-radius: 0;
+  border-radius: 9999px;
   border-width: 0;
   selection-background-color: #1A73E8;
   selected-color: #FFFFFF !important;
@@ -186,7 +186,6 @@ StEntry {
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   background-color: #ffffff;
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
@@ -408,7 +407,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu-boxpointer, .candidate-popup-boxpointer {
-  -arrow-border-radius: 14px;
+  -arrow-border-radius: 12px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
@@ -431,8 +430,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu-content {
   padding: 4px;
   margin: 4px 10px 13px 10px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   border: none;
 }
@@ -461,7 +460,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.1) !important;
   color: rgba(0, 0, 0, 0.75) !important;
   font-weight: normal;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
   border: none;
   box-shadow: none;
 }
@@ -527,7 +526,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0;
   color: rgba(0, 0, 0, 0.75) !important;
   background-color: rgba(0, 0, 0, 0.1) !important;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 8px 8px;
   border: none;
   box-shadow: none;
   background-image: none;
@@ -535,7 +534,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-sub-menu .popup-menu-item {
   margin: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   color: rgba(0, 0, 0, 0.75) !important;
   background-image: none;
 }
@@ -692,7 +691,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-today-button {
   min-height: 48px;
   padding: 4px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -890,7 +889,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-button,
 .events-button {
   padding: 4px 8px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -1067,7 +1066,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message {
   background-color: rgba(0, 0, 0, 0.04);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: rgba(0, 0, 0, 0.54);
   text-shadow: none;
 }
@@ -1209,7 +1208,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .candidate-popup-content {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   margin: 2px 10px 13px;
@@ -1937,6 +1936,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0;
 }
 
+#panel .panel-button.clock-display .clock {
+  border-radius: 9999px;
+}
+
 #panel .panel-button:hover {
   background-color: transparent;
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
@@ -2018,6 +2021,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
   border: none !important;
   margin: 2px !important;
+  border-radius: 9999px;
 }
 
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover,
@@ -2106,7 +2110,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .window-caption {
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(32, 32, 32, 0.9);
-  border-radius: 99px;
+  border-radius: 9999px;
   padding: 4px 8px;
 }
 
@@ -2147,7 +2151,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 100px;
   border-color: transparent;
   box-shadow: none;
   selection-background-color: #1A73E8;
@@ -2283,7 +2286,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 16px;
-  padding: 10px;
+  padding: 12px 10px;
   border-radius: 9999px;
 }
 
@@ -2408,7 +2411,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder-dialog .folder-name-container .folder-name-entry {
   min-height: 28px;
-  padding: 6px;
+  padding: 4px;
   border: none;
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.15);
@@ -2444,9 +2447,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.7);
   border: none;
+  height: 32px;
+  width: 32px;
   padding: 4px;
-  width: 36px;
-  height: 36px;
   border-radius: 9999px;
 }
 
@@ -3201,7 +3204,6 @@ StWidget.focused .app-well-app-running-dot {
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   background-color: #ffffff;
-  border-radius: 100px;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);

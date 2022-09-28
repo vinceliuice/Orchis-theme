@@ -14,6 +14,8 @@ stage {
   color: $inverse_hint_fg_color;
 }
 
+$bubble_button_radius: if($corner-style == 'circular', $circular_radius, $material_radius);
+
 %bubble_button {
   border: none;
   margin-bottom: $container-padding;
@@ -29,20 +31,20 @@ stage {
   &:first-child {
     margin-left: $container-padding !important;
     margin-right: 0 !important;
-    border-radius: $circular_radius 0 0 $circular_radius;
+    border-radius: $bubble_button_radius 0 0 $bubble_button_radius;
   }
 
   &:last-child {
     margin-left: 0 !important;
     margin-right: $container-padding !important;
     border-right-width: 0;
-    border-radius: 0 $circular_radius $circular_radius 0;
+    border-radius: 0 $bubble_button_radius $bubble_button_radius 0;
   }
 
   &:first-child:last-child {
     margin: 0 $container-padding $container-padding $container-padding !important;
     border-right-width: 0;
-    border-radius: $circular_radius;
+    border-radius: $bubble_button_radius;
   }
 }
 

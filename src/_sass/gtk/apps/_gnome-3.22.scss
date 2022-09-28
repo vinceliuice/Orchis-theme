@@ -1728,16 +1728,6 @@ terminal-window {
   }
 
   &.background.csd.maximized { border-radius: 0; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
-
-  // notebook > header > box {
-  //   // Remove hard-coded margin around button(s)
-  //   margin: -2px -2px -3px;
-  //
-  //   button {
-  //     margin-bottom: -1px;
-  //     border-radius: 0;
-  //   }
-  // }
 }
 
 window.background { // gnome-terminal 3.32 setting
@@ -1760,6 +1750,15 @@ window.background { // gnome-terminal 3.32 setting
       > stack {
         border-bottom-right-radius: $window-radius;
       }
+    }
+  }
+}
+
+// Console
+popover.background.menu {
+  radiobutton {
+    &.system, &.light, &.dark {
+      margin: $container-padding 0 $container-padding / 2;
     }
   }
 }

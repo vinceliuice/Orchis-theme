@@ -99,7 +99,6 @@
     caret-color: $secondary_fg_color;
     color: $secondary_fg_color;
     background-color: if($variant == 'light', $base_color, $inverse_divider_color);
-    border-radius: 100px;
     margin: 2px 6px 6px;
     border: 2px solid transparent;
     box-shadow: 0 3px 3px rgba(black, 0.24), 0 5px 8px rgba(black, 0.05);
@@ -132,7 +131,6 @@
     caret-color: rgba(black, 0.75);
     color: rgba(black, 0.75);
     background-color: rgba(white, 0.75);
-    border-radius: 100px;
     border-color: transparent;
     box-shadow: none;
   }
