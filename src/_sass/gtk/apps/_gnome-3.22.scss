@@ -1758,7 +1758,7 @@ window.background { // gnome-terminal 3.32 setting
 popover.background.menu {
   radiobutton {
     &.system, &.light, &.dark {
-      margin-top: $container-padding;
+      margin: $container-padding 0 $container-padding / 2;
     }
   }
 }
