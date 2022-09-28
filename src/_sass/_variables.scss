@@ -18,12 +18,13 @@ $bar-size: 6px;
 $menuitem-size: if($compact == 'false', 28px, 24px);
 
 //
-// Radii
+// Radiuses
 //
 
-$window-radius: if($compact == 'false', 18px, 14px);
-$corner-radius: if($compact == 'false', 12px, 10px);
-$menu-radius: if($compact == 'false', 12px, 9px);
+$window-radius: $default_corner + $container-padding;
+$corner-radius: if($compact == 'false', $default_corner, $default_corner - 2px);
+$menu-radius: $default_corner / 4 + $container-padding + 2px;
+$menuitem-radius: $default_corner / 4 + 2px;
 $circular-radius: 9999px;
 
 //

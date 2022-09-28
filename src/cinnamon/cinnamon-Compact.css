@@ -870,7 +870,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #notification {
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 8px;
   spacing-rows: 6px;
   spacing-columns: 6px;

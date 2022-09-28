@@ -48,7 +48,7 @@
 .message {
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   border: none;
-  border-radius: $buttons_radius;
+  border-radius: $material_radius;
   color: $secondary_fg_color;
   text-shadow: none;
 

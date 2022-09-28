@@ -1574,6 +1574,7 @@ menubar {
 /**********************
  * Popover Base Menus *
  **********************/
+
 popover.menu {
   box.inline-buttons {
     padding: 0 $container-padding;
@@ -1636,7 +1637,7 @@ popover.menu {
     min-height: $menuitem-size - $container-padding;
     min-width: $menuitem-size * 2;
     padding: $container-padding / 2 $container-padding * 1.5;
-    border-radius: $menu-radius - $container-padding;
+    border-radius: $menuitem-radius;
     color: $text;
     font: initial;
     text-shadow: none;
@@ -1661,6 +1662,7 @@ popover.menu {
 /************
  * Popovers *
  ************/
+
 popover.background {
   font: initial;
 
@@ -1714,10 +1716,11 @@ popover.background {
   .linked > button:not(.radio) {
     background: none;
     box-shadow: none;
-    border-radius: $corner-radius / 2;
-    &:first-child { border-radius: $corner-radius / 2; }
-    &:last-child { border-radius: $corner-radius / 2; }
-    &:only-child { border-radius: $corner-radius / 2; }
+    border-radius: $menuitem-radius;
+
+    &:first-child { border-radius: $menuitem-radius; }
+    &:last-child { border-radius: $menuitem-radius; }
+    &:only-child { border-radius: $menuitem-radius; }
   }
 
   &.menu button,
@@ -1726,7 +1729,7 @@ popover.background {
 
     min-height: 32px;
     padding: 0 8px;
-    border-radius: $corner-radius / 2;
+    border-radius: $menuitem-radius;
   }
 
   .osd &,
@@ -1750,7 +1753,7 @@ popover.background {
 
     > row {
       padding: $container-padding $container-padding * 2;
-      border-radius: $corner-radius / 2;
+      border-radius: $menuitem-radius;
       margin: 0;
     }
   }
@@ -3926,7 +3929,7 @@ window {
   }
 
   &.popup {
-    border-radius: $corner-radius;
+    border-radius: $menu-radius;
     box-shadow: $shadow-z4;
   }
 
