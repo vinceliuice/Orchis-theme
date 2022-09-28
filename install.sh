@@ -54,7 +54,7 @@ while [[ "$#" -gt 0 ]]; do
       _name="$2"
       shift 2
       ;;
-    -r|-u|--remove|--uninstall)
+    -r|--remove|-u|--uninstall)
       remove="true"
       shift
       ;;
