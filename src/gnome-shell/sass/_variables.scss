@@ -36,9 +36,9 @@ $bar_size: 4px;
 $menuitem_size: if($laptop == 'false', 32px, 28px);
 
 // radiuses
-$popup_radius: $default_corner + 2px;
-$material_radius: $default_corner / 2 + 2px;
-$buttons_radius: $default_corner / 2;
+$popup_radius: $default_corner / 2 + $container_padding + 2px;
+$material_radius: $default_corner / 2 + 4px;
+$buttons_radius: $default_corner / 2 + 2px;
 $circular_radius: 9999px;
 
 // durations

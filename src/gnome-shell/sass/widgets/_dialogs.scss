@@ -5,7 +5,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
 .headline { @include font(title); }
 
 .modal-dialog {
-  border-radius: 20px + $container_padding;
+  border-radius: if($corner-style == 'circular', 20px + $container_padding, $material_radius + $container_padding);
   color: $fg_color;
   background-color: $base_color;
   border: 0 none $mdborder_color;

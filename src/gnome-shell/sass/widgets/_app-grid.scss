@@ -91,7 +91,7 @@
 
     & .folder-name-entry {
       min-height: 28px;
-      padding: 6px;
+      padding: $container_padding;
       border: none;
       color: $light_fg_color;
       background-color: rgba(white, 0.15);
@@ -123,10 +123,10 @@
       background-color: $inverse_divider_color;
       color: $inverse_secondary_fg_color;
       border: none;
-      padding: 4px;
-      width: 36px;
-      height: 36px;
-      border-radius: $circular-radius;
+      height: 32px;
+      width: 32px;
+      padding: $container_padding;
+      border-radius: if($corner-style == 'circular', $circular_radius, $buttons_radius);
 
       & > StIcon { icon-size: 16px }
 

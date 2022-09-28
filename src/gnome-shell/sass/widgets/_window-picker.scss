@@ -15,7 +15,7 @@ $window_close_button_padding: 3px;
 .window-caption {
   color: $inverse_fg_color;
   background-color: $dark_bg_color;
-  border-radius: 99px;
+  border-radius: if($corner-style == 'circular', $circular_radius, $material_radius);
   padding: $container_padding $container_padding * 2;
 }
 
