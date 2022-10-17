@@ -411,7 +411,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu-item:checked.selected {
+.popup-menu-item.selected:checked {
   background-color: #e5e5e5;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -421,7 +421,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu-item:checked.selected:active {
+.popup-menu-item.selected:checked:active {
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.75);
 }
@@ -1851,12 +1851,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
-#panel .panel-button:hover.clock-display {
+#panel .panel-button.clock-display:hover {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button:hover.clock-display .clock {
+#panel .panel-button.clock-display:hover .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
@@ -1865,12 +1865,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
-#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
+#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:focus.clock-display .clock, #panel .panel-button:checked.clock-display .clock {
+#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
@@ -1900,7 +1900,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel .panel-button#panelActivities {
+#panel #panelActivities.panel-button {
   background-image: url("assets/activities.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -1910,15 +1910,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-#panel .panel-button#panelActivities > * {
+#panel #panelActivities.panel-button > * {
   width: 30px;
 }
 
-#panel .panel-button#panelActivities:hover {
+#panel #panelActivities.panel-button:hover {
   background-image: url("assets/activities-active.svg");
 }
 
-#panel .panel-button#panelActivities:hover, #panel .panel-button#panelActivities:active, #panel .panel-button#panelActivities:overview, #panel .panel-button#panelActivities:focus, #panel .panel-button#panelActivities:checked {
+#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
   color: transparent;
   box-shadow: none;
 }
@@ -3297,39 +3297,173 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(50, 129, 234, 0.5);
 }
 
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
 #dashtodockContainer {
   background: transparent;
+}
+
+#dashtodockContainer .number-overlay {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+#dashtodockContainer .notification-badge {
+  color: #FFFFFF;
+  background-color: #3281ea;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 9999px;
+  margin: 2px 3px 5px;
+  padding: 0.2em 0.6em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#dashtodockContainer.top.straight-corner, #dashtodockContainer.top.straight-corner #dash, #dashtodockContainer.top.shrink.straight-corner, #dashtodockContainer.top.shrink.straight-corner #dash, #dashtodockContainer.top.extended, #dashtodockContainer.top.extended #dash, #dashtodockContainer.top.shrink.extended, #dashtodockContainer.top.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.top.straight-corner .dash-background, #dashtodockContainer.top.shrink.straight-corner .dash-background, #dashtodockContainer.top.extended .dash-background, #dashtodockContainer.top.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.top.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.straight-corner .show-apps, #dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.bottom.straight-corner, #dashtodockContainer.bottom.straight-corner #dash, #dashtodockContainer.bottom.shrink.straight-corner, #dashtodockContainer.bottom.shrink.straight-corner #dash, #dashtodockContainer.bottom.extended, #dashtodockContainer.bottom.extended #dash, #dashtodockContainer.bottom.shrink.extended, #dashtodockContainer.bottom.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.bottom.straight-corner .dash-background, #dashtodockContainer.bottom.shrink.straight-corner .dash-background, #dashtodockContainer.bottom.extended .dash-background, #dashtodockContainer.bottom.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps, #dashtodockContainer.bottom.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.left.straight-corner, #dashtodockContainer.left.straight-corner #dash, #dashtodockContainer.left.shrink.straight-corner, #dashtodockContainer.left.shrink.straight-corner #dash, #dashtodockContainer.left.extended, #dashtodockContainer.left.extended #dash, #dashtodockContainer.left.shrink.extended, #dashtodockContainer.left.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.left.straight-corner .dash-background, #dashtodockContainer.left.shrink.straight-corner .dash-background, #dashtodockContainer.left.extended .dash-background, #dashtodockContainer.left.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.left.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.straight-corner .show-apps, #dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.right.straight-corner, #dashtodockContainer.right.straight-corner #dash, #dashtodockContainer.right.shrink.straight-corner, #dashtodockContainer.right.shrink.straight-corner #dash, #dashtodockContainer.right.extended, #dashtodockContainer.right.extended #dash, #dashtodockContainer.right.shrink.extended, #dashtodockContainer.right.shrink.extended #dash {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.right.straight-corner .dash-background, #dashtodockContainer.right.shrink.straight-corner .dash-background, #dashtodockContainer.right.extended .dash-background, #dashtodockContainer.right.shrink.extended .dash-background {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  border-radius: 0;
+}
+
+#dashtodockContainer.right.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .show-apps, #dashtodockContainer.right.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.straight-corner .show-apps, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.extended .dash-background, #dashtodockContainer.straight-corner .dash-background {
+  border-radius: 0;
+}
+
+#dashtodockContainer.shrink .dash-background {
+  padding: 2px !important;
+}
+
+#dashtodockContainer.shrink .dash-item-container .app-well-app, #dashtodockContainer.shrink .show-apps {
+  margin: 0 !important;
+}
+
+#dashtodockContainer.shrink.extended .dash-background {
+  border-radius: 0;
 }
 
 #dashtodockContainer #dash, #dashtodockContainer:overview #dash {
   background: transparent;
 }
 
-#dashtodockContainer.extended #dash {
-  padding: 0;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+#dashtodockContainer.left .dash-item-container .app-well-app, #dashtodockContainer.left .show-apps, #dashtodockContainer.right .dash-item-container .app-well-app, #dashtodockContainer.right .show-apps {
+  padding: 2px 6px !important;
 }
 
-#dashtodockContainer.extended #dash .dash-background {
-  background: none;
-  padding: 0;
-  margin: 0;
+#dashtodockContainer.left .dash-background, #dashtodockContainer.right .dash-background {
+  margin-bottom: 0 !important;
 }
 
-#dashtodockContainer.extended:overview #dash {
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 0;
+#dashtodockContainer.left.shrink .dash-background, #dashtodockContainer.left.shrink.extended .dash-background, #dashtodockContainer.right.shrink .dash-background, #dashtodockContainer.right.shrink.extended .dash-background {
+  padding: 2px 4px !important;
 }
 
-#dashtodockContainer.extended:overview #dash .dash-background {
-  background: none;
-  margin-bottom: 0;
+#dashtodockContainer.left.shrink .dash-item-container .app-well-app, #dashtodockContainer.left.shrink .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended .show-apps, #dashtodockContainer.right.shrink .dash-item-container .app-well-app, #dashtodockContainer.right.shrink .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended .show-apps {
+  margin: 0 !important;
+  padding: 2px 0 !important;
+}
+
+#dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app {
+  padding: 2px 10px !important;
+}
+
+#dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.straight-corner .show-apps {
+  padding: 2px 10px 20px !important;
+}
+
+#dashtodockContainer.top .dash-background, #dashtodockContainer.bottom .dash-background {
+  padding: 10px 8px !important;
+}
+
+#dashtodockContainer.top.shrink .dash-background, #dashtodockContainer.bottom.shrink .dash-background {
+  padding: 4px 2px !important;
+}
+
+#dashtodockContainer.top.shrink .dash-item-container .app-well-app, #dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink .show-apps {
+  margin: 0 !important;
+  padding: 0 2px 16px !important;
+}
+
+#dashtodockContainer.top.extended .dash-separator, #dashtodockContainer.top.straight-corner .dash-separator, #dashtodockContainer.bottom.extended .dash-separator, #dashtodockContainer.bottom.straight-corner .dash-separator {
+  margin: 0 7px !important;
+}
+
+#dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps {
+  padding: 10px 2px !important;
 }
 
 #dashtodockContainer #dash .dash-background {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
+}
+
+#dashtodockContainer #dash StWidget.focused .app-well-app-running-dot {
+  background-color: #3281ea;
 }
 
 #dashtodockContainer.opaque #dash .dash-background {
@@ -3340,8 +3474,16 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+#dashtodockContainer:overview #dash {
+  background: none;
+}
+
 #dashtodockContainer:overview #dash .dash-background {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#dashtodockContainer:overview #dash StWidget.focused .app-well-app-running-dot {
+  background-color: #3281ea;
 }
 
 #dashtodockContainer.opaque:overview #dash, #dashtodockContainer.transparent:overview #dash {
@@ -3349,17 +3491,42 @@ StWidget.focused .app-well-app-running-dot {
   box-shadow: none !important;
 }
 
-#dashtodockContainer.opaque:overview #dash .dash-background, #dashtodockContainer.transparent:overview #dash .dash-background {
+#dashtodockContainer.opaque:overview .dash-background, #dashtodockContainer.transparent:overview .dash-background {
   background-color: transparent !important;
 }
 
-#dashtodockContainer.opaque.extended:overview #dash .dash-background, #dashtodockContainer.transparent.extended:overview #dash .dash-background {
-  background-color: rgba(255, 255, 255, 0.2);
+#dashtodockContainer.extended:overview #dash, #dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
+  background: none;
+}
+
+#dashtodockContainer.running-dots .dash-item-container > StButton, #dashtodockContainer.dashtodock .dash-item-container > StButton {
+  transition-duration: 250ms;
+  background-size: contain;
+}
+
+#dashtodockContainer.shrink .dash-item-container > StButton, #dashtodockContainer.dashtodock .dash-item-container > StButton {
+  padding: 1px 2px;
+}
+
+#dashtodockContainer.extended .app-well-app .overview-icon,
+#dashtodockContainer.extended .show-apps .overview-icon, #dashtodockContainer.extended:overview .app-well-app .overview-icon,
+#dashtodockContainer.extended:overview .show-apps .overview-icon {
+  border-radius: 8px;
+}
+
+#dashtodockContainer .metro .overview-icon {
+  border-radius: 0;
 }
 
 .dashtodock-app-well-preview-menu-item {
-  padding-left: 0.5em !important;
-  padding-right: 0.5em !important;
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
 }
 
 .openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {

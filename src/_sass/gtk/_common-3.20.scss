@@ -1165,6 +1165,10 @@ searchbar > revealer > box {
   }
 
   button.suggested-action, button.destructive-action {
+    .linked:not(.vertical) > & {
+      border-radius: $corner-radius;
+    }
+
     &:disabled {
       background-color: $titlebar-fill;
       color: $titlebar-text-disabled;
@@ -3455,26 +3459,14 @@ infobar {
  * Tooltips *
  ************/
 tooltip {
-  &.background {
-    // background-color needs to be set this way otherwise it gets drawn twice
-    // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
-    background-color: $tooltip;
-    color: on($tooltip);
-  }
-
-  &.background.csd {
+  &.background, &.background.csd {
     border-radius: $corner-radius;
+    background-color: $tooltip;
+    color: white;
   }
 
-  // padding: 4px; /* not working */
-  border-radius: $corner-radius/2;
+  border-radius: $corner-radius / 2;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
-
-  &:not(.csd):not(.unity-csd) {
-    // border: 1px solid $divider;
-    // border-radius: $corner-radius + 1px;
-    // background-clip: $background-clip-extra;
-  }
 
   // FIXME: we need a border or tooltips vanish on black background.
   decoration { background-color: transparent; }
@@ -3483,11 +3475,6 @@ tooltip {
     margin: -6px; // Remove hard-coded 6px margin
     min-height: 32px - 4px * 2;
     padding: 4px 8px;
-  }
-
-  * {
-    // workaround for Eclipse.
-    // do not include any declaration here.
   }
 }
 

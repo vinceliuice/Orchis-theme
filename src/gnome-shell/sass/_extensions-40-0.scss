@@ -2,41 +2,162 @@
 // Dash to Dock
 //
 
+// Scrollview style
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
 #dashtodockContainer {
   background: transparent;
+
+  .number-overlay {
+    color: white;
+    background-color: rgba(black, 0.75);
+    text-align: center;
+  }
+
+  .notification-badge {
+    color: $light_fg_color;
+    background-color: $primary_color;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+    border-radius: $circular_radius;
+    margin: 2px 3px 5px;
+    padding: 0.2em 0.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @each $_pos, $b_pos in (top, bottom),
+                         (bottom, top),
+                         (left, right),
+                         (right, left) {
+    &.#{$_pos}.straight-corner,
+    &.#{$_pos}.shrink.straight-corner,
+    &.#{$_pos}.extended,
+    &.#{$_pos}.shrink.extended {
+      &, #dash {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+      }
+
+      .dash-background {
+        margin: 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 0;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  &.extended,
+  &.straight-corner {
+    .dash-background {
+      border-radius: 0;
+    }
+  }
+
+  &.shrink {
+    .dash-background {
+      padding: $dash_spacing !important;
+      // border-radius: $buttons_radius + $container_padding / 2;
+    }
+
+    .dash-item-container .app-well-app, .show-apps {
+      margin: 0 !important;
+    }
+  }
+
+  &.shrink.extended {
+    .dash-background {
+      border-radius: 0;
+    }
+  }
 
   #dash,
   &:overview #dash {
     background: transparent;
   }
 
-  &.extended {
-    #dash {
-      padding: 0;
-      margin: 0;
-      background-color: $panel_bg_color;
+  &.left,
+  &.right {
+    .dash-item-container .app-well-app, .show-apps {
+      padding: $dash_spacing $container_padding !important;
+    }
 
+    .dash-background {
+      margin-bottom: 0 !important;
+    }
+
+    &.shrink, &.shrink.extended {
       .dash-background {
-        background: none;
-        padding: 0;
-        margin: 0;
+        padding: $container_margin / 2 $container_margin !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+        padding: $container_margin / 2 0 !important;
       }
     }
 
-    &:overview #dash {
-      background-color: rgba(white, 0.2);
-      margin-bottom: 0;
+    &.extended,
+    &.straight-corner {
+      .dash-item-container .app-well-app {
+        padding: $dash_spacing $dash_padding !important;
+      }
 
-      .dash-background {
-        background: none;
-        margin-bottom: 0;
+      .show-apps {
+        padding: $dash_spacing $dash_padding $dash_padding * 2 !important;
       }
     }
   }
 
-  #dash .dash-background {
-    background-color: $panel_bg_color;
-    padding: $dash_padding;
+  &.top,
+  &.bottom {
+    .dash-background {
+      padding: $dash_padding ($dash_padding - $dash_spacing) !important;
+    }
+
+    &.shrink {
+      .dash-background {
+        padding: $container_margin $container_margin / 2 !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+        padding: 0 $container_margin / 2 $dash_bottom_margin !important;
+      }
+    }
+
+    &.extended,
+    &.straight-corner {
+      .dash-separator {
+        margin: 0 ($dash_spacing + ($dash_padding / 2)) !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        padding: $dash_padding $dash_spacing !important;
+      }
+    }
+  }
+
+  #dash {
+    .dash-background {
+      background-color: $panel_bg_color;
+    }
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $primary_color;
+    }
   }
 
   &.opaque #dash .dash-background { // solid-mode
@@ -47,8 +168,16 @@
     background-color: $panel_bg_color; // does not work
   }
 
-  &:overview #dash .dash-background { // overview-mode #1
-    background-color: rgba(white, 0.2);
+  &:overview #dash { // overview-mode #1
+    background: none;
+
+    .dash-background {
+      background-color: $inverse_divider_color;
+    }
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $primary_color;
+    }
   }
 
   &.opaque:overview,
@@ -56,22 +185,60 @@
     #dash {
       background-color: transparent !important;
       box-shadow: none !important;
+    }
 
-      .dash-background { background-color: transparent !important; }
+    .dash-background {
+      background-color: transparent !important;
     }
   }
 
+  &.extended:overview, // overview-mode #3
   &.opaque.extended:overview,
   &.transparent.extended:overview {
-    #dash .dash-background {
-      background-color: rgba(white, 0.2);
+    #dash {
+      background: none;
     }
+  }
+
+  &.running-dots,
+  &.dashtodock {
+    .dash-item-container > StButton {
+      transition-duration: 250ms;
+      background-size: contain;
+    }
+  }
+
+  &.shrink,
+  &.dashtodock {
+    .dash-item-container > StButton {
+      padding: 1px 2px;
+    }
+  }
+
+  &.extended,
+  &.extended:overview {
+    .app-well-app,
+    .show-apps {
+      .overview-icon {
+        border-radius: $buttons_radius;
+      }
+    }
+  }
+
+  .metro .overview-icon {
+    border-radius: 0;
   }
 }
 
 .dashtodock-app-well-preview-menu-item {
-  padding-left: 0.5em !important;
-  padding-right: 0.5em !important;
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
 }
 
 //

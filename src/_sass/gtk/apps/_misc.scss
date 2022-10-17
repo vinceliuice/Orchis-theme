@@ -84,8 +84,15 @@ window.background.chromium {
     &:disabled { color: $text-secondary-disabled; }
   }
 
-  menubar,
-  headerbar { color: $titlebar-text-secondary; }
+  menubar, headerbar { color: $titlebar-text-secondary; }
+
+  menu {
+    padding: 0;
+    border-color: $divider;
+    box-shadow: none;
+
+    menuitem { border-radius: 0; }
+  }
 
   // Workaround for non-animatable buttons in headerbar
   headerbar button:active { background-color: $overlay-active; }
@@ -109,7 +116,10 @@ window.background.chromium {
   }
 }
 
-tooltip.background.chromium { background-color: rgba($tooltip, 1); }
+tooltip.background.chromium {
+  color: white;
+  background-color: rgba($tooltip, 1);
+}
 
 
 /***********
