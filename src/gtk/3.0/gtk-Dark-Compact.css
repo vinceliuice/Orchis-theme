@@ -4813,7 +4813,7 @@ menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, me
 
 
 check {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-unchecked-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/unchecked-symbolic.svg"));
 }
 
 
@@ -4823,12 +4823,12 @@ check:checked {
 
 
 check:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/mixed-symbolic.svg"));
 }
 
 
 radio {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/unchecked-symbolic.svg"));
 }
 
 
@@ -4838,15 +4838,16 @@ radio:checked {
 
 
 radio:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/mixed-symbolic.svg"));
 }
 
 #MozillaGtkWidget > widget > checkbutton > check,
 menu menuitem check {
-  min-height: 16px;
-  min-width: 16px;
+  min-height: 18px;
+  min-width: 18px;
   border-radius: 10px;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-unchecked-symbolic.svg"));
+  -gtk-icon-size: 18px;
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-unchecked-symbolic.svg"));
 }
 
 #MozillaGtkWidget > widget > checkbutton > check:checked,
@@ -4856,15 +4857,16 @@ menu menuitem check:checked {
 
 #MozillaGtkWidget > widget > checkbutton > check:indeterminate,
 menu menuitem check:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-mixed-symbolic.svg"));
 }
 
 #MozillaGtkWidget > widget > radiobutton > radio,
 menu menuitem radio {
-  min-height: 16px;
-  min-width: 16px;
+  min-height: 18px;
+  min-width: 18px;
   border-image: none;
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-unchecked-symbolic.svg"));
+  -gtk-icon-size: 18px;
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-unchecked-symbolic.svg"));
 }
 
 #MozillaGtkWidget > widget > radiobutton > radio:checked,
@@ -4874,7 +4876,7 @@ menu menuitem radio:checked {
 
 #MozillaGtkWidget > widget > radiobutton > radio:indeterminate,
 menu menuitem radio:indeterminate {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-mixed-symbolic.svg"));
 }
 
 treeview.view check, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:not(.progressbar):not(.trough) check, filechooser stack.view scrolledwindow treeview.view check,
@@ -6263,7 +6265,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.background.csd headerbar {
-  padding-left: 12px;
+  padding-left: 8px;
   background-color: #2C2C2C;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
@@ -6280,15 +6282,15 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.background.csd placessidebar > viewport.frame {
-  margin: 8px 0 12px 12px;
-  border-radius: 10px;
+  margin: 6px 0 8px 8px;
+  border-radius: 12px;
   background-color: rgba(50, 129, 234, 0.08);
 }
 
 .nautilus-window.background.csd placessidebar > viewport.frame > list {
-  padding: 12px 0 12px 0;
+  padding: 8px 0 8px 0;
   background: none;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable {

@@ -4,17 +4,17 @@
    height="18"
    version="1.1"
    viewBox="0 0 18 18"
-   id="svg239"
-   sodipodi:docname="small-radio-checked-symbolic.svg"
+   id="svg403"
+   sodipodi:docname="small-checkbox-mixed-symbolic.svg"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs243" />
+     id="defs407" />
   <sodipodi:namedview
-     id="namedview241"
+     id="namedview405"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
@@ -24,15 +24,15 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="14.75"
-     inkscape:cx="0.6440678"
+     inkscape:cx="-6.6779661"
      inkscape:cy="8.0338983"
      inkscape:window-width="1920"
      inkscape:window-height="1000"
      inkscape:window-x="0"
      inkscape:window-y="44"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg239" />
+     inkscape:current-layer="svg403" />
   <path
-     id="path640"
-     d="M 9 0 A 9 9 0 0 0 0 9 A 9 9 0 0 0 9 18 A 9 9 0 0 0 18 9 A 9 9 0 0 0 9 0 z M 9 6 C 10.656852 6 12 7.3431475 12 9 C 12 10.656852 10.656852 12 9 12 C 7.3431475 12 6 10.656852 6 9 C 6 7.3431475 7.3431475 6 9 6 z " />
+     id="path435"
+     d="M 9 0 A 9 9 0 0 0 0 9 A 9 9 0 0 0 9 18 A 9 9 0 0 0 18 9 A 9 9 0 0 0 9 0 z M 5 8 L 13 8 L 13 10 L 5 10 L 5 8 z " />
 </svg>

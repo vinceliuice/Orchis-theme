@@ -38,9 +38,9 @@
   background-color: $surface;
   border-color: $surface;
 
-  .container { padding: $container-padding; }
+  .container { padding: $space-size; }
 
-  separator { margin: $container-padding / 2 0; }
+  separator { margin: $space-size / 2 0; }
 
   border { border: none; }
 
@@ -53,11 +53,11 @@
 
     button {
       @extend %button-flat-simple;
-      border-radius: $corner-radius - $container-padding;
+      border-radius: $corner-radius - $space-size;
     }
   }
 
-  calendar:not(.header) { border-radius: $corner-radius - $container-padding; }
+  calendar:not(.header) { border-radius: $corner-radius - $space-size; }
 
   scrolledwindow.sidebar.categories { // AppMenu
     background-color: $fill;
@@ -68,9 +68,9 @@
     background: none;
     border-right: none;
     color: $text;
-    padding: $container-padding / 2;
+    padding: $space-size / 2;
 
-    // label { padding: $container-padding / 2 $container-padding * 1.5; }
+    // label { padding: $space-size / 2 $space-size * 1.5; }
 
     &:hover { background-color: $overlay-hover; }
 
@@ -85,7 +85,7 @@
 
     list > row.activatable {
       @extend %row_activatable;
-      padding: $container-padding ($container-padding + 2px);
+      padding: $space-size ($space-size + 2px);
     }
   }
 
@@ -108,14 +108,14 @@
     }
   }
 
-  button { border-radius: $corner-radius - $container-padding; }
+  button { border-radius: $corner-radius - $space-size; }
 
   button.flat:not(.image-button) {
     min-height: $menuitem-size;
     padding: 0 8px;
     color: $text;
     font-weight: normal;
-    border-radius: $corner-radius - $container-padding;
+    border-radius: $corner-radius - $space-size;
 
     &:disabled { color: $text-disabled; }
   }
@@ -148,7 +148,7 @@
   }
 
   &.user-menu {
-    // .container { padding: $container-padding; }
+    // .container { padding: $space-size; }
 
     list,
     row { // reset styling
@@ -159,7 +159,7 @@
 
     // top-row (user-name and avatar)
     > frame.container > box.vertical row.activatable:first-child {
-      margin-bottom: $container-padding / 2;
+      margin-bottom: $space-size / 2;
       outline-width: 0;
       border-radius: $corner-radius;
 
@@ -174,16 +174,16 @@
   }
 
   &.sound-popover {
-    // separator { margin: $container-padding / 2 0; }
+    // separator { margin: $space-size / 2 0; }
   }
 
   &.night-light-indicator {
-    .container { padding: $container-padding / 2; }
-    .view-header { margin: 0 $container-padding; }
+    .container { padding: $space-size / 2; }
+    .view-header { margin: 0 $space-size; }
   }
 
   &.places-menu {
-    .container { padding: $container-padding / 2; }
+    .container { padding: $space-size / 2; }
 
     .name-button {
       image {
@@ -198,20 +198,20 @@
     }
 
     .places-list:not(.always-expand) {
-      margin-top: $container-padding / 2;
-      padding-top: $container-padding / 2;
+      margin-top: $space-size / 2;
+      padding-top: $space-size / 2;
       border-top: 1px solid $divider;
     }
 
     // use such sizes for consistency with other hard-coded dim-label sizes
     .alternative-label {
-      padding: $container-padding / 2;
+      padding: $space-size / 2;
       font-size: 15px;
     }
   }
 
   &.workspace-popover {
-    // .container { padding: $container-padding; }
+    // .container { padding: $space-size; }
 
     flowboxchild { padding: 0; }
   }
@@ -274,7 +274,7 @@
 
 %panel_circular_button {
   padding: 0 0;
-  margin: ($container-padding / 2) 0;
+  margin: ($space-size / 2) 0;
   min-width: 16px;
   min-height: 16px;
   color: on($panel, secondary);
@@ -644,20 +644,20 @@ calendar.raven-calendar {
     padding: 0; // reset padding for full-width list node
 
     > list > row.activatable {
-      margin-left: -$container-padding;
-      margin-right: -$container-padding / 2;
+      margin-left: -$space-size;
+      margin-right: -$space-size / 2;
 
-      .raven-notifications-group-header { padding: 0 $container-padding * 2; }
+      .raven-notifications-group-header { padding: 0 $space-size * 2; }
 
       // sub-list rows grouping
       list {
-        padding: $container-padding;
+        padding: $space-size;
         background: none;
 
         > row.activatable {
           border: none;
-          padding: $container-padding $container-padding $container-padding $container-padding * 2;
-          margin: $container-padding / 2;
+          padding: $space-size $space-size $space-size $space-size * 2;
+          margin: $space-size / 2;
           border-radius: $corner-radius;
           background-color: $fill;
 
@@ -761,7 +761,7 @@ calendar.raven-calendar {
 .budgie-run-dialog {
   entry.search {
     font-size: 120%;
-    padding: $container-padding 8px + $container-padding;
+    padding: $space-size 8px + $space-size;
     border-image: none;
     box-shadow: none;
     background-color: transparent;

@@ -52,7 +52,7 @@ stage {
 
 %osd_button {
   min-height: 24px;
-  padding: $container-padding $container-padding*5;
+  padding: $space-size $space-size*5;
   transition-duration: 100ms;
   border-radius: $corner-radius;
 
@@ -68,7 +68,7 @@ stage {
 // Entries
 //
 %entry {
-  padding: $container-padding/2 $container-padding*2;
+  padding: $space-size/2 $space-size*2;
   min-height: $small-size;
   caret-size: 1px;
   selection-background-color: $primary;
@@ -83,12 +83,12 @@ stage {
   StIcon.capslock-warning {
     icon-size: 16px;
     warning-color: $warning;
-    padding: 0 $container-padding;
+    padding: 0 $space-size;
   }
 }
 
 %osd_entry {
-  padding: $container-padding/2 $container-padding*2;
+  padding: $space-size/2 $space-size*2;
   caret-size: 1px;
   caret-color: on($tooltip);
   selection-background-color: $primary;
@@ -255,10 +255,10 @@ StScrollBar {
 //
 #Tooltip {
   border-radius: $circular-radius;
-  padding: $container-padding $container-padding * 2;
+  padding: $space-size $space-size * 2;
   background-color: $tooltip;
   color: on($tooltip);
-  margin: $container-padding;
+  margin: $space-size;
   box-shadow: $shadow-z4;
   font-size: 1em;
   font-weight: normal;
@@ -271,16 +271,16 @@ StScrollBar {
 
 $menu_bg: if($variant=='light', rgba($base, 0.95), rgba($background, 0.95));
 $sub_menu_bg: if($variant == 'light', #555555, #eaeaea);
-$menu_item_radius: $corner-radius - $container-padding;
+$menu_item_radius: $corner-radius - $space-size;
 
 .menu,
 .popup-menu,
 %menu {
-  padding: $container-padding / 2;
+  padding: $space-size / 2;
   color: $text;
   background-color: $menu_bg;
   border-radius: $corner-radius;
-  margin: $container-padding;
+  margin: $space-size;
   box-shadow: 0 5px 12px rgba(black, 0.35);
 
   &-arrow { icon-size: 16px; }
@@ -303,11 +303,11 @@ $menu_item_radius: $corner-radius - $container-padding;
     }
   }
 
-  .popup-menu-content { padding: $container-padding / 2; }
+  .popup-menu-content { padding: $space-size / 2; }
 
   .popup-menu-item {
-    padding: $container-padding $container-padding*2;
-    spacing: $container-padding*2;
+    padding: $space-size $space-size*2;
+    spacing: $space-size*2;
     border-radius: $menu_item_radius;
 
     &:hover, &:active {
@@ -343,7 +343,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 
 .popup-combo-menu {
   @extend %menu;
-  padding: $container-padding*2;
+  padding: $space-size*2;
 }
 
 // .popup-image-menu-item {}
@@ -380,7 +380,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 #panel {
   font-weight: bold;
   height: $medium-size;
-  width: $medium-size + $container-padding;
+  width: $medium-size + $space-size;
 
   &:highlight {
     border-image: none;
@@ -414,8 +414,8 @@ $menu_item_radius: $corner-radius - $container-padding;
       background-gradient-end: rgba(0,0,255,0.2);
     }
 
-    &:ltr { padding-left: $container-padding; spacing: 0px; }
-    &:rtl { padding-right: $container-padding; spacing: 0px; }
+    &:ltr { padding-left: $space-size; spacing: 0px; }
+    &:rtl { padding-right: $space-size; spacing: 0px; }
 
     &.vertical {
       padding: 0;
@@ -780,10 +780,10 @@ $menu_item_radius: $corner-radius - $container-padding;
 //
 #notification {
   border-radius: $window-radius;
-  padding: $container-padding*2;
-  spacing-rows: $container-padding*1.5;
-  spacing-columns: $container-padding*1.5;
-  margin-from-right-edge-of-screen: $container-padding*3;
+  padding: $space-size*2;
+  spacing-rows: $space-size*1.5;
+  spacing-columns: $space-size*1.5;
+  margin-from-right-edge-of-screen: $space-size*3;
   width: 28em;
   color: $text;
   background-color: rgba($base, 0.8);
@@ -792,7 +792,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 
   .notification-button, .notification-icon-button {
     @extend %flat_button;
-    padding: $container-padding;
+    padding: $space-size;
   }
 
   StEntry { @extend %entry; }
@@ -814,14 +814,14 @@ $menu_item_radius: $corner-radius - $container-padding;
 
     .notification-button, .notification-icon-button {
       @extend %flat_button;
-      padding: $container-padding;
+      padding: $space-size;
     }
 
     StEntry { @extend %entry; }
   }
 
   &.multi-line-notification {
-    padding-bottom: $container-padding*2;
+    padding-bottom: $space-size*2;
     color: $text;
   }
 
@@ -830,12 +830,12 @@ $menu_item_radius: $corner-radius - $container-padding;
 
     > .top-shadow, > .bottom-shadow { height: 1em; }
 
-    &:ltr > StScrollBar { padding-left: $container-padding; }
-    &:rtl > StScrollBar { padding-right: $container-padding; }
+    &:ltr > StScrollBar { padding-left: $space-size; }
+    &:rtl > StScrollBar { padding-right: $space-size; }
   }
 
-  &-body { spacing: $container-padding; }
-  &-actions { spacing: $container-padding*1.5; }
+  &-body { spacing: $space-size; }
+  &-actions { spacing: $space-size*1.5; }
 }
 
 .notification {
@@ -846,7 +846,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 
   &-button, &-icon-button {
     @extend %flat_button;
-    padding: $container-padding;
+    padding: $space-size;
   }
 
   &-icon-button > StIcon { icon-size: 36px; }
@@ -980,7 +980,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 // Run dialog
 //
 .run-dialog {
-  padding: $container-padding $container-padding * 2;
+  padding: $space-size $space-size * 2;
   background-color: $tooltip;
   border-radius: $corner-radius;
   color: on($tooltip);
@@ -1008,7 +1008,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 
   &-entry {
     width: 21em;
-    padding: $container-padding / 2 $container-padding * 2;
+    padding: $space-size / 2 $space-size * 2;
     border-radius: $corner-radius;
     caret-color: on($tooltip);
     selected-color: on($primary);
@@ -1149,8 +1149,8 @@ $menu_item_radius: $corner-radius - $container-padding;
 .menu {
   &-favorites-box {
     margin: auto;
-    margin-bottom: $container-padding;
-    padding: $container-padding;
+    margin-bottom: $space-size;
+    padding: $space-size;
     transition-duration: 300;
     background-color: rgba($text, 0.05);
     border: none;
@@ -1158,7 +1158,7 @@ $menu_item_radius: $corner-radius - $container-padding;
   }
 
   &-favorites-button {
-    padding: $container-padding*1.5;
+    padding: $space-size*1.5;
     border: none;
     border-radius: $corner-radius;
 
@@ -1171,20 +1171,20 @@ $menu_item_radius: $corner-radius - $container-padding;
   &-places {
     &-box {
       margin: auto;
-      padding: $container-padding * 1.5;
+      padding: $space-size * 1.5;
       border: 1px solid rgba(0,0,0,0);
     }
 
-    &-button { padding: $container-padding * 1.5; }
+    &-button { padding: $space-size * 1.5; }
   }
 
-  &-categories-box { padding: $container-padding * 1.5 $container-padding * 5; }
+  &-categories-box { padding: $space-size * 1.5 $space-size * 5; }
 
   &-applications-inner-box,
-  &-applications-outer-box { padding: $container-padding * 1.5 $container-padding * 1.5 0 $container-padding * 1.5; }
+  &-applications-outer-box { padding: $space-size * 1.5 $space-size * 1.5 0 $space-size * 1.5; }
 
   &-application-button {
-    padding: $container-padding;
+    padding: $space-size;
     border-radius: $corner-radius;
     border: none;
 
@@ -1193,19 +1193,19 @@ $menu_item_radius: $corner-radius - $container-padding;
 
     &-selected {
       @include button(hover);
-      padding: $container-padding;
+      padding: $space-size;
       border-radius: $corner-radius;
       border: none;
 
       &:highlighted { font-weight: bold; }
     }
 
-    &-label:ltr { padding-left: $container-padding; }
-    &-label:rtl { padding-right: $container-padding; }
+    &-label:ltr { padding-left: $space-size; }
+    &-label:rtl { padding-right: $space-size; }
   }
 
   StScrollView.menu-application-button { // extracted submenu container
-    padding: $container-padding / 2 0;
+    padding: $space-size / 2 0;
     border-radius: $corner-radius;
     background-color: $sub_menu_bg;
     color: on($sub_menu_bg);
@@ -1213,12 +1213,12 @@ $menu_item_radius: $corner-radius - $container-padding;
     .popup-menu-item {
       padding: 0;
       spacing: 0;
-      margin: 0 $container-padding / 2;
+      margin: 0 $space-size / 2;
       border-radius: $corner-radius;
       color: on($sub_menu_bg);
 
-      &:ltr { padding-left: $container-padding; }
-      &:rtl { padding-right: $container-padding; }
+      &:ltr { padding-left: $space-size; }
+      &:rtl { padding-right: $space-size; }
 
       &:active {
         border-image: none; // image independent
@@ -1229,18 +1229,18 @@ $menu_item_radius: $corner-radius - $container-padding;
       StIcon { min-width: 22px; } // indentation
 
       StLabel {
-        &:ltr { padding: $container-padding 0 $container-padding $container-padding; }
-        &:rtl { padding: $container-padding $container-padding $container-padding 0; }
+        &:ltr { padding: $space-size 0 $space-size $space-size; }
+        &:rtl { padding: $space-size $space-size $space-size 0; }
       }
     }
   }
 
   &-category-button {
-    padding: $container-padding;
+    padding: $space-size;
     border-radius: $corner-radius;
 
     &-selected {
-      padding: $container-padding;
+      padding: $space-size;
     }
 
     &-hover, &-selected {
@@ -1249,12 +1249,12 @@ $menu_item_radius: $corner-radius - $container-padding;
     }
 
     &-greyed {
-      padding: $container-padding;
+      padding: $space-size;
       color: $text-disabled;
     }
 
-    &-label:ltr { padding-left: $container-padding; }
-    &-label:rtl { padding-right: $container-padding; }
+    &-label:ltr { padding-left: $space-size; }
+    &-label:rtl { padding-right: $space-size; }
   }
 
   // Name and description of the currently hovered item in the menu
@@ -1273,7 +1273,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 
   &-selected-app-title { font-weight: bold; }
 
-  &-selected-app-description { max-width: 150px; margin-bottom: $container-padding; }
+  &-selected-app-description { max-width: 150px; margin-bottom: $space-size; }
 
   &-search-box:ltr { padding-left: 30px; }
   &-search-box-rtl { padding-right: 30px; }
@@ -1374,10 +1374,10 @@ $menu_item_radius: $corner-radius - $container-padding;
     color: rgba($panel_fg, 0.9);
     border-radius: 0;
 
-    .panel-bottom & StLabel { padding-left: $container-padding; }
-    .panel-top & StLabel { padding-left: $container-padding; }
-    .panel-left & StLabel { padding-top: $container-padding; }
-    .panel-right & StLabel { padding-top: $container-padding; }
+    .panel-bottom & StLabel { padding-left: $space-size; }
+    .panel-top & StLabel { padding-left: $space-size; }
+    .panel-left & StLabel { padding-top: $space-size; }
+    .panel-right & StLabel { padding-top: $space-size; }
 
     @each $position in (top),
                        (bottom),
@@ -1450,8 +1450,8 @@ $menu_item_radius: $corner-radius - $container-padding;
 
   // >= 3.6.7
   &-preview { // thumbnail popup windows = .switcher-list
-    padding: $container-padding*2; // = .switcher-list - .item-box
-    spacing: $container-padding; // = .switcher-list-item-container
+    padding: $space-size*2; // = .switcher-list - .item-box
+    spacing: $space-size; // = .switcher-list-item-container
     border: none;
     background-color: $base;
     border-radius: $corner-radius;
@@ -1474,12 +1474,12 @@ $menu_item_radius: $corner-radius - $container-padding;
   }
 
   &-thumbnail-menu {
-    padding: $container-padding;
+    padding: $space-size;
 
     .item-box {
-      padding: $container-padding;
+      padding: $space-size;
       border-radius: $corner-radius;
-      spacing: $container-padding;
+      spacing: $space-size;
       margin: 1px;
 
       &:outlined {
@@ -1524,7 +1524,7 @@ $menu_item_radius: $corner-radius - $container-padding;
     margin: 0;
     color: rgba($panel_fg, 0.6);
     border-radius: 0;
-    spacing: $container-padding;
+    spacing: $space-size;
     border-bottom: 2px solid transparent;
 
     &.top, &.bottom {
@@ -1665,8 +1665,8 @@ $menu_item_radius: $corner-radius - $container-padding;
   &-overlay {
     width: 290px;
     height: 80px;
-    padding: $container-padding*2 $container-padding*3;
-    spacing: $container-padding;
+    padding: $space-size*2 $space-size*3;
+    spacing: $space-size;
     background-color: rgba(black, 0.45);
     border: none;
     border-radius: 0 0 $corner-radius $corner-radius;
@@ -1677,7 +1677,7 @@ $menu_item_radius: $corner-radius - $container-padding;
       width: 16px;
       height: 16px;
       padding: 8px;
-      margin: 0 $container-padding $container-padding;
+      margin: 0 $space-size $space-size;
       color: on(dark);
       border-radius: $circular-radius;
       border: none;
@@ -1693,7 +1693,7 @@ $menu_item_radius: $corner-radius - $container-padding;
       }
     }
 
-    StLabel { padding: 0 $container-padding; }
+    StLabel { padding: 0 $space-size; }
 
     StBoxLayout {
       padding-top: 2px;
@@ -1830,7 +1830,7 @@ $menu_item_radius: $corner-radius - $container-padding;
 // Applets (applet.js)
 //
 .applet {
-  &-separator { padding: 1px $container-padding / 2; }
+  &-separator { padding: 1px $space-size / 2; }
 
   &-separator-line {
     width: 1px;
@@ -1838,14 +1838,14 @@ $menu_item_radius: $corner-radius - $container-padding;
   }
 
   &-box {
-    padding: 0 $container-padding;
+    padding: 0 $space-size;
     color: $panel_fg;
     text-shadow: none;
     transition-duration: 100ms;
     border-radius: 0;
 
     &.vertical {
-      padding: $container-padding 0;
+      padding: $space-size 0;
     }
 
     &:hover {

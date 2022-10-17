@@ -1,30 +1,359 @@
+
+//
+// Nautilus
+//
+.nautilus-window {
+  background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
+  color: if($topbar == 'dark' and $variant == 'light', $titlebar-text-secondary, $text-secondary);
+
+  headerbar {
+    background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
+    box-shadow: inset 0 1px highlight($titlebar);
+  }
+
+  flap > separator {
+    background: none;
+  }
+
+  flap.unfolded > placessidebar {
+    background-color: transparent;
+    border-radius: $window-radius;
+    color: $titlebar-text-secondary;
+
+    > scrolledwindow {
+      margin: 0 0 $space-size * 2 $space-size * 2;
+      border-radius: $window-radius - $space-size;
+      background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
+
+      > viewport {
+        > list.navigation-sidebar {
+          padding: $space-size * 2 0 $space-size * 2 0;
+          background: none;
+          border-radius: $window-radius - $space-size;
+  
+          > separator { background: none; }
+  
+          > row.activatable {
+            border-radius: 0;
+            padding: 0;
+            margin: -8px 0 -8px 0;
+  
+            &, &:focus, &:hover, &:active {
+              background: none;
+              box-shadow: none;
+            }
+  
+            &, image.sidebar-icon, label.sidebar-label {
+              color: $titlebar-text-secondary;
+            }
+  
+            image.sidebar-icon {
+              padding-right: 8px;
+            }
+  
+            label.sidebar-label {
+              color: inherit;
+              min-height: 54px;
+              padding: 0 0 0 4px;
+            }
+  
+            &.sidebar-placeholder-row { background-color: transparent; }
+  
+            &:drop(active) {
+              border-radius: 0;
+  
+              @if $topbar == 'dark' {
+                border-radius: $circular_radius 0 0 $circular_radius;
+              }
+  
+              background-color: rgba($drop_target_color, 0.1);
+  
+              &, image.sidebar-icon, label.sidebar-label {
+                color: $drop_target_color;
+              }
+            }
+  
+            button.sidebar-button {
+              @if $topbar == 'dark' { @extend %button-on-dark; }
+            }
+  
+            &:hover {
+              image.sidebar-icon, label.sidebar-label { color: $primary; }
+            }
+  
+            &:selected {
+              background-color: transparent;
+              font-weight: 700;
+              // font-size: larger;
+  
+              image.sidebar-icon { color: $primary; }
+  
+              label.sidebar-label {
+                color: $primary;
+                background-color: $base;
+                box-shadow: 4px 0 $base;
+                padding: 0 24px 0 14px;
+                border-image-width: 10px 10px 10px 18px;
+                border-image-slice: 10 10 10 18;
+                border-image-repeat: stretch;
+                border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
+                                                 url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
+              }
+  
+              revealer.sidebar-revealer {
+                padding-right: 0;
+              }
+  
+              button.sidebar-button {
+                margin-right: 8px;
+                margin-left: -32px;
+                color: $primary;
+  
+                @extend %button-flat-simple;
+              }
+            }
+  
+            &:disabled {
+              &, image.sidebar-icon, label.sidebar-label {
+                color: $titlebar-text-secondary-disabled;
+              }
+            }
+          }
+        }
+      }
+
+      > scrollbar {
+        margin-top: $space-size;
+        margin-bottom: $space-size;
+        background: none;
+        border: none;
+  
+        > range > though {
+          background: none;
+  
+          > slider {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  @if $variant == 'light' and $topbar == 'dark' {
+    tabbar {
+      &:not(.inline) {
+        .box {
+          background-color: $titlebar-fill;
+        }
+
+        &:backdrop .box {
+          background-color: $titlebar-fill;
+        }
+      }
+
+      scrolledwindow:not(.pinned) > tabbox {
+        tab, tab > button.flat {
+          color: $titlebar-text-secondary;
+
+          &:hover {
+            color: $titlebar-text;
+            background-color: $titlebar-fill;
+          }
+
+          &:active, &:checked, &:selected {
+            color: $titlebar-text;
+            background-color: $titlebar-divider;
+          }
+
+          &:disabled {
+            color: $titlebar-text-secondary-disabled;
+          }
+        }
+      }
+    }
+  }
+
+  .nautilus-grid-view.view {
+    &, gridview.view {
+      background-color: transparent;
+      border-radius: $window-radius;
+    }
+  }
+
+  placesview {
+    label { color: $text-secondary; }
+  }
+
+  infobar {
+    margin: $space-size / 2;
+
+    > revealer > box {
+      border-radius: $corner-radius + $space-size;
+    }
+  }
+
+  label.search-information {
+    margin: $space-size / 2;
+    border-radius: $corner-radius;
+  }
+
+  .floating-bar {
+    min-height: $small-size;
+    padding: 2px;
+    margin: 6px;
+    border: none;
+    border-radius: $circular-radius;
+    background-color: rgba($background, 0.95);
+
+    button {
+      margin: (32px - $small-size) / 2;
+
+      @extend %small-button;
+    }
+  }
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  > menubutton > button {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0;
+  }
+
+  > text { margin: 0; }
+}
+
+#NautilusPathBar {
+  background-color: $titlebar-fill;
+  border-radius: $circular-radius;
+  margin: $space-size 0;
+
+  #NautilusPathButton {
+    margin: 0 $space-size / 2;
+    border-radius: $circular-radius;
+
+    &.current-dir {
+      color: $titlebar-text;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+
+    &:first-child { margin-left: 0; }
+  }
+
+  > menubutton > button {
+    border-radius: $circular-radius;
+  }
+}
+
+#NautilusQueryEditorTag {
+  border-radius: $circular-radius;
+
+  > button {
+   margin: $space-size / 2;
+   padding: 0;
+   min-height: $small-size - 2px;
+   min-width: $small-size - 2px;
+  }
+}
+
+//
+// Gnome Control Center
+//
+window.dialog {
+  > box > stack > box > box {
+    > notebook.frame {
+      border-width: 0 0 0 1px;
+      border-radius: 0;
+    }
+  }
+}
+
+//
+// Calculator
+//
+
+.history-view { background-color: $base; }
+
+#displayitem {
+  border-top: 1px solid $border;
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+
+  &.forecast-card {
+    border-width: 1px 0;
+  }
+
+  &.display-container {
+    border-width: 0 0 1px 0;
+  }
+}
+
+leaflet {
+  button.number-button {
+    background-color: rgba($text, 0.1);
+
+    &:hover {
+      background-color: rgba($text, 0.2);
+    }
+
+    &:active {
+      background-color: rgba($text, 0.3);
+    }
+  }
+
+  button.clear-button.image-button {
+    border-radius: $corner-radius;
+  }
+}
+
+//
+// Calendar
+//
+
+datechooser.view {
+  button.flat.pill, button.circular.day {
+    min-height: 24px;
+    min-width: 24px;
+    padding: $space-size;
+  }
+}
+
+//
+// Contacts
+//
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+
 //
 // Gnome Software
 //
 
 flowboxchild > button.card {
-  box-shadow: none;
-
-  .large-icons {
-    -gtk-icon-size: 32px;
-  }
-
-  &.category-work {
-    background-color: $yellow-100;
-    color: on($yellow-100);
-  }
-
-  &.category-develop {
-    background-color: $grey-700;
-    color: on($grey-700);
-  }
-
   &.category-tile {
-    padding: $container-padding * 3.5;
+    padding: $space-size * 3.5;
+    border: none;
+    border-radius: $corner-radius;
   }
 
   &.category-tile-iconless {
-    padding: $container-padding * 1.5 $container-padding * 2.5;
+    padding: $space-size * 1.5 $space-size * 2.5;
   }
 }
 
@@ -42,6 +371,317 @@ app-context-bar {
 
     &:first-child {
       border-radius: $corner-radius 0 0 $corner-radius;
+    }
+  }
+
+  > box > button.flat {
+    border-left-color: $border;
+  }
+}
+
+carousel.card {
+  border: none;
+}
+
+.context-tile-lozenge {
+  min-height: 28px;
+  min-width: 28px;
+  padding: $space-size;
+
+  &.grey {
+    color: $text;
+    background-color: $divider;
+  }
+
+  &.green, &.details-rating-0 {
+    color: darken($success, 15%);
+    background-color: rgba($success, 0.15);
+  }
+
+  &.blue,
+  &.details-rating-5 {
+    color: $blue-500;
+    background-color: rgba($blue-500, 0.15);
+  }
+
+  &.yellow, &.details-rating-12 {
+    color: darken($warning, 15%);
+    background-color: rgba($warning, 0.15);
+  }
+
+  &.details-rating-15 {
+    color: $orange-500;
+    background-color: rgba($orange-500, .15);
+  }
+
+  &.red, &.details-rating-18 {
+    color: darken($error, 15%);
+    background-color: rgba($error, 0.15);
+  }
+}
+
+screenshot-carousel box.frame.view {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+
+/* Styling for specific category buttons. */
+.category-tile.category-create {
+  background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
+  }
+}
+
+.category-tile.category-develop {
+  background: #5e5c64;
+  color: white;
+
+  &:hover {
+    background: shade(#5e5c64, 1.2);
+  }
+
+  &:active {
+    background-color: shade(#5e5c64, .95);
+  }
+}
+
+.category-tile.category-learn {
+  background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+  }
+}
+
+.category-tile.category-play {
+  background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
+  color: #393484;
+
+  &:hover {
+    background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+}
+
+.category-tile.category-socialize {
+  background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
+  color: $text-secondary;
+
+  &:hover {
+    background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+  }
+}
+
+.category-tile.category-work {
+  padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+  color: #1c71d8;
+  background-color:#fdf8d7;
+  background-image: linear-gradient($border 1px, transparent 1px),
+           linear-gradient(90deg, $border 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px;
+  background-position: -1px -4px, center -1px;
+
+  &:hover {
+    background-color: lighten(#fdf8d7, 5%);
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+  }
+
+  &:active {
+    background-color: darken(#fdf8d7, 5%);
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+  }
+}
+
+//
+// Polari
+//
+.polari-room-list {
+  .sidebar {
+    background: none;
+
+    > row.activatable:selected {
+      background-color: $primary;
+      color: on($primary);
+    }
+  }
+
+  popover.background {
+    > arrow,
+    > contents {
+      padding: 0;
+    }
+  }
+}
+
+//
+// Builder
+//
+
+window.org-gnome-Builder {
+  headerbar {
+    box-shadow: inset 0 -1px $border;
+
+    splitbutton {
+      button {
+        border-radius: $corner-radius;
+      }
+
+      notification button {
+        margin: 0;
+        min-height: $small-size;
+        min-width: $small-size;
+        padding: 0;
+      }
+    }
+
+    menubutton > button {
+      border-radius: $corner-radius;
+      padding: $space-size $space-size * 1.5;
+    }
+
+    paneltogglebutton {
+      button {
+        border-radius: $corner-radius;
+      }
+    }
+  }
+}
+
+popover.background.global-search {
+  > arrow, > contents { padding: 0; }
+}
+
+panelframeswitcher {
+  padding: $space-size;
+}
+
+.frameheader.header {
+  min-height: $small-size;
+  background-color: $fill;
+
+  > button {
+    border: none;
+    margin: 0;
+    padding: $space-size / 2;
+  }
+
+  tabbar.inline {
+    > revealer > box {
+      min-height: $small-size;
+
+      .start-action {
+        padding: 0;
+        border: none;
+      }
+
+      .end-action {
+        padding: 0;
+        border-left: 1px solid $border;
+
+        menubutton > button {
+          margin: $space-size;
+          min-height: $small-size;
+          min-width: $small-size;
+          padding: $space-size / 2;
+          border-radius: $corner-radius;
+        }
+      }
+
+      tabbox {
+        border: none;
+        background: none;
+      }
+    }
+  }
+}
+
+panelstatusbar {
+  background-color: $background;
+
+  > menubutton > button,
+  > paneltogglebutton button.image-button { border-radius: 0; }
+}
+
+// Setting window
+.style-variant {
+  padding: 0 $space-size * 2;
+
+  button.toggle {
+    padding: 0;
+
+    &, &:hover, &:focus, &:active, &:checked {
+      background: none;
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    > stylevariantpreview > .wallpaper {
+      border-radius: $corner-radius;
+      outline-color: transparent;
+      outline-width: 3px;
+      outline-offset: $space-size / 2;
+      outline-style: solid;
+      box-shadow: none;
+    }
+
+    &:hover > stylevariantpreview > .wallpaper {
+      outline-color: $fill;
+    }
+
+    &:active > stylevariantpreview > .wallpaper {
+      outline-color: $track;
+    }
+
+    &:checked > stylevariantpreview > .wallpaper {
+      outline-color: $primary;
+    }
+  }
+}
+
+//
+// dialogs
+//
+
+window.dialog {
+  > .dialog-vbox > box > scrolledwindow > viewport > widget {
+    > list.boxed-list {
+      border: none;
+      border-radius: 0;
+
+      > row {
+        &:first-child, &:last-child { border-radius: 0; }
+      }
+    }
+  }
+}
+
+window.aboutdialog {
+  stack scrolledwindow.frame > {
+    &, viewport.view {
+      border-radius: $window-radius - $space-size;
     }
   }
 }

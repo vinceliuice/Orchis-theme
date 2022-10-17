@@ -8,8 +8,7 @@ $blackness-asset-suffix: if($blackness == 'false' or $topbar == 'light', '', '-b
 // Sizes
 //
 
-$container-padding: if($compact == 'false', 6px, 4px);
-
+$space-size: if($compact == 'false', 6px, 4px);
 $small-size: if($compact == 'false', 24px, 22px);
 $medium-size: if($compact == 'false', 36px, 32px);
 $large-size: if($compact == 'false', 48px, 40px);
@@ -21,9 +20,9 @@ $menuitem-size: if($compact == 'false', 28px, 24px);
 // Radiuses
 //
 
-$window-radius: $default_corner + $container-padding;
+$window-radius: $default_corner + $space-size;
 $corner-radius: if($compact == 'false', $default_corner, $default_corner - 2px);
-$menu-radius: $default_corner / 4 + $container-padding + 2px;
+$menu-radius: $default_corner / 4 + $space-size + 2px;
 $menuitem-radius: $default_corner / 4 + 2px;
 $circular-radius: 9999px;
 

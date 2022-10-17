@@ -78,8 +78,8 @@
   -NemoPlacesTreeView-disk-full-bar-radius: 0;
   -NemoPlacesTreeView-disk-full-bottom-padding: 1px; // There is already hard-coded 1px bottom-padding
   -NemoPlacesTreeView-disk-full-max-length: 80px;
-  padding-top: $container-padding/2;
-  padding-bottom: $container-padding/2;
+  padding-top: $space-size/2;
+  padding-bottom: $space-size/2;
 }
 
 .nemo-desktop.nemo-canvas-item {
