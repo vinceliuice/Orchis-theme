@@ -1268,6 +1268,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 3px 10px 13px;
   padding: 6px;
   spacing: 6px;
+  border: none;
 }
 
 .candidate-index {
