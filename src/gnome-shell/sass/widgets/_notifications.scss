@@ -9,7 +9,7 @@ $notification_banner_width: 34em;
   width: $notification_banner_width;
   font-size: 1em;
   margin: 5px;
-  border-radius: $buttons_radius;
+  border-radius: $material_radius;
   color: $fg_color;
   background-color: rgba($base_color, 0.92);
   border: none;
@@ -28,24 +28,28 @@ $notification_banner_width: 34em;
     background-color: transparent;
     color: $secondary_fg_color;
     font-weight: 500;
-    border-width: 0;
+    border-width: 1px 0 0 0;
+    border-color: $divider_color;
+    border-style: solid;
 
-    &:first-child { border-radius: 0 0 0 $buttons_radius; }
+    &:first-child { border-radius: 0 0 0 $material_radius; }
 
-    &:last-child { border-radius: 0 0 $buttons_radius 0; }
+    &:last-child { border-radius: 0 0 $material_radius 0; }
 
-    &:only-child, &:first-child:last-child { border-radius: 0 0 $buttons_radius $buttons_radius; }
+    &:only-child, &:first-child:last-child { border-radius: 0 0 $material_radius $material_radius; }
 
     &:focus {
       background-color: transparent;
       color: $secondary_fg_color;
-      box-shadow: inset 0 0 0 2px $divider_color;
+      box-shadow: inset 0 0 0 2px $divider_color !important;
+      outline: none !important;
     }
 
     &:hover, &:focus:hover {
       background-color: $divider_color;
       color: $fg_color;
-      box-shadow: none;
+      box-shadow: none !important;
+      outline: none !important;
     }
 
     &:active { background-color: $track_color; color: $fg_color; }

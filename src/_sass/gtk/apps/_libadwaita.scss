@@ -102,7 +102,7 @@ button {
   // hide separators
   &.font {
     separator { background-color: transparent; }
-    > box { border-spacing: $container-padding; }
+    > box { border-spacing: $space-size; }
     > box > box > label { font-weight: bold; }
   }
 
@@ -184,8 +184,8 @@ menubutton {
 
   &.image-button > button {
     min-width: 24px;
-    padding-left: $container-padding;
-    padding-right: $container-padding;
+    padding-left: $space-size;
+    padding-right: $space-size;
   }
 
   arrow {
@@ -212,37 +212,42 @@ menubutton {
 splitbutton {
   border-radius: $corner-radius;
 
+  &:disabled {
+    filter: none;
+    opacity: 1;
+  }
+
   &, & > separator {
     transition: $transition;
     transition-property: background;
   }
 
   > separator {
-    margin-top: $container-padding;
-    margin-bottom: $container-padding;
+    margin-top: $space-size;
+    margin-bottom: $space-size;
     background: none;
   }
 
   > menubutton > button {
-    padding-left: $container-padding - 2px;
-    padding-right: $container-padding - 2px;
+    padding-left: $space-size;
+    padding-right: $space-size;
   }
 
   // Since the inner button doesn't have any style classes on it,
   // we have to add them manually
   &.image-button > button {
+    min-height: 24px;
     min-width: 24px;
-    padding-left: $container-padding;
-    padding-right: $container-padding;
+    padding: ($medium-size - 24px) / 2;
   }
 
   &.text-button.image-button > button,
   &.image-text-button > button {
-    padding-left: $container-padding * 1.5;
-    padding-right: $container-padding * 1.5;
+    padding-left: $space-size * 1.5;
+    padding-right: $space-size * 1.5;
 
     > box {
-      border-spacing: $container-padding;
+      border-spacing: $space-size;
     }
   }
 
@@ -251,14 +256,14 @@ splitbutton {
   > menubutton > button:dir(rtl) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    margin-right: -1px;
+    margin-right: 0;
   }
 
   > button:dir(rtl),
   > menubutton > button:dir(ltr) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    margin-left: -1px;
+    margin-left: 0;
   }
 
   @at-root %flat_split_button,
@@ -329,7 +334,7 @@ splitbutton {
 }
 
 buttoncontent {
-  border-spacing: $container-padding;
+  border-spacing: $space-size;
 
   > label {
     font-weight: bold;
@@ -353,20 +358,20 @@ buttoncontent {
 
 toast {
   @extend %osd;
-  margin: $container-padding * 2;
+  margin: $space-size * 2;
   margin-bottom: 24px;
   border-radius: $circular-radius;
-  border-spacing: $container-padding;
-  padding: $container-padding;
+  border-spacing: $space-size;
+  padding: $space-size;
   box-shadow: $shadow-z6, inset 0 1px highlight($base);
   color: $text-secondary;
   font-weight: normal;
 
-  &:dir(ltr) { padding-left: $container-padding * 2; }
-  &:dir(rtl) { padding-right: $container-padding * 2; }
+  &:dir(ltr) { padding-left: $space-size * 2; }
+  &:dir(rtl) { padding-right: $space-size * 2; }
 
   > widget {
-    margin: 0 $container-padding;
+    margin: 0 $space-size;
   }
 }
 
@@ -376,11 +381,11 @@ toast {
 
 statuspage {
   > scrolledwindow > viewport > box {
-    margin: $container-padding * 6 $container-padding * 2;
+    margin: $space-size * 6 $space-size * 2;
     border-spacing: 36px;
 
     > clamp > box {
-      border-spacing: $container-padding * 2;
+      border-spacing: $space-size * 2;
 
       > .icon {
         -gtk-icon-size: 128px;
@@ -392,22 +397,22 @@ statuspage {
         }
 
         &:not(:last-child) {
-          margin-bottom: $container-padding * 4;
+          margin-bottom: $space-size * 4;
         }
       }
     }
   }
 
   &.compact > scrolledwindow > viewport > box {
-    margin: $container-padding * 4 $container-padding * 2;
-    border-spacing: $container-padding * 4;
+    margin: $space-size * 4 $space-size * 2;
+    border-spacing: $space-size * 4;
 
     > clamp > box {
       > .icon {
         -gtk-icon-size: 96px;
 
         &:not(:last-child) {
-          margin-bottom: $container-padding * 2;
+          margin-bottom: $space-size * 2;
         }
       }
 
@@ -435,17 +440,17 @@ statuspage {
 
 // preferences
 preferencespage > scrolledwindow > viewport > clamp > box {
-  margin: $container-padding * 4 $container-padding * 2;
-  border-spacing: $container-padding * 4;
+  margin: $space-size * 4 $space-size * 2;
+  border-spacing: $space-size * 4;
 }
 
 preferencesgroup > box {
   &, .labels {
-    border-spacing: $container-padding;
+    border-spacing: $space-size;
   }
 
   > box.header:not(.single-line) {
-    margin-bottom: $container-padding;
+    margin-bottom: $space-size;
   }
 
   > box.single-line {
@@ -458,7 +463,7 @@ preferencesgroup > box {
     box-shadow: none;
     outline-color: transparent;
     outline-width: 2px;
-    outline-offset: $container-padding / 2;
+    outline-offset: $space-size / 2;
     outline-style: solid;
 
     &, > background-preview {
@@ -487,11 +492,11 @@ viewswitcher {
   margin: 0;
 
   &.wide {
-    border-spacing: $container-padding / 2;
+    border-spacing: $space-size / 2;
     border-radius: $circular-radius;
     background-color: $fill;
-    margin-top: $container-padding;
-    margin-bottom: $container-padding;
+    margin-top: $space-size;
+    margin-bottom: $space-size;
 
     button.toggle:checked, button.toggle.flat:checked {
       background-color: $primary;
@@ -521,19 +526,19 @@ viewswitcher {
     > stack > box {
       &.narrow {
         font-size: 0.75rem;
-        padding-top: $container-padding + 1px;
-        padding-bottom: $container-padding - 1px;
-        border-spacing: $container-padding - 2px;
+        padding-top: $space-size + 1px;
+        padding-bottom: $space-size - 1px;
+        border-spacing: $space-size - 2px;
 
         > stack > label {
-          padding-left: $container-padding + 2px;
-          padding-right: $container-padding + 2px;
+          padding-left: $space-size + 2px;
+          padding-right: $space-size + 2px;
         }
       }
 
       &.wide {
-        padding: 0 $container-padding * 2;
-        border-spacing: $container-padding;
+        padding: 0 $space-size * 2;
+        border-spacing: $space-size;
       }
     }
   }
@@ -546,15 +551,15 @@ viewswitcherbar actionbar > revealer > box {
 
 // AdwViewSwitcherTitle
 viewswitchertitle viewswitcher {
-  margin-left: $container-padding * 2;
-  margin-right: $container-padding * 2;
+  margin-left: $space-size * 2;
+  margin-right: $space-size * 2;
 }
 
 // AdwIndicatorBin
 indicatorbin {
   > indicator, > mask {
-    min-width: $container-padding;
-    min-height: $container-padding;
+    min-width: $space-size;
+    min-height: $space-size;
     border-radius: $circular-radius;
   }
 
@@ -590,17 +595,23 @@ indicatorbin {
 tabbar {
   .box {
     min-height: $menuitem-size;
+    background-color: $background;
+    color: $text-secondary;
+    padding: 0;
+    box-shadow: inset 0 -1px $solid-border;
+    border-bottom: none;
   }
 
   tabbox {
     > tabboxchild {
-      border-radius: $corner-radius;
-      margin: $container-padding / 2;
+      border-radius: 0;
+      margin: 0;
+      padding-top: 4px;
     }
 
     > separator {
-      margin-top: $container-padding * 1.5;
-      margin-bottom: $container-padding * 1.5;
+      margin-top: $space-size * 1.5;
+      margin-bottom: $space-size * 1.5;
       transition: opacity 150ms ease-in-out;
 
       &.hidden {
@@ -611,30 +622,41 @@ tabbar {
     > revealer > indicator {
       min-width: 2px;
       border-radius: 2px;
-      margin: $container-padding * 1.5 $container-padding;
+      margin: $space-size * 1.5 $space-size;
       background: gtkalpha($primary, 0.5);
     }
   }
 
   tab {
-    transition: background 150ms ease-in-out;
+    transition: none;
+    border-radius: $corner-radius $corner-radius 0 0;
+    border: 1px solid transparent;
+    border-bottom-width: 0;
+    color: $text-secondary;
+    padding: $space-size $space-size * 2;
 
-    &:selected, &:checked, &:active, &:active:hover, &:checked:hover {
-      background-color: $divider;
+    &:hover:not(:selected):not(:active):not(:checked) {
+      transition: none;
+      background-color: $solid-border;
       box-shadow: none;
       color: $text;
+      border-color: $solid-border;
+      border-radius: $corner-radius $corner-radius 0 0;
     }
 
-    &:hover {
-      background-color: $fill;
+    &:selected, &:checked, &:active {
+      transition: background-color 150ms ease-in-out;
+      background-color: $base;
       box-shadow: none;
       color: $text;
+      border-color: $solid-border;
+      border-radius: $corner-radius $corner-radius 0 0;
     }
   }
 
   .start-action,
   .end-action {
-    padding: 5px;
+    padding: 6px;
   }
 
   .start-action:dir(ltr),
@@ -646,41 +668,20 @@ tabbar {
   .end-action:dir(ltr) {
     padding-left: 0;
   }
-
-  &:not(.inline) {
-    .box {
-      background-color: $background;
-      color: $text-secondary;
-      padding: $container-padding / 2;
-      box-shadow: none;
-      border-bottom: 1px solid $divider;
-    }
-
-    &:backdrop .box {
-      > scrolledwindow,
-      > .start-action,
-      > .end-action {
-        filter: opacity(0.5);
-      }
-    }
-  }
 }
+
+tabview > stack { background-color: $base; }
 
 dnd tab {
   background-color: $background;
   color: $text-secondary;
   box-shadow: none;
-  margin: $container-padding * 4;
+  margin: $space-size * 4;
 }
 
 tabbar,
 dnd {
   tab {
-    min-height: $menuitem-size;
-    padding: $container-padding / 2 $container-padding;
-    border-radius: $corner-radius / 2;
-    margin: 0 1px;
-
     button.image-button {
       padding: 0;
       margin: 0;

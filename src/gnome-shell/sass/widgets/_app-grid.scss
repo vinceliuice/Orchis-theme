@@ -207,6 +207,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .page-navigation-hint {
   width: 300px;
+  color: white;
 
   &.dnd {
     background: rgba(255, 255, 255, 0.1);
@@ -230,7 +231,27 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .page-navigation-arrow {
-  margin: 6px;
-  width: 24px;
-  height: 24px;
+  & > StIcon {
+    margin: 6px;
+    padding: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: $circular-radius;
+    color: $inverse_fg_color;
+  }
+
+  &:insensitive > StIcon {
+    background-color: rgba(white, 0.06);
+    color: white;
+  }
+
+  &:hover > StIcon {
+    background-color: rgba(white, 0.12);
+    color: white;
+  }
+
+  &:active > StIcon {
+    background-color: rgba(white, 0.24);
+    color: white;
+  }
 }

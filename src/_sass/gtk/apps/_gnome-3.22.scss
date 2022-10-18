@@ -16,7 +16,7 @@
     border-radius: 0 0 $window-radius $window-radius;
 
     headerbar {
-      padding-left: 12px;
+      padding-left: $space-size * 2;
       background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
       box-shadow: inset 0 1px highlight($titlebar);
     }
@@ -30,14 +30,14 @@
       color: $titlebar-text-secondary;
 
       > viewport.frame {
-        margin: 8px 0 12px 12px;
-        border-radius: $window-radius - 6px;
+        margin: $space-size 0 $space-size * 2 $space-size * 2;
+        border-radius: $window-radius - $space-size;
         background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
 
         > list {
           padding: 12px 0 12px 0;
           background: none;
-          border-radius: $window-radius - 6px;
+          border-radius: $window-radius - $space-size;
 
           > row.activatable {
             border-radius: 0;
@@ -54,16 +54,26 @@
             }
 
             image.sidebar-icon {
-              padding-right: 8px;
+              padding-right: $space-size;
             }
 
             label.sidebar-label {
               color: inherit;
               min-height: 54px;
-              padding: 0 0 0 4px;
+              padding: 0 0 0 $space-size;
             }
 
             &.sidebar-placeholder-row { background-color: transparent; }
+
+            > revealer.sidebar-revealer {
+              padding-left: 12px;
+              padding-right: 0;
+
+              > widget > box {
+                padding-right: 12px;
+                padding-left: 0;
+              }
+            }
 
             &:drop(active) {
               border-radius: 0;
@@ -92,27 +102,22 @@
               font-weight: 700;
               // font-size: larger;
 
-              image.sidebar-icon { color: $primary; }
+              image.sidebar-icon, label.sidebar-label { color: $primary; }
 
-              label.sidebar-label {
-                color: $primary;
+              > revealer.sidebar-revealer > widget > box {
                 background-color: $base;
-                box-shadow: 4px 0 $base;
-                padding: 0 24px 0 14px;
-                border-image-width: 10px 10px 10px 18px;
-                border-image-slice: 10 10 10 18;
+                border-image-width: 10px 10px 10px 46px;
+                border-image-slice: 10 10 10 46;
                 border-image-repeat: stretch;
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
                                                  url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
-              }
 
-              revealer.sidebar-revealer {
-                padding-right: 0;
+                label.sidebar-label {
+                  padding-left: 14px;
+                }
               }
 
               button.sidebar-button {
-                margin-right: 8px;
-                margin-left: -32px;
                 color: $primary;
 
                 @extend %button-flat-simple;
@@ -133,6 +138,7 @@
       scrollbar {
         background: none;
         border: none;
+        margin: $space-size + 2px 0 $space-size * 2 + 2px 0;
       }
 
       > undershoot {
@@ -153,7 +159,6 @@
       treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: transparent;
         border-radius: 0;
-        // @extend %view;
 
         > header > button {
           &:first-child { border-top-left-radius: $window-radius; }
@@ -261,7 +266,7 @@
 .windowhandle .linked.nautilus-path-bar {
   background-color: $titlebar-fill;
   border-radius: $circular-radius;
-  margin: $container-padding 0;
+  margin: $space-size 0;
 
   button:not(.suggested-action):not(.destructive-action) {
     margin-top: 0;
@@ -314,7 +319,7 @@
 // Path bar
 .path-bar-box {
   transition: background-color $duration $ease-out;
-  margin: $container-padding 0;
+  margin: $space-size 0;
   border-radius: $circular-radius;
 
   button { margin: 0; } // reset the margin
@@ -573,13 +578,13 @@ window.org-gnome-gedit {
       color: $text-secondary;
     }
 
-    $buttons_width: $small-size * 2 + $container-padding * 3;
+    $buttons_width: $small-size * 2 + $space-size * 3;
 
     &:dir(ltr) {
       margin-right: -$buttons_width;
       padding-right: $buttons_width;
 
-      .gedit-search-entry-occurrences-tag { margin-left: $container-padding; }
+      .gedit-search-entry-occurrences-tag { margin-left: $space-size; }
 
       image.right { margin-right: 0; }
     }
@@ -588,7 +593,7 @@ window.org-gnome-gedit {
       margin-left: -$buttons_width;
       padding-left: $buttons_width;
 
-      .gedit-search-entry-occurrences-tag { margin-right: $container-padding; }
+      .gedit-search-entry-occurrences-tag { margin-right: $space-size; }
 
       image.left { margin-left: 0; }
     }
@@ -605,17 +610,17 @@ window.org-gnome-gedit {
   }
 
   .linked > button {
-    border: solid $container-padding transparent;
+    border: solid $space-size transparent;
     border-radius: $circular-radius;
 
     @extend %button-flat-simple;
     @extend %small-button;
 
     &:last-child:dir(ltr),
-    &:not(:first-child):dir(rtl) { margin-left: -$container-padding / 2; }
+    &:not(:first-child):dir(rtl) { margin-left: -$space-size / 2; }
 
     &:first-child:dir(rtl),
-    &:not(:last-child):dir(ltr) { margin-right: -$container-padding / 2; }
+    &:not(:last-child):dir(ltr) { margin-right: -$space-size / 2; }
   }
 }
 
@@ -629,39 +634,39 @@ frame.gedit-map-frame > border {
  * Tweaks *
  **********/
 
- %circular_list {
-   border-radius: $corner-radius + 1px;
-   box-shadow: none;
-   border: 1px solid $divider;
- }
+%circular_list {
+  border-radius: $corner-radius + 1px;
+  box-shadow: none;
+  border: 1px solid $divider;
+}
 
- %circular_row {
-   &:first-child {
-     border-top-left-radius: $corner-radius;
-     border-top-right-radius: $corner-radius;
-   }
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
 
-   &:last-child { // Not use ?
-     border-bottom-left-radius: $corner-radius;
-     border-bottom-right-radius: $corner-radius;
-   }
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
 
-   &:only-child {
-     border-radius: $corner-radius;
-   }
- }
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
 
- %sidebar_row {
-   margin-right: 4px;
-   border-radius: 0 $circular-radius $circular-radius 0;
+%sidebar_row {
+  margin-right: 4px;
+  border-radius: 0 $circular-radius $circular-radius 0;
 
-   &:selected {
-     background-color: $overlay-checked;
-     color: $primary;
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
 
-     image, label { color: $primary; }
-   }
- }
+    image, label { color: $primary; }
+  }
+}
 
 // the sidebar
 .tweak-categories {
@@ -732,19 +737,18 @@ row#workspaces-only-on-primary {
 }
 
 // See https://github.com/nana-4/materia-theme/issues/432
-leaflet.titlebar > .titlebar.tweak-titlebar-left,
-leaflet.titlebar > .titlebar.tweak-titlebar-right, // Workaround for gnome-tweaks 40.0
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-left,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-right { // Workaround for gnome-tweaks 3.34
-  background-color: inherit;
-  box-shadow: inherit;
-  // Remove only background-color transition.
-  // This shouldn't be necessary, but otherwise it gets lag...
-  transition: color $duration $ease-out;
-
-  + separator {
+leaflet.titlebar, hdyleaflet.titlebar {
+  > .titlebar.tweak-titlebar-right, > .titlebar.tweak-titlebar-left {
     background-color: inherit;
-    background-image: image($titlebar-divider);
+    box-shadow: inherit;
+    // Remove only background-color transition.
+    // This shouldn't be necessary, but otherwise it gets lag...
+    transition: color $duration $ease-out;
+
+    + separator {
+      background-color: inherit;
+      background-image: image($titlebar-divider);
+    }
   }
 }
 
@@ -754,8 +758,8 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right { // Workaround for gnome-t
  ************************/
 window.background.csd {
   > headerbar.titlebar {
-    > leaflet,
-    > hdyleaflet {
+    > leaflet.unfolded,
+    > hdyleaflet.unfolded {
       > headerbar {
         &:first-child:not(:only-child) {
           border-top-left-radius: $window-radius;
@@ -879,7 +883,7 @@ hdyleaflet, leaflet, box.horizontal > stack.background {
         @extend %sidebar_row;
       }
 
-      > separator { margin: $container-padding / 2 0; }
+      > separator { margin: $space-size / 2 0; }
     }
   }
 
@@ -956,7 +960,7 @@ window.background.csd {
 tabbox { // Gnome 40.0
   background-color: $background;
   box-shadow: inset 0 -1px $divider;
-  padding: ($container-padding / 2) ($container-padding / 2) 0;
+  padding: ($space-size / 2) ($space-size / 2) 0;
 
   > tab {
     @extend %tabs_tab;
@@ -1087,7 +1091,7 @@ window.background.csd.unified {
 window.csd > box.vertical > box.vertical,
 window.solid-csd > box.vertical > box.vertical {
   > toolbar.horizontal {
-    padding: $container-padding;
+    padding: $space-size;
     // margin: -1px 0;
     border-bottom: none;
     box-shadow: none;
@@ -1326,7 +1330,7 @@ docktab {
   min-height: $small-size;
   min-width: $small-size;
   margin-bottom: -1px;
-  padding: $container-padding 6px;
+  padding: $space-size 6px;
 
   border-width: 1px;         // for reorderable tabs
   border-color: transparent; //
@@ -1758,7 +1762,7 @@ window.background { // gnome-terminal 3.32 setting
 popover.background.menu {
   radiobutton {
     &.system, &.light, &.dark {
-      margin: $container-padding 0 $container-padding / 2;
+      margin: $space-size 0 $space-size / 2;
     }
   }
 }

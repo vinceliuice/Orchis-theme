@@ -43,6 +43,10 @@
     color: $text-disabled;
     color: if($fc == $primary, $text-disabled, rgba($fc, 0.35));
     outline: none;
+    filter: none;
+    opacity: 1;
+
+    > label { color: $text-disabled; }
   }
 
   @if $t == raised-normal {
@@ -70,6 +74,8 @@
     background-color: $base-alt;
     color: $text-disabled;
     outline: none;
+    filter: none;
+    opacity: 1;
   }
 }
 
@@ -108,6 +114,10 @@
     box-shadow: none;
     background-color: $fill;
     color: $text-disabled;
+    filter: none;
+    opacity: 1;
+
+    > label { color: $text-disabled; }
   }
 
   @if $t == checked {
@@ -154,6 +164,8 @@
     box-shadow: none;
     background-color: transparent;
     color: $text-secondary-disabled;
+    filter: none;
+    opacity: 1;
   }
 
   @if $t == flat-checked {
@@ -164,6 +176,8 @@
   @if $t == flat-checked-disabled {
     background-color: $overlay-checked;
     color: $text-disabled;
+    filter: none;
+    opacity: 1;
   }
 }
 

@@ -17,8 +17,8 @@
   -GtkWidget-text-handle-width: 24;
   -GtkWidget-text-handle-height: 24;
 
-  -GtkDialog-button-spacing: $container-padding / 1px;
-  -GtkDialog-action-area-border: $container-padding / 1px;
+  -GtkDialog-button-spacing: $space-size / 1px;
+  -GtkDialog-action-area-border: $space-size / 1px;
 
   // We use the outline properties to signal the focus properties
   // to the adwaita engine: using real CSS properties is faster,
@@ -714,7 +714,7 @@ modelbutton.flat arrow {
 button.color {
   min-height: $small-size;
   min-width: $small-size;
-  padding: $container-padding;
+  padding: $space-size;
 
   colorswatch:only-child {
     // &, overlay { border-radius: 0; }
@@ -771,8 +771,8 @@ spinbutton {
       @extend %button-flat-simple;
       @extend %small-button;
 
-      // margin: $container-padding;
-      border: solid $container-padding transparent;
+      // margin: $space-size;
+      border: solid $space-size transparent;
 
       // Remove unwanted focus indicator
       &:focus:not(:hover):not(:active):not(:disabled) {
@@ -781,10 +781,10 @@ spinbutton {
       }
 
       &.up:dir(ltr),
-      &.down:dir(rtl) { margin-left: -$container-padding / 2; }
+      &.down:dir(rtl) { margin-left: -$space-size / 2; }
 
       &.up:dir(rtl),
-      &.down:dir(ltr) { margin-right: -$container-padding / 2; }
+      &.down:dir(ltr) { margin-right: -$space-size / 2; }
     }
   }
 
@@ -814,7 +814,7 @@ spinbutton {
       background-color: transparent;
 
       min-height: $medium-size;
-      min-width: $large-size - $container-padding;
+      min-width: $large-size - $space-size;
       padding: 0;
     }
 
@@ -823,7 +823,7 @@ spinbutton {
       @extend %small-button;
       padding: 0;
 
-      border: solid $container-padding transparent;
+      border: solid $space-size transparent;
 
       // Remove unwanted focus indicator
       &:focus:not(:hover):not(:active) {
@@ -831,9 +831,9 @@ spinbutton {
         color: $text-secondary;
       }
 
-      &.up { margin: 0 $container-padding/2; }
+      &.up { margin: 0 $space-size/2; }
 
-      &.down { margin: 0 $container-padding/2; }
+      &.down { margin: 0 $space-size/2; }
     }
   }
 
@@ -875,7 +875,7 @@ combobox {
     menuitem { // reset
       min-height: 20px;
       min-width: 40px;
-      padding: $container-padding / 2 $container-padding * 1.5;
+      padding: $space-size / 2 $space-size * 1.5;
     }
   }
 
@@ -978,7 +978,7 @@ toolbar {
   // stand-alone OSD toolbars
   @at-root %toolbar_osd, &.osd {
     transition: $transition-shadow;
-    padding: $container-padding;
+    padding: $space-size;
     border-radius: $corner-radius;
     box-shadow: $shadow-z4, inset 0 1px highlight($surface);
     background-color: $surface;
@@ -1023,13 +1023,13 @@ toolbar {
       button { margin: 0; }
     }
 
-    switch { margin: 2px + $container-padding 2px; }
+    switch { margin: 2px + $space-size 2px; }
   }
 }
 
 // searchbar, location-bar & inline-toolbar
 .inline-toolbar {
-  padding: $container-padding;
+  padding: $space-size;
   border-style: solid;
   border-width: 0 1px 1px;
   border-color: $divider;
@@ -1038,7 +1038,7 @@ toolbar {
 
 searchbar > revealer > box,
 .location-bar {
-  padding: $container-padding;
+  padding: $space-size;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: $divider;
@@ -1160,11 +1160,15 @@ searchbar > revealer > box {
 
     &.search + button {
       border-radius: $corner-radius;
-      margin-left: $container-padding / 2;
+      margin-left: $space-size / 2;
     }
   }
 
   button.suggested-action, button.destructive-action {
+    .linked:not(.vertical) > & {
+      border-radius: $corner-radius;
+    }
+
     &:disabled {
       background-color: $titlebar-fill;
       color: $titlebar-text-disabled;
@@ -1263,7 +1267,7 @@ searchbar > revealer > box {
 
   &.default-decoration {
     min-height: 24px;
-    padding: $container-padding $container-padding / 2;
+    padding: $space-size $space-size / 2;
     box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $corner-radius $corner-radius 0 0;
 
@@ -1277,7 +1281,7 @@ searchbar > revealer > box {
     button.titlebutton {
       min-height: 24px;
       min-width: 24px;
-      margin: 0 $container-padding / 2;
+      margin: 0 $space-size / 2;
       padding: 0;
     }
 
@@ -1296,7 +1300,7 @@ searchbar > revealer > box {
 headerbar {
   // The sizing factor needs to be defined in the headerbar node for the case of split headerbars
   min-height: $large-size;
-  padding: 0 $container-padding;
+  padding: 0 $space-size;
 
   &:not(.titlebar) { box-shadow: none; }
 
@@ -1308,8 +1312,8 @@ headerbar {
   entry,
   spinbutton,
   button {
-    margin-top: $container-padding;
-    margin-bottom: $container-padding;
+    margin-top: $space-size;
+    margin-bottom: $space-size;
   }
 
   button:not(.suggested-action):not(.destructive-action) {
@@ -1348,12 +1352,12 @@ headerbar {
       padding: 0;
 
       > stack > box {
-        padding: 0 $container-padding * 2;
+        padding: 0 $space-size * 2;
 
         &.narrow {
           font-size: 10px;
 
-          image { margin-top: $container-padding / 2; }
+          image { margin-top: $space-size / 2; }
         }
       }
 
@@ -1538,7 +1542,7 @@ treeview.view {
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: $container-padding / 2;
+  padding: $space-size / 2;
   box-shadow: inset 0 -1px $divider;
   background-color: $titlebar;
   color: $titlebar-text;
@@ -1576,8 +1580,8 @@ menubar,
 menu,
 .menu,
 .context-menu {
-  margin: $container-padding / 2; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
-  padding: $container-padding;
+  margin: $space-size / 2; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
+  padding: $space-size;
   box-shadow: inset 0 1px highlight($surface);
   background-color: $surface;
   background-clip: border-box;
@@ -1592,11 +1596,11 @@ menu,
     transition: background-color $duration $ease-out;
     min-height: 20px;
     min-width: 40px;
-    padding: ($container-padding / 2 + 1px) $container-padding * 1.5;
+    padding: ($space-size / 2 + 1px) $space-size * 1.5;
     color: $text;
     font: initial;
     text-shadow: none;
-    border-radius: $menu-radius - $container-padding;
+    border-radius: $menu-radius - $space-size;
 
     &:hover {
       transition: none;
@@ -1635,7 +1639,7 @@ menu,
   > arrow {
     min-height: 16px;
     min-width: 16px;
-    padding: $container-padding / 2 + 1px;
+    padding: $space-size / 2 + 1px;
     background-color: $surface;
     color: $text-secondary;
     border-radius: $menu-radius - 3px;
@@ -1695,18 +1699,18 @@ popover.background {
   }
 
   &.combo {
-    padding: $container-padding;
+    padding: $space-size;
 
     > scrolledwindow > viewport.frame > list {
       > row.activatable {
         border-radius: $menuitem-radius;
         margin: 2px;
-        padding: $container-padding;
+        padding: $space-size;
       }
     }
   }
 
-  > stack { margin: 4px - $container-padding; } // remove extra padding from menu style popovers
+  > stack { margin: 4px - $space-size; } // remove extra padding from menu style popovers
 
   // > toolbar { margin: 0; }
 
@@ -1745,7 +1749,7 @@ popover.background {
     // &:checked { color: $primary; }
   }
 
-  separator { margin: $container-padding / 2 0; }
+  separator { margin: $space-size / 2 0; }
 
   list separator { margin: 0; }
 }
@@ -1760,7 +1764,7 @@ popover.background {
               background-image 0ms;
   min-height: $small-size;
   min-width: $small-size;
-  padding: $container-padding 12px;
+  padding: $space-size 12px;
 
   border-width: 1px;
   border-color: transparent;
@@ -2022,8 +2026,8 @@ notebook {
       // FIXME: The tab node doesn't have :drop(active), instead its child box has it.
       > box {
         transition: background-color $duration $ease-out;
-        margin: -$container-padding -12px;
-        padding: $container-padding 12px;
+        margin: -$space-size -12px;
+        padding: $space-size 12px;
 
         &:drop(active) {
           background-color: $divider;
@@ -2036,13 +2040,13 @@ notebook {
         @extend %small-button;
 
         &:last-child {
-          margin-left: $container-padding;
-          margin-right: $container-padding - 12px;
+          margin-left: $space-size;
+          margin-right: $space-size - 12px;
         }
 
         &:first-child {
-          margin-left: $container-padding - 12px;
-          margin-right: $container-padding;
+          margin-left: $space-size - 12px;
+          margin-right: $space-size;
         }
       }
     }
@@ -2220,7 +2224,7 @@ scrollbar {
  **********/
 switch {
   transition: all $duration $ease-out;
-  margin: $container-padding 0;
+  margin: $space-size 0;
   padding: 0 2px;
   border: 5px solid transparent;
   border-radius: $circular-radius;
@@ -2368,48 +2372,44 @@ radio {
 
 %check,
 check {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-unchecked-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-checked-symbolic.svg")); }
 
-  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/checkbox-mixed-symbolic.svg")); }
+  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/mixed-symbolic.svg")); }
 }
 
 %radio,
 radio {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg")); }
 
-  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-mixed-symbolic.svg")); }
+  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/mixed-symbolic.svg")); }
 }
 
 %small_check,
 menu menuitem check {
-  & {
-    min-height: 16px;
-    min-width: 16px;
-    border-radius: $corner-radius;
-    -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-unchecked-symbolic.svg"));
-  }
+  min-height: 18px;
+  min-width: 18px;
+  border-radius: $corner-radius;
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic.svg")); }
 
-  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-mixed-symbolic.svg")); }
+  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-mixed-symbolic.svg")); }
 }
 
 %small_radio,
 menu menuitem radio {
-  & {
-    min-height: 16px;
-    min-width: 16px;
-    border-image: none;
-    -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-unchecked-symbolic.svg"));
-  }
+  min-height: 18px;
+  min-width: 18px;
+  border-image: none;
+  -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-checked-symbolic.svg")); }
 
-  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-mixed-symbolic.svg")); }
+  &:indeterminate { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-mixed-symbolic.svg")); }
 }
 
 // ANIMATION:
@@ -2808,7 +2808,7 @@ frame {
 }
 
 actionbar > revealer > box {
-  padding: $container-padding;
+  padding: $space-size;
   border-top: 1px solid $divider;
   background-color: $base;
   background-clip: border-box;
@@ -3061,15 +3061,15 @@ messagedialog { // Message Dialog styling
     }
 
     .dialog-action-box {
-      margin-top: -$container-padding;
-      // padding: $container-padding;
+      margin-top: -$space-size;
+      // padding: $space-size;
 
       button {
         @extend %button-flat;
 
         &, &:first-child, &:last-child { border-radius: $circular-radius; }
 
-        &:not(:last-child) { margin-right: $container-padding; }
+        &:not(:last-child) { margin-right: $space-size; }
 
         &:not(:disabled) { color: $primary; }
 
@@ -3455,26 +3455,14 @@ infobar {
  * Tooltips *
  ************/
 tooltip {
-  &.background {
-    // background-color needs to be set this way otherwise it gets drawn twice
-    // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
-    background-color: $tooltip;
-    color: on($tooltip);
-  }
-
-  &.background.csd {
+  &.background, &.background.csd {
     border-radius: $corner-radius;
+    background-color: $tooltip;
+    color: white;
   }
 
-  // padding: 4px; /* not working */
-  border-radius: $corner-radius/2;
+  border-radius: $corner-radius / 2;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
-
-  &:not(.csd):not(.unity-csd) {
-    // border: 1px solid $divider;
-    // border-radius: $corner-radius + 1px;
-    // background-clip: $background-clip-extra;
-  }
 
   // FIXME: we need a border or tooltips vanish on black background.
   decoration { background-color: transparent; }
@@ -3483,11 +3471,6 @@ tooltip {
     margin: -6px; // Remove hard-coded 6px margin
     min-height: 32px - 4px * 2;
     padding: 4px 8px;
-  }
-
-  * {
-    // workaround for Eclipse.
-    // do not include any declaration here.
   }
 }
 
@@ -3744,7 +3727,7 @@ cursor-handle {
 stackswitcher {
   min-height: 0;
   padding: 0;
-  margin: $container-padding 0;
+  margin: $space-size 0;
   border-radius: $circular-radius;
   background-color: $overlay-normal;
 
@@ -3812,8 +3795,8 @@ popover.emoji-picker {
 }
 
 button.emoji-section {
-  margin: $container-padding / 2;
-  border-radius: $menu-radius - $container-padding / 2;
+  margin: $space-size / 2;
+  border-radius: $menu-radius - $space-size / 2;
 
   &:checked {
     // background-color: transparent;

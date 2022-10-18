@@ -177,7 +177,8 @@
     color: $primary_color;
     text-shadow: none;
     icon-shadow: none;
-    // box-shadow: inset 0px 0px 0px 2px $primary_color;
+    box-shadow: none !important;
+    outline: none !important;
 
     &:active {
       color: white;
@@ -186,7 +187,7 @@
 
   @if $t == hover {
     color: $tc;
-    background-color: rgba($tc, 0.1);
+    background-color: rgba($tc, 0.12);
     border-color: transparent;
     box-shadow: none;
     text-shadow: none;
@@ -195,7 +196,7 @@
 
   @if $t == active {
     color: $tc;
-    background-color: rgba($tc, 0.2);
+    background-color: rgba($tc, 0.24);
     border-color: transparent;
     box-shadow: none;
     text-shadow: none;
@@ -233,8 +234,8 @@
     color: if($tc != $inverse_fg_color, $fg_color, $inverse_fg_color);
     text-shadow: none;
     icon-shadow: none;
-    box-shadow: $shadow_0;
-    // box-shadow: inset 0px 0px 0px 2px $divider_color;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
   @if $t == flat-hover {
