@@ -4,7 +4,7 @@
 // main list
 .message-list {
   width: 31.5em;
-  padding: 0 $container_margin;
+  padding: 0;
   color: $secondary_fg_color;
   text-shadow: none;
   border: none;
@@ -28,7 +28,7 @@
 
 .message-list-sections {
   spacing: $container_padding;
-  margin: 0 $container_margin * 4; // to account for scrollbar
+  margin: 0 $container_margin * 4 0 $container_margin + $container_padding; // to account for scrollbar
 }
 
 .message-list-section,

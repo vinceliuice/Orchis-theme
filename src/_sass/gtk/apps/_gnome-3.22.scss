@@ -30,12 +30,12 @@
       color: $titlebar-text-secondary;
 
       > viewport.frame {
-        margin: $space-size + 2px 0 $space-size * 2 $space-size * 2;
+        margin: $space-size 0 $space-size * 2 $space-size * 2;
         border-radius: $window-radius - $space-size;
         background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
 
         > list {
-          padding: $space-size * 2 0 $space-size * 2 0;
+          padding: 12px 0 12px 0;
           background: none;
           border-radius: $window-radius - $space-size;
 
@@ -54,16 +54,26 @@
             }
 
             image.sidebar-icon {
-              padding-right: 8px;
+              padding-right: $space-size;
             }
 
             label.sidebar-label {
               color: inherit;
               min-height: 54px;
-              padding: 0 0 0 4px;
+              padding: 0 0 0 $space-size;
             }
 
             &.sidebar-placeholder-row { background-color: transparent; }
+
+            > revealer.sidebar-revealer {
+              padding-left: 12px;
+              padding-right: 0;
+
+              > widget > box {
+                padding-right: 12px;
+                padding-left: 0;
+              }
+            }
 
             &:drop(active) {
               border-radius: 0;
@@ -92,27 +102,22 @@
               font-weight: 700;
               // font-size: larger;
 
-              image.sidebar-icon { color: $primary; }
+              image.sidebar-icon, label.sidebar-label { color: $primary; }
 
-              label.sidebar-label {
-                color: $primary;
+              > revealer.sidebar-revealer > widget > box {
                 background-color: $base;
-                box-shadow: 4px 0 $base;
-                padding: 0 24px 0 14px;
-                border-image-width: 10px 10px 10px 18px;
-                border-image-slice: 10 10 10 18;
+                border-image-width: 10px 10px 10px 46px;
+                border-image-slice: 10 10 10 46;
                 border-image-repeat: stretch;
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
                                                  url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
-              }
 
-              revealer.sidebar-revealer {
-                padding-right: 0;
+                label.sidebar-label {
+                  padding-left: 14px;
+                }
               }
 
               button.sidebar-button {
-                margin-right: 8px;
-                margin-left: -32px;
                 color: $primary;
 
                 @extend %button-flat-simple;
@@ -133,6 +138,7 @@
       scrollbar {
         background: none;
         border: none;
+        margin: $space-size + 2px 0 $space-size * 2 + 2px 0;
       }
 
       > undershoot {
@@ -738,7 +744,7 @@ leaflet.titlebar, hdyleaflet.titlebar {
     // Remove only background-color transition.
     // This shouldn't be necessary, but otherwise it gets lag...
     transition: color $duration $ease-out;
-  
+
     + separator {
       background-color: inherit;
       background-image: image($titlebar-divider);

@@ -6,6 +6,8 @@ OPTIPNG="$(command -v optipng)" || true
 
 INDEX="assets.txt"
 
+./make-assets.sh
+
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Grey'; do
 
 ASSETS_DIR="assets${theme}"

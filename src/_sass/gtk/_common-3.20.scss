@@ -2393,7 +2393,6 @@ menu menuitem check {
   min-height: 18px;
   min-width: 18px;
   border-radius: $corner-radius;
-  -gtk-icon-size: 18px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-checkbox-checked-symbolic.svg")); }
@@ -2406,7 +2405,6 @@ menu menuitem radio {
   min-height: 18px;
   min-width: 18px;
   border-image: none;
-  -gtk-icon-size: 18px;
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-unchecked-symbolic.svg"));
 
   &:checked { -gtk-icon-source: -gtk-recolor(url("assets/scalable/small-radio-checked-symbolic.svg")); }

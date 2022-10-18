@@ -955,7 +955,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0 6px;
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 14px 14px;
   border: none;
   box-shadow: none;
   background-image: none;
@@ -963,7 +963,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-sub-menu .popup-menu-item {
   margin: 0;
-  border-radius: 8px;
+  border-radius: 14px;
   color: rgba(0, 0, 0, 0.75);
   background-image: none;
 }
@@ -1018,12 +1018,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
   font-weight: normal;
-  border-radius: 8px 8px 0 0;
+  border-radius: 14px 14px 0 0;
   border: none;
   box-shadow: none;
 }
 
-.popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked.selected {
   background-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.85);
 }
@@ -1033,7 +1033,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu .popup-menu-item.selected:checked:active {
+.popup-menu .popup-menu-item:checked.selected:active {
   background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }

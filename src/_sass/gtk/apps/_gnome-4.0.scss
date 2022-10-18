@@ -3,8 +3,11 @@
 // Nautilus
 //
 .nautilus-window {
-  background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
-  color: if($topbar == 'dark' and $variant == 'light', $titlebar-text-secondary, $text-secondary);
+  &.background.csd {
+    background-image: none;
+    background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
+    color: if($topbar == 'dark' and $variant == 'light', $titlebar-text-secondary, $text-secondary);
+  }
 
   headerbar {
     background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
@@ -13,6 +16,7 @@
 
   flap > separator {
     background: none;
+    min-width: 0;
   }
 
   flap.unfolded > placessidebar {
@@ -42,6 +46,10 @@
             border-radius: 0;
             padding: 0;
             margin: -8px 0 -8px 0;
+
+            > revealer > box {
+              padding: 0 $space-size;
+            }
 
             &, &:focus, &:hover, &:active {
               background: none;
@@ -93,11 +101,19 @@
 
               image.sidebar-icon { color: $primary; }
 
-              label.sidebar-label {
+              image.sidebar-icon, label.sidebar-label { color: $primary; }
+
+              button.sidebar-button {
+                color: $primary;
+
+                @extend %button-flat-simple;
+              }
+
+              > revealer > box {
                 color: $primary;
                 background-color: $base;
-                box-shadow: 4px 0 $base;
-                padding: 0 24px 0 14px;
+                padding: 0 $space-size * 2 + 2px 0 14px;
+                margin-right: -$space-size - 2px;
                 border-image-width: 10px 10px 10px 18px;
                 border-image-slice: 10 10 10 18;
                 border-image-repeat: stretch;
@@ -110,8 +126,6 @@
               }
 
               button.sidebar-button {
-                margin-right: 8px;
-                margin-left: -32px;
                 color: $primary;
 
                 @extend %button-flat-simple;
@@ -179,8 +193,9 @@
 
   .nautilus-grid-view.view {
     &, gridview.view {
-      background-color: transparent;
-      border-radius: $window-radius;
+      background-color: $base;
+      border-radius: $window-radius - $space-size;
+      margin: 0 $space-size $space-size 0;
     }
   }
 

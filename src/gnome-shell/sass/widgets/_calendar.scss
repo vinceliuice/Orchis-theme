@@ -28,15 +28,15 @@
 .datemenu-calendar-column {
   spacing: $container_padding;
   border: 0 solid $border_color;
-  padding: 0 $container_padding * 2;
+  padding: 0 $container_padding;
   color: $secondary_fg_color;
 
   &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
 
   &:active { color: $fg_color; background-color: $track_color; }
 
-  &:ltr { margin-right: $container_padding + 2; border-left-width: 0; }
-  &:rtl { margin-left: $container_padding + 2; border-right-width: 0; }
+  &:ltr { margin-right: $container_padding + 2px; border-left-width: 0; }
+  &:rtl { margin-left: $container_padding + 2px; border-right-width: 0; }
 
   .datemenu-displays-section {
   }

@@ -167,7 +167,7 @@ $submenu_item_radius: $popup_radius - $container_padding;
 // desktop background menu
 .background-menu {
   -boxpointer-gap: $container_margin;
-  -arrow-rise: 0px; // hide the beak on the menu
+  -arrow-rise: 0; // hide the beak on the menu
 }
 
 // system status menu
@@ -175,7 +175,8 @@ $submenu_item_radius: $popup_radius - $container_padding;
   min-width: if($laptop == 'true', 19em, 21em);
 
   // this is unneeded at the top-level in this menu, hide it
-  .popup-menu-ornament, .popup-sub-menu .popup-menu-ornament { width: 0 !important; }
+  .popup-menu-ornament,
+  .popup-sub-menu .popup-menu-ornament { width: 0 !important; }
 
   .popup-menu-icon {
     padding: 0;
@@ -187,6 +188,7 @@ $submenu_item_radius: $popup_radius - $container_padding;
     &:ltr { /* 12px spacing + 2*4px padding */
       padding-left: $container_padding * 2 + $container_margin; margin-left: 0;
     }
+
     &:rtl { /* 12px spacing + 2*4px padding */
       padding-right: $container_padding * 2 + $container_margin; margin-right: 0;
     }
@@ -200,11 +202,13 @@ $submenu_item_radius: $popup_radius - $container_padding;
   // this is unneeded at the top-level in this menu, hide it
   .popup-menu-ornament { width: 0 !important; }
 
-  .popup-inactive-menu-item:first-child {
-    // "Open Windows" label
-    > StLabel {
-      &:ltr { margin-right: $container_margin * 2; }
-      &:rtl { margin-left: $container_margin * 2; }
+  .popup-menu-item > :first-child {
+    &:ltr {
+      padding-left: $container_padding * 2; margin-left: 0;
+    }
+
+    &:rtl {
+      padding-right: $container_padding * 2; margin-right: 0;
     }
   }
 }
