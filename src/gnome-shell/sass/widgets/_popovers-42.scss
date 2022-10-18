@@ -38,7 +38,7 @@ $submenu_item_radius: $popup_radius - $container_padding;
 // menu items
 .popup-menu-item {
   spacing: $container_padding;
-  padding: $container_padding;
+  padding: $container_padding $container_padding * 2;
   color: $fg_color !important;
   transition-duration: $shorter_duration;
   border-radius: if($corner-style == 'circular', $circular_radius, $submenu_item_radius);

@@ -3,7 +3,7 @@
   border-radius: 20px + $container_padding * 3 !important;
 
   .icon-button, .button {
-    padding: $container_padding * 1.75;
+    padding: 10px;
   }
 
   .popup-menu-content {
@@ -20,7 +20,7 @@
   border-radius: $circular_radius;
   min-width: 12em;
   max-width: 12em;
-  min-height: 40px;
+  min-height: $container_padding * 4 + 16px;
   border: none;
   background-color: rgba($fg_color, 0.06) !important;
 
@@ -97,7 +97,7 @@
 .quick-toggle-menu {
   background-color: white !important;
   color: rgba(black, 0.65) !important;
-  border-radius: 20px + $container_padding * 2 !important;
+  border-radius: $container_padding * 5 !important;
   padding: $container_padding * 2;
   margin: $container_padding * 2 $container_padding * 4.5 0;
 
