@@ -15,24 +15,18 @@ stage {
   border: none;
   margin-bottom: 6px;
   color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.06);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none;
   font-size: 10.5pt;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: transparent;
-  box-shadow: none;
-  text-shadow: none;
-  icon-shadow: none;
 }
 
 .modal-dialog .modal-dialog-linked-button:hover, .hotplug-notification-item:hover {
   color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -41,7 +35,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:active, .hotplug-notification-item:active {
   color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.24);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -51,7 +45,7 @@ stage {
 
 .modal-dialog .modal-dialog-linked-button:insensitive, .hotplug-notification-item:insensitive {
   color: rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.06);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -62,8 +56,8 @@ stage {
   color: #3281ea;
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: none;
-  outline: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .modal-dialog .modal-dialog-linked-button:focus:active, .hotplug-notification-item:focus:active {
@@ -227,7 +221,8 @@ StEntry StLabel.hint-text {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: 0 0 transparent;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .icon-button {
@@ -282,7 +277,8 @@ StEntry StLabel.hint-text {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: 0 0 transparent;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .icon-button > StIcon {
@@ -1265,7 +1261,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 34em;
   font-size: 1em;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 10px;
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(32, 32, 32, 0.92);
   border: none;
@@ -1290,31 +1286,35 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
-  border-width: 0;
+  border-width: 1px 0 0 0;
+  border-color: rgba(255, 255, 255, 0.08);
+  border-style: solid;
 }
 
 .notification-banner .notification-button:first-child {
-  border-radius: 0 0 0 8px;
+  border-radius: 0 0 0 10px;
 }
 
 .notification-banner .notification-button:last-child {
-  border-radius: 0 0 8px 0;
+  border-radius: 0 0 10px 0;
 }
 
 .notification-banner .notification-button:only-child, .notification-banner .notification-button:first-child:last-child {
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 10px 10px;
 }
 
 .notification-banner .notification-button:focus {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08) !important;
+  outline: none !important;
 }
 
 .notification-banner .notification-button:hover, .notification-banner .notification-button:focus:hover {
   background-color: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.9);
-  box-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .notification-banner .notification-button:active {
@@ -2915,7 +2915,8 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: 0 0 transparent;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .lg-obj-inspector-button:hover {
@@ -3053,7 +3054,7 @@ StWidget.focused .app-well-app-running-dot {
 .unlock-dialog .modal-dialog-button:default:hover,
 .unlock-dialog .modal-dialog-button:default:focus {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -3063,7 +3064,7 @@ StWidget.focused .app-well-app-running-dot {
 .login-dialog .modal-dialog-button:default:active,
 .unlock-dialog .modal-dialog-button:default:active {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.24);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -3629,7 +3630,8 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
   icon-shadow: none;
-  box-shadow: 0 0 transparent;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .openweather-provider:active {

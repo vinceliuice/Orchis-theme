@@ -21,7 +21,6 @@ $bubble_button_radius: if($corner-style == 'circular', $circular_radius, $materi
   margin-bottom: $container-padding;
   @include button(normal);
   @include font(button);
-  @include button(normal);
 
   &:hover { @include button(hover); }
   &:active { @include button(active); color: $fg_color !important; }

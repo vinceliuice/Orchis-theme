@@ -68,7 +68,7 @@ $alt_base_color:        if($variant =='dark', lighten($base_color, 25%), darken(
 $dark_bg_color:         rgba($dark_color, 0.9);
 $alt_dark_bg_color:     rgba($dark_color, 0.75);
 $inverse_bg_color:      rgba($inverse_fg_color, 0.13);
-$button_bg_color:       if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
+$button_bg_color:       if($variant == 'light', rgba(black, 0.08), rgba(white, 0.06));
 $keyboard_bg_color:     if($variant == 'light', $grey_50, fade($grey_700)); // for gnome-shell keyboard
 $alt_keyboard_bg_color: if($variant == 'light', $grey_300, fade($grey_900)); // for gnome-shell keyboard
 

@@ -22,14 +22,14 @@
   max-width: 12em;
   min-height: 40px;
   border: none;
-  background-color: $divider_color !important;
+  background-color: rgba($fg_color, 0.06) !important;
 
   &:hover {
-    background-color: $visit_color !important;
+    background-color: rgba($fg_color, 0.12) !important;
   }
 
   &:active {
-    background-color: rgba($fg_color, 0.15) !important;
+    background-color: rgba($fg_color, 0.24) !important;
   }
 
   &:checked {
@@ -121,7 +121,7 @@
       &:ltr {
         padding-left: $container_padding  + $container_margin !important;
       }
-  
+
       &:rtl {
         padding-right: $container_padding + $container_margin !important;
       }
@@ -161,10 +161,10 @@
   & > StBoxLayout { spacing: 2 * $container_padding; }
 
   .icon-button {
-    background-color: $divider_color;
+    background-color: rgba($fg_color, 0.06);
 
-    &:hover { background-color: $visit_color; }
-    &:active { background-color: $track_color; }
+    &:hover { background-color: rgba($fg_color, 0.12); }
+    &:active { background-color: rgba($fg_color, 0.24); }
 
     > StIcon { -st-icon-style: symbolic; }
   }
