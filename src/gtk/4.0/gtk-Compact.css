@@ -3767,6 +3767,7 @@ calendar > grid > label.day-number.other-month {
  ***********/
 window.dialog.message.background {
   background-color: #FFFFFF;
+  background-image: none;
 }
 
 window.dialog.message box.dialog-vbox.vertical {
@@ -3788,6 +3789,13 @@ window.dialog.message .titlebar:backdrop {
 
 window.dialog.message.csd .dialog-action-area {
   padding: 4px;
+  border: none;
+  box-shadow: none;
+}
+
+window.dialog.message.csd .dialog-action-area > button {
+  border: none;
+  box-shadow: none;
 }
 
 window.dialog.message.csd .dialog-action-area > button, window.dialog.message.csd .dialog-action-area > button:first-child, window.dialog.message.csd .dialog-action-area > button:last-child {

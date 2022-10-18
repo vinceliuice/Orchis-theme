@@ -3356,7 +3356,10 @@ calendar {
  * Dialogs *
  ***********/
 window.dialog.message { // Message Dialog styling
-  &.background { background-color: $surface; }
+  &.background {
+    background-color: $surface;
+    background-image: none;
+  }
 
   box.dialog-vbox.vertical {
     border-spacing: 10px;
@@ -3379,9 +3382,13 @@ window.dialog.message { // Message Dialog styling
     .dialog-action-area {
       // margin-top: -$space-size;
       padding: $space-size;
+      border: none;
+      box-shadow: none;
 
       > button {
         @extend %button-flat;
+        border: none;
+        box-shadow: none;
 
         &, &:first-child, &:last-child { border-radius: $circular-radius; }
 
