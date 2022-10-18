@@ -147,7 +147,7 @@
       icon-size: 24px; // a non-standard symbolic size but ok
       border-radius: $circular_radius;
       padding: 1.5 * $container_padding;
-      background-color: $divider_color !important;
+      background-color: rgba(black, 0.08) !important;
 
       &.active {
         background-color: $primary_color !important;

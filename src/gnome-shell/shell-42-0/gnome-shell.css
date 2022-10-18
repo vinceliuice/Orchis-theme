@@ -1517,7 +1517,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 24px;
   border-radius: 9999px;
   padding: 9px;
-  background-color: rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .quick-toggle-menu .header .icon.active {
