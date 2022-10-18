@@ -36,7 +36,7 @@
 
       > viewport {
         > list.navigation-sidebar {
-          padding: $space-size * 2 0 $space-size * 2 0;
+          padding: 16px 0 16px 0;
           background: none;
           border-radius: $window-radius - $space-size;
 
@@ -47,8 +47,14 @@
             padding: 0;
             margin: -8px 0 -8px 0;
 
-            > revealer > box {
-              padding: 0 $space-size;
+            > revealer.sidebar-revealer {
+              padding-left: 12px;
+              padding-right: 0;
+
+              > box {
+                padding-right: 12px + $space-size;
+                padding-left: 0;
+              }
             }
 
             &, &:focus, &:hover, &:active {
@@ -61,13 +67,13 @@
             }
 
             image.sidebar-icon {
-              padding-right: 8px;
+              padding-right: $space-size;
             }
 
             label.sidebar-label {
               color: inherit;
               min-height: 54px;
-              padding: 0 0 0 4px;
+              padding-left: $space-size;
             }
 
             &.sidebar-placeholder-row { background-color: transparent; }
@@ -112,17 +118,15 @@
               > revealer > box {
                 color: $primary;
                 background-color: $base;
-                padding: 0 $space-size * 2 + 2px 0 14px;
-                margin-right: -$space-size - 2px;
-                border-image-width: 10px 10px 10px 18px;
-                border-image-slice: 10 10 10 18;
+                border-image-width: 10px 10px 10px 46px;
+                border-image-slice: 10 10 10 46;
                 border-image-repeat: stretch;
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
                                                  url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
               }
 
-              revealer.sidebar-revealer {
-                padding-right: 0;
+              label.sidebar-label {
+                padding-left: 14px;
               }
 
               button.sidebar-button {
@@ -157,50 +161,86 @@
     }
   }
 
-  @if $variant == 'light' and $topbar == 'dark' {
-    tabbar {
-      &:not(.inline) {
-        .box {
-          background-color: $titlebar-fill;
-        }
+  tabbar {
+    .box {
+      padding: 0 $window-radius - $space-size;
+      background-color: transparent;
+      box-shadow: inset 0 -1px if($topbar == 'dark' and $variant == 'light', transparent, $solid-border);
+    }
 
-        &:backdrop .box {
-          background-color: $titlebar-fill;
-        }
+    tab {
+      color: $titlebar-text-secondary;
+
+      @if $topbar == 'dark' and $variant == 'light' {
+        border: none;
       }
 
-      scrolledwindow:not(.pinned) > tabbox {
-        tab, tab > button.flat {
-          color: $titlebar-text-secondary;
+      &:hover:not(:selected):not(:active):not(:checked) {
+        color: $titlebar-text;
+        background-color: if($topbar == 'dark', rgba($titlebar-text, 0.05), transparent);
+      }
 
-          &:hover {
-            color: $titlebar-text;
-            background-color: $titlebar-fill;
-          }
+      &:active, &:checked, &:selected {
+        color: $text;
 
-          &:active, &:checked, &:selected {
-            color: $titlebar-text;
-            background-color: $titlebar-divider;
-          }
+        &:disabled { color: $text-disabled; }
 
-          &:disabled {
-            color: $titlebar-text-secondary-disabled;
-          }
+        & > button.flat { @extend %button-flat-simple; }
+      }
+
+      &:disabled {
+        color: $titlebar-text-secondary-disabled;
+      }
+
+      & > button.flat {
+        @if $topbar == 'dark' {
+          @extend %button-on-dark;
+        } @else {
+          @extend %button-flat-simple;
         }
       }
     }
   }
 
-  .nautilus-grid-view.view {
-    &, gridview.view {
-      background-color: $base;
+  @if $variant == 'light' and $topbar == 'dark' {
+    tabview > stack {
+      background-color: transparent;
+    }
+  
+    .nautilus-grid-view.view {
+      &, gridview.view {
+        background-color: $base;
+        border-radius: $window-radius - $space-size;
+        margin: 0 $space-size $space-size 0;
+      }
+    }
+  
+    .nautilus-list-view.view {
       border-radius: $window-radius - $space-size;
       margin: 0 $space-size $space-size 0;
+  
+      .view { background-color: transparent; }
+    }
+
+    placesview {
+      border-radius: $window-radius - $space-size;
+      margin: 0 $space-size $space-size 0;
+      background-color: $base;
+
+      list, actionbar, actionbar > revealer > box {
+        background-color: transparent;
+      }
     }
   }
 
   placesview {
-    label { color: $text-secondary; }
+    label {
+      color: $text-secondary;
+
+      &:disabled {
+        color: $text-secondary-disabled;
+      }
+    }
   }
 
   infobar {
@@ -241,6 +281,8 @@
 }
 
 #NautilusQueryEditor { // search entry
+  border-radius: $circular-radius;
+
   > menubutton > button {
     min-width: 16px;
     min-height: 16px;

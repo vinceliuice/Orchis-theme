@@ -595,12 +595,18 @@ indicatorbin {
 tabbar {
   .box {
     min-height: $menuitem-size;
+    background-color: $background;
+    color: $text-secondary;
+    padding: 0;
+    box-shadow: inset 0 -1px $solid-border;
+    border-bottom: none;
   }
 
   tabbox {
     > tabboxchild {
-      border-radius: $corner-radius;
-      margin: $space-size / 2;
+      border-radius: 0;
+      margin: 0;
+      padding-top: 4px;
     }
 
     > separator {
@@ -622,24 +628,35 @@ tabbar {
   }
 
   tab {
-    transition: background 150ms ease-in-out;
+    transition: none;
+    border-radius: $corner-radius $corner-radius 0 0;
+    border: 1px solid transparent;
+    border-bottom-width: 0;
+    color: $text-secondary;
+    padding: $space-size $space-size * 2;
 
-    &:selected, &:checked, &:active, &:active:hover, &:checked:hover {
-      background-color: $divider;
+    &:hover:not(:selected):not(:active):not(:checked) {
+      transition: none;
+      background-color: $solid-border;
       box-shadow: none;
       color: $text;
+      border-color: $solid-border;
+      border-radius: $corner-radius $corner-radius 0 0;
     }
 
-    &:hover {
-      background-color: $fill;
+    &:selected, &:checked, &:active {
+      transition: background-color 150ms ease-in-out;
+      background-color: $base;
       box-shadow: none;
       color: $text;
+      border-color: $solid-border;
+      border-radius: $corner-radius $corner-radius 0 0;
     }
   }
 
   .start-action,
   .end-action {
-    padding: 5px;
+    padding: 6px;
   }
 
   .start-action:dir(ltr),
@@ -651,25 +668,9 @@ tabbar {
   .end-action:dir(ltr) {
     padding-left: 0;
   }
-
-  &:not(.inline) {
-    .box {
-      background-color: $background;
-      color: $text-secondary;
-      padding: $space-size / 2;
-      box-shadow: none;
-      border-bottom: 1px solid $divider;
-    }
-
-    &:backdrop .box {
-      > scrolledwindow,
-      > .start-action,
-      > .end-action {
-        filter: opacity(0.5);
-      }
-    }
-  }
 }
+
+tabview > stack { background-color: $base; }
 
 dnd tab {
   background-color: $background;
@@ -681,11 +682,6 @@ dnd tab {
 tabbar,
 dnd {
   tab {
-    min-height: $menuitem-size;
-    padding: $space-size / 2 $space-size;
-    border-radius: $corner-radius / 2;
-    margin: 0 1px;
-
     button.image-button {
       padding: 0;
       margin: 0;

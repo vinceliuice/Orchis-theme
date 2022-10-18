@@ -95,23 +95,24 @@
 }
 
 .quick-toggle-menu {
-  background-color: $base_color !important;
-  color: $fg_color !important;
+  background-color: white !important;
+  color: rgba(black, 0.65) !important;
   border-radius: 20px + $container_padding * 2 !important;
   padding: $container_padding * 2;
-  margin: $container_padding * 2 $container_padding * 5 0;
+  margin: $container_padding * 2 $container_padding * 4.5 0;
 
   .popup-menu-item {
     border-radius: $circular_radius !important;
+    color: rgba(black, 0.65) !important;
 
     &:focus, &:hover, &.selected {
-      color: $fg_color !important;
-      background-color: rgba($fg_color, 0.1) !important;
+      color: rgba(black, 0.75) !important;
+      background-color: rgba(black, 0.1) !important;
     }
 
     &:active {
-      color: $fg_color !important;
-      background-color: rgba($fg_color, 0.2) !important;
+      color: rgba(black, 0.75) !important;
+      background-color: rgba(black, 0.2) !important;
     }
 
     > StIcon { -st-icon-style: symbolic; }
@@ -123,6 +124,16 @@
   
       &:rtl {
         padding-right: $container_padding + $container_margin !important;
+      }
+    }
+
+    .popup-separator-menu-item-separator {
+      background-color: rgba(black, 0.1) !important;
+    }
+
+    @if $variant == 'dark' {
+      .toggle-switch {
+        background-image: url("assets/menu-toggle-off.svg");
       }
     }
   }

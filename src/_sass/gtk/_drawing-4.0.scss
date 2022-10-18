@@ -45,6 +45,8 @@
     outline: none;
     filter: none;
     opacity: 1;
+
+    > label { color: $text-disabled; }
   }
 
   @if $t == raised-normal {
@@ -114,6 +116,8 @@
     color: $text-disabled;
     filter: none;
     opacity: 1;
+
+    > label { color: $text-disabled; }
   }
 
   @if $t == checked {

@@ -177,7 +177,8 @@
     color: $primary_color;
     text-shadow: none;
     icon-shadow: none;
-    // box-shadow: inset 0px 0px 0px 2px $primary_color;
+    box-shadow: none;
+    outline: none;
 
     &:active {
       color: white;
