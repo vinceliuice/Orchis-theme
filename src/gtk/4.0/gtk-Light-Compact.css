@@ -4607,6 +4607,10 @@ popover.entry-completion > contents {
   font-weight: 700;
 }
 
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon {
+  color: #1A73E8;
+}
+
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label {
   color: #1A73E8;
 }
@@ -4624,6 +4628,14 @@ popover.entry-completion > contents {
   border-image-slice: 10 10 10 18;
   border-image-repeat: stretch;
   border-image-source: -gtk-scaled(url("assets/row-selected-light.png"), url("assets/row-selected-light@2.png"));
+}
+
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected revealer.sidebar-revealer {
+  padding-right: 0;
+}
+
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button {
+  color: #1A73E8;
 }
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled label.sidebar-label {
