@@ -107,6 +107,8 @@ label.separator {
 }
 
 label:disabled {
+  opacity: 1;
+  filter: none;
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -285,6 +287,8 @@ entry:disabled {
   color: rgba(0, 0, 0, 0.38);
   color: rgba(0, 0, 0, 0.38);
   outline: none;
+  filter: none;
+  opacity: 1;
 }
 
 spinbutton.flat.vertical, spinbutton.flat:not(.vertical),
@@ -384,6 +388,8 @@ entry.error:disabled {
   color: rgba(0, 0, 0, 0.38);
   color: rgba(217, 48, 37, 0.35);
   outline: none;
+  filter: none;
+  opacity: 1;
 }
 
 spinbutton.success.vertical, spinbutton.success:not(.vertical),
@@ -421,6 +427,8 @@ entry.success:disabled {
   color: rgba(0, 0, 0, 0.38);
   color: rgba(15, 157, 88, 0.35);
   outline: none;
+  filter: none;
+  opacity: 1;
 }
 
 spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
@@ -458,6 +466,8 @@ entry.warning:disabled {
   color: rgba(0, 0, 0, 0.38);
   color: rgba(244, 180, 0, 0.35);
   outline: none;
+  filter: none;
+  opacity: 1;
 }
 
 spinbutton.vertical > progress, spinbutton:not(.vertical) > progress,
@@ -550,7 +560,7 @@ infobar.warning > revealer > box button:checked:disabled, popover.background.tou
   color: rgba(255, 255, 255, 0.5);
 }
 
-button {
+headerbar popover.background button:not(.suggested-action):not(.destructive-action):not(.flat), button {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 225ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
@@ -558,36 +568,38 @@ button {
   color: rgba(0, 0, 0, 0.87);
 }
 
-button:focus {
+headerbar popover.background button:focus:not(.suggested-action):not(.destructive-action):not(.flat), button:focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08), inset 0 0 0 9999px transparent;
 }
 
-button:hover {
+headerbar popover.background button:hover:not(.suggested-action):not(.destructive-action):not(.flat), button:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-button:active {
+headerbar popover.background button:active:not(.suggested-action):not(.destructive-action):not(.flat), button:active {
   transition: box-shadow 225ms cubic-bezier(0, 0, 0.2, 1), background-color 225ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
 }
 
-button:disabled {
+headerbar popover.background button:disabled:not(.suggested-action):not(.destructive-action):not(.flat), button:disabled {
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
+  filter: none;
+  opacity: 1;
 }
 
-button:checked {
+headerbar popover.background button:checked:not(.suggested-action):not(.destructive-action):not(.flat), button:checked {
   box-shadow: none;
   background-color: #1A73E8;
   color: white;
 }
 
-button:checked:hover {
+headerbar popover.background button:checked:hover:not(.suggested-action):not(.destructive-action):not(.flat), button:checked:hover {
   box-shadow: inset 0 0 0 9999px transparent;
 }
 
-button:checked:disabled {
+headerbar popover.background button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.flat), button:checked:disabled {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
@@ -607,10 +619,9 @@ button:drop(active) {
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
 treeview.view > header > button button.circular, row.activatable button.circular, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, modelbutton.flat, tabbar tab button.image-button,
+radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, tabbar tab button.image-button,
 dnd tab button.image-button, splitbutton.flat > button,
-splitbutton.flat > menubutton > button, menubutton.flat > button, filechooser #pathbarbox > stack > box > button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, popover.background.menu button,
-popover.background button.model, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
+splitbutton.flat > menubutton > button, menubutton.flat > button, filechooser #pathbarbox > stack > box > button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
@@ -622,10 +633,9 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:focus, placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
 treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, check:focus,
-radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, modelbutton.flat:focus, tabbar tab button.image-button:focus,
+radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, tabbar tab button.image-button:focus,
 dnd tab button.image-button:focus, splitbutton.flat > button:focus,
-splitbutton.flat > menubutton > button:focus, menubutton.flat > button:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, popover.background.menu button:focus,
-popover.background button.model:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
+splitbutton.flat > menubutton > button:focus, menubutton.flat > button:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
   box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
@@ -634,10 +644,9 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:hover, placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
 treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, modelbutton.flat:hover, tabbar tab button.image-button:hover,
+radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, tabbar tab button.image-button:hover,
 dnd tab button.image-button:hover, splitbutton.flat > button:hover,
-splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, popover.background.menu button:hover,
-popover.background button.model:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
+splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
@@ -646,10 +655,9 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:active, placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
 treeview.view > header > button button.circular:active, row.activatable button.circular:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, modelbutton.flat:active, tabbar tab button.image-button:active,
+radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, tabbar tab button.image-button:active,
 dnd tab button.image-button:active, splitbutton.flat > button:active,
-splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, popover.background.menu button:active,
-popover.background button.model:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
+splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
@@ -659,21 +667,21 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:disabled, placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
 treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, modelbutton.flat:disabled, tabbar tab button.image-button:disabled,
+radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, tabbar tab button.image-button:disabled,
 dnd tab button.image-button:disabled, splitbutton.flat > button:disabled,
-splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, popover.background.menu button:disabled,
-popover.background button.model:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
+splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
+  filter: none;
+  opacity: 1;
 }
 
 tabbar tab button.image-button:checked,
 dnd tab button.image-button:checked, splitbutton.flat > button:checked,
-splitbutton.flat > menubutton > button:checked, menubutton.flat > button:checked, filechooser #pathbarbox > stack > box > button:checked, window.dialog.message.csd .dialog-action-area > button:checked, .app-notification button:checked, popover.background.menu button:checked,
-popover.background button.model:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked,
+splitbutton.flat > menubutton > button:checked, menubutton.flat > button:checked, filechooser #pathbarbox > stack > box > button:checked, window.dialog.message.csd .dialog-action-area > button:checked, .app-notification button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked,
 toolbar button:checked, dropdown > .linked:not(.vertical) > button:checked:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat:checked, button.flat:checked:hover {
   background-color: alpha(currentColor, 0.1);
@@ -682,12 +690,13 @@ combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat
 
 tabbar tab button.image-button:checked:disabled,
 dnd tab button.image-button:checked:disabled, splitbutton.flat > button:checked:disabled,
-splitbutton.flat > menubutton > button:checked:disabled, menubutton.flat > button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, window.dialog.message.csd .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, popover.background.menu button:checked:disabled,
-popover.background button.model:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
+splitbutton.flat > menubutton > button:checked:disabled, menubutton.flat > button:checked:disabled, filechooser #pathbarbox > stack > box > button:checked:disabled, window.dialog.message.csd .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
 toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
   color: rgba(0, 0, 0, 0.38);
+  filter: none;
+  opacity: 1;
 }
 
 button.text-button {
@@ -783,6 +792,8 @@ button.suggested-action:disabled {
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
+  filter: none;
+  opacity: 1;
 }
 
 button.suggested-action:hover {
@@ -810,6 +821,8 @@ button.suggested-action.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
+  filter: none;
+  opacity: 1;
 }
 
 button.suggested-action.flat:checked {
@@ -826,6 +839,8 @@ button.destructive-action:disabled {
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
+  filter: none;
+  opacity: 1;
 }
 
 button.destructive-action:hover {
@@ -853,6 +868,8 @@ button.destructive-action.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
+  filter: none;
+  opacity: 1;
 }
 
 button.destructive-action.flat:checked {
@@ -913,21 +930,21 @@ stackswitcher > button.needs-attention > image:dir(rtl) {
   background-position: left 3px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical, .linked:not(.vertical) > spinbutton:not(.vertical), .linked:not(.vertical) > entry, .linked:not(.vertical) > button, .linked:not(.vertical) > button.image-button {
+headerbar popover.background .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), .linked:not(.vertical) > spinbutton.vertical, .linked:not(.vertical) > spinbutton:not(.vertical), .linked:not(.vertical) > entry, .linked:not(.vertical) > button, .linked:not(.vertical) > button.image-button {
   border-radius: 0;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:first-child, .linked:not(.vertical) > spinbutton:first-child:not(.vertical), .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
+headerbar popover.background .linked:not(.vertical) > button:first-child:not(.suggested-action):not(.destructive-action), .linked:not(.vertical) > spinbutton.vertical:first-child, .linked:not(.vertical) > spinbutton:first-child:not(.vertical), .linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > button:first-child {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:last-child, .linked:not(.vertical) > spinbutton:last-child:not(.vertical), .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
+headerbar popover.background .linked:not(.vertical) > button:last-child:not(.suggested-action):not(.destructive-action), .linked:not(.vertical) > spinbutton.vertical:last-child, .linked:not(.vertical) > spinbutton:last-child:not(.vertical), .linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > button:last-child {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-.linked:not(.vertical) > spinbutton.vertical:only-child, .linked:not(.vertical) > spinbutton:only-child:not(.vertical), .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
+headerbar popover.background .linked:not(.vertical) > button:only-child:not(.suggested-action):not(.destructive-action), .linked:not(.vertical) > spinbutton.vertical:only-child, .linked:not(.vertical) > spinbutton:only-child:not(.vertical), .linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > button:only-child {
   border-radius: 10px;
 }
 
@@ -947,15 +964,6 @@ stackswitcher > button.needs-attention > image:dir(rtl) {
 
 .linked.vertical > spinbutton.vertical:only-child, .linked.vertical > spinbutton:only-child:not(.vertical), .linked.vertical > entry:only-child, .linked.vertical > button:only-child {
   border-radius: 10px;
-}
-
-/* menu buttons */
-modelbutton.flat arrow.left {
-  -gtk-icon-source: -gtk-icontheme("go-previous-symbolic");
-}
-
-modelbutton.flat arrow.right {
-  -gtk-icon-source: -gtk-icontheme("go-next-symbolic");
 }
 
 button.color {
@@ -1239,6 +1247,8 @@ button.combo:only-child:disabled {
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
+  filter: none;
+  opacity: 1;
 }
 
 .app-notification, .toolbar.osd,
@@ -1477,8 +1487,27 @@ headerbar headerbar {
   box-shadow: none;
 }
 
-headerbar headerbar + separator {
-  background-color: rgba(0, 0, 0, 0.12);
+headerbar splitbutton {
+  border-radius: 9999px;
+}
+
+headerbar splitbutton > button, headerbar splitbutton > menubutton > button {
+  min-height: 24px;
+  min-width: 24px;
+  padding: 4px;
+  border-radius: 9999px;
+}
+
+headerbar splitbutton > button:dir(ltr),
+headerbar splitbutton > menubutton > button:dir(rtl) {
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+headerbar splitbutton > button:dir(rtl),
+headerbar splitbutton > menubutton > button:dir(ltr) {
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
 }
 
 headerbar .linked:not(.vertical) > entry:not(:only-child) {
@@ -1520,8 +1549,7 @@ headerbar > windowhandle > box > box.end {
 headerbar entry,
 headerbar spinbutton,
 headerbar button,
-headerbar stackswitcher,
-headerbar separator {
+headerbar stackswitcher {
   margin-top: 4px;
   margin-bottom: 4px;
 }
@@ -1531,12 +1559,6 @@ headerbar spinbutton > button,
 headerbar splitbutton > button {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-headerbar separator:not(.sidebar) {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.12);
 }
 
 headerbar switch {
@@ -1957,6 +1979,14 @@ popover.menu modelbutton:hover {
 
 popover.menu modelbutton:disabled {
   color: rgba(0, 0, 0, 0.38);
+}
+
+popover.menu modelbutton arrow.left {
+  -gtk-icon-source: -gtk-icontheme("go-previous-symbolic");
+}
+
+popover.menu modelbutton arrow.right {
+  -gtk-icon-source: -gtk-icontheme("go-next-symbolic");
 }
 
 popover.menu label.title {
@@ -3223,14 +3253,8 @@ overshoot.right {
 }
 
 junction {
-  border-style: solid none none solid;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.12);
+  border: none;
   background-color: #FFFFFF;
-}
-
-junction:dir(rtl) {
-  border-style: solid solid none none;
 }
 
 separator {
@@ -3240,7 +3264,7 @@ separator {
 }
 
 separator.spacer {
-  background: none;
+  background-color: transparent;
 }
 
 separator.spacer.horizontal {
@@ -3829,12 +3853,17 @@ separator.sidebar.spacer {
 .navigation-sidebar > row {
   min-height: 22px;
   padding: 4px 6px;
-  border-radius: 5px;
-  margin: 0 4px;
+  border-radius: 0 9999px 9999px 0;
+  margin: 0 4px 0 0;
 }
 
 .navigation-sidebar > row:hover, .navigation-sidebar > row:focus-visible:focus-within {
   background-color: alpha(currentColor, 0.08);
+}
+
+.navigation-sidebar > row:selected {
+  background-color: alpha(currentColor, 0.1);
+  color: #1A73E8;
 }
 
 .navigation-sidebar > row:selected label, .navigation-sidebar > row:selected image {
@@ -4281,11 +4310,11 @@ windowcontrols button image {
   padding: 0;
 }
 
-gridview > child:selected, modelbutton.flat:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
+gridview > child:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
   background-color: alpha(currentColor, 0.06);
 }
 
-.view:selected, iconview:selected, flowbox > flowboxchild:selected, calendar > grid > label.today, stacksidebar row:selected, .navigation-sidebar > row:selected {
+.view:selected, iconview:selected, flowbox > flowboxchild:selected, calendar > grid > label.today, stacksidebar row:selected {
   color: #1A73E8;
   background-color: rgba(26, 115, 232, 0.2);
 }
@@ -4507,6 +4536,14 @@ popover.entry-completion > contents {
   background-color: rgba(26, 115, 232, 0.08);
 }
 
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow overshoot.top {
+  border-radius: 12px 12px 0 0;
+}
+
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow overshoot.bottom {
+  border-radius: 0 0 12px 12px;
+}
+
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar {
   padding: 8px 0 8px 0;
   background: none;
@@ -4594,17 +4631,16 @@ popover.entry-completion > contents {
 }
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin: 2px 2px 2px 0;
   background: none;
   border: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar > range > though {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar though {
   background: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar > range > though > slider {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar though > slider {
   border: none;
 }
 
@@ -4622,12 +4658,12 @@ popover.entry-completion > contents {
 }
 
 .nautilus-window infobar > revealer > box {
-  border-radius: 14px;
+  border-radius: 4px;
 }
 
 .nautilus-window label.search-information {
   margin: 2px;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .nautilus-window .floating-bar {
@@ -4637,6 +4673,7 @@ popover.entry-completion > contents {
   border: none;
   border-radius: 9999px;
   background-color: rgba(242, 242, 242, 0.95);
+  box-shadow: none;
 }
 
 .nautilus-window .floating-bar button {
@@ -5296,6 +5333,11 @@ splitbutton {
   border-radius: 10px;
 }
 
+splitbutton:disabled {
+  filter: none;
+  opacity: 1;
+}
+
 splitbutton, splitbutton > separator {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
   transition-property: background;
@@ -5308,14 +5350,14 @@ splitbutton > separator {
 }
 
 splitbutton > menubutton > button {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 splitbutton.image-button > button {
+  min-height: 24px;
   min-width: 24px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
 }
 
 splitbutton.text-button.image-button > button, splitbutton.image-text-button > button {
@@ -5331,14 +5373,14 @@ splitbutton > button:dir(ltr),
 splitbutton > menubutton > button:dir(rtl) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  margin-right: -1px;
+  margin-right: 0;
 }
 
 splitbutton > button:dir(rtl),
 splitbutton > menubutton > button:dir(ltr) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  margin-left: -1px;
+  margin-left: 0;
 }
 
 splitbutton.flat > separator {

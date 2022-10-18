@@ -212,6 +212,11 @@ menubutton {
 splitbutton {
   border-radius: $corner-radius;
 
+  &:disabled {
+    filter: none;
+    opacity: 1;
+  }
+
   &, & > separator {
     transition: $transition;
     transition-property: background;
@@ -224,16 +229,16 @@ splitbutton {
   }
 
   > menubutton > button {
-    padding-left: $space-size - 2px;
-    padding-right: $space-size - 2px;
+    padding-left: $space-size;
+    padding-right: $space-size;
   }
 
   // Since the inner button doesn't have any style classes on it,
   // we have to add them manually
   &.image-button > button {
+    min-height: 24px;
     min-width: 24px;
-    padding-left: $space-size;
-    padding-right: $space-size;
+    padding: ($medium-size - 24px) / 2;
   }
 
   &.text-button.image-button > button,
@@ -251,14 +256,14 @@ splitbutton {
   > menubutton > button:dir(rtl) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    margin-right: -1px;
+    margin-right: 0;
   }
 
   > button:dir(rtl),
   > menubutton > button:dir(ltr) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    margin-left: -1px;
+    margin-left: 0;
   }
 
   @at-root %flat_split_button,

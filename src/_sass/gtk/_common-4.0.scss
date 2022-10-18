@@ -131,6 +131,8 @@ label {
   > selection { @extend %selected_items_primary; }
 
   &:disabled {
+    opacity: 1;
+    filter: none;
     color: $text-disabled;
 
     // selection { color: $text-disabled; }
@@ -623,8 +625,6 @@ button {
 
         &:checked { background-color: rgba($b_color, 0.3); }
       }
-
-      .osd & { }
     }
   }
 
@@ -725,18 +725,6 @@ button {
   &:only-child {
     border-radius: $corner-radius;
   }
-}
-
-/* menu buttons */
-modelbutton.flat {
-  @extend %button-flat-simple;
-
-  &:selected { @extend %selected_items; }
-}
-
-modelbutton.flat arrow {
-  &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-  &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
 }
 
 button.color {
@@ -1199,14 +1187,36 @@ headerbar {
     box-shadow: none;
   }
 
-  // The separator for split headerbars
-  headerbar + separator {
-    background-color: $titlebar-divider;
+  splitbutton {
+    border-radius: $circular-radius;
+
+    > button,  > menubutton > button {
+      min-height: 24px;
+      min-width: 24px;
+      padding: ($medium-size - 24px) / 2;
+      border-radius: $circular-radius;
+    }
+
+    > button:dir(ltr),
+    > menubutton > button:dir(rtl) {
+      border-top-right-radius: $circular-radius;
+      border-bottom-right-radius: $circular-radius;
+    }
+
+    > button:dir(rtl),
+    > menubutton > button:dir(ltr) {
+      border-top-left-radius: $circular-radius;
+      border-bottom-left-radius: $circular-radius;
+    }
   }
 
   entry { @extend %titlebar-entry; }
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
+
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %titlebar-button;
+  }
 
   button.suggested-action, button.destructive-action {
     &:disabled {
@@ -1216,6 +1226,16 @@ headerbar {
   }
 
   button.toggle { border-radius: $circular-radius; }
+
+  popover.background {
+    button:not(.suggested-action):not(.destructive-action):not(.flat) {
+      @extend %button-basic;
+    }
+
+    .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+      @extend %linked;
+    }
+  }
 
   stackswitcher { // reset
     margin: $space-size 0;
@@ -1244,8 +1264,7 @@ headerbar {
   entry,
   spinbutton,
   button,
-  stackswitcher,
-  separator {
+  stackswitcher {
     margin-top: $space-size;
     margin-bottom: $space-size;
   }
@@ -1255,16 +1274,6 @@ headerbar {
   splitbutton > button {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  button:not(.suggested-action):not(.destructive-action) {
-    @extend %titlebar-button;
-  }
-
-  separator:not(.sidebar) {
-    margin-top: $large-size / 4;
-    margin-bottom: $large-size / 4;
-    background-color: $titlebar-divider;
   }
 
   switch {
@@ -1647,6 +1656,11 @@ popover.menu {
     }
 
     &:disabled { color: $text-disabled; }
+
+    arrow {
+      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
+      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
+    }
   }
 
   label.title {
@@ -1722,8 +1736,6 @@ popover.background {
 
   &.menu button,
   button.model {
-    @extend %button-flat;
-
     min-height: 32px;
     padding: 0 8px;
     border-radius: $menuitem-radius;
@@ -2846,12 +2858,8 @@ scrolledwindow {
   // }
 
   @at-root junction { // the small square between two scrollbars
-    border-style: solid none none solid;
-    border-width: 1px;
-    border-color: $divider;
+    border: none;
     background-color: $base;
-
-    &:dir(rtl) { border-style: solid solid none none; }
   }
 }
 
@@ -2862,7 +2870,7 @@ separator {
   background-color: $divider;
 
   &.spacer {
-    background: none;
+    background-color: transparent;
 
     &.horizontal { min-width: $space-size * 2; }
     &.vertical { min-height: $space-size * 2; }
@@ -3504,8 +3512,8 @@ separator.sidebar {
   > row {
     min-height: $small-size;
     padding: $space-size $space-size * 1.5;
-    border-radius: $corner-radius / 2;
-    margin: 0 $space-size;
+    border-radius: 0 $circular-radius $circular-radius 0;
+    margin: 0 $space-size 0 0;
 
     &:hover,
     &:focus-visible:focus-within {
@@ -3513,7 +3521,8 @@ separator.sidebar {
     }
 
     &:selected {
-      @extend %selected_items_color;
+      background-color: $overlay-checked;
+      color: $primary;
 
       label, image { color: $primary; }
 

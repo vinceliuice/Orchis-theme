@@ -25,69 +25,74 @@
       border-radius: $window-radius - $space-size;
       background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
 
+      overshoot {
+        &.top { border-radius: $window-radius - $space-size $window-radius - $space-size 0 0; }
+        &.bottom { border-radius: 0 0 $window-radius - $space-size $window-radius - $space-size; }
+      }
+
       > viewport {
         > list.navigation-sidebar {
           padding: $space-size * 2 0 $space-size * 2 0;
           background: none;
           border-radius: $window-radius - $space-size;
-  
+
           > separator { background: none; }
-  
+
           > row.activatable {
             border-radius: 0;
             padding: 0;
             margin: -8px 0 -8px 0;
-  
+
             &, &:focus, &:hover, &:active {
               background: none;
               box-shadow: none;
             }
-  
+
             &, image.sidebar-icon, label.sidebar-label {
               color: $titlebar-text-secondary;
             }
-  
+
             image.sidebar-icon {
               padding-right: 8px;
             }
-  
+
             label.sidebar-label {
               color: inherit;
               min-height: 54px;
               padding: 0 0 0 4px;
             }
-  
+
             &.sidebar-placeholder-row { background-color: transparent; }
-  
+
             &:drop(active) {
               border-radius: 0;
-  
+
               @if $topbar == 'dark' {
                 border-radius: $circular_radius 0 0 $circular_radius;
               }
-  
+
               background-color: rgba($drop_target_color, 0.1);
-  
+
               &, image.sidebar-icon, label.sidebar-label {
                 color: $drop_target_color;
               }
             }
-  
+
             button.sidebar-button {
               @if $topbar == 'dark' { @extend %button-on-dark; }
             }
-  
+
             &:hover {
               image.sidebar-icon, label.sidebar-label { color: $primary; }
             }
-  
+
             &:selected {
               background-color: transparent;
               font-weight: 700;
               // font-size: larger;
-  
+
               image.sidebar-icon { color: $primary; }
-  
+
               label.sidebar-label {
                 color: $primary;
                 background-color: $base;
@@ -99,20 +104,20 @@
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
                                                  url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
               }
-  
+
               revealer.sidebar-revealer {
                 padding-right: 0;
               }
-  
+
               button.sidebar-button {
                 margin-right: 8px;
                 margin-left: -32px;
                 color: $primary;
-  
+
                 @extend %button-flat-simple;
               }
             }
-  
+
             &:disabled {
               &, image.sidebar-icon, label.sidebar-label {
                 color: $titlebar-text-secondary-disabled;
@@ -123,14 +128,13 @@
       }
 
       > scrollbar {
-        margin-top: $space-size;
-        margin-bottom: $space-size;
+        margin: $space-size / 2 $space-size / 2 $space-size / 2 0;
         background: none;
         border: none;
-  
-        > range > though {
+
+        though {
           background: none;
-  
+
           > slider {
             border: none;
           }
@@ -188,13 +192,13 @@
     margin: $space-size / 2;
 
     > revealer > box {
-      border-radius: $corner-radius + $space-size;
+      border-radius: $space-size;
     }
   }
 
   label.search-information {
     margin: $space-size / 2;
-    border-radius: $corner-radius;
+    border-radius: $space-size;
   }
 
   .floating-bar {
@@ -204,6 +208,7 @@
     border: none;
     border-radius: $circular-radius;
     background-color: rgba($background, 0.95);
+    box-shadow: none;
 
     button {
       margin: (32px - $small-size) / 2;

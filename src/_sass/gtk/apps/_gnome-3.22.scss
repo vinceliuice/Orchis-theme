@@ -628,39 +628,39 @@ frame.gedit-map-frame > border {
  * Tweaks *
  **********/
 
- %circular_list {
-   border-radius: $corner-radius + 1px;
-   box-shadow: none;
-   border: 1px solid $divider;
- }
+%circular_list {
+  border-radius: $corner-radius + 1px;
+  box-shadow: none;
+  border: 1px solid $divider;
+}
 
- %circular_row {
-   &:first-child {
-     border-top-left-radius: $corner-radius;
-     border-top-right-radius: $corner-radius;
-   }
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
 
-   &:last-child { // Not use ?
-     border-bottom-left-radius: $corner-radius;
-     border-bottom-right-radius: $corner-radius;
-   }
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
 
-   &:only-child {
-     border-radius: $corner-radius;
-   }
- }
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
 
- %sidebar_row {
-   margin-right: 4px;
-   border-radius: 0 $circular-radius $circular-radius 0;
+%sidebar_row {
+  margin-right: 4px;
+  border-radius: 0 $circular-radius $circular-radius 0;
 
-   &:selected {
-     background-color: $overlay-checked;
-     color: $primary;
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
 
-     image, label { color: $primary; }
-   }
- }
+    image, label { color: $primary; }
+  }
+}
 
 // the sidebar
 .tweak-categories {
