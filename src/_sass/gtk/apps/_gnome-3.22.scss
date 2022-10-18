@@ -731,19 +731,18 @@ row#workspaces-only-on-primary {
 }
 
 // See https://github.com/nana-4/materia-theme/issues/432
-leaflet.titlebar > .titlebar.tweak-titlebar-left,
-leaflet.titlebar > .titlebar.tweak-titlebar-right, // Workaround for gnome-tweaks 40.0
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-left,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-right { // Workaround for gnome-tweaks 3.34
-  background-color: inherit;
-  box-shadow: inherit;
-  // Remove only background-color transition.
-  // This shouldn't be necessary, but otherwise it gets lag...
-  transition: color $duration $ease-out;
-
-  + separator {
+leaflet.titlebar, hdyleaflet.titlebar {
+  > .titlebar.tweak-titlebar-right, > .titlebar.tweak-titlebar-left {
     background-color: inherit;
-    background-image: image($titlebar-divider);
+    box-shadow: inherit;
+    // Remove only background-color transition.
+    // This shouldn't be necessary, but otherwise it gets lag...
+    transition: color $duration $ease-out;
+  
+    + separator {
+      background-color: inherit;
+      background-image: image($titlebar-divider);
+    }
   }
 }
 
@@ -753,8 +752,8 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right { // Workaround for gnome-t
  ************************/
 window.background.csd {
   > headerbar.titlebar {
-    > leaflet,
-    > hdyleaflet {
+    > leaflet.unfolded,
+    > hdyleaflet.unfolded {
       > headerbar {
         &:first-child:not(:only-child) {
           border-top-left-radius: $window-radius;

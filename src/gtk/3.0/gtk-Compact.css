@@ -6914,19 +6914,13 @@ row#workspaces-only-on-primary {
   margin-top: 4px;
 }
 
-leaflet.titlebar > .titlebar.tweak-titlebar-left,
-leaflet.titlebar > .titlebar.tweak-titlebar-right,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-left,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-right {
+leaflet.titlebar > .titlebar.tweak-titlebar-right, leaflet.titlebar > .titlebar.tweak-titlebar-left, hdyleaflet.titlebar > .titlebar.tweak-titlebar-right, hdyleaflet.titlebar > .titlebar.tweak-titlebar-left {
   background-color: inherit;
   box-shadow: inherit;
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-leaflet.titlebar > .titlebar.tweak-titlebar-left + separator,
-leaflet.titlebar > .titlebar.tweak-titlebar-right + separator,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-left + separator,
-hdyleaflet.titlebar > .titlebar.tweak-titlebar-right + separator {
+leaflet.titlebar > .titlebar.tweak-titlebar-right + separator, leaflet.titlebar > .titlebar.tweak-titlebar-left + separator, hdyleaflet.titlebar > .titlebar.tweak-titlebar-right + separator, hdyleaflet.titlebar > .titlebar.tweak-titlebar-left + separator {
   background-color: inherit;
   background-image: image(rgba(255, 255, 255, 0.12));
 }
@@ -6934,19 +6928,19 @@ hdyleaflet.titlebar > .titlebar.tweak-titlebar-right + separator {
 /************************
  * Gnome Control Center *
  ************************/
-window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child:not(:only-child),
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:not(:only-child) {
+window.background.csd > headerbar.titlebar > leaflet.unfolded > headerbar:first-child:not(:only-child),
+window.background.csd > headerbar.titlebar > hdyleaflet.unfolded > headerbar:first-child:not(:only-child) {
   border-top-left-radius: 16px;
 }
 
-window.background.csd > headerbar.titlebar > leaflet > headerbar:last-child:not(:only-child),
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:not(:only-child) {
+window.background.csd > headerbar.titlebar > leaflet.unfolded > headerbar:last-child:not(:only-child),
+window.background.csd > headerbar.titlebar > hdyleaflet.unfolded > headerbar:last-child:not(:only-child) {
   border-top-right-radius: 16px;
 }
 
-window.background.csd > headerbar.titlebar > leaflet > headerbar:first-child:only-child, window.background.csd > headerbar.titlebar > leaflet > headerbar:last-child:only-child,
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:first-child:only-child,
-window.background.csd > headerbar.titlebar > hdyleaflet > headerbar:last-child:only-child {
+window.background.csd > headerbar.titlebar > leaflet.unfolded > headerbar:first-child:only-child, window.background.csd > headerbar.titlebar > leaflet.unfolded > headerbar:last-child:only-child,
+window.background.csd > headerbar.titlebar > hdyleaflet.unfolded > headerbar:first-child:only-child,
+window.background.csd > headerbar.titlebar > hdyleaflet.unfolded > headerbar:last-child:only-child {
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
 }
