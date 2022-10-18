@@ -50,8 +50,8 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   .panel-button {
     font-weight: bold;
     color: $panel_fg_color;
-    -natural-hpadding: $container_padding;
-    -minimum-hpadding: $container_padding;
+    -natural-hpadding: 6px;
+    -minimum-hpadding: 6px;
     transition-duration: 150ms;
     border: $container_padding / 2 solid transparent;
     border-radius: if($corner-style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
@@ -96,7 +96,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     // status area icons
     .system-status-icon {
       icon-size: 16px;
-      padding: $container_padding;
+      padding: 6px;
       margin: 0 3px;
     }
 
@@ -171,7 +171,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
   Gjs_ui_panel_AggregateMenu.panel-button {
     .system-status-icon {
-      margin: 0 0 !important;
+      margin: 0 !important;
       padding: $container_padding !important;
     }
   }
@@ -179,7 +179,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
     .arc-menu-icon {
-      margin: 0 0 !important;
+      margin: 0 !important;
       padding: 0 !important;
     }
   }
