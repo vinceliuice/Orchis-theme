@@ -1,6 +1,6 @@
 /* Slider */
 
-$slider_size: 15px;
+$slider_size: if($laptop == 'false', 22px, 20px);
 $slider_color: if($variant == 'light', $accent_color, white);
 
 .slider {
@@ -18,7 +18,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
   -barlevel-overdrive-border-color: if($variant == 'light', darken($destructive_color, 4%), lighten($destructive_color, 2%)); //trough border when red;
   -barlevel-overdrive-separator-width: 2px;
   // slider handler
-  -slider-handle-radius: $slider_size * 0.5; // half the size of the size
+  -slider-handle-radius: $slider_size / 2 - 4px; // half the size of the size
   -slider-handle-border-width: 0;
   -slider-handle-border-color: if($variant == 'light', $border_color, $fg_color);
 

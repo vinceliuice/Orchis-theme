@@ -340,7 +340,7 @@ StEntry StLabel.hint-text {
 
 /* Slider */
 .slider {
-  height: 15px;
+  height: 20px;
   -barlevel-height: 2px;
   -barlevel-background-color: rgba(255, 255, 255, 0.16);
   -barlevel-border-width: 0;
@@ -350,7 +350,7 @@ StEntry StLabel.hint-text {
   -barlevel-overdrive-color: #FF5252;
   -barlevel-overdrive-border-color: #ff5c5c;
   -barlevel-overdrive-separator-width: 2px;
-  -slider-handle-radius: 7.5px;
+  -slider-handle-radius: 6px;
   -slider-handle-border-width: 0;
   -slider-handle-border-color: rgba(255, 255, 255, 0.9);
   color: white;
@@ -492,7 +492,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu-item.selected:checked {
+.popup-menu-item:checked.selected {
   background-color: #e5e5e5;
   color: rgba(0, 0, 0, 0.85);
 }
@@ -502,7 +502,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu-item.selected:checked:active {
+.popup-menu-item:checked.selected:active {
   background-color: #e0e0e0;
   color: rgba(0, 0, 0, 0.75);
 }
@@ -1938,12 +1938,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
-#panel .panel-button.clock-display:hover {
+#panel .panel-button:hover.clock-display {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button.clock-display:hover .clock {
+#panel .panel-button:hover.clock-display .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
@@ -1952,12 +1952,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
-#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:focus.clock-display .clock, #panel .panel-button:checked.clock-display .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
@@ -1987,7 +1987,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel #panelActivities.panel-button {
+#panel .panel-button#panelActivities {
   background-image: url("assets/activities-small.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -1997,15 +1997,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-#panel #panelActivities.panel-button > * {
+#panel .panel-button#panelActivities > * {
   width: 28px;
 }
 
-#panel #panelActivities.panel-button:hover {
+#panel .panel-button#panelActivities:hover {
   background-image: url("assets/activities-active-small.svg");
 }
 
-#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
+#panel .panel-button#panelActivities:hover, #panel .panel-button#panelActivities:active, #panel .panel-button#panelActivities:overview, #panel .panel-button#panelActivities:focus, #panel .panel-button#panelActivities:checked {
   color: transparent;
   box-shadow: none;
 }
