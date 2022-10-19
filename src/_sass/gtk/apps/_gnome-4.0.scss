@@ -206,7 +206,7 @@
     tabview > stack {
       background-color: transparent;
     }
-  
+
     .nautilus-grid-view.view {
       &, gridview.view {
         background-color: $base;
@@ -214,11 +214,11 @@
         margin: 0 $space-size $space-size 0;
       }
     }
-  
+
     .nautilus-list-view.view {
       border-radius: $window-radius - $space-size;
       margin: 0 $space-size $space-size 0;
-  
+
       .view { background-color: transparent; }
     }
 

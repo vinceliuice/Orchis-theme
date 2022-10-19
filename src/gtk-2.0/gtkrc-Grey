@@ -16,7 +16,7 @@ gtk-color-scheme = "text_color:#212121\nbase_color:#FFFFFF"
 # Foreground/background
 gtk-color-scheme = "fg_color:#212121\nbg_color:#F2F2F2"
 # Selected foreground/background
-gtk-color-scheme = "selected_fg_color:#FFFFFF\nselected_bg_color:#616161"
+gtk-color-scheme = "selected_fg_color:#FFFFFF\nselected_bg_color:#464646"
 # Titlebar foreground/background
 gtk-color-scheme = "titlebar_fg_color:#212121\ntitlebar_bg_color:#FFFFFF"
 # Menus
@@ -24,7 +24,7 @@ gtk-color-scheme = "menu_color:#FFFFFF"
 # Tooltips foreground/background
 gtk-color-scheme = "tooltip_fg_color:#FFFFFF\ntooltip_bg_color:#616161"
 # Links
-gtk-color-scheme = "link_color:#1A73E8\nvisited_link_color:#9C27B0"
+gtk-color-scheme = "link_color:#464646\nvisited_link_color:#9C27B0"
 
 # Set GTK settings
 gtk-auto-mnemonics              = 1

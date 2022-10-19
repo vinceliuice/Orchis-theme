@@ -15,7 +15,7 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Orchis
-THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Grey')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
@@ -102,7 +102,7 @@ install() {
   mkdir -p                                                                      "$THEME_DIR/gtk-3.0"
   cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-3.0/assets"
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-3.0/assets"
-  cp -r "$SRC_DIR/gtk/thumbnail${ELSE_DARK:-}.png"                              "$THEME_DIR/gtk-3.0/thumbnail.png"
+  cp -r "$SRC_DIR/gtk/thumbnail$theme${ELSE_DARK:-}.png"                        "$THEME_DIR/gtk-3.0/thumbnail.png"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-3.0/gtk.css"
@@ -132,13 +132,21 @@ install() {
   cp -r "$SRC_DIR/cinnamon/common-assets"                                       "$THEME_DIR/cinnamon/assets"
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
 
+  if [[ "$theme" != '' ]]; then
+    cp -r "$SRC_DIR/cinnamon/theme$theme/add-workspace-active${ELSE_DARK:-}.svg" "$THEME_DIR/cinnamon/assets/add-workspace-active.svg"
+    cp -r "$SRC_DIR/cinnamon/theme$theme/checkbox${ELSE_DARK:-}.svg"            "$THEME_DIR/cinnamon/assets/checkbox.svg"
+    cp -r "$SRC_DIR/cinnamon/theme$theme/radiobutton${ELSE_DARK:-}.svg"         "$THEME_DIR/cinnamon/assets/radiobutton.svg"
+    cp -r "$SRC_DIR/cinnamon/theme$theme/corner-ripple${ELSE_DARK:-}.svg"       "$THEME_DIR/cinnamon/assets/corner-ripple.svg"
+    cp -r "$SRC_DIR/cinnamon/theme$theme/toggle-on${ELSE_DARK:-}.svg"           "$THEME_DIR/cinnamon/assets/toggle-on.svg"
+  fi
+
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}$size.scss"       "$THEME_DIR/cinnamon/cinnamon.css"
   else
     cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}$size.css"                   "$THEME_DIR/cinnamon/cinnamon.css"
   fi
 
-  cp -r "$SRC_DIR/cinnamon/thumbnail${ELSE_DARK:-}.png"                         "$THEME_DIR/cinnamon/thumbnail.png"
+  cp -r "$SRC_DIR/cinnamon/thumbnail$theme${ELSE_DARK:-}.png"                   "$THEME_DIR/cinnamon/thumbnail.png"
 
   mkdir -p                                                                      "$THEME_DIR/metacity-1"
   cp -r "$SRC_DIR/metacity-1/metacity-theme-2${color}.xml"                      "$THEME_DIR/metacity-1/metacity-theme-2.xml"
@@ -273,6 +281,9 @@ install_theme_color() {
         ;;
       -Green)
         theme_color='green'
+        ;;
+      -Teal)
+        theme_color='teal'
         ;;
       -Grey)
         theme_color='grey'

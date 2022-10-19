@@ -11,7 +11,7 @@ OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
 
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|grey|all] (Default: blue)
+  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
   -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
 
@@ -31,7 +31,7 @@ OPTIONS:
   --shell                 install gnome-shell version [38|40|42]
                           1. 38:       gnome-shell version < 40.0
                           2. 40:       gnome-shell version = 40.0
-                          3. 42:       gnome-shell version = 42.0
+                          3. 42:       gnome-shell version >= 42.0
 
   -h, --help              Show help
 EOF
@@ -160,8 +160,12 @@ while [[ "$#" -gt 0 ]]; do
             themes+=("${THEME_VARIANTS[6]}")
             shift
             ;;
-          grey)
+          teal)
             themes+=("${THEME_VARIANTS[7]}")
+            shift
+            ;;
+          grey)
+            themes+=("${THEME_VARIANTS[8]}")
             shift
             ;;
           all)

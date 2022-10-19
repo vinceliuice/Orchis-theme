@@ -36,14 +36,20 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         ;;
       -Grey)
         theme_color_dark='#616161'
-        theme_color_light='#757575'
+        theme_color_light='#DDDDDD'
         ;;
     esac
 
     if [[ "$theme" != '' ]]; then
+      rm -rf "assets${theme}.svg"
       cp -rf "assets.svg" "assets${theme}.svg"
       sed -i "s/#1A73E8/${theme_color_dark}/g" "assets${theme}.svg"
       sed -i "s/#3281EA/${theme_color_light}/g" "assets${theme}.svg"
+      rm -rf "thumbnail${theme}.svg"
+      cp -rf "thumbnail.svg" "thumbnail${theme}.svg"
+      sed -i "s/#1A73E8/${theme_color_dark}/g" "thumbnail${theme}.svg"
+      sed -i "s/#3281EA/${theme_color_light}/g" "thumbnail${theme}.svg"
+      sed -i "s/thumbnail/thumbnail${theme}/g" "thumbnail${theme}.svg"
     fi
 done
 

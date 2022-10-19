@@ -8,7 +8,7 @@ INDEX="assets.txt"
 
 ./make-assets.sh
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Grey'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
 
 ASSETS_DIR="assets${theme}"
 SRC_FILE="assets${theme}.svg"
@@ -53,5 +53,25 @@ else
 fi
 
 done
+done
 
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+  SRC_FILE="thumbnail${theme}.svg"
+  for color in '' '-Dark'; do
+    echo
+    echo Rendering thumbnail${theme}${color}.png
+    $INKSCAPE --export-id=thumbnail${theme}${color} \
+              --export-id-only \
+              --export-dpi=96 \
+              --export-filename=thumbnail${theme}${color}.png $SRC_FILE >/dev/null \
+    && $OPTIPNG -o7 --quiet thumbnail${theme}.png
+  done
+done
+
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+  if [[ ${theme} == '' ]]; then
+    keep='true'
+  else
+    rm -rf "thumbnail${theme}.svg" "assets${theme}.svg"
+  fi
 done
