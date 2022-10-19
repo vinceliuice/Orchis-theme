@@ -1373,7 +1373,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .quick-settings .icon-button, .quick-settings .button {
-  padding: 10px;
+  padding: 12px;
 }
 
 .quick-settings .popup-menu-content {
