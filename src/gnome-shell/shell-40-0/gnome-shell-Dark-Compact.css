@@ -1088,6 +1088,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message .message-title {
   font-weight: bold;
   padding-top: 0.57em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .message .message-secondary-bin {
