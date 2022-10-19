@@ -9,12 +9,11 @@ StScrollBar {
   padding: 0;
 
   StScrollView & {
-    min-width: 16px;
-    min-height: 6px;
+    min-width: 8px;
+    min-height: 8px;
   }
 
   StBin#trough {
-    margin: 6px;
     border-radius: $circular_radius;
     background-color: $divider_color;
   }
@@ -22,9 +21,40 @@ StScrollBar {
   StButton#vhandle, StButton#hhandle {
     border-radius: $circular_radius;
     background-color: $hint_fg_color;
-    // border: 6px solid transparent; //would be nice to margin or at least to transparent
-    margin: 6px;
+    border: 4px solid transparent; //would be nice to margin or at least to transparent
+    transition: 500ms all ease;
+
     &:hover { background-color: $secondary_fg_color; }
     &:active { background-color: $fg_color; }
+  }
+}
+
+%scrollbar_on_dark {
+  StScrollBar {
+    StBin#trough {
+      background-color: $inverse_divider_color;
+    }
+
+    StButton#vhandle, StButton#hhandle {
+      background-color: $inverse_hint_fg_color;
+
+      &:hover { background-color: $inverse_secondary_fg_color; }
+      &:active { background-color: $inverse_fg_color; }
+    }
+  }
+}
+
+%scrollbar_on_light {
+  StScrollBar {
+    StBin#trough {
+      background-color: rgba(black, 0.15);
+    }
+
+    StButton#vhandle, StButton#hhandle {
+      background-color: rgba(black, 0.35);
+
+      &:hover { background-color: rgba(black, 0.45); }
+      &:active { background-color: rgba(black, 0.65); }
+    }
   }
 }

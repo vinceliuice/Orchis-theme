@@ -2,58 +2,68 @@
 
 // Dialog
 #LookingGlassDialog {
-  color: $secondary_fg_color;
-  background-color: $base_color;
-  spacing: 4px;
-  padding: 6px;
+  color: $inverse_secondary_fg_color;
+  background-color: $system_bg_color;
+  spacing: $container_padding;
+  padding: 0;
   border: none;
-  border-radius: $buttons_radius;
+  border-radius: $popup_radius;
   box-shadow: $shadow_4;
 
   & > #Toolbar {
-    padding: 0 8px;
+    padding: $container_padding $container_padding * 1.5;
     border: none;
-    border-radius: 0;
-    background-color: rgba($base_color, 0.01);
-    box-shadow: inset 0 -1px 0 $border_color;
+    border-radius: $popup_radius $popup_radius 0 0;
+    background-color: lighten($system_bg_color, 10%);
+    box-shadow: inset 0 -1px 0 $inverse_divider_color;
+    color: $inverse_secondary_fg_color;
   }
 
-  .labels { spacing: 0; }
+  .labels {
+    spacing: 0;
+    color: $inverse_secondary_fg_color;
+  }
 
   .notebook-tab {
-    -natural-hpadding: 12px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: $container_padding;
+    -minimum-hpadding: $container_padding;
     font-weight: bold;
-    color: $hint_fg_color;
+    color: $inverse_hint_fg_color;
     transition-duration: $longer_duration;
-    padding-left: 16px;
-    padding-right: 16px;
-    min-height: $medium_size;
-    padding: 0 16px * 2;
+    padding-left: $container_padding * 3;
+    padding-right: $container_padding * 3;
+    min-height: $small-size;
+    border-radius: $buttons_radius;
+    background-color: transparent;
 
     &:hover {
-      box-shadow: inset 0 -2px 0 $track_color;
-      color: $fg_color;
+      color: $inverse_fg_color;
+      background-color: rgba($inverse_fg_color, 0.15);
       text-shadow: none;
+      box-shadow: none;
     }
 
     &:selected {
-      background-color: rgba($base_color, 0.01);
-      box-shadow: inset 0 -2px 0 $primary_color;
-      color: $fg_color;
+      background-color: rgba($inverse_fg_color, 0.1);
+      box-shadow: none;
+      color: $inverse_fg_color;
       text-shadow: none;
     }
   }
 
-  StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
+  StBoxLayout#EvalBox { padding: $container_padding; spacing: $container_padding; }
 
-  StBoxLayout#ResultsArea { spacing: 4px; }
+  StBoxLayout#ResultsArea { spacing: $container_padding; }
+
+  @extend %scrollbar_on_dark;
 }
 
 .lg-dialog {
   StEntry {
     selection-background-color: $primary_color;
-    selected-color: $inverse_fg_color !important;
+    selected-color: $inverse_fg_color;
+    background-color: $inverse_divider_color;
+    color: $inverse_fg_color;
   }
 
   .shell-link {
@@ -61,20 +71,31 @@
 
     &:hover { color: $link_color; }
   }
+
+  .actor-link {
+    color: $inverse_disabled_fg_color;
+
+    &:hover { color: lighten($inverse_disabled_fg_color, 20%); }
+    &:active { color: darken($inverse_disabled_fg_color, 20%); }
+
+    & StIcon { icon-size: 12px; }
+   }
 }
 
 .lg-completions-text {
   font-size: 1em;
   font-style: italic;
+  color: $inverse_secondary_fg_color;
 }
 
 .lg-obj-inspector-title {
-    spacing: 4px;
+  spacing: $container_padding;
+  color: $inverse_secondary_fg_color;
 }
 
 .lg-obj-inspector-button {
   min-height: $medium_size;
-  padding: 0 16px;
+  padding: $container_padding;
   border: none;
   border-radius: $buttons_radius;
   @include font(button);
@@ -86,32 +107,57 @@
   &:hover { border: none; }
 }
 
-#lookingGlassExtensions { padding: 4px; }
+#lookingGlassExtensions {
+  padding: $container_padding;
+  color: $inverse_secondary_fg_color;
+}
 
 .lg-extensions-list {
-  padding: 4px;
-  spacing: 6px;
+  padding: $container_padding;
+  spacing: $container_padding;
+  color: $inverse_secondary_fg_color;
 }
 
 .lg-extension {
   border: none;
-  border-radius: $buttons_radius;
-  background-color: $alt_base_color;
-  padding: 4px;
+  border-radius: $material_radius;
+  background-color: rgba($inverse_fg_color, 0.1);
+  color: $inverse_secondary_fg_color;
+  padding: $container_padding;
+  box-shadow: none;
 }
 
 .lg-extension-name {
   @include font(headline);
+  color: $inverse_fg_color;
 }
 
 .lg-extension-meta {
-  spacing: 6px;
+  spacing: $container_padding;
 }
 
 #LookingGlassPropertyInspector {
-  background: $base_color;
+  color: $inverse_fg_color;
+  background: lighten($system_bg_color, 6%);
   border: none;
   border-radius: $buttons_radius;
-  padding: 6px;
-  box-shadow: $shadow_4;
+  padding: $container_padding;
+  box-shadow: $shadow_3;
+
+  .window-close {
+    margin: $container_padding;
+  }
+}
+
+.lg-debug-flag-button {
+  StLabel { padding: $container_padding, 2 * $container_padding; }
+  color: $inverse_fg_color;
+
+  &:hover { color: lighten($inverse_fg_color, 20%); }
+  &:active { color: darken($inverse_fg_color, 20%); }
+}
+
+.lg-debug-flags-header {
+  padding-top: 2 * $container_padding;
+  padding: $container_padding;
 }

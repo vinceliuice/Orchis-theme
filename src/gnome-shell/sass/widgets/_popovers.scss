@@ -126,6 +126,8 @@ $submenu_item_radius: $popup_radius - $container_padding;
 
     &:insensitive { color: rgba(black, 0.35); }
   }
+
+  @extend %scrollbar_on_light;
 }
 
 // container for radio and check boxes

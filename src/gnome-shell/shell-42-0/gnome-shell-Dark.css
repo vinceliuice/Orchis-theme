@@ -432,12 +432,11 @@ StScrollBar {
 }
 
 StScrollView StScrollBar {
-  min-width: 16px;
-  min-height: 6px;
+  min-width: 8px;
+  min-height: 8px;
 }
 
 StScrollBar StBin#trough {
-  margin: 6px;
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.08);
 }
@@ -445,7 +444,8 @@ StScrollBar StBin#trough {
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.5);
-  margin: 6px;
+  border: 4px solid transparent;
+  transition: 500ms all ease;
 }
 
 StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
@@ -454,6 +454,38 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover {
 
 StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+#LookingGlassDialog StScrollBar StBin#trough, #overviewGroup StScrollBar StBin#trough {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#LookingGlassDialog StScrollBar StButton#vhandle, #overviewGroup StScrollBar StButton#vhandle, #LookingGlassDialog StScrollBar StButton#hhandle, #overviewGroup StScrollBar StButton#hhandle {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#LookingGlassDialog StScrollBar StButton#vhandle:hover, #overviewGroup StScrollBar StButton#vhandle:hover, #LookingGlassDialog StScrollBar StButton#hhandle:hover, #overviewGroup StScrollBar StButton#hhandle:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#LookingGlassDialog StScrollBar StButton#vhandle:active, #overviewGroup StScrollBar StButton#vhandle:active, #LookingGlassDialog StScrollBar StButton#hhandle:active, #overviewGroup StScrollBar StButton#hhandle:active {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.popup-sub-menu StScrollBar StBin#trough {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.popup-sub-menu StScrollBar StButton#vhandle, .popup-sub-menu StScrollBar StButton#hhandle {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.popup-sub-menu StScrollBar StButton#vhandle:hover, .popup-sub-menu StScrollBar StButton#hhandle:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.popup-sub-menu StScrollBar StButton#vhandle:active, .popup-sub-menu StScrollBar StButton#hhandle:active {
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Popovers/Menus */
@@ -3129,63 +3161,69 @@ StWidget.focused .app-well-app-running-dot {
 /* Looking Glass */
 #LookingGlassDialog {
   color: rgba(255, 255, 255, 0.7);
-  background-color: #202020;
-  spacing: 4px;
-  padding: 6px;
+  background-color: #222222;
+  spacing: 6px;
+  padding: 0;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
 }
 
 #LookingGlassDialog > #Toolbar {
-  padding: 0 8px;
+  padding: 6px 9px;
   border: none;
-  border-radius: 0;
-  background-color: rgba(32, 32, 32, 0.01);
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+  border-radius: 20px 20px 0 0;
+  background-color: #3c3c3c;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #LookingGlassDialog .labels {
   spacing: 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #LookingGlassDialog .notebook-tab {
-  -natural-hpadding: 12px;
+  -natural-hpadding: 6px;
   -minimum-hpadding: 6px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.5);
   transition-duration: 150ms;
-  padding-left: 16px;
-  padding-right: 16px;
-  min-height: 36px;
-  padding: 0 32px;
+  padding-left: 18px;
+  padding-right: 18px;
+  min-height: 24px;
+  border-radius: 8px;
+  background-color: transparent;
 }
 
 #LookingGlassDialog .notebook-tab:hover {
-  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.15);
   text-shadow: none;
+  box-shadow: none;
 }
 
 #LookingGlassDialog .notebook-tab:selected {
-  background-color: rgba(32, 32, 32, 0.01);
-  box-shadow: inset 0 -2px 0 #3281EA;
-  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.85);
   text-shadow: none;
 }
 
 #LookingGlassDialog StBoxLayout#EvalBox {
-  padding: 4px;
-  spacing: 4px;
+  padding: 6px;
+  spacing: 6px;
 }
 
 #LookingGlassDialog StBoxLayout#ResultsArea {
-  spacing: 4px;
+  spacing: 6px;
 }
 
 .lg-dialog StEntry {
   selection-background-color: #3281EA;
-  selected-color: rgba(255, 255, 255, 0.85) !important;
+  selected-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .lg-dialog .shell-link {
@@ -3196,18 +3234,36 @@ StWidget.focused .app-well-app-running-dot {
   color: #3281EA;
 }
 
+.lg-dialog .actor-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lg-dialog .actor-link:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lg-dialog .actor-link:active {
+  color: rgba(204, 204, 204, 0.5);
+}
+
+.lg-dialog .actor-link StIcon {
+  icon-size: 12px;
+}
+
 .lg-completions-text {
   font-size: 1em;
   font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .lg-obj-inspector-title {
-  spacing: 4px;
+  spacing: 6px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .lg-obj-inspector-button {
   min-height: 36px;
-  padding: 0 16px;
+  padding: 6px;
   border: none;
   border-radius: 8px;
   font-size: 10.5pt;
@@ -3260,24 +3316,29 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #lookingGlassExtensions {
-  padding: 4px;
+  padding: 6px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .lg-extensions-list {
-  padding: 4px;
+  padding: 6px;
   spacing: 6px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .lg-extension {
   border: none;
-  border-radius: 8px;
-  background-color: #606060;
-  padding: 4px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 6px;
+  box-shadow: none;
 }
 
 .lg-extension-name {
   font-size: 18pt;
   font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .lg-extension-meta {
@@ -3285,11 +3346,37 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #LookingGlassPropertyInspector {
-  background: #202020;
+  color: rgba(255, 255, 255, 0.85);
+  background: #313131;
   border: none;
   border-radius: 8px;
   padding: 6px;
-  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.285), 0 6px 3px rgba(0, 0, 0, 0.345);
+}
+
+#LookingGlassPropertyInspector .window-close, #LookingGlassPropertyInspector .screenshot-ui-close-button {
+  margin: 6px;
+}
+
+.lg-debug-flag-button {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lg-debug-flag-button StLabel {
+  padding: 6px, 12px;
+}
+
+.lg-debug-flag-button:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lg-debug-flag-button:active {
+  color: rgba(204, 204, 204, 0.85);
+}
+
+.lg-debug-flags-header {
+  padding-top: 12px;
+  padding: 6px;
 }
 
 .icon-label-button-container {

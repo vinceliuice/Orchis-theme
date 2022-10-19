@@ -31,7 +31,7 @@ $osd_levelbar_height: 4px;
 /* Pad OSD */
 .pad-osd-window {
   padding: 32px;
-  background-color: transparentize(#000, 0.2);
+  background-color: transparentize(black, 0.2);
   border: none;
 
   .pad-osd-title-box { spacing: 12px; }

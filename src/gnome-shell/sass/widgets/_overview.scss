@@ -6,6 +6,8 @@
 
 #overviewGroup {
   background-color: $system_bg_color;
+
+  @extend %scrollbar_on_dark;
 }
 
 .overview-controls {
