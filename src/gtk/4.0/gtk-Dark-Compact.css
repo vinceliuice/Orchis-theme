@@ -2203,15 +2203,13 @@ notebook:focus tab:checked {
 }
 
 notebook > header {
-  border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.12);
+  border: none;
   background-color: #212121;
-  background-clip: border-box;
 }
 
 notebook > header.top {
-  border-bottom-style: solid;
   border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 -1px #404040;
 }
 
 notebook > header.top > tabs {
@@ -2225,8 +2223,8 @@ notebook > header.top > tabs > tab {
 }
 
 notebook > header.bottom {
-  border-top-style: solid;
   border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 1px #404040;
 }
 
 notebook > header.bottom > tabs {
@@ -2240,8 +2238,8 @@ notebook > header.bottom > tabs > tab {
 }
 
 notebook > header.left {
-  border-right-style: solid;
   border-radius: 10px 0 0 10px;
+  box-shadow: inset -1px 0 #404040;
 }
 
 notebook > header.left > tabs {
@@ -2255,8 +2253,8 @@ notebook > header.left > tabs > tab {
 }
 
 notebook > header.right {
-  border-left-style: solid;
   border-radius: 0 10px 10px 0;
+  box-shadow: inset 1px 0 #404040;
 }
 
 notebook > header.right > tabs {
