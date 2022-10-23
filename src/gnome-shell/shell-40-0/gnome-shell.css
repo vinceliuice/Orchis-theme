@@ -340,7 +340,7 @@ StEntry StLabel.hint-text {
 
 /* Slider */
 .slider {
-  height: 15px;
+  height: 22px;
   -barlevel-height: 2px;
   -barlevel-background-color: rgba(0, 0, 0, 0.2);
   -barlevel-border-width: 0;
@@ -350,7 +350,7 @@ StEntry StLabel.hint-text {
   -barlevel-overdrive-color: #FF5252;
   -barlevel-overdrive-border-color: #ff3e3e;
   -barlevel-overdrive-separator-width: 2px;
-  -slider-handle-radius: 7.5px;
+  -slider-handle-radius: 7px;
   -slider-handle-border-width: 0;
   -slider-handle-border-color: rgba(0, 0, 0, 0.12);
   color: #287ce9;
