@@ -6,6 +6,8 @@
 // hard-coded css:
 // https://gitlab.gnome.org/GNOME/nautilus/blob/master/src/resources/css/nautilus.css
 
+$theme_list_radius: $window-radius - $space-size;
+
 .nautilus-window {
   &.background.csd.unified {
     headerbar { box-shadow: none; } // reset
@@ -28,16 +30,16 @@
       background-color: transparent;
       border-radius: $window-radius;
       color: $titlebar-text-secondary;
+      margin: 0 0 $space-size * 2 $space-size * 2;
 
       > viewport.frame {
-        margin: $space-size 0 $space-size * 2 $space-size * 2;
-        border-radius: $window-radius - $space-size;
+        border-radius: $theme_list_radius;
         background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
 
         > list {
           padding: 12px 0 12px 0;
           background: none;
-          border-radius: $window-radius - $space-size;
+          border-radius: $theme_list_radius;
 
           > row.activatable {
             border-radius: 0;
@@ -138,7 +140,7 @@
       scrollbar {
         background: none;
         border: none;
-        margin: $space-size + 2px 0 $space-size * 2 + 2px 0;
+        margin: 2px 0;
       }
 
       > undershoot {
@@ -148,6 +150,16 @@
 
         &.bottom {
           background: none;
+        }
+      }
+
+      > overshoot {
+        &.top {
+          border-radius: $theme_list_radius $theme_list_radius 0 0;
+        }
+
+        &.bottom {
+          border-radius: 0 0 $theme_list_radius $theme_list_radius;
         }
       }
     }
@@ -513,7 +525,7 @@ window.org-gnome-gedit {
         > scrolledwindow { // raised widget
           border-bottom-left-radius: $window-radius;
 
-          treeview.view:not(:hover):not(:selected) {
+          treeview.view:not(:hover):not(:active):not(:selected) {
             background: none;
           }
         }
@@ -904,9 +916,8 @@ window#gnome-system-monitor.background.csd {
 
     > box.vertical {
       > scrolledwindow {
-        treeview.view:not(.progressbar):not(.trough) {
+        treeview.view:not(.progressbar):not(.trough):not(:hover):not(:active):not(:selected) {
           background: none;
-          @extend .view;
         }
       }
 
@@ -1656,6 +1667,22 @@ box.vertical > revealer > toolbar.search-bar {
   }
 }
 
+/***********************
+ * Gnome Note (bijiben)*
+ ***********************/
+
+dialog.background {
+  scrolledwindow.frame > viewport {
+    > list {
+      background-color: transparent;
+      border: none;
+
+      > row.activatable {
+        @extend %circular_row;
+      }
+    }
+  }
+}
 
 /*******************
  * Document Viewer *
@@ -1663,7 +1690,7 @@ box.vertical > revealer > toolbar.search-bar {
 window.background.csd {
   > box.vertical {
     > paned.horizontal > box.vertical > scrolledwindow {
-      > treeview.view:not(:hover):not(:selected) { background-color: transparent; }
+      > treeview.view:not(:hover):not(:active):not(:selected) { background-color: transparent; }
     }
   }
 
@@ -1686,11 +1713,11 @@ window.background.csd {
       border-radius: 0 0 $window-radius $window-radius;
       background-color: $base;
 
-      treeview.view:not(:hover):not(:selected) {
+      treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: transparent;
       }
 
-      > treeview.view:not(:hover):not(:selected) {
+      > treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: $base;
       }
     }
@@ -1700,7 +1727,7 @@ window.background.csd {
         border-radius: 0 0 0 $window-radius;
         background-color: $background;
 
-        treeview.view:not(:hover):not(:selected) {
+        treeview.view:not(:hover):not(:active):not(:selected) {
           background-color: transparent;
         }
       }
@@ -1715,7 +1742,7 @@ window.background.csd {
 window.background.csd {
   > box.vertical > paned.horizontal {
     > scrolledwindow {
-      treeview.view:not(:selected):not(:hover) {
+      treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: transparent;
       }
     }
@@ -1953,7 +1980,6 @@ preferencesgroup, .geary-accounts-editor-pane {
     > leaflet > leaflet > box.vertical > .geary-conversation-frame {
       > scrolledwindow {
         margin: -1px 0; // hide .view top border
-        // > treeview.view {}
       }
     }
   }
@@ -2095,7 +2121,7 @@ dialog.background.csd {
         }
       }
 
-      treeview.view:not(:hover):not(:selected) { background: none; }
+      treeview.view:not(:hover):not(:active):not(:selected) { background: none; }
     }
 
     viewport.frame {

@@ -1804,9 +1804,20 @@ notebook {
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
 
-  .background.csd &, .background.csd &.frame {
-    background-color: $base;
-    border-radius: $corner-radius;
+  &.frame {
+    &, > stack {
+      border-radius: $corner-radius / 2;
+    }
+  }
+
+  .background.csd &.frame {
+    &, > stack {
+      border-radius: $corner-radius;
+    }
+  }
+
+  > stack {
+    background-color: transparent;
   }
 
   &.frame frame {
@@ -1858,7 +1869,25 @@ notebook {
     }
   }
 
-  .background.csd & > header {
+  &.frame > header {
+    &.top {
+      border-radius: $corner-radius / 2 $corner-radius / 2 0 0;
+    }
+
+    &.bottom {
+      border-radius: 0 0 $corner-radius / 2 $corner-radius / 2;
+    }
+
+    &.left {
+      border-radius: $corner-radius / 2 0 0 $corner-radius / 2;
+    }
+
+    &.right {
+      border-radius: 0 $corner-radius / 2 $corner-radius / 2 0;
+    }
+  }
+
+  .background.csd &.frame > header {
     &.top {
       border-radius: $corner-radius $corner-radius 0 0;
 
@@ -2082,11 +2111,6 @@ notebook {
         tab.reorderable-page { border-style: solid; }
       }
     }
-  }
-
-  > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
-    background-color: transparent;
-    border-radius: $corner-radius;
   }
 }
 
@@ -2417,33 +2441,27 @@ menu menuitem radio {
 // the transformation is set on the active state and it get reset on the checked state.
 // radio:not(:checked):active { -gtk-icon-transform: scale(0); }
 
-treeview.view check,
-treeview.view radio {
-  padding: 0;
+treeview.view {
+  check, radio {
+    padding: 0;
+    margin: 0;
 
-  &:hover, &:selected {
-    box-shadow: none;
-    background-color: transparent;
-  }
+    &, &:hover, &:selected {
+      box-shadow: none;
+      background-color: transparent;
+      background-image: none;
+      color: $text-secondary;
 
-  & {
-    color: $text-secondary;
+      &:hover, &:active { color: $text; }
 
-    &:hover, &:active { color: $text; }
+      &:disabled { color: $text-secondary-disabled; }
 
-    &:disabled { color: $text-secondary-disabled; }
+      &:checked, &:indeterminate { color: $check_radio_primary; }
 
-    &:checked, &:indeterminate { color: $check_radio_primary; }
-
-    &:checked:disabled, &:indeterminate:disabled { color: $text-secondary-disabled; }
+      &:checked:disabled, &:indeterminate:disabled { color: $text-secondary-disabled; }
+    }
   }
 }
-
-treeview.view radio:checked {
-  -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg"));
-  border-image: none;
-}
-
 
 /************
  * GtkScale *
@@ -2817,11 +2835,13 @@ actionbar > revealer > box {
     border-radius: 0 0 $window-radius $window-radius;
   }
 
+  .background.csd frame box.vertical > & {
+    border-radius: 0;
+  }
+
   button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
 
   .linked > button:not(.suggested-action):not(.destructive-action) { @extend %button-basic; }
-
-  // .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 }
 
 scrolledwindow {
@@ -3108,8 +3128,7 @@ filechooser {
 
       list { background-color: transparent; }
 
-      treeview.view {
-        @extend .view;
+      treeview.view:not(:hover):not(:active):not(:selected) {
         background-color: transparent;
       }
     }

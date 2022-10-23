@@ -131,7 +131,7 @@ window.background.csd.thunar {
   > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane {
     border-bottom-left-radius: $window-radius;
 
-    treeview.view:not(:hover):not(:selected) {
+    treeview.view:not(:hover):not(:active):not(:selected) {
       background-color: transparent;
     }
   }

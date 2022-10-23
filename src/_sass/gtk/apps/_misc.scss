@@ -64,6 +64,31 @@ window.background > box.vertical > scrolledwindow > widget toolbar {
 }
 
 
+/********
+ * Meld *
+ ********/
+
+notebook.meld-notebook {
+  background-color: $base;
+  border-radius: 0 0 $window-radius $window-radius;
+
+  > stack {
+    background-color: $base;
+    border-radius: 0 0 $window-radius $window-radius;
+  }
+}
+
+.meld-notebook-child {
+  background-color: $base;
+  border-radius: 0 0 $window-radius $window-radius;
+}
+
+.meld-status-bar {
+  background-color: transparent;
+
+  button { border-radius: 0; }
+}
+
 /************
  * Chromium *
  ************/
@@ -354,7 +379,7 @@ window.background.csd {
 // LibreOffice
 //
 
-window.background:not(.solid-csd) {
+window.background:not(.solid-csd):not(.csd) {
   // reserved area at the most-right side of GtkMenuBar
   > grid.horizontal > grid.horizontal {
     background-color: $titlebar;
@@ -365,7 +390,7 @@ window.background:not(.solid-csd) {
   }
 }
 
-window.background:not(.solid-csd) {
+window.background:not(.solid-csd):not(.csd) {
   // for 'Notebookbar' toolbar
   > notebook {
     border: none; // unset borders
