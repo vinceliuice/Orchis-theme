@@ -5499,19 +5499,11 @@ box.vertical > revealer > toolbar.search-bar button > widget {
   border: none;
 }
 
-/**************
- * Gnome Note *
- **************/
+/***********************
+ * Gnome Note (bijiben)*
+ ***********************/
 dialog.background scrolledwindow.frame > viewport > list {
   background-color: transparent;
-  border: none;
-}
-
-dialog.background scrolledwindow.frame > viewport > list > row.activatable {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-dialog.background scrolledwindow.frame > viewport > list > row.activatable:last-child {
   border: none;
 }
 
