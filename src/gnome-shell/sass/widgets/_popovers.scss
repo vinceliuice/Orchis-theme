@@ -6,8 +6,8 @@
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
-  -arrow-rise: 0;
+  -arrow-base: $container_padding * 2;
+  -arrow-rise: $container_padding;
   -arrow-box-shadow: none; //dreaming. bug #689995
 }
 

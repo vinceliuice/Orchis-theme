@@ -6,8 +6,8 @@
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
-  -arrow-rise: 0;
+  -arrow-base: 8px;
+  -arrow-rise: 4px;
   -arrow-box-shadow: none; //dreaming. bug #689995
 }
 
@@ -16,6 +16,9 @@
   min-width: 15em;
   color: $fg_color;
   border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: $popup_radius;
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
@@ -26,11 +29,11 @@
 
 .popup-menu-content {
   padding: $container_padding;
-  margin: $container_padding 10px 13px 10px;
+  margin: 0 $container_padding / 2 $container_padding / 2;
   background-color: $menu_bg_color;
   border-radius: $popup_radius;
-  box-shadow: 0 3px 8px rgba(black, 0.2);
   border: none;
+  box-shadow: 0 3px 8px rgba(black, 0.2);
 }
 
 $submenu_item_radius: $popup_radius - $container_padding;
