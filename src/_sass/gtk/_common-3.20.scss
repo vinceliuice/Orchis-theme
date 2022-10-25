@@ -1830,11 +1830,28 @@ notebook {
     &, > stack {
       border-radius: $corner-radius / 2;
     }
+
+    > stack {
+      scrolledwindow.frame {
+        border: none;
+      }
+
+      .inline-toolbar {
+        border-width: 1px 0 0;
+        border-radius: 0 0 $corner-radius / 2 $corner-radius / 2;
+      }
+    }
   }
 
   .background.csd &.frame {
     &, > stack {
       border-radius: $corner-radius;
+    }
+
+    > stack {
+      .inline-toolbar {
+        border-radius: 0 0 $corner-radius $corner-radius;
+      }
     }
   }
 

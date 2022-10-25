@@ -2103,8 +2103,21 @@ notebook.frame, notebook.frame > stack {
   border-radius: 5px;
 }
 
+notebook.frame > stack scrolledwindow.frame {
+  border: none;
+}
+
+notebook.frame > stack .inline-toolbar {
+  border-width: 1px 0 0;
+  border-radius: 0 0 5px 5px;
+}
+
 .background.csd notebook.frame, .background.csd notebook.frame > stack {
   border-radius: 10px;
+}
+
+.background.csd notebook.frame > stack .inline-toolbar {
+  border-radius: 0 0 10px 10px;
 }
 
 notebook > stack {
