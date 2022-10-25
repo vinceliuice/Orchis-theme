@@ -494,8 +494,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
-  -arrow-rise: 0;
+  -arrow-base: 8px;
+  -arrow-rise: 4px;
   -arrow-box-shadow: none;
 }
 
@@ -503,6 +503,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 15em;
   color: rgba(0, 0, 0, 0.87);
   border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 18px;
 }
 
 .popup-menu.panel-menu {
@@ -512,11 +515,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-content {
   padding: 4px;
-  margin: 4px 10px 13px 10px;
+  margin: 0 2px 2px;
   background-color: rgba(255, 255, 255, 0.97);
   border-radius: 18px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup-menu-item {
@@ -1370,14 +1373,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .quick-settings {
   padding: 12px !important;
   border-radius: 32px !important;
+  margin-top: 2px;
 }
 
 .quick-settings .icon-button, .quick-settings .button {
   padding: 12px;
-}
-
-.quick-settings .popup-menu-content {
-  padding: 8px !important;
 }
 
 .quick-settings-grid {
@@ -1507,7 +1507,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.65) !important;
   border-radius: 20px !important;
   padding: 8px;
-  margin: 8px 18px 0;
+  margin: 8px 14px 0;
 }
 
 .quick-toggle-menu .popup-menu-item {

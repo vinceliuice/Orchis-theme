@@ -1,13 +1,10 @@
 .quick-settings {
   padding: $container_padding * 3 !important;
   border-radius: 20px + $container_padding * 3 !important;
+  margin-top: $container_padding / 2;
 
   .icon-button, .button {
     padding: 12px;
-  }
-
-  .popup-menu-content {
-    padding: $container_padding * 2 !important;
   }
 }
 
@@ -99,7 +96,7 @@
   color: rgba(black, 0.65) !important;
   border-radius: $container_padding * 5 !important;
   padding: $container_padding * 2;
-  margin: $container_padding * 2 $container_padding * 4.5 0;
+  margin: $container_padding * 2 $container_padding * 3.5 0;
 
   .popup-menu-item {
     border-radius: $circular_radius !important;
