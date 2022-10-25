@@ -1,7 +1,12 @@
 // IBus Candidate Popup
 
 .candidate-popup-boxpointer {
-  @extend .popup-menu-boxpointer;
+  -arrow-border-radius: 2px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 12px;
 }
 
 .candidate-popup-content {

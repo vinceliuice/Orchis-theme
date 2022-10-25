@@ -221,10 +221,11 @@ StEntry StLabel.hint-text {
 
 /* Buttons */
 .button {
-  min-height: 24px;
-  padding: 4px 8px;
+  min-height: 20px;
+  padding: 6px 8px;
   border: none;
   border-radius: 8px;
+  text-align: center;
   font-size: 9.75pt;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
@@ -472,35 +473,35 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-.popup-sub-menu StScrollBar StBin#trough {
+.popup-menu .popup-sub-menu StScrollBar StBin#trough {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-.popup-sub-menu StScrollBar StButton#vhandle, .popup-sub-menu StScrollBar StButton#hhandle {
+.popup-menu .popup-sub-menu StScrollBar StButton#vhandle, .popup-menu .popup-sub-menu StScrollBar StButton#hhandle {
   background-color: rgba(0, 0, 0, 0.35);
 }
 
-.popup-sub-menu StScrollBar StButton#vhandle:hover, .popup-sub-menu StScrollBar StButton#hhandle:hover {
+.popup-menu .popup-sub-menu StScrollBar StButton#vhandle:hover, .popup-menu .popup-sub-menu StScrollBar StButton#hhandle:hover {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
-.popup-sub-menu StScrollBar StButton#vhandle:active, .popup-sub-menu StScrollBar StButton#hhandle:active {
+.popup-menu .popup-sub-menu StScrollBar StButton#vhandle:active, .popup-menu .popup-sub-menu StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Popovers/Menus */
-.popup-menu-boxpointer, .candidate-popup-boxpointer {
-  -arrow-border-radius: 18px;
+.popup-menu-boxpointer {
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 8px;
   -arrow-rise: 4px;
   -arrow-box-shadow: none;
+  background: transparent;
 }
 
 .popup-menu {
-  min-width: 15em;
+  min-width: 10em;
   color: rgba(255, 255, 255, 0.9);
   border: none;
   padding: 0;
@@ -508,12 +509,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 18px;
 }
 
-.popup-menu.panel-menu {
-  -boxpointer-gap: 2px;
-  margin-bottom: 1.75em;
-}
-
-.popup-menu-content {
+.popup-menu .popup-menu-content {
   padding: 4px;
   margin: 0 2px 2px;
   background-color: rgba(32, 32, 32, 0.97);
@@ -522,7 +518,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.popup-menu-item {
+.popup-menu .popup-menu-item {
   spacing: 4px;
   padding: 4px 8px;
   color: rgba(255, 255, 255, 0.9) !important;
@@ -532,17 +528,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
 }
 
-.popup-menu-item:ltr {
+.popup-menu .popup-menu-item:ltr {
   padding-right: 8px;
   padding-left: 0;
 }
 
-.popup-menu-item:rtl {
+.popup-menu .popup-menu-item:rtl {
   padding-right: 0;
   padding-left: 8px;
 }
 
-.popup-menu-item:checked {
+.popup-menu .popup-menu-item:checked {
   background-color: rgba(255, 255, 255, 0.95) !important;
   color: rgba(0, 0, 0, 0.75) !important;
   font-weight: normal;
@@ -551,64 +547,64 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu-item:checked:hover, .popup-menu-item:checked:focus, .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item.selected:checked {
   background-color: #e5e5e5 !important;
   color: rgba(0, 0, 0, 0.85) !important;
 }
 
-.popup-menu-item:checked:active {
+.popup-menu .popup-menu-item:checked:active {
   background-color: #dfdfdf !important;
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-menu-item.selected:checked:active {
+.popup-menu .popup-menu-item.selected:checked:active {
   background-color: #e0e0e0 !important;
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-menu-item:checked:insensitive {
+.popup-menu .popup-menu-item:checked:insensitive {
   color: rgba(0, 0, 0, 0.35) !important;
 }
 
-.popup-menu-item:hover, .popup-menu-item:focus, .popup-menu-item.selected {
+.popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:focus, .popup-menu .popup-menu-item.selected {
   background-color: rgba(255, 255, 255, 0.08) !important;
   color: rgba(255, 255, 255, 0.9) !important;
   transition-duration: 0ms;
 }
 
-.popup-menu-item:active {
+.popup-menu .popup-menu-item:active {
   background-color: rgba(255, 255, 255, 0.16) !important;
   color: rgba(255, 255, 255, 0.9) !important;
   transition-duration: 150ms;
 }
 
-.popup-menu-item.selected:active {
+.popup-menu .popup-menu-item.selected:active {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.popup-menu-item:insensitive {
+.popup-menu .popup-menu-item:insensitive {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.popup-inactive-menu-item {
+.popup-menu .popup-inactive-menu-item {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.popup-inactive-menu-item.selected:active {
+.popup-menu .popup-inactive-menu-item.selected:active {
   background-color: #e0e0e0 !important;
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-inactive-menu-item:insensitive {
+.popup-menu .popup-inactive-menu-item:insensitive {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.popup-menu-arrow,
-.popup-menu-icon {
+.popup-menu .popup-menu-arrow,
+.popup-menu .popup-menu-icon {
   icon-size: 16px;
 }
 
-.popup-sub-menu {
+.popup-menu .popup-sub-menu {
   margin: 0;
   color: rgba(0, 0, 0, 0.75) !important;
   background-color: rgba(255, 255, 255, 0.95) !important;
@@ -618,58 +614,63 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: none;
 }
 
-.popup-sub-menu .popup-menu-item {
+.popup-menu .popup-sub-menu .popup-menu-item {
   margin: 0;
   border-radius: 14px;
   color: rgba(0, 0, 0, 0.75) !important;
   background-image: none;
 }
 
-.popup-sub-menu .popup-menu-item:hover, .popup-sub-menu .popup-menu-item:focus, .popup-sub-menu .popup-menu-item.selected {
+.popup-menu .popup-sub-menu .popup-menu-item:hover, .popup-menu .popup-sub-menu .popup-menu-item:focus, .popup-menu .popup-sub-menu .popup-menu-item.selected {
   color: rgba(0, 0, 0, 0.85) !important;
   background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
-.popup-sub-menu .popup-menu-item:active {
+.popup-menu .popup-sub-menu .popup-menu-item:active {
   color: rgba(0, 0, 0, 0.85) !important;
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-.popup-sub-menu .popup-menu-item.selected:active {
+.popup-menu .popup-sub-menu .popup-menu-item.selected:active {
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-sub-menu .popup-menu-item:insensitive {
+.popup-menu .popup-sub-menu .popup-menu-item:insensitive {
   color: rgba(0, 0, 0, 0.35) !important;
 }
 
-.popup-menu-ornament {
+.popup-menu .popup-menu-ornament {
   width: 1.2em;
   text-align: center !important;
 }
 
-.popup-menu-ornament:ltr {
+.popup-menu .popup-menu-ornament:ltr {
   text-align: right;
 }
 
-.popup-menu-ornament:rtl {
+.popup-menu .popup-menu-ornament:rtl {
   text-align: left;
 }
 
-.popup-separator-menu-item {
+.popup-menu .popup-separator-menu-item {
   background: none;
   border: none;
 }
 
-.popup-separator-menu-item .popup-separator-menu-item-separator {
+.popup-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   height: 1px;
   margin: 4px 32px;
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-.popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
+.popup-sub-menu .popup-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   margin: 4px 36px 4px 16px;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.popup-menu.panel-menu {
+  -boxpointer-gap: 2px;
+  margin-bottom: 1.75em;
 }
 
 .background-menu {
@@ -679,11 +680,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .aggregate-menu {
   min-width: 19em;
-}
-
-.aggregate-menu .popup-menu-ornament,
-.aggregate-menu .popup-sub-menu .popup-menu-ornament {
-  width: 0 !important;
 }
 
 .aggregate-menu .popup-menu-icon {
@@ -720,6 +716,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-menu .popup-menu-item > :first-child:rtl {
   padding-right: 8px;
   margin-right: 0;
+}
+
+.app-menu .popup-inactive-menu-item:first-child > StLabel {
+  font-size: 9.75pt;
+  font-weight: 500;
+}
+
+.app-menu .popup-inactive-menu-item:first-child > StLabel:ltr {
+  margin-right: 4px;
+}
+
+.app-menu .popup-inactive-menu-item:first-child > StLabel:rtl {
+  margin-left: 4px;
+}
+
+.app-menu .popup-inactive-menu-item:first-child .popup-separator-menu-item-separator {
+  height: 0;
+  background-color: transparent;
 }
 
 /* Date/Time Menu */
@@ -1295,6 +1309,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 8px;
   icon-size: 24px !important;
+}
+
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 2px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 12px;
 }
 
 .candidate-popup-content {

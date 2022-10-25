@@ -1,10 +1,11 @@
 /* Buttons */
 
 .button {
-  min-height: 24px;
-  padding: $container_padding $container_padding * 2;
+  min-height: 20px;
+  padding: $container_padding + 2px $container_padding * 2;
   border: none;
   border-radius: $buttons_radius;
+  text-align: center;
 
   @include font(button);
   @include button(flat-normal);
