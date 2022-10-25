@@ -2103,8 +2103,12 @@ dialog.background.csd {
     }
 
     > notebook {
-      > stack {
+      &, > stack {
         border-radius: 0 0 $window-radius $window-radius;
+      }
+
+      .inline-toolbar {
+        border-radius: 0 0 $corner-radius $corner-radius;
       }
     }
   }

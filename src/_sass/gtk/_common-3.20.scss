@@ -584,11 +584,33 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
-    padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
+    min-width: $small-size;
+    min-width: $small-size;
+    padding: ($medium-size - 24px) / 2;
+    background-color: $osd;
+    color: on($osd);
 
-    &.image-button, &.circular { padding: ($large-size - 24px) / 2; }
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:hover {
+      background-color: mix(white, $osd, 15%);
+      color: on($osd);
+    }
+
+    &:active {
+      background-color: mix(white, $osd, 25%);
+      color: on($osd);
+    }
 
     &:disabled { opacity: 0; }
+
+    &.image-button, &.circular {
+      padding: ($large-size - 24px) / 2;
+
+      > image { padding: 0; }
+    }
   }
 
   // overlay / OSD style

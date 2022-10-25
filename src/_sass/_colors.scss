@@ -101,6 +101,7 @@ $base:                                  if($variant == 'light', background(a), b
 $base-alt:                              if($variant == 'light', background(b), background(f));
 
 $tooltip:                               if($blackness == 'true' and $variant == 'dark', rgba(#101010, 0.9), rgba(#363636, 0.9));
+$osd:                                   background(e);
 $scrim:                                 rgba(black, 0.6);
 $scrim-alt:                             rgba(black, 0.3);
 $scrim-inverse:                         rgba(white, 0.1);
