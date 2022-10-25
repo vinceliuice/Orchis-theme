@@ -2102,7 +2102,7 @@ dialog.background.csd {
       }
     }
 
-    > notebook {
+    > notebook:not(.frame) {
       &, > stack {
         border-radius: 0 0 $window-radius $window-radius;
       }

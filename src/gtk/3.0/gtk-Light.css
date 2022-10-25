@@ -5887,11 +5887,11 @@ dialog.background.csd > box.vertical.dialog-vbox > stack toolbar.toolbar {
   border-radius: 0 0 18px 18px;
 }
 
-dialog.background.csd > box.vertical.dialog-vbox > notebook, dialog.background.csd > box.vertical.dialog-vbox > notebook > stack {
+dialog.background.csd > box.vertical.dialog-vbox > notebook:not(.frame), dialog.background.csd > box.vertical.dialog-vbox > notebook:not(.frame) > stack {
   border-radius: 0 0 18px 18px;
 }
 
-dialog.background.csd > box.vertical.dialog-vbox > notebook .inline-toolbar {
+dialog.background.csd > box.vertical.dialog-vbox > notebook:not(.frame) .inline-toolbar {
   border-radius: 0 0 12px 12px;
 }
 
