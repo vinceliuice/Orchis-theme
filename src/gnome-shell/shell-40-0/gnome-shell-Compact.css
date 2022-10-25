@@ -3796,6 +3796,12 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(0, 0, 0, 0.85);
 }
 
+.arcmenu-menu-button,
+.arcmenu-button {
+  border-width: 0 !important;
+  border-radius: 9999px !important;
+}
+
 .cosmic-solid-bg {
   background-color: #222222;
 }

@@ -7,7 +7,7 @@
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: $container_padding * 2;
-  -arrow-rise: $container_padding;
+  -arrow-rise: $container_padding / 2;
   -arrow-box-shadow: none; //dreaming. bug #689995
   background: transparent; // needs to reset?
 }
@@ -23,15 +23,15 @@
 
   .popup-menu-content {
     padding: $container_padding;
-    margin: 0 $container_padding / 2 $container_padding / 2;
+    margin: 0 6px 14px;
     background-color: $menu_bg_color;
     border-radius: $popup_radius;
     border: none;
-    box-shadow: 0 3px 8px rgba(black, 0.2);
+    box-shadow: 0 3px 8px -3px rgba(black, 0.2);
   }
-  
+
   $submenu_item_radius: $popup_radius - $container_padding;
-  
+
   // menu items
   .popup-menu-item {
     spacing: $container_padding;
@@ -41,10 +41,10 @@
     border-radius: if($corner-style == 'circular', $circular_radius, $submenu_item_radius);
     background-image: none;
     border: none;
-  
+
     &:ltr { padding-right: $container_padding * 2; padding-left: 0; }
     &:rtl { padding-right: 0; padding-left: $container_padding * 2; }
-  
+
     &:checked {
       background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
       color: rgba(black, 0.75) !important;
@@ -52,57 +52,57 @@
       border-radius: $submenu_item_radius $submenu_item_radius 0 0;
       border: none;
       box-shadow: none;
-  
+
       &:hover, &:focus, &.selected {
         background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5) !important;
         color: rgba(black, 0.85) !important;
       }
-  
+
       &:active {
         background-color: #dfdfdf !important;
         color: rgba(black, 0.75) !important;
       }
-  
+
       &.selected:active {
         background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0) !important;
         color: rgba(black, 0.75) !important;
       }
-  
+
       &:insensitive { color: rgba(black, 0.35) !important; }
     }
-  
+
     &:hover, &:focus, &.selected {
       background-color: $divider_color !important;
       color: $fg_color !important;
       transition-duration: 0ms;
     }
-  
+
     &:active {
       background-color: $track_color !important;
       color: $fg_color !important;
       transition-duration: $longer_duration;
     }
-  
+
     &.selected:active { color: $fg_color !important; }
     &:insensitive { color: $disabled_fg_color !important; }
   }
-  
+
   // all icons and other graphical elements
   .popup-inactive-menu-item {
     color: $fg_color !important;
-  
+
     &.selected:active {
       background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0) !important;
       color: rgba(black, 0.75) !important;
     }
-  
+
     &:insensitive { color: $hint_fg_color !important; }
   }
-  
+
   // symbolic icons in popover
   .popup-menu-arrow,
   .popup-menu-icon { icon-size: 16px; }
-  
+
   // popover submenus
   .popup-sub-menu {
     margin: 0;
@@ -112,50 +112,50 @@
     border: none;
     box-shadow: none;
     background-image: none;
-  
+
     .popup-menu-item {
       margin: 0;
       border-radius: $submenu_item_radius;
       color: rgba(black, 0.75) !important;
       background-image: none;
-  
+
       &:hover, &:focus, &.selected {
         color: rgba(black, 0.85) !important;
         background-color: rgba(black, 0.15) !important;
       }
-  
+
       &:active {
         color: rgba(black, 0.85) !important;
         background-color: rgba(black, 0.2) !important;
       }
-  
+
       &.selected:active { color: rgba(black, 0.75) !important; }
-  
+
       &:insensitive { color: rgba(black, 0.35) !important; }
     }
-  
+
     @extend %scrollbar_on_light;
   }
-  
+
   // container for radio and check boxes
   .popup-menu-ornament {
     width: 1.2em;
     text-align: center !important;
-  
+
     &:ltr { text-align: right; }
     &:rtl { text-align: left; }
   }
-  
+
   // separator
   .popup-separator-menu-item {
     background: none;
     border: none;
-  
+
     .popup-separator-menu-item-separator {
       height: 1px; //not really the whole box
       margin: $container_padding $container_padding * 8;
       background-color: $border_color;
-  
+
       .popup-sub-menu & { //submenu separators
         margin: $container_padding $container_padding * 9 $container_padding $container_padding * 4;
         background-color: rgba(black, 0.10);
@@ -221,9 +221,11 @@
   .popup-inactive-menu-item:first-child {
     // "Open Windows" label
     > StLabel {
-      @include font(body-2);
-      &:ltr { margin-right: $container_margin * 2; }
-      &:rtl { margin-left: $container_margin * 2; }
+      font-weight: bold;
+      font-size: $root-font-size;
+
+      &:ltr { margin-right: 0; }
+      &:rtl { margin-left: 0; }
     }
 
     .popup-separator-menu-item-separator {

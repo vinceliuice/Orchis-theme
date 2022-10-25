@@ -495,7 +495,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 8px;
-  -arrow-rise: 4px;
+  -arrow-rise: 2px;
   -arrow-box-shadow: none;
   background: transparent;
 }
@@ -511,11 +511,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-menu-content {
   padding: 4px;
-  margin: 0 2px 2px;
+  margin: 0 6px 14px;
   background-color: rgba(255, 255, 255, 0.97);
   border-radius: 18px;
   border: none;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.2);
 }
 
 .popup-menu .popup-menu-item {
@@ -719,16 +719,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel {
-  font-size: 9.75pt;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel:ltr {
-  margin-right: 4px;
+  margin-right: 0;
 }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel:rtl {
-  margin-left: 4px;
+  margin-left: 0;
 }
 
 .app-menu .popup-inactive-menu-item:first-child .popup-separator-menu-item-separator {
@@ -1396,7 +1396,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .quick-settings {
   padding: 12px !important;
   border-radius: 32px !important;
-  margin-top: 2px;
+  margin-top: 2px !important;
+  border: none;
 }
 
 .quick-settings .icon-button, .quick-settings .button {
@@ -4345,6 +4346,12 @@ StWidget.focused .app-well-app-running-dot {
 
 .popup-sub-menu .openweather-sunrise-icon, .popup-sub-menu .openweather-sunset-icon, .popup-sub-menu .openweather-build-icon {
   color: rgba(0, 0, 0, 0.85);
+}
+
+.arcmenu-menu-button,
+.arcmenu-button {
+  border-width: 0 !important;
+  border-radius: 9999px !important;
 }
 
 .cosmic-solid-bg {

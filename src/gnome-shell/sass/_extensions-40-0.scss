@@ -340,7 +340,11 @@
 //
 // Arcmenu
 //
-
+.arcmenu-menu-button,
+.arcmenu-button {
+  border-width: 0 !important;
+  border-radius: $circular_radius !important;
+}
 
 //
 // Pop_OS cosmic widget styling
