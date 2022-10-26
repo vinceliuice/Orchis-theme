@@ -4033,7 +4033,13 @@ windowcontrols {
     image {
       background-color: transparent;
       padding: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
     }
+
+    &:hover > image,
+    &:active > image { background-color: transparent; }
   }
 }
 

@@ -4373,6 +4373,13 @@ windowcontrols.start:not(.empty):dir(rtl), windowcontrols.end:not(.empty):dir(lt
 windowcontrols button image {
   background-color: transparent;
   padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+windowcontrols button:hover > image, windowcontrols button:active > image {
+  background-color: transparent;
 }
 
 gridview > child:selected, row:selected, calendar:selected, calendar > grid > label.day-number:selected {
