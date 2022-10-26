@@ -4029,6 +4029,7 @@ windowcontrols {
 
   button {
     @extend %circular-button;
+    @extend %button-flat-simple;
 
     image {
       background-color: transparent;
@@ -4036,10 +4037,14 @@ windowcontrols {
       border: none;
       outline: none;
       box-shadow: none;
+      color: $titlebar-text-secondary;
     }
 
     &:hover > image,
-    &:active > image { background-color: transparent; }
+    &:active > image {
+      background-color: transparent;
+      color: $titlebar-text;
+    }
   }
 }
 
