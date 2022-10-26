@@ -46,6 +46,7 @@
             border-radius: 0;
             padding: 0;
             margin: -8px 0 -8px 0;
+            animation: none;
 
             > revealer.sidebar-revealer {
               padding-left: 12px;
@@ -60,6 +61,7 @@
             &, &:focus, &:hover, &:active {
               background: none;
               box-shadow: none;
+              animation: none;
             }
 
             &, image.sidebar-icon, label.sidebar-label {
