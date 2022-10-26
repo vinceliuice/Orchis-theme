@@ -828,7 +828,6 @@ spinbutton {
     &:disabled { color: $text-disabled; }
 
     entry {
-      // @extend %entry_raised;
       margin: 0;
       border-image: none;
       border-radius: 0;
@@ -2993,10 +2992,10 @@ row {
       background-image: radial-gradient(circle, $overlay-active 10%, transparent 0%);
       background-size: 0% 0%;
     }
+  }
 
-    button.circular {
-      @extend %button-flat-simple;
-    }
+  button.circular {
+    @extend %button-flat-simple;
   }
 
   &:selected {

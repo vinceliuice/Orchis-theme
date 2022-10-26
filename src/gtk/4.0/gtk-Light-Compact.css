@@ -1,3 +1,30 @@
+@keyframes ripple {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.1) 30%, transparent 0%);
+  }
+  to {
+    background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.1) 100%, transparent 0%);
+  }
+}
+
+@keyframes ripple-on-slider {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 0%, transparent 0%);
+  }
+  to {
+    background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 100%, transparent 0%);
+  }
+}
+
+@keyframes ripple-on-headerbar {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center, #1A73E8 30%, transparent 0%);
+  }
+  to {
+    background-image: radial-gradient(circle farthest-corner at center, #1A73E8 100%, transparent 0%);
+  }
+}
+
 /***************
  * Base States *
  ***************/
@@ -257,19 +284,22 @@ entry {
   border-spacing: 4px;
   border-radius: 10px;
   caret-color: currentColor;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 2px transparent;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  outline: 0 solid transparent;
+  outline-offset: 2px;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 spinbutton.vertical:focus-within, spinbutton:focus-within:not(.vertical),
 entry:focus-within {
   background-color: rgba(0, 0, 0, 0.04);
-  box-shadow: inset 0 0 0 2px #1A73E8;
   color: rgba(0, 0, 0, 0.87);
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
+  outline-color: #1A73E8;
+  outline-width: 2px;
+  outline-offset: -2px;
 }
 
 spinbutton.vertical:drop(active), spinbutton:drop(active):not(.vertical),
@@ -360,11 +390,12 @@ entry undershoot.right {
 
 spinbutton.error.vertical, spinbutton.error:not(.vertical),
 entry.error {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 2px transparent;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  outline: 0 solid transparent;
+  outline-offset: 2px;
   background-color: rgba(217, 48, 37, 0.08);
   color: #D93025;
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 spinbutton.error.vertical image, spinbutton.error:not(.vertical) image,
@@ -381,9 +412,11 @@ entry.error selection {
 spinbutton.error.vertical:focus-within, spinbutton.error:focus-within:not(.vertical),
 entry.error:focus-within {
   background-color: rgba(217, 48, 37, 0.08);
-  box-shadow: inset 0 0 0 2px #D93025;
   color: #D93025;
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
+  outline-color: #D93025;
+  outline-width: 2px;
+  outline-offset: -2px;
 }
 
 spinbutton.error.vertical:disabled, spinbutton.error:disabled:not(.vertical),
@@ -404,11 +437,12 @@ entry.error:disabled > label {
 
 spinbutton.success.vertical, spinbutton.success:not(.vertical),
 entry.success {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 2px transparent;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  outline: 0 solid transparent;
+  outline-offset: 2px;
   background-color: rgba(15, 157, 88, 0.08);
   color: #0F9D58;
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 spinbutton.success.vertical image, spinbutton.success:not(.vertical) image,
@@ -425,9 +459,11 @@ entry.success selection {
 spinbutton.success.vertical:focus-within, spinbutton.success:focus-within:not(.vertical),
 entry.success:focus-within {
   background-color: rgba(15, 157, 88, 0.08);
-  box-shadow: inset 0 0 0 2px #0F9D58;
   color: #0F9D58;
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
+  outline-color: #0F9D58;
+  outline-width: 2px;
+  outline-offset: -2px;
 }
 
 spinbutton.success.vertical:disabled, spinbutton.success:disabled:not(.vertical),
@@ -448,11 +484,12 @@ entry.success:disabled > label {
 
 spinbutton.warning.vertical, spinbutton.warning:not(.vertical),
 entry.warning {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 2px transparent;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  outline: 0 solid transparent;
+  outline-offset: 2px;
   background-color: rgba(244, 180, 0, 0.08);
   color: #F4B400;
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 spinbutton.warning.vertical image, spinbutton.warning:not(.vertical) image,
@@ -469,9 +506,11 @@ entry.warning selection {
 spinbutton.warning.vertical:focus-within, spinbutton.warning:focus-within:not(.vertical),
 entry.warning:focus-within {
   background-color: rgba(244, 180, 0, 0.08);
-  box-shadow: inset 0 0 0 2px #F4B400;
   color: #F4B400;
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
+  outline-color: #F4B400;
+  outline-width: 2px;
+  outline-offset: -2px;
 }
 
 spinbutton.warning.vertical:disabled, spinbutton.warning:disabled:not(.vertical),
@@ -545,11 +584,12 @@ treeview entry.flat, treeview entry.flat:focus-within, treeview entry, treeview 
 }
 
 editablelabel > stack > text {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 2px transparent;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  outline: 0 solid transparent;
+  outline-offset: 2px;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 /***********
@@ -581,10 +621,14 @@ infobar.warning > revealer > box button:checked:disabled, popover.background.tou
 }
 
 headerbar popover.background button:not(.suggested-action):not(.destructive-action):not(.flat), button {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 225ms cubic-bezier(0, 0, 0.2, 1);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
   background-color: rgba(0, 0, 0, 0.04);
+  background-image: radial-gradient(circle farthest-corner at center, transparent 0%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000% 1000%;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -597,8 +641,11 @@ headerbar popover.background button:hover:not(.suggested-action):not(.destructiv
 }
 
 headerbar popover.background button:active:not(.suggested-action):not(.destructive-action):not(.flat), button:active {
-  transition: box-shadow 225ms cubic-bezier(0, 0, 0.2, 1), background-color 225ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 100% 100%;
 }
 
 headerbar popover.background button:disabled:not(.suggested-action):not(.destructive-action):not(.flat), button:disabled {
@@ -641,23 +688,25 @@ button:drop(active) {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.nautilus-window tabbar tab > button.flat, .nautilus-window tabbar tab:active > button.flat, .nautilus-window tabbar tab:checked > button.flat, .nautilus-window tabbar tab:selected > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, windowcontrols button, placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, columnview.view > header > button button.circular,
-treeview.view > header > button button.circular, row.activatable button.circular, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, tabbar tab button.image-button,
+.nautilus-window tabbar tab > button.flat, .nautilus-window tabbar tab:active > button.flat, .nautilus-window tabbar tab:checked > button.flat, .nautilus-window tabbar tab:selected > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), windowcontrols button, placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, row button.circular, check,
+radio, scrollbar button, notebook > header > tabs > arrow, popover.menu modelbutton, spinbutton.vertical > button, spinbutton:not(.vertical) > button, tabbar tab button.image-button,
 dnd tab button.image-button, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, filechooser #pathbarbox > stack > box > button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
   background-color: transparent;
+  background-image: radial-gradient(circle farthest-corner at center, transparent 0%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000% 1000%;
   color: rgba(0, 0, 0, 0.6);
 }
 
-.nautilus-window tabbar tab > button.flat:focus, .nautilus-window tabbar tab:active > button.flat:focus, .nautilus-window tabbar tab:checked > button.flat:focus, .nautilus-window tabbar tab:selected > button.flat:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:focus, windowcontrols button:focus, placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, columnview.view > header > button button.circular:focus,
-treeview.view > header > button button.circular:focus, row.activatable button.circular:focus, check:focus,
-radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, tabbar tab button.image-button:focus,
+.nautilus-window tabbar tab > button.flat:focus, .nautilus-window tabbar tab:active > button.flat:focus, .nautilus-window tabbar tab:checked > button.flat:focus, .nautilus-window tabbar tab:selected > button.flat:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:focus, stackswitcher.linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), windowcontrols button:focus, placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, row button.circular:focus, check:focus,
+radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, popover.menu modelbutton:focus, spinbutton.vertical > button:focus, spinbutton:not(.vertical) > button:focus, tabbar tab button.image-button:focus,
 dnd tab button.image-button:focus, splitbutton.flat > button:focus,
 splitbutton.flat > menubutton > button:focus, menubutton.flat > button:focus, filechooser #pathbarbox > stack > box > button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
@@ -666,9 +715,8 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
   color: rgba(0, 0, 0, 0.87);
 }
 
-.nautilus-window tabbar tab > button.flat:hover, .nautilus-window tabbar tab:active > button.flat:hover, .nautilus-window tabbar tab:checked > button.flat:hover, .nautilus-window tabbar tab:selected > button.flat:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:hover, windowcontrols button:hover, placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, columnview.view > header > button button.circular:hover,
-treeview.view > header > button button.circular:hover, row.activatable button.circular:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, tabbar tab button.image-button:hover,
+.nautilus-window tabbar tab > button.flat:hover, .nautilus-window tabbar tab:active > button.flat:hover, .nautilus-window tabbar tab:checked > button.flat:hover, .nautilus-window tabbar tab:selected > button.flat:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:hover, stackswitcher.linked:not(.vertical) > button:hover:not(.suggested-action):not(.destructive-action), windowcontrols button:hover, placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, row button.circular:hover, check:hover,
+radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, popover.menu modelbutton:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, tabbar tab button.image-button:hover,
 dnd tab button.image-button:hover, splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, filechooser #pathbarbox > stack > box > button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
@@ -677,21 +725,22 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
   color: rgba(0, 0, 0, 0.87);
 }
 
-.nautilus-window tabbar tab > button.flat:active, .nautilus-window tabbar tab:active > button.flat:active, .nautilus-window tabbar tab:checked > button.flat:active, .nautilus-window tabbar tab:selected > button.flat:active, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:active, windowcontrols button:active, placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, columnview.view > header > button button.circular:active,
-treeview.view > header > button button.circular:active, row.activatable button.circular:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, tabbar tab button.image-button:active,
+.nautilus-window tabbar tab > button.flat:active, .nautilus-window tabbar tab:active > button.flat:active, .nautilus-window tabbar tab:checked > button.flat:active, .nautilus-window tabbar tab:selected > button.flat:active, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:active, stackswitcher.linked:not(.vertical) > button:active:not(.suggested-action):not(.destructive-action), windowcontrols button:active, placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, row button.circular:active, check:active,
+radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, popover.menu modelbutton:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, tabbar tab button.image-button:active,
 dnd tab button.image-button:active, splitbutton.flat > button:active,
 splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, filechooser #pathbarbox > stack > box > button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 100% 100%;
   color: rgba(0, 0, 0, 0.87);
 }
 
-.nautilus-window tabbar tab > button.flat:disabled, .nautilus-window tabbar tab:active > button.flat:disabled, .nautilus-window tabbar tab:checked > button.flat:disabled, .nautilus-window tabbar tab:selected > button.flat:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:disabled, windowcontrols button:disabled, placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, columnview.view > header > button button.circular:disabled,
-treeview.view > header > button button.circular:disabled, row.activatable button.circular:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, tabbar tab button.image-button:disabled,
+.nautilus-window tabbar tab > button.flat:disabled, .nautilus-window tabbar tab:active > button.flat:disabled, .nautilus-window tabbar tab:checked > button.flat:disabled, .nautilus-window tabbar tab:selected > button.flat:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:disabled, stackswitcher.linked:not(.vertical) > button:disabled:not(.suggested-action):not(.destructive-action), windowcontrols button:disabled, placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, row button.circular:disabled, check:disabled,
+radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, popover.menu modelbutton:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, tabbar tab button.image-button:disabled,
 dnd tab button.image-button:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
@@ -699,8 +748,6 @@ combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.fla
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
-  filter: none;
-  opacity: 1;
 }
 
 tabbar tab button.image-button:checked,
@@ -719,8 +766,6 @@ toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:chec
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
   color: rgba(0, 0, 0, 0.38);
-  filter: none;
-  opacity: 1;
 }
 
 button.text-button {
@@ -849,8 +894,6 @@ button.suggested-action.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
-  filter: none;
-  opacity: 1;
 }
 
 button.suggested-action.flat:checked {
@@ -900,8 +943,6 @@ button.destructive-action.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
-  filter: none;
-  opacity: 1;
 }
 
 button.destructive-action.flat:checked {
@@ -1019,8 +1060,11 @@ list > row button.image-button:not(.flat):hover {
 
 list > row button.image-button:not(.flat):active,
 list > row button.image-button:not(.flat):checked {
-  transition: box-shadow 225ms cubic-bezier(0, 0, 0.2, 1), background-color 225ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 100% 100%;
 }
 
 
@@ -1077,6 +1121,7 @@ spinbutton:not(.vertical) > text {
 }
 
 spinbutton:not(.vertical) > button {
+  margin: 0;
   border: solid 4px transparent;
 }
 
@@ -1243,11 +1288,12 @@ combobox > .linked:not(.vertical) > button:not(:only-child) {
 button.combo:only-child {
   border-radius: 10px;
   font-weight: normal;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 2px transparent;
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  outline: 0 solid transparent;
+  outline-offset: 2px;
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.87);
-  outline: none;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 button.combo:only-child:focus {
@@ -1261,8 +1307,11 @@ button.combo:only-child:hover {
 }
 
 button.combo:only-child:active {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 100% 100%;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -1620,6 +1669,7 @@ headerbar switch {
 
 headerbar.selection-mode {
   transition: background-color 0.1ms 225ms, color 75ms cubic-bezier(0, 0, 0.2, 1);
+  animation: ripple-on-headerbar 225ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
   background-color: #1A73E8;
   color: white;
@@ -2020,17 +2070,6 @@ popover.menu modelbutton {
   color: rgba(0, 0, 0, 0.87);
   font: initial;
   text-shadow: none;
-  box-shadow: none;
-  background: none;
-}
-
-popover.menu modelbutton:hover {
-  transition: none;
-  background-color: alpha(currentColor, 0.08);
-}
-
-popover.menu modelbutton:disabled {
-  color: rgba(0, 0, 0, 0.38);
 }
 
 popover.menu modelbutton arrow.left {
@@ -2894,10 +2933,10 @@ scale > trough > fill:disabled {
 }
 
 scale > trough > slider {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto;
+  background-size: auto, 0% 0%;
   min-height: 32px;
   min-width: 32px;
   margin: -15px;
@@ -2930,9 +2969,11 @@ scale > trough > slider:focus:hover {
 }
 
 scale > trough > slider:active {
-  background-color: alpha(currentColor, 0.12);
-  background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png"));
-  background-size: auto, 0% 0%;
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  animation: ripple-on-slider 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  background-color: alpha(currentColor, 0.08);
+  background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png")), radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: auto, 100% 100%;
 }
 
 scale > marks,
@@ -3375,39 +3416,41 @@ row {
 
 columnview.view > header > button,
 treeview.view > header > button, row.activatable {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
+  box-shadow: inset 0 0 0 9999px transparent;
+  background-image: radial-gradient(circle farthest-corner at center, transparent 30%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000% 1000%;
 }
 
 columnview.view > header > button:focus,
 treeview.view > header > button:focus, row.activatable:focus {
-  box-shadow: none;
-  background-color: alpha(currentColor, 0.05);
-  color: rgba(0, 0, 0, 0.87);
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
 columnview.view > header > button:hover,
 treeview.view > header > button:hover, row.activatable:hover {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms;
-  background-color: alpha(currentColor, 0.08);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
 columnview.view > header > button.has-open-popup,
 treeview.view > header > button.has-open-popup, columnview.view > header > button:active,
 treeview.view > header > button:active, row.activatable.has-open-popup, row.activatable:active {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 30%, transparent 0%);
+  background-size: 100% 100%;
 }
 
-button:hover columnview.view > header > button,
-button:hover treeview.view > header > button, button:active columnview.view > header > button,
-button:active treeview.view > header > button, button:checked columnview.view > header > button,
-button:checked treeview.view > header > button, button:hover row.activatable, button:active row.activatable, button:checked row.activatable {
+button:hover row, button:active row, button:checked row {
   background-color: transparent;
 }
 
-button:checked columnview.view > header > button,
-button:checked treeview.view > header > button, button:checked row.activatable {
+button:checked row {
   color: white;
 }
 
@@ -4462,19 +4505,10 @@ stackswitcher {
 stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
   margin: 0 0;
   border-radius: 9999px;
-  background-color: transparent;
 }
 
 stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 100px;
-}
-
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):focus {
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
-}
-
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):active {
-  box-shadow: inset 0 0 0 9999px alpha(#1A73E8, 0.08);
 }
 
 stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):checked {
@@ -5371,13 +5405,19 @@ button.card:hover {
 }
 
 button.card.keyboard-activating, button.card:active {
-  transition: box-shadow 225ms cubic-bezier(0, 0, 0.2, 1), background-color 225ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 100% 100%;
 }
 
 button.card:checked {
-  transition: box-shadow 225ms cubic-bezier(0, 0, 0.2, 1), background-color 225ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.12);
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
+  animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 100% 100%;
 }
 
 button.card:drop(active) {

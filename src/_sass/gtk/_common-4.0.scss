@@ -358,38 +358,6 @@ entry {
   .linked.vertical > & { @extend %linked-vertical; }
 }
 
-%entry_raised {
-  border-radius: $corner-radius;
-
-  @include entry(raised-normal);
-
-  &:focus-within { @include entry(raised-focus); }
-
-  &:drop(active) { @include entry(raised-hover); }
-
-  &:disabled { @include entry(raised-disabled); }
-
-  // entry error and warning style
-  @each $e_type, $e_color in (error, $error),
-                             (warning, $warning) {
-    &.#{$e_type} {
-      @include entry(raised-normal, $e_color);
-
-      &:focus-within { @include entry(raised-focus, $e_color); }
-
-      &:disabled { @include entry(raised-disabled, $e_color); }
-
-      image {
-        color: on($e_color, secondary);
-
-        &:hover, &:active { color: on($e_color); }
-
-        &:disabled { color: on($e_color, disabled); }
-      }
-    }
-  }
-}
-
 treeview entry {
   &.flat, & {
     background-color: $base;
@@ -805,6 +773,7 @@ spinbutton {
     > button {
       @extend %button-flat-simple;
       @extend %small-button;
+      margin: 0;
 
       // margin: $space-size;
       border: solid $space-size transparent;
@@ -1292,6 +1261,7 @@ headerbar {
     // 0.1ms was a workaround for https://gitlab.gnome.org/GNOME/gtk/issues/698
     // but let's keep it for backwards compatibility.
     transition: background-color 0.1ms $ripple-fade-in-duration, color $duration $ease-out;
+    animation: ripple-on-headerbar $ripple-fade-in-duration $ease-out;
     box-shadow: inset 0 1px highlight($primary);
     background-color: $primary;
     color: on($primary);
@@ -1654,15 +1624,7 @@ popover.menu {
     color: $text;
     font: initial;
     text-shadow: none;
-    box-shadow: none;
-    background: none;
-
-    &:hover {
-      transition: none;
-      background-color: $overlay-hover;
-    }
-
-    &:disabled { color: $text-disabled; }
+    @extend %button-flat-simple;
 
     arrow {
       &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
@@ -2514,10 +2476,12 @@ scale {
   }
 
   > trough > slider {
-    transition: $transition;
+    transition: background-color $duration $ease-out,
+                background-size 0,
+                background-image 0;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto;
+    background-size: auto, 0% 0%;
     min-height: $slider_size;
     min-width: $slider_size;
     margin: $slider_margin;
@@ -2546,9 +2510,14 @@ scale {
     &:active {
       $_url: 'assets/scale-slider#{$asset-suffix}';
 
-      background-color: $overlay-active;
-      background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png'));
-      background-size: auto, 0% 0%;
+      transition: background-color $duration $ease-out,
+                  background-size 0ms,
+                  background-image 0ms;
+      animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
+      background-color: $overlay-hover;
+      background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                        radial-gradient(circle farthest-corner at center, $overlay-active 10%, transparent 0%);
+      background-size: auto, 100% 100%;
     }
   }
 
@@ -2920,38 +2889,50 @@ row {
   background-clip: padding-box;
 
   @at-root %row_activatable, &.activatable {
-    transition: $transition;
+    transition: $transition,
+                background-size $ripple-fade-out-duration $ease-out,
+                background-image $ripple-fade-out-opacity-duration $ease-out;
     outline: none;
+    box-shadow: inset 0 0 0 9999px transparent;
+    background-image: radial-gradient(circle farthest-corner at center, transparent 30%, transparent 0%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1000% 1000%;
 
     &:focus {
-      box-shadow: none;
-      background-color: $overlay-normal;
-      color: $text;
+      box-shadow: inset 0 0 0 9999px $overlay-focus;
     }
 
     &:hover {
       transition: $transition,
-                  box-shadow 0ms;
-      background-color: $overlay-hover;
+                  box-shadow 0ms,
+                  background-size $ripple-fade-out-duration $ease-out,
+                  background-image $ripple-fade-out-opacity-duration $ease-out;
+      box-shadow: inset 0 0 0 9999px $overlay-hover;
     }
 
     &.has-open-popup, // this is for indicathing which row generated a popover see https://bugzilla.gnome.org/show_bug.cgi?id=754411
     &:active {
-      transition: $transition;
-      background-color: $overlay-active;
+      transition: $transition,
+                  background-size 0ms,
+                  background-image 0ms;
+      animation: ripple $ripple-fade-in-duration $ease-out forwards;
+      box-shadow: inset 0 0 0 9999px $overlay-hover;
+      background-image: radial-gradient(circle farthest-corner at center, $overlay-active 30%, transparent 0%);
+      background-size: 100% 100%;
     }
+  }
 
-    button.circular {
-      @extend %button-flat-simple;
-    }
+  button.circular {
+    @extend %button-flat-simple;
+  }
 
-    button:hover &, button:active &, button:checked & {
-      background-color: transparent;
-    }
+  button:hover &, button:active &, button:checked & {
+    background-color: transparent;
+  }
 
-    button:checked & {
-      color: on($primary);
-    }
+  button:checked & {
+    color: on($primary);
   }
 
   &:selected {
@@ -3944,15 +3925,8 @@ colorchooser .popover.osd {
   rubberband, .rubberband { @extend rubberband; }
 }
 
-.scale-popup {
-  // .osd & { @extend %osd; }
-
-  // .osd & button.flat { // FIXME: quick hack, redo properly
-  // }
-  //
-  // button { // +/- buttons on GtkVolumeButton popup
-  // }
-}
+// .scale-popup {
+// }
 
 
 /**********************
@@ -4128,15 +4102,9 @@ stackswitcher {
   &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
     margin: 0 0;
     border-radius: $circular-radius;
-    background-color: transparent;
+    @extend %button-flat-simple;
 
     &.text-button { min-width: 100px; }
-
-    &:focus { box-shadow: inset 0 0 0 2px $overlay-focus; }
-
-    &:active {
-      box-shadow: inset 0 0 0 9999px gtkalpha($primary, 0.08);
-    }
 
     &:checked {
       background-color: $primary;
