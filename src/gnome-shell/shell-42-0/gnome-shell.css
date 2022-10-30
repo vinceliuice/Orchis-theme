@@ -383,8 +383,8 @@ StEntry StLabel.hint-text {
 
 /* Switches */
 .toggle-switch {
-  width: 40px;
-  height: 20px;
+  width: 44px;
+  height: 26px;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
 }

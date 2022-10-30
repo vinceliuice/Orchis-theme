@@ -80,10 +80,8 @@ install() {
     cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"         "$THEME_DIR/gnome-shell/assets/checkbox.svg"
   fi
 
-  if [[ "$theme" != '' ]]; then
-    cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"     "$THEME_DIR/gnome-shell/assets/more-results.svg"
-    cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"        "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
-  fi
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"       "$THEME_DIR/gnome-shell/assets/more-results.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"          "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
 
   cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
