@@ -780,14 +780,12 @@ style "default" {
       file           = "assets/pan-down-alt-disabled.png"
     }
 
-    # LTR
 
     image {
       function       = EXPANDER
       expander_style = COLLAPSED
       state          = NORMAL
       file           = "assets/pan-right-alt.png"
-      direction      = LTR
     }
 
     image {
@@ -795,7 +793,6 @@ style "default" {
       expander_style = COLLAPSED
       state          = PRELIGHT
       file           = "assets/pan-right.png"
-      direction      = LTR
     }
 
     image {
@@ -803,7 +800,6 @@ style "default" {
       expander_style = COLLAPSED
       state          = ACTIVE
       file           = "assets/pan-right.png"
-      direction      = LTR
     }
 
     image {
@@ -811,31 +807,26 @@ style "default" {
       expander_style = COLLAPSED
       state          = INSENSITIVE
       file           = "assets/pan-right-alt-disabled.png"
-      direction      = LTR
     }
 
     image {
       function       = EXPANDER
       expander_style = SEMI_COLLAPSED
       file           = "assets/pan-right-semi.png"
-      direction      = LTR
     }
 
     image {
       function       = EXPANDER
       expander_style = SEMI_EXPANDED
       file           = "assets/pan-right-semi.png"
-      direction      = LTR
     }
 
-    # RTL
 
     image {
       function       = EXPANDER
       expander_style = COLLAPSED
       state          = NORMAL
       file           = "assets/pan-left-alt.png"
-      direction      = RTL
     }
 
     image {
@@ -843,7 +834,6 @@ style "default" {
       expander_style = COLLAPSED
       state          = PRELIGHT
       file           = "assets/pan-left.png"
-      direction      = RTL
     }
 
     image {
@@ -851,7 +841,6 @@ style "default" {
       expander_style = COLLAPSED
       state          = ACTIVE
       file           = "assets/pan-left.png"
-      direction      = RTL
     }
 
     image {
@@ -859,21 +848,18 @@ style "default" {
       expander_style = COLLAPSED
       state          = INSENSITIVE
       file           = "assets/pan-left-alt-disabled.png"
-      direction      = RTL
     }
 
     image {
       function       = EXPANDER
       expander_style = SEMI_COLLAPSED
       file           = "assets/pan-left-semi.png"
-      direction      = RTL
     }
 
     image {
       function       = EXPANDER
       expander_style = SEMI_EXPANDED
       file           = "assets/pan-left-semi.png"
-      direction      = RTL
     }
 
     #############
@@ -1017,7 +1003,6 @@ style "default" {
       file        = "assets/scrollbar-vert-ltr-trough.png"
       border      = {2, 0, 0, 0}
       orientation = VERTICAL
-      direction   = LTR
     }
 
     image {
@@ -1026,7 +1011,6 @@ style "default" {
       file        = "assets/scrollbar-vert-rtl-trough.png"
       border      = {0, 2, 0, 0}
       orientation = VERTICAL
-      direction   = RTL
     }
 
     # Horizontal sliders
@@ -1081,7 +1065,6 @@ style "default" {
       border      = {18, 16, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = LTR
     }
 
     image {
@@ -1092,7 +1075,6 @@ style "default" {
       border      = {18, 16, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = LTR
     }
 
     image {
@@ -1103,7 +1085,6 @@ style "default" {
       border      = {18, 16, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = LTR
     }
 
     image {
@@ -1114,10 +1095,8 @@ style "default" {
       border      = {18, 16, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = LTR
     }
 
-    # RTL
 
     image {
       function    = SLIDER
@@ -1127,7 +1106,6 @@ style "default" {
       border      = {16, 18, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = RTL
     }
 
     image {
@@ -1138,7 +1116,6 @@ style "default" {
       border      = {16, 18, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = RTL
     }
 
     image {
@@ -1149,7 +1126,6 @@ style "default" {
       border      = {16, 18, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = RTL
     }
 
     image {
@@ -1160,7 +1136,6 @@ style "default" {
       border      = {16, 18, 16, 16}
       stretch     = TRUE
       orientation = VERTICAL
-      direction   = RTL
     }
 
     ##########
@@ -1401,7 +1376,6 @@ style "default" {
     # Spins #
     #########
 
-    # Spin-Up LTR
 
     image {
       function        = BOX
@@ -1412,7 +1386,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up-alt.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
     image {
@@ -1424,7 +1397,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
     image {
@@ -1436,7 +1408,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
     image {
@@ -1448,10 +1419,8 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up-alt-disabled.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
-    # Spin-Up RTL
 
     image {
       function        = BOX
@@ -1462,7 +1431,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up-alt.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     image {
@@ -1474,7 +1442,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     image {
@@ -1486,7 +1453,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     image {
@@ -1498,10 +1464,8 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-up-alt-disabled.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
-    # Spin-Down LTR
 
     image {
       function        = BOX
@@ -1512,7 +1476,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down-alt.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
     image {
@@ -1524,7 +1487,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
     image {
@@ -1536,7 +1498,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
     image {
@@ -1548,10 +1509,8 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down-alt-disabled.png"
       overlay_stretch = FALSE
-      direction       = LTR
     }
 
-    # Spin-Down RTL
 
     image {
       function        = BOX
@@ -1562,7 +1521,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down-alt.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     image {
@@ -1574,7 +1532,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     image {
@@ -1586,7 +1543,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     image {
@@ -1598,7 +1554,6 @@ style "default" {
       stretch         = TRUE
       overlay_file    = "assets/pan-down-alt-disabled.png"
       overlay_stretch = FALSE
-      direction       = RTL
     }
 
     ##############
@@ -2064,7 +2019,6 @@ style "combobox_entry" {
   engine "pixmap" {
 
     #############
-    # LTR entry #
     #############
 
     image {
@@ -2074,7 +2028,6 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry.png"
       border    = {16, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2084,7 +2037,6 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry-active.png"
       border    = {16, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2094,11 +2046,9 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry-disabled.png"
       border    = {16, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     #############
-    # RTL entry #
     #############
 
     image {
@@ -2108,7 +2058,6 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry.png"
       border    = {16, 16, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2118,7 +2067,6 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry-active.png"
       border    = {16, 16, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2128,11 +2076,9 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry-disabled.png"
       border    = {16, 16, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
 
     ##############
-    # LTR button #
     ##############
 
     image {
@@ -2142,7 +2088,6 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry.png"
       border    = {0, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2152,7 +2097,6 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry-hover.png"
       border    = {0, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2162,7 +2106,6 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry-active.png"
       border    = {0, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2172,11 +2115,9 @@ style "combobox_entry" {
       file      = "assets/combo-right-entry-disabled.png"
       border    = {0, 16, 16, 16}
       stretch   = TRUE
-      direction = LTR
     }
 
     ##############
-    # RTL button #
     ##############
 
     image {
@@ -2186,7 +2127,6 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry.png"
       border    = {16, 0, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2196,7 +2136,6 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry-hover.png"
       border    = {16, 0, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2206,7 +2145,6 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry-active.png"
       border    = {16, 0, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2216,7 +2154,6 @@ style "combobox_entry" {
       file      = "assets/combo-left-entry-disabled.png"
       border    = {16, 0, 16, 16}
       stretch   = TRUE
-      direction = RTL
     }
   }
 }
@@ -2359,7 +2296,6 @@ style "treeview_header" {
       file      = "assets/treeview-ltr-button.png"
       border    = {0, 2, 0, 2}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2368,7 +2304,6 @@ style "treeview_header" {
       file      = "assets/treeview-ltr-button-hover.png"
       border    = {0, 2, 0, 2}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2377,7 +2312,6 @@ style "treeview_header" {
       file      = "assets/treeview-ltr-button-active.png"
       border    = {0, 2, 0, 2}
       stretch   = TRUE
-      direction = LTR
     }
 
     image {
@@ -2386,7 +2320,6 @@ style "treeview_header" {
       file      = "assets/treeview-rtl-button.png"
       border    = {2, 0, 0, 2}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2395,7 +2328,6 @@ style "treeview_header" {
       file      = "assets/treeview-rtl-button-hover.png"
       border    = {2, 0, 0, 2}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
@@ -2404,7 +2336,6 @@ style "treeview_header" {
       file      = "assets/treeview-rtl-button-active.png"
       border    = {2, 0, 0, 2}
       stretch   = TRUE
-      direction = RTL
     }
 
     image {
