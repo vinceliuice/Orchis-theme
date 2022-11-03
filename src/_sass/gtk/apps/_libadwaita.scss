@@ -37,7 +37,7 @@ avatar {
   &.image { background: none; }
 }
 
-$opaque_button_default_bg: gtkmix($base, $text, 85%);
+$opaque_button_default_bg: mix($base, $text, 85%);
 
 button {
   @at-root %opaque-button {

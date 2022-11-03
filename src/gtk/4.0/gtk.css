@@ -5277,10 +5277,6 @@ window.dialog > .dialog-vbox > box > scrolledwindow > viewport > widget > list.b
   border-radius: 0;
 }
 
-window.aboutdialog stack scrolledwindow.frame >, window.aboutdialog stack scrolledwindow.frame > viewport.view {
-  border-radius: 12px;
-}
-
 avatar {
   border-radius: 9999px;
   font-weight: bold;
@@ -5394,7 +5390,7 @@ splitbutton.suggested-action > button.keyboard-activating:checked, splitbutton.s
 }
 
 button.opaque {
-  background-color: gtkmix(#FFFFFF, rgba(0, 0, 0, 0.87), 85%);
+  background-color: rgba(224, 224, 224, 0.9805);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -5479,7 +5475,7 @@ menubutton.destructive-action {
 }
 
 menubutton.opaque {
-  background-color: gtkmix(#FFFFFF, rgba(0, 0, 0, 0.87), 85%);
+  background-color: rgba(224, 224, 224, 0.9805);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -5614,7 +5610,7 @@ splitbutton.destructive-action {
 }
 
 splitbutton.opaque {
-  background-color: gtkmix(#FFFFFF, rgba(0, 0, 0, 0.87), 85%);
+  background-color: rgba(224, 224, 224, 0.9805);
   color: rgba(0, 0, 0, 0.87);
 }
 

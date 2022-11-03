@@ -3413,8 +3413,10 @@ filechooserbutton:drop(active) {
 // aboutdialog
 window.aboutdialog {
   stack scrolledwindow.frame {
-    &, > .view, > .view > text {
-      border-radius: $corner-radius;
+    &,
+    & > .view,
+    & > .view > text {
+      border-radius: $window-radius - $space-size;
     }
   }
 
