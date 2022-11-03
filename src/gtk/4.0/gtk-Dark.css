@@ -2070,6 +2070,15 @@ popover.menu modelbutton {
   color: white;
   font: initial;
   text-shadow: none;
+  border-spacing: 6px;
+}
+
+popover.menu modelbutton accelerator {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+popover.menu modelbutton accelerator:disabled {
+  color: rgba(255, 255, 255, 0.12);
 }
 
 popover.menu modelbutton arrow.left {
@@ -2700,6 +2709,11 @@ radio:not(:hover):focus {
   box-shadow: inset 0 0 0 9999px transparent;
 }
 
+popover modelbutton.flat check, popover modelbutton.flat radio {
+  margin: 0;
+  padding: 0;
+}
+
 popover modelbutton.flat check, popover modelbutton.flat check:focus, popover modelbutton.flat check:hover, popover modelbutton.flat check:focus:hover, popover modelbutton.flat check:active, popover modelbutton.flat check:disabled, popover modelbutton.flat radio, popover modelbutton.flat radio:focus, popover modelbutton.flat radio:hover, popover modelbutton.flat radio:focus:hover, popover modelbutton.flat radio:active, popover modelbutton.flat radio:disabled {
   transition: none;
   box-shadow: none;
@@ -2711,6 +2725,10 @@ popover modelbutton.flat check:not(:checked):not(:indeterminate):not(:disabled),
   color: rgba(255, 255, 255, 0.7);
 }
 
+popover modelbutton.flat check, popover modelbutton.flat check:hover, popover modelbutton.flat check:disabled, popover modelbutton.flat radio, popover modelbutton.flat radio:hover, popover modelbutton.flat radio:disabled {
+  box-shadow: none;
+}
+
 popover modelbutton.flat check.left:dir(rtl), popover modelbutton.flat radio.left:dir(rtl) {
   margin-left: -12px;
   margin-right: -4px;
@@ -2719,28 +2737,6 @@ popover modelbutton.flat check.left:dir(rtl), popover modelbutton.flat radio.lef
 popover modelbutton.flat check.right:dir(ltr), popover modelbutton.flat radio.right:dir(ltr) {
   margin-left: -4px;
   margin-right: -12px;
-}
-
-popover.menu check, popover.menu radio {
-  transition: none;
-  margin: 0;
-  padding: 0;
-}
-
-popover.menu check:dir(ltr), popover.menu radio:dir(ltr) {
-  margin-right: 8px;
-}
-
-popover.menu check:dir(rtl), popover.menu radio:dir(rtl) {
-  margin-left: 8px;
-}
-
-popover.menu check:not(:checked):not(:indeterminate):not(:disabled), popover.menu radio:not(:checked):not(:indeterminate):not(:disabled) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-popover.menu check, popover.menu check:hover, popover.menu check:disabled, popover.menu radio, popover.menu radio:hover, popover.menu radio:disabled {
-  box-shadow: none;
 }
 
 

@@ -1624,7 +1624,16 @@ popover.menu {
     color: $text;
     font: initial;
     text-shadow: none;
+    border-spacing: $space-size;
     @extend %button-flat-simple;
+
+    accelerator {
+      color: $text-disabled;
+
+      &:disabled {
+        color: $divider;
+      }
+    }
 
     arrow {
       &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
@@ -2248,6 +2257,9 @@ radio {
   &:not(:hover):focus { box-shadow: inset 0 0 0 9999px transparent; }
 
   popover modelbutton.flat & {
+    margin: 0; // this is a workaround for a menu check/radio size allocation issue
+    padding: 0;
+
     &, &:focus, &:hover, &:focus:hover, &:active, &:disabled {
       transition: none; // FIXME: this is a workaround for a popover check/radio long transition issue
       box-shadow: none;
@@ -2257,6 +2269,10 @@ radio {
 
     &:not(:checked):not(:indeterminate):not(:disabled) { color: $text-secondary; }
 
+    &, &:hover, &:disabled {
+      box-shadow: none;
+    }
+
     &.left:dir(rtl) {
       margin-left: -12px;
       margin-right: -4px;
@@ -2265,23 +2281,6 @@ radio {
     &.right:dir(ltr) {
       margin-left: -4px;
       margin-right: -12px;
-    }
-  }
-
-  popover.menu & {
-    transition: none;
-    margin: 0; // this is a workaround for a menu check/radio size allocation issue
-    padding: 0;
-
-    &:dir(ltr) { margin-right: 8px; }
-
-    &:dir(rtl) { margin-left: 8px; }
-
-    &:not(:checked):not(:indeterminate):not(:disabled) { color: $text-secondary; }
-
-    &, &:hover, &:disabled {
-      box-shadow: none;
-      // color: inherit;
     }
   }
 }
