@@ -3936,8 +3936,19 @@ colorchooser .popover.osd {
 window {
   outline: none;
   transition: $transition-shadow;
-  border-radius: $window-radius;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+
+  &.csd {
+    border-radius: $window-radius;
+
+    &.maximized,
+    &.fullscreen,
+    &.tiled,
+    &.tiled-top,
+    &.tiled-right,
+    &.tiled-bottom,
+    &.tiled-left { border-radius: 0; }
+  }
 
   @if $variant == 'light' and $topbar == 'dark' {
     &.background {
@@ -3958,16 +3969,11 @@ window {
     box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
   }
 
-  &.popup {
-    border-radius: $menu-radius;
-    box-shadow: $shadow-z4;
+  &.ssd {
+    box-shadow: none; // just doing borders, wm draws actual shadows
   }
 
-  &.dialog.message {
-    border-radius: $window-radius;
-  }
-
-  .solid-csd & {
+  &.solid-csd {
     margin: 0;
     padding: 2px;
     border-radius: 0;
@@ -3976,14 +3982,6 @@ window {
 
     &:backdrop { background-color: $titlebar-backdrop; }
   }
-
-  &.maximized,
-  &.fullscreen,
-  &.tiled,
-  &.tiled-top,
-  &.tiled-right,
-  &.tiled-bottom,
-  &.tiled-left { border-radius: 0; }
 }
 
 // Window button
