@@ -493,7 +493,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu-item.selected:checked {
+.popup-menu-item:checked.selected {
   background-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.85);
 }
@@ -503,7 +503,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.popup-menu-item.selected:checked:active {
+.popup-menu-item:checked.selected:active {
   background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
@@ -1948,12 +1948,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
-#panel .panel-button.clock-display:hover {
+#panel .panel-button:hover.clock-display {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button.clock-display:hover .clock {
+#panel .panel-button:hover.clock-display .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.15);
 }
 
@@ -1962,12 +1962,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
-#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:focus.clock-display .clock, #panel .panel-button:checked.clock-display .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
@@ -1997,7 +1997,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel #panelActivities.panel-button {
+#panel .panel-button#panelActivities {
   background-image: url("assets/activities-small.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -2007,15 +2007,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-#panel #panelActivities.panel-button > * {
+#panel .panel-button#panelActivities > * {
   width: 28px;
 }
 
-#panel #panelActivities.panel-button:hover {
+#panel .panel-button#panelActivities:hover {
   background-image: url("assets/activities-active-small.svg");
 }
 
-#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
+#panel .panel-button#panelActivities:hover, #panel .panel-button#panelActivities:active, #panel .panel-button#panelActivities:overview, #panel .panel-button#panelActivities:focus, #panel .panel-button#panelActivities:checked {
   color: transparent;
   box-shadow: none;
 }
@@ -3699,6 +3699,54 @@ StWidget.focused .app-well-app-running-dot {
   height: auto;
   border-right-width: 1px;
   margin: 32px 0;
+}
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel .dash-background {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.dashtopanelMainPanel .show-apps .overview-icon {
+  margin: 0 !important;
+  border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel .panel-button, .dashtopanelMainPanel .panel-button.clock-display .clock {
+  border-radius: 7px !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
+  border-radius: 5px !important;
+}
+
+.popup-menu.panel-menu .popup-menu-content, .popup-menu.panel-menu.quick-settings .popup-menu-content {
+  margin-bottom: 2px !important;
+}
+
+.dashtopanelSecondaryMenu {
+  border-radius: 12px !important;
+}
+
+#preview-menu {
+  margin: 4px !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+}
+
+#dashtopanelPreviewScrollview {
+  padding: 12px 0 !important;
+  border-radius: 12px !important;
 }
 
 .openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
