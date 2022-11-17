@@ -37,24 +37,28 @@
                          (bottom, top),
                          (left, right),
                          (right, left) {
+    &.#{$_pos} #dash .dash-background {
+      border-radius: $dash_border_radius !important;
+    }
+
     &.#{$_pos}.straight-corner,
     &.#{$_pos}.shrink.straight-corner,
     &.#{$_pos}.extended,
     &.#{$_pos}.shrink.extended {
-      &, #dash {
+      #dash {
         margin: 0 !important;
         margin-top: 0 !important;
         padding: 0 !important;
-      }
 
-      .dash-background {
-        margin: 0 !important;
-        margin-bottom: 0 !important;
-        border-radius: 0;
-      }
+        .dash-background {
+          margin: 0 !important;
+          margin-bottom: 0 !important;
+          border-radius: 0 !important;
+        }
 
-      .dash-item-container .app-well-app, .show-apps {
-        margin: 0 !important;
+        .dash-item-container .app-well-app, .show-apps {
+          margin: 0 !important;
+        }
       }
     }
   }
@@ -62,7 +66,7 @@
   &.extended,
   &.straight-corner {
     .dash-background {
-      border-radius: 0;
+      border-radius: 0 !important;
     }
   }
 

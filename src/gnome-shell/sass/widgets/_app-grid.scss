@@ -3,7 +3,7 @@
 %icon_tile {
   color: $inverse_fg_color;
   border-radius: $buttons_radius * 1.5;
-  padding: 6px;
+  padding: $container_padding;
   border: none;
   transition-duration: $longer_duration;
   text-align: center;
@@ -28,7 +28,7 @@
 .show-apps,
 .app-well-app,
 .grid-search-result {
-  & .overview-icon {
+  .overview-icon {
     @extend %icon_tile;
   }
 
@@ -52,7 +52,7 @@
     padding: 10px 8px 5px 8px;
 
     > StBoxLayout {
-      spacing: 6px;
+      spacing: $container_padding;
     }
   }
 }
@@ -79,17 +79,17 @@
   background-color: rgba($system_bg_color, 0.95);
   spacing: 6px;
 
-  & .folder-name-container {
+  .folder-name-container {
     padding: 24px 36px 0;
     spacing: 12px;
 
-    & .folder-name-label,
-    & .folder-name-entry {
+    .folder-name-label,
+    .folder-name-entry {
       font-size: 18pt;
       font-weight: 800;
     }
 
-    & .folder-name-entry {
+    .folder-name-entry {
       min-height: 28px;
       padding: $container_padding;
       border: none;
@@ -117,9 +117,9 @@
     }
 
     /* FIXME: this is to keep the label in sync with the entry */
-    & .folder-name-label { padding: 5px 7px; color: $inverse_secondary_fg_color; }
+    .folder-name-label { padding: 5px 7px; color: $inverse_secondary_fg_color; }
 
-    & .edit-folder-button {
+    .edit-folder-button {
       background-color: $inverse_divider_color;
       color: $inverse_secondary_fg_color;
       border: none;
@@ -128,14 +128,14 @@
       padding: $container_padding;
       border-radius: if($corner-style == 'circular', $circular_radius, $buttons_radius);
 
-      & > StIcon { icon-size: 16px }
+      > StIcon { icon-size: 16px }
 
       &:hover { background-color: $inverse_divider_color; }
       &:checked, &:active { background-color: $inverse_track_color; }
     }
   }
 
-  & .icon-grid {
+  .icon-grid {
     row-spacing: 12px;
     column-spacing: 30px;
     page-padding-top: 0;
@@ -144,7 +144,7 @@
     page-padding-right: 0;
   }
 
-  & .page-indicators {
+  .page-indicators {
     margin-bottom: 18px;
   }
 }

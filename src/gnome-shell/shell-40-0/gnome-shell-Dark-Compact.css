@@ -2267,7 +2267,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Dash */
 #dash {
   margin-top: 8px;
-  padding: 0 2px;
+  padding: 0;
 }
 
 #dash .placeholder {
@@ -2281,25 +2281,43 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 32px;
 }
 
-#dash .overview-icon {
-  padding: 5px;
-  border-radius: 9999px;
+#dash .app-well-app-running-dot {
+  margin-bottom: 10px;
 }
 
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 16px;
-  padding: 12px 10px;
+  margin-bottom: 8px;
+  padding: 8px;
+  spacing: 4px;
   border-radius: 9999px;
 }
 
-.dash-item-container .app-well-app, .show-apps {
-  padding: 10px 2px 26px;
+.dash-item-container > * {
+  margin: 0 2px;
+}
+
+.dash-item-container:ltr:first-child {
+  margin-left: 0;
+}
+
+.dash-item-container:rtl:first-child {
+  margin-right: 0;
+}
+
+.dash-item-container .show-apps, .dash-item-container .app-well-app {
+  padding-bottom: 8px;
+}
+
+.dash-item-container .show-apps .overview-icon, .dash-item-container .app-well-app .overview-icon {
+  padding: 4px;
+  border-radius: 9999px;
 }
 
 .dash-separator {
   width: 1px;
-  margin: 0 7px 16px;
+  margin: 0 2px;
+  margin-bottom: 8px;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -2321,7 +2339,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app .overview-icon, .search-provider-icon, .list-search-result {
   color: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
-  padding: 6px;
+  padding: 4px;
   border: none;
   transition-duration: 150ms;
   text-align: center;
@@ -2376,7 +2394,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout,
 .show-apps .overview-icon.overview-icon-with-label > StBoxLayout,
 .app-well-app .overview-icon.overview-icon-with-label > StBoxLayout {
-  spacing: 6px;
+  spacing: 4px;
 }
 
 /* App Folders */
@@ -2407,7 +2425,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   /* FIXME: this is to keep the label in sync with the entry */
 }
 
-.app-folder-dialog .folder-name-container .folder-name-label, .app-folder-dialog .folder-name-container .folder-name-entry {
+.app-folder-dialog .folder-name-container .folder-name-label,
+.app-folder-dialog .folder-name-container .folder-name-entry {
   font-size: 18pt;
   font-weight: 800;
 }
@@ -3500,72 +3519,88 @@ StWidget.focused .app-well-app-running-dot {
   text-align: center;
 }
 
-#dashtodockContainer.top.straight-corner, #dashtodockContainer.top.straight-corner #dash, #dashtodockContainer.top.shrink.straight-corner, #dashtodockContainer.top.shrink.straight-corner #dash, #dashtodockContainer.top.extended, #dashtodockContainer.top.extended #dash, #dashtodockContainer.top.shrink.extended, #dashtodockContainer.top.shrink.extended #dash {
+#dashtodockContainer.top #dash .dash-background {
+  border-radius: 9999px !important;
+}
+
+#dashtodockContainer.top.straight-corner #dash, #dashtodockContainer.top.shrink.straight-corner #dash, #dashtodockContainer.top.extended #dash, #dashtodockContainer.top.shrink.extended #dash {
   margin: 0 !important;
   margin-top: 0 !important;
   padding: 0 !important;
 }
 
-#dashtodockContainer.top.straight-corner .dash-background, #dashtodockContainer.top.shrink.straight-corner .dash-background, #dashtodockContainer.top.extended .dash-background, #dashtodockContainer.top.shrink.extended .dash-background {
+#dashtodockContainer.top.straight-corner #dash .dash-background, #dashtodockContainer.top.shrink.straight-corner #dash .dash-background, #dashtodockContainer.top.extended #dash .dash-background, #dashtodockContainer.top.shrink.extended #dash .dash-background {
   margin: 0 !important;
   margin-bottom: 0 !important;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
-#dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.top.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.straight-corner .show-apps, #dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.extended .show-apps {
+#dashtodockContainer.top.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner #dash .show-apps, #dashtodockContainer.top.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.straight-corner #dash .show-apps, #dashtodockContainer.top.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.top.extended #dash .show-apps, #dashtodockContainer.top.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.extended #dash .show-apps {
   margin: 0 !important;
 }
 
-#dashtodockContainer.bottom.straight-corner, #dashtodockContainer.bottom.straight-corner #dash, #dashtodockContainer.bottom.shrink.straight-corner, #dashtodockContainer.bottom.shrink.straight-corner #dash, #dashtodockContainer.bottom.extended, #dashtodockContainer.bottom.extended #dash, #dashtodockContainer.bottom.shrink.extended, #dashtodockContainer.bottom.shrink.extended #dash {
+#dashtodockContainer.bottom #dash .dash-background {
+  border-radius: 9999px !important;
+}
+
+#dashtodockContainer.bottom.straight-corner #dash, #dashtodockContainer.bottom.shrink.straight-corner #dash, #dashtodockContainer.bottom.extended #dash, #dashtodockContainer.bottom.shrink.extended #dash {
   margin: 0 !important;
   margin-top: 0 !important;
   padding: 0 !important;
 }
 
-#dashtodockContainer.bottom.straight-corner .dash-background, #dashtodockContainer.bottom.shrink.straight-corner .dash-background, #dashtodockContainer.bottom.extended .dash-background, #dashtodockContainer.bottom.shrink.extended .dash-background {
+#dashtodockContainer.bottom.straight-corner #dash .dash-background, #dashtodockContainer.bottom.shrink.straight-corner #dash .dash-background, #dashtodockContainer.bottom.extended #dash .dash-background, #dashtodockContainer.bottom.shrink.extended #dash .dash-background {
   margin: 0 !important;
   margin-bottom: 0 !important;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
-#dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps, #dashtodockContainer.bottom.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.extended .show-apps {
+#dashtodockContainer.bottom.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner #dash .show-apps, #dashtodockContainer.bottom.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.straight-corner #dash .show-apps, #dashtodockContainer.bottom.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended #dash .show-apps, #dashtodockContainer.bottom.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.extended #dash .show-apps {
   margin: 0 !important;
 }
 
-#dashtodockContainer.left.straight-corner, #dashtodockContainer.left.straight-corner #dash, #dashtodockContainer.left.shrink.straight-corner, #dashtodockContainer.left.shrink.straight-corner #dash, #dashtodockContainer.left.extended, #dashtodockContainer.left.extended #dash, #dashtodockContainer.left.shrink.extended, #dashtodockContainer.left.shrink.extended #dash {
+#dashtodockContainer.left #dash .dash-background {
+  border-radius: 9999px !important;
+}
+
+#dashtodockContainer.left.straight-corner #dash, #dashtodockContainer.left.shrink.straight-corner #dash, #dashtodockContainer.left.extended #dash, #dashtodockContainer.left.shrink.extended #dash {
   margin: 0 !important;
   margin-top: 0 !important;
   padding: 0 !important;
 }
 
-#dashtodockContainer.left.straight-corner .dash-background, #dashtodockContainer.left.shrink.straight-corner .dash-background, #dashtodockContainer.left.extended .dash-background, #dashtodockContainer.left.shrink.extended .dash-background {
+#dashtodockContainer.left.straight-corner #dash .dash-background, #dashtodockContainer.left.shrink.straight-corner #dash .dash-background, #dashtodockContainer.left.extended #dash .dash-background, #dashtodockContainer.left.shrink.extended #dash .dash-background {
   margin: 0 !important;
   margin-bottom: 0 !important;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
-#dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.left.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.straight-corner .show-apps, #dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended .show-apps {
+#dashtodockContainer.left.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner #dash .show-apps, #dashtodockContainer.left.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.straight-corner #dash .show-apps, #dashtodockContainer.left.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.left.extended #dash .show-apps, #dashtodockContainer.left.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended #dash .show-apps {
   margin: 0 !important;
 }
 
-#dashtodockContainer.right.straight-corner, #dashtodockContainer.right.straight-corner #dash, #dashtodockContainer.right.shrink.straight-corner, #dashtodockContainer.right.shrink.straight-corner #dash, #dashtodockContainer.right.extended, #dashtodockContainer.right.extended #dash, #dashtodockContainer.right.shrink.extended, #dashtodockContainer.right.shrink.extended #dash {
+#dashtodockContainer.right #dash .dash-background {
+  border-radius: 9999px !important;
+}
+
+#dashtodockContainer.right.straight-corner #dash, #dashtodockContainer.right.shrink.straight-corner #dash, #dashtodockContainer.right.extended #dash, #dashtodockContainer.right.shrink.extended #dash {
   margin: 0 !important;
   margin-top: 0 !important;
   padding: 0 !important;
 }
 
-#dashtodockContainer.right.straight-corner .dash-background, #dashtodockContainer.right.shrink.straight-corner .dash-background, #dashtodockContainer.right.extended .dash-background, #dashtodockContainer.right.shrink.extended .dash-background {
+#dashtodockContainer.right.straight-corner #dash .dash-background, #dashtodockContainer.right.shrink.straight-corner #dash .dash-background, #dashtodockContainer.right.extended #dash .dash-background, #dashtodockContainer.right.shrink.extended #dash .dash-background {
   margin: 0 !important;
   margin-bottom: 0 !important;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
-#dashtodockContainer.right.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .show-apps, #dashtodockContainer.right.shrink.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.straight-corner .show-apps, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended .show-apps {
+#dashtodockContainer.right.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner #dash .show-apps, #dashtodockContainer.right.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.straight-corner #dash .show-apps, #dashtodockContainer.right.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.right.extended #dash .show-apps, #dashtodockContainer.right.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended #dash .show-apps {
   margin: 0 !important;
 }
 
 #dashtodockContainer.extended .dash-background, #dashtodockContainer.straight-corner .dash-background {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 #dashtodockContainer.shrink .dash-background {
@@ -3602,15 +3637,15 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app {
-  padding: 2px 10px !important;
+  padding: 2px 8px !important;
 }
 
 #dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.straight-corner .show-apps {
-  padding: 2px 10px 20px !important;
+  padding: 2px 8px 16px !important;
 }
 
 #dashtodockContainer.top .dash-background, #dashtodockContainer.bottom .dash-background {
-  padding: 10px 8px !important;
+  padding: 8px 6px !important;
 }
 
 #dashtodockContainer.top.shrink .dash-background, #dashtodockContainer.bottom.shrink .dash-background {
@@ -3619,15 +3654,15 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer.top.shrink .dash-item-container .app-well-app, #dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink .show-apps {
   margin: 0 !important;
-  padding: 0 1px 16px !important;
+  padding: 0 1px 8px !important;
 }
 
 #dashtodockContainer.top.extended .dash-separator, #dashtodockContainer.top.straight-corner .dash-separator, #dashtodockContainer.bottom.extended .dash-separator, #dashtodockContainer.bottom.straight-corner .dash-separator {
-  margin: 0 7px !important;
+  margin: 0 6px !important;
 }
 
 #dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps {
-  padding: 10px 2px !important;
+  padding: 8px 2px !important;
 }
 
 #dashtodockContainer #dash .dash-background {
