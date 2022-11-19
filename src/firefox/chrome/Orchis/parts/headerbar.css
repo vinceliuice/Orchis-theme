@@ -10,13 +10,13 @@
 
 /* Headerbar CSD colors */
 :root[tabsintitlebar] #nav-bar {
-	background: var(--gnome-headerbar-background) !important;
+  background-color: var(--toolbar-bgcolor);
+  background-image: var(--toolbar-bgimage);
 	border: none !important;
-	border-bottom: 1px solid var(--gnome-headerbar-border-color) !important;
+	border-bottom: 0 solid var(--gnome-headerbar-border-color) !important;
 	box-shadow: none !important;
 }
 :root[tabsintitlebar] #nav-bar:-moz-window-inactive {
-	background: var(--gnome-inactive-headerbar-background) !important;
-	border-bottom: 1px solid var(--gnome-inactive-headerbar-border-color) !important;
+	border-bottom: 0 solid var(--gnome-inactive-headerbar-border-color) !important;
 	box-shadow: none !important;
 }
