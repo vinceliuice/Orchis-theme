@@ -78,7 +78,7 @@
 .quick-slider {
   padding: 0 $container_padding;
 
-  & > StBoxLayout { spacing: $container_padding; }
+  > StBoxLayout { spacing: $container_padding; }
 
   .slider-bin {
     &:focus { @include button(focus); }

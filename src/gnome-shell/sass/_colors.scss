@@ -45,6 +45,7 @@ $disabled_secondary_fg_color:          if($variant == 'light', rgba($black, 0.26
 $track_color:                          if($variant == 'light', rgba($black, 0.2), rgba($white, 0.16));
 $visit_color:                          if($variant == 'light', rgba($black, 0.16), rgba($white, 0.1));
 $divider_color:                        if($variant == 'light', rgba($black, 0.12), rgba($white, 0.08));
+$fill_color:                           if($variant == 'light', rgba($black, 0.06), rgba($white, 0.05));
 
 $titlebar_fg_color:                    if($panel == 'light', rgba($black, 0.87), $white);
 $titlebar_secondary_fg_color:          if($panel == 'light', rgba($black, 0.54), rgba($white, 0.7));

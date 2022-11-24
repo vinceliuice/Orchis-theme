@@ -37,24 +37,28 @@
                          (bottom, top),
                          (left, right),
                          (right, left) {
+    &.#{$_pos} #dash .dash-background {
+      border-radius: $dash_border_radius !important;
+    }
+
     &.#{$_pos}.straight-corner,
     &.#{$_pos}.shrink.straight-corner,
     &.#{$_pos}.extended,
     &.#{$_pos}.shrink.extended {
-      &, #dash {
+      #dash {
         margin: 0 !important;
         margin-top: 0 !important;
         padding: 0 !important;
-      }
 
-      .dash-background {
-        margin: 0 !important;
-        margin-bottom: 0 !important;
-        border-radius: 0;
-      }
+        .dash-background {
+          margin: 0 !important;
+          margin-bottom: 0 !important;
+          border-radius: 0 !important;
+        }
 
-      .dash-item-container .app-well-app, .show-apps {
-        margin: 0 !important;
+        .dash-item-container .app-well-app, .show-apps {
+          margin: 0 !important;
+        }
       }
     }
   }
@@ -62,7 +66,7 @@
   &.extended,
   &.straight-corner {
     .dash-background {
-      border-radius: 0;
+      border-radius: 0 !important;
     }
   }
 
@@ -239,6 +243,70 @@
   height: auto;
   border-right-width: 1px;
   margin: 32px 0;
+}
+
+//
+// Dash to Panel
+//
+
+$dash_to_panel_item_radius: 5px;
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  .dash-background {
+    background-color: $dash_background_color;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .show-apps .overview-icon  {
+    margin: 0 !important;
+    border-radius: $dash_to_panel_item_radius !important;
+  }
+
+  .panel-button {
+    &, &.clock-display .clock {
+      border-radius: $dash_to_panel_item_radius + $container_padding / 2 !important;
+      margin: 0 !important;
+    }
+  }
+
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
+    border-radius: $dash_to_panel_item_radius !important;
+  }
+}
+
+.popup-menu.panel-menu, .popup-menu.panel-menu.quick-settings {
+  .popup-menu-content {
+    margin-bottom: $container_padding / 2 !important;
+  }
+}
+
+$dash_to_panel_menu_radius: 12px;
+
+.dashtopanelSecondaryMenu {
+	border-radius: $dash_to_panel_menu_radius !important;
+}
+
+#preview-menu {
+  margin: $container_padding !important;
+  box-shadow: 0 3px 8px rgba(black, 0.2) !important;
+  border-radius: $dash_to_panel_menu_radius !important;
+  padding: 0 !important;
+
+  // .preview-header-box {
+  //   border-radius: $dash_to_panel_item_radius !important;
+  // }
+}
+
+#dashtopanelPreviewScrollview {
+  padding: $dash_to_panel_menu_radius 0 !important;
+  border-radius: $dash_to_panel_menu_radius !important;
 }
 
 //

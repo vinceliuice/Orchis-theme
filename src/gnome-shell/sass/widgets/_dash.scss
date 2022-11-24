@@ -2,15 +2,15 @@
 
 $dash_background_color: rgba(white, 0.2);
 $dash_placeholder_size: 32px;
-$dash_padding: 10px;
+$dash_padding: $container_padding * 2;
 $dash_spacing: 2px;
-$dash_bottom_margin: 16px;
+$dash_bottom_margin: $dash_padding;
 $dash_border_radius: if($corner-style == 'circular', $circular_radius, $buttons_radius + $dash_padding + $dash_spacing);
 
 #dash {
   // font-size: 1em;
-  margin-top: $container_padding * 2;
-  padding: 0 $dash_spacing;
+  margin-top: $dash_padding;
+  padding: 0;
 
   .placeholder {
     background-image: none;
@@ -23,27 +23,42 @@ $dash_border_radius: if($corner-style == 'circular', $circular_radius, $buttons_
     height: $dash_placeholder_size;
   }
 
-  .overview-icon {
-    padding: $dash_padding / 2;
-    border-radius: if($corner-style == 'circular', $circular_radius, $buttons_radius);
+  // Running app indicator (also shown in app grid)
+  .app-well-app-running-dot {
+    margin-bottom: $dash_padding + $container_padding / 2; // hardcoded
   }
 }
 
 .dash-background {
   background-color: $dash_background_color;
   margin-bottom: $dash_bottom_margin;
-  padding: $dash_padding + $dash_spacing $dash_padding;
+  padding: $dash_padding;
+  spacing: $container_padding;
   border-radius: $dash_border_radius;
 }
 
-// Dash Items
-.dash-item-container .app-well-app, .show-apps {
-  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+// items on the dash
+.dash-item-container {
+  > * { margin: 0 $dash_spacing; }
+
+  &:ltr:first-child { margin-left: 0; }
+
+  &:rtl:first-child { margin-right: 0; }
+
+  .show-apps, .app-well-app {
+    padding-bottom: $dash_padding;
+
+    .overview-icon {
+      padding: $container_padding;
+      border-radius: if($corner-style == 'circular', $circular_radius, $buttons_radius);
+    }
+  }
 }
 
 .dash-separator {
   width: 1px;
-  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
+  margin: 0 $container_margin;
+  margin-bottom: $dash_padding;
   background-color: rgba(white, 0.15);
 }
 
