@@ -17,7 +17,7 @@ OPTIONS:
 
   -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
 
-  --round                 Change button's round corner border-radius [Input the px value you want] (Suggest: 2px < value < 16px)
+  --round                 Change theme round corner border-radius [Input the px value you want] (Suggested: 2px < value < 16px)
 
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes
