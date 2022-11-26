@@ -1596,7 +1596,11 @@ menubar,
 
 // Needed to make the border-radius of menus work
 // otherwise the background bleeds out of the menu edges
-.background.popup { background-color: transparent; }
+.background.popup {
+  background-color: transparent;
+  background-image: none;
+  border-radius: $menu-radius + 1px;
+}
 
 menu,
 .menu,

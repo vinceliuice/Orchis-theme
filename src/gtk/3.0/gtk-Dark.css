@@ -1823,6 +1823,8 @@ menubar > menuitem label:disabled,
 
 .background.popup {
   background-color: transparent;
+  background-image: none;
+  border-radius: 12px;
 }
 
 menu,
