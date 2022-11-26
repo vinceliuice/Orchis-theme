@@ -284,11 +284,17 @@
 
 #NautilusQueryEditor { // search entry
   border-radius: $circular-radius;
+  color: $titlebar-text-secondary;
 
-  > menubutton > button {
-    min-width: 16px;
-    min-height: 16px;
+  &:focus-within { color: $titlebar-text; }
+
+  &:disabled { color: $titlebar-text-secondary-disabled; }
+
+  > menubutton > button.image-button {
+    min-width: $menuitem-size;
+    min-height: $menuitem-size;
     margin: 0;
+    padding: 0;
   }
 
   > text { margin: 0; }
@@ -334,11 +340,20 @@
 //
 // Gnome Control Center
 //
+
 window.dialog {
   > box > stack > box > box {
     > notebook.frame {
       border-width: 0 0 0 1px;
       border-radius: 0;
+    }
+  }
+}
+
+window.background {
+  > contents > leaflet {
+    stack.background {
+      background-color: transparent;
     }
   }
 }

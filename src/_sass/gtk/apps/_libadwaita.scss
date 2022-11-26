@@ -714,11 +714,8 @@ tabbox:drop(active) {
 //
 
 leaflet {
-  outline-color: highlight($titlebar);
-  outline-width: 1px;
-  outline-style: solid;
-  outline-offset: -1px;
   border-radius: $window-radius;
+  box-shadow: inset 0 1px highlight($titlebar);
 
   headerbar {
     border-radius: 0;
