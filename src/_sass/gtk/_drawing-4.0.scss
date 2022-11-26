@@ -135,8 +135,6 @@
     color: $text-disabled;
     filter: none;
     opacity: 1;
-
-    > label { color: $text-disabled; }
   }
 
   @if $t == checked {

@@ -1191,7 +1191,8 @@ headerbar {
     @extend %titlebar-button;
   }
 
-  button.suggested-action, button.destructive-action {
+  button.suggested-action,
+  button.destructive-action {
     &:disabled {
       background-color: $titlebar-fill;
       color: $titlebar-text-disabled;
