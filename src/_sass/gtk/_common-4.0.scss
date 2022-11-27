@@ -1109,12 +1109,11 @@ searchbar > revealer > box {
 
 headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
-  box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
+  box-shadow: inset 0 -1px $divider;
   color: $titlebar-text;
   min-height: $large-size;
   padding: 0;
   margin: 0;
-  border-radius: $window-radius $window-radius 0 0;
 
   @if $topbar == 'dark' {
     background-color: transparent;
@@ -2744,6 +2743,9 @@ progressbar {
     min-width: $bar-size;
     min-height: $bar-size;
     background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
 
     trough { background-color: transparent; }
 
@@ -4010,8 +4012,6 @@ colorchooser .popover.osd {
  **********************/
 window {
   outline: none;
-  transition: $transition-shadow;
-  box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
 
   &.csd {
     border-radius: $window-radius;
@@ -4027,6 +4027,10 @@ window {
 
   @if $topbar == 'dark' {
     &.background {
+      box-shadow: $shadow-z16,
+                  0 16px (24px * .6) 2px transparent,
+                  0 6px (30px * .6) 5px transparent,
+                  inset 0 1px highlight($titlebar);
       background-color: transparent;
       background-image: linear-gradient(to bottom,
                                         $titlebar,
@@ -4034,6 +4038,10 @@ window {
                                         $background $large-size,
                                         $background);
     }
+  } @else {
+    box-shadow: $shadow-z16,
+                0 16px (24px * .6) 2px transparent,
+                0 6px (30px * .6) 5px transparent;
   }
 
   &:backdrop {
@@ -4041,7 +4049,26 @@ window {
     // change when we go to backdrop, to prevent jumping windows.
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
-    box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+    transition: $transition-shadow;
+
+    @if $topbar == 'dark' {
+      &.background {
+        box-shadow: $shadow-z4,
+                    0 16px (24px * .6) 2px transparent,
+                    0 6px (30px * .6) 5px transparent,
+                    inset 0 1px highlight($titlebar);
+        background-color: transparent;
+        background-image: linear-gradient(to bottom,
+                                          $titlebar-backdrop,
+                                          $titlebar-backdrop $large-size,
+                                          $background $large-size,
+                                          $background);
+      }
+    } @else {
+      box-shadow: $shadow-z4,
+                  0 16px (24px * .6) 2px transparent,
+                  0 6px (30px * .6) 5px transparent;
+    }
   }
 
   &.ssd {

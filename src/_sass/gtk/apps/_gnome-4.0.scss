@@ -350,6 +350,19 @@ window.dialog {
   }
 }
 
+// leaflet
+leaflet {
+  background-color: transparent;
+
+  stack.background {
+    background-color: transparent;
+  }
+
+  > box > scrolledwindow > viewport > widget > stack {
+    background-color: $base;
+  }
+}
+
 //
 // Calculator
 //
@@ -612,13 +625,7 @@ screenshot-carousel box.frame.view {
 
 window.org-gnome-Builder {
   headerbar {
-    box-shadow: inset 0 -1px $border;
-
     splitbutton {
-      button {
-        border-radius: $corner-radius;
-      }
-
       notification button {
         margin: 0;
         min-height: $small-size;
@@ -626,26 +633,21 @@ window.org-gnome-Builder {
         padding: 0;
       }
     }
-
-    menubutton > button {
-      border-radius: $corner-radius;
-      padding: $space-size $space-size * 1.5;
-    }
-
-    paneltogglebutton {
-      button {
-        border-radius: $corner-radius;
-      }
-    }
   }
 }
 
 popover.background.global-search {
-  > arrow, > contents { padding: 0; }
+  > arrow,
+  > contents { padding: 0; }
 }
 
 panelframeswitcher {
   padding: $space-size;
+  border-bottom: 1px solid $border;
+}
+
+panelframetabbar {
+  border-bottom: none;
 }
 
 .frameheader.header {
@@ -672,10 +674,10 @@ panelframeswitcher {
         border-left: 1px solid $border;
 
         menubutton > button {
-          margin: $space-size;
+          margin: $space-size / 2;
           min-height: $small-size;
           min-width: $small-size;
-          padding: $space-size / 2;
+          padding: $space-size;
           border-radius: $corner-radius;
         }
       }

@@ -1487,12 +1487,11 @@ headerbar entry image:disabled {
 
 headerbar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   color: white;
   min-height: 40px;
   padding: 0;
   margin: 0;
-  border-radius: 16px 16px 0 0;
   background-color: transparent;
 }
 
@@ -3202,6 +3201,9 @@ progressbar.osd {
   min-width: 6px;
   min-height: 6px;
   background-color: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 
 progressbar.osd trough {
@@ -4413,8 +4415,6 @@ colorchooser .popover.osd:backdrop {
  **********************/
 window {
   outline: none;
-  transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
 }
 
 window.csd {
@@ -4426,12 +4426,19 @@ window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-
 }
 
 window.background {
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: transparent;
   background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 40px, #212121 40px, #212121);
 }
 
 window:backdrop {
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
+  transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+window:backdrop.background {
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 40px, #212121 40px, #212121);
 }
 
 window.ssd {
@@ -4954,12 +4961,24 @@ window.dialog > box > stack > box > box > notebook.frame {
   border-radius: 0;
 }
 
+leaflet {
+  background-color: transparent;
+}
+
+leaflet stack.background {
+  background-color: transparent;
+}
+
+leaflet > box > scrolledwindow > viewport > widget > stack {
+  background-color: #2C2C2C;
+}
+
 .history-view {
   background-color: #2C2C2C;
 }
 
 #displayitem {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .small .card {
@@ -5028,7 +5047,7 @@ app-context-bar > box:first-child > button.flat:first-child {
 }
 
 app-context-bar > box > button.flat {
-  border-left-color: rgba(0, 0, 0, 0.12);
+  border-left-color: rgba(255, 255, 255, 0.12);
 }
 
 carousel.card {
@@ -5147,19 +5166,19 @@ screenshot-carousel box.frame.view {
   /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
   color: #1c71d8;
   background-color: #fdf8d7;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
   background-position: -1px -4px, center -1px;
 }
 
 .category-tile.category-work:hover {
   background-color: #fefcef;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
 }
 
 .category-tile.category-work:active {
   background-color: #fcf4bf;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
 }
 
 .polari-room-list .sidebar {
@@ -5176,14 +5195,6 @@ screenshot-carousel box.frame.view {
   padding: 0;
 }
 
-window.org-gnome-Builder headerbar {
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
-}
-
-window.org-gnome-Builder headerbar splitbutton button {
-  border-radius: 10px;
-}
-
 window.org-gnome-Builder headerbar splitbutton notification button {
   margin: 0;
   min-height: 22px;
@@ -5191,21 +5202,18 @@ window.org-gnome-Builder headerbar splitbutton notification button {
   padding: 0;
 }
 
-window.org-gnome-Builder headerbar menubutton > button {
-  border-radius: 10px;
-  padding: 4px 6px;
-}
-
-window.org-gnome-Builder headerbar paneltogglebutton button {
-  border-radius: 10px;
-}
-
-popover.background.global-search > arrow, popover.background.global-search > contents {
+popover.background.global-search > arrow,
+popover.background.global-search > contents {
   padding: 0;
 }
 
 panelframeswitcher {
   padding: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+panelframetabbar {
+  border-bottom: none;
 }
 
 .frameheader.header {
@@ -5230,14 +5238,14 @@ panelframeswitcher {
 
 .frameheader.header tabbar.inline > revealer > box .end-action {
   padding: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .frameheader.header tabbar.inline > revealer > box .end-action menubutton > button {
-  margin: 4px;
+  margin: 2px;
   min-height: 22px;
   min-width: 22px;
-  padding: 2px;
+  padding: 4px;
   border-radius: 10px;
 }
 
@@ -6004,42 +6012,6 @@ tabbox:drop(active) {
   border: none;
 }
 
-leaflet {
-  border-radius: 16px;
-}
-
-leaflet, leaflet:backdrop {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-}
-
-leaflet leaflet {
-  border-radius: 0;
-  outline: none;
-  box-shadow: none;
-}
-
-leaflet leaflet, leaflet leaflet:backdrop {
-  box-shadow: none;
-}
-
-leaflet headerbar {
-  border-radius: 0;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
-}
-
-leaflet stack.background {
-  background-color: transparent;
-}
-
-leaflet > box > scrolledwindow > viewport > widget > stack {
-  background-color: #2C2C2C;
-}
-
-.maximized leaflet, .fullscreen leaflet, .tiled leaflet, .tiled-top leaflet, .tiled-right leaflet, .tiled-bottom leaflet, .tiled-left leaflet {
-  border-radius: 0;
-  outline: none;
-}
-
 /* GTK NAMED COLORS
    ----------------
    use responsibly! */
@@ -6170,3 +6142,84 @@ FIXME this is really an API */
 @define-color BLACK_500 #393634;
 @define-color BLACK_700 #33302F;
 @define-color BLACK_900 #2B2928;
+@define-color blue_1 #99c1f1;
+@define-color blue_2 #62a0ea;
+@define-color blue_3 #3584e4;
+@define-color blue_4 #1c71d8;
+@define-color blue_5 #1a5fb4;
+@define-color green_1 #8ff0a4;
+@define-color green_2 #57e389;
+@define-color green_3 #33d17a;
+@define-color green_4 #2ec27e;
+@define-color green_5 #26a269;
+@define-color yellow_1 #f9f06b;
+@define-color yellow_2 #f8e45c;
+@define-color yellow_3 #f6d32d;
+@define-color yellow_4 #f5c211;
+@define-color yellow_5 #e5a50a;
+@define-color orange_1 #ffbe6f;
+@define-color orange_2 #ffa348;
+@define-color orange_3 #ff7800;
+@define-color orange_4 #e66100;
+@define-color orange_5 #c64600;
+@define-color red_1 #f66151;
+@define-color red_2 #ed333b;
+@define-color red_3 #e01b24;
+@define-color red_4 #c01c28;
+@define-color red_5 #a51d2d;
+@define-color purple_1 #dc8add;
+@define-color purple_2 #c061cb;
+@define-color purple_3 #9141ac;
+@define-color purple_4 #813d9c;
+@define-color purple_5 #613583;
+@define-color brown_1 #cdab8f;
+@define-color brown_2 #b5835a;
+@define-color brown_3 #986a44;
+@define-color brown_4 #865e3c;
+@define-color brown_5 #63452c;
+@define-color light_1 #ffffff;
+@define-color light_2 #f6f5f4;
+@define-color light_3 #deddda;
+@define-color light_4 #c0bfbc;
+@define-color light_5 #9a9996;
+@define-color dark_1 #77767b;
+@define-color dark_2 #5e5c64;
+@define-color dark_3 #3d3846;
+@define-color dark_4 #241f31;
+@define-color dark_5 #000000;
+/* GTK NAMED COLORS
+   ----------------
+   use responsibly! */
+@define-color accent_bg_color #3281EA;
+@define-color accent_fg_color white;
+@define-color accent_color #3281EA;
+@define-color destructive_bg_color #F28B82;
+@define-color destructive_fg_color rgba(0, 0, 0, 0.87);
+@define-color destructive_color #F28B82;
+@define-color success_bg_color #81C995;
+@define-color success_fg_color rgba(0, 0, 0, 0.87);
+@define-color success_color #81C995;
+@define-color warning_bg_color #FDD633;
+@define-color warning_fg_color rgba(0, 0, 0, 0.87);
+@define-color warning_color #FDD633;
+@define-color error_bg_color #F28B82;
+@define-color error_fg_color rgba(0, 0, 0, 0.87);
+@define-color error_color #F28B82;
+@define-color window_bg_color #212121;
+@define-color window_fg_color white;
+@define-color view_bg_color #2C2C2C;
+@define-color view_fg_color white;
+@define-color headerbar_bg_color #2C2C2C;
+@define-color headerbar_fg_color white;
+@define-color headerbar_border_color rgba(255, 255, 255, 0.12);
+@define-color headerbar_backdrop_color #2C2C2C;
+@define-color headerbar_shade_color rgba(255, 255, 255, 0.12);
+@define-color card_bg_color #2C2C2C;
+@define-color card_fg_color white;
+@define-color card_shade_color rgba(255, 255, 255, 0.12);
+@define-color dialog_bg_color #242424;
+@define-color dialog_fg_color white;
+@define-color popover_bg_color #3C3C3C;
+@define-color popover_fg_color white;
+@define-color shade_color rgba(255, 255, 255, 0.12);
+@define-color scrollbar_outline_color rgba(255, 255, 255, 0.12);
