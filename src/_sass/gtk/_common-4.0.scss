@@ -1628,7 +1628,7 @@ menubar {
 
 popover.menu {
   box.inline-buttons {
-    padding: 0 $space-size;
+    padding: 0 $space-size + 8px;
 
     button.image-button.model {
       min-height: $menuitem-size;
@@ -1685,7 +1685,7 @@ popover.menu {
 
   label.title {
     font-weight: bold;
-    padding: 4px ($space-size + 20px); //this will fall apart with font sizing
+    padding: $space-size / 2 ($space-size + 6px) * 2 + $space-size + 2px; //this will fall apart with font sizing
   }
 }
 
@@ -2325,7 +2325,7 @@ radio {
 
   &:not(:hover):focus { box-shadow: inset 0 0 0 9999px transparent; }
 
-  popover modelbutton.flat & {
+  popover modelbutton & {
     margin: 0; // this is a workaround for a menu check/radio size allocation issue
     padding: 0;
 
