@@ -1173,18 +1173,8 @@ combobox arrow {
 
 dropdown > popover.menu,
 combobox > popover.menu {
-  margin-top: 4px;
-}
-
-dropdown > popover.menu > contents,
-combobox > popover.menu > contents {
-  padding: 6px;
-}
-
-dropdown > popover.menu > contents modelbutton,
-combobox > popover.menu > contents modelbutton {
-  padding-left: 9px;
-  padding-right: 9px;
+  margin-top: 6px;
+  padding: 0;
 }
 
 dropdown button.combo cellview:dir(ltr),
@@ -1408,7 +1398,10 @@ searchbar > revealer > box {
   box-shadow: none;
 }
 
-searchbar > revealer > box entry {
+searchbar > revealer > box entry,
+searchbar > revealer > box button,
+searchbar > revealer > box menubutton,
+searchbar > revealer > box splitbutton {
   margin: 0;
 }
 
@@ -1619,12 +1612,16 @@ headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):no
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:focus, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:hover, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:active, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked {
+headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:focus, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:hover, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:active {
   color: white;
 }
 
 headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:disabled {
   color: rgba(255, 255, 255, 0.3);
+}
+
+headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked {
+  color: white;
 }
 
 headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked:disabled {
@@ -2116,6 +2113,7 @@ popover.menu label.title {
  ************/
 popover.background {
   font: initial;
+  padding: 0;
 }
 
 popover.background, popover.background:backdrop {
@@ -2153,6 +2151,10 @@ popover.background > contents > scrolledwindow > viewport > stack > box {
 popover.background > contents separator {
   background-color: rgba(255, 255, 255, 0.12);
   margin: 3px 0;
+}
+
+popover.background > contents list > row {
+  padding: 6px 12px;
 }
 
 popover.background > contents list separator {
@@ -3330,6 +3332,13 @@ actionbar > revealer > box {
   box-shadow: none;
 }
 
+actionbar > revealer > box entry,
+actionbar > revealer > box button,
+actionbar > revealer > box menubutton,
+actionbar > revealer > box splitbutton {
+  margin: 0;
+}
+
 statusbar {
   padding: 6px 18px;
 }
@@ -3425,7 +3434,6 @@ list {
 
 listview > row,
 list > row {
-  padding: 2px;
   background-clip: padding-box;
 }
 
@@ -3491,11 +3499,12 @@ treeview.view > header > button:active, row.activatable.has-open-popup, row.acti
   background-size: 100% 100%;
 }
 
-button row, button row:hover, button row.has-open-popup, button row:active {
+button row.activatable, button row.activatable:hover, button row.activatable.has-open-popup, button row.activatable:active, button row.activatable:active:hover {
   background-color: transparent;
   box-shadow: none;
   background-image: none;
   transition: none;
+  animation: none;
 }
 
 button:checked row {
@@ -3689,11 +3698,11 @@ row.expander:checked image.expander-row-arrow {
 }
 
 row.expander:not(:checked) image.expander-row-arrow:dir(ltr) {
-  -gtk-icon-transform: rotate(-0.25turn);
+  -gtk-icon-transform: rotate(0.5turn);
 }
 
 row.expander:not(:checked) image.expander-row-arrow:dir(rtl) {
-  -gtk-icon-transform: rotate(0.25turn);
+  -gtk-icon-transform: rotate(-0.5turn);
 }
 
 row.expander:checked image.expander-row-arrow:not(:disabled) {

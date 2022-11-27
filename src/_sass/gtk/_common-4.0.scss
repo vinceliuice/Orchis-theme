@@ -852,16 +852,8 @@ combobox {
 
   // align menu labels with the button label
   > popover.menu {
-    margin-top: $space-size - 2px;
-
-    > contents {
-      padding: $space-size;
-
-      modelbutton {
-        padding-left: $space-size * 1.5;
-        padding-right: $space-size * 1.5;
-      }
-    }
+    margin-top: $space-size;
+    padding: 0;
   }
 
   button.combo cellview {
@@ -1041,7 +1033,10 @@ searchbar > revealer > box {
   background-clip: border-box;
   box-shadow: none;
 
-  entry { margin: 0; }
+  entry,
+  button,
+  menubutton,
+  splitbutton { margin: 0; }
 }
 
 /***************
@@ -1240,12 +1235,16 @@ headerbar {
       border-radius: $circular-radius;
       color: $titlebar-text-secondary;
 
-      &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
+      &:focus, &:hover, &:active { color: $titlebar-text; }
 
       &:disabled { color: $titlebar-text-secondary-disabled; }
 
-      &:checked:disabled {
-        color: on($primary, disabled);
+      &:checked {
+        color: on($primary);
+
+        &:disabled {
+          color: on($primary, disabled);
+        }
       }
 
       &:backdrop {
@@ -1696,6 +1695,7 @@ popover.menu {
 
 popover.background {
   font: initial;
+  padding: 0;
 
   &, &:backdrop {
     background-color: transparent;
@@ -1737,7 +1737,13 @@ popover.background {
       margin: $space-size / 2 0;
     }
 
-    list separator { margin: 0; }
+    list {
+      > row {
+        padding: $space-size $space-size * 2;
+      }
+
+      separator { margin: 0; }
+    }
   }
 
   // FIXME: Use the popover color instead of transparent as a workaround for .view
@@ -2858,6 +2864,11 @@ actionbar > revealer > box {
   background-color: $base;
   background-clip: border-box;
   box-shadow: none;
+
+  entry,
+  button,
+  menubutton,
+  splitbutton { margin: 0; }
 }
 
 statusbar {
@@ -2936,7 +2947,6 @@ list {
   color: $text-secondary;
 
   > row {
-    padding: 2px;
     background-clip: padding-box;
   }
 
@@ -2998,12 +3008,13 @@ row {
     @extend %button-flat-simple;
   }
 
-  button & {
-    &, &:hover, &.has-open-popup, &:active {
+  button &.activatable {
+    &, &:hover, &.has-open-popup, &:active, &:active:hover {
       background-color: transparent;
       box-shadow: none;
       background-image: none;
       transition: none;
+      animation: none;
     }
   }
 
@@ -3207,7 +3218,6 @@ row.expander {
   }
 
   // AdwExpanderRow arrow rotation
-
   image.expander-row-arrow {
     transition: 200ms $ease-out;
     @include margin-start(6px);
@@ -3221,11 +3231,11 @@ row.expander {
     @extend .dim-label;
 
     &:dir(ltr) {
-      -gtk-icon-transform: rotate(-0.25turn);
+      -gtk-icon-transform: rotate(0.5turn);
     }
 
     &:dir(rtl) {
-      -gtk-icon-transform: rotate(0.25turn);
+      -gtk-icon-transform: rotate(-0.5turn);
     }
   }
 
