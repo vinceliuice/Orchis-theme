@@ -376,6 +376,7 @@ StScrollView.hfade {
 
 StScrollBar {
   padding: 0;
+  margin: 6px;
 }
 
 StScrollView StScrollBar {

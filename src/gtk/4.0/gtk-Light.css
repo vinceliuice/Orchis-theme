@@ -1719,6 +1719,8 @@ headerbar .selection-mode {
 headerbar.default-decoration {
   min-height: 24px;
   padding: 6px;
+  background-image: none;
+  background-color: #FFFFFF;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
 }
 
@@ -4946,10 +4948,6 @@ window.dialog > box > stack > box > box > notebook.frame {
   border-radius: 0;
 }
 
-window.background > contents > leaflet stack.background {
-  background-color: transparent;
-}
-
 .history-view {
   background-color: #FFFFFF;
 }
@@ -6002,7 +6000,20 @@ tabbox:drop(active) {
 
 leaflet {
   border-radius: 18px;
+}
+
+leaflet, leaflet:backdrop {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+leaflet leaflet {
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+leaflet leaflet, leaflet leaflet:backdrop {
+  box-shadow: none;
 }
 
 leaflet headerbar {
@@ -6010,9 +6021,8 @@ leaflet headerbar {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
-leaflet leaflet {
-  border-radius: 0;
-  outline: none;
+leaflet stack.background {
+  background-color: transparent;
 }
 
 leaflet > box > scrolledwindow > viewport > widget > stack {

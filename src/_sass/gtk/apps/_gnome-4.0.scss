@@ -350,14 +350,6 @@ window.dialog {
   }
 }
 
-window.background {
-  > contents > leaflet {
-    stack.background {
-      background-color: transparent;
-    }
-  }
-}
-
 //
 // Calculator
 //
