@@ -187,9 +187,8 @@ clean() {
 }
 
 uninstall_link() {
-  [[ -L "${HOME}/.config/gtk-4.0/assets" ]] && rm -rf "${HOME}/.config/gtk-4.0/assets" && echo -e "Removing ${HOME}/.config/gtk-4.0/assets"
-  [[ -L "${HOME}/.config/gtk-4.0/gtk.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk.css"
-  [[ -L "${HOME}/.config/gtk-4.0/gtk-dark.css" ]] && rm -rf "${HOME}/.config/gtk-4.0/gtk-dark.css" && echo -e "Removing ${HOME}/.config/gtk-4.0/gtk-dark.css"
+  rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
+  echo -e "\nRemoving ${HOME}/.config/gtk-4.0 links..."
 }
 
 link_libadwaita() {

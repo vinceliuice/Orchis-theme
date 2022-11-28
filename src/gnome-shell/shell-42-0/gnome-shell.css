@@ -430,6 +430,7 @@ StScrollView.hfade {
 
 StScrollBar {
   padding: 0;
+  margin: 6px;
 }
 
 StScrollView StScrollBar {
@@ -491,6 +492,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Popovers/Menus */
 .popup-menu-boxpointer {
+  -arrow-border-radius: 6px;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
@@ -511,7 +513,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-menu-content {
   padding: 6px;
-  margin: 0 6px 14px;
+  margin: 0 3px 14px;
   background-color: rgba(255, 255, 255, 0.97);
   border-radius: 20px;
   border: none;
