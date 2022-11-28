@@ -1629,10 +1629,11 @@ popover.menu {
 
     accelerator {
       color: $text-disabled;
+      margin-left: $space-size * 5;
+    }
 
-      &:disabled {
-        color: $divider;
-      }
+    &:disabled accelerator {
+      color: $divider;
     }
 
     arrow {

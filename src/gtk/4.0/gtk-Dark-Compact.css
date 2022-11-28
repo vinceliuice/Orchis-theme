@@ -2075,9 +2075,10 @@ popover.menu modelbutton {
 
 popover.menu modelbutton accelerator {
   color: rgba(255, 255, 255, 0.5);
+  margin-left: 20px;
 }
 
-popover.menu modelbutton accelerator:disabled {
+popover.menu modelbutton:disabled accelerator {
   color: rgba(255, 255, 255, 0.12);
 }
 
