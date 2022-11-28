@@ -2536,6 +2536,43 @@ scale {
     min-height: $slider_size;
     min-width: $slider_size;
     margin: $slider_margin;
+    transition: background-color $duration $ease-out,
+                background-size $ripple-fade-out-duration $ease-out,
+                background-image $ripple-fade-out-opacity-duration $ease-out;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto, 1000% 1000%;
+    border-radius: 50%;
+    color: $primary;
+
+    @each $s, $as in ('', ''),
+                     (':disabled', '-disabled') {
+      &#{$s} {
+        $_url: 'assets/scale-slider#{$as}#{$asset-suffix}';
+
+        background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                          radial-gradient(circle, transparent 10%, transparent 0%);
+      }
+    }
+
+    &:focus { background-color: $overlay-focus; }
+
+    &:hover { background-color: $overlay-hover; }
+
+    &:focus:hover { background-color: $overlay-focus-hover; }
+
+    &:active {
+      $_url: 'assets/scale-slider#{$asset-suffix}';
+
+      transition: background-color $duration $ease-out,
+                  background-size 0ms,
+                  background-image 0ms;
+      animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
+      background-color: $overlay-hover;
+      background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                        radial-gradient(circle, $overlay-active 10%, transparent 0%);
+      background-size: auto, 0% 0%;
+    }
   }
 
   // click-and-hold the slider to activate
@@ -2583,46 +2620,6 @@ scale {
     background-color: $track;
 
     &:disabled { background-color: transparent; }
-  }
-
-  slider {
-    transition: background-color $duration $ease-out,
-                background-size $ripple-fade-out-duration $ease-out,
-                background-image $ripple-fade-out-opacity-duration $ease-out;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto, 1000% 1000%;
-    border-radius: 50%;
-    color: $primary;
-
-    @each $s, $as in ('', ''),
-                     (':disabled', '-disabled') {
-      &#{$s} {
-        $_url: 'assets/scale-slider#{$as}#{$asset-suffix}';
-
-        background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
-                          radial-gradient(circle, transparent 10%, transparent 0%);
-      }
-    }
-
-    &:focus { background-color: $overlay-focus; }
-
-    &:hover { background-color: $overlay-hover; }
-
-    &:focus:hover { background-color: $overlay-focus-hover; }
-
-    &:active {
-      $_url: 'assets/scale-slider#{$asset-suffix}';
-
-      transition: background-color $duration $ease-out,
-                  background-size 0ms,
-                  background-image 0ms;
-      animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
-      background-color: $overlay-hover;
-      background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
-                        radial-gradient(circle, $overlay-active 10%, transparent 0%);
-      background-size: auto, 0% 0%;
-    }
   }
 
   marks,

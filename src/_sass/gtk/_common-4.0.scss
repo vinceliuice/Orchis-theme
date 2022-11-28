@@ -2527,71 +2527,75 @@ scale {
     background-color: $track;
 
     &:disabled { background-color: $track-disabled; }
-  }
 
-  // the colored part of the backing bit
-  > trough > highlight {
-    transition: background-image $duration $ease-out;
-    background-image: image($primary);
+    > slider {
+      transition: background-color $duration $ease-out,
+                  background-size $ripple-fade-out-duration $ease-out,
+                  background-image $ripple-fade-out-opacity-duration $ease-out;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto, 1000% 1000%;
+      min-height: $slider_size;
+      min-width: $slider_size;
+      margin: $slider_margin;
+      border-radius: 50%;
+      color: $primary;
+      background-color: transparent;
 
-    &:disabled {
-      background-color: $background;
-      background-image: image($text-secondary-disabled);
-    }
-  }
+      &, &:focus, &:hover, &:active {
+        border: none;
+        box-shadow: none;
+        outline: none;
+      }
 
-  // this is another differently styled part of the backing bit, the most relevant use case is for example
-  // in media player to indicate how much video stream as been cached
-  > trough > fill {
-    transition: background-color $duration $ease-out;
-    background-color: $track;
+      @each $s, $as in ('', ''),
+                       (':disabled', '-disabled') {
+        &#{$s} {
+          $_url: 'assets/scale-slider#{$as}#{$asset-suffix}';
 
-    &:disabled { background-color: transparent; }
-  }
+          background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                            radial-gradient(circle, transparent 10%, transparent 0%);
+        }
+      }
 
-  > trough > slider {
-    transition: background-color $duration $ease-out,
-                background-size 0,
-                background-image 0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto, 0% 0%;
-    min-height: $slider_size;
-    min-width: $slider_size;
-    margin: $slider_margin;
-    border-radius: 50%;
-    color: $primary;
-    background-color: transparent;
-    box-shadow: none;
-    outline: none;
-    border: none;
+      &:focus { background-color: $overlay-focus; }
 
-    @each $s, $as in ('', ''),
-                     (':disabled', '-disabled') {
-      &#{$s} {
-        $_url: 'assets/scale-slider#{$as}#{$asset-suffix}';
+      &:hover { background-color: $overlay-hover; }
 
-        background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png'));
+      &:focus:hover { background-color: $overlay-focus-hover; }
+
+      &:active {
+        $_url: 'assets/scale-slider#{$asset-suffix}';
+
+        transition: background-color $duration $ease-out,
+                    background-size 0ms,
+                    background-image 0ms;
+        animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
+        background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
+                          radial-gradient(circle, $overlay-active 10%, transparent 0%);
+        background-size: auto, 0% 0%;
+        color: $primary;
       }
     }
 
-    &:focus { background-color: $overlay-focus; }
+    // the colored part of the backing bit
+    > highlight {
+      transition: background-image $duration $ease-out;
+      background-image: image($primary);
 
-    &:hover { background-color: $overlay-hover; }
+      &:disabled {
+        background-color: $background;
+        background-image: image($text-secondary-disabled);
+      }
+    }
 
-    &:focus:hover { background-color: $overlay-focus-hover; }
+    // this is another differently styled part of the backing bit, the most relevant use case is for example
+    // in media player to indicate how much video stream as been cached
+    > fill {
+      transition: background-color $duration $ease-out;
+      background-color: $track;
 
-    &:active {
-      $_url: 'assets/scale-slider#{$asset-suffix}';
-
-      transition: background-color $duration $ease-out,
-                  background-size 0ms,
-                  background-image 0ms;
-      animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
-      background-color: $overlay-hover;
-      background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
-                        radial-gradient(circle farthest-corner at center, $overlay-active 10%, transparent 0%);
-      background-size: auto, 100% 100%;
+      &:disabled { background-color: transparent; }
     }
   }
 
@@ -2643,7 +2647,6 @@ scale {
       transform: none;
       box-shadow: none;
       border: none;
-      transition: $transition;
 
       &:disabled {
         box-shadow: none;
@@ -2664,14 +2667,16 @@ scale {
             &#{$state} {
               $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$state_infix}#{$asset-suffix}';
 
-              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+              background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png')),
+                                radial-gradient(circle, transparent 10%, transparent 0%);
             }
           }
 
           &:active {
             $_scale_asset: 'assets/scale-#{$dir_infix}-#{$marks_infix}-slider#{$asset-suffix}';
 
-            background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png'));
+            background-image: -gtk-scaled(url('#{$_scale_asset}.png'), url('#{$_scale_asset}@2.png')),
+                              radial-gradient(circle, $overlay-active 10%, transparent 0%);
           }
         }
       }

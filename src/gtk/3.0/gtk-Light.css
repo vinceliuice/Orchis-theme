@@ -2795,6 +2795,40 @@ scale slider {
   min-height: 32px;
   min-width: 32px;
   margin: -15px;
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto, 1000% 1000%;
+  border-radius: 50%;
+  color: #1A73E8;
+}
+
+scale slider {
+  background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png")), radial-gradient(circle, transparent 10%, transparent 0%);
+}
+
+scale slider:disabled {
+  background-image: -gtk-scaled(url("assets/scale-slider-disabled.png"), url("assets/scale-slider-disabled@2.png")), radial-gradient(circle, transparent 10%, transparent 0%);
+}
+
+scale slider:focus {
+  background-color: alpha(currentColor, 0.08);
+}
+
+scale slider:hover {
+  background-color: alpha(currentColor, 0.08);
+}
+
+scale slider:focus:hover {
+  background-color: alpha(currentColor, 0.16);
+}
+
+scale slider:active {
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
+  animation: ripple-on-slider 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  background-color: alpha(currentColor, 0.08);
+  background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png")), radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: auto, 0% 0%;
 }
 
 scale.fine-tune.horizontal {
@@ -2840,43 +2874,6 @@ scale fill {
 
 scale fill:disabled {
   background-color: transparent;
-}
-
-scale slider {
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto, 1000% 1000%;
-  border-radius: 50%;
-  color: #1A73E8;
-}
-
-scale slider {
-  background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png")), radial-gradient(circle, transparent 10%, transparent 0%);
-}
-
-scale slider:disabled {
-  background-image: -gtk-scaled(url("assets/scale-slider-disabled.png"), url("assets/scale-slider-disabled@2.png")), radial-gradient(circle, transparent 10%, transparent 0%);
-}
-
-scale slider:focus {
-  background-color: alpha(currentColor, 0.08);
-}
-
-scale slider:hover {
-  background-color: alpha(currentColor, 0.08);
-}
-
-scale slider:focus:hover {
-  background-color: alpha(currentColor, 0.16);
-}
-
-scale slider:active {
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
-  animation: ripple-on-slider 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-color: alpha(currentColor, 0.08);
-  background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png")), radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
-  background-size: auto, 0% 0%;
 }
 
 scale marks,
