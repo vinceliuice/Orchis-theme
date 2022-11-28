@@ -1682,36 +1682,6 @@ popover.menu {
     margin-right: 0;
   }
 
-<<<<<<< HEAD
-  modelbutton {
-    transition: background-color $duration $ease-out;
-    min-height: $menuitem-size - $space-size;
-    min-width: $menuitem-size * 2;
-    padding: $space-size / 2 $space-size * 1.5;
-    border-radius: $menuitem-radius;
-    color: $text;
-    font: initial;
-    text-shadow: none;
-    border-spacing: $space-size;
-    @extend %button-flat-simple;
-
-    accelerator {
-      color: $text-disabled;
-      margin-left: $space-size * 5;
-    }
-
-    &:disabled accelerator {
-      color: $divider;
-    }
-
-    arrow {
-      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
-    }
-  }
-
-=======
->>>>>>> fdefaf61499c971da070212bd68fd775b6cc1393
   label.title {
     font-weight: bold;
     padding: $space-size / 2 ($space-size + 6px) * 2 + $space-size + 2px; //this will fall apart with font sizing
