@@ -2076,19 +2076,6 @@ popover.menu box.circular-buttons button.circular.image-button.model:focus {
   background-color: alpha(currentColor, 0.06);
 }
 
-popover.menu > arrow, popover.menu.background > contents {
-  padding: 6px;
-  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12);
-  background-color: #FFFFFF;
-  background-clip: border-box;
-  border: none;
-  border-radius: 11px;
-}
-
-popover.menu.background separator {
-  margin: 6px 0;
-}
-
 popover.menu arrow.left,
 popover.menu radio.left,
 popover.menu check.left {

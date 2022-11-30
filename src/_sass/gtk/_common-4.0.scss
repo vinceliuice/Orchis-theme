@@ -1654,20 +1654,6 @@ popover.menu {
     }
   }
 
-  & > arrow,
-  &.background > contents {
-    padding: $space-size;
-    box-shadow: $shadow-z6;
-    background-color: $surface;
-    background-clip: border-box;
-    border: none; // axes borders in a composited env
-    border-radius: $menu-radius;
-  }
-
-  &.background separator {
-    margin: $space-size 0;
-  }
-
   arrow.left,
   radio.left,
   check.left {
