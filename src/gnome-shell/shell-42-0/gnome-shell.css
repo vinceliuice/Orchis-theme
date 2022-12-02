@@ -2612,8 +2612,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash */
 #dash {
+  font-size: 9pt;
+  font-weight: 400;
   margin-top: 12px;
-  padding: 0;
 }
 
 #dash .placeholder {
@@ -2637,6 +2638,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 12px;
   spacing: 6px;
   border-radius: 9999px;
+  box-shadow: none;
+  border: none;
 }
 
 .dash-item-container > * {
@@ -2651,12 +2654,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-right: 0;
 }
 
-.dash-item-container .show-apps, .dash-item-container .app-well-app {
-  padding-bottom: 12px;
+.dash-item-container .show-apps,
+.dash-item-container .app-well-app {
+  padding-bottom: 12px !important;
 }
 
-.dash-item-container .show-apps .overview-icon, .dash-item-container .app-well-app .overview-icon {
-  padding: 6px;
+.dash-item-container .show-apps .overview-icon,
+.dash-item-container .app-well-app .overview-icon {
+  padding: 8px !important;
   border-radius: 9999px;
 }
 
@@ -2675,8 +2680,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-align: center;
-  margin-bottom: 6px;
-  -y-offset: 12px;
+  -y-offset: 8px;
 }
 
 /* App Grid */
@@ -2685,7 +2689,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app .overview-icon, .search-provider-icon, .list-search-result {
   color: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
-  padding: 6px;
+  padding: 12px;
   border: none;
   transition-duration: 150ms;
   text-align: center;
@@ -2694,12 +2698,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .icon-grid {
   row-spacing: 12px;
   column-spacing: 12px;
-  max-row-spacing: 72px;
-  max-column-spacing: 72px;
+  max-row-spacing: 42px;
+  max-column-spacing: 42px;
   page-padding-top: 24px;
   page-padding-bottom: 24px;
-  page-padding-left: 12px;
-  page-padding-right: 12px;
+  page-padding-left: 18px;
+  page-padding-right: 18px;
 }
 
 /* App Icons */
@@ -2729,12 +2733,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   transition-duration: 150ms;
-}
-
-.grid-search-result .overview-icon.overview-icon-with-label,
-.show-apps .overview-icon.overview-icon-with-label,
-.app-well-app .overview-icon.overview-icon-with-label {
-  padding: 10px 8px 5px 8px;
 }
 
 .grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout,

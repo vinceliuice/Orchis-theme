@@ -2,15 +2,13 @@
 
 $dash_background_color: rgba(white, 0.2);
 $dash_placeholder_size: 32px;
-$dash_padding: $container_padding * 2;
+$dash_padding: 12px;
 $dash_spacing: 2px;
-$dash_bottom_margin: $dash_padding;
 $dash_border_radius: if($corner-style == 'circular', $circular_radius, $buttons_radius + $dash_padding + $dash_spacing);
 
 #dash {
-  // font-size: 1em;
+  @include font(caption);
   margin-top: $dash_padding;
-  padding: 0;
 
   .placeholder {
     background-image: none;
@@ -25,16 +23,18 @@ $dash_border_radius: if($corner-style == 'circular', $circular_radius, $buttons_
 
   // Running app indicator (also shown in app grid)
   .app-well-app-running-dot {
-    margin-bottom: $dash_padding + $container_padding / 2; // hardcoded
+    margin-bottom: $dash_padding + 3px; // hardcoded
   }
 }
 
 .dash-background {
   background-color: $dash_background_color;
-  margin-bottom: $dash_bottom_margin;
+  margin-bottom: $dash_padding;
   padding: $dash_padding;
-  spacing: $container_padding;
+  spacing: 6px;
   border-radius: $dash_border_radius;
+  box-shadow: none;
+  border: none;
 }
 
 // items on the dash
@@ -45,11 +45,12 @@ $dash_border_radius: if($corner-style == 'circular', $circular_radius, $buttons_
 
   &:rtl:first-child { margin-right: 0; }
 
-  .show-apps, .app-well-app {
-    padding-bottom: $dash_padding;
+  .show-apps,
+  .app-well-app {
+    padding-bottom: $dash_padding !important;
 
-    .overview-icon {
-      padding: $container_padding;
+    & .overview-icon {
+      padding: 8px !important;
       border-radius: if($corner-style == 'circular', $circular_radius, $buttons_radius);
     }
   }
@@ -71,6 +72,6 @@ $dash_border_radius: if($corner-style == 'circular', $circular_radius, $buttons_
   border: none;
   box-shadow: $shadow_2;
   text-align: center;
-  margin-bottom: $container_padding;
-  -y-offset: $container_margin * 3; // distance from the dash edge
+  // margin-bottom: $container_padding;
+  -y-offset: $container_margin * 2; // distance from the dash edge
 }

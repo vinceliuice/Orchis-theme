@@ -3,23 +3,22 @@
 %icon_tile {
   color: $inverse_fg_color;
   border-radius: $buttons_radius * 1.5;
-  padding: $container_padding;
+  padding: $container_padding * 2;
   border: none;
   transition-duration: $longer_duration;
   text-align: center;
 }
 
-
 // app icons
 .icon-grid {
   row-spacing: 12px;
   column-spacing: 12px;
-  max-row-spacing: 72px;
-  max-column-spacing: 72px;
+  max-row-spacing: 42px;
+  max-column-spacing: 42px;
   page-padding-top: 24px;
   page-padding-bottom: 24px;
-  page-padding-left: 12px;
-  page-padding-right: 12px;
+  page-padding-left: 18px;
+  page-padding-right: 18px;
 }
 
 /* App Icons */
@@ -49,8 +48,6 @@
   }
 
   .overview-icon.overview-icon-with-label {
-    padding: 10px 8px 5px 8px;
-
     > StBoxLayout {
       spacing: $container_padding;
     }

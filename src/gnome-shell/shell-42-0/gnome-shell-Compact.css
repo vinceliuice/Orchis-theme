@@ -2612,8 +2612,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash */
 #dash {
-  margin-top: 8px;
-  padding: 0;
+  font-size: 9pt;
+  font-weight: 400;
+  margin-top: 12px;
 }
 
 #dash .placeholder {
@@ -2628,15 +2629,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dash .app-well-app-running-dot {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .dash-background {
   background-color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 8px;
-  padding: 8px;
-  spacing: 4px;
+  margin-bottom: 12px;
+  padding: 12px;
+  spacing: 6px;
   border-radius: 9999px;
+  box-shadow: none;
+  border: none;
 }
 
 .dash-item-container > * {
@@ -2651,19 +2654,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-right: 0;
 }
 
-.dash-item-container .show-apps, .dash-item-container .app-well-app {
-  padding-bottom: 8px;
+.dash-item-container .show-apps,
+.dash-item-container .app-well-app {
+  padding-bottom: 12px !important;
 }
 
-.dash-item-container .show-apps .overview-icon, .dash-item-container .app-well-app .overview-icon {
-  padding: 4px;
+.dash-item-container .show-apps .overview-icon,
+.dash-item-container .app-well-app .overview-icon {
+  padding: 8px !important;
   border-radius: 9999px;
 }
 
 .dash-separator {
   width: 1px;
   margin: 0 2px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -2675,8 +2680,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-align: center;
-  margin-bottom: 4px;
-  -y-offset: 6px;
+  -y-offset: 4px;
 }
 
 /* App Grid */
@@ -2685,7 +2689,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app .overview-icon, .search-provider-icon, .list-search-result {
   color: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
-  padding: 4px;
+  padding: 8px;
   border: none;
   transition-duration: 150ms;
   text-align: center;
@@ -2694,12 +2698,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .icon-grid {
   row-spacing: 12px;
   column-spacing: 12px;
-  max-row-spacing: 72px;
-  max-column-spacing: 72px;
+  max-row-spacing: 42px;
+  max-column-spacing: 42px;
   page-padding-top: 24px;
   page-padding-bottom: 24px;
-  page-padding-left: 12px;
-  page-padding-right: 12px;
+  page-padding-left: 18px;
+  page-padding-right: 18px;
 }
 
 /* App Icons */
@@ -2729,12 +2733,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   transition-duration: 150ms;
-}
-
-.grid-search-result .overview-icon.overview-icon-with-label,
-.show-apps .overview-icon.overview-icon-with-label,
-.app-well-app .overview-icon.overview-icon-with-label {
-  padding: 10px 8px 5px 8px;
 }
 
 .grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout,
@@ -4191,15 +4189,15 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app {
-  padding: 2px 8px !important;
+  padding: 2px 12px !important;
 }
 
 #dashtodockContainer.left.extended .show-apps, #dashtodockContainer.left.straight-corner .show-apps, #dashtodockContainer.right.extended .show-apps, #dashtodockContainer.right.straight-corner .show-apps {
-  padding: 2px 8px 16px !important;
+  padding: 2px 12px 24px !important;
 }
 
 #dashtodockContainer.top .dash-background, #dashtodockContainer.bottom .dash-background {
-  padding: 8px 6px !important;
+  padding: 12px 10px !important;
 }
 
 #dashtodockContainer.top.shrink .dash-background, #dashtodockContainer.bottom.shrink .dash-background {
@@ -4208,15 +4206,15 @@ StWidget.focused .app-well-app-running-dot {
 
 #dashtodockContainer.top.shrink .dash-item-container .app-well-app, #dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink .show-apps {
   margin: 0 !important;
-  padding: 0 1px 8px !important;
+  padding: 0 1px 12px !important;
 }
 
 #dashtodockContainer.top.extended .dash-separator, #dashtodockContainer.top.straight-corner .dash-separator, #dashtodockContainer.bottom.extended .dash-separator, #dashtodockContainer.bottom.straight-corner .dash-separator {
-  margin: 0 6px !important;
+  margin: 0 8px !important;
 }
 
 #dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps {
-  padding: 8px 2px !important;
+  padding: 12px 2px !important;
 }
 
 #dashtodockContainer #dash .dash-background {
