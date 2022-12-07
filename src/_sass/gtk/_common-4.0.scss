@@ -1130,6 +1130,16 @@ headerbar {
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
+  &.flat {
+    @if $topbar == 'dark' and $variant == 'light' {
+      box-shadow: none;
+    } @else {
+      box-shadow: none;
+
+      &, &:backdrop { background-color: transparent; }
+    }
+  }
+
   .title {
     padding: 0 $space-size * 2;
     font-weight: bold;
@@ -1454,7 +1464,7 @@ window.devel {
 
 $window-space: if($mac_style == 'true', $space-size * 1.5, $space-size);
 
-windowcontrols {
+headerbar windowcontrols {
   border-spacing: $space-size;
 
   &:not(.empty) {
@@ -1478,9 +1488,15 @@ windowcontrols {
       @extend %mac_window_button;
     } @else {
       @extend %button-flat-simple;
+
+      &, &:hover, &:active, &:backdrop {
+        > image {
+          background-color: transparent;
+        }
+      }
     }
 
-    image {
+    > image {
       padding: 0;
       border: none;
       outline: none;
