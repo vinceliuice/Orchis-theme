@@ -4134,6 +4134,8 @@ colorchooser .popover.osd {
  **********************/
 window {
   outline: none;
+  padding: 0;
+  margin: 0;
 
   &.csd {
     border-radius: $window-radius;
@@ -4145,51 +4147,51 @@ window {
     &.tiled-right,
     &.tiled-bottom,
     &.tiled-left { border-radius: 0; }
-  }
-
-  @if $topbar == 'dark' {
-    &.background {
-      box-shadow: $shadow-z16,
-                  0 16px (24px * .6) 2px transparent,
-                  0 6px (30px * .6) 5px transparent,
-                  inset 0 1px highlight($titlebar);
-      background-color: transparent;
-      background-image: linear-gradient(to bottom,
-                                        $titlebar,
-                                        $titlebar $large-size,
-                                        $background $large-size,
-                                        $background);
-    }
-  } @else {
-    box-shadow: $shadow-z16,
-                0 16px (24px * .6) 2px transparent,
-                0 6px (30px * .6) 5px transparent;
-  }
-
-  &:backdrop {
-    // the transparent shadow here is to enforce that the shadow extents don't
-    // change when we go to backdrop, to prevent jumping windows.
-    // The biggest shadow should be in the same order then in the active state
-    // or the jumping will happen during the transition.
-    transition: $transition-shadow;
 
     @if $topbar == 'dark' {
       &.background {
-        box-shadow: $shadow-z4,
+        box-shadow: $shadow-z16,
                     0 16px (24px * .6) 2px transparent,
                     0 6px (30px * .6) 5px transparent,
                     inset 0 1px highlight($titlebar);
         background-color: transparent;
         background-image: linear-gradient(to bottom,
-                                          $titlebar-backdrop,
-                                          $titlebar-backdrop $large-size,
+                                          $titlebar,
+                                          $titlebar $large-size,
                                           $background $large-size,
                                           $background);
       }
     } @else {
-      box-shadow: $shadow-z4,
+      box-shadow: $shadow-z16,
                   0 16px (24px * .6) 2px transparent,
                   0 6px (30px * .6) 5px transparent;
+    }
+
+    &:backdrop {
+      // the transparent shadow here is to enforce that the shadow extents don't
+      // change when we go to backdrop, to prevent jumping windows.
+      // The biggest shadow should be in the same order then in the active state
+      // or the jumping will happen during the transition.
+      transition: $transition-shadow;
+
+      @if $topbar == 'dark' {
+        &.background {
+          box-shadow: $shadow-z4,
+                      0 16px (24px * .6) 2px transparent,
+                      0 6px (30px * .6) 5px transparent,
+                      inset 0 1px highlight($titlebar);
+          background-color: transparent;
+          background-image: linear-gradient(to bottom,
+                                            $titlebar-backdrop,
+                                            $titlebar-backdrop $large-size,
+                                            $background $large-size,
+                                            $background);
+        }
+      } @else {
+        box-shadow: $shadow-z4,
+                    0 16px (24px * .6) 2px transparent,
+                    0 6px (30px * .6) 5px transparent;
+      }
     }
   }
 

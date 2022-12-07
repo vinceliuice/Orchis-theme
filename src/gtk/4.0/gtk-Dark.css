@@ -4446,6 +4446,8 @@ colorchooser .popover.osd:backdrop {
  **********************/
 window {
   outline: none;
+  padding: 0;
+  margin: 0;
 }
 
 window.csd {
@@ -4456,17 +4458,17 @@ window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-
   border-radius: 0;
 }
 
-window.background {
+window.csd.background {
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: transparent;
   background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 48px, #212121 48px, #212121);
 }
 
-window:backdrop {
+window.csd:backdrop {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-window:backdrop.background {
+window.csd:backdrop.background {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: transparent;
   background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 48px, #212121 48px, #212121);
