@@ -279,18 +279,16 @@ spinner:checked:disabled {
  ****************/
 headerbar popover.background entry, entry {
   caret-color: currentColor;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(255, 255, 255, 0.04);
   color: white;
-  box-shadow: inset 0 0 0 2px transparent;
 }
 
 headerbar popover.background entry:focus-within, entry:focus-within {
   background-color: rgba(255, 255, 255, 0.04);
   color: white;
-  box-shadow: inset 0 0 0 2px transparent;
   outline-color: #3281EA;
   outline-width: 2px;
   outline-offset: -2px;
@@ -298,13 +296,12 @@ headerbar popover.background entry:focus-within, entry:focus-within {
 
 headerbar popover.background entry:drop(active), entry:drop(active) {
   background-color: alpha(currentColor, 0.08);
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
   color: white;
-  outline: none;
+  outline: 2px solid alpha(currentColor, 0.08);
+  outline-offset: -2px;
 }
 
 headerbar popover.background entry:disabled, entry:disabled {
-  box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
   color: rgba(255, 255, 255, 0.5);
@@ -378,12 +375,11 @@ entry undershoot.right {
 }
 
 entry.error {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(242, 139, 130, 0.08);
   color: #F28B82;
-  box-shadow: inset 0 0 0 2px transparent;
 }
 
 entry.error image {
@@ -398,14 +394,12 @@ entry.error selection {
 entry.error:focus-within {
   background-color: rgba(242, 139, 130, 0.08);
   color: #F28B82;
-  box-shadow: inset 0 0 0 2px transparent;
   outline-color: #F28B82;
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 entry.error:disabled {
-  box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(242, 139, 130, 0.04);
   color: rgba(255, 255, 255, 0.5);
   color: rgba(242, 139, 130, 0.35);
@@ -419,12 +413,11 @@ entry.error:disabled > label {
 }
 
 entry.success {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(129, 201, 149, 0.08);
   color: #81C995;
-  box-shadow: inset 0 0 0 2px transparent;
 }
 
 entry.success image {
@@ -439,14 +432,12 @@ entry.success selection {
 entry.success:focus-within {
   background-color: rgba(129, 201, 149, 0.08);
   color: #81C995;
-  box-shadow: inset 0 0 0 2px transparent;
   outline-color: #81C995;
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 entry.success:disabled {
-  box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(129, 201, 149, 0.04);
   color: rgba(255, 255, 255, 0.5);
   color: rgba(129, 201, 149, 0.35);
@@ -460,12 +451,11 @@ entry.success:disabled > label {
 }
 
 entry.warning {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(253, 214, 51, 0.08);
   color: #FDD633;
-  box-shadow: inset 0 0 0 2px transparent;
 }
 
 entry.warning image {
@@ -480,14 +470,12 @@ entry.warning selection {
 entry.warning:focus-within {
   background-color: rgba(253, 214, 51, 0.08);
   color: #FDD633;
-  box-shadow: inset 0 0 0 2px transparent;
   outline-color: #FDD633;
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 entry.warning:disabled {
-  box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(253, 214, 51, 0.04);
   color: rgba(255, 255, 255, 0.5);
   color: rgba(253, 214, 51, 0.35);
@@ -552,12 +540,11 @@ treeview entry.flat, treeview entry.flat:focus-within, treeview entry, treeview 
 }
 
 editablelabel > stack > text {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(255, 255, 255, 0.04);
   color: white;
-  box-shadow: inset 0 0 0 2px transparent;
 }
 
 /***********
@@ -1062,12 +1049,11 @@ button.link > label {
  * GtkSpinButton *
  *****************/
 spinbutton:not(.vertical), spinbutton.vertical {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(255, 255, 255, 0.04);
   color: white;
-  box-shadow: inset 0 0 0 2px transparent;
   border-radius: 10px;
   padding: 0;
   border-spacing: 0;
@@ -1076,14 +1062,12 @@ spinbutton:not(.vertical), spinbutton.vertical {
 spinbutton:not(.vertical):focus-within, spinbutton.vertical:focus-within {
   background-color: rgba(255, 255, 255, 0.04);
   color: white;
-  box-shadow: inset 0 0 0 2px transparent;
   outline-color: #3281EA;
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 spinbutton:not(.vertical):disabled, spinbutton.vertical:disabled {
-  box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
   color: rgba(255, 255, 255, 0.5);
@@ -1248,12 +1232,11 @@ combobox > .linked:not(.vertical) > button:not(:only-child) {
 button.combo:only-child {
   border-radius: 10px;
   font-weight: normal;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1), outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
-  outline-offset: 2px;
+  outline-offset: 4px;
   background-color: rgba(255, 255, 255, 0.04);
   color: white;
-  box-shadow: inset 0 0 0 2px transparent;
 }
 
 button.combo:only-child:focus {
