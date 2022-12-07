@@ -170,5 +170,13 @@ $titlebar-track-disabled:               on($titlebar, track-disabled);
 $titlebar-divider:                      on($titlebar, divider);
 $titlebar-fill:                         on($titlebar, fill);
 
+//
+// Titlebutton colors
+//
+
+$titlebutton-close:                     #fd5f51;
+$titlebutton-max:                       #38c76a;
+$titlebutton-min:                       #fdbe04;
+
 // workaround for GTK3 @placeholder_text_color which doesn't allow translucent colors
 $placeholder_text_color:                if($variant == 'light', mix(black, $base, percentage(0.6)), mix(white, $base, percentage(0.7)));

@@ -1347,10 +1347,17 @@ headerbar {
     windowcontrols {
       button,
       menubutton {
-        min-height: $small-size;
-        min-width: $small-size;
-        margin: 0;
         padding: 0;
+
+        @if $mac_style == 'true' {
+          min-height: 16px;
+          min-width: 16px;
+          margin: 0 $space-size - 2px;
+        } @else {
+          min-height: $small-size;
+          min-width: $small-size;
+          margin: 0;
+        }
       }
     }
   }
@@ -1380,6 +1387,104 @@ window.devel {
     &:backdrop {
       background: $titlebar cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
                   image($titlebar); /* background-color would flash */
+    }
+  }
+}
+
+//
+// Window buttons
+//
+
+%mac_window_button {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 0;
+  margin: 0 $space-size - 2px;
+
+  &.minimize, &.maximize, &.close {
+    color: transparent;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 9999px rgba(black, if($topbar == 'dark', 0.12, 0));
+      background-image: radial-gradient(circle, rgba(black, 0.12) 10%, transparent 0%);
+    }
+
+    &:hover, &:active {
+      color: white;
+    }
+
+    &:backdrop {
+      color: transparent;
+      background-color: $titlebar-track;
+
+      &:hover, &:active {
+        color: $titlebar-text-disabled;
+      }
+    }
+  }
+
+  &.minimize { // Window minimize button
+    background-color: $titlebutton-min;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-min, 25%);
+    }
+  }
+
+  &.maximize { // Window maximize button
+    background-color: $titlebutton-max;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-max, 25%);
+    }
+  }
+
+  &.close { // Window close button
+    background-color: $titlebutton-close;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-close, 25%);
+    }
+  }
+}
+
+$window-space: if($mac_style == 'true', $space-size * 1.5, $space-size);
+
+windowcontrols {
+  border-spacing: $space-size;
+
+  &:not(.empty) {
+    &.start:dir(ltr),
+    &.end:dir(rtl) {
+      margin-right: $window-space;
+      margin-left: $window-space;
+    }
+
+    &.start:dir(rtl),
+    &.end:dir(ltr) {
+      margin-left: $window-space;
+      margin-right: $window-space;
+    }
+  }
+
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %circular-button;
+
+    @if $mac_style == 'true' {
+      @extend %mac_window_button;
+    } @else {
+      @extend %button-flat-simple;
+    }
+
+    image {
+      padding: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
     }
   }
 }
@@ -4087,46 +4192,7 @@ window {
   }
 }
 
-// Window button
-windowcontrols {
-  border-spacing: $space-size;
-
-  &:not(.empty) {
-    &.start:dir(ltr),
-    &.end:dir(rtl) {
-      margin-right: $space-size;
-    }
-
-    &.start:dir(rtl),
-    &.end:dir(ltr) {
-      margin-left: $space-size;
-    }
-  }
-
-  button {
-    @extend %circular-button;
-    @extend %button-flat-simple;
-
-    image {
-      background-color: transparent;
-      padding: 0;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      color: $titlebar-text-secondary;
-    }
-
-    &:hover > image,
-    &:active > image {
-      background-color: transparent;
-      color: $titlebar-text;
-    }
-  }
-}
-
-
 // catch all extend :)
-
 %selected_items {
   background-color: $overlay-selected;
 }

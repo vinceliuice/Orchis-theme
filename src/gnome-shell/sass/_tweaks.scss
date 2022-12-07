@@ -13,10 +13,10 @@ $theme: 'default';
 // Default corner radius value
 $default_corner: 12px;
 
-$corner-style: 'default';
+$corner_style: 'default';
 
 @if ($default_corner / 1px >= 10) {
-  $corner-style: 'circular';
+  $corner_style: 'circular';
 } @else {
-  $corner-style: 'square';
+  $corner_style: 'square';
 }

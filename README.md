@@ -43,15 +43,16 @@ OPTIONS:
   -u, --uninstall         Uninstall/Remove installed themes
 
   --tweaks                Specify versions for tweaks [solid|compact|black|primary] (Options can mix)
-                          1. solid:    no transparency panel variant
-                          2. compact:  no floating panel variant
-                          3. black:    full black variant
+                          1. solid:    No transparency panel variant
+                          2. compact:  No floating panel variant
+                          3. black:    Full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
+                          5. macos:    Change window buttons to MacOS style
 
   --shell                 install gnome-shell version [38|40|42]
-                          1. 38:       gnome-shell version < 40.0
-                          2. 40:       gnome-shell version = 40.0
-                          3. 42:       gnome-shell version = 42.0
+                          1. 38:       Gnome-shell version < 40.0
+                          2. 40:       Gnome-shell version = 40.0
+                          3. 42:       Gnome-shell version = 42.0
 
   -h, --help              Show help
 ```

@@ -40,7 +40,7 @@ $submenu_item_radius: $popup_radius - $container_padding;
   margin: 0 $container_padding;
   color: $fg_color;
   transition-duration: $shorter_duration;
-  border-radius: if($corner-style == 'circular', $circular_radius, $submenu_item_radius);
+  border-radius: if($corner_style == 'circular', $circular_radius, $submenu_item_radius);
   background-image: none;
 
   &:ltr { padding-right:1.75em; padding-left: 0; }

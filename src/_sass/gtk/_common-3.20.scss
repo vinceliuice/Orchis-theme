@@ -1287,10 +1287,15 @@ searchbar > revealer > box {
   }
 
   &.default-decoration {
-    min-height: 24px;
-    padding: $space-size $space-size / 2;
+    min-height: $small-size;
     box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $corner-radius $corner-radius 0 0;
+
+    @if $mac_style == 'true' {
+      padding: $space-size $space-size * 2;
+    } @else {
+      padding: $space-size $space-size / 2;
+    }
 
     .tiled &,
     .maximized &,
@@ -1300,10 +1305,17 @@ searchbar > revealer > box {
     }
 
     button.titlebutton {
-      min-height: 24px;
-      min-width: 24px;
-      margin: 0 $space-size / 2;
       padding: 0;
+
+      @if $mac_style == 'true' {
+        min-height: 16px;
+        min-width: 16px;
+        margin: 0 $space-size - 2px;
+      } @else {
+        min-height: $small-size;
+        min-width: $small-size;
+        margin: 0 $space-size / 2;
+      }
     }
 
     // workaround for non-animatable buttons
@@ -1400,6 +1412,88 @@ headerbar {
           border-radius: 0;
         }
       }
+    }
+  }
+}
+
+//
+// Window buttons
+//
+
+%mac_window_button {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 0;
+  margin: 0 $space-size - 2px;
+
+  &.minimize, &.maximize, &.close {
+    color: transparent;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 9999px rgba(black, if($topbar == 'dark', 0.12, 0));
+      background-image: radial-gradient(circle, rgba(black, 0.12) 10%, transparent 0%);
+    }
+
+    &:hover, &:active {
+      color: white;
+    }
+
+    &:backdrop {
+      color: transparent;
+      background-color: $titlebar-track;
+
+      &:hover, &:active {
+        color: $titlebar-text-disabled;
+      }
+    }
+  }
+
+  &.minimize { // Window minimize button
+    background-color: $titlebutton-min;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-min, 25%);
+    }
+  }
+
+  &.maximize { // Window maximize button
+    background-color: $titlebutton-max;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-max, 25%);
+    }
+  }
+
+  &.close { // Window close button
+    background-color: $titlebutton-close;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-close, 25%);
+    }
+  }
+}
+
+headerbar {
+  @if $mac_style == 'true' {
+    > box.left,
+    > box.right {
+      padding: 0 $space-size;
+
+      > separator.titlebutton {
+        background-color: transparent;
+      }
+    }
+  }
+
+  button.titlebutton {
+    @extend %circular-button;
+
+    @if $mac_style == 'true' {
+      @extend %mac_window_button;
     }
   }
 }
@@ -3729,12 +3823,7 @@ decoration {
   }
 }
 
-// Window Close button
-button.titlebutton {
-  @extend %circular-button;
-}
-
-.monospace { font-family: monospace; }
+// .monospace { font-family: monospace; }
 
 
 /**********************
