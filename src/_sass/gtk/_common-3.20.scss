@@ -652,8 +652,6 @@ button {
 
         &:checked { background-color: rgba($b_color, 0.3); }
       }
-
-      .osd & { }
     }
   }
 
@@ -694,9 +692,9 @@ button {
 
   // inline-toolbar buttons
   .inline-toolbar & {
-    // @extend %button-flat;
+    @extend %button-flat;
 
-    &:not(.text-button) { @extend %circular-button; }
+    &.image-button { @extend %circular-button; }
   }
 
   .primary-toolbar & { -gtk-icon-shadow: none; } // tango icons don't need shadows
@@ -1555,6 +1553,7 @@ treeview.view {
 
   border-left-color: $track; // this is actually the tree lines color,
   border-top-color: $divider; // while this is the grid lines color, better then nothing
+  -gtk-outline-radius: 3px;
 
   // FIXME: Avoid transparency background-color being slightly darker
   &:selected {
@@ -1884,14 +1883,11 @@ popover.background {
   min-height: $small-size;
   min-width: $small-size;
   padding: $space-size 12px;
-
   border-width: 1px;
   border-color: transparent;
   border-style: solid;
-
   outline: none;
   background-clip: padding-box;
-
   color: $text-secondary;
   font-weight: 500;
 
@@ -1929,12 +1925,7 @@ notebook {
     }
 
     > stack {
-      scrolledwindow.frame {
-        border: none;
-      }
-
       .inline-toolbar {
-        border-width: 1px 0 0;
         border-radius: 0 0 $corner-radius / 2 $corner-radius / 2;
       }
     }
@@ -1946,6 +1937,10 @@ notebook {
     }
 
     > stack {
+      scrolledwindow.frame {
+        border-radius: $corner-radius $corner-radius 0 0;
+      }
+
       .inline-toolbar {
         border-radius: 0 0 $corner-radius $corner-radius;
       }
@@ -2942,7 +2937,6 @@ printdialog {
   box-shadow: none;
 }
 
-frame > border,
 .frame {
   @extend %frame;
 
@@ -2952,7 +2946,7 @@ frame > border,
 }
 
 frame {
-  // & > border { @extend %frame; }
+  & > border { @extend %frame; }
 
   &.flat > border,
   statusbar & > border { border: none; } // for backward compatibility

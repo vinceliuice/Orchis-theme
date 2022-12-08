@@ -392,7 +392,7 @@ window.background:not(.solid-csd):not(.csd) {
 
 window.background:not(.solid-csd):not(.csd) {
   // for 'Notebookbar' toolbar
-  > notebook {
+  > notebook:not(.frame) {
     border: none; // unset borders
     background-color: $base;
     box-shadow: none;
