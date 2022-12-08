@@ -619,8 +619,8 @@ actionbar > revealer > box .linked > button:checked:disabled:not(.suggested-acti
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat), window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button, .nautilus-window headerbar revealer > button, .linked:not(.vertical) > button.disclosure-button:not(.suggested-action):not(.destructive-action):not(:only-child), button.titlebutton, filechooser #pathbarbox > stack > box > button, check,
-radio, button.close, button.circular, .inline-toolbar button:not(.text-button), button.image-button {
+window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button, .nautilus-window headerbar revealer > button, .linked:not(.vertical) > button.disclosure-button:not(.suggested-action):not(.destructive-action):not(:only-child), filechooser #pathbarbox > stack > box > button, check,
+radio, headerbar button.titlebutton, button.close, button.circular, .inline-toolbar button:not(.text-button), button.image-button {
   border-radius: 9999px;
 }
 
@@ -628,8 +628,8 @@ radio, button.close, button.circular, .inline-toolbar button:not(.text-button), 
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat) label, window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised label, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
-window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label, .nautilus-window headerbar revealer > button label, .linked:not(.vertical) > button.disclosure-button:not(.suggested-action):not(.destructive-action):not(:only-child) label, button.titlebutton label, filechooser #pathbarbox > stack > box > button label, check label,
-radio label, button.close label, button.circular label, .inline-toolbar button:not(.text-button) label, button.image-button label {
+window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label, .nautilus-window headerbar revealer > button label, .linked:not(.vertical) > button.disclosure-button:not(.suggested-action):not(.destructive-action):not(:only-child) label, filechooser #pathbarbox > stack > box > button label, check label,
+radio label, headerbar button.titlebutton label, button.close label, button.circular label, .inline-toolbar button:not(.text-button) label, button.image-button label {
   padding: 0;
 }
 
@@ -1495,10 +1495,10 @@ searchbar > revealer > box {
 }
 
 .titlebar.default-decoration {
-  min-height: 24px;
-  padding: 4px 2px;
+  min-height: 22px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   border-radius: 10px 10px 0 0;
+  padding: 4px 2px;
 }
 
 .tiled .titlebar.default-decoration, .maximized .titlebar.default-decoration, .fullscreen .titlebar.default-decoration {
@@ -1507,10 +1507,10 @@ searchbar > revealer > box {
 }
 
 .titlebar.default-decoration button.titlebutton {
-  min-height: 24px;
-  min-width: 24px;
-  margin: 0 2px;
   padding: 0;
+  min-height: 22px;
+  min-width: 22px;
+  margin: 0 2px;
 }
 
 .background:not(.csd) .titlebar.default-decoration button.titlebutton:active {
@@ -3915,10 +3915,6 @@ messagedialog.csd decoration {
 
 .solid-csd decoration:backdrop {
   background-color: #FFFFFF;
-}
-
-.monospace {
-  font-family: monospace;
 }
 
 /**********************

@@ -14,7 +14,7 @@ stage {
   color: $inverse_hint_fg_color;
 }
 
-$bubble_button_radius: if($corner-style == 'circular', $circular_radius, $material_radius);
+$bubble_button_radius: if($corner_style == 'circular', $circular_radius, $material_radius);
 
 %bubble_button {
   border: none;

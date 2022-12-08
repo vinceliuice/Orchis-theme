@@ -21,7 +21,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     height: $medium_size - 2px;
   } @else {
     margin: $container_padding / 2;
-    border-radius: if($corner-style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
+    border-radius: if($corner_style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
     height: $medium_size + 2px;
   }
 
@@ -54,11 +54,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     -minimum-hpadding: 6px;
     transition-duration: 150ms;
     border: $container_padding / 2 solid transparent;
-    border-radius: if($corner-style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
+    border-radius: if($corner_style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
     margin: 0;
 
     &.clock-display .clock {
-      border-radius: if($corner-style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
+      border-radius: if($corner_style == 'circular', $circular_radius, $material_radius + $container_padding / 2);
     }
 
     &:hover {
@@ -156,7 +156,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
     border: none !important;
     margin: $container_padding / 2 !important;
-    border-radius: if($corner-style == 'circular', $circular_radius, $material_radius);
+    border-radius: if($corner_style == 'circular', $circular_radius, $material_radius);
 
     &:hover {
       background-color: $inverse_divider_color;

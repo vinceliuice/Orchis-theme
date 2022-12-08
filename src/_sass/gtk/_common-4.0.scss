@@ -1130,6 +1130,16 @@ headerbar {
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
+  &.flat {
+    @if $topbar == 'dark' and $variant == 'light' {
+      box-shadow: none;
+    } @else {
+      box-shadow: none;
+
+      &, &:backdrop { background-color: transparent; }
+    }
+  }
+
   .title {
     padding: 0 $space-size * 2;
     font-weight: bold;
@@ -1347,10 +1357,17 @@ headerbar {
     windowcontrols {
       button,
       menubutton {
-        min-height: $small-size;
-        min-width: $small-size;
-        margin: 0;
         padding: 0;
+
+        @if $mac_style == 'true' {
+          min-height: 16px;
+          min-width: 16px;
+          margin: 0 $space-size - 2px;
+        } @else {
+          min-height: $small-size;
+          min-width: $small-size;
+          margin: 0;
+        }
       }
     }
   }
@@ -1380,6 +1397,110 @@ window.devel {
     &:backdrop {
       background: $titlebar cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
                   image($titlebar); /* background-color would flash */
+    }
+  }
+}
+
+//
+// Window buttons
+//
+
+%mac_window_button {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 0;
+  margin: 0 $space-size - 2px;
+
+  &.minimize, &.maximize, &.close {
+    color: transparent;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 9999px rgba(black, if($topbar == 'dark', 0.12, 0));
+      background-image: radial-gradient(circle, rgba(black, 0.12) 10%, transparent 0%);
+    }
+
+    &:hover, &:active {
+      color: white;
+    }
+
+    &:backdrop {
+      color: transparent;
+      background-color: $titlebar-track;
+
+      &:hover, &:active {
+        color: $titlebar-text-disabled;
+      }
+    }
+  }
+
+  &.minimize { // Window minimize button
+    background-color: $titlebutton-min;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-min, 25%);
+    }
+  }
+
+  &.maximize { // Window maximize button
+    background-color: $titlebutton-max;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-max, 25%);
+    }
+  }
+
+  &.close { // Window close button
+    background-color: $titlebutton-close;
+
+    &:active {
+      background-color: mix($titlebar-text, $titlebutton-close, 25%);
+    }
+  }
+}
+
+$window-space: if($mac_style == 'true', $space-size * 1.5, $space-size);
+
+headerbar windowcontrols {
+  border-spacing: $space-size;
+
+  &:not(.empty) {
+    &.start:dir(ltr),
+    &.end:dir(rtl) {
+      margin-right: $window-space;
+      margin-left: $window-space;
+    }
+
+    &.start:dir(rtl),
+    &.end:dir(ltr) {
+      margin-left: $window-space;
+      margin-right: $window-space;
+    }
+  }
+
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %circular-button;
+
+    @if $mac_style == 'true' {
+      @extend %mac_window_button;
+    } @else {
+      @extend %button-flat-simple;
+
+      &, &:hover, &:active, &:backdrop {
+        > image {
+          background-color: transparent;
+        }
+      }
+    }
+
+    > image {
+      padding: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
     }
   }
 }
@@ -1652,20 +1773,6 @@ popover.menu {
         background-color: $overlay-selected;
       }
     }
-  }
-
-  & > arrow,
-  &.background > contents {
-    padding: $space-size;
-    box-shadow: $shadow-z6;
-    background-color: $surface;
-    background-clip: border-box;
-    border: none; // axes borders in a composited env
-    border-radius: $menu-radius;
-  }
-
-  &.background separator {
-    margin: $space-size 0;
   }
 
   arrow.left,
@@ -4027,6 +4134,8 @@ colorchooser .popover.osd {
  **********************/
 window {
   outline: none;
+  padding: 0;
+  margin: 0;
 
   &.csd {
     border-radius: $window-radius;
@@ -4038,51 +4147,51 @@ window {
     &.tiled-right,
     &.tiled-bottom,
     &.tiled-left { border-radius: 0; }
-  }
-
-  @if $topbar == 'dark' {
-    &.background {
-      box-shadow: $shadow-z16,
-                  0 16px (24px * .6) 2px transparent,
-                  0 6px (30px * .6) 5px transparent,
-                  inset 0 1px highlight($titlebar);
-      background-color: transparent;
-      background-image: linear-gradient(to bottom,
-                                        $titlebar,
-                                        $titlebar $large-size,
-                                        $background $large-size,
-                                        $background);
-    }
-  } @else {
-    box-shadow: $shadow-z16,
-                0 16px (24px * .6) 2px transparent,
-                0 6px (30px * .6) 5px transparent;
-  }
-
-  &:backdrop {
-    // the transparent shadow here is to enforce that the shadow extents don't
-    // change when we go to backdrop, to prevent jumping windows.
-    // The biggest shadow should be in the same order then in the active state
-    // or the jumping will happen during the transition.
-    transition: $transition-shadow;
 
     @if $topbar == 'dark' {
       &.background {
-        box-shadow: $shadow-z4,
+        box-shadow: $shadow-z16,
                     0 16px (24px * .6) 2px transparent,
                     0 6px (30px * .6) 5px transparent,
                     inset 0 1px highlight($titlebar);
         background-color: transparent;
         background-image: linear-gradient(to bottom,
-                                          $titlebar-backdrop,
-                                          $titlebar-backdrop $large-size,
+                                          $titlebar,
+                                          $titlebar $large-size,
                                           $background $large-size,
                                           $background);
       }
     } @else {
-      box-shadow: $shadow-z4,
+      box-shadow: $shadow-z16,
                   0 16px (24px * .6) 2px transparent,
                   0 6px (30px * .6) 5px transparent;
+    }
+
+    &:backdrop {
+      // the transparent shadow here is to enforce that the shadow extents don't
+      // change when we go to backdrop, to prevent jumping windows.
+      // The biggest shadow should be in the same order then in the active state
+      // or the jumping will happen during the transition.
+      transition: $transition-shadow;
+
+      @if $topbar == 'dark' {
+        &.background {
+          box-shadow: $shadow-z4,
+                      0 16px (24px * .6) 2px transparent,
+                      0 6px (30px * .6) 5px transparent,
+                      inset 0 1px highlight($titlebar);
+          background-color: transparent;
+          background-image: linear-gradient(to bottom,
+                                            $titlebar-backdrop,
+                                            $titlebar-backdrop $large-size,
+                                            $background $large-size,
+                                            $background);
+        }
+      } @else {
+        box-shadow: $shadow-z4,
+                    0 16px (24px * .6) 2px transparent,
+                    0 6px (30px * .6) 5px transparent;
+      }
     }
   }
 
@@ -4101,46 +4210,7 @@ window {
   }
 }
 
-// Window button
-windowcontrols {
-  border-spacing: $space-size;
-
-  &:not(.empty) {
-    &.start:dir(ltr),
-    &.end:dir(rtl) {
-      margin-right: $space-size;
-    }
-
-    &.start:dir(rtl),
-    &.end:dir(ltr) {
-      margin-left: $space-size;
-    }
-  }
-
-  button {
-    @extend %circular-button;
-    @extend %button-flat-simple;
-
-    image {
-      background-color: transparent;
-      padding: 0;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      color: $titlebar-text-secondary;
-    }
-
-    &:hover > image,
-    &:active > image {
-      background-color: transparent;
-      color: $titlebar-text;
-    }
-  }
-}
-
-
 // catch all extend :)
-
 %selected_items {
   background-color: $overlay-selected;
 }
