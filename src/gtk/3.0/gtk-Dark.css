@@ -7787,12 +7787,16 @@ XfdesktopIconView.view .rubberband {
 /**********
  * Thunar *
  **********/
-.thunar #location-toolbar {
+.thunar toolbar {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .thunar .standard-view.frame {
   border-style: none;
+}
+
+.thunar .standard-view.frame > .view {
+  border-radius: 12px;
 }
 
 .thunar .sidebar .view:not(:selected) {

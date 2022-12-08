@@ -110,9 +110,15 @@ XfdesktopIconView.view {
  * Thunar *
  **********/
 .thunar {
-  #location-toolbar { border-bottom: 1px solid $divider; }
+  toolbar { border-bottom: 1px solid $divider; }
 
-  .standard-view.frame { border-style: none; }
+  .standard-view.frame {
+    border: none;
+
+    > .view {
+      border-radius: $corner-radius;
+    }
+  }
 
   .sidebar .view:not(:selected) { background-color: transparent; }
 
