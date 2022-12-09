@@ -165,7 +165,7 @@ textview border {
   color: rgba(255, 255, 255, 0.7);
 }
 
-iconview:hover, iconview:selected {
+iconview {
   border-radius: 12px;
 }
 
@@ -1222,7 +1222,8 @@ toolbar.vertical > separator {
 toolbar:not(.inline-toolbar):not(.osd) scale,
 toolbar:not(.inline-toolbar):not(.osd) entry,
 toolbar:not(.inline-toolbar):not(.osd) spinbutton,
-toolbar:not(.inline-toolbar):not(.osd) button {
+toolbar:not(.inline-toolbar):not(.osd) button,
+toolbar:not(.inline-toolbar):not(.osd) stackswitcher {
   margin: 2px;
 }
 
@@ -1253,6 +1254,10 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
   border-width: 0 1px 1px;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #242424;
+}
+
+frame.view + .inline-toolbar {
+  border-radius: 0 0 12px 12px;
 }
 
 searchbar > revealer > box,
@@ -3143,7 +3148,8 @@ frame > border, .frame {
   border-style: none;
 }
 
-frame.flat > border, statusbar frame > border {
+frame.flat > border,
+frame > border.flat, statusbar frame > border {
   border: none;
 }
 
@@ -6366,32 +6372,156 @@ window.background:not(.solid-csd):not(.csd) > notebook:not(.frame) > stack {
   color: white;
 }
 
-stack frame.view, stack frame.view > border {
+stack > scrolledwindow > viewport > box > box > box > frame.view, stack > scrolledwindow > viewport > box > box > box > frame.view > border,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > border,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > border,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > border {
   border-radius: 12px;
 }
 
-stack frame.view > box > box > list {
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box > list,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box > list,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box > list,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box > list {
   background-color: transparent;
 }
 
-stack frame.view > box > box:first-child > list, stack frame.view > box > box:first-child > list > row {
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:first-child > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:first-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box:first-child > list,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box:first-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box:first-child > list,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box:first-child > list > row,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box:first-child > list,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box:first-child > list > row {
   border-radius: 12px 12px 0 0;
 }
 
-stack frame.view > box > box:last-child > list, stack frame.view > box > box:last-child > list > row {
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:last-child > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:last-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box:last-child > list,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box:last-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box:last-child > list,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box:last-child > list > row,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box:last-child > list,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box:last-child > list > row {
   border-radius: 0 0 12px 12px;
 }
 
-stack frame.view > box > box:only-child > list, stack frame.view > box > box:only-child > list > row {
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:only-child > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:only-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box:only-child > list,
+stack > scrolledwindow > viewport > box > stack > box > revealer > box > box > frame.view > box > box:only-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box:only-child > list,
+stack > scrolledwindow > viewport > box > stack > box > stack > box > box > frame.view > box > box:only-child > list > row,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box:only-child > list,
+stack > scrolledwindow > viewport > box > revealer > box > stack > box > box > frame.view > box > box:only-child > list > row {
   border-radius: 12px;
 }
 
-stack frame.view > box > revealer > box > box > list {
+stack > scrolledwindow > viewport > box > box > box > frame.view, stack > scrolledwindow > viewport > box > box > box > frame.view > border,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > border,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > border {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box > list {
   background-color: transparent;
 }
 
-stack frame.view > box > revealer:last-child > box > box > list, stack frame.view > box > revealer:last-child > box > box > list > row {
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:first-child > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:first-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box:first-child > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box:first-child > list > row,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box:first-child > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box:first-child > list > row {
+  border-radius: 12px 12px 0 0;
+}
+
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:last-child > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:last-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box:last-child > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box:last-child > list > row,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box:last-child > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box:last-child > list > row {
   border-radius: 0 0 12px 12px;
+}
+
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:only-child > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > box:only-child > list > row,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box:only-child > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > box:only-child > list > row,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box:only-child > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > box:only-child > list > row {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > revealer > box > box > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > revealer > box > box > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > revealer > box > box > list {
+  background-color: transparent;
+}
+
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > revealer:first-child > box > box > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > revealer:first-child > box > box > list > row,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > revealer:first-child > box > box > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > revealer:first-child > box > box > list > row,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > revealer:first-child > box > box > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > revealer:first-child > box > box > list > row {
+  border-radius: 12px 12px 0 0;
+}
+
+stack > scrolledwindow > viewport > box > box > box > frame.view > box > revealer:last-child > box > box > list, stack > scrolledwindow > viewport > box > box > box > frame.view > box > revealer:last-child > box > box > list > row,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > revealer:last-child > box > box > list,
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > revealer:last-child > box > box > list > row,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > revealer:last-child > box > box > list,
+stack > scrolledwindow > viewport > box > box > revealer > box > box > frame.view > box > revealer:last-child > box > box > list > row {
+  border-radius: 0 0 12px 12px;
+}
+
+stack > scrolledwindow > viewport > box > box > widget > overlay > scrolledwindow > viewport > grid > box > frame, stack > scrolledwindow > viewport > box > box > widget > overlay > scrolledwindow > viewport > grid > box > frame > border {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box > box > widget > overlay > scrolledwindow > viewport > grid > box > frame > list {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box > box > widget > overlay > scrolledwindow > viewport > grid > box > frame > list > row:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+stack > scrolledwindow > viewport > box > box > widget > overlay > scrolledwindow > viewport > grid > box > frame > list > row:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view, stack > scrolledwindow > viewport > box > stack > box > box > frame.view > border {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view frame.view {
+  background-color: transparent;
+}
+
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > scrolledwindow > viewport.frame > box > list {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > scrolledwindow > viewport.frame > box > list > row:first-child {
+  border-radius: 12px 12px 0 0;
+}
+
+stack > scrolledwindow > viewport > box > stack > box > box > frame.view > box > scrolledwindow > viewport.frame > box > list > row:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
+stack > scrolledwindow > viewport > box > widget > box > frame.view, stack > scrolledwindow > viewport > box > widget > box > frame.view > border,
+stack > scrolledwindow > viewport > box > widget > box > frame.view > widget > box > box > list {
+  border-radius: 12px;
+}
+
+stack > scrolledwindow > viewport > box #c_box notebook {
+  background-color: transparent;
 }
 
 /*********

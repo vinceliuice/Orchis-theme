@@ -425,44 +425,152 @@ window.background:not(.solid-csd):not(.csd) {
 // Cinnamon setting
 //
 
-stack frame.view {
-  &, > border {
-    border-radius: $corner-radius;
-  }
-
-  > box > box {
-    > list {
-      background-color: transparent;
-    }
-
-    &:first-child > list {
-      &, > row {
-        border-radius: $corner-radius $corner-radius 0 0;
-      }
-    }
-
-    &:last-child > list {
-      &, > row {
-        border-radius: 0 0 $corner-radius $corner-radius;
-      }
-    }
-
-    &:only-child > list {
-      &, > row {
+stack > scrolledwindow > viewport > box {
+  > box > box,
+  > stack > box > revealer > box > box,
+  > stack > box > stack > box > box,
+  > revealer > box > stack > box > box {
+    > frame.view {
+      &, > border {
         border-radius: $corner-radius;
       }
+
+      > box > box {
+        > list {
+          background-color: transparent;
+        }
+
+        &:first-child > list {
+          &, > row {
+            border-radius: $corner-radius $corner-radius 0 0;
+          }
+        }
+
+        &:last-child > list {
+          &, > row {
+            border-radius: 0 0 $corner-radius $corner-radius;
+          }
+        }
+
+        &:only-child > list {
+          &, > row {
+            border-radius: $corner-radius;
+          }
+        }
+      }
     }
   }
 
-  > box > revealer {
-    > box > box > list {
+  > box > box,
+  > stack > box > box,
+  > box > revealer > box > box {
+    > frame.view {
+      &, > border {
+        border-radius: $corner-radius;
+      }
+
+      > box > box {
+        > list {
+          background-color: transparent;
+        }
+
+        &:first-child > list {
+          &, > row {
+            border-radius: $corner-radius $corner-radius 0 0;
+          }
+        }
+
+        &:last-child > list {
+          &, > row {
+            border-radius: 0 0 $corner-radius $corner-radius;
+          }
+        }
+
+        &:only-child > list {
+          &, > row {
+            border-radius: $corner-radius;
+          }
+        }
+      }
+
+      > box > revealer {
+        > box > box > list {
+          background-color: transparent;
+        }
+
+        &:first-child > box > box > list {
+          &, > row {
+            border-radius: $corner-radius $corner-radius 0 0;
+          }
+        }
+
+        &:last-child > box > box > list {
+          &, > row {
+            border-radius: 0 0 $corner-radius $corner-radius;
+          }
+        }
+      }
+    }
+  }
+
+  > box > widget > overlay > scrolledwindow > viewport > grid > box {
+    > frame {
+      &, > border {
+        border-radius: $corner-radius;
+      }
+
+      > list {
+        border-radius: $corner-radius;
+
+        > row {
+          &:first-child {
+            border-radius: $corner-radius $corner-radius 0 0;
+          }
+
+          &:last-child {
+            border-radius: 0 0 $corner-radius $corner-radius;
+          }
+        }
+      }
+    }
+  }
+
+  > stack > box > box > frame.view {
+    &, > border {
+      border-radius: $corner-radius;
+    }
+
+    frame.view {
       background-color: transparent;
     }
 
-    &:last-child > box > box > list {
-      &, > row {
-        border-radius: 0 0 $corner-radius $corner-radius;
+    > box > scrolledwindow > viewport.frame > box {
+      > list {
+        border-radius: $corner-radius;
+
+        > row {
+          &:first-child {
+            border-radius: $corner-radius $corner-radius 0 0;
+          }
+
+          &:last-child {
+            border-radius: 0 0 $corner-radius $corner-radius;
+          }
+        }
       }
+    }
+  }
+
+  > widget > box > frame.view {
+    &, > border,
+    > widget > box > box > list {
+      border-radius: $corner-radius;
+    }
+  }
+
+  #c_box {
+    notebook {
+      background-color: transparent;
     }
   }
 }
