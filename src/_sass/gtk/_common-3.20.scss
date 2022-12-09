@@ -986,7 +986,7 @@ button.combo:only-child {
  ************/
 toolbar {
   -GtkWidget-window-dragging: true;
-  padding: 2px;
+  padding: $space-size / 2;
   background-color: $background;
 
   button { @extend %button-flat; }
@@ -1198,6 +1198,7 @@ searchbar > revealer > box {
 
   stackswitcher { // reset
     border-radius: $circular-radius;
+    margin: $space-size 0;
 
     &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
       border-radius: $circular-radius;
@@ -3032,6 +3033,41 @@ separator {
 /*********
  * Lists *
  *********/
+
+%circular_list {
+  border-radius: $corner-radius + 1px;
+  box-shadow: none;
+  border: 1px solid $divider;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+  }
+
+  &:only-child {
+    border-radius: $corner-radius;
+  }
+}
+
+%sidebar_row {
+  margin-right: 4px;
+  border-radius: 0 $circular-radius $circular-radius 0;
+
+  &:selected {
+    background-color: $overlay-checked;
+    color: $primary;
+
+    image, label { color: $primary; }
+  }
+}
+
 list {
   border-color: $divider;
   background-color: $base;
@@ -3868,7 +3904,6 @@ cursor-handle {
 stackswitcher {
   min-height: 0;
   padding: 0;
-  margin: $space-size 0;
   border-radius: $circular-radius;
   background-color: $overlay-normal;
 

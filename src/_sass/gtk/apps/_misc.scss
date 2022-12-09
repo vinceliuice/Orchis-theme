@@ -420,3 +420,49 @@ window.background:not(.solid-csd):not(.csd) {
     }
   }
 }
+
+//
+// Cinnamon setting
+//
+
+stack frame.view {
+  &, > border {
+    border-radius: $corner-radius;
+  }
+
+  > box > box {
+    > list {
+      background-color: transparent;
+    }
+
+    &:first-child > list {
+      &, > row {
+        border-radius: $corner-radius $corner-radius 0 0;
+      }
+    }
+
+    &:last-child > list {
+      &, > row {
+        border-radius: 0 0 $corner-radius $corner-radius;
+      }
+    }
+
+    &:only-child > list {
+      &, > row {
+        border-radius: $corner-radius;
+      }
+    }
+  }
+
+  > box > revealer {
+    > box > box > list {
+      background-color: transparent;
+    }
+
+    &:last-child > box > box > list {
+      &, > row {
+        border-radius: 0 0 $corner-radius $corner-radius;
+      }
+    }
+  }
+}
