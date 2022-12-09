@@ -7,7 +7,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="toggle-off.svg"
+   sodipodi:docname="menu-toggle-off.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -33,14 +33,14 @@
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#808080"
-     bordercolor="#666666"
-     borderopacity="1.0"
+     pagecolor="#ffffff"
+     bordercolor="#c7c7c7"
+     borderopacity="1"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.0786474"
-     inkscape:cx="-11.814169"
-     inkscape:cy="-9.352884"
+     inkscape:zoom="14.364584"
+     inkscape:cx="29.865118"
+     inkscape:cy="15.07179"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -52,7 +52,7 @@
      inkscape:document-rotation="0"
      inkscape:showpageshadow="2"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#808080">
+     inkscape:deskcolor="#ffffff">
     <inkscape:grid
        type="xygrid"
        id="grid2985"

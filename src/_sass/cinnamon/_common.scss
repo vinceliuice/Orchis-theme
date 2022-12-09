@@ -9,7 +9,7 @@ $panel_bg: rgba($panel-solid, 0.75);
 $panel_fg: on($panel-solid, secondary);
 
 stage {
-  @include fontsize($font-size);
+  // @include fontsize($font-size);
   color: $text;
 }
 
@@ -88,7 +88,7 @@ stage {
 }
 
 %osd_entry {
-  padding: $space-size/2 $space-size*2;
+  padding: $space-size / 2 $space-size * 2;
   caret-size: 1px;
   caret-color: on($tooltip);
   selection-background-color: $primary;
@@ -100,6 +100,19 @@ stage {
 
   &:focus { @include entry(osd-focus); }
   &:insensitive { @include entry(osd-insensitive); }
+}
+
+//
+// Looking Glass
+//
+#LookingGlassDialog {
+  background-color: if($opacity == 'default', rgba($base, 0.97), $base);
+  spacing: $space-size;
+  padding: $space-size $space-size * 2;
+  border: none;
+  border-radius: $corner-radius;
+  color: $text;
+  box-shadow: 3px 6px rgba(black, 0.25);
 }
 
 //
@@ -226,8 +239,8 @@ StScrollBar {
 // Switches
 //
 .toggle-switch {
-  width: 40px;
-  height: 20px;
+  width: 44px;
+  height: 26px;
   background-size: contain;
   background-image: url("#{$asset_path}/toggle-off.svg");
 
@@ -269,33 +282,40 @@ StScrollBar {
 // Popovers/Menus
 //
 
-$menu_bg: if($variant=='light', rgba($base, 0.95), rgba($background, 0.95));
-$sub_menu_bg: if($variant == 'light', #555555, #eaeaea);
-$menu_item_radius: $corner-radius - $space-size;
+$menu_bg: if($opacity == 'default', rgba($base, 0.97), $base);
+$sub_menu_bg: if($variant == 'light', #e6e6e6, #f2f2f2);
+$menu_radius: $corner-radius + $space-size;
 
 .menu,
 .popup-menu,
 %menu {
-  padding: $space-size / 2;
+  padding: 0;
   color: $text;
-  background-color: $menu_bg;
-  border-radius: $corner-radius;
-  margin: $space-size;
-  box-shadow: 0 5px 12px rgba(black, 0.35);
+  background-color: transparent;
 
   &-arrow { icon-size: 16px; }
 
   .popup-sub-menu {
-    border-radius: $menu_item_radius;
+    border-radius: $corner-radius;
     background-gradient-direction: none;
     box-shadow: none;
     background-color: $sub_menu_bg;
     color: on($sub_menu_bg, secondary);
 
-    .popup-menu-item:active {
-      background-color: on($sub_menu_bg, divider);
-      color: on($sub_menu_bg);
+    .popup-menu-item {
+      &:active {
+        background-color: on($sub_menu_bg, divider);
+        color: on($sub_menu_bg);
+      }
+
+      &:active .popup-inactive-menu-item { color: on($sub_menu_bg, disabled); }
+
+      &:insensitive {
+        color: on($sub_menu_bg, secondary-disabled);
+      }
     }
+
+    .popup-inactive-menu-item { color: on($sub_menu_bg, secondary-disabled); }
 
     StScrollBar {
       padding: 4px;
@@ -303,12 +323,19 @@ $menu_item_radius: $corner-radius - $space-size;
     }
   }
 
-  .popup-menu-content { padding: $space-size / 2; }
+  .popup-menu-content {
+    color: $text;
+    padding: $space-size;
+    background-color: $menu_bg;
+    border-radius: $menu_radius;
+    margin: $space-size;
+    box-shadow: 0 3px 8px rgba(black, 0.35);
+  }
 
   .popup-menu-item {
-    padding: $space-size $space-size*2;
-    spacing: $space-size*2;
-    border-radius: $menu_item_radius;
+    padding: $space-size $space-size * 2;
+    spacing: $space-size * 2;
+    border-radius: $corner-radius;
 
     &:hover, &:active {
       color: $text;
@@ -343,7 +370,7 @@ $menu_item_radius: $corner-radius - $space-size;
 
 .popup-combo-menu {
   @extend %menu;
-  padding: $space-size*2;
+  padding: $space-size * 2;
 }
 
 // .popup-image-menu-item {}
@@ -660,10 +687,37 @@ $menu_item_radius: $corner-radius - $space-size;
 //
 // Calendar
 //
+
+.calendar-main-box {
+  margin: 0 $space-size;
+}
+
 .calendar {
-  padding: .4em 1.75em;
+  padding: $space-size $space-size * 2;
   spacing-rows: 0px;
   spacing-columns: 0px;
+}
+
+.calendar-today-home-button,
+.calendar-today-home-button-enabled {
+  margin: $space-size 0;
+  padding: $space-size;
+  @extend %flat_button;
+}
+
+.calendar-today-day-label {
+  font-size: 1.75em;
+  color: $text-secondary;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: .1em;
+}
+
+.calendar-today-date-label {
+  font-size: 1.1em;
+  color: $text-disabled;
+  font-weight: bold;
+  text-align: center;
 }
 
 .calendar-month-label {
@@ -703,6 +757,18 @@ $menu_item_radius: $corner-radius - $space-size;
   }
 }
 
+.calendar-day-event-dot-box {
+  margin-top: 1.75em;
+  max-rows: 1;
+}
+
+.calendar-day-event-dot {
+  margin: 1px;
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
+}
+
 .datemenu-date-label {
   padding: .4em 1.75em;
   font-weight: normal;
@@ -719,6 +785,18 @@ $menu_item_radius: $corner-radius - $space-size;
   padding: 0;
   margin: 2px;
   border-radius: $circular-radius;
+
+  &:hover {
+    background-color: $fill;
+  }
+
+  &:active {
+    background-color: $divider;
+  }
+
+  &:selected {
+    background-color: $divider;
+  }
 }
 
 .calendar-day-heading {
@@ -748,7 +826,8 @@ $menu_item_radius: $corner-radius - $space-size;
 .calendar-today,
 .calendar-today:active,
 .calendar-today:focus,
-.calendar-today:hover {
+.calendar-today:hover,
+.calendar-today:selected {
   font-weight: bold;
   color: on($primary);
   background-color: $primary;
@@ -773,6 +852,131 @@ $menu_item_radius: $corner-radius - $space-size;
     padding: 0;
     margin-top: 3px;
   }
+}
+
+.calendar-events-main-box {
+  height: 300px;
+  margin: $space-size + 2px 0.8em 0 0;
+  padding: $space-size + 2px;
+  min-width: 350px;
+  border: none;
+  border-radius: $corner-radius;
+  background-gradient-direction: vertical;
+  background-gradient-start: $fill;
+  background-gradient-end: $fill;
+  color: $text-secondary;
+}
+
+.calendar-events-no-events-button {
+  margin: $space-size 0;
+  padding: $space-size;
+  border-radius: $corner-radius;
+
+  &:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: $fill;
+    background-gradient-end: $fill;
+    box-shadow: none;
+  }
+}
+
+.calendar-events-no-events-icon {
+  color: $text-disabled;
+}
+
+.calendar-events-no-events-label {
+  font-size: 1.1em;
+  color: $text-disabled;
+  font-weight: bold;
+  text-align: center;
+  margin-top: $space-size * 1.5;
+}
+
+.calendar-events-date-label {
+  padding: $space-size / 2 0 $space-size * 2 $space-size / 2;
+  font-size: 1.1em;
+  color: $text-secondary;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-events-event-container {
+  padding: 2px;
+}
+
+.calendar-events-main-box .separator {
+  -margin-horizontal: 1em;
+  -gradient-height: 1px;
+  -gradient-start: $border;
+  -gradient-end: $border;
+}
+
+.calendar-event-button {
+  margin: $space-size 0 $space-size 0;
+  border-radius: $corner-radius;
+
+  &:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: $fill;
+    background-gradient-end: $fill;
+    box-shadow: none;
+  }
+}
+
+.calendar-event-color-strip {
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.calendar-event-row-content {
+  margin: $space-size;
+}
+
+.calendar-event-time-past {
+  color: $text-secondary-disabled;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-time-present {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-time-present:all-day {
+  color: rgba($success, 0.6);
+}
+
+.calendar-event-time-future {
+  text-align: left;
+  margin-bottom: .6em;
+}
+
+.calendar-event-countdown {
+  color: $text-disabled;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: .6em;
+}
+
+.calendar-event-countdown:soon {
+  color: white;
+}
+
+.calendar-event-countdown:imminent {
+  color: rgba($warning, 0.6);
+}
+
+.calendar-event-countdown:current {
+  color: rgba($success, 0.6);
+}
+
+.calendar-event-summary {
+  color: $text-disabled;
+  text-align: left;
+  width: 200px;
 }
 
 //
@@ -1450,7 +1654,7 @@ $menu_item_radius: $corner-radius - $space-size;
 
   // >= 3.6.7
   &-preview { // thumbnail popup windows = .switcher-list
-    padding: $space-size*2; // = .switcher-list - .item-box
+    padding: $space-size * 2; // = .switcher-list - .item-box
     spacing: $space-size; // = .switcher-list-item-container
     border: none;
     background-color: $base;
@@ -1475,6 +1679,12 @@ $menu_item_radius: $corner-radius - $space-size;
 
   &-thumbnail-menu {
     padding: $space-size;
+    padding: $space-size;
+    margin: $space-size;
+    background-color: $menu_bg;
+    box-shadow: 0 3px 8px rgba(black, 0.35);
+    border-radius: $window-radius;
+    color: $text;
 
     .item-box {
       padding: $space-size;
@@ -1882,6 +2092,25 @@ $menu_item_radius: $corner-radius - $space-size;
     .applet-box:checked & {
       color: $panel_fg;
       text-shadow: none;
+    }
+  }
+
+  &-cornerbar {
+    width: 8px;
+    background: transparent;
+
+    &-box {
+      padding: 0;
+      background: transparent;
+      border-left: 1px solid on($panel, divider);
+
+      &:hover > .applet-cornerbar {
+        background: on($panel, divider);
+      }
+    }
+
+    &.vertical {
+      height: 8px;
     }
   }
 }

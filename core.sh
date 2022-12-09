@@ -129,13 +129,13 @@ install() {
   mkdir -p                                                                      "$THEME_DIR/cinnamon"
   cp -r "$SRC_DIR/cinnamon/common-assets"                                       "$THEME_DIR/cinnamon/assets"
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
+  cp -r "$SRC_DIR/cinnamon/theme$theme/add-workspace-active${ELSE_DARK:-}.svg"  "$THEME_DIR/cinnamon/assets/add-workspace-active.svg"
+  cp -r "$SRC_DIR/cinnamon/theme$theme/corner-ripple${ELSE_DARK:-}.svg"         "$THEME_DIR/cinnamon/assets/corner-ripple.svg"
+  cp -r "$SRC_DIR/cinnamon/theme$theme/toggle-on${ELSE_DARK:-}.svg"             "$THEME_DIR/cinnamon/assets/toggle-on.svg"
 
-  if [[ "$theme" != '' ]]; then
-    cp -r "$SRC_DIR/cinnamon/theme$theme/add-workspace-active${ELSE_DARK:-}.svg" "$THEME_DIR/cinnamon/assets/add-workspace-active.svg"
-    cp -r "$SRC_DIR/cinnamon/theme$theme/checkbox${ELSE_DARK:-}.svg"            "$THEME_DIR/cinnamon/assets/checkbox.svg"
+  if [[ "$primary" == 'true' ]]; then
+    cp -r "$SRC_DIR/cinnamon/theme$theme/checkbox${ELSE_DARK:-}.svg"            "$THEME_DIR/gnome-shell/assets/checkbox.svg"
     cp -r "$SRC_DIR/cinnamon/theme$theme/radiobutton${ELSE_DARK:-}.svg"         "$THEME_DIR/cinnamon/assets/radiobutton.svg"
-    cp -r "$SRC_DIR/cinnamon/theme$theme/corner-ripple${ELSE_DARK:-}.svg"       "$THEME_DIR/cinnamon/assets/corner-ripple.svg"
-    cp -r "$SRC_DIR/cinnamon/theme$theme/toggle-on${ELSE_DARK:-}.svg"           "$THEME_DIR/cinnamon/assets/toggle-on.svg"
   fi
 
   if [[ "$tweaks" == 'true' ]]; then
