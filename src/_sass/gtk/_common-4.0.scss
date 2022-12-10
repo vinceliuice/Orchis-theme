@@ -1970,11 +1970,12 @@ magnifier {
 }
 
 notebook {
+  background-color: $base;
+
   frame > paned > & > header,
   &.frame > header { background-color: $base-alt; }
 
-  &, &.frame {
-    background-color: $base;
+  &.frame {
     border-radius: $corner-radius;
   }
 
@@ -1993,12 +1994,29 @@ notebook {
 
   &:focus tab:checked { box-shadow: none; }
 
+  &.frame > header {
+    &.top {
+      border-radius: $corner-radius $corner-radius 0 0;
+    }
+
+    &.bottom {
+      border-radius: 0 0 $corner-radius $corner-radius;
+    }
+
+    &.left {
+      border-radius: $corner-radius 0 0 $corner-radius;
+    }
+
+    &.right {
+      border-radius: 0 $corner-radius $corner-radius 0;
+    }
+  }
+
   > header {
     border: none;
     background-color: $background;
 
     &.top {
-      border-radius: $corner-radius $corner-radius 0 0;
       box-shadow: inset 0 -1px $solid-border;
 
       > tabs {
@@ -2013,7 +2031,6 @@ notebook {
     }
 
     &.bottom {
-      border-radius: 0 0 $corner-radius $corner-radius;
       box-shadow: inset 0 1px $solid-border;
 
       > tabs {
@@ -2028,7 +2045,6 @@ notebook {
     }
 
     &.left {
-      border-radius: $corner-radius 0 0 $corner-radius;
       box-shadow: inset -1px 0 $solid-border;
 
       > tabs {
@@ -2043,7 +2059,6 @@ notebook {
     }
 
     &.right {
-      border-radius: 0 $corner-radius $corner-radius 0;
       box-shadow: inset 1px 0 $solid-border;
 
       > tabs {

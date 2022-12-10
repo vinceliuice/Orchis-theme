@@ -2279,12 +2279,15 @@ notebook > header tab:checked.reorderable-page {
   background-color: #FFFFFF;
 }
 
+notebook {
+  background-color: #FFFFFF;
+}
+
 frame > paned > notebook > header, notebook.frame > header {
   background-color: #FAFAFA;
 }
 
-notebook, notebook.frame {
-  background-color: #FFFFFF;
+notebook.frame {
   border-radius: 12px;
 }
 
@@ -2301,13 +2304,28 @@ notebook:focus tab:checked {
   box-shadow: none;
 }
 
+notebook.frame > header.top {
+  border-radius: 12px 12px 0 0;
+}
+
+notebook.frame > header.bottom {
+  border-radius: 0 0 12px 12px;
+}
+
+notebook.frame > header.left {
+  border-radius: 12px 0 0 12px;
+}
+
+notebook.frame > header.right {
+  border-radius: 0 12px 12px 0;
+}
+
 notebook > header {
   border: none;
   background-color: #F2F2F2;
 }
 
 notebook > header.top {
-  border-radius: 12px 12px 0 0;
   box-shadow: inset 0 -1px #dedede;
 }
 
@@ -2322,7 +2340,6 @@ notebook > header.top > tabs > tab {
 }
 
 notebook > header.bottom {
-  border-radius: 0 0 12px 12px;
   box-shadow: inset 0 1px #dedede;
 }
 
@@ -2337,7 +2354,6 @@ notebook > header.bottom > tabs > tab {
 }
 
 notebook > header.left {
-  border-radius: 12px 0 0 12px;
   box-shadow: inset -1px 0 #dedede;
 }
 
@@ -2352,7 +2368,6 @@ notebook > header.left > tabs > tab {
 }
 
 notebook > header.right {
-  border-radius: 0 12px 12px 0;
   box-shadow: inset 1px 0 #dedede;
 }
 
