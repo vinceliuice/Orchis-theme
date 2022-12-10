@@ -2323,6 +2323,7 @@ notebook.frame > header.right {
 notebook > header {
   border: none;
   background-color: #212121;
+  padding: 0;
 }
 
 notebook > header.top {
@@ -2330,8 +2331,7 @@ notebook > header.top {
 }
 
 notebook > header.top > tabs {
-  margin-bottom: -1px;
-  margin-top: 4px;
+  margin: 4px 0 0;
 }
 
 notebook > header.top > tabs > tab {
@@ -2344,8 +2344,7 @@ notebook > header.bottom {
 }
 
 notebook > header.bottom > tabs {
-  margin-top: -1px;
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 notebook > header.bottom > tabs > tab {
@@ -2358,8 +2357,7 @@ notebook > header.left {
 }
 
 notebook > header.left > tabs {
-  margin-right: -1px;
-  margin-left: 4px;
+  margin: 0 4px 0 0;
 }
 
 notebook > header.left > tabs > tab {
@@ -2372,8 +2370,7 @@ notebook > header.right {
 }
 
 notebook > header.right > tabs {
-  margin-left: -1px;
-  margin-right: 4px;
+  margin: 0 0 0 4px;
 }
 
 notebook > header.right > tabs > tab {

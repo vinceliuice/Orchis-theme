@@ -2015,13 +2015,13 @@ notebook {
   > header {
     border: none;
     background-color: $background;
+    padding: 0;
 
     &.top {
       box-shadow: inset 0 -1px $solid-border;
 
       > tabs {
-        margin-bottom: -1px;
-        margin-top: 4px;
+        margin: 4px 0 0;
 
         > tab {
           border-radius: $corner-radius $corner-radius 0 0;
@@ -2034,8 +2034,7 @@ notebook {
       box-shadow: inset 0 1px $solid-border;
 
       > tabs {
-        margin-top: -1px;
-        margin-bottom: 4px;
+        margin: 0 0 4px;
 
         > tab {
           border-radius: 0 0 $corner-radius $corner-radius;
@@ -2048,8 +2047,7 @@ notebook {
       box-shadow: inset -1px 0 $solid-border;
 
       > tabs {
-        margin-right: -1px;
-        margin-left: 4px;
+        margin: 0 4px 0 0;
 
         > tab {
           border-radius: $corner-radius 0 0 $corner-radius;
@@ -2062,8 +2060,7 @@ notebook {
       box-shadow: inset 1px 0 $solid-border;
 
       > tabs {
-        margin-left: -1px;
-        margin-right: 4px;
+        margin: 0 0 0 4px;
 
         > tab {
           border-radius: 0 $corner-radius $corner-radius 0;
