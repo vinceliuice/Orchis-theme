@@ -28,6 +28,7 @@ OPTIONS:
                           3. black:    Full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
                           5. macos:    Change window buttons to MacOS style
+                          6. submenu:  Theme sub-menus, by Default submenus contrast
 
   --shell                 install gnome-shell version [38|40|42]
                           1. 38:       Gnome-shell version < 40.0
@@ -125,6 +126,11 @@ while [[ "$#" -gt 0 ]]; do
           macos)
             macstyle="true"
             echo -e "Install MacOS style window button version ..."
+            shift
+            ;;
+          submenu)
+            submenu="true"
+            echo -e "Install with themed sub-menus ..."
             shift
             ;;
           -*)

@@ -257,6 +257,10 @@ round_corner() {
   sed -i "/\$default_corner:/s/12px/${corner}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
+install_submenu() {
+  sed -i "/\$submenu_style:/s/false/true/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
+}
+
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -320,6 +324,11 @@ theme_tweaks() {
   if [[ "$macstyle" == "true" ]] ; then
     install_mac
   fi
+  
+  if [[ "$submenu" == "true" ]] ; then
+    install_submenu
+  fi
+  
 }
 
 check_shell() {
