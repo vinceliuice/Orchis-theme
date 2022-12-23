@@ -1,5 +1,6 @@
 /* Popovers/Menus */
 
+
 //.the popover itself
 .popup-menu-boxpointer {
   -arrow-border-radius: $popup_radius;
@@ -39,6 +40,7 @@ $submenu_item_radius: $popup_radius - $container_padding;
   padding: $container_padding;
   margin: 0 $container_padding;
   color: $fg_color;
+  background-color: if($submenu_style == 'true', $bg_color !important, none);
   transition-duration: $shorter_duration;
   border-radius: if($corner_style == 'circular', $circular_radius, $submenu_item_radius);
   background-image: none;
@@ -49,6 +51,10 @@ $submenu_item_radius: $popup_radius - $container_padding;
   &:checked {
     background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
     color: rgba(black, 0.75);
+    @if ($submenu_style == 'true') {
+      color: $fg_color !important;
+      background-color: lighten($bg_color, 10%) !important;
+    }
     font-weight: normal;
     border-radius: $submenu_item_radius $submenu_item_radius 0 0;
     border: none;
@@ -57,20 +63,45 @@ $submenu_item_radius: $popup_radius - $container_padding;
     &.selected {
       background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5);
       color: rgba(black, 0.85);
+      @if ($submenu_style == 'true') {
+        color: $selected_fg_color !important;
+        background-color: darken($selected_bg_color, 10%) !important;
+      }
     }
 
     &:active {
       background-color: #dfdfdf;
       color: rgba(black, 0.75);
+      @if ($submenu_style == 'true') {
+        color: $fg_color !important;
+        background-color: $bg_color !important;
+      }
     }
 
-    &.selected:active { background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); color: rgba(black, 0.75); }
-    &:insensitive { color: rgba(black, 0.35); }
+    &.selected:active { 
+      background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); 
+      color: rgba(black, 0.75); 
+      @if ($submenu_style == 'true') {
+        color: $selected_fg_color !important;
+        background-color: darken($selected_bg_color, 10%) !important;
+      }
+    }
+    &:insensitive { 
+      color: rgba(black, 0.35); 
+      @if ($submenu_style == 'true') {
+        color: $fg_color !important;
+        background-color: $bg_color !important;
+      }
+    }
   }
 
   &.selected {
     background-color: $divider_color;
     color: $fg_color;
+    @if ($submenu_style == 'true') {
+      color: $selected_fg_color !important;
+      background-color: darken($selected_bg_color, 10%) !important;
+    }
     transition-duration: 0ms;
   }
 
@@ -88,7 +119,14 @@ $submenu_item_radius: $popup_radius - $container_padding;
 .popup-inactive-menu-item {
   color: $fg_color;
 
-  &.selected:active { background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); color: rgba(black, 0.75); }
+  &.selected:active { 
+    background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); 
+    color: rgba(black, 0.75); 
+    @if ($submenu_style == 'true') {
+      color: $selected_fg_color !important;
+      background-color: $selected_bg_color !important;
+    }
+  }
   &:insensitive { color: $hint_fg_color; }
 }
 
@@ -101,6 +139,10 @@ $submenu_item_radius: $popup_radius - $container_padding;
   margin: 0 $container_padding;
   color: rgba(black, 0.75);
   background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
+  @if ($submenu_style == 'true') {
+    color: $fg_color !important;
+    background-color: lighten($bg_color, 10%) !important;
+  }
   border-radius: 0 0 $submenu_item_radius $submenu_item_radius;
   border: none;
   box-shadow: none;
@@ -110,21 +152,45 @@ $submenu_item_radius: $popup_radius - $container_padding;
     margin: 0;
     border-radius: $submenu_item_radius;
     color: rgba(black, 0.75);
+    @if ($submenu_style == 'true') {
+      color: $fg_color !important;
+      background-color: lighten($bg_color, 10%) !important;
+    }
     background-image: none;
 
     &:hover {
       color: rgba(black, 0.85);
       background-color: rgba(black, 0.15);
+      @if ($submenu_style == 'true') {
+        color: $selected_fg_color !important;
+        background-color: darken($selected_bg_color, 10%) !important;
+      }
     }
 
     &:active {
       color: rgba(black, 0.85);
       background-color: rgba(black, 0.2);
+      @if ($submenu_style == 'true') {
+        color: $fg_color !important;
+        background-color: $bg_color !important;
+      }
     }
 
-    &.selected:active { color: rgba(black, 0.75); }
+    &.selected:active { 
+      color: rgba(black, 0.75);
+      @if ($submenu_style == 'true') {
+        color: $fg_color !important;
+        background-color: $bg_color !important;
+      }
+    }
 
-    &:insensitive { color: rgba(black, 0.35); }
+    &:insensitive { 
+      color: rgba(black, 0.35);
+      @if ($submenu_style == 'true') {
+        color: $fg_color !important;
+        // background-color: $bg_color !important;  // if enabled this will screw over separator colors in submenus
+      }
+    }
   }
 
   @extend %scrollbar_on_light;
@@ -140,19 +206,20 @@ $submenu_item_radius: $popup_radius - $container_padding;
 
 // separator
 .popup-separator-menu-item {
-  background: none;
+  // menu separator color
+  background: if($submenu_style == 'true', $bg_color !important, none); 
   border: none;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 
   .popup-separator-menu-item-separator {
-    height: 1px; //not really the whole box
+    height: if($submenu_style == 'true', 2px, 1px); // increase visibility with a themed menu
     margin: 0 0;
     background-color: $border_color;
 
     .popup-sub-menu & { //submenu separators
       margin: 0 32px 0 0;
-      background-color: rgba(black, 0.10);
+      background-color: rgba(black, 0.10);  // FIXME: this does not actually do anything, try `pink`
     }
   }
 }
