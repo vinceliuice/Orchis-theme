@@ -2368,12 +2368,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .dash-label {
   border-radius: 9999px;
   padding: 6px 12px;
+  margin: 8px 4px;
   color: rgba(255, 255, 255, 0.85);
   background-color: rgba(0, 0, 0, 0.75);
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-align: center;
-  -y-offset: 8px;
+  -y-offset: 0;
 }
 
 /* App Grid */

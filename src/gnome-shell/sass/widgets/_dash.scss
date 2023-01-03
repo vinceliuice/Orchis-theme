@@ -67,11 +67,11 @@ $dash_border_radius: if($corner_style == 'circular', $circular_radius, $buttons_
 .dash-label {
   border-radius: if($corner_style == 'circular', $circular_radius, $material_radius);
   padding: $container_padding $container_padding * 2;
+  margin: $container_margin * 2 $container_margin;
   color: $inverse_fg_color;
   background-color: rgba(black, 0.75);
   border: none;
   box-shadow: $shadow_2;
   text-align: center;
-  // margin-bottom: $container_padding;
-  -y-offset: $container_margin * 2; // distance from the dash edge
+  -y-offset: 0; // distance from the dash edge
 }
