@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Nord' '-Grey'; do
     case "$theme" in
       '')
         theme_color_dark='#1A73E8'
@@ -33,6 +33,10 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
       -Teal)
         theme_color_dark='#009688'
         theme_color_light='#4DB6AC'
+        ;;
+      -Nord)
+        theme_color_dark='#8FBCBB'
+        theme_color_light='#2E3440'
         ;;
       -Grey)
         theme_color_dark='#616161'

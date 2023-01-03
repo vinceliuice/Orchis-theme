@@ -3,6 +3,7 @@
 
 @import 'tweaks-temp';
 @import 'color-palette';
+@import 'nord-palette';
 
 @function gtkalpha($c, $a) {
   @return unquote("alpha(#{$c}, #{$a})");
@@ -55,6 +56,7 @@
     @if ($theme == 'yellow') { @return $yellow-700; }
     @if ($theme == 'green') { @return $green-500; }
     @if ($theme == 'teal') { @return $teal-500; }
+    @if ($theme == 'nord') { @return $nord1; }
     @if ($theme == 'grey') { @return $grey-700; }
   } @else {
     @if ($theme == 'default') { @return #3281EA; }
@@ -65,6 +67,7 @@
     @if ($theme == 'yellow') { @return $yellow-a700; }
     @if ($theme == 'green') { @return $green-400; }
     @if ($theme == 'teal') { @return $teal-300; }
+    @if ($theme == 'nord') { @return $nord7; }
     @if ($theme == 'grey') { @return $grey-600; }
   }
 }
@@ -74,6 +77,13 @@
   @if ($type == 'b') { @return #FAFAFA; }
   @if ($type == 'c') { @return #F2F2F2; }
   @if ($type == 'd') { @return #CCCCCC; }
+
+  @if ($theme == 'nord'){
+    @if ($type == 'e') { @return darken($nord2, 5%); }
+    @if ($type == 'f') { @return darken(mix(darken($nord0, 5%), $nord2, 35%), 5%); }
+    @if ($type == 'g') { @return darken($nord1, 5%); }
+    @if ($type == 'h') { @return darken($nord2, 10%); }
+  }
 
   @if ($blackness == 'false') {
     @if ($type == 'e') { @return #212121; }
@@ -94,6 +104,7 @@
 
 $primary:                               theme(color);
 $drop_target_color:                     #FF7043;
+$drop_target_color:                     if($theme == 'nord', $primary, $drop_target_color);
 
 $background:                            if($variant == 'light', background(c), background(e));
 $surface:                               if($variant == 'light', background(a), background(h));
@@ -108,7 +119,16 @@ $scrim-inverse:                         rgba(white, 0.1);
 $titlebar:                              if($topbar == 'dark', background(g), background(a));
 $titlebar-backdrop:                     if($topbar == 'dark', background(g), background(a));
 
+@if $theme == 'nord' {
+  $tooltip:                               darken(background(e), 5%);
+  $scrim:                                 darken(background(e), 5%);
+  $scrim-alt:                             darken(background(e), 25%);
+  $scrim-inverse:                         rgba($primary, 0.1);
+}
+
+
 $panel-solid:                           if($blackness == 'true', black, #1F1F1F); // for Unity panel which doesn't allow translucent colors
+$panel-solid:                           if($theme == 'nord', transparentize($nord0, 0), $panel-solid);
 $panel:                                 if($opacity == 'default', rgba($panel-solid, 0.65), $panel-solid);
 
 $button:                                if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
@@ -177,6 +197,12 @@ $titlebar-fill:                         on($titlebar, fill);
 $titlebutton-close:                     #fd5f51;
 $titlebutton-max:                       #38c76a;
 $titlebutton-min:                       #fdbe04;
+
+@if $theme == 'nord' {
+  $titlebutton-close:                     $nord11;
+  $titlebutton-max:                       $nord7;
+  $titlebutton-min:                       $nord13;
+}
 
 // workaround for GTK3 @placeholder_text_color which doesn't allow translucent colors
 $placeholder_text_color:                if($variant == 'light', mix(black, $base, percentage(0.6)), mix(white, $base, percentage(0.7)));

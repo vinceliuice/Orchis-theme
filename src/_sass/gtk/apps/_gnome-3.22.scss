@@ -74,6 +74,10 @@ $theme_list_radius: $window-radius - $space-size;
               > widget > box {
                 padding-right: 12px;
                 padding-left: 0;
+                @if ($theme == 'nord') {
+                  padding-left: 12px;
+                  border-radius: $circular_radius 0 0 $circular_radius;
+                }
               }
             }
 
@@ -108,14 +112,19 @@ $theme_list_radius: $window-radius - $space-size;
 
               > revealer.sidebar-revealer > widget > box {
                 background-color: $base;
-                border-image-width: 10px 10px 10px 46px;
-                border-image-slice: 10 10 10 46;
-                border-image-repeat: stretch;
-                border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
-                                                 url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
+                @if ($theme != 'nord') {
+                  border-image-width: 10px 10px 10px 46px;
+                  border-image-slice: 10 10 10 46;
+                  border-image-repeat: stretch;
+                  border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
+                                                   url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
+                }
 
                 label.sidebar-label {
                   padding-left: 14px;
+                  @if ($theme == 'nord') {
+                    padding-left: 4px;
+                  }
                 }
               }
 
