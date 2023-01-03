@@ -3,6 +3,7 @@
 
 @import 'tweaks-temp';
 @import 'color-palette';
+@import '../../_sass/_nord-palette';
 
 @function fade($c) {
   @return mix($c, $grey_900, 50%);
@@ -18,6 +19,7 @@
     @if ($theme == 'yellow') { @return $yellow-700; }
     @if ($theme == 'green') { @return $green-500; }
     @if ($theme == 'teal') { @return $teal-500; }
+    @if ($theme == 'nord') { @return $nord1; }
     @if ($theme == 'grey') { @return $grey-700; }
   } @else {
     @if ($theme == 'default') { @return #3281EA; }
@@ -28,6 +30,7 @@
     @if ($theme == 'yellow') { @return $yellow-a700; }
     @if ($theme == 'green') { @return $green-400; }
     @if ($theme == 'teal') { @return $teal-300; }
+    @if ($theme == 'nord') { @return $nord7; }
     @if ($theme == 'grey') { @return $grey-600; }
   }
 }
@@ -38,6 +41,13 @@ $shl_dark: $black;
 $shl_light: $white;
 $fg_base_light: $shl_light;
 $bg_base_dark: #202020;
+
+@if ($theme == 'nord'){
+  $shl_dark: $nord0;
+  $shl_light: $nord7;
+  $fg_base_light: $nord4;
+  $bg_base_dark: $shl_dark;
+}
 
 
 // Foreground colors
