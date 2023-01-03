@@ -38,9 +38,6 @@
   &:ltr { margin-right: $container_padding + 2px; border-left-width: 0; }
   &:rtl { margin-left: $container_padding + 2px; border-right-width: 0; }
 
-  .datemenu-displays-section {
-  }
-
   .datemenu-displays-box {
     spacing: $container_padding;
   }
@@ -119,10 +116,10 @@
 .calendar-day-base {
   @include font(caption);
   text-align: center;
-  width: $menuitem_size;
-  height: $menuitem_size;
-  padding: 0 0;
-  margin: 2px;
+  width: $menuitem_size !important;
+  height: $menuitem_size !important;
+  padding: 0 !important;
+  margin: 2px !important;
   border-radius: $circular_radius;
   color: $secondary_fg_color;
   border: none;
@@ -147,7 +144,7 @@
     width: $menuitem_size; height: $menuitem_size - 7px;
     margin-top: 2px;
     padding: 7px 0 0;
-    border-radius: 100px;
+    border-radius: $circular_radius;
     background-color: transparent;
     color: $hint_fg_color;
     @include font(caption);

@@ -28,7 +28,7 @@
 
 .message-list-sections {
   spacing: $container_padding;
-  margin: 0 $container_margin * 4 0 $container_margin + $container_padding; // to account for scrollbar
+  margin: 0 $container_margin * 4 0 $container_margin * 2 + $container_padding; // to account for scrollbar
 }
 
 .message-list-section,

@@ -882,10 +882,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 9pt;
   font-weight: 400;
   text-align: center;
-  width: 32px;
-  height: 32px;
-  padding: 0 0;
-  margin: 2px;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  margin: 2px !important;
   border-radius: 9999px;
   color: rgba(0, 0, 0, 0.54);
   border: none;
@@ -914,7 +914,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 25px;
   margin-top: 2px;
   padding: 7px 0 0;
-  border-radius: 100px;
+  border-radius: 9999px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.38);
   font-size: 9pt;
@@ -1154,7 +1154,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-list-sections {
   spacing: 6px;
-  margin: 0 16px 0 10px;
+  margin: 0 16px 0 14px;
 }
 
 .message-list-section,
@@ -2493,18 +2493,55 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.15);
 }
 
-#overview .search-entry {
+.search-entry {
+  min-height: 24px;
+  padding: 6px 6px;
   width: 320px;
-  padding: 0 8px;
-  border: none;
+  border-radius: 9999px;
+  selection-background-color: #1A73E8;
+  selected-color: #FFFFFF !important;
+  caret-color: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54);
+  background-color: #ffffff;
+  margin: 2px 6px 6px;
+  border: 2px solid transparent;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-entry:hover {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
+}
+
+.search-entry:focus {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #1A73E8;
+}
+
+.search-entry:insensitive {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-entry .search-entry-icon {
+  icon-size: 16px;
+  padding: 0 4px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.search-entry StLabel.hint-text {
+  margin-left: 2px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+#overview .search-entry {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  border: none !important;
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
   border-color: transparent;
   box-shadow: none;
-  selection-background-color: #1A73E8;
-  selected-color: #FFFFFF !important;
-  margin: 12px 0 6px;
 }
 
 #overview .search-entry:hover {
@@ -2519,15 +2556,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.95);
   border: none;
   box-shadow: none;
-  padding: 0 8px;
   selection-background-color: #1A73E8;
   selected-color: #FFFFFF !important;
 }
 
 #overview .search-entry .search-entry-icon {
-  icon-size: 16px;
-  padding: 0 4px;
-  color: inherit;
+  color: rgba(0, 0, 0, 0.65);
 }
 
 #overview .search-entry:hover .search-entry-icon, #overview .search-entry:focus .search-entry-icon {
@@ -2535,7 +2569,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #overview .search-entry StLabel.hint-text {
-  margin-left: 2px;
   color: rgba(0, 0, 0, 0.35);
 }
 
@@ -4221,6 +4254,10 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+#dashtodockContainer #dash .app-well-app-running-dot {
+  margin-bottom: 3px !important;
+}
+
 #dashtodockContainer #dash StWidget.focused .app-well-app-running-dot {
   background-color: #1A73E8;
 }
@@ -4463,4 +4500,22 @@ StWidget.focused .app-well-app-running-dot {
   margin-right: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.overview-components-transparent .search-entry,
+.overview-components-light .search-entry,
+.overview-components-dark .search-entry {
+  caret-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.overview-components-transparent .search-entry .search-entry-icon,
+.overview-components-light .search-entry .search-entry-icon,
+.overview-components-dark .search-entry .search-entry-icon {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.overview-components-transparent .search-entry StLabel.hint-text,
+.overview-components-light .search-entry StLabel.hint-text,
+.overview-components-dark .search-entry StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.35) !important;
 }

@@ -159,6 +159,10 @@
       background-color: $panel_bg_color;
     }
 
+    .app-well-app-running-dot {
+      margin-bottom: 3px !important;
+    }
+
     StWidget.focused .app-well-app-running-dot {
       background-color: $primary_color;
     }
@@ -447,5 +451,23 @@ $dash_to_panel_menu_radius: 12px;
         margin-bottom: 0;
       }
     }
+  }
+}
+
+//
+// Blur my shell
+//
+
+.overview-components-transparent .search-entry,
+.overview-components-light .search-entry,
+.overview-components-dark .search-entry {
+  caret-color: rgba(white, 0.75) !important;
+
+  .search-entry-icon {
+    color: rgba(white, 0.65);
+  }
+
+  StLabel.hint-text {
+    color: rgba(white, 0.35) !important;
   }
 }
