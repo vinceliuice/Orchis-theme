@@ -15,12 +15,12 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Orchis
-THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey' '-Nord')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
 # Old name variants
-OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
+OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-nord')
 OLD_COLOR_VARIANTS=('' '-light' '-dark')
 OLD_SIZE_VARIANTS=('' '-compact')
 
@@ -280,6 +280,9 @@ install_theme_color() {
         ;;
       -Teal)
         theme_color='teal'
+        ;;
+      -Nord)
+        theme_color='nord'
         ;;
       -Grey)
         theme_color='grey'
