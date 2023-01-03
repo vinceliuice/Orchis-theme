@@ -8,7 +8,7 @@ INDEX="assets.txt"
 
 ./make-assets.sh
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Nord' '-Grey'; do
 
 ASSETS_DIR="assets${theme}"
 SRC_FILE="assets${theme}.svg"
@@ -55,7 +55,7 @@ fi
 done
 done
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Nord' '-Grey'; do
   SRC_FILE="thumbnail${theme}.svg"
   for color in '' '-Dark'; do
     echo
