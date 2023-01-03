@@ -2335,6 +2335,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0;
 }
 
+#panel .panel-button .panel-status-indicators-box .system-status-icon {
+  margin: 0 !important;
+  padding: 4px !important;
+}
+
 #panel .panel-button .appindicator-trayicons-box {
   margin: 0 6px;
 }

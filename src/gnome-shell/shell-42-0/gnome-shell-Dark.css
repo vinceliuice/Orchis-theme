@@ -2323,7 +2323,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button .system-status-icon {
   icon-size: 16px;
-  padding: 6px;
+  padding: 9px;
   margin: 0 3px;
 }
 
@@ -2333,6 +2333,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button .panel-status-menu-box .system-status-icon {
   margin: 0;
+}
+
+#panel .panel-button .panel-status-indicators-box .system-status-icon {
+  margin: 0 !important;
+  padding: 6px !important;
 }
 
 #panel .panel-button .appindicator-trayicons-box {

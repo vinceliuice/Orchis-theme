@@ -96,7 +96,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     // status area icons
     .system-status-icon {
       icon-size: 16px;
-      padding: 6px;
+      padding: $container_padding * 1.5;
       margin: 0 3px;
     }
 
@@ -108,9 +108,10 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       margin: 0;
     }
 
-    // .panel-status-indicators-box .system-status-icon {
-    //   margin: 0 3px;
-    // }
+    .panel-status-indicators-box .system-status-icon {
+      margin: 0 !important;
+      padding: $container_padding !important;
+    }
 
     .appindicator-trayicons-box {
       margin: 0 6px;
