@@ -97,12 +97,21 @@ $alt_keyboard_bg_color: if($variant == 'light', $grey_300, fade($grey_900)); // 
 $primary_color:         theme(color);
 $alt_primary_color:     darken($primary_color, 3%);
 $accent_color:          lighten($primary_color, 3%);
+@if ($theme == 'nord'){
+  $accent_color:          darken($primary_color, 3%);
+}
 
 $panel_bg:              if($blackness == 'true', $black, $bg_base_dark);
 $panel_bg_color:        if($opacity == 'default', rgba($shl_dark, 0.5), $panel_bg);
 $panel_fg_color:        if($panel == 'dark', #dedede, #dedede);
 $menu_bg_color:         if($opacity == 'default', rgba($base_color, 0.97), $base_color);
 $system_bg_color:       if($blackness == 'true' and $variant == 'dark', #121212, #222222);
+
+@if ($theme == 'nord'){
+  $panel_fg_color: $fg_base_light;
+  $system_bg_color: $dark_bg_color;
+}
+
 
 $link_color:            $primary_color;
 $visited_link_color:    if($variant == 'light', $purple-500, $purple-200);
@@ -118,6 +127,18 @@ $info_bg_color:         $green-400;
 $question_bg_color:     $blue-400;
 $warning_bg_color:      $orange-400;
 $error_bg_color:        $red-400;
+
+@if ($theme == 'nord'){
+  $warning_color:       darken($warning_color, 10%);
+  $error_bg_color:      darken($error_bg_color, 10%);
+  $warning_bg_color:    darken($warning_bg_color, 10%);
+  $question_bg_color:   darken($question_bg_color, 10%);
+  $info_bg_color:       darken($info_bg_color, 10%);
+  $destructive_color:   darken(rgba($destructive_color, 0.7), 1%);
+  $suggested_color:     darken($suggested_color, 10%);  // accent color
+  $success_color:       darken($success_color, 10%);
+  $error_color:         darken($error_color, 10%);
+}
 
 $border_color:          if($variant == 'light', rgba($shl_dark, 0.12), rgba($shl_light, 0.12));
 $highlight_color:       if($variant == 'light', rgba($shl_light, 0.4),  rgba($shl_light, 0.1));
