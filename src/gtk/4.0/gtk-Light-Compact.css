@@ -2357,7 +2357,7 @@ notebook > header.left {
 }
 
 notebook > header.left > tabs {
-  margin: 0 4px 0 0;
+  margin: 0 0 0 4px;
 }
 
 notebook > header.left > tabs > tab {
@@ -2370,7 +2370,7 @@ notebook > header.right {
 }
 
 notebook > header.right > tabs {
-  margin: 0 0 0 4px;
+  margin: 0 4px 0 0;
 }
 
 notebook > header.right > tabs > tab {

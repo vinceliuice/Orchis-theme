@@ -2047,7 +2047,7 @@ notebook {
       box-shadow: inset -1px 0 $solid-border;
 
       > tabs {
-        margin: 0 4px 0 0;
+        margin: 0 0 0 4px;
 
         > tab {
           border-radius: $corner-radius 0 0 $corner-radius;
@@ -2060,7 +2060,7 @@ notebook {
       box-shadow: inset 1px 0 $solid-border;
 
       > tabs {
-        margin: 0 0 0 4px;
+        margin: 0 4px 0 0;
 
         > tab {
           border-radius: 0 $corner-radius $corner-radius 0;
