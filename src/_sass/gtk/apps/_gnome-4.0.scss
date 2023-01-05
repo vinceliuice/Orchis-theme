@@ -4,14 +4,17 @@
 //
 .nautilus-window {
   &.background.csd {
-    background-image: none;
-    background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
     color: if($topbar == 'dark' and $variant == 'light', $titlebar-text-secondary, $text-secondary);
+
+    &, &:backdrop {
+      background-image: none;
+      background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
+    }
   }
 
   headerbar {
-    background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
-    box-shadow: inset 0 1px highlight($titlebar);
+    background-color: transparent;
+    box-shadow: none;
   }
 
   flap > separator {

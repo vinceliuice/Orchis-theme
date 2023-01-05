@@ -1043,6 +1043,30 @@ searchbar > revealer > box {
  * Header bars *
  ***************/
 
+%flat-titlebar-button {
+  color: $text-secondary;
+
+  &:focus, &:hover, &:active, &:checked { color: $text; }
+
+  &:disabled { color: $text-secondary-disabled; }
+
+  &:checked:disabled { color: $text-disabled; }
+
+  &:backdrop {
+    color: $text-disabled;
+
+    &:focus, &:hover, &:active { color: $text-secondary; }
+
+    &:disabled { color: $text-secondary-disabled; }
+
+    &:checked {
+      color: $text-secondary;
+
+      &:disabled { color: $text-secondary-disabled; }
+    }
+  }
+}
+
 %titlebar-button {
   @extend %button-flat;
   color: $titlebar-text-secondary;
@@ -1130,16 +1154,6 @@ headerbar {
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
-  &.flat {
-    @if $topbar == 'dark' and $variant == 'light' {
-      box-shadow: none;
-    } @else {
-      box-shadow: none;
-
-      &, &:backdrop { background-color: transparent; }
-    }
-  }
-
   .title {
     padding: 0 $space-size * 2;
     font-weight: bold;
@@ -1204,6 +1218,16 @@ headerbar {
   }
 
   button.toggle { border-radius: $circular-radius; }
+
+  &.flat {
+    background-color: $background;
+    box-shadow: none;
+    color: $text-secondary;
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %flat-titlebar-button;
+    }
+  }
 
   popover.background { // reset
     > contents {
@@ -1467,17 +1491,33 @@ $window-space: if($mac_style == 'true', $space-size * 1.5, $space-size);
 headerbar windowcontrols {
   border-spacing: $space-size;
 
-  &:not(.empty) {
-    &.start:dir(ltr),
-    &.end:dir(rtl) {
-      margin-right: $window-space;
-      margin-left: $window-space;
-    }
+  @if $mac_style == 'true' {
+    &:not(.empty) {
+      &.start:dir(ltr),
+      &.end:dir(rtl) {
+        margin-right: $window-space;
+        margin-left: $window-space;
+      }
 
-    &.start:dir(rtl),
-    &.end:dir(ltr) {
-      margin-left: $window-space;
-      margin-right: $window-space;
+      &.start:dir(rtl),
+      &.end:dir(ltr) {
+        margin-left: $window-space;
+        margin-right: $window-space;
+      }
+    }
+  } @else {
+    &:not(.empty) {
+      &.start:dir(ltr),
+      &.end:dir(rtl) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      &.start:dir(rtl),
+      &.end:dir(ltr) {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 
@@ -1487,7 +1527,7 @@ headerbar windowcontrols {
     @if $mac_style == 'true' {
       @extend %mac_window_button;
     } @else {
-      @extend %button-flat-simple;
+      // @extend %button-flat-simple;
 
       &, &:hover, &:active, &:backdrop {
         > image {
@@ -3635,6 +3675,21 @@ window.aboutdialog {
   }
 }
 
+window.about.background.csd {
+  &, &:backdrop {
+    background-image: none;
+    background-color: $background;
+  }
+
+  headerbar {
+    color: $text-secondary;
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %flat-titlebar-button;
+    }
+  }
+}
+
 /***********
  * Sidebar *
  ***********/
@@ -4176,7 +4231,8 @@ window {
     } @else {
       box-shadow: $shadow-z16,
                   0 16px (24px * .6) 2px transparent,
-                  0 6px (30px * .6) 5px transparent;
+                  0 6px (30px * .6) 5px transparent,
+                  inset 0 1px highlight($titlebar);
     }
 
     &:backdrop {
@@ -4202,7 +4258,8 @@ window {
       } @else {
         box-shadow: $shadow-z4,
                     0 16px (24px * .6) 2px transparent,
-                    0 6px (30px * .6) 5px transparent;
+                    0 6px (30px * .6) 5px transparent,
+                    inset 0 1px highlight($titlebar);
       }
     }
   }

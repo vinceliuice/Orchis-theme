@@ -640,7 +640,7 @@ button:drop(active) {
 }
 
 .nautilus-window tabbar tab > button.flat, .nautilus-window tabbar tab:active > button.flat, .nautilus-window tabbar tab:checked > button.flat, .nautilus-window tabbar tab:selected > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, row button.circular, check,
-radio, scrollbar button, notebook > header > tabs > arrow, popover.background modelbutton, headerbar windowcontrols button:not(.suggested-action):not(.destructive-action), spinbutton:not(.vertical) > button, spinbutton.vertical > button, tabbar tab button.image-button,
+radio, scrollbar button, notebook > header > tabs > arrow, popover.background modelbutton, spinbutton:not(.vertical) > button, spinbutton.vertical > button, tabbar tab button.image-button,
 dnd tab button.image-button, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, filechooser #pathbarbox > stack > box > button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action), headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
@@ -1391,6 +1391,42 @@ searchbar > revealer > box splitbutton {
 /***************
  * Header bars *
  ***************/
+window.about.background.csd headerbar button:not(.suggested-action):not(.destructive-action), headerbar.flat button:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+window.about.background.csd headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:active:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+window.about.background.csd headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+window.about.background.csd headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+window.about.background.csd headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+window.about.background.csd headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+window.about.background.csd headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+window.about.background.csd headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+window.about.background.csd headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+  color: rgba(0, 0, 0, 0.26);
+}
+
 headerbar button:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.6);
 }
@@ -1484,14 +1520,6 @@ headerbar:backdrop:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
-headerbar.flat {
-  box-shadow: none;
-}
-
-headerbar.flat, headerbar.flat:backdrop {
-  background-color: transparent;
-}
-
 headerbar .title {
   padding: 0 8px;
   font-weight: bold;
@@ -1559,6 +1587,12 @@ headerbar button.destructive-action:disabled {
 
 headerbar button.toggle {
   border-radius: 9999px;
+}
+
+headerbar.flat {
+  background-color: #F2F2F2;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 headerbar popover.background > contents {
@@ -1738,13 +1772,13 @@ headerbar windowcontrols {
 }
 
 headerbar windowcontrols:not(.empty).start:dir(ltr), headerbar windowcontrols:not(.empty).end:dir(rtl) {
-  margin-right: 4px;
-  margin-left: 4px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 headerbar windowcontrols:not(.empty).start:dir(rtl), headerbar windowcontrols:not(.empty).end:dir(ltr) {
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 headerbar windowcontrols button:not(.suggested-action):not(.destructive-action) > image, headerbar windowcontrols button:not(.suggested-action):not(.destructive-action):hover > image, headerbar windowcontrols button:not(.suggested-action):not(.destructive-action):active > image, headerbar windowcontrols button:not(.suggested-action):not(.destructive-action):backdrop > image {
@@ -3959,6 +3993,15 @@ window.aboutdialog .large-icons {
   -gtk-icon-size: 128px;
 }
 
+window.about.background.csd, window.about.background.csd:backdrop {
+  background-image: none;
+  background-color: #F2F2F2;
+}
+
+window.about.background.csd headerbar {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 /***********
  * Sidebar *
  ***********/
@@ -4447,7 +4490,7 @@ window {
 
 window.csd {
   border-radius: 16px;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.4);
 }
 
 window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-top, window.csd.tiled-right, window.csd.tiled-bottom, window.csd.tiled-left {
@@ -4456,7 +4499,7 @@ window.csd.maximized, window.csd.fullscreen, window.csd.tiled, window.csd.tiled-
 
 window.csd:backdrop {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent;
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 14.4px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.4);
 }
 
 window.ssd {
@@ -4666,14 +4709,17 @@ popover.entry-completion > contents {
 }
 
 .nautilus-window.background.csd {
-  background-image: none;
-  background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.6);
 }
 
-.nautilus-window headerbar {
+.nautilus-window.background.csd, .nautilus-window.background.csd:backdrop {
+  background-image: none;
   background-color: #FFFFFF;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.nautilus-window headerbar {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .nautilus-window flap > separator {
