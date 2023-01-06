@@ -1221,12 +1221,19 @@ headerbar {
 
   &.flat {
     background-color: $background;
-    box-shadow: none;
+    box-shadow: inset 0 1px highlight($background);
     color: $text-secondary;
+    border-radius: $window-radius $window-radius 0 0;
 
     button:not(.suggested-action):not(.destructive-action) {
       @extend %flat-titlebar-button;
     }
+  }
+
+  background.csd.info &.flat,
+  background.csd.about &.flat { // reset
+    background-color: transparent;
+    box-shadow: none;
   }
 
   popover.background { // reset
@@ -1885,6 +1892,9 @@ popover.background {
     }
 
     list {
+      background-color: transparent;
+      padding: 0;
+
       > row {
         padding: $space-size $space-size * 2;
       }
@@ -3633,6 +3643,42 @@ window.dialog.message { // Message Dialog styling
   }
 }
 
+window.messagedialog {
+  .message-area {
+    separator {
+      background-color: transparent;
+      min-height: 0;
+    }
+  }
+
+  .response-area {
+    padding: $space-size;
+    box-shadow: none;
+    border: none;
+
+    button {
+      @extend %button-flat;
+      border: none;
+      box-shadow: none;
+
+      &, &:first-child, &:last-child { border-radius: $circular-radius; }
+
+      &:not(:last-child) { margin-right: $space-size; }
+
+      &:last-child:not(:disabled) { color: $primary; }
+
+      &.suggested-action:not(:disabled) { color: $suggested; }
+
+      &.destructive-action:not(:disabled) { color: $destructive; }
+    }
+
+    separator {
+      background-color: transparent;
+      min-width: 0;
+    }
+  }
+}
+
 filechooser {
   .dialog-action-box { border-top: 1px solid $divider; }
 
@@ -3676,11 +3722,6 @@ window.aboutdialog {
 }
 
 window.about.background.csd {
-  &, &:backdrop {
-    background-image: none;
-    background-color: $background;
-  }
-
   headerbar {
     color: $text-secondary;
 
@@ -4206,6 +4247,10 @@ window {
 
   &.csd {
     border-radius: $window-radius;
+    box-shadow: $shadow-z16,
+                0 16px (24px * .6) 2px transparent,
+                0 6px (30px * .6) 5px transparent,
+                inset 0 1px highlight($titlebar);
 
     &.maximized,
     &.fullscreen,
@@ -4217,10 +4262,6 @@ window {
 
     @if $topbar == 'dark' {
       &.background {
-        box-shadow: $shadow-z16,
-                    0 16px (24px * .6) 2px transparent,
-                    0 6px (30px * .6) 5px transparent,
-                    inset 0 1px highlight($titlebar);
         background-color: transparent;
         background-image: linear-gradient(to bottom,
                                           $titlebar,
@@ -4228,11 +4269,6 @@ window {
                                           $background $large-size,
                                           $background);
       }
-    } @else {
-      box-shadow: $shadow-z16,
-                  0 16px (24px * .6) 2px transparent,
-                  0 6px (30px * .6) 5px transparent,
-                  inset 0 1px highlight($titlebar);
     }
 
     &:backdrop {
@@ -4241,13 +4277,13 @@ window {
       // The biggest shadow should be in the same order then in the active state
       // or the jumping will happen during the transition.
       transition: $transition-shadow;
+      box-shadow: $shadow-z4,
+                  0 16px (24px * .6) 2px transparent,
+                  0 6px (30px * .6) 5px transparent,
+                  inset 0 1px highlight($titlebar);
 
       @if $topbar == 'dark' {
         &.background {
-          box-shadow: $shadow-z4,
-                      0 16px (24px * .6) 2px transparent,
-                      0 6px (30px * .6) 5px transparent,
-                      inset 0 1px highlight($titlebar);
           background-color: transparent;
           background-image: linear-gradient(to bottom,
                                             $titlebar-backdrop,
@@ -4255,11 +4291,33 @@ window {
                                             $background $large-size,
                                             $background);
         }
-      } @else {
+      }
+    }
+
+    &.messagedialog {
+      background-color: $surface;
+      background-image: none;
+      box-shadow: $shadow-z16,
+                  0 16px (24px * .6) 2px transparent,
+                  0 6px (30px * .6) 5px transparent,
+                  inset 0 1px highlight($titlebar);
+
+      &:backdrop {
+        background-color: $background;
+        background-image: none;
         box-shadow: $shadow-z4,
                     0 16px (24px * .6) 2px transparent,
                     0 6px (30px * .6) 5px transparent,
                     inset 0 1px highlight($titlebar);
+      }
+    }
+
+    &.about, &.info {
+      @if $topbar == 'dark' {
+        &.background, &.background:backdrop {
+          background-color: $background;
+          background-image: none;
+        }
       }
     }
   }
