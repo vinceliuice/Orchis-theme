@@ -3660,16 +3660,13 @@ window.messagedialog {
       @extend %button-flat;
       border: none;
       box-shadow: none;
-
-      &, &:first-child, &:last-child { border-radius: $circular-radius; }
+      border-radius: $circular-radius;
 
       &:not(:last-child) { margin-right: $space-size; }
 
-      &:last-child:not(:disabled) { color: $primary; }
+      &.suggested:not(:disabled) { color: $suggested; }
 
-      &.suggested-action:not(:disabled) { color: $suggested; }
-
-      &.destructive-action:not(:disabled) { color: $destructive; }
+      &.destructive:not(:disabled) { color: $destructive; }
     }
 
     separator {

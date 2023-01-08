@@ -3988,9 +3988,6 @@ window.messagedialog .response-area {
 window.messagedialog .response-area button {
   border: none;
   box-shadow: none;
-}
-
-window.messagedialog .response-area button, window.messagedialog .response-area button:first-child, window.messagedialog .response-area button:last-child {
   border-radius: 9999px;
 }
 
@@ -3998,15 +3995,11 @@ window.messagedialog .response-area button:not(:last-child) {
   margin-right: 6px;
 }
 
-window.messagedialog .response-area button:last-child:not(:disabled) {
+window.messagedialog .response-area button.suggested:not(:disabled) {
   color: #1A73E8;
 }
 
-window.messagedialog .response-area button.suggested-action:not(:disabled) {
-  color: #1A73E8;
-}
-
-window.messagedialog .response-area button.destructive-action:not(:disabled) {
+window.messagedialog .response-area button.destructive:not(:disabled) {
   color: #D93025;
 }
 
