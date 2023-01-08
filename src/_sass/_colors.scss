@@ -120,10 +120,10 @@ $titlebar:                              if($topbar == 'dark', background(g), bac
 $titlebar-backdrop:                     if($topbar == 'dark', background(g), background(a));
 
 @if $theme == 'nord' {
-  $tooltip:                               darken(background(e), 5%);
-  $scrim:                                 darken(background(e), 5%);
-  $scrim-alt:                             darken(background(e), 25%);
-  $scrim-inverse:                         rgba($primary, 0.1);
+  $tooltip:                             darken(background(e), 5%);
+  $scrim:                               darken(background(e), 5%);
+  $scrim-alt:                           darken(background(e), 25%);
+  $scrim-inverse:                       rgba($primary, 0.1);
 }
 
 
@@ -199,9 +199,9 @@ $titlebutton-max:                       #38c76a;
 $titlebutton-min:                       #fdbe04;
 
 @if $theme == 'nord' {
-  $titlebutton-close:                     $nord11;
-  $titlebutton-max:                       $nord7;
-  $titlebutton-min:                       $nord13;
+  $titlebutton-close:                   $nord11;
+  $titlebutton-max:                     $nord7;
+  $titlebutton-min:                     $nord13;
 }
 
 // workaround for GTK3 @placeholder_text_color which doesn't allow translucent colors

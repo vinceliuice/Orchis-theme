@@ -97,8 +97,9 @@ $alt_keyboard_bg_color: if($variant == 'light', $grey_300, fade($grey_900)); // 
 $primary_color:         theme(color);
 $alt_primary_color:     darken($primary_color, 3%);
 $accent_color:          lighten($primary_color, 3%);
-@if ($theme == 'nord'){
-  $accent_color:          darken($primary_color, 3%);
+
+@if ($theme == 'nord') {
+  $accent_color:        darken($primary_color, 3%);
 }
 
 $panel_bg:              if($blackness == 'true', $black, $bg_base_dark);
