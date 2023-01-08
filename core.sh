@@ -15,12 +15,12 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Orchis
-THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey' '-Nord')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
 # Old name variants
-OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
+OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-nord')
 OLD_COLOR_VARIANTS=('' '-light' '-dark')
 OLD_SIZE_VARIANTS=('' '-compact')
 
@@ -257,6 +257,10 @@ round_corner() {
   sed -i "/\$default_corner:/s/12px/${corner}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
+install_submenu() {
+  sed -i "/\$submenu_style:/s/false/true/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
+}
+
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -280,6 +284,9 @@ install_theme_color() {
         ;;
       -Teal)
         theme_color='teal'
+        ;;
+      -Nord)
+        theme_color='nord'
         ;;
       -Grey)
         theme_color='grey'
@@ -320,6 +327,11 @@ theme_tweaks() {
   if [[ "$macstyle" == "true" ]] ; then
     install_mac
   fi
+  
+  if [[ "$submenu" == "true" ]] ; then
+    install_submenu
+  fi
+  
 }
 
 check_shell() {

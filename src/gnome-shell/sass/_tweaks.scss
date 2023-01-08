@@ -20,3 +20,6 @@ $corner_style: 'default';
 } @else {
   $corner_style: 'square';
 }
+
+// Default sub-menu styling
+$submenu_style: 'false';

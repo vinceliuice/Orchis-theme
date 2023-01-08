@@ -11,7 +11,7 @@ OPTIONS:
   -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
 
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
+  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|nord|all] (Default: blue)
   -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
 
@@ -28,6 +28,7 @@ OPTIONS:
                           3. black:    Full black variant
                           4. primary:  Change radio icon checked color to primary theme color (Default is Green)
                           5. macos:    Change window buttons to MacOS style
+                          6. submenu:  Theme sub-menus, by Default submenus contrast
 
   --shell                 install gnome-shell version [38|40|42]
                           1. 38:       Gnome-shell version < 40.0
@@ -127,6 +128,11 @@ while [[ "$#" -gt 0 ]]; do
             echo -e "Install MacOS style window button version ..."
             shift
             ;;
+          submenu)
+            submenu="true"
+            echo -e "Install with themed sub-menus ..."
+            shift
+            ;;
           -*)
             break
             ;;
@@ -177,6 +183,10 @@ while [[ "$#" -gt 0 ]]; do
             ;;
           grey)
             themes+=("${THEME_VARIANTS[8]}")
+            shift
+            ;;
+          nord)
+            themes+=("${THEME_VARIANTS[9]}")
             shift
             ;;
           all)
