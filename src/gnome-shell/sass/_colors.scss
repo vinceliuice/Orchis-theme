@@ -40,19 +40,21 @@
 $shl_dark: $black;
 $shl_light: $white;
 $fg_base_light: $shl_light;
+$bg_base_light: $white;
 $bg_base_dark: #202020;
 
 @if ($theme == 'nord'){
   $shl_dark: $nord0;
   $shl_light: $nord7;
   $fg_base_light: $nord4;
+  $bg_base_light: $nord6;
   $bg_base_dark: $shl_dark;
 }
 
 
 // Foreground colors
 $dark_fg_color:   rgba($shl_dark, 0.87);
-$light_fg_color:  $shl_light;
+$light_fg_color:  white;
 $button_fg_color: if($variant == 'light', rgba($shl_dark, 0.62), rgba($shl_light, 0.8)); // extra fg color for raised buttons
 
 $fg_color:                             if($variant == 'light', rgba($shl_dark, 0.87), rgba($fg_base_light, 0.9));
@@ -83,7 +85,7 @@ $inverse_divider_color:                rgba($fg_base_light, 0.15);
 
 // Background colors
 $dark_color:            if($blackness == 'true' and $variant == 'dark', $black, $bg_base_dark);
-$base_color:            if($variant =='dark', $dark_color, $shl_light);
+$base_color:            if($variant =='dark', $dark_color, $bg_base_light);
 $alt_base_color:        if($variant =='dark', lighten($base_color, 25%), darken($base_color, 25%));
 
 $dark_bg_color:         rgba($dark_color, 0.9);
