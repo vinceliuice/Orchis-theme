@@ -282,6 +282,10 @@ $dash_to_panel_item_radius: 5px;
   Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
     border-radius: $dash_to_panel_item_radius !important;
+
+    > * {
+      padding: 8px 6px !important;
+    }
   }
 }
 

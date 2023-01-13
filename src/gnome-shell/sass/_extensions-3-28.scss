@@ -70,6 +70,74 @@ $icon_padding: 9px;
 }
 
 //
+// Dash to Panel
+//
+
+$dash_to_panel_item_radius: 5px;
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  .dash-background {
+    background-color: $panel_bg_color;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .show-apps .overview-icon  {
+    margin: 0 !important;
+    border-radius: $dash_to_panel_item_radius !important;
+  }
+
+  .panel-button {
+    &, &.clock-display .clock {
+      border-radius: $dash_to_panel_item_radius + $container_padding / 2 !important;
+      margin: 0 !important;
+    }
+  }
+
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
+    border-radius: $dash_to_panel_item_radius !important;
+
+    > * {
+      padding: 8px 6px !important;
+    }
+  }
+}
+
+.popup-menu.panel-menu, .popup-menu.panel-menu.quick-settings {
+  .popup-menu-content {
+    margin-bottom: $container_padding / 2 !important;
+  }
+}
+
+$dash_to_panel_menu_radius: 12px;
+
+.dashtopanelSecondaryMenu {
+	border-radius: $dash_to_panel_menu_radius !important;
+}
+
+#preview-menu {
+  margin: $container_padding !important;
+  box-shadow: 0 3px 8px rgba(black, 0.2) !important;
+  border-radius: $dash_to_panel_menu_radius !important;
+  padding: 0 !important;
+
+  // .preview-header-box {
+  //   border-radius: $dash_to_panel_item_radius !important;
+  // }
+}
+
+#dashtopanelPreviewScrollview {
+  padding: $dash_to_panel_menu_radius 0 !important;
+  border-radius: $dash_to_panel_menu_radius !important;
+}
+
+//
 // Simple Dock
 //
 

@@ -505,6 +505,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu {
   min-width: 10em;
   color: rgba(255, 255, 255, 0.9);
+  background-color: none;
   border: none;
   padding: 0;
   margin: 0;
@@ -524,6 +525,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 4px;
   padding: 4px 8px;
   color: rgba(255, 255, 255, 0.9) !important;
+  background-color: none;
   transition-duration: 100ms;
   border-radius: 9999px;
   background-image: none;
@@ -590,6 +592,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-inactive-menu-item {
   color: rgba(255, 255, 255, 0.9) !important;
+  background-color: none;
 }
 
 .popup-menu .popup-inactive-menu-item.selected:active {
@@ -4361,6 +4364,11 @@ StWidget.focused .app-well-app-running-dot {
 .dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
 .dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
   border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button > *,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button > * {
+  padding: 8px 6px !important;
 }
 
 .popup-menu.panel-menu .popup-menu-content, .popup-menu.panel-menu.quick-settings .popup-menu-content {

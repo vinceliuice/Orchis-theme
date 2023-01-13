@@ -110,7 +110,7 @@ StEntry {
   font-weight: 400;
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
@@ -411,7 +411,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .modal-dialog {
   border-radius: 16px;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   box-shadow: 0 0 transparent;
 }
 
@@ -1343,7 +1343,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .resize-popup,
 .switcher-list, .workspace-switcher-container {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   border-radius: 8px;
@@ -2819,7 +2819,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .notification-banner:focus {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 
 .notification-banner .notification-icon {
@@ -3300,7 +3300,7 @@ StWidget.focused .app-well-app-running-dot {
   selected-color: rgba(255, 255, 255, 0.85) !important;
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
@@ -3711,7 +3711,7 @@ StWidget.focused .app-well-app-running-dot {
 
 #LookingGlassDialog {
   color: rgba(0, 0, 0, 0.54);
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   spacing: 4px;
   padding: 6px;
   border: none;
@@ -3867,7 +3867,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #LookingGlassPropertyInspector {
-  background: #ffffff;
+  background: #FFFFFF;
   border: none;
   border-radius: 8px;
   padding: 6px;
@@ -3946,6 +3946,59 @@ StWidget.focused .app-well-app-running-dot {
 #dashtodockContainer .show-apps .overview-icon {
   padding: 9px;
   background-size: contain;
+}
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel .dash-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.dashtopanelMainPanel .show-apps .overview-icon {
+  margin: 0 !important;
+  border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel .panel-button, .dashtopanelMainPanel .panel-button.clock-display .clock {
+  border-radius: 8px !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
+  border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button > *,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button > * {
+  padding: 8px 6px !important;
+}
+
+.popup-menu.panel-menu .popup-menu-content, .popup-menu.panel-menu.quick-settings .popup-menu-content {
+  margin-bottom: 3px !important;
+}
+
+.dashtopanelSecondaryMenu {
+  border-radius: 12px !important;
+}
+
+#preview-menu {
+  margin: 6px !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+}
+
+#dashtopanelPreviewScrollview {
+  padding: 12px 0 !important;
+  border-radius: 12px !important;
 }
 
 #dash:desktop {
@@ -4028,7 +4081,7 @@ StWidget.focused .app-well-app-running-dot {
   selected-color: rgba(255, 255, 255, 0.85);
   caret-color: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   margin: 2px 6px 6px;
   border: 2px solid transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
