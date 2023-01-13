@@ -1,0 +1,28 @@
+/* Entries */
+
+StEntry {
+  min-height: $medium-size;
+  padding: 0 8px;
+  border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+  border-width: 0;
+  selection-background-color: $primary;
+  selected-color: on(dark) !important;
+  @include font(subheading);
+  @include entry(normal);
+  &:hover { @include entry(hover);}
+  &:focus { @include entry(focus);}
+  &:insensitive { @include entry(insensitive);}
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning;
+    padding: 0 0;
+  }
+  StIcon.peek-password {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: $text-disabled;
+  }
+}

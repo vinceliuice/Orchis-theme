@@ -1,0 +1,473 @@
+//
+// Dash to Dock
+//
+
+// Scrollview style
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background: transparent;
+
+  .number-overlay {
+    color: white;
+    background-color: rgba(black, 0.75);
+    text-align: center;
+  }
+
+  .notification-badge {
+    color: on(dark);
+    background-color: $primary;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+    border-radius: $circular-radius;
+    margin: 2px 3px 5px;
+    padding: 0.2em 0.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @each $_pos, $b_pos in (top, bottom),
+                         (bottom, top),
+                         (left, right),
+                         (right, left) {
+    &.#{$_pos} #dash .dash-background {
+      border-radius: $dash_border_radius !important;
+    }
+
+    &.#{$_pos}.straight-corner,
+    &.#{$_pos}.shrink.straight-corner,
+    &.#{$_pos}.extended,
+    &.#{$_pos}.shrink.extended {
+      #dash {
+        margin: 0 !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+
+        .dash-background {
+          margin: 0 !important;
+          margin-bottom: 0 !important;
+          border-radius: 0 !important;
+        }
+
+        .dash-item-container .app-well-app, .show-apps {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+
+  &.extended,
+  &.straight-corner {
+    .dash-background {
+      border-radius: 0 !important;
+    }
+  }
+
+  &.shrink {
+    .dash-background {
+      padding: $dash_spacing !important;
+      // border-radius: $material-radius + $space-size / 2;
+    }
+
+    .dash-item-container .app-well-app, .show-apps {
+      margin: 0 !important;
+    }
+  }
+
+  &.shrink.extended {
+    .dash-background {
+      border-radius: 0;
+    }
+  }
+
+  #dash,
+  &:overview #dash {
+    background: transparent;
+  }
+
+  &.left,
+  &.right {
+    .dash-item-container .app-well-app, .show-apps {
+      padding: $dash_spacing $space-size !important;
+    }
+
+    .dash-background {
+      margin-bottom: 0 !important;
+    }
+
+    &.shrink, &.shrink.extended {
+      .dash-background {
+        padding: $margin-size / 2 $margin-size !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+        padding: $margin-size / 2 0 !important;
+      }
+    }
+
+    &.extended,
+    &.straight-corner {
+      .dash-item-container .app-well-app {
+        padding: $dash_spacing $dash_padding !important;
+      }
+
+      .show-apps {
+        padding: $dash_spacing $dash_padding $dash_padding * 2 !important;
+      }
+    }
+  }
+
+  &.top,
+  &.bottom {
+    .dash-background {
+      padding: $dash_padding ($dash_padding - $dash_spacing) !important;
+    }
+
+    &.shrink {
+      .dash-background {
+        padding: $margin-size $margin-size / 2 !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+        padding: 0 $margin-size / 2 $dash_padding !important;
+      }
+    }
+
+    &.extended,
+    &.straight-corner {
+      .dash-separator {
+        margin: 0 ($dash_spacing + ($dash_padding / 2)) !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        padding: $dash_padding $dash_spacing !important;
+      }
+    }
+  }
+
+  #dash {
+    .dash-background {
+      background-color: $panel;
+    }
+
+    .app-well-app-running-dot {
+      margin-bottom: 3px !important;
+    }
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $primary;
+    }
+  }
+
+  &.opaque #dash .dash-background { // solid-mode
+    background-color: $panel-solid;
+  }
+
+  &.transparent #dash .dash-background { // translucent-mode
+    background-color: $panel; // does not work
+  }
+
+  &:overview #dash { // overview-mode #1
+    background: none;
+
+    .dash-background {
+      background-color: on(dark, divider);
+    }
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $primary;
+    }
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .dash-background {
+      background-color: transparent !important;
+    }
+  }
+
+  &.extended:overview, // overview-mode #3
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash {
+      background: none;
+    }
+  }
+
+  &.running-dots,
+  &.dashtodock {
+    .dash-item-container > StButton {
+      transition-duration: 250ms;
+      background-size: contain;
+    }
+  }
+
+  &.shrink,
+  &.dashtodock {
+    .dash-item-container > StButton {
+      padding: 1px 2px;
+    }
+  }
+
+  &.extended,
+  &.extended:overview {
+    .app-well-app,
+    .show-apps {
+      .overview-icon {
+        border-radius: $material-radius;
+      }
+    }
+  }
+
+  .metro .overview-icon {
+    border-radius: 0;
+  }
+}
+
+.dashtodock-app-well-preview-menu-item {
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
+}
+
+//
+// Dash to Panel
+//
+
+$dash_to_panel_item_radius: 5px;
+
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  .dash-background {
+    background-color: $dash_background_color;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .show-apps .overview-icon  {
+    margin: 0 !important;
+    border-radius: $dash_to_panel_item_radius !important;
+  }
+
+  .panel-button {
+    &, &.clock-display .clock {
+      border-radius: $dash_to_panel_item_radius + $space-size / 2 !important;
+      margin: 0 !important;
+    }
+  }
+
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
+    border-radius: $dash_to_panel_item_radius !important;
+  }
+}
+
+.popup-menu.panel-menu, .popup-menu.panel-menu.quick-settings {
+  .popup-menu-content {
+    margin-bottom: $space-size / 2 !important;
+  }
+}
+
+$dash_to_panel_menu_radius: 12px;
+
+.dashtopanelSecondaryMenu {
+	border-radius: $dash_to_panel_menu_radius !important;
+}
+
+#preview-menu {
+  margin: $space-size !important;
+  box-shadow: 0 3px 8px rgba(black, 0.2) !important;
+  border-radius: $dash_to_panel_menu_radius !important;
+  padding: 0 !important;
+
+  // .preview-header-box {
+  //   border-radius: $dash_to_panel_item_radius !important;
+  // }
+}
+
+#dashtopanelPreviewScrollview {
+  padding: $dash_to_panel_menu_radius 0 !important;
+  border-radius: $dash_to_panel_menu_radius !important;
+}
+
+//
+// OpenWeather
+//
+
+.openweather {
+  &-button,
+  &-button-action,
+  &-menu-button-container,
+  &-button-box {
+    border: 1px solid transparent;
+  }
+
+  &-provider {
+    // generic text buttons are allocated with y-expand-ed
+    padding: 0 16px;
+    font-weight: 500;
+    @include button(flat-normal);
+    &:hover { @include button(flat-hover); }
+    &:focus { @include button(flat-focus); }
+    &:active { @include button(flat-active); }
+    &:insensitive { @include button(flat-disabled); }
+  }
+
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: $text;
+    }
+
+    &-databox-values {
+      background: none;
+      color: $text-disabled;
+    }
+
+    &-databox-captions {
+      background: none;
+      color: $text-disabled;
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      background: none;
+      color: $text-secondary;
+    }
+
+    &-day,
+    &-temperature {
+      background: none;
+      color: $text-disabled;
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon { color: $text-secondary; }
+}
+
+.popup-sub-menu .openweather {
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: rgba(black, 0.95);
+    }
+
+    &-databox-values {
+      color: rgba(black, 0.75);
+    }
+
+    &-databox-captions {
+      color: rgba(black, 0.75);
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      color: rgba(black, 0.85);
+    }
+
+    &-day,
+    &-temperature {
+      color: rgba(black, 0.75);
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon { color: rgba(black, 0.85); }
+}
+
+//
+// Arcmenu
+//
+.arcmenu-menu-button,
+.arcmenu-button {
+  border-width: 0 !important;
+  border-radius: $circular-radius !important;
+}
+
+//
+// Pop_OS cosmic widget styling
+//
+
+.cosmic-solid-bg {
+  background-color: $system;
+}
+
+.cosmic-dock {
+  #dock {
+    background-color: transparent;
+
+    .dash-background {
+      background-color: $panel;
+    }
+  }
+
+  &.extended {
+    #dash {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 0;
+
+      .dash-background {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+//
+// Blur my shell
+//
+
+.overview-components-transparent .search-entry,
+.overview-components-light .search-entry,
+.overview-components-dark .search-entry {
+  caret-color: rgba(white, 0.75) !important;
+
+  .search-entry-icon {
+    color: rgba(white, 0.65);
+  }
+
+  StLabel.hint-text {
+    color: rgba(white, 0.35) !important;
+  }
+}

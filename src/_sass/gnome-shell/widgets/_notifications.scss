@@ -1,0 +1,95 @@
+/* Notifications & Message Tray */
+
+$notification_banner_height: 64px;
+$notification_banner_width: 34em;
+
+// Banner notifications
+.notification-banner {
+  min-height: $notification_banner_height;
+  width: $notification_banner_width;
+  font-size: 1em;
+  margin: 5px;
+  border-radius: $material-radius;
+  color: $text;
+  background-color: rgba($base, 0.92);
+  border: none;
+  box-shadow: $shell-shadow-z2;
+
+  &:hover { background-color: rgba($base, 0.95); }
+  &:focus { background-color: $base; }
+
+  .notification-actions {
+    spacing: 0;
+  }
+
+  .notification-button {
+    min-height: 40px;
+    padding: 0 16px;
+    background-color: transparent;
+    color: $text-secondary;
+    font-weight: 500;
+    border-width: 1px 0 0 0;
+    border-color: $secondary-fill;
+    border-style: solid;
+
+    &:first-child { border-radius: 0 0 0 $material-radius; }
+
+    &:last-child { border-radius: 0 0 $material-radius 0; }
+
+    &:only-child, &:first-child:last-child { border-radius: 0 0 $material-radius $material-radius; }
+
+    &:focus {
+      background-color: transparent;
+      color: $text-secondary;
+      box-shadow: inset 0 0 0 2px $secondary-fill !important;
+      outline: none !important;
+    }
+
+    &:hover, &:focus:hover {
+      background-color: $secondary-fill;
+      color: $text;
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    &:active { background-color: $track; color: $text; }
+  }
+}
+
+// counter
+.summary-source-counter {
+  font-size: 1em;
+  font-weight: bold;
+  height: 1.6em; width: 1.6em;
+  -shell-counter-overlap-x: 3px;
+  -shell-counter-overlap-y: 3px;
+  background-color: $primary;
+  color: on(dark);
+  border: 2px solid $primary;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
+}
+
+// chat bubbles
+.chat-body { spacing: 5px; }
+.chat-response { margin: 5px; }
+.chat-log-message { color: $text-secondary; }
+.chat-new-group { padding-top: 1em; }
+.chat-received {
+  padding-left: 4px;
+  &:rtl { padding-left: 0px; padding-right: 4px; }
+}
+
+.chat-sent {
+  padding-left: 18pt;
+  color: $text-secondary;
+  &:rtl { padding-left: 0; padding-right: 18pt; }
+}
+
+.chat-meta-message {
+  font-weight: bold;
+  padding-left: 4px;
+  @include font(caption);
+  color: $text-disabled;
+  &:rtl { padding-left: 0; padding-right: 4px; }
+}

@@ -1,0 +1,77 @@
+/* Dash */
+
+$dash_background_color: rgba(white, 0.2);
+$dash_placeholder_size: 32px;
+$dash_padding: 12px;
+$dash_spacing: 2px;
+$dash_border_radius: if($corner_style == 'circular', $circular-radius, $material-radius + $dash_padding + $dash_spacing);
+
+#dash {
+  @include font(caption);
+  margin-top: $dash_padding;
+
+  .placeholder {
+    background-image: none;
+    background-size: contain;
+    height: $dash_placeholder_size;
+  }
+
+  .empty-dash-drop-target {
+    width: $dash_placeholder_size;
+    height: $dash_placeholder_size;
+  }
+
+  // Running app indicator (also shown in app grid)
+  .app-well-app-running-dot {
+    margin-bottom: $dash_padding + 3px; // hardcoded
+  }
+}
+
+.dash-background {
+  background-color: $dash_background_color;
+  margin-bottom: $dash_padding;
+  padding: $dash_padding;
+  spacing: 6px;
+  border-radius: $dash_border_radius;
+  box-shadow: none;
+  border: none;
+}
+
+// items on the dash
+.dash-item-container {
+  > * { margin: 0 $dash_spacing; }
+
+  &:ltr:first-child { margin-left: 0; }
+
+  &:rtl:first-child { margin-right: 0; }
+
+  .show-apps,
+  .app-well-app {
+    padding-bottom: $dash_padding !important;
+
+    & .overview-icon {
+      padding: 8px !important;
+      border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+    }
+  }
+}
+
+.dash-separator {
+  width: 1px;
+  margin: 0 $margin-size;
+  margin-bottom: $dash_padding;
+  background-color: rgba(white, 0.15);
+}
+
+// OSD Tooltip
+.dash-label {
+  border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+  padding: $space-size $space-size * 2;
+  margin: $margin-size * 2 $margin-size;
+  color: on(dark);
+  background-color: rgba(black, 0.75);
+  border: none;
+  box-shadow: $shell-shadow-z2;
+  text-align: center;
+  -y-offset: 0; // distance from the dash edge
+}

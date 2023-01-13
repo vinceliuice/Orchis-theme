@@ -498,8 +498,8 @@ carousel.card {
 
   &.blue,
   &.details-rating-5 {
-    color: $blue-500;
-    background-color: rgba($blue-500, 0.15);
+    color: $blue-dark;
+    background-color: rgba($blue-dark, 0.15);
   }
 
   &.yellow, &.details-rating-12 {
@@ -508,8 +508,8 @@ carousel.card {
   }
 
   &.details-rating-15 {
-    color: $orange-500;
-    background-color: rgba($orange-500, .15);
+    color: $orange-dark;
+    background-color: rgba($orange-dark, .15);
   }
 
   &.red, &.details-rating-18 {

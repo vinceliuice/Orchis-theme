@@ -1,0 +1,32 @@
+/* Buttons */
+
+.button {
+  min-height: 20px;
+  padding: $space-size + 2px $space-size * 2;
+  border: none;
+  border-radius: $material-radius;
+  text-align: center;
+
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:checked { @include button(flat-checked); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+}
+
+.icon-button {
+  padding: $space-size * 2;
+  border-radius: $circular-radius;
+  border: none;
+  @include button(flat-normal);
+
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:checked { @include button(flat-checked); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+
+  & > StIcon { icon-size: 16px; }
+}

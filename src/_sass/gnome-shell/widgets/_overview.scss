@@ -1,0 +1,15 @@
+/* OVERVIEW */
+
+.controls-manager, .secondary-monitor-workspaces {
+  spacing: $space-size * 2;
+}
+
+#overviewGroup {
+  background-color: $system;
+
+  @extend %scrollbar_on_dark;
+}
+
+.overview-controls {
+  padding-bottom: 32px;
+}

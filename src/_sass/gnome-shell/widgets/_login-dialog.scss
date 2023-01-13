@@ -1,0 +1,149 @@
+/* Login Dialog */
+
+.login-dialog-banner-view {
+  padding-top: 24px;
+  max-width: 23em;
+}
+
+.login-dialog,
+.unlock-dialog {
+  //reset
+  border: none;
+  background-color: transparent;
+
+  StEntry {
+    selection-background-color: $primary;
+    selected-color: on(dark) !important;
+    @include entry(normal, $fc:on(dark, track));
+    &:focus { @include entry(focus, $fc:on(dark)); }
+    &:insensitive {
+      @include entry(insensitive, $fc:on(dark, divider));
+    }
+  }
+
+  .modal-dialog-button-box { spacing: 3px; }
+  .modal-dialog-button {
+    padding: 4px 18px;
+    box-shadow: none;
+    @include button(flat-normal, $tc: on(dark));
+    &:hover,&:focus { @include button(flat-hover, $tc: on(dark)); }
+    &:active { @include button(flat-active, $tc: on(dark)); }
+    &:insensitive { @include button(flat-insensitive, $tc: on(dark)); }
+
+    &:default {
+      @include button(normal, $c: $suggested, $tc: on(dark));
+      &:hover,&:focus { @include button(hover, $c: $suggested, $tc: on(dark)); }
+      &:active { @include button(active, $c: $suggested, $tc: on(dark)); }
+      &:insensitive { @include button(insensitive, $c: on(dark, divider), $tc: on(dark, disabled)); }
+    }
+  }
+
+  .cancel-button,
+  .switch-user-button,
+  .login-dialog-session-list-button {
+    padding: 0;
+    border-radius: 99px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: on(dark, divider);
+    color: on(dark, secondary);
+
+    &:hover,&:focus { color: on(dark); }
+    &:active {
+      color: on(dark);
+      background-color: on(dark, track);
+    }
+
+    StIcon { icon-size: 16px; }
+  }
+
+  .caps-lock-warning-label,
+  .login-dialog-message-warning {
+    color: on(dark);
+  }
+}
+
+.login-dialog-logo-bin { padding: 24px 0px; }
+.login-dialog-banner { color: on(dark, secondary); }
+.login-dialog-button-box { width: 23em; spacing: 5px; }
+.login-dialog-message { text-align: center; }
+.login-dialog-user-selection-box { padding: 100px 0px; }
+
+.login-dialog-not-listed-label {
+  padding-left: 2px;
+  font-size: 1em;
+  font-weight: bold;
+  color: on(dark, secondary);
+  padding-top: 1em;
+  &:hover { color: on(dark); }
+  &:focus { background-color: on(dark, divider); }
+
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
+    color: on(dark);
+  }
+}
+
+.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list {
+  spacing: 12px;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected { background-color: on(dark, divider); color: on(dark); }
+  &:expanded .login-dialog-user-list-item:hover { background-color: on(dark, divider); color: on(dark); }
+  &:expanded .login-dialog-user-list-item:active { background-color: on(dark, track); color: on(dark); }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid on(dark); }
+}
+
+.login-dialog-user-list-item {
+  border-radius: $material-radius;
+  padding: 6px;
+  color: on(dark, secondary);
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+  &:hover { background-color: on(dark, divider); color: on(dark); }
+  &:active { background-color: on(dark, track); color: on(dark); }
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin: 6px 0 0 0;
+    background-color: on(dark);
+  }
+  &:focus .login-dialog-timed-login-indicator { background-color: on(dark); }
+}
+
+.user-widget-label {
+  color: on(dark);
+}
+
+.user-widget.horizontal .user-widget-label {
+  @include font(title);
+  font-weight: bold;
+  padding-left: 15px;
+
+  &:ltr { padding-left: 14px; text-align: left; }
+  &:rtl { padding-right: 14px; text-align: right; }
+}
+
+.user-widget.vertical .user-widget-label {
+  @include font(title);
+  text-align: center;
+  font-weight: normal;
+  padding-top: 16px;
+}
+
+.login-dialog-prompt-layout {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  spacing: $space-size * 2;
+  width: 23em;
+}
+
+.login-dialog-prompt-entry {
+  height: 1.5em;
+}
+
+.login-dialog-prompt-label {
+  color: on(dark, disabled);
+  font-size: 1em;
+  padding-top: 1em;
+}

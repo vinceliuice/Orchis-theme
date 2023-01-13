@@ -1,10 +1,10 @@
 $variant: 'dark';
-$laptop: 'true';
-$panel: 'dark';
+$topbar: 'dark';
+$compact: 'true';
 
-@import '../sass/variables';
-@import '../sass/colors';
-@import '../sass/drawing';
-@import '../sass/common';
-@import '../sass/widgets';
-@import '../sass/extensions-40-0';
+@import '../../_sass/variables';
+@import '../../_sass/colors';
+@import '../../_sass/gnome-shell/drawing';
+@import '../../_sass/gnome-shell/common';
+@import '../../_sass/gnome-shell/widgets';
+@import '../../_sass/gnome-shell/extensions-40-0';

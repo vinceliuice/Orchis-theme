@@ -1,0 +1,69 @@
+//This is the RIGHT PLACE to edit the stylesheet
+
+//let's start by telling people not to edit the generated CSS:
+$cakeisalie: "This stylesheet is generated, DO NOT EDIT";
+/* #{$cakeisalie} */
+
+stage {
+  @include font(body-1);
+  color: $text;
+}
+
+%status_text {
+  @include font(display-2);
+  color: on(dark, disabled);
+}
+
+$bubble_button_radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+
+%bubble_button {
+  border: none;
+  margin-bottom: $space-size;
+  @include button(normal);
+  @include font(button);
+
+  &:hover { @include button(hover); }
+  &:active { @include button(active); color: $text !important; }
+  &:insensitive { @include button(insensitive); }
+  &:focus { @include button(focus); }
+
+  &:first-child {
+    margin-left: $space-size !important;
+    margin-right: 0 !important;
+    border-radius: $bubble_button_radius 0 0 $bubble_button_radius;
+  }
+
+  &:last-child {
+    margin-left: 0 !important;
+    margin-right: $space-size !important;
+    border-right-width: 0;
+    border-radius: 0 $bubble_button_radius $bubble_button_radius 0;
+  }
+
+  &:first-child:last-child {
+    margin: 0 $space-size $space-size $space-size !important;
+    border-right-width: 0;
+    border-radius: $bubble_button_radius;
+  }
+}
+
+%osd_button {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+
+  &:insensitive { @include button(insensitive, $c:$system, $tc: on(dark, secondary-disabled)); }
+  &:focus { @include button(focus, $c:$system, $tc: on(dark)); }
+  &:hover { @include button(hover, $c:$system, $tc: on(dark)); }
+  &:active { @include button(active, $c:$system, $tc: on(dark)); }
+  &:outlined, &:checked { @include button(checked); }
+}
+
+%osd_panel {
+  color: on(dark);
+  background-color: $system;
+  border: none;
+  box-shadow: $shell-shadow-z2;
+  border-radius: $material-radius;
+  padding: $space-size * 2;
+}

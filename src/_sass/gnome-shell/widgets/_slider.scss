@@ -1,0 +1,28 @@
+/* Slider */
+
+$slider_size: if($compact == 'false', 22px, 20px);
+$slider_color: if($variant == 'light', $primary, white);
+
+.slider {
+  height: $slider_size;
+  // slider trough
+  -barlevel-height: 2px; // has to be an odd number
+  -barlevel-background-color: $track; //background of the trough
+  -barlevel-border-width: 0;
+  -barlevel-border-color: $border; // trough border color
+  // fill style
+  -barlevel-active-background-color: $primary; //active trough fill
+  -barlevel-active-border-color: if($variant == 'light', darken($primary, 4%), lighten($primary, 2%)); //active trough border
+  // overfill style (red in this case)
+  -barlevel-overdrive-color: $destructive;
+  -barlevel-overdrive-border-color: if($variant == 'light', darken($destructive, 4%), lighten($destructive, 2%)); //trough border when red;
+  -barlevel-overdrive-separator-width: 2px;
+  // slider handler
+  -slider-handle-radius: $slider_size / 2 - 4px; // half the size of the size
+  -slider-handle-border-width: 0;
+  -slider-handle-border-color: if($variant == 'light', $border, $text);
+
+  color: $slider_color;
+  &:hover { color: lighten($slider_color, 5%); }
+  &:active { color: darken($slider_color, 5%); }
+}

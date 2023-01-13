@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="44"
+   height="26"
+   version="1.1"
+   viewBox="0 0 44 26"
+   id="svg22"
+   sodipodi:docname="toggle-on.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview24"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="23.6"
+     inkscape:cx="41.822034"
+     inkscape:cy="8.8771186"
+     inkscape:window-width="1920"
+     inkscape:window-height="1000"
+     inkscape:window-x="0"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22">
+    <inkscape:grid
+       type="xygrid"
+       id="grid327"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs5">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter932"
+       x="-0.147"
+       y="-0.147"
+       width="1.294"
+       height="1.294">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.225"
+         id="feGaussianBlur934" />
+    </filter>
+  </defs>
+  <rect
+     x="3"
+     y="5"
+     width="32"
+     height="14"
+     rx="7"
+     ry="7"
+     fill="#f04cab"
+     opacity="0.35"
+     id="rect7"
+     style="stroke-width:0.864099" />
+  <circle
+     cx="31"
+     cy="13"
+     r="10"
+     fill="#f04cab"
+     id="circle376"
+     style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:1;filter:url(#filter932)" />
+  <circle
+     cx="31"
+     cy="12"
+     r="10"
+     fill="#f04cab"
+     id="circle14"
+     style="stroke-width:1" />
+</svg>

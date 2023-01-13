@@ -145,7 +145,7 @@ headerbar label:disabled, tab label:disabled, button label:disabled {
 
 label.osd {
   border-radius: 12px;
-  background-color: rgba(54, 54, 54, 0.9);
+  background-color: rgba(25, 25, 25, 0.9);
   color: white;
 }
 
@@ -162,11 +162,11 @@ label.osd {
 }
 
 .warning {
-  color: #FDD633;
+  color: #FBC02D;
 }
 
 .error {
-  color: #F28B82;
+  color: #F44336;
 }
 
 window.assistant .sidebar {
@@ -378,31 +378,31 @@ entry.error {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(242, 139, 130, 0.08);
-  color: #F28B82;
+  background-color: rgba(244, 67, 54, 0.08);
+  color: #F44336;
 }
 
 entry.error image {
-  color: #F28B82;
+  color: #F44336;
 }
 
 entry.error selection {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #F28B82;
+  color: white;
+  background-color: #F44336;
 }
 
 entry.error:focus-within {
-  background-color: rgba(242, 139, 130, 0.08);
-  color: #F28B82;
-  outline-color: #F28B82;
+  background-color: rgba(244, 67, 54, 0.08);
+  color: #F44336;
+  outline-color: #F44336;
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 entry.error:disabled {
-  background-color: rgba(242, 139, 130, 0.04);
+  background-color: rgba(244, 67, 54, 0.04);
   color: rgba(255, 255, 255, 0.5);
-  color: rgba(242, 139, 130, 0.35);
+  color: rgba(244, 67, 54, 0.35);
   outline: none;
   filter: none;
   opacity: 1;
@@ -454,31 +454,31 @@ entry.warning {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(253, 214, 51, 0.08);
-  color: #FDD633;
+  background-color: rgba(251, 192, 45, 0.08);
+  color: #FBC02D;
 }
 
 entry.warning image {
-  color: #FDD633;
+  color: #FBC02D;
 }
 
 entry.warning selection {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #FDD633;
+  background-color: #FBC02D;
 }
 
 entry.warning:focus-within {
-  background-color: rgba(253, 214, 51, 0.08);
-  color: #FDD633;
-  outline-color: #FDD633;
+  background-color: rgba(251, 192, 45, 0.08);
+  color: #FBC02D;
+  outline-color: #FBC02D;
   outline-width: 2px;
   outline-offset: -2px;
 }
 
 entry.warning:disabled {
-  background-color: rgba(253, 214, 51, 0.04);
+  background-color: rgba(251, 192, 45, 0.04);
   color: rgba(255, 255, 255, 0.5);
-  color: rgba(253, 214, 51, 0.35);
+  color: rgba(251, 192, 45, 0.35);
   outline: none;
   filter: none;
   opacity: 1;
@@ -848,8 +848,8 @@ button.suggested-action.flat:checked {
 }
 
 button.destructive-action {
-  background-color: #F28B82;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #F44336;
+  color: white;
   box-shadow: none;
 }
 
@@ -862,24 +862,24 @@ button.destructive-action:disabled {
 }
 
 button.destructive-action:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px rgba(242, 139, 130, 0.2), 0 4px 3px 0 rgba(242, 139, 130, 0.14), 0 1px 6px 0 rgba(242, 139, 130, 0.12);
+  box-shadow: inset 0 0 0 9999px transparent, 0 2px 2.4px -1px rgba(244, 67, 54, 0.2), 0 4px 3px 0 rgba(244, 67, 54, 0.14), 0 1px 6px 0 rgba(244, 67, 54, 0.12);
 }
 
 button.destructive-action:checked {
-  background-color: rgba(182, 105, 98, 0.961);
+  background-color: #f77b72;
 }
 
 button.destructive-action:checked:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(242, 139, 130, 0.3), 0 2px 3px -1px rgba(242, 139, 130, 0.24), 0 2px 5px 0 rgba(242, 139, 130, 0.12);
+  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(244, 67, 54, 0.3), 0 2px 3px -1px rgba(244, 67, 54, 0.24), 0 2px 5px 0 rgba(244, 67, 54, 0.12);
 }
 
 button.destructive-action:focus {
-  box-shadow: 0 0 0 2px rgba(242, 139, 130, 0.35);
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.35);
 }
 
 button.destructive-action.flat {
   background-color: transparent;
-  color: #F28B82;
+  color: #F44336;
 }
 
 button.destructive-action.flat:disabled {
@@ -889,7 +889,7 @@ button.destructive-action.flat:disabled {
 }
 
 button.destructive-action.flat:checked {
-  background-color: rgba(242, 139, 130, 0.3);
+  background-color: rgba(244, 67, 54, 0.3);
 }
 
 stackswitcher > button > label {
@@ -1018,8 +1018,8 @@ list > row button.image-button:not(.flat).suggested-action {
 
 
 list > row button.image-button:not(.flat).destructive-action {
-  background-color: #F28B82;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #F44336;
+  color: white;
 }
 
 /*********
@@ -1030,7 +1030,7 @@ link {
 }
 
 link:visited {
-  color: #CE93D8;
+  color: #BA68C8;
 }
 
 button.link:link, button.link:link:focus, button.link:link:hover, button.link:link:active {
@@ -1038,7 +1038,7 @@ button.link:link, button.link:link:focus, button.link:link:hover, button.link:li
 }
 
 button.link:visited, button.link:visited:focus, button.link:visited:hover, button.link:visited:active {
-  color: #CE93D8;
+  color: #BA68C8;
 }
 
 button.link > label {
@@ -3314,7 +3314,7 @@ levelbar trough {
 }
 
 levelbar block.low {
-  background-color: #FDD633;
+  background-color: #FBC02D;
 }
 
 levelbar block.high, levelbar block:not(.empty) {
@@ -3971,7 +3971,7 @@ window.dialog.message.csd .dialog-action-area > button:not(:disabled) {
 }
 
 window.dialog.message.csd .dialog-action-area > button.destructive-action:not(:disabled) {
-  color: #F28B82;
+  color: #F44336;
 }
 
 window.messagedialog .message-area separator {
@@ -4000,7 +4000,7 @@ window.messagedialog .response-area button.suggested:not(:disabled) {
 }
 
 window.messagedialog .response-area button.destructive:not(:disabled) {
-  color: #F28B82;
+  color: #F44336;
 }
 
 window.messagedialog .response-area separator {
@@ -4367,7 +4367,7 @@ infobar.action:hover > revealer > box, infobar.question:hover > revealer > box {
 }
 
 infobar.warning > revealer > box, infobar.warning:backdrop > revealer > box {
-  background-color: #FDD633;
+  background-color: #FBC02D;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -4380,24 +4380,24 @@ infobar.warning > revealer > box *:link, infobar.warning:backdrop > revealer > b
 }
 
 infobar.warning:hover > revealer > box {
-  background-color: #fdd11a;
+  background-color: #fbb814;
 }
 
 infobar.error > revealer > box, infobar.error:backdrop > revealer > box {
-  background-color: #F28B82;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #F44336;
+  color: white;
 }
 
 infobar.error > revealer > box button, infobar.error > revealer > box button:hover, infobar.error > revealer > box button:focus, infobar.error > revealer > box button:active, infobar.error > revealer > box button:checked, infobar.error > revealer > box button.text-button:not(:disabled), infobar.error:backdrop > revealer > box button, infobar.error:backdrop > revealer > box button:hover, infobar.error:backdrop > revealer > box button:focus, infobar.error:backdrop > revealer > box button:active, infobar.error:backdrop > revealer > box button:checked, infobar.error:backdrop > revealer > box button.text-button:not(:disabled) {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 infobar.error > revealer > box *:link, infobar.error:backdrop > revealer > box *:link {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 infobar.error:hover > revealer > box {
-  background-color: #f0766b;
+  background-color: #f32c1e;
 }
 
 /************
@@ -4409,7 +4409,7 @@ tooltip {
 }
 
 tooltip.background, tooltip.background.csd {
-  background-color: rgba(54, 54, 54, 0.9);
+  background-color: rgba(25, 25, 25, 0.9);
   color: white;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   border-radius: 6px;
@@ -5177,23 +5177,23 @@ carousel.card {
 }
 
 .context-tile-lozenge.blue, .context-tile-lozenge.details-rating-5 {
-  color: #2196F3;
-  background-color: rgba(33, 150, 243, 0.15);
+  color: #1A73E8;
+  background-color: rgba(26, 115, 232, 0.15);
 }
 
 .context-tile-lozenge.yellow, .context-tile-lozenge.details-rating-12 {
-  color: #e1b602;
-  background-color: rgba(253, 214, 51, 0.15);
+  color: #d79b04;
+  background-color: rgba(251, 192, 45, 0.15);
 }
 
 .context-tile-lozenge.details-rating-15 {
-  color: #FF9800;
-  background-color: rgba(255, 152, 0, 0.15);
+  color: #FF7043;
+  background-color: rgba(255, 112, 67, 0.15);
 }
 
 .context-tile-lozenge.red, .context-tile-lozenge.details-rating-18 {
-  color: #eb4b3d;
-  background-color: rgba(242, 139, 130, 0.15);
+  color: #d2190b;
+  background-color: rgba(244, 67, 54, 0.15);
 }
 
 screenshot-carousel box.frame.view {
@@ -5532,11 +5532,11 @@ button.opaque {
 }
 
 button.destructive-action {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 button.destructive-action, button.destructive-action:checked {
-  background-color: #F28B82;
+  background-color: #F44336;
 }
 
 button.suggested-action {
@@ -5607,8 +5607,8 @@ menubutton.suggested-action {
 }
 
 menubutton.destructive-action {
-  background-color: #F28B82;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #F44336;
+  color: white;
 }
 
 menubutton.opaque {
@@ -5742,8 +5742,8 @@ splitbutton.suggested-action {
 }
 
 splitbutton.destructive-action {
-  background-color: #F28B82;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #F44336;
+  color: white;
 }
 
 splitbutton.opaque {
@@ -6177,8 +6177,8 @@ widgets main borders color on backdrop windows */
 @define-color unfocused_borders rgba(255, 255, 255, 0.12);
 /*
 these are pretty self explicative */
-@define-color warning_color #FDD633;
-@define-color error_color #F28B82;
+@define-color warning_color #FBC02D;
+@define-color error_color #F44336;
 @define-color success_color #81C995;
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
@@ -6196,8 +6196,8 @@ FIXME this is really an API */
 @define-color text_view_bg #1d1d1d;
 @define-color budgie_tasklist_indicator_color rgba(255, 255, 255, 0.7);
 @define-color budgie_tasklist_indicator_color_active #3281EA;
-@define-color budgie_tasklist_indicator_color_active_window rgba(43, 93, 159, 0.8075);
-@define-color budgie_tasklist_indicator_color_attention #FDD633;
+@define-color budgie_tasklist_indicator_color_active_window rgba(44, 93, 160, 0.8075);
+@define-color budgie_tasklist_indicator_color_attention #FBC02D;
 @define-color STRAWBERRY_100 #FF9262;
 @define-color STRAWBERRY_300 #FF793E;
 @define-color STRAWBERRY_500 #F15D22;
@@ -6299,18 +6299,18 @@ FIXME this is really an API */
 @define-color accent_bg_color #3281EA;
 @define-color accent_fg_color white;
 @define-color accent_color #3281EA;
-@define-color destructive_bg_color #F28B82;
-@define-color destructive_fg_color rgba(0, 0, 0, 0.87);
-@define-color destructive_color #F28B82;
+@define-color destructive_bg_color #F44336;
+@define-color destructive_fg_color white;
+@define-color destructive_color #F44336;
 @define-color success_bg_color #81C995;
 @define-color success_fg_color rgba(0, 0, 0, 0.87);
 @define-color success_color #81C995;
-@define-color warning_bg_color #FDD633;
+@define-color warning_bg_color #FBC02D;
 @define-color warning_fg_color rgba(0, 0, 0, 0.87);
-@define-color warning_color #FDD633;
-@define-color error_bg_color #F28B82;
-@define-color error_fg_color rgba(0, 0, 0, 0.87);
-@define-color error_color #F28B82;
+@define-color warning_color #FBC02D;
+@define-color error_bg_color #F44336;
+@define-color error_fg_color white;
+@define-color error_color #F44336;
 @define-color window_bg_color #212121;
 @define-color window_fg_color white;
 @define-color view_bg_color #2C2C2C;

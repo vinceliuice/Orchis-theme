@@ -1,0 +1,104 @@
+/* On-screen Keyboard */
+
+$keyboard_hover_bg_color: if($variant == 'light', darken($keyboard, 10%), lighten($keyboard, 10%));
+$keyboard_active_bg_color: if($variant == 'light', darken($keyboard, 20%), lighten($keyboard, 20%));
+
+// draw keys using button function
+#keyboard {
+  background-color: rgba(black, 0.85);
+  border: none;
+  border-top-width: 0;
+  box-shadow: none;
+
+  .page-indicator {
+    padding: $space-size;
+
+    .page-indicator-icon {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+// the container for individual keys
+.key-container {
+  padding: $margin-size;
+  spacing: $margin-size;
+}
+
+// the keys
+.keyboard-key {
+  min-height: 2em;
+  min-width: 2em;
+  font-size: 14pt;
+  font-weight: bold;
+  border-radius: $material-radius;
+  border: none;
+  color: inherit;
+  background-color: $keyboard;
+  box-shadow: 0 1px rgba($black, 0.2);
+
+  &:focus, &:hover { color: $text; background-color: $keyboard_hover_bg_color; }
+  &:checked, &:active { color: $text; background-color: $keyboard_active_bg_color; }
+
+  &:grayed { //FIXME
+    background-color: $scrim;
+    color: on(dark);
+    border-color: $scrim;
+  }
+
+  &.default-key {
+    background-color: $keyboard-alt;
+    box-shadow: 0 1px rgba($black, 0.2);
+    &:focus, &:hover { color: $text-secondary; background-color: $keyboard; }
+    &:checked, &:active { color: $text-secondary; background-color: darken($keyboard, 6%); }
+  }
+
+  &.enter-key {
+    background-color: $primary;
+    color: on(dark);
+
+    &:focus, &:hover { color: on(dark); background-color: lighten($primary, 5%); }
+    &:checked, &:active { color: on(dark); background-color: darken($primary, 10%); }
+  }
+
+  &.shift-key-uppercase { color: $primary }
+
+  StIcon { icon-size: 1.125em; }
+}
+
+// long press on a key popup
+.keyboard-subkeys {
+  color: inherit;
+  -arrow-border-radius: $material-radius;
+  -arrow-background-color: rgba(black, 0.45);
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -boxpointer-gap: 5px;
+  box-shadow: $shell-shadow-z2;
+}
+
+// emoji
+.emoji-page {
+  .keyboard-key {
+    background-color: transparent;
+    border: none;
+    color: initial;
+  }
+}
+
+.emoji-panel {
+  .keyboard-key:latched {
+    border-color: lighten($primary, 5%);
+    background-color: $primary;
+  }
+}
+
+// suggestions
+.word-suggestions {
+  font-size: 14pt;
+  spacing: 12px;
+  min-height: 20pt;
+}

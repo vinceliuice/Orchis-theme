@@ -2,6 +2,8 @@
 REPO_DIR="$(dirname "$(readlink -m "${0}")")"
 SRC_DIR="$REPO_DIR/src"
 
+source "${REPO_DIR}/gtkrc.sh"
+
 ROOT_UID=0
 DEST_DIR=
 
@@ -15,14 +17,16 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Orchis
-THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey' '-Nord')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
 # Old name variants
-OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey' '-nord')
+OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
 OLD_COLOR_VARIANTS=('' '-light' '-dark')
 OLD_SIZE_VARIANTS=('' '-compact')
+
+ctype=
 
 # Check command availability
 function has_command() {
@@ -35,14 +39,14 @@ install() {
   local theme="$3"
   local color="$4"
   local size="$5"
-  local corner="$6"
+  local ctype="$6"
 
   [[ "$color" == '-Dark' ]] && local ELSE_DARK="$color"
   [[ "$color" == '-Light' ]] && local ELSE_LIGHT="$color"
 
-  local THEME_DIR="$dest/$name$theme$color$size"
+  local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
-  [[ -d "$THEME_DIR" ]] && rm -rf "${THEME_DIR:?}"
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR"
 
   theme_tweaks && install_theme_color
 
@@ -53,13 +57,13 @@ install() {
 
   echo "[Desktop Entry]" >>                                                     "$THEME_DIR/index.theme"
   echo "Type=X-GNOME-Metatheme" >>                                              "$THEME_DIR/index.theme"
-  echo "Name=$name$theme$color$size" >>                                         "$THEME_DIR/index.theme"
-  echo "Comment=An Materia Gtk+ theme based on Elegant Design" >>               "$THEME_DIR/index.theme"
+  echo "Name==${2}${3}${4}${5}${6}" >>                                          "$THEME_DIR/index.theme"
+  echo "Comment=An flat Materia Gtk+ theme based on Elegant Design" >>          "$THEME_DIR/index.theme"
   echo "Encoding=UTF-8" >>                                                      "$THEME_DIR/index.theme"
   echo "" >>                                                                    "$THEME_DIR/index.theme"
   echo "[X-GNOME-Metatheme]" >>                                                 "$THEME_DIR/index.theme"
-  echo "GtkTheme=$name$theme$color$size" >>                                     "$THEME_DIR/index.theme"
-  echo "MetacityTheme=$name$theme$color$size" >>                                "$THEME_DIR/index.theme"
+  echo "GtkTheme==${2}${3}${4}${5}${6}" >>                                      "$THEME_DIR/index.theme"
+  echo "MetacityTheme==${2}${3}${4}${5}${6}" >>                                 "$THEME_DIR/index.theme"
   echo "IconTheme=Tela-circle${ELSE_DARK:-}" >>                                 "$THEME_DIR/index.theme"
   echo "CursorTheme=Vimix${ELSE_DARK:-}" >>                                     "$THEME_DIR/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "$THEME_DIR/index.theme"
@@ -77,11 +81,11 @@ install() {
   cp -r "$SRC_DIR/gnome-shell/assets${ELSE_DARK:-}/"*.svg                       "$THEME_DIR/gnome-shell/assets"
 
   if [[ "$primary" == 'true' ]]; then
-    cp -r "$SRC_DIR/gnome-shell/theme$theme/checkbox${ELSE_DARK:-}.svg"         "$THEME_DIR/gnome-shell/assets/checkbox.svg"
+    cp -r "$SRC_DIR/gnome-shell/theme$theme$ctype/checkbox${ELSE_DARK:-}.svg"   "$THEME_DIR/gnome-shell/assets/checkbox.svg"
   fi
 
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/more-results${ELSE_DARK:-}.svg"       "$THEME_DIR/gnome-shell/assets/more-results.svg"
-  cp -r "$SRC_DIR/gnome-shell/theme$theme/toggle-on${ELSE_DARK:-}.svg"          "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme$ctype/more-results${ELSE_DARK:-}.svg" "$THEME_DIR/gnome-shell/assets/more-results.svg"
+  cp -r "$SRC_DIR/gnome-shell/theme$theme$ctype/toggle-on${ELSE_DARK:-}.svg"    "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
 
   cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -90,17 +94,17 @@ install() {
 
   mkdir -p                                                                      "$THEME_DIR/gtk-2.0"
   cp -r "$SRC_DIR/gtk-2.0/common/"{apps.rc,hacks.rc,main.rc}                    "$THEME_DIR/gtk-2.0"
-  cp -r "$SRC_DIR/gtk-2.0/gtkrc$theme${ELSE_DARK:-}"                            "$THEME_DIR/gtk-2.0/gtkrc"
-  cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets$theme${ELSE_DARK:-}"             "$THEME_DIR/gtk-2.0/assets"
+  cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets-common${ELSE_DARK:-}"            "$THEME_DIR/gtk-2.0/assets"
+  cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets$theme${ELSE_DARK:-}$ctype/"*"png" "$THEME_DIR/gtk-2.0/assets"
 
   if [[ "$primary" != "true" ]]; then
-    cp -rf "$SRC_DIR/gtk-2.0/assets-folder/assets-default-radio${ELSE_DARK:-}"/*.png "$THEME_DIR/gtk-2.0/assets"
+    cp -rf "$SRC_DIR/gtk-2.0/assets-folder/assets-default-radio${ELSE_DARK:-}$ctype"/*.png "$THEME_DIR/gtk-2.0/assets"
   fi
 
   mkdir -p                                                                      "$THEME_DIR/gtk-3.0"
-  cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-3.0/assets"
+  cp -r "$SRC_DIR/gtk/assets$theme$ctype"                                       "$THEME_DIR/gtk-3.0/assets"
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-3.0/assets"
-  cp -r "$SRC_DIR/gtk/thumbnail$theme${ELSE_DARK:-}.png"                        "$THEME_DIR/gtk-3.0/thumbnail.png"
+  cp -r "$SRC_DIR/gtk/thumbnails/thumbnail$theme${ELSE_DARK:-}$ctype.png"       "$THEME_DIR/gtk-3.0/thumbnail.png"
 
   if [[ "$tweaks" == 'true' ]]; then
     sassc $SASSC_OPT "$SRC_DIR/gtk/3.0/gtk$color$size.scss"                     "$THEME_DIR/gtk-3.0/gtk.css"
@@ -111,7 +115,7 @@ install() {
   fi
 
   mkdir -p                                                                      "$THEME_DIR/gtk-4.0"
-  cp -r "$SRC_DIR/gtk/assets$theme"                                             "$THEME_DIR/gtk-4.0/assets"
+  cp -r "$SRC_DIR/gtk/assets$theme$ctype"                                       "$THEME_DIR/gtk-4.0/assets"
   cp -r "$SRC_DIR/gtk/scalable"                                                 "$THEME_DIR/gtk-4.0/assets"
 
   if [[ "$tweaks" == 'true' ]]; then
@@ -129,13 +133,13 @@ install() {
   mkdir -p                                                                      "$THEME_DIR/cinnamon"
   cp -r "$SRC_DIR/cinnamon/common-assets"                                       "$THEME_DIR/cinnamon/assets"
   cp -r "$SRC_DIR/cinnamon/assets${ELSE_DARK:-}/"*.svg                          "$THEME_DIR/cinnamon/assets"
-  cp -r "$SRC_DIR/cinnamon/theme$theme/add-workspace-active${ELSE_DARK:-}.svg"  "$THEME_DIR/cinnamon/assets/add-workspace-active.svg"
-  cp -r "$SRC_DIR/cinnamon/theme$theme/corner-ripple${ELSE_DARK:-}.svg"         "$THEME_DIR/cinnamon/assets/corner-ripple.svg"
-  cp -r "$SRC_DIR/cinnamon/theme$theme/toggle-on${ELSE_DARK:-}.svg"             "$THEME_DIR/cinnamon/assets/toggle-on.svg"
+  cp -r "$SRC_DIR/cinnamon/theme$theme$ctype/add-workspace-active${ELSE_DARK:-}.svg" "$THEME_DIR/cinnamon/assets/add-workspace-active.svg"
+  cp -r "$SRC_DIR/cinnamon/theme$theme$ctype/corner-ripple${ELSE_DARK:-}.svg"   "$THEME_DIR/cinnamon/assets/corner-ripple.svg"
+  cp -r "$SRC_DIR/cinnamon/theme$theme$ctype/toggle-on${ELSE_DARK:-}.svg"       "$THEME_DIR/cinnamon/assets/toggle-on.svg"
 
   if [[ "$primary" == 'true' ]]; then
-    cp -r "$SRC_DIR/cinnamon/theme$theme/checkbox${ELSE_DARK:-}.svg"            "$THEME_DIR/gnome-shell/assets/checkbox.svg"
-    cp -r "$SRC_DIR/cinnamon/theme$theme/radiobutton${ELSE_DARK:-}.svg"         "$THEME_DIR/cinnamon/assets/radiobutton.svg"
+    cp -r "$SRC_DIR/cinnamon/theme$theme$ctype/checkbox${ELSE_DARK:-}.svg"      "$THEME_DIR/cinnamon/assets/checkbox.svg"
+    cp -r "$SRC_DIR/cinnamon/theme$theme$ctype/radiobutton${ELSE_DARK:-}.svg"   "$THEME_DIR/cinnamon/assets/radiobutton.svg"
   fi
 
   if [[ "$tweaks" == 'true' ]]; then
@@ -144,7 +148,7 @@ install() {
     cp -r "$SRC_DIR/cinnamon/cinnamon${ELSE_DARK:-}$size.css"                   "$THEME_DIR/cinnamon/cinnamon.css"
   fi
 
-  cp -r "$SRC_DIR/cinnamon/thumbnail$theme${ELSE_DARK:-}.png"                   "$THEME_DIR/cinnamon/thumbnail.png"
+  cp -r "$SRC_DIR/cinnamon/thumbnails/thumbnail$theme${ELSE_DARK:-}$ctype.png"  "$THEME_DIR/cinnamon/thumbnail.png"
 
   mkdir -p                                                                      "$THEME_DIR/metacity-1"
   cp -r "$SRC_DIR/metacity-1/metacity-theme-2${color}.xml"                      "$THEME_DIR/metacity-1/metacity-theme-2.xml"
@@ -154,7 +158,7 @@ install() {
   cd "$THEME_DIR/metacity-1" && ln -s metacity-theme-2.xml metacity-theme-1.xml
 
   mkdir -p                                                                      "$THEME_DIR/plank"
-  cp -r "$SRC_DIR/plank/dock.theme"                                             "$THEME_DIR/plank"
+  cp -r "$SRC_DIR/plank/"*                                                      "$THEME_DIR/plank"
 }
 
 uninstall() {
@@ -163,8 +167,9 @@ uninstall() {
   local theme="$3"
   local color="$4"
   local size="$5"
+  local ctype="$6"
 
-  local THEME_DIR="$dest/$name$theme$color$size"
+  local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
   [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
 }
@@ -197,8 +202,9 @@ link_libadwaita() {
   local theme="$3"
   local color="$4"
   local size="$5"
+  local ctype="$6"
 
-  local THEME_DIR="$dest/$name$theme$color$size"
+  local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
   echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
 
@@ -227,7 +233,6 @@ install_package() {
 
 tweaks_temp() {
   cp -rf ${SRC_DIR}/_sass/_tweaks.scss ${SRC_DIR}/_sass/_tweaks-temp.scss
-  cp -rf ${SRC_DIR}/gnome-shell/sass/_tweaks.scss ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
 }
 
 change_radio_color() {
@@ -235,16 +240,14 @@ change_radio_color() {
 }
 
 install_compact_panel() {
-  sed -i "/\$panel_style:/s/float/compact/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
+  sed -i "/\$panel_style:/s/float/compact/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
 install_solid() {
-  sed -i "/\$opacity:/s/default/solid/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
   sed -i "/\$opacity:/s/default/solid/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
 install_black() {
-  sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
   sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
@@ -253,12 +256,21 @@ install_mac() {
 }
 
 round_corner() {
-  sed -i "/\$default_corner:/s/12px/${corner}/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
   sed -i "/\$default_corner:/s/12px/${corner}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
 install_submenu() {
-  sed -i "/\$submenu_style:/s/false/true/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
+  sed -i "/\$submenu_style:/s/false/true/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+}
+
+install_nord() {
+  sed -i "/\@import/s/color-palette-default/color-palette-nord/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+  sed -i "/\$colorscheme:/s/default/nord/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+}
+
+install_dracula() {
+  sed -i "/\@import/s/color-palette-default/color-palette-dracula/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+  sed -i "/\$colorscheme:/s/default/dracula/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
 install_theme_color() {
@@ -285,14 +297,10 @@ install_theme_color() {
       -Teal)
         theme_color='teal'
         ;;
-      -Nord)
-        theme_color='nord'
-        ;;
       -Grey)
         theme_color='grey'
         ;;
     esac
-    sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/gnome-shell/sass/_tweaks-temp.scss
     sed -i "/\$theme:/s/default/${theme_color}/" ${SRC_DIR}/_sass/_tweaks-temp.scss
   fi
 }
@@ -300,7 +308,7 @@ install_theme_color() {
 theme_tweaks() {
   install_package; tweaks_temp
 
-  if [[ "$panel" == "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" || "$round" == "true" || "$macstyle" == "true" ]]; then
+  if [[ "$panel" == "compact" || "$opacity" == 'solid' || "$blackness" == "true" || "$accent" == "true" || "$primary" == "true" || "$round" == "true" || "$macstyle" == "true" || "$submenu" == "true" || "$nord" == 'true' || "$dracula" == 'true' ]]; then
     tweaks='true'
   fi
 
@@ -327,11 +335,18 @@ theme_tweaks() {
   if [[ "$macstyle" == "true" ]] ; then
     install_mac
   fi
-  
+
   if [[ "$submenu" == "true" ]] ; then
     install_submenu
   fi
-  
+
+  if [[ "$nord" == "true" ]] ; then
+    install_nord
+  fi
+
+  if [[ "$dracula" == "true" ]] ; then
+    install_dracula
+  fi
 }
 
 check_shell() {
@@ -366,7 +381,8 @@ install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$corner"
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+        make_gtkrc "${dest:-$DEST_DIR}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
     done
   done
@@ -376,7 +392,7 @@ uninstall_theme() {
   for theme in "${THEME_VARIANTS[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
     done
   done
@@ -396,7 +412,7 @@ link_theme() {
   for theme in "${themes[@]}"; do
     for color in "${lcolors[@]}"; do
       for size in "${sizes[0]}"; do
-        link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+        link_libadwaita "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
       done
     done
   done

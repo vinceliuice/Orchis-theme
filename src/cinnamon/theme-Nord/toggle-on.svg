@@ -59,7 +59,7 @@
      height="14"
      rx="7"
      ry="7"
-     fill="#8FBCBB"
+     fill="#5e81ac"
      opacity="0.35"
      id="rect7"
      style="stroke-width:0.864099" />
@@ -67,14 +67,14 @@
      cx="31"
      cy="13"
      r="10"
-     fill="#8FBCBB"
+     fill="#5e81ac"
      id="circle376"
      style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:1;filter:url(#filter932)" />
   <circle
      cx="31"
      cy="12"
      r="10"
-     fill="#8FBCBB"
+     fill="#5e81ac"
      id="circle14"
      style="stroke-width:1" />
 </svg>

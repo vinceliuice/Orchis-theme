@@ -1,0 +1,163 @@
+/* Looking Glass */
+
+// Dialog
+#LookingGlassDialog {
+  color: on(dark, secondary);
+  background-color: $system;
+  spacing: $space-size;
+  padding: 0;
+  border: none;
+  border-radius: $popup-radius;
+  box-shadow: $shell-shadow-z4;
+
+  & > #Toolbar {
+    padding: $space-size $space-size * 1.5;
+    border: none;
+    border-radius: $popup-radius $popup-radius 0 0;
+    background-color: lighten($system, 10%);
+    box-shadow: inset 0 -1px 0 on(dark, divider);
+    color: on(dark, secondary);
+  }
+
+  .labels {
+    spacing: 0;
+    color: on(dark, secondary);
+  }
+
+  .notebook-tab {
+    -natural-hpadding: $space-size;
+    -minimum-hpadding: $space-size;
+    font-weight: bold;
+    color: on(dark, disabled);
+    transition-duration: $longer-duration;
+    padding-left: $space-size * 3;
+    padding-right: $space-size * 3;
+    min-height: $small-size;
+    border-radius: $material-radius;
+    background-color: transparent;
+
+    &:hover {
+      color: on(dark);
+      background-color: rgba(on(dark), 0.15);
+      text-shadow: none;
+      box-shadow: none;
+    }
+
+    &:selected {
+      background-color: rgba(on(dark), 0.1);
+      box-shadow: none;
+      color: on(dark);
+      text-shadow: none;
+    }
+  }
+
+  StBoxLayout#EvalBox { padding: $space-size; spacing: $space-size; }
+
+  StBoxLayout#ResultsArea { spacing: $space-size; }
+
+  @extend %scrollbar_on_dark;
+}
+
+.lg-dialog {
+  StEntry {
+    selection-background-color: $primary;
+    selected-color: on(dark);
+    background-color: on(dark, divider);
+    color: on(dark);
+  }
+
+  .shell-link {
+    color: $link;
+
+    &:hover { color: $link; }
+  }
+
+  .actor-link {
+    color: on(dark, disabled);
+
+    &:hover { color: lighten(on(dark, disabled), 20%); }
+    &:active { color: darken(on(dark, disabled), 20%); }
+
+    & StIcon { icon-size: 12px; }
+   }
+}
+
+.lg-completions-text {
+  font-size: 1em;
+  font-style: italic;
+  color: on(dark, secondary);
+}
+
+.lg-obj-inspector-title {
+  spacing: $space-size;
+  color: on(dark, secondary);
+}
+
+.lg-obj-inspector-button {
+  min-height: $medium-size;
+  padding: $space-size;
+  border: none;
+  border-radius: $material-radius;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+  &:hover { border: none; }
+}
+
+#lookingGlassExtensions {
+  padding: $space-size;
+  color: on(dark, secondary);
+}
+
+.lg-extensions-list {
+  padding: $space-size;
+  spacing: $space-size;
+  color: on(dark, secondary);
+}
+
+.lg-extension {
+  border: none;
+  border-radius: $material-radius;
+  background-color: rgba(on(dark), 0.1);
+  color: on(dark, secondary);
+  padding: $space-size;
+  box-shadow: none;
+}
+
+.lg-extension-name {
+  @include font(headline);
+  color: on(dark);
+}
+
+.lg-extension-meta {
+  spacing: $space-size;
+}
+
+#LookingGlassPropertyInspector {
+  color: on(dark);
+  background: lighten($system, 6%);
+  border: none;
+  border-radius: $material-radius;
+  padding: $space-size;
+  box-shadow: $shell-shadow-z3;
+
+  .window-close {
+    margin: $space-size;
+  }
+}
+
+.lg-debug-flag-button {
+  StLabel { padding: $space-size, 2 * $space-size; }
+  color: on(dark);
+
+  &:hover { color: lighten(on(dark), 20%); }
+  &:active { color: darken(on(dark), 20%); }
+}
+
+.lg-debug-flags-header {
+  padding-top: 2 * $space-size;
+  padding: $space-size;
+}

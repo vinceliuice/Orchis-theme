@@ -1,0 +1,197 @@
+//
+// Dash to Dock
+//
+
+#dashtodockContainer {
+  background: transparent;
+
+  #dash,
+  &:overview #dash,
+  &.extended #dash,
+  &.extended:overview #dash {
+    padding: 0;
+    border: none;
+    margin: 0;
+  }
+
+  @each $_dock, $_radius in (top, 16px 16px 16px 16px),
+                            (bottom, 16px 16px 16px 16px),
+                            (left, 16px 16px 16px 16px),
+                            (right, 16px 16px 16px 16px) {
+    &.#{$_dock} #dash,
+    &.#{$_dock}:overview #dash { border-radius: #{$_radius}; }
+
+    &.#{$_dock}.extended #dash,
+    &.#{$_dock}.extended:overview #dash { border-radius: #{$_radius}; }
+  }
+
+  #dash { // default-mode
+    background-color: $panel;
+    box-shadow: none;
+  }
+
+  &.opaque #dash { // solid-mode
+    background-color: $panel-solid;
+  }
+
+  &.transparent #dash { // translucent-mode
+    background-color: $panel; // does not work
+  }
+
+  &:overview #dash { // overview-mode #1
+    background-color: $panel;
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &.extended:overview, // overview-mode #3
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash {
+      background-color: $panel;
+    }
+  }
+
+  .app-well-app,
+  .show-apps {
+    .overview-icon {
+      padding: 9px;
+      background-size: contain;
+    }
+  }
+}
+
+//
+// Simple Dock
+//
+
+#dash:desktop {
+  background-color: $panel;
+}
+
+//
+// OpenWeather
+//
+
+.openweather {
+  &-button,
+  &-button-action,
+  &-menu-button-container,
+  &-button-box {
+    border: 1px solid transparent;
+  }
+
+  &-provider {
+    // generic text buttons are allocated with y-expand-ed
+    padding: 0 16px;
+    font-weight: 500;
+    @include button(flat-normal);
+    &:hover { @include button(flat-hover); }
+    &:focus { @include button(flat-focus); }
+    &:active { @include button(flat-active); }
+    &:insensitive { @include button(flat-disabled); }
+  }
+
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: $text;
+    }
+
+    &-databox-values {
+      background: none;
+      color: $text-disabled;
+    }
+
+    &-databox-captions {
+      background: none;
+      color: $text-disabled;
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      background: none;
+      color: $text-secondary;
+    }
+
+    &-day,
+    &-temperature {
+      background: none;
+      color: $text-disabled;
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon { color: $text-secondary; }
+}
+
+//
+// GPaste
+//
+
+.popup-menu {
+  .search-entry {
+    color: $text;
+    selection-background-color: $primary;
+    selected-color: on(dark);
+    @include entry(normal);
+
+    &:focus {
+      @include entry(focus);
+      color: $text;
+    }
+
+    .search-entry-icon { color: $text-disabled; }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: $text; }
+    }
+  }
+}
+
+//
+// Pop_OS cosmic widget styling
+//
+
+.cosmic-solid-bg {
+  background-color: $system;
+}
+
+.cosmic-dock {
+  #dock {
+    background-color: transparent;
+
+    .dash-background {
+      background-color: $panel;
+    }
+  }
+
+  &.extended {
+    #dash {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 0;
+
+      .dash-background {
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

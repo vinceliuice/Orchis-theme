@@ -1,0 +1,34 @@
+/* Workspace pager */
+
+%overview_panel {
+  color: on(dark);
+  background-color: on(dark, divider);
+  border: none;
+}
+
+// thumbnails in overview
+.workspace-thumbnails {
+  visible-width: 32px; //amount visible before hover
+  spacing: $space-size;
+  padding: $space-size;
+
+  .workspace-thumbnail {
+    @extend %overview_panel;
+    border-radius: 3px;
+  }
+
+  // drag and drop indicator
+  .placeholder {
+    background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-size: contain;
+    width: 18px;
+  }
+}
+
+// selected indicator
+.workspace-thumbnail-indicator {
+  border: 3px solid $primary;
+  border-radius: 3px;
+  padding: 0px;
+  // background-color: transparentize(rgba($primary, 0.2), 0.9);
+}

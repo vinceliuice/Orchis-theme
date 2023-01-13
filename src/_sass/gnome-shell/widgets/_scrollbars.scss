@@ -1,0 +1,61 @@
+/* Scrollbars */
+
+StScrollView {
+  &.vfade { -st-vfade-offset: 32px; }
+  &.hfade { -st-hfade-offset: 32px; }
+}
+
+StScrollBar {
+  padding: 0;
+  margin: 6px;
+
+  StScrollView & {
+    min-width: 8px;
+    min-height: 8px;
+  }
+
+  StBin#trough {
+    border-radius: $circular-radius;
+    background-color: $secondary-fill;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    border-radius: $circular-radius;
+    background-color: $text-disabled;
+    border: 4px solid transparent; //would be nice to margin or at least to transparent
+    transition: 500ms all ease;
+
+    &:hover { background-color: $text-secondary; }
+    &:active { background-color: $text; }
+  }
+}
+
+%scrollbar_on_dark {
+  StScrollBar {
+    StBin#trough {
+      background-color: on(dark, divider);
+    }
+
+    StButton#vhandle, StButton#hhandle {
+      background-color: on(dark, disabled);
+
+      &:hover { background-color: on(dark, secondary); }
+      &:active { background-color: on(dark); }
+    }
+  }
+}
+
+%scrollbar_on_light {
+  StScrollBar {
+    StBin#trough {
+      background-color: rgba(black, 0.15);
+    }
+
+    StButton#vhandle, StButton#hhandle {
+      background-color: rgba(black, 0.35);
+
+      &:hover { background-color: rgba(black, 0.45); }
+      &:active { background-color: rgba(black, 0.65); }
+    }
+  }
+}

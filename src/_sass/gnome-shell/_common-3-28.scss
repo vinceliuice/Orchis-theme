@@ -1,0 +1,3160 @@
+//This is the RIGHT PLACE to edit the stylesheet
+
+//let's start by telling people not to edit the generated CSS:
+$cakeisalie: "This stylesheet is generated, DO NOT EDIT";
+/* #{$cakeisalie} */
+
+/* Copyright 2009, 2015 Red Hat, Inc.
+ *
+ * Portions adapted from Mx's data/style/default.css
+ *   Copyright 2009 Intel Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU Lesser General Public License,
+ * version 2.1, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+
+/* GLOBALS */
+* {
+  // transition-timing-function: $ease-out;
+  transition-duration: $longer-duration;
+}
+
+stage {
+  // font-family: $font-family;
+  @include font(body-1);
+  color: $text;
+}
+
+// Pointer location
+.ripple-pointer-location {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px; // radius equals the size of the box to give us the curve
+  background-color: lighten(transparentize($primary, 0.7), 30%);
+  box-shadow: 0 0 2px 2px lighten($primary, 20%);
+}
+
+// Pointer accessibility notifications
+.pie-timer {
+  width: 60px;
+  height: 60px;
+  -pie-border-width: 3px;
+  -pie-border-color: $primary;
+  -pie-background-color: lighten(transparentize($primary, 0.7), 40%);
+}
+
+/* WIDGETS */
+
+/* Buttons */
+.button {
+  min-height: $medium-size;
+  padding: 0 16px;
+  border-width: 0;
+  border-radius: $material-radius;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+
+}
+
+/* Entries */
+GPasteSearchEntry,
+.search-entry,
+StEntry {
+  min-height: $medium-size;
+  padding: 0 8px;
+  border-radius: 0;
+  border-width: 0;
+  selection-background-color: $primary;
+  selected-color: on(dark) !important;
+  @include font(subheading);
+  @include entry(normal);
+  &:hover { @include entry(hover);}
+  &:focus { @include entry(focus);}
+  &:insensitive { @include entry(insensitive);}
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning;
+    padding: 0 0;
+  }
+  StIcon.peek-password {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: $text-disabled;
+  }
+}
+
+
+/* Scrollbars */
+
+StScrollView {
+  &.vfade { -st-vfade-offset: 32px; }
+  &.hfade { -st-hfade-offset: 32px; }
+}
+
+StScrollBar {
+  padding: 0;
+
+  StScrollView & {
+    min-width: 16px;
+    min-height: 6px;
+  }
+
+  StBin#trough {
+    margin: 6px;
+    border-radius: $circular-radius;
+    background-color: $secondary-fill;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    border-radius: $circular-radius;
+    background-color: $text-disabled;
+    //border: 4px solid transparent; //would be nice to margin or at least to transparent
+    margin: 6px;
+    &:hover { background-color: $text-secondary; }
+    &:active { background-color: $text; }
+  }
+}
+
+%overview_scrollbar {
+  StBin#trough {
+    background-color: on(dark, divider);
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    background-color: on(dark, disabled);
+    &:hover { background-color: on(dark, secondary); }
+    &:active { background-color: on(dark); }
+  }
+}
+
+/* Slider */
+
+$slider_color: if($variant == 'light', $primary, white);
+
+.slider {
+  height: 20px;
+  color: $slider_color;
+  -slider-height: 2px;
+  -slider-background-color: $track; //background of the trough
+  -slider-border-color: transparent; //trough border color
+  -slider-active-background-color: $primary; //active trough fill
+  -slider-active-border-color: transparent; //active trough border
+  -slider-border-width: 0;
+  -slider-handle-radius: 7px;
+  -slider-handle-border-width: 0;
+  -slider-handle-border-color: $border;
+
+  // barlevels are for >= 3.29.90
+  -barlevel-height: 2px;
+  -barlevel-background-color: $track;
+  -barlevel-border-color: transparent;
+  -barlevel-active-background-color: $primary;
+  -barlevel-active-border-color: transparent;
+  -barlevel-overdrive-color: $destructive;
+  -barlevel-overdrive-border-color: transparent;
+  -barlevel-overdrive-separator-width: 2px;
+  -barlevel-border-width: 0;
+}
+
+/* Check Boxes */
+
+.check-box {
+  * {
+    min-height: $medium-size - 8px * 2;
+    padding: 8px 0;
+  }
+  StBoxLayout { spacing: .8em; }
+  StBin {
+    width: 24px;
+    height: 24px;
+    padding: ($medium-size - 24px) / 2;
+    border-radius: 100px;
+    background-image: url("assets/checkbox-off.svg");
+  }
+  &:focus StBin {
+    background-image: url("assets/checkbox-off.svg");
+  }
+  &:hover StBin {
+    background-color: $secondary-fill;
+  }
+  &:active StBin {
+    background-color: $track;
+  }
+  &:checked StBin {
+    background-image: url("assets/checkbox.svg");
+  }
+  &:focus:checked StBin {
+    background-image: url("assets/checkbox.svg");
+  }
+  &:hover:checked StBin {
+    background-color: rgba($primary, 0.3 / 2);
+  }
+  &:active:checked StBin {
+    background-color: rgba($primary, 0.3);
+  }
+}
+
+/* Switches */
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+
+  &:checked { background-image: url("assets/toggle-on.svg"); }
+
+  .popup-menu-item.selected & {
+    background-image: url("assets/toggle-off.svg");
+
+    &:checked { background-image: url("assets/toggle-on.svg"); }
+  }
+}
+
+@each $v in us, intl {
+  .toggle-switch-#{$v} {
+    background-image: url("assets/toggle-off.svg");
+    &:checked { background-image: url("assets/toggle-on.svg"); }
+  }
+}
+
+/* links */
+.shell-link {
+  border-radius: $material-radius;
+  color: $link;
+  background-color: transparent;
+  &:hover {
+    color: $link;
+    background-color: rgba($link, 0.3 / 2);
+  }
+  &:active {
+    color: $link;
+    background-color: rgba($link, 0.3);
+  }
+}
+
+// Outline for low res icons
+.lowres-icon {
+  icon-shadow: 0 1px 2px rgba(black, 0.3);
+}
+
+// Dropshadow for large icons
+.icon-dropshadow {
+  icon-shadow: 0 1px 2px rgba(black, 0.4);
+}
+
+// Rubberband for select-area screenshots
+.select-area-rubberband {
+  background-color: transparentize($primary, 0.7);
+  border: 1px solid $primary;
+}
+
+// User icon
+.user-icon {
+  background-size: contain;
+  color: on(dark, secondary);
+  border-radius: $circular-radius;
+  border: 2px on(dark, secondary);
+
+  &:hover {
+    color: on(dark);
+  }
+
+  & StIcon {
+    background-color: transparentize(on(dark, secondary), 0.95);
+    border-radius: 99px;
+  }
+}
+
+.user-widget.vertical .user-icon {
+  icon-size: 128px; // 128px
+
+  & StIcon {
+    padding: $space-size * 3 + 2px; // 20px
+    padding-top: $space-size * 3; // 18 px
+    padding-bottom: $space-size * 3 + 4px; // 22px
+    width: 88px; height:  88px; // 88px;
+  }
+}
+
+.user-widget.horizontal .user-icon {
+  icon-size: 64px;
+
+  & StIcon {
+    padding: $space-size * 2 ; // 12px
+    width: $space-size * 2.5; height:  $space-size * 2.5; // 40px;
+  }
+}
+
+// Caps-lock warning
+.caps-lock-warning-label {
+  text-align: center;
+  padding-bottom: 8px;
+  @include font(body-1);
+  color: $warning;
+}
+
+.lightbox { background-color: black; }
+.flashspot { background-color: white; }
+
+/* Modal Dialogs */
+
+.headline { @include font(title); }
+
+$mdborder_color: if($variant == 'light', transparent, rgba($white, 0.15));
+
+.modal-dialog {
+  border-radius: $material-radius * 2;
+  color: $text;
+  background-color: $base;
+  // border: 2px solid $mdborder_color;
+  box-shadow: none;
+
+  .modal-dialog-content-box {
+    margin: 32px 40px;
+    spacing: 32px;
+    max-width: 28em;
+  }
+
+  .run-dialog-entry { width: 20em; margin-bottom: 6px; }
+
+  .run-dialog-error-box {
+    padding-top: 16px;
+    spacing: 6px;
+  }
+
+  .run-dialog-button-box {
+    margin: 3px;
+    padding-top: 1em;
+  }
+
+  .run-dialog-label {
+    font-size: 1em;
+    font-weight: normal;
+    color: $text-disabled;
+    padding-bottom: .4em;
+  }
+}
+
+.modal-dialog-linked-button {
+  min-height: 40px;
+  padding: 0 16px;
+  border: none;
+  margin-bottom: 6px;
+  @include font(button);
+  @include button(normal);
+
+  &:hover { @include button(hover); }
+  &:active { @include button(active); }
+  &:insensitive { @include button(insensitive); }
+  &:focus { @include button(focus); }
+
+  &:first-child {
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: $circular-radius 0px 0px $circular-radius;
+  }
+
+  &:last-child {
+    margin-left: 0;
+    margin-right: 6px;
+    border-right-width: 0px;
+    border-radius: 0px $circular-radius $circular-radius 0;
+  }
+
+  &:first-child:last-child {
+    margin: 0 6px 6px 6px;
+    border-right-width: 0px;
+    border-radius: $circular-radius;
+  }
+}
+
+.show-processes-dialog-subject,
+.mount-dialog-subject,
+.end-session-dialog-subject { //this should be a generic header class
+  @include font(title);
+}
+
+/* Message Dialog */
+.message-dialog-content {
+  spacing: 18px;
+
+  .message-dialog-title {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 800;
+
+    &.lightweight {
+      font-size: 13pt;
+      font-weight: 800;
+    }
+  }
+  .message-dialog-description { text-align: center; }
+}
+
+/* End Session Dialog */
+.end-session-dialog {
+  width: 30em;
+  // border: 2px solid $mdborder_color;
+
+  .modal-dialog-linked-button:last-child {
+    color: white;
+    background-color: $destructive;
+
+    &:hover {
+      color: white;
+      background-color: lighten($destructive, 9%);
+    }
+
+    &:active {
+      color: white;
+      background-color: darken($destructive, 5%);
+    }
+  }
+
+  .end-session-dialog-battery-warning,
+  .dialog-list-title {
+    color: $warning;
+  }
+}
+
+/* Dialog List */
+.dialog-list {
+  spacing: 18px;
+
+  .dialog-list-title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .dialog-list-scrollview { max-height: 200px; }
+  .dialog-list-box {
+    spacing: 1em;
+
+    .dialog-list-item {
+      spacing: 1em;
+
+      .dialog-list-item-title { font-weight: bold; }
+      .dialog-list-item-description {
+        color: $text-secondary;
+        @include font(title);
+      }
+    }
+  }
+}
+
+/* Run Dialog */
+.run-dialog {
+  .modal-dialog-content-box {
+    margin-top: 24px;
+    margin-bottom: 14px;
+  }
+  .run-dialog-entry { width: 20em; }
+  .run-dialog-description {
+    @include font(subheading);
+    text-align: center;
+    color: $text-disabled;
+  }
+}
+
+/* ShellMountOperation Dialogs */
+.shell-mount-operation-icon { icon-size: 48px; }
+
+.mount-dialog {
+  spacing: 24px;
+
+  .message-dialog-title {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+    max-width: 34em;
+  }
+
+  .message-dialog-title:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+  }
+
+  .message-dialog-body {
+    padding-left: 17px;
+    width: 28em;
+  }
+
+  .message-dialog-body:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+  }
+}
+
+.mount-dialog-app-list {
+  max-height: 200px;
+  padding-top: 24px;
+  padding-left: 49px;
+  padding-right: 32px;
+}
+
+.mount-dialog-app-list:rtl {
+  padding-right: 49px;
+  padding-left: 32px;
+}
+
+.mount-dialog-app-list-item {
+  color: $text;
+  &:hover { color: $text; }
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+}
+
+.mount-dialog-app-list-item-icon {
+  &:ltr { padding-right: 17px; }
+  &:rtl { padding-left: 17px; }
+}
+
+.mount-dialog-app-list-item-name {
+  font-size: 1em;
+}
+
+
+/* Password or Authentication Dialog */
+
+.prompt-dialog {
+  //this is the width of the entire modal popup
+  width: 28em;
+  // border: 2px solid $mdborder_color;
+
+  .modal-dialog-content-box {
+    margin-bottom: 24px;
+  }
+
+  .modal-dialog-linked-button:first-child {
+    color: $destructive;
+
+    &:active {
+      color: white;
+      background-color: $destructive;
+    }
+  }
+
+  .modal-dialog-linked-button:last-child {
+    color: white;
+    background-color: $suggested;
+
+    &:hover {
+      color: white;
+      background-color: lighten($suggested, 9%);
+    }
+
+    &:active {
+      color: white;
+      background-color: darken($suggested, 5%);
+    }
+
+    &:insensitive {
+      color: rgba($suggested, 0.5);
+      background-color: rgba($suggested, 0.15);
+    }
+  }
+
+  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
+  .message-dialog-content { spacing: 16px; }
+  .message-dialog-title { @include font(title); color: $text; }
+}
+
+.prompt-dialog-password-grid {
+  spacing-rows: 8px;
+  spacing-columns: 4px;
+
+  .prompt-dialog-password-entry {
+    width: auto;
+
+    // 4px (spacing) + 16px (spinner-width)
+    &:ltr { margin-left: 20px; }
+    &:rtl { margin-right: 20px; }
+  }
+}
+
+.prompt-dialog-password-layout {
+  spacing: 8px;
+}
+
+.prompt-dialog-password-entry {
+  width: 20em;
+}
+
+.prompt-dialog-error-label,
+.prompt-dialog-info-label,
+.prompt-dialog-null-label {
+  text-align: center;
+  @include font(title);
+}
+
+.prompt-dialog-error-label {
+  color: $warning;
+}
+
+.prompt-dialog-description:rtl {
+  text-align: right;
+}
+
+.prompt-dialog-password-box {
+  spacing: 1em;
+  padding-bottom: 1em;
+}
+
+.prompt-dialog-error-label {
+  font-size: 1em;
+  color: $error;
+  padding-bottom: 8px;
+}
+
+.prompt-dialog-info-label {
+  font-size: 1em;
+  padding-bottom: 8px;
+}
+
+.hidden {
+  color: rgba(0,0,0,0);
+}
+
+.prompt-dialog-null-label {
+  font-size: 1em;
+  padding-bottom: 8px;
+}
+
+/* Polkit Dialog */
+.polkit-dialog-user-layout {
+  text-align: center;
+  spacing: 8px;
+  margin-bottom: 6px;
+
+  .polkit-dialog-user-root-label { color: $warning; }
+}
+
+.polkit-dialog-user-icon {
+  border-radius: $circular-radius;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+}
+
+/* Audio selection dialog */
+.audio-device-selection-dialog {
+  .modal-dialog-content-box { margin-bottom: 28px; }
+  .audio-selection-box { spacing: 20px; }
+}
+
+.audio-selection-content {
+  spacing: 20px;
+  padding: 24px;
+}
+
+.audio-selection-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.audio-selection-device {
+  border: 1px solid $border;
+  border-radius: $material-radius;
+  &:active,&:hover,&:focus { background-color: $primary; }
+}
+
+.audio-selection-device-box {
+  padding: 20px;
+  spacing: 20px;
+}
+
+.audio-selection-device-icon {
+  icon-size: 64px;
+}
+
+/* Access Dialog */
+.access-dialog {
+  spacing: 30px;
+}
+
+.access-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.access-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.access-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.access-dialog-title {
+  font-weight: bold;
+}
+
+.access-dialog-subtitle {
+  color: $text-secondary;
+  font-weight: bold;
+}
+
+/* Geolocation Dialog */
+.geolocation-dialog {
+  spacing: 30px;
+}
+
+.geolocation-dialog-main-layout {
+  spacing: 12px;
+}
+
+.geolocation-dialog-content {
+  spacing: 20px;
+}
+
+.geolocation-dialog-icon {
+  icon-size: 48px;
+}
+
+.geolocation-dialog-title {
+  font-weight: bold;
+}
+
+.geolocation-dialog-reason {
+  color: $text-secondary;
+  font-weight: bold;
+}
+
+/* Extension Dialog */
+.extension-dialog {
+  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
+  .message-dialog-title { color: $text-secondary; }
+}
+
+/* Inhibit-Shortcuts Dialog */
+.inhibit-shortcuts-dialog {
+  spacing: 30px;
+}
+
+/* Network Agent Dialog */
+
+.network-dialog-secret-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+.keyring-dialog-control-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+//
+// Popovers/Menus
+//
+
+$submenu_item_radius: $popup-radius - $space-size;
+
+.popup-menu {
+  min-width: 15em;
+  color: $text;
+  background: none;
+
+  .popup-menu-arrow { width: 16px; height: 16px; } //defined globally in the TOP BAR
+
+  .popup-sub-menu {
+    margin: 0 $space-size;
+    color: rgba(black, 0.75);
+    background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
+    border-radius: 0 0 $submenu_item_radius $submenu_item_radius;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+
+    .popup-menu-item {
+      margin: 0;
+      border-radius: $submenu_item_radius;
+      color: rgba(black, 0.75);
+      background-image: none;
+
+      &:hover {
+        color: rgba(black, 0.85);
+        background-color: rgba(black, 0.15);
+      }
+
+      &:active {
+        color: rgba(black, 0.85);
+        background-color: rgba(black, 0.2);
+      }
+
+      &.selected:active { color: rgba(black, 0.75); }
+
+      &:insensitive { color: rgba(black, 0.35); }
+
+      &:not(:first-child):last-child {
+        border-radius: 0 0 $material-radius $material-radius;
+      }
+    }
+  }
+
+  .popup-menu-content { padding: $space-size 0; }
+
+  .popup-menu-item {
+    spacing: 12px;
+    margin: 0 $space-size;
+    padding: 6px;
+    color: $text;
+    transition-duration: $shorter-duration;
+    border-radius: if($corner_style == 'circular', $circular-radius, $submenu_item_radius);
+    background-image: none;
+
+    &:ltr { padding-right: 1.5em; padding-left: 0; }
+    &:rtl { padding-right: 0; padding-left: 1.5em; }
+
+    &:checked {
+      background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
+      color: rgba(black, 0.75);
+      font-weight: normal;
+      border-radius: $submenu_item_radius $submenu_item_radius 0 0;
+      border: none;
+      box-shadow: none;
+
+      .popup-menu-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        // icon-shadow: 0 1px rgba(black, 0.45);
+      }
+
+      &.selected {
+        background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5);
+        color: rgba(black, 0.85);
+      }
+
+      &:active {
+        background-color: #dfdfdf;
+        color: rgba(black, 0.75);
+      }
+
+      &.selected:active { background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0); color: rgba(black, 0.75); }
+      &:insensitive { color: rgba(black, 0.35); }
+    }
+
+    &.selected {
+      background-color: $secondary-fill;
+      color: $text;
+      transition-duration: 0ms;
+    }
+
+    &:active {
+      background-color: $track;
+      color: $text;
+      transition-duration: $longer-duration;
+    }
+
+    &.selected:active { color: $text; }
+
+    &:insensitive { color: $text-disabled; }
+  }
+
+  .popup-inactive-menu-item { //all icons and other graphical elements
+    color: $text;
+
+    &:insensitive { color: $text-disabled; }
+  }
+
+  //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
+  &.panel-menu {
+    -boxpointer-gap: $space-size;
+    margin-bottom: 1.75em;
+  }
+}
+
+.popup-menu-ornament {
+  text-align: right;
+  width: 16px;
+  height: 16px;
+}
+
+.popup-menu-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 6px;
+  -arrow-box-shadow: none; //dreaming. bug #689995
+  margin: 0;
+  background-image: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  .popup-menu-content {
+    margin-left: $space-size * 1.5;
+    background-color: $surface;
+    border-radius: $material-radius;
+    box-shadow: $shell-shadow-z3;
+  }
+}
+
+.popup-separator-menu-item {
+  background: none;
+  border: none;
+  padding: 0 0;
+  margin: 0 0;
+  height: 4px;
+
+  .popup-separator-menu-item-separator {
+    background: none;
+    padding: 0 0;
+    margin: 0 0;
+    height: 1px;
+
+    .popup-sub-menu & { //submenu separators
+      background: none;
+      padding: 0 0;
+      margin: 0 0;
+    }
+  }
+}
+
+// a little unstructured mess:
+
+.system-switch-user-submenu-icon.user-icon {
+  icon-size: 20px;
+  padding: 0 2px;
+}
+
+.system-switch-user-submenu-icon.default-icon {
+  icon-size: 16px;
+  padding: 0 4px;
+}
+
+#appMenu {
+  spinner-image: url("process-working.svg");
+  spacing: 4px;
+
+  .label-shadow { color: transparent; }
+}
+
+.aggregate-menu {
+  min-width: if($compact == 'true', 19em, 21em);
+
+  .popup-menu-icon {
+    padding: 0;
+    margin: 0;
+    -st-icon-style: symbolic;
+  }
+
+  .popup-sub-menu .popup-menu-item > :first-child {
+    &:ltr { /* 12px spacing + 2*4px padding */
+      padding-left: 16px; margin-left: 1.09em;
+    }
+    &:rtl { /* 12px spacing + 2*4px padding */
+      padding-right: 16px; margin-right: 1.09em;
+    }
+  }
+}
+
+.system-menu-action {
+  color: $text-secondary;
+  background-color: $secondary-fill;
+  border-radius: 100px; /* wish we could do 50% */
+  padding: ($large-size - 20px) / 2;
+  border: none;
+  -st-icon-style: symbolic; // >= 3.29.90
+
+  &:hover, &:focus {
+    background-color: $track;
+    color: $text;
+    border: none;
+    padding: ($large-size - 20px) / 2;
+  }
+  &:active { background-color: $primary; color: white; }
+
+  & > StIcon { icon-size: 16px; }
+}
+
+// Background menu
+.background-menu { -boxpointer-gap: 8px; -arrow-rise: 0; }
+
+/* OSD */
+.osd-window {
+  @extend %osd-panel;
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  margin: 32px;
+  min-width: 64px;
+  min-height: 64px;
+
+  .osd-monitor-label { @include font(display-2); }
+  .level {
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba($primary, 0.3);
+    color: $text;
+
+    // For >= 3.29.90
+    -barlevel-height: 4px;
+    // FIXME: above 'background-color' property rendered correct trough
+    // colour already, so keep -background-color style-property transparent
+    -barlevel-background-color: rgba($primary, 0.3);
+    -barlevel-active-background-color: $primary;
+    -barlevel-overdrive-color: $destructive;
+    -barlevel-overdrive-separator-width: 3px;
+    -barlevel-border-width: 0;
+  }
+  .level-bar {
+    background-color: $primary;
+    border-radius: 2px;
+  }
+}
+
+/* Pad OSD */
+.pad-osd-window {
+  padding: 32px;
+  background-color: $tooltip;
+
+  .pad-osd-title-box { spacing: 12px; }
+  .pad-osd-title-menu-box { spacing: 6px; }
+}
+
+.combo-box-label {
+  width: 15em;
+}
+
+/* App Switcher */
+.switcher-popup {
+  padding: 8px;
+  spacing: 24px;
+}
+
+.osd-window,
+.resize-popup,
+.switcher-list {
+  @extend %osd-panel;
+}
+
+.switcher-list-item-container { spacing: 8px; }
+
+.switcher-list .item-box {
+  padding: 8px;
+  border-radius: $material-radius;
+}
+
+.switcher-list .item-box:outlined {
+  padding: 8px;
+  border: none;
+  background-color: $secondary-fill;
+  color: $text; // for Ubuntu session
+}
+
+.switcher-list .item-box:selected {
+  background-color: $primary;
+  color: on(dark);
+}
+
+.switcher-list .thumbnail-box {
+  padding: 2px;
+  spacing: 4px;
+}
+
+.switcher-list .thumbnail {
+  width:  256px;
+}
+
+.switcher-list .separator {
+  width: 1px;
+  background: $border;
+}
+
+.switcher-arrow {
+  border-color: rgba(0,0,0,0);
+  color: $text-disabled;
+  &:highlighted {
+    color: $text;
+  }
+}
+
+.input-source-switcher-symbol {
+  @include font(display-2);
+  width: 96px;
+  height: 96px;
+}
+
+/* Window Cycler */
+.cycler-highlight { border: 4px solid $primary; }
+
+/* Workspace Switcher */
+.workspace-switcher-group { padding: 8px; }
+
+.workspace-switcher-container {
+  @extend %osd-panel;
+}
+
+.workspace-switcher {
+  background: transparent;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  spacing: 8px;
+}
+
+.ws-switcher-active-up, .ws-switcher-active-down {
+  height: 48px;
+  background-color: $primary;
+  color: on(dark);
+  background-size: 32px;
+  border-radius: $material-radius;
+}
+
+.ws-switcher-box {
+  height: 48px;
+  border: none;
+  background: $secondary-fill;
+  border-radius: $material-radius;
+}
+
+%osd-panel {
+  color: $text;
+  background-color: $base;
+  border: none;
+  box-shadow: $shell-shadow-z2;
+  border-radius: $material-radius;
+  padding: 12px;
+}
+
+/* Tiled window previews */
+.tile-preview {
+  background-color: rgba($primary, 0.3);
+  border: 1px solid $primary;
+}
+
+.tile-preview-left.on-primary {
+  border-radius: $panel-corner-radius 0 0 0;
+}
+
+.tile-preview-right.on-primary {
+  border-radius: 0 $panel-corner-radius 0 0;
+}
+
+.tile-preview-left.tile-preview-right.on-primary {
+  border-radius: $panel-corner-radius $panel-corner-radius 0 0;
+}
+
+//
+// TOP BAR
+//
+#panel {
+  transition-duration: 250ms; // transition from solid to transparent
+  font-weight: bold;
+  height: $medium-size + 2px;
+
+  @if $opacity == 'solid' {
+    background-color: $panel-solid;
+  } @else {
+    background-color: $panel;
+  }
+
+  @if $panel_style == 'compact' {
+    margin: 0;
+    border-radius: 0;
+    height: $medium-size - 2px;
+  } @else {
+    margin: $space-size / 2;
+    border-radius: $circular-radius;
+    height: $medium-size + 2px;
+  }
+
+  &:overview,
+  &.unlock-screen,
+  &.login-screen,
+  &.lock-screen {
+    background-color: transparent;
+
+    .panel-corner {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: transparent;
+      -panel-corner-border-color: transparent;
+    }
+  }
+
+  #panelLeft, #panelCenter { // spacing between activities<>app menu and such
+    spacing: 0;
+  }
+
+  .panel-corner {
+    -panel-corner-radius: $panel-corner-radius;
+    -panel-corner-background-color: $panel;
+    -panel-corner-border-width: 0;
+    -panel-corner-border-color: transparent;
+
+    &:active, &:overview, &:focus {
+      -panel-corner-border-color: on(dark);
+    }
+
+    &.lock-screen, &.login-screen, &.unlock-screen {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: transparent;
+      -panel-corner-border-color: transparent;
+    }
+
+    StLabel { padding: 0 4px; }
+  }
+
+  .panel-button {
+    margin: 4px 6px;
+    -natural-hpadding: $margin-size;
+    -minimum-hpadding: $margin-size;
+    font-weight: bold;
+    color: on($panel-solid);
+    text-shadow: none;
+    border-radius: $circular-radius;
+    transition-duration: $longer-duration;
+
+    StLabel { padding: 0 3px; }
+
+    .popup-menu-arrow { width: 0; height: 0; } // Remove arrow on panel button
+
+    .app-menu-icon {
+      -st-icon-style: symbolic;
+      margin-left: 4px;
+      margin-right: 0;
+      //dimensions of the icon are hardcoded
+    }
+
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+    }
+
+    &:hover {
+      color: on($panel-solid);
+      background-color: on(dark, divider);
+      text-shadow: none;
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      // Trick due to St limitations. It needs a background to draw
+      // a box-shadow
+      background-color: rgba(on(dark), 0.25);
+      color: on(dark);
+      text-shadow: none;
+      box-shadow: none;
+
+      .system-status-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: none;
+      }
+    }
+
+    .system-status-icon { icon-size: em(16px); padding: 0 3px; }
+    .unlock-screen &,
+    .login-screen &,
+    .lock-screen & {
+      color: on(dark, secondary);
+      &:focus, &:hover, &:active { color: on(dark); }
+    }
+  }
+
+  .panel-button.clock-display {
+    &:active, &:overview, &:focus, &:checked {
+      box-shadow: none;
+
+      .clock {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 2px;
+  }
+
+  // spacing between power icon and (optional) percentage label
+  .power-status.panel-status-indicators-box {
+    spacing: 0;
+  }
+
+  .screencast-indicator { color: $error; }
+  .remote-access-indicator { color: $warning; } // > 3.29.4
+}
+
+$size_suffix: if($compact == 'true', '-small', '');
+
+Gjs_AggregateMenu.panel-button,
+Gjs_ui_panel_AggregateMenu.panel-button,
+Gjs_ArcMenu_ApplicationsButton.panel-button,
+Gjs_arc-menu_linuxgem33_com_menuButton_ArcMenu_MenuButton.panel-button arc-menu-panel-menu {
+  background-color: rgba(on($panel-solid), 0.15) !important;
+}
+
+// Activities button
+Gjs_ui_panel_ActivitiesButton.panel-button {
+  background-image: url("assets/activities#{$size_suffix}.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: transparent !important;
+  background-gradient-direction: none !important;
+  border: 0 solid transparent !important;
+  text-shadow: 0 0 transparent !important;
+  transition-duration: 0ms !important;
+  box-shadow: none !important;
+  color: transparent !important;
+
+  > * { width: $medium-size; }
+
+  &:hover, &:active, &:overview, &:focus, &:checked {
+    background-color: transparent;
+    border: none;
+    transition: none;
+    animation: none;
+  }
+
+  &:active, &:overview, &:focus, &:checked {
+    background-image: url("assets/activities-active#{$size_suffix}.svg");
+  }
+}
+
+// calendar popover
+.clock-display-box {
+  spacing: 4px;
+
+  .clock {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+#calendarArea {
+  padding: 0;
+  margin: ($space-size * 3) 0;
+}
+
+.calendar {
+  padding: 0;
+  margin: 0 8px;
+  border: none;
+  box-shadow: none;
+  background: none;
+  text-shadow: none;
+  color: $text-secondary;
+}
+
+.datemenu-displays-section { padding-bottom: 0; }
+.datemenu-displays-box { spacing: $space-size; }
+
+.datemenu-calendar-column {
+  spacing: $space-size;
+  border: 0 solid $border;
+  padding: 0 $space-size * 2;
+  color: $text-secondary;
+
+  &:hover, &:focus { color: $text; background-color: $secondary-fill; }
+
+  &:active { color: $text; background-color: $track; }
+
+  &:ltr { margin-right: $space-size * 2; border-left-width: 0; }
+  &:rtl { margin-left: $space-size * 2; border-right-width: 0; }
+}
+
+.datemenu-today-button {
+  min-height: $menuitem-size * 2 - 4px * 2;
+  padding: $space-size;
+  border-radius: $material-radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  color: $text-secondary;
+
+  // weekday label
+  .day-label {
+    @include font(title);
+    font-weight: bold;
+  }
+
+  // date label
+  .date-label {
+    @include font(headline);
+  }
+
+  &:hover, &:focus {
+    color: $text;
+    background-color: $secondary-fill;
+  }
+
+  &:active {
+    color: $text;
+    background-color: $track;
+  }
+}
+
+.calendar-month-label {
+  height: $menuitem-size - 4px * 2;
+  margin: 2px;
+  padding: 6px 16px;
+  border-radius: $material-radius;
+  color: $text-secondary;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+
+  &:focus { color: $text; background-color: $secondary-fill; }
+}
+
+.pager-button {
+  width: $menuitem-size;
+  height: $menuitem-size;
+  margin: 2px;
+  border-radius: $circular-radius;
+  background-color: transparent;
+  color: $text-secondary;
+
+  &:hover, &:focus { color: $text; background-color: $secondary-fill; }
+
+  &:active { color: $text; background-color: $track; }
+}
+
+.calendar-change-month-back { //arrow back
+  padding: 0 2px;
+  background-image: url("assets/calendar-arrow-left.svg");
+  &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+}
+
+.calendar-change-month-forward { //arrow foreward
+  padding: 0 2px;
+  background-image: url("assets/calendar-arrow-right.svg");
+  &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+}
+
+.calendar-day-base {
+  @include font(caption);
+  text-align: center;
+  width: $menuitem-size;
+  height: $menuitem-size;
+  padding: 0 0;
+  margin: 2px;
+  border-radius: $circular-radius;
+  color: $text-secondary;
+  border: none;
+  font-feature-settings: "tnum";
+  text-shadow: none;
+
+  &:hover, &:focus { background-color: $secondary-fill; }
+
+  &:active {
+    color: $text-secondary;
+    background-color: $track;
+    border-color: transparent; //avoid jumparound due to today
+  }
+
+  &:selected {
+    color: $text;
+    background-color: $track;
+    border-color: transparent; //avoid jumparound due to today
+  }
+
+  &.calendar-day-heading {  //day of week heading
+    width: $menuitem-size; height: $menuitem-size - 7px;
+    margin-top: 2px;
+    padding: 7px 0 0;
+    border-radius: $circular-radius;
+    background-color: transparent;
+    color: $text-disabled;
+    @include font(caption);
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.calendar-day { //border collapse hack - see calendar.js
+  border-width: 0;
+}
+
+.calendar-day-top { border-top-width: 0; }
+.calendar-day-left { border-left-width: 0; }
+// .calendar-work-day { }
+.calendar-nonwork-day {
+  color: $text;
+}
+
+.calendar-today {
+  font-weight: bold !important;
+  color: white;
+  background-color: $primary;
+  border: none;
+
+  &:hover, &:focus {
+    background-color: lighten($primary, 3%);
+    color: white;
+  }
+
+  &:active, &:selected {
+    background-color: $primary;
+    color: white;
+
+    &:hover, &:focus {
+      background-color: lighten($primary, 3%);
+      color: white;
+    }
+  }
+}
+
+.calendar-day-with-events {
+  color: $text-disabled;
+  background-image: url("assets/calendar-today.svg");
+
+  &.calendar-work-day {
+    color: $text-disabled;
+    font-weight: bold;
+  }
+}
+
+.calendar-other-month-day {
+  color: $text-secondary-disabled;
+  opacity: 0.5;
+}
+
+.calendar-week-number {
+  height: 1.8em;
+  width: 2em;
+  margin: $space-size 0;
+  border-radius: 100px;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+  color: $text-disabled;
+  font-size: inherit;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+}
+
+// buttons under calendar
+.world-clocks-button,
+.weather-button,
+.events-button {
+  padding: $space-size 8px;
+  border-radius: $material-radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $text-secondary;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+
+  &:hover, &:focus {
+    color: $text;
+    background-color: $secondary-fill;
+  }
+
+  &:active {
+    color: $text;
+    background-color: $track;
+  }
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title,
+.events-title {
+  color: $text-disabled;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-shadow: none;
+}
+
+.weather-grid,
+.world-clocks-grid {
+  spacing-rows: 8px;
+  spacing-columns: 16px;
+}
+
+.world-clocks-header,
+.weather-header,
+.events-section-title {
+  color: $text-disabled;
+  font-weight: bold;
+}
+
+// Events button
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $text-secondary-disabled;
+    font-feature-settings: "tnum";
+  }
+}
+
+// World clocks button
+.world-clocks-button {
+  .world-clocks-city {
+    color: $text-disabled;
+    font-weight: normal;
+    font-size: 1em;
+  }
+
+  .world-clocks-time {
+    color: $text-disabled;
+    font-feature-settings: "tnum";
+    font-weight: bold;
+    font-size: 1em;
+
+    &:ltr { text-align: right; }
+    &:rtl { text-align: left; }
+  }
+
+  .world-clocks-timezone {
+    color: $text-disabled;
+    font-feature-settings: "tnum";
+    font-size: 1em;
+  }
+}
+
+// Weather button
+.weather-button {
+  .weather-box {
+    spacing: 12px;
+  }
+
+  .weather-header-box {
+    spacing: 8px;
+  }
+
+  .weather-header.location {
+    font-weight: normal;
+    color: $text-disabled;
+  }
+
+  .weather-forecast-icon {
+    icon-size: 32px;
+    color: $text-disabled;
+  }
+
+  .weather-forecast-time {
+    color: $text-disabled;
+    font-size: 0.8em;
+    font-feature-settings: "tnum";
+    font-weight: normal;
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+  }
+
+  .weather-forecast-temp {
+    font-weight: bold;
+    color: transparentize($text, 0.35);
+    text-shadow: none;
+  }
+}
+
+// Message list
+.message-list {
+  width: 31.5em;
+  padding: 0 12px;
+  color: $text-secondary;
+  text-shadow: none;
+
+  .message-list-placeholder { spacing: 12px; }
+}
+
+.message-list-clear-button.button {
+  background-color: transparent;
+  &:hover,&:focus { background-color: $secondary-fill; }
+  &:active { background-color: $track; }
+  margin: 8px 8px 0;
+}
+
+.message-list-section,
+.message-list-sections,
+.message-list-section-list {
+  spacing: 8px;
+}
+
+// do-not-disturb + clear button
+.message-list-controls {
+  margin: 8px 16px 0;
+  // NOTE: remove the padding if notification_bubble could remove margin for drop shadow
+  padding: 4px;
+  spacing: 16px;
+}
+
+.message {
+  // min-height: $menuitem-size * 2;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+  border: none;
+  border-radius: $material-radius;
+  color: $text-secondary;
+  text-shadow: none;
+
+  &:hover, &:focus { background-color: $secondary-fill; }
+  &:active { background-color: $track; }
+}
+
+.message-icon-bin {
+  padding: 8px 0px 8px 8px;
+  &:rtl { padding: 8px 8px 8px 0px; }
+}
+
+.message-icon-bin > StIcon {
+  // color: $text;
+  icon-size: 32px; // 32px
+  -st-icon-style: symbolic;
+  margin: 8px 0px 8px 8px;
+  &:rtl { margin: 8px 8px 8px 0px; }
+}
+
+.message-secondary-bin {
+  padding: 0 8px;
+}
+
+.message-secondary-bin > .event-time {
+  min-height: $small-size - 2px;
+  padding-top: 2px;
+  color: $text-secondary;
+  font-size: 1em;
+  padding-bottom: 0;
+}
+
+.message-secondary-bin > StIcon {
+  icon-size: em(16px);
+}
+
+.message-title {
+  min-height: $small-size - 2px;
+  padding-top: 2px;
+  color: $text;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.message-content {
+  min-height: $menuitem-size * 2 - 8px * 2;
+  padding: 8px;
+  color: $text-secondary;
+  font-size: 1em;
+}
+
+// close button
+.message-close-button {
+  color: $text-secondary;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+
+  &:hover, &:focus { color: $text; background-color: $secondary-fill; }
+  &:active { color: $text; background-color: $track; }
+  &:insensitive { color: $text-secondary-disabled; }
+}
+
+// body
+.message-body {
+  color: $text-disabled;
+}
+
+.message-media-control {
+  margin: 16px 4px;
+  padding: 8px;
+  border-radius: 100px;
+  color: $text-secondary;
+  &:hover,&:focus { color: $text; background-color: $secondary-fill; }
+  &:active { color: $text; background-color: $track; }
+  &:insensitive { color: $text-secondary-disabled; }
+
+  &:last-child:ltr { margin-right: 16px; padding-right: 8px; }
+  &:last-child:rtl { margin-left: 16px; padding-left: 8px; }
+}
+
+.media-message-cover-icon {
+  icon-size: 32px !important;
+  margin: 8px 0px 8px 4px !important;
+  &:rtl { margin: 8px 4px 8px 0px !important; }
+  &.fallback {
+    icon-size: 16px !important;
+    padding: 8px;
+    border: none;
+    border-radius: $material-radius;
+    background-color: $secondary-fill;
+    color: $text-disabled;
+  }
+}
+
+//Activities Ripples
+.ripple-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 0 0 48px 0;
+  background-color: rgba($primary, 0.35);
+  background-image: none;
+  background-size: auto;
+}
+
+.ripple-box:rtl {
+  border-radius: 0 0 0 48px;
+  background-image: none;
+}
+
+// not really top bar only
+.popup-menu-arrow { width: 16px; height: 16px; }
+.popup-menu-icon { icon-size: em(16px); }
+
+//close buttons
+
+.window-close {
+  transition-duration: 0ms; // FIXME: unless disable the transition, button will distort when hovering
+  height: 42px;
+  width: 42px;
+  -shell-close-overlap: 20px;
+  // -st-background-image-shadow: $shell-shadow-z1;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: transparent;
+  background-color: transparent;
+  background-image: url("assets/window-close.svg");
+
+  &:hover {
+    height: 42px;
+    width: 42px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    // -st-background-image-shadow: $shell-shadow-z2;
+    background-image: url("assets/window-close-hover.svg");
+  }
+
+  &:active {
+    height: 42px;
+    width: 42px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    background-image: url("assets/window-close-active.svg");
+  }
+
+  // For backward compatibility of 3.26.0
+  // &:rtl { -st-background-image-shadow: $shell-shadow-z1; }
+  // &:rtl:hover { -st-background-image-shadow: $shell-shadow-z2; }
+}
+
+/* NETWORK DIALOGS */
+
+.nm-dialog {
+  max-height: 34em;
+  min-height: 31em;
+  min-width: 32em;
+}
+
+.nm-dialog-content {
+  spacing: 20px;
+  padding: 24px;
+}
+.nm-dialog-header-hbox { spacing: 10px; }
+.nm-dialog-airplane-box { spacing: 12px; }
+
+.nm-dialog-airplane-headline {
+  font-weight: bold;
+  text-align: center;
+}
+
+.nm-dialog-airplane-text { color: $text; }
+.nm-dialog-header-icon { icon-size: 32px; }
+
+.nm-dialog-scroll-view {
+  border: none;
+  background-color: transparent;
+}
+
+.nm-dialog-header { @include font(title); }
+
+.nm-dialog-item {
+  font-size: 1em;
+  border-bottom: none;
+  border-radius: $material-radius;
+  padding: 12px;
+  spacing: 20px;
+
+  &:hover, &:focus { background-color: $secondary-fill; }
+
+  &:active { background-color: $track; }
+
+  &:selected {
+    background-color: $primary;
+    color: on(dark);
+  }
+}
+
+.nm-dialog-icons { spacing: .5em; }
+.nm-dialog-icon { icon-size: 16px; }
+.no-networks-label { color: $text-disabled; }
+.no-networks-box { spacing: 12px; }
+
+/* OVERVIEW */
+
+#overview {
+  spacing: 24px;
+  StScrollBar { @extend %overview_scrollbar; }
+
+  .search-entry {
+    width: 320px - 8px * 2;
+    padding: 0 8px;
+    border: none;
+    @include search_entry(normal);
+    selection-background-color: $primary;
+    selected-color: on(dark) !important;
+
+    &:focus {
+      @include search_entry(focus);
+      padding: 0 8px;
+      selection-background-color: $primary;
+      selected-color: on(dark) !important;
+    }
+
+    .search-entry-icon { icon-size: 16px; padding: 0 0; color: rgba(black, 0.75); }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: rgba(black, 0.75); }
+    }
+
+    &:insensitive {
+      @include search_entry(insensitive);
+    }
+
+    StLabel.hint-text {
+      color: rgba(black, 0.45);
+    }
+  }
+}
+
+.overview-controls {
+  padding-bottom: 32px;
+}
+
+.window-picker { //container around window thumbnails
+  -horizontal-spacing: 16px;
+  -vertical-spacing: 16px;
+  padding: 0 16px 32px;
+  spacing: 12px;
+
+  &.external-monitor { padding: 16px; }
+}
+
+.window-clone-border {
+  border: 4px solid on(dark, track);
+  border-radius: $material-radius;
+  // For window decorations with round corners we can't match
+  // the exact shape when the window is scaled. So apply a shadow
+  // to fix that case
+  box-shadow: inset 0 0 0 1px on(dark, track);
+}
+
+.window-caption {
+  spacing: 25px;
+  color: on(dark);
+  background-color: $tooltip;
+  border-radius: $material-radius;
+  padding: 4px 8px;
+  border: none;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+//search results
+
+#searchResultsBin {
+  max-width: 1000px;
+}
+
+#searchResultsContent {
+  padding-left: 20px;
+  padding-right: 20px;
+  spacing: 16px;
+  max-width: 1024px;
+}
+
+.search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
+.search-section-content { // This is the space between the provider icon and the results container
+  spacing: 32px;
+  background-color: on(dark, divider);
+  border-radius: $material-radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: on(dark);
+  padding: 12px;
+}
+
+.search-statustext { // "no results"
+  @extend %status_text;
+}
+
+.list-search-results { spacing: 3px; }
+
+.search-section-separator { height: 0; }
+
+.list-search-result-content { spacing: 30px; }
+.list-search-result-title { @include font(subheading); color: on(dark); spacing: 12px; }
+.list-search-result-description { color: on(dark, secondary); }
+.list-search-provider-details { width: 150px; color: on(dark, secondary); margin-top: 0.24em; }
+.list-search-provider-content { spacing: 20px; }
+.search-provider-icon { padding: 15px; }
+
+
+// /* DASHBOARD */
+
+#dash {
+  font-size: 1em;
+  color: on(dark);
+  background-color: on(dark, divider);
+  padding: 3px 0;
+  margin: 6px;
+  border: none;
+  border-radius: 100px;
+
+  &:rtl {
+    border-radius: 100px;
+  }
+
+  .placeholder {
+    background-image: url("assets/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
+
+  .empty-dash-drop-target {
+    width: 24px;
+    height: 24px;
+  }
+
+  .show-apps,
+  .app-well-app {
+    & .overview-icon { // reset
+      border-radius: $circular-radius;
+    }
+  }
+}
+
+.dash-item-container > StWidget {
+  padding: 3px 6px;
+}
+
+.dash-label { //osd tooltip
+  // min-height: 32px - 6px * 2;
+  border-radius: 100px;
+  padding: 8px 10px;
+  color: on(dark);
+  background-color: rgba(black, 0.75);
+  border: none;
+  box-shadow: $shell-shadow-z2;
+  text-align: center;
+  -x-offset: 8px;
+}
+
+/* App Vault/Grid */
+.icon-grid {
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
+
+  row-spacing: $space-size * 6;
+  column-spacing: $space-size * 6;
+  max-row-spacing: $space-size * 12;
+  max-column-spacing: $space-size * 12;
+
+  .overview-icon { icon-size: 96px; }
+}
+//.app-display { spacing: 20px; }
+
+.system-action-icon {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); // FIXME: this should really have a highlight
+  background-color: $grey_900;
+  color: $white;
+  border-radius: 99px;
+  icon-size: 48px;
+}
+
+.app-view-controls { //favorties | all toggle container
+  width: 320px;
+  margin-bottom: 32px;
+  padding: 0;
+  border-radius: 100px;
+  background-color: on(dark, divider);
+}
+
+.app-view-control { //favorties | all toggle button
+  padding: 0 16px;
+  margin: 3px;
+  border-radius: 100px;
+  font-weight: bold;
+  color: on(dark, secondary);
+  background-color: transparent;
+  &:hover {
+    color: on(dark);
+    background-color: rgba(on(dark), 0.20);
+  }
+  &:active {
+    color: on(dark);
+    background-color: on(dark, track);
+  }
+  &:checked {
+    color: white;
+    background-color: $primary;
+    box-shadow: none;
+  }
+}
+
+//Icon tile
+.search-provider-icon,
+.list-search-result {
+  @extend %icon_tile;
+  &:focus, &:selected, &:hover {
+    background-color: on(dark, divider);
+    transition-duration: 0ms;
+  }
+  &:active, &:checked {
+    background-color: on(dark, track);
+    transition-duration: $longer-duration;
+  }
+}
+
+.show-apps,
+.app-well-app,
+.grid-search-result {
+  & .overview-icon {
+    @extend %icon_tile;
+  }
+
+  &:hover .overview-icon,
+  &:focus .overview-icon,
+  &:selected .overview-icon {
+    background-color: on(dark, divider);
+    transition-duration: 0ms;
+    border-image: none;
+    background-image: none;
+  }
+
+  &:active .overview-icon,
+  &:checked .overview-icon {
+    background-color: on(dark, track);
+    box-shadow: none;
+    transition-duration: $longer-duration;
+  }
+}
+
+.app-well-app-running-dot { //running apps indicator
+  width: 8px; height: 2px;
+  border-radius: 0;
+  background-color: on(dark);
+  margin-bottom: 0;
+}
+
+StWidget.focused .app-well-app-running-dot {
+  width: 16px;
+  background-color: $primary;
+}
+
+%icon_tile {
+  color: on(dark);
+  border-radius: $material-radius;
+  padding: 6px;
+  border: none;
+  transition-duration: $longer-duration;
+  text-align: center;
+}
+
+.show-apps .show-apps-icon {
+  color: on(dark, secondary);
+}
+
+.show-apps:hover .show-apps-icon,
+.show-apps:active .show-apps-icon,
+.show-apps:checked .show-apps-icon,
+.show-apps:focus .show-apps-icon {
+  color: on(dark);
+  transition-duration: $longer-duration;
+}
+
+// Collections
+.app-folder-popup { //expanded collection
+  -arrow-border-radius: $material-radius;
+  -arrow-background-color: on(dark, divider);
+  -arrow-base: 0;
+  -arrow-rise: 12px;
+}
+
+.app-folder-icon {
+  padding: 5px;
+  spacing-rows: 5px;
+  spacing-columns: 5px;
+}
+
+.page-indicator {
+  padding: 15px 20px;
+
+  .page-indicator-icon {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background-image: none;
+    background-color: on(dark, secondary-disabled);
+  }
+  &:hover .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    background-color: on(dark, disabled);
+  }
+  &:active .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    background-color: on(dark, secondary);
+  }
+  &:checked .page-indicator-icon {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    background-color: on(dark);
+    transition-duration: 0ms;
+  }
+  &:checked:active { background-image: none; }
+}
+
+.no-frequent-applications-label { @extend %status_text; }
+
+.overview-icon.overview-icon-with-label,
+.app-well-app .overview-icon.overview-icon-with-label {
+  padding: 10px 8px 5px 8px;
+  spacing: 6px;
+
+  > StBoxLayout {
+    spacing: 6px;
+  }
+}
+
+/* App Folders */
+.app-folder {
+  background: none;
+
+  .overview-icon {
+    background-color: on(dark, divider);
+    border-radius: $material-radius * 2;
+  }
+
+  &:hover .overview-icon {
+    background-color: on(dark, divider);
+  }
+}
+
+// expanded folder
+.app-folder-dialog {
+  border-radius: $material-radius * 4;
+  border: 2px solid rgba(white, 0.15);
+  padding: 12px;
+  background-color: rgba(#222, 0.95);
+
+  & .folder-name-container {
+    padding: 24px 36px 0;
+    spacing: 12px;
+
+    & .folder-name-label,
+    & .folder-name-entry {
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    & .folder-name-entry {
+      border: none;
+      color: on(dark);
+      background-color: rgba(white, 0.15);
+      selection-background-color: $primary;
+      selected-color: on(dark);
+      width: 300px;
+
+      &:focus {
+        color: on(dark);
+        background-color: rgba(white, 0.25);
+      }
+
+      .search-entry-icon { color: rgba(white, 0.85); }
+
+      &:hover, &:focus {
+        .search-entry-icon { color: rgba(white, 0.95); }
+      }
+
+      &:insensitive, StLabel.hint-text {
+        color: rgba(white, 0.45);
+      }
+    }
+
+    /* FIXME: this is to keep the label in sync with the entry */
+    & .folder-name-label { padding: 5px 7px; color: on(dark, secondary); }
+
+    & .edit-folder-button {
+      background-color: on(dark, divider);
+      color: on(dark, secondary);
+      border: none;
+
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+
+      & > StIcon { icon-size: 16px }
+
+      &:hover { background-color: on(dark, divider); }
+      &:checked, &:active { background-color: on(dark, track); }
+    }
+  }
+
+  & .icon-grid {
+    row-spacing: $space-size * 2;
+    column-spacing: $space-size * 5;
+  }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+
+    .page-indicator {
+      padding: 15px 12px;
+    }
+  }
+
+  & StButton#vhandle,
+  & StButton#vhandle:hover,
+  & StButton#vhandle:active { background-color: transparent; }
+}
+
+.app-folder-dialog-container {
+  padding: $space-size;
+  width: 600px;
+  height: 600px;
+}
+
+.app-folder-icon {
+  padding: $space-size;
+  spacing-rows: $space-size;
+  spacing-columns: $space-size;
+}
+
+// Rename popup for app folders
+.rename-folder-popup {
+  .rename-folder-popup-item {
+    spacing: $space-size;
+    &:ltr, &:rtl { padding: 0 $space-size * 2; }
+  }
+}
+
+// right-click app menu
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
+}
+
+// Workspace pager
+.workspace-thumbnails { //container ala dash
+  @extend %overview-panel;
+  visible-width: 32px; //amount visible before hover
+  spacing: 12px;
+  padding: 16px;
+  border-radius: $material-radius;
+  margin: 6px;
+  //border-width: 0; //fixme: can't have non unoform borders :(
+  // &:rtl { border-radius: $material-radius; }
+
+  .placeholder {
+    background-image: url("assets/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
+}
+
+.workspace-thumbnail-indicator {
+  border: 2px solid $primary;
+  padding: 6px;
+  border-radius: 3px;
+}
+
+//Some hacks I don't even
+.all-apps,
+.frequent-apps > StBoxLayout {
+  // horizontal padding to make sure scrollbars or dash don't overlap content
+  padding: 0px 88px 10px 88px;
+}
+
+%overview-panel {
+  color: on(dark);
+  background-color: on(dark, divider);
+  border: none;
+}
+
+%status_text {
+  @include font(display-2);
+  color: on(dark, disabled);
+}
+
+/* NOTIFICATIONS & MESSAGE TRAY */
+
+.url-highlighter { link-color: $link; }
+
+// Banners
+.notification-banner {
+  font-size: 1em;
+  width: 34em;
+  min-height: $menuitem-size * 2;
+  margin: 5px;
+  border-radius: $material-radius;
+  color: $text;
+  background-color: rgba($base, 0.92);
+  border: none;
+  box-shadow: $shell-shadow-z2;
+
+  &:hover { background-color: rgba($base, 0.95); }
+  &:focus { background-color: $base; }
+
+  .notification-icon { padding: 5px; }
+  .notification-content { padding: 5px; spacing: 5px; }
+  .secondary-icon { icon-size: em(16px); }
+  .notification-actions {
+    background-color: transparent;
+    padding-top: 0;
+    border-top: 1px solid $border;
+    spacing: 1px;
+  }
+
+  .notification-button {
+    min-height: 40px;
+    padding: 0 16px;
+    background-color: transparent;
+    color: $text-secondary;
+    font-weight: 500;
+    border-width: 0;
+
+    &:first-child { border-radius: 0 0 0 $material-radius; }
+
+    &:last-child { border-radius: 0 0 $material-radius 0; }
+
+    &:only-child, &:first-child:last-child { border-radius: 0 0 $material-radius $material-radius; }
+
+    &:focus {
+      background-color: transparent;
+      color: $text-secondary;
+      box-shadow: inset 0 0 0 2px $secondary-fill;
+    }
+
+    &:hover, &:focus:hover {
+      background-color: $secondary-fill;
+      color: $text;
+      box-shadow: none;
+    }
+
+    &:active { background-color: $track; color: $text; }
+  }
+}
+
+// counter
+.summary-source-counter {
+  font-size: 1em;
+  font-weight: bold;
+  height: 1.6em; width: 1.6em;
+  -shell-counter-overlap-x: 3px;
+  -shell-counter-overlap-y: 3px;
+  background-color: $primary;
+  color: on(dark);
+  border: 2px solid $primary;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
+}
+
+.secondary-icon { icon-size: em(16px); }
+
+//chat bubbles
+.chat-body { spacing: 5px; }
+.chat-response { margin: 5px; }
+.chat-log-message { color: $text; }
+.chat-new-group { padding-top: 1em; }
+.chat-received {
+  padding-left: 4px;
+  &:rtl { padding-left: 0px; padding-right: 4px; }
+}
+.chat-sent {
+  padding-left: 18pt;
+  color: $text-secondary;
+  &:rtl { padding-left: 0; padding-right: 18pt; }
+}
+.chat-meta-message {
+  padding-left: 4px;
+  @include font(caption);
+  color: $text-disabled;
+  &:rtl { padding-left: 0; padding-right: 4px; }
+}
+
+%bubble_button {
+  @include button(normal);
+  padding: $space-size * 2;
+  border-style: solid;
+  border-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+
+  &:insensitive { @include button(insensitive); }
+  &:hover { @include button(hover); }
+  &:focus { @include button(focus); }
+  &:active { @include button(active); }
+
+  // radius is 2 pixel less to fit in bubble
+  &:first-child {
+    border-radius: 0 0 0 $material-radius;
+  }
+
+  &:last-child {
+    border-right-width: 0;
+    border-radius: 0 0 $material-radius 0;
+  }
+
+  &:first-child:last-child {
+    border-radius: 0 0 $material-radius $material-radius;
+  }
+}
+
+//hotplug
+.hotplug-transient-box {
+  spacing: 6px;
+  padding: 2px 72px 2px 12px;
+}
+
+.hotplug-notification-item {
+  padding: 2px 10px;
+  @extend %bubble_button;
+  &:focus { padding: 1px 71px 1px 11px; }
+}
+
+.hotplug-notification-item-icon {
+  icon-size: 24px;
+  padding: 2px 5px;
+}
+
+.hotplug-resident-box { spacing: 8px; }
+
+.hotplug-resident-mount {
+  spacing: 8px;
+  border-radius: $material-radius;
+  &:hover { background-color: $secondary-fill; }
+  &:active { background-color: $track; }
+}
+
+.hotplug-resident-mount-label {
+  color: inherit;
+  padding-left: 6px;
+}
+
+.hotplug-resident-mount-icon {
+  icon-size: 24px;
+  padding-left: 6px;
+}
+
+.hotplug-resident-eject-icon {
+  icon-size: 16px;
+}
+
+.hotplug-resident-eject-button {
+  padding: 7px;
+  border-radius: $material-radius;
+  color: $text;
+}
+
+// Eeeky things
+
+.magnifier-zoom-region { //magnifier
+  border: 2px solid $primary;
+  &.full-screen { border-width: 0; }
+}
+
+//Keyboard
+
+.word-suggestions { // On-screen Keyboard
+  font-size: 14pt;
+  spacing: 12px;
+  min-height: 20pt;
+}
+
+#keyboard {
+  background-color: rgba(black, 0.65);
+
+  border: none;
+  border-top-width: 0;
+  box-shadow: none;
+
+  .page-indicator {
+    padding: $space-size;
+
+    .page-indicator-icon {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+.keyboard-row {
+  spacing: 15px;
+}
+
+.keyboard-layout {
+  padding: 4px;
+  spacing: 4px;
+}
+
+$keyboard_hover_bg_color: if($variant == 'light', darken($keyboard, 10%), lighten($keyboard, 10%));
+$keyboard_active_bg_color: if($variant == 'light', darken($keyboard, 20%), lighten($keyboard, 20%));
+
+.keyboard-key {
+  min-height: 2em;
+  min-width: 2em;
+  font-size: 14pt;
+  font-weight: bold;
+  border-radius: $material-radius;
+  border: none;
+  color: inherit;
+  background-color: $keyboard;
+  box-shadow: 0 1px rgba($black, 0.2);
+
+  &:focus, &:hover { color: $text; background-color: $keyboard_hover_bg_color; }
+  &:checked, &:active { color: $text; background-color: $keyboard_active_bg_color; }
+
+  &:grayed { //FIXME
+    background-color: $scrim;
+    color: on(dark);
+    border-color: $scrim;
+  }
+
+  &.default-key {
+    background-color: $keyboard-alt;
+    box-shadow: 0 1px rgba($black, 0.2);
+    &:focus, &:hover { color: $text-secondary; background-color: $keyboard; }
+    &:checked, &:active { color: $text-secondary; background-color: darken($keyboard, 6%); }
+  }
+
+  &.enter-key {
+    background-color: $primary;
+    color: on(dark);
+
+    &:focus, &:hover { color: on(dark); background-color: lighten($primary, 5%); }
+    &:checked, &:active { color: on(dark); background-color: darken($primary, 10%); }
+  }
+}
+
+.keyboard-subkeys { //long press on a key popup
+  color: inherit;
+  -arrow-border-radius: $material-radius;
+  -arrow-background-color: rgba(black, 0.45);
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -boxpointer-gap: 5px;
+  box-shadow: $shell-shadow-z2;
+}
+
+// emoji
+.emoji-page {
+  .keyboard-key {
+    background-color: transparent;
+    border: none;
+    color: initial;
+  }
+}
+
+.emoji-panel {
+  .keyboard-key:latched {
+    border-color: lighten($primary, 5%);
+    background-color: $primary;
+  }
+}
+
+// IBus Candidate Popup
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 3px;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 12px;
+  -arrow-box-shadow: none; //dreaming. bug #689995
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.candidate-popup-content {
+  background-color: $surface;
+  border-radius: $material-radius;
+  box-shadow: $shell-shadow-z3;
+  margin: ($space-size / 2) 8px;
+  padding: $space-size;
+  spacing: $space-size;
+}
+
+.candidate-index {
+  padding: 0 0.5em 0 0;
+  color: $text-disabled;
+  .candidate-box:selected & { color: on(dark, disabled); }
+}
+
+.candidate-box {
+  transition-duration: 0ms; // FIXME: needs more natural transitions
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  margin-right: $space-size / 2;
+  border-radius: $material-radius - $space-size;
+  &:hover { background-color: $secondary-fill; color: $text; }
+  &:active { background-color: $track; color: $text; }
+  &:selected { background-color: $primary; color: on(dark); }
+  &:last-child { margin-right: 0; }
+}
+
+.candidate-page-button-box {
+  height: 2em;
+  .vertical & { padding-top: 0.5em; }
+  .horizontal & { padding-left: 0.5em; }
+}
+
+.candidate-page-button {
+  padding: 4px;
+}
+
+.candidate-page-button-previous { border-radius: $material-radius; border-right-width: 0; }
+.candidate-page-button-next { border-radius: $material-radius;  }
+.candidate-page-button-icon { icon-size: 1em; }
+
+// Auth Dialogs & Screen Shield
+.framed-user-icon {
+  background-size: contain;
+  border: none;
+  color: on(dark);
+  border-radius: $circular-radius;
+  &:hover {
+    border-color: on(dark);
+    color: on(dark);
+  }
+}
+
+//
+// LOGIN DIALOG
+//
+.login-dialog-banner-view {
+  padding-top: 24px;
+  max-width: 23em;
+}
+
+.login-dialog,
+.unlock-dialog {
+  //reset
+  border: none;
+  background-color: transparent;
+
+  StEntry {
+    selection-background-color: $primary;
+    selected-color: on(dark) !important;
+    @include entry(normal, $fc:on(dark, track));
+    &:focus { @include entry(focus, $fc:on(dark)); }
+    &:insensitive {
+      @include entry(insensitive, $fc:on(dark, divider));
+    }
+  }
+
+  .modal-dialog-button-box { spacing: 3px; }
+  .modal-dialog-button {
+    padding: 0 16px;
+    @include button(flat-normal, $tc: on(dark));
+    &:hover,&:focus { @include button(flat-hover, $tc: on(dark)); }
+    &:active { @include button(flat-active, $tc: on(dark)); }
+    &:insensitive { @include button(flat-insensitive, $tc: on(dark)); }
+
+    &:default {
+      @include button(normal, $c: $suggested, $tc: on(dark));
+      &:hover,&:focus { @include button(hover, $c: $suggested, $tc: on(dark)); }
+      &:active { @include button(active, $c: $suggested, $tc: on(dark)); }
+      &:insensitive { @include button(insensitive, $c: on(dark, divider), $tc: on(dark, disabled)); }
+    }
+  }
+}
+
+.login-dialog-logo-bin { padding: 24px 0px; }
+.login-dialog-banner { color: on(dark, secondary); }
+.login-dialog-button-box { spacing: 5px; }
+.login-dialog-message-warning { color: $warning; }
+.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
+.login-dialog-user-selection-box { padding: 100px 0px; }
+.login-dialog-not-listed-label {
+  padding-left: 2px;
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
+    color: on(dark);
+  }
+}
+.login-dialog-not-listed-label {
+  font-size: 1em;
+  font-weight: bold;
+  color: on(dark, secondary);
+  padding-top: 1em;
+  &:hover { color: on(dark); }
+  &:focus { background-color: on(dark, divider); }
+}
+
+.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list {
+  spacing: 12px;
+  padding: .2em;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected { background-color: on(dark, divider); color: on(dark); }
+  &:expanded .login-dialog-user-list-item:hover { background-color: on(dark, divider); color: on(dark); }
+  &:expanded .login-dialog-user-list-item:active { background-color: on(dark, track); color: on(dark); }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid on(dark); }
+}
+.login-dialog-user-list-item {
+  border-radius: $material-radius;
+  padding: 6px;
+  color: on(dark, secondary);
+  &:ltr { padding-right: 1em; }
+  &:rtl { padding-left: 1em; }
+  &:hover { background-color: on(dark, divider); color: on(dark); }
+  &:active { background-color: on(dark, track); color: on(dark); }
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin: 6px 0 0 0;
+    background-color: on(dark);
+  }
+  &:focus .login-dialog-timed-login-indicator { background-color: on(dark); }
+}
+
+.login-dialog-username,
+.user-widget-label {
+  color: on(dark);
+  @include font(title);
+  text-align: left;
+  padding-left: 15px;
+}
+  .user-widget-label {
+    &:ltr { padding-left: 18px; }
+    &:rtl { padding-right: 18px; }
+  }
+
+.login-dialog-prompt-layout {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    spacing: 8px;
+    width: 23em;
+}
+
+.login-dialog-prompt-label {
+    color: on(dark, disabled);
+    font-size: 1em;
+    padding-top: 1em;
+}
+
+.login-dialog-session-list-button StIcon {
+    icon-size: 1.25em;
+}
+
+.login-dialog-session-list-button {
+    color: on(dark, secondary);
+    &:hover,&:focus { color: on(dark); }
+    &:active { color: on(dark); }
+}
+
+//SCREEN SHIELD
+
+.screen-shield-arrows {
+    padding-bottom: 3em;
+}
+
+.screen-shield-arrows Gjs_Arrow {
+    color: white;
+    width: 80px;
+    height: 48px;
+    -arrow-thickness: 12px;
+    -arrow-shadow: $shell-shadow-z1;
+}
+
+.screen-shield-clock {
+  color: white;
+  text-shadow: $shell-shadow-z1;
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+.screen-shield-clock-time {
+  @include font(display-4);
+  text-shadow: $shell-shadow-z1;
+}
+
+.screen-shield-clock-date { @include font(display-2); }
+
+.screen-shield-notifications-container {
+  spacing: 6px;
+  width: 30em;
+  background-color: transparent;
+  max-height: 500px;
+  .summary-notification-stack-scrollview {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .notification,
+  .screen-shield-notification-source {
+    padding: 8px;
+    border: none;
+    background-color: $scrim;
+    color: on(dark);
+    border-radius: $material-radius;
+  }
+  .notification { margin-right: 16px; } //compensate for space allocated to the scrollbar
+}
+
+
+.screen-shield-notification-label {
+  min-height: $small-size - 2px;
+  padding: 2px 0px 0px 16px;
+  font-weight: bold;
+}
+
+.screen-shield-notification-count-text {
+  min-height: $small-size - 2px;
+  padding: 2px 0px 0px 16px;
+  color: on(dark, secondary);
+}
+
+#panel.lock-screen { background-color: $scrim; }
+
+.screen-shield-background { //just the shadow, really
+  background: black;
+  box-shadow: $shell-shadow-z5;
+}
+
+/* Screen Shield */
+
+.unlock-dialog-clock {
+  color: white;
+  font-weight: 300;
+  text-align: center;
+  spacing: 24px;
+  padding-bottom: 2.5em;
+}
+
+.unlock-dialog-clock-time {
+  font-size: 64pt;
+  padding-top: 42px;
+  font-feature-settings: "tnum";
+}
+
+.unlock-dialog-clock-date {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.unlock-dialog-clock-hint {
+  font-weight: normal;
+  padding-top: 48px;
+}
+
+.unlock-dialog-notifications-container {
+  margin: 12px 0;
+  spacing: 6px;
+  width: 23em;
+  background-color: transparent;
+  .summary-notification-stack-scrollview {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .notification,
+  .unlock-dialog-notification-source {
+    padding: 12px 6px;
+    border: none;
+    background-color: $tooltip;
+    color: on(dark);
+    border-radius: $material-radius;
+
+    &.critical { background-color: $scrim; }
+  }
+}
+
+.unlock-dialog-notification-label {
+  padding: 0px 0px 0px 12px;
+}
+
+.unlock-dialog-notification-count-text {
+  weight: bold;
+  padding: 0 6px;
+  color: $tooltip;
+  background-color: on(dark, secondary);
+  border-radius: 99px;
+  margin-right: 12px;
+}
+
+#lockDialogGroup {
+  background: #333333 url("assets/noise-texture.svg");
+  background-size: cover;
+}
+
+#screenShieldNotifications {
+  StScrollBar { @extend %overview_scrollbar; }
+}
+
+
+// Looking Glass
+#LookingGlassDialog {
+  color: $text-secondary;
+  background-color: $base;
+  spacing: 4px;
+  padding: 6px;
+  border: none;
+  border-radius: $material-radius;
+  box-shadow: $shell-shadow-z4;
+
+  & > #Toolbar {
+    padding: 0 8px;
+    border: none;
+    border-radius: 0;
+    background-color: rgba($base, 0.01);
+    box-shadow: inset 0 -1px 0 $border;
+  }
+
+  .labels { spacing: 0; }
+
+  .notebook-tab {
+    -natural-hpadding: 12px;
+    -minimum-hpadding: 6px;
+    font-weight: bold;
+    color: $text-disabled;
+    transition-duration: $longer-duration;
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: $medium-size;
+    padding: 0 16px * 2;
+
+    &:hover {
+      box-shadow: inset 0 -2px 0 $track;
+      color: $text;
+      text-shadow: none;
+    }
+
+    &:selected {
+      background-color: rgba($base, 0.01);
+      box-shadow: inset 0 -2px 0 $primary;
+      color: $text;
+      text-shadow: none;
+    }
+  }
+
+  StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
+
+  StBoxLayout#ResultsArea { spacing: 4px; }
+}
+
+.lg-dialog {
+  StEntry {
+    selection-background-color: $primary;
+    selected-color: on(dark) !important;
+  }
+
+  .shell-link {
+    color: $link;
+
+    &:hover { color: $link; }
+  }
+}
+
+.lg-completions-text {
+  font-size: 1em;
+  font-style: italic;
+}
+
+.lg-obj-inspector-title {
+    spacing: 4px;
+}
+
+.lg-obj-inspector-button {
+  min-height: $medium-size;
+  padding: 0 16px;
+  border: none;
+  border-radius: $material-radius;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+  &:hover { border: none; }
+}
+
+#lookingGlassExtensions { padding: 4px; }
+
+.lg-extensions-list {
+  padding: 4px;
+  spacing: 6px;
+}
+
+.lg-extension {
+  border: none;
+  border-radius: $material-radius;
+  background-color: $base-alt;
+  padding: 4px;
+}
+
+.lg-extension-name {
+  @include font(headline);
+}
+
+.lg-extension-meta {
+  spacing: 6px;
+}
+
+#LookingGlassPropertyInspector {
+  background: $base;
+  border: none;
+  border-radius: $material-radius;
+  padding: 6px;
+  box-shadow: $shell-shadow-z4;
+}

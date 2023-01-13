@@ -1,0 +1,19 @@
+
+/* Tiled window previews */
+$tile_corner_radius: $material-radius + 1px;
+.tile-preview {
+  background-color: rgba($primary, 0.3);
+  border: 1px solid $primary;
+}
+
+.tile-preview-left.on-primary {
+  border-radius: $tile_corner_radius 0 0 0;
+}
+
+.tile-preview-right.on-primary {
+  border-radius: 0 $tile_corner_radius 0 0;
+}
+
+.tile-preview-left.tile-preview-right.on-primary {
+  border-radius: $tile_corner_radius $tile_corner_radius 0 0;
+}

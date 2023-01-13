@@ -24,7 +24,6 @@ if [[ -n "${SIZE_VARIANTS:-}" ]]; then
 fi
 
 cp -rf src/_sass/_tweaks.scss src/_sass/_tweaks-temp.scss
-cp -rf src/gnome-shell/sass/_tweaks.scss src/gnome-shell/sass/_tweaks-temp.scss
 
 echo "== Generating the CSS..."
 

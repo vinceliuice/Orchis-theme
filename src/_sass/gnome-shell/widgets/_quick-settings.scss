@@ -1,0 +1,183 @@
+.quick-settings {
+  padding: $space-size * 3 !important;
+  border-radius: 20px + $space-size * 3 !important;
+  margin-top: $space-size / 2 !important;
+  border: none;
+
+  .icon-button, .button {
+    padding: 12px;
+  }
+}
+
+.quick-settings-grid {
+  spacing-rows: $space-size * 2;
+  spacing-columns: $space-size * 2;
+}
+
+.quick-toggle {
+  border-radius: $circular-radius;
+  min-width: 12em;
+  max-width: 12em;
+  min-height: $space-size * 4 + 16px;
+  border: none;
+  background-color: rgba($text, 0.06) !important;
+
+  &:hover {
+    background-color: rgba($text, 0.12) !important;
+  }
+
+  &:active {
+    background-color: rgba($text, 0.24) !important;
+  }
+
+  &:checked {
+    background-color: $primary !important;
+    color: on(dark);
+
+    &:hover {
+      background-color: mix($text, $primary, 10%) !important;
+      color: on(dark);
+    }
+
+    &:active {
+      background-color: mix($text, $primary, 20%) !important;
+      color: on(dark);
+    }
+  }
+
+  & > StBoxLayout { spacing: $space-size; }
+
+  /* Move padding into the box; this is to allow menu arrows
+     to extend to the border */
+  &.button { padding: 0; }
+  & > StBoxLayout { padding: 0 $space-size * 2; }
+  &:ltr > StBoxLayout { padding-left: $space-size * 2.5; }
+  &:rtl > StBoxLayout { padding-right: $space-size * 2.5; }
+
+  .quick-toggle-label { font-weight: bold; }
+  .quick-toggle-icon, .quick-toggle-arrow { icon-size: 16px; }
+}
+
+.quick-menu-toggle {
+  &:ltr > StBoxLayout { padding-right: 0; }
+  &:rtl > StBoxLayout { padding-left: 0; }
+
+  .quick-toggle-arrow {
+    background-color: $secondary-fill !important;
+    padding: $space-size $space-size * 1.75;
+
+    &:active {
+      background-color: $track !important;
+    }
+
+    &:ltr { border-radius: 0 $circular-radius $circular-radius 0; }
+    &:rtl { border-radius: $circular-radius 0 0 $circular-radius; }
+  }
+}
+
+.quick-slider {
+  padding: 0 $space-size;
+
+  > StBoxLayout { spacing: $space-size; }
+
+  .slider-bin {
+    &:focus { @include button(focus); }
+    min-height: 16px; // slider size
+    padding: $space-size;
+    border-radius: $circular-radius;
+  }
+
+  .quick-toggle-icon {
+    icon-size: 16px;
+  }
+}
+
+.quick-toggle-menu {
+  background-color: white !important;
+  color: rgba(black, 0.65) !important;
+  border-radius: $space-size * 5 !important;
+  padding: $space-size * 2;
+  margin: $space-size * 2 $space-size * 3.5 0;
+
+  .popup-menu-item {
+    border-radius: $circular-radius !important;
+    color: rgba(black, 0.65) !important;
+
+    &:focus, &:hover, &.selected {
+      color: rgba(black, 0.75) !important;
+      background-color: rgba(black, 0.1) !important;
+    }
+
+    &:active {
+      color: rgba(black, 0.75) !important;
+      background-color: rgba(black, 0.2) !important;
+    }
+
+    > StIcon { -st-icon-style: symbolic; }
+
+    & > :first-child {
+      &:ltr {
+        padding-left: $space-size  + $margin-size !important;
+      }
+
+      &:rtl {
+        padding-right: $space-size + $margin-size !important;
+      }
+    }
+
+    .popup-separator-menu-item-separator {
+      background-color: rgba(black, 0.1) !important;
+    }
+
+    @if $variant == 'dark' {
+      .toggle-switch {
+        background-image: url("assets/menu-toggle-off.svg");
+      }
+    }
+  }
+
+  & .header {
+    spacing-rows: 0.5 * $space-size;
+    spacing-columns: $space-size * 2;
+    padding-bottom: 2 * $space-size;
+
+    & .icon {
+      icon-size: 24px; // a non-standard symbolic size but ok
+      border-radius: $circular-radius;
+      padding: 1.5 * $space-size;
+      background-color: rgba(black, 0.08) !important;
+
+      &.active {
+        background-color: $primary !important;
+        color: on(dark);
+      }
+    }
+  }
+}
+
+.quick-settings-system-item {
+  & > StBoxLayout { spacing: 2 * $space-size; }
+
+  .icon-button {
+    background-color: rgba($text, 0.06);
+
+    &:hover { background-color: rgba($text, 0.12); }
+    &:active { background-color: rgba($text, 0.24); }
+
+    > StIcon { -st-icon-style: symbolic; }
+  }
+
+  & .power-item {
+    min-height: 0;
+    min-width: 0;
+
+    &:insensitive {
+      @include button(normal);
+      background-color: transparent;
+    }
+  }
+}
+
+.nm-network-item {
+  .wireless-secure-icon { icon-size: 8px; }
+}

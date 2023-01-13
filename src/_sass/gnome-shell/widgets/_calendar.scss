@@ -1,0 +1,343 @@
+/* Date/Time Menu */
+
+.clock-display-box {
+  spacing: 2px;
+
+  .clock {
+    padding-left: $space-size * 2;
+    padding-right: $space-size * 2;
+  }
+}
+
+// overall menu
+#calendarArea {
+  padding: $space-size * 2 0;
+}
+
+.calendar {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none;
+  box-shadow: none;
+  background: none;
+  text-shadow: none;
+  color: $text-secondary;
+}
+
+// Calendar menu side column
+.datemenu-calendar-column {
+  spacing: $space-size;
+  border: 0 solid $border;
+  padding: 0 $space-size;
+  color: $text-secondary;
+
+  &:hover, &:focus { color: $text; background-color: $secondary-fill; }
+
+  &:active { color: $text; background-color: $track; }
+
+  &:ltr { margin-right: $space-size + 2px; border-left-width: 0; }
+  &:rtl { margin-left: $space-size + 2px; border-right-width: 0; }
+
+  .datemenu-displays-box {
+    spacing: $space-size;
+  }
+}
+
+.datemenu-today-button {
+  min-height: $menuitem-size * 2 - 4px * 2;
+  padding: $space-size;
+  border-radius: $material-radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  color: $text-secondary;
+
+  // weekday label
+  .day-label {
+    @include font(title);
+    font-weight: bold;
+  }
+
+  // date label
+  .date-label {
+    @include font(headline);
+  }
+
+  &:hover, &:focus {
+    color: $text;
+    background-color: $secondary-fill;
+  }
+
+  &:active {
+    color: $text;
+    background-color: $track;
+  }
+}
+
+.calendar-month-label {
+  height: $menuitem-size - 4px * 2;
+  margin: 2px;
+  padding: 6px 16px;
+  border-radius: $material-radius;
+  color: $text-secondary;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+
+  &:focus { color: $text; background-color: $secondary-fill; }
+}
+
+.pager-button {
+  width: $menuitem-size;
+  height: $menuitem-size;
+  margin: 2px;
+  border-radius: $circular-radius;
+  background-color: transparent;
+  color: $text-secondary;
+
+  &:hover, &:focus { color: $text; background-color: $secondary-fill; }
+
+  &:active { color: $text; background-color: $track; }
+}
+
+.calendar-change-month-back { //arrow back
+  padding: 0 2px;
+  background-image: url("assets/calendar-arrow-left.svg");
+  &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+}
+
+.calendar-change-month-forward { //arrow foreward
+  padding: 0 2px;
+  background-image: url("assets/calendar-arrow-right.svg");
+  &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+}
+
+.calendar-day-base {
+  @include font(caption);
+  text-align: center;
+  width: $menuitem-size !important;
+  height: $menuitem-size !important;
+  padding: 2px !important;
+  margin: 2px !important;
+  border-radius: $circular-radius;
+  color: $text-secondary;
+  border: none;
+  font-feature-settings: "tnum";
+  text-shadow: none;
+
+  &:hover, &:focus { background-color: $secondary-fill; }
+
+  &:active {
+    color: $text-secondary;
+    background-color: $track;
+    border-color: transparent; //avoid jumparound due to today
+  }
+
+  &:selected {
+    color: $text;
+    background-color: $track;
+    border-color: transparent; //avoid jumparound due to today
+  }
+
+  &.calendar-day-heading {  //day of week heading
+    width: $menuitem-size; height: $menuitem-size - 7px;
+    margin-top: 2px;
+    padding: 7px 0 0;
+    border-radius: $circular-radius;
+    background-color: transparent;
+    color: $text-disabled;
+    @include font(caption);
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.calendar-day { //border collapse hack - see calendar.js
+  border-width: 0;
+}
+
+.calendar-day-top { border-top-width: 0; }
+.calendar-day-left { border-left-width: 0; }
+// .calendar-work-day { }
+.calendar-nonwork-day {
+  color: $text;
+}
+
+.calendar-today {
+  font-weight: bold !important;
+  color: white;
+  background-color: $primary;
+  border: none;
+
+  &:hover, &:focus {
+    background-color: lighten($primary, 3%);
+    color: white;
+  }
+
+  &:active, &:selected {
+    background-color: $primary;
+    color: white;
+
+    &:hover, &:focus {
+      background-color: lighten($primary, 3%);
+      color: white;
+    }
+  }
+}
+
+.calendar-day-with-events {
+  color: $text-disabled;
+  background-image: url("assets/calendar-today.svg");
+
+  &.calendar-work-day {
+    color: $text-disabled;
+    font-weight: bold;
+  }
+}
+
+.calendar-other-month-day {
+  color: $text-secondary-disabled;
+  opacity: 0.5;
+}
+
+.calendar-week-number {
+  height: 28px !important;
+  width: 28px !important;
+  margin: $margin-size !important;
+  padding: 0 !important;
+  border-radius: $circular-radius;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+  color: $text-disabled;
+  font-size: inherit;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+}
+
+// buttons under calendar
+.world-clocks-button,
+.weather-button,
+.events-button {
+  padding: $space-size $space-size * 2;
+  border-radius: $material-radius;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $text-secondary;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+
+  &:hover, &:focus {
+    color: $text;
+    background-color: $secondary-fill;
+  }
+
+  &:active {
+    color: $text;
+    background-color: $track;
+  }
+}
+
+.world-clocks-header,
+.weather-header,
+.message-list-section-title,
+.events-section-title,
+.events-title {
+  color: $text-disabled;
+  font-weight: bold;
+  margin-bottom: $space-size / 2;
+  text-shadow: none;
+}
+
+.weather-grid,
+.world-clocks-grid {
+  spacing-rows: 8px;
+  spacing-columns: 16px;
+}
+
+.world-clocks-header,
+.weather-header,
+.events-section-title {
+  color: $text-disabled;
+  font-weight: bold;
+  font-size: if($compact == 'true', 0.9em, 1em);
+}
+
+// Events button
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $text-secondary-disabled;
+    font-feature-settings: "tnum";
+  }
+}
+
+// World clocks button
+.world-clocks-button {
+  .world-clocks-city {
+    color: $text-disabled;
+    font-weight: normal;
+    font-size: if($compact == 'true', 0.9em, 1em);
+  }
+
+  .world-clocks-time {
+    color: $text-disabled;
+    font-feature-settings: "tnum";
+    font-weight: bold;
+    font-size: if($compact == 'true', 0.9em, 1em);
+
+    &:ltr { text-align: right; }
+    &:rtl { text-align: left; }
+  }
+
+  .world-clocks-timezone {
+    color: $text-disabled;
+    font-feature-settings: "tnum";
+    font-size: if($compact == 'true', 0.9em, 1em);
+  }
+}
+
+// Weather button
+.weather-button {
+  .weather-box {
+    spacing: 12px;
+  }
+
+  .weather-header-box {
+    spacing: 8px;
+  }
+
+  .weather-header.location {
+    font-weight: normal;
+    color: $text-disabled;
+    font-size: if($compact == 'true', 0.8em, 0.9em);
+  }
+
+  .weather-forecast-icon {
+    icon-size: if($compact == 'true', 24px, 32px);
+    color: $text-disabled;
+  }
+
+  .weather-forecast-time {
+    color: $text-disabled;
+    font-size: if($compact == 'true', 0.7em, 0.8em);
+    font-feature-settings: "tnum";
+    font-weight: normal;
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+  }
+
+  .weather-forecast-temp {
+    font-weight: bold;
+    color: transparentize($text, 0.35);
+    text-shadow: none;
+  }
+}

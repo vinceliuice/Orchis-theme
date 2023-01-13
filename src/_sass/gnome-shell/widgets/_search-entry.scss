@@ -1,0 +1,60 @@
+// Search entry
+
+$search_entry_width: 320px;
+
+.search-entry {
+  min-height: 24px;
+  padding: $space-size $space-size * 1;
+  width: $search_entry_width;
+  border-radius: $circular-radius;
+  selection-background-color: $primary;
+  selected-color: on(dark) !important;
+  @include entry(normal);
+
+  &:hover { @include entry(hover); }
+  &:focus { @include entry(focus); }
+  &:insensitive { @include entry(insensitive); }
+
+  .search-entry-icon {
+    icon-size: 16px;
+    padding: 0 4px;
+    color: $text-secondary;
+  }
+
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: $text-disabled;
+  }
+}
+
+#overview {
+  .search-entry {
+    margin-top: $space-size * 2;
+    margin-bottom: $space-size;
+    border: none !important;
+
+    @include search_entry(normal);
+
+    &:hover {
+      @include search_entry(hover);
+    }
+
+    &:focus {
+      @include search_entry(focus);
+      selection-background-color: $primary;
+      selected-color: on(dark) !important;
+    }
+
+    .search-entry-icon {
+      color: rgba(black, 0.65);
+    }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: rgba(black, 0.75); }
+    }
+
+    StLabel.hint-text {
+      color: rgba(black, 0.35);
+    }
+  }
+}
