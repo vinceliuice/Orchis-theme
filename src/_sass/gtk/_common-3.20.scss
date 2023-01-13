@@ -1296,6 +1296,7 @@ searchbar > revealer > box {
     min-height: $small-size;
     box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $corner-radius $corner-radius 0 0;
+    border: none;
 
     @if $mac_style == 'true' {
       padding: $space-size $space-size * 2;
