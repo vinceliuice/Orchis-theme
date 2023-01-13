@@ -93,24 +93,45 @@
 }
 
 .quick-toggle-menu {
-  background-color: white !important;
-  color: rgba(black, 0.65) !important;
   border-radius: $space-size * 5 !important;
   padding: $space-size * 2;
   margin: $space-size * 2 $space-size * 3.5 0;
 
+  @if $submenu_style == 'true' {
+    background-color: $surface !important;
+    color: $text-secondary !important;
+  } @else {
+    background-color: white !important;
+    color: rgba(black, 0.65) !important;
+  }
+
   .popup-menu-item {
     border-radius: $circular-radius !important;
-    color: rgba(black, 0.65) !important;
 
-    &:focus, &:hover, &.selected {
-      color: rgba(black, 0.75) !important;
-      background-color: rgba(black, 0.1) !important;
-    }
+    @if $submenu_style == 'true' {
+      color: $text-secondary !important;
 
-    &:active {
-      color: rgba(black, 0.75) !important;
-      background-color: rgba(black, 0.2) !important;
+      &:focus, &:hover, &.selected {
+        color: $text !important;
+        background-color: $secondary-fill !important;
+      }
+
+      &:active {
+        color: $text !important;
+        background-color: $divider !important;
+      }
+    } @else {
+      color: rgba(black, 0.65) !important;
+
+      &:focus, &:hover, &.selected {
+        color: rgba(black, 0.75) !important;
+        background-color: rgba(black, 0.1) !important;
+      }
+
+      &:active {
+        color: rgba(black, 0.75) !important;
+        background-color: rgba(black, 0.2) !important;
+      }
     }
 
     > StIcon { -st-icon-style: symbolic; }
@@ -126,7 +147,11 @@
     }
 
     .popup-separator-menu-item-separator {
-      background-color: rgba(black, 0.1) !important;
+      @if $submenu_style == 'true' {
+        background-color: $border !important;
+      } @else {
+        background-color: rgba(black, 0.1) !important;
+      }
     }
 
     @if $variant == 'dark' {

@@ -4816,6 +4816,7 @@ popover.entry-completion > contents {
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar {
   padding: 16px 0 16px 0;
+  background: none;
   border-radius: 12px;
 }
 
@@ -4897,6 +4898,7 @@ popover.entry-completion > contents {
 
 .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected > revealer > box {
   color: #3281EA;
+  background-color: #2C2C2C;
   border-image-width: 10px 10px 10px 46px;
   border-image-slice: 10 10 10 46;
   border-image-repeat: stretch;

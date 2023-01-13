@@ -505,7 +505,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu {
   min-width: 12em;
   color: rgba(0, 0, 0, 0.87);
-  background-color: none;
+  background-color: transparent;
   border: none;
   padding: 0;
   margin: 0;
@@ -525,7 +525,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 6px;
   padding: 6px 12px;
   color: rgba(0, 0, 0, 0.87) !important;
-  background-color: none;
+  background-color: transparent;
   transition-duration: 100ms;
   border-radius: 9999px;
   background-image: none;
@@ -543,12 +543,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:checked {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  color: rgba(0, 0, 0, 0.75) !important;
   font-weight: normal;
   border-radius: 14px 14px 0 0;
   border: none;
   box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: rgba(0, 0, 0, 0.75) !important;
 }
 
 .popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item:checked.selected {
@@ -592,12 +592,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-inactive-menu-item {
   color: rgba(0, 0, 0, 0.87) !important;
-  background-color: none;
-}
-
-.popup-menu .popup-inactive-menu-item.selected:active {
-  background-color: rgba(0, 0, 0, 0.15) !important;
-  color: rgba(0, 0, 0, 0.75) !important;
 }
 
 .popup-menu .popup-inactive-menu-item:insensitive {
@@ -611,19 +605,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-sub-menu {
   margin: 0;
-  color: rgba(0, 0, 0, 0.75) !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
   border-radius: 0 0 14px 14px;
   border: none;
   box-shadow: none;
   background-image: none;
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .popup-menu .popup-sub-menu .popup-menu-item {
   margin: 0;
   border-radius: 14px;
-  color: rgba(0, 0, 0, 0.75) !important;
   background-image: none;
+  color: rgba(0, 0, 0, 0.75) !important;
 }
 
 .popup-menu .popup-sub-menu .popup-menu-item:hover, .popup-menu .popup-sub-menu .popup-menu-item:focus, .popup-menu .popup-sub-menu .popup-menu-item.selected {
@@ -1532,11 +1526,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .quick-toggle-menu {
-  background-color: white !important;
-  color: rgba(0, 0, 0, 0.65) !important;
   border-radius: 30px !important;
   padding: 12px;
   margin: 12px 21px 0;
+  background-color: white !important;
+  color: rgba(0, 0, 0, 0.65) !important;
 }
 
 .quick-toggle-menu .popup-menu-item {
@@ -4341,7 +4335,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .dashtopanelMainPanel .dash-background {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(33, 33, 33, 0.65);
   margin-bottom: 0 !important;
   padding: 0 !important;
   border-radius: 0 !important;
@@ -4360,6 +4354,11 @@ StWidget.focused .app-well-app-running-dot {
 .dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
 .dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
   border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button > *,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button > * {
+  padding: 8px 6px !important;
 }
 
 .popup-menu.panel-menu .popup-menu-content, .popup-menu.panel-menu.quick-settings .popup-menu-content {

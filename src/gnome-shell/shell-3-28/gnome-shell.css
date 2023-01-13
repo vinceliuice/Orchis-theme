@@ -3948,6 +3948,59 @@ StWidget.focused .app-well-app-running-dot {
   background-size: contain;
 }
 
+.dashtopanelMainPanel {
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel .dash-background {
+  background-color: rgba(33, 33, 33, 0.65);
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.dashtopanelMainPanel .show-apps .overview-icon {
+  margin: 0 !important;
+  border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel .panel-button, .dashtopanelMainPanel .panel-button.clock-display .clock {
+  border-radius: 8px !important;
+  margin: 0 !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
+  border-radius: 5px !important;
+}
+
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button > *,
+.dashtopanelMainPanel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button > * {
+  padding: 8px 6px !important;
+}
+
+.popup-menu.panel-menu .popup-menu-content, .popup-menu.panel-menu.quick-settings .popup-menu-content {
+  margin-bottom: 3px !important;
+}
+
+.dashtopanelSecondaryMenu {
+  border-radius: 12px !important;
+}
+
+#preview-menu {
+  margin: 6px !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+}
+
+#dashtopanelPreviewScrollview {
+  padding: 12px 0 !important;
+  border-radius: 12px !important;
+}
+
 #dash:desktop {
   background-color: rgba(33, 33, 33, 0.65);
 }

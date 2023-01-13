@@ -41,11 +41,6 @@
         > list.navigation-sidebar {
           padding: 16px 0 16px 0;
           background: none;
-
-          @if ($theme == 'nord') {
-            background: background(e);
-          }
-
           border-radius: $window-radius - $space-size;
 
           > separator { background: none; }
@@ -127,17 +122,12 @@
 
               > revealer > box {
                 color: $primary;
-
-                @if ($theme == 'nord') {
-                  background: background(g);
-                } @else {
-                  background-color: $base;
-                  border-image-width: 10px 10px 10px 46px;
-                  border-image-slice: 10 10 10 46;
-                  border-image-repeat: stretch;
-                  border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
-                                                   url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
-                }
+                background-color: $base;
+                border-image-width: 10px 10px 10px 46px;
+                border-image-slice: 10 10 10 46;
+                border-image-repeat: stretch;
+                border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
+                                                 url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
               }
 
               label.sidebar-label {
