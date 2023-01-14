@@ -2476,6 +2476,16 @@ radiobutton.text-button {
   padding: 2px;
 
   label:not(:only-child) { margin: 0 4px; }
+
+  popover & > check {
+    &:dir(ltr) {
+      margin-left: -($space-size * 2 + 4px);
+    }
+
+    &:dir(rtl) {
+      margin-right: -($space-size * 2 + 4px);
+    }
+  }
 }
 
 $check_radio_size: 40px;

@@ -11,28 +11,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <metadata
-     id="metadata717">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      showgrid="false"
      id="namedview4"
      inkscape:document-rotation="0"
-     inkscape:zoom="1.4820001"
-     inkscape:cx="158.90688"
-     inkscape:cy="263.49527"
+     inkscape:zoom="4.1917293"
+     inkscape:cx="206.47803"
+     inkscape:cy="292.36144"
      inkscape:window-width="1368"
      inkscape:window-height="688"
      inkscape:window-x="0"
@@ -124,13 +110,6 @@
          stop-color="#000000"
          stop-opacity="0.12"
          id="stop26" />
-    </linearGradient>
-    <linearGradient
-       id="color-primary">
-      <stop
-         offset="1"
-         stop-color="#1a73e8"
-         id="stop32" />
     </linearGradient>
     <linearGradient
        id="color-background">
@@ -915,15 +894,6 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#color-divider"
-       id="linearGradient2352"
-       x1="0"
-       y1="0"
-       x2="1"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#color-background"
        id="linearGradient2358"
        x1="0"
@@ -943,29 +913,11 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#color-frame"
-       id="linearGradient2362"
-       x1="0"
-       y1="0"
-       x2="3"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-frame"
        id="linearGradient2365"
        x1="0"
        y1="0"
        x2="3"
        y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-base"
-       id="linearGradient2367"
-       x1="1"
-       y1="1"
-       x2="2"
-       y2="1"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
@@ -984,60 +936,6 @@
        x1="0"
        y1="0"
        x2="10"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2373"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2375"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2377"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2379"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2381"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2383"
-       x1="-2"
-       y1="0"
-       x2="0"
        y2="0"
        gradientUnits="userSpaceOnUse" />
     <clipPath
@@ -1059,19 +957,6 @@
       <rect
          style="opacity:0.35;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
          id="rect6288"
-         width="28"
-         height="132"
-         x="164"
-         y="12"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath6290">
-      <rect
-         style="opacity:0.35;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect6292"
          width="28"
          height="132"
          x="164"
@@ -1115,19 +1000,6 @@
          height="16"
          x="164"
          y="46"
-         rx="0"
-         ry="0" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath6490">
-      <rect
-         style="opacity:0.35;fill:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         id="rect6492"
-         width="26"
-         height="16"
-         x="164"
-         y="78"
          rx="0"
          ry="0" />
     </clipPath>
@@ -1965,7 +1837,6 @@
          height="1"
          fill="url(#color-divider)"
          id="rect667"
-         style="fill:url(#linearGradient2352)"
          x="0"
          y="0" />
     </g>
@@ -1998,10 +1869,8 @@
          width="2"
          height="2"
          fill="none"
-         stroke="url(#color-frame)"
-         stroke-width="1"
          id="rect681"
-         style="stroke:url(#linearGradient2362)" />
+         style="stroke:url(#color-frame);stroke-width:1;stroke-dasharray:none" />
     </g>
     <g
        id="frame-notebook"
@@ -2019,9 +1888,8 @@
          y="1"
          width="1"
          height="1"
-         fill="url(#color-base)"
          id="rect686"
-         style="fill:url(#linearGradient2367)" />
+         style="fill:url(#color-base)" />
     </g>
     <g
        id="frame-inline"
@@ -2038,7 +1906,6 @@
          x="1"
          width="1"
          height="1"
-         fill="url(#color-base-alt)"
          id="rect691"
          style="fill:url(#color-base-alt)"
          y="0" />
@@ -2066,7 +1933,6 @@
          fill="url(#color-text)"
          fill-opacity="0"
          id="use697"
-         style="fill:url(#linearGradient2373)"
          x="0"
          y="0"
          width="100%"
@@ -2080,7 +1946,6 @@
          fill="url(#color-text)"
          fill-opacity="0.08"
          id="use700"
-         style="fill:url(#linearGradient2375)"
          x="0"
          y="0"
          width="100%"
@@ -2094,7 +1959,6 @@
          fill="url(#color-text)"
          fill-opacity="0.2"
          id="use703"
-         style="fill:url(#linearGradient2377)"
          x="0"
          y="0"
          width="100%"
@@ -2108,7 +1972,6 @@
          fill="url(#color-text)"
          fill-opacity="0"
          id="use706"
-         style="fill:url(#linearGradient2379)"
          x="0"
          y="0"
          width="100%"
@@ -2122,7 +1985,6 @@
          fill="url(#color-text)"
          fill-opacity="0.08"
          id="use709"
-         style="fill:url(#linearGradient2381)"
          x="0"
          y="0"
          width="100%"
@@ -2136,7 +1998,6 @@
          fill="url(#color-text)"
          fill-opacity="0.2"
          id="use712"
-         style="fill:url(#linearGradient2383)"
          x="0"
          y="0"
          width="100%"

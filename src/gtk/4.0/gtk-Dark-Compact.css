@@ -2791,6 +2791,14 @@ radiobutton.text-button label:not(:only-child) {
   margin: 0 4px;
 }
 
+popover checkbutton.text-button > check:dir(ltr), popover radiobutton.text-button > check:dir(ltr) {
+  margin-left: -12px;
+}
+
+popover checkbutton.text-button > check:dir(rtl), popover radiobutton.text-button > check:dir(rtl) {
+  margin-right: -12px;
+}
+
 check,
 radio {
   min-height: 20px;

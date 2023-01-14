@@ -288,26 +288,26 @@ make_gtkrc() {
     esac
   fi
 
-  cp -r "${GTKRC_DIR}/gtkrc${ELSE_DARK:-}"                                      "${THEME_DIR}/gtk-2.0/gtkrc"
-  sed -i "/\tooltip_bg_color/s/#616161/${tooltip_bg}/"                          "${THEME_DIR}/gtk-2.0/gtkrc"
+  cp -r "${GTKRC_DIR}/gtkrc${ELSE_DARK:-}"                                     "${THEME_DIR}/gtk-2.0/gtkrc"
+  sed -i "/tooltip_bg_color/s/#616161/${tooltip_bg}/"                          "${THEME_DIR}/gtk-2.0/gtkrc"
 
   if [[ "${color}" == '-Dark' ]]; then
-    sed -i "s/#3281EA/${theme_color}/g"                                         "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\bg_color/s/#212121/${background_dark}/"                           "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\base_color/s/#2C2C2C/${base_dark}/"                               "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\titlebar_bg_color/s/#2C2C2C/${titlebar_dark}/"                    "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\menu_color/s/#3C3C3C/${menu_dark}/"                               "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\text_color/s/#FFFFFF/${text_dark}/"                               "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\fg_color/s/#FFFFFF/${text_dark}/"                                 "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\titlebar_fg_color/s/#FFFFFF/${text_dark}/"                        "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#3281EA/${theme_color}/g"                                        "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/bg_color/s/#212121/${background_dark}/"                           "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/base_color/s/#2C2C2C/${base_dark}/"                               "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/titlebar_bg_color/s/#2C2C2C/${titlebar_dark}/"                    "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/menu_color/s/#3C3C3C/${menu_dark}/"                               "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/text_color/s/#FFFFFF/${text_dark}/"                               "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/fg_color/s/#FFFFFF/${text_dark}/"                                 "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/titlebar_fg_color/s/#FFFFFF/${text_dark}/"                        "${THEME_DIR}/gtk-2.0/gtkrc"
   else
-    sed -i "s/#1A73E8/${theme_color}/g"                                         "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\bg_color/s/#F2F2F2/${background_light}/"                          "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\base_color/s/#FFFFFF/${base_light}/"                              "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\titlebar_bg_color/s/#FFFFFF/${titlebar_light}/"                   "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\menu_color/s/#FFFFFF/${menu_light}/"                              "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\text_color/s/#212121/${text_light}/"                              "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\fg_color/s/#212121/${text_light}/"                                "${THEME_DIR}/gtk-2.0/gtkrc"
-    sed -i "/\titlebar_fg_color/s/#212121/${text_light}/"                       "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "s/#1A73E8/${theme_color}/g"                                        "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/bg_color/s/#F2F2F2/${background_light}/"                          "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/base_color/s/#FFFFFF/${base_light}/"                              "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/titlebar_bg_color/s/#FFFFFF/${titlebar_light}/"                   "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/menu_color/s/#FFFFFF/${menu_light}/"                              "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/text_color/s/#212121/${text_light}/"                              "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/fg_color/s/#212121/${text_light}/"                                "${THEME_DIR}/gtk-2.0/gtkrc"
+    sed -i "/titlebar_fg_color/s/#212121/${text_light}/"                       "${THEME_DIR}/gtk-2.0/gtkrc"
   fi
 }

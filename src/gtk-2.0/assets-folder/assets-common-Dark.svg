@@ -21,9 +21,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="1.19375"
-     inkscape:cx="86.701571"
-     inkscape:cy="161.25654"
+     inkscape:zoom="4.775"
+     inkscape:cx="339.37173"
+     inkscape:cy="253.9267"
      inkscape:window-width="1368"
      inkscape:window-height="688"
      inkscape:window-x="0"
@@ -855,38 +855,11 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#color-track-disabled"
-       id="linearGradient2335"
-       x1="0"
-       y1="0"
-       x2="1"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#color-background"
        id="linearGradient2341"
        x1="0"
        y1="0"
        x2="4"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-track-disabled"
-       id="linearGradient2343"
-       x1="0"
-       y1="0"
-       x2="4"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-frame"
-       id="linearGradient2345"
-       x1="0"
-       y1="0"
-       x2="3"
        y2="0"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
@@ -900,39 +873,12 @@
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#color-base"
-       id="linearGradient2349"
-       x1="1"
-       y1="1"
-       x2="2"
-       y2="1"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#color-frame"
        id="linearGradient2351"
        gradientTransform="scale(1.2247449,0.81649658)"
        x1="0"
        y1="0"
        x2="2.4494896"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-base"
-       id="linearGradient2353"
-       x1="1"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-track-disabled"
-       id="linearGradient2355"
-       x1="0"
-       y1="0"
-       x2="10"
        y2="0"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
@@ -947,43 +893,7 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#color-text"
-       id="linearGradient2359"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2361"
-       x1="0"
-       y1="0"
-       x2="2"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
        id="linearGradient2363"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2365"
-       x1="-2"
-       y1="0"
-       x2="0"
-       y2="0"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#color-text"
-       id="linearGradient2367"
        x1="-2"
        y1="0"
        x2="0"
@@ -1594,7 +1504,6 @@
          height="1"
          fill="url(#color-track-disabled)"
          id="rect607"
-         style="fill:url(#linearGradient2335)"
          x="0"
          y="0" />
     </g>
@@ -1614,7 +1523,6 @@
          height="4"
          fill="url(#color-track-disabled)"
          id="rect618"
-         style="fill:url(#linearGradient2343)"
          x="0"
          y="0" />
     </g>
@@ -1628,8 +1536,7 @@
          height="2"
          fill="none"
          stroke="url(#color-frame)"
-         id="rect621"
-         style="stroke:url(#linearGradient2345)" />
+         id="rect621" />
     </g>
     <g
        id="frame-notebook"
@@ -1648,8 +1555,7 @@
          width="1"
          height="1"
          fill="url(#color-base)"
-         id="rect626"
-         style="fill:url(#linearGradient2349)" />
+         id="rect626" />
     </g>
     <g
        id="frame-inline"
@@ -1668,7 +1574,6 @@
          height="1"
          fill="url(#color-base)"
          id="rect631"
-         style="fill:url(#linearGradient2353)"
          y="0" />
     </g>
     <g
@@ -1683,8 +1588,7 @@
          fill="none"
          stroke="url(#color-track-disabled)"
          stroke-width="2"
-         id="rect634"
-         style="stroke:url(#linearGradient2355)" />
+         id="rect634" />
     </g>
     <g
        id="treeview-ltr-button"
@@ -1708,7 +1612,6 @@
          fill-opacity="0.08"
          xlink:href="#base-treeview-ltr-button"
          id="use640"
-         style="fill:url(#linearGradient2359)"
          x="0"
          y="0"
          width="100%"
@@ -1722,7 +1625,6 @@
          fill-opacity="0.2"
          xlink:href="#base-treeview-ltr-button"
          id="use643"
-         style="fill:url(#linearGradient2361)"
          x="0"
          y="0"
          width="100%"
@@ -1750,7 +1652,6 @@
          fill-opacity="0.08"
          xlink:href="#base-treeview-rtl-button"
          id="use649"
-         style="fill:url(#linearGradient2365)"
          x="0"
          y="0"
          width="100%"
@@ -1764,7 +1665,6 @@
          fill-opacity="0.2"
          xlink:href="#base-treeview-rtl-button"
          id="use652"
-         style="fill:url(#linearGradient2367)"
          x="0"
          y="0"
          width="100%"

@@ -94,7 +94,7 @@ install() {
 
   mkdir -p                                                                      "$THEME_DIR/gtk-2.0"
   cp -r "$SRC_DIR/gtk-2.0/common/"{apps.rc,hacks.rc,main.rc}                    "$THEME_DIR/gtk-2.0"
-  cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets-common${ELSE_DARK:-}"            "$THEME_DIR/gtk-2.0/assets"
+  cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets-common${ELSE_DARK:-}$ctype"      "$THEME_DIR/gtk-2.0/assets"
   cp -r "$SRC_DIR/gtk-2.0/assets-folder/assets$theme${ELSE_DARK:-}$ctype/"*"png" "$THEME_DIR/gtk-2.0/assets"
 
   if [[ "$primary" != "true" ]]; then

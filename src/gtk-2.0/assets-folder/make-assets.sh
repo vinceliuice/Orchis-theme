@@ -35,7 +35,8 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         esac
 
         if [[ "$type" == '-Nord' ]]; then
-          background_color='#f8fafc'
+          background_color='#f0f1f4'
+          base_color='#f8fafc'
 
           case "$theme" in
             '')
@@ -69,7 +70,8 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         fi
 
         if [[ "$type" == '-Dracula' ]]; then
-          background_color='#f9f9fb'
+          background_color='#f0f1f4'
+          base_color='#f9f9fb'
 
           case "$theme" in
             '')
@@ -133,7 +135,8 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         esac
 
         if [[ "$type" == '-Nord' ]]; then
-          background_color='#242932'
+          background_color='#1c1f26'
+          base_color='#242932'
 
           case "$theme" in
             '')
@@ -167,7 +170,8 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         fi
 
         if [[ "$type" == '-Dracula' ]]; then
-          background_color='#242632'
+          background_color='#1c1e26'
+          base_color='#242632'
 
           case "$theme" in
             '')
@@ -208,6 +212,14 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         else
           sed -i "s/#3281ea/${theme_color}/g" "assets${theme}${color}${type}.svg"
         fi
+        cp -r "assets-common${color}.svg" "assets-common${color}${type}.svg"
+        if [[ "$color" == '-Dark' ]]; then
+          sed -i "s/#212121/${background_color}/g" "assets-common${color}${type}.svg"
+          sed -i "s/#2C2C2C/${base_color}/g" "assets-common${color}${type}.svg"
+        else
+          sed -i "s/#F2F2F2/${background_color}/g" "assets-common${color}${type}.svg"
+          sed -i "s/#FFFFFF/${base_color}/g" "assets-common${color}${type}.svg"
+        fi
       elif [[ "$theme" != '' ]]; then
         cp -r "assets${color}.svg" "assets${theme}${color}.svg"
         if [[ "$color" == '' ]]; then
@@ -216,7 +228,6 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           sed -i "s/#3281ea/${theme_color}/g" "assets${theme}${color}.svg"
         fi
       fi
-
     done
   done
 done
