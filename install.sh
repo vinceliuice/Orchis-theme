@@ -17,16 +17,6 @@ OPTIONS:
 
   -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
 
-  --round                 Change theme round corner border-radius [Input the px value you want] (Suggested: 2px < value < 16px)
-                          1. 3px
-                          2. 4px
-                          3. 5px
-                          ...
-                          13. 15px
-
-  -r, --remove,
-  -u, --uninstall         Uninstall/Remove installed themes
-
   --tweaks                Specify versions for tweaks [solid|compact|black|primary|macos|submenu|(nord/dracula)] (Options can mix [nord and dracula can not mix use!])
                           1. solid:              No transparency panel variant
                           2. compact:            No floating panel variant
@@ -36,10 +26,20 @@ OPTIONS:
                           6. submenu:            Theme sub-menus, by Default submenus contrast
                           7. [nord|dracula]:     Nord/dracula colorscheme themes
 
+  --round                 Change theme round corner border-radius [Input the px value you want] (Suggested: 2px < value < 16px)
+                          1. 3px
+                          2. 4px
+                          3. 5px
+                          ...
+                          13. 15px
+
   --shell                 install gnome-shell version [38|40|42]
                           1. 38:                 Gnome-shell version < 40.0
                           2. 40:                 Gnome-shell version = 40.0
                           3. 42:                 Gnome-shell version >= 42.0
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
 
   -h, --help              Show help
 EOF
