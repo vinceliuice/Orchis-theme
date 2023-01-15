@@ -119,8 +119,12 @@ window.background.chromium {
     menuitem { border-radius: 0; }
   }
 
+  headerbar {
+    padding: 0 $space-size * 2;
+  }
+
   // Workaround for non-animatable buttons in headerbar
-  headerbar button:active { background-color: $overlay-active; }
+  // headerbar button:active { background-color: $overlay-active; }
 
   spinner { color: $primary; }
 

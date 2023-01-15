@@ -6094,8 +6094,8 @@ window.background.chromium menu menuitem {
   border-radius: 0;
 }
 
-window.background.chromium headerbar button:active {
-  background-color: alpha(currentColor, 0.12);
+window.background.chromium headerbar {
+  padding: 0 12px;
 }
 
 window.background.chromium spinner {
