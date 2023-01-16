@@ -92,38 +92,11 @@ global:
 flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
-### On Snapcraft
-
-<a href="https://snapcraft.io/orchis-themes">
-<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
-</a>
-
-You can install the theme from the Snap Store оr by running:
-
-```
-sudo snap install orchis-themes
-```
-To connect the theme to an app run:
-```
-sudo snap connect [other snap]:gtk-3-themes orchis-themes:gtk-3-themes
-```
-To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
-```
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i orchis-themes:gtk-3-themes; done
-```
-
 ### Firefox theme
 [Install Firefox theme](src/firefox)
 
 ![Firefox-theme](src/firefox/preview01.png?raw=true)
 ![Firefox-theme](src/firefox/preview02.png?raw=true)
-
-### Fix for Dash to panel
-Go to `src/gnome-shell/extensions/dash-to-panel` [dash-to-panel](src/gnome-shell/extensions/dash-to-panel) run the following commands in the terminal:
-
-```sh
-./install.sh
-```
 
 ## Preview
 ![1](images/preview.jpg?raw=true)
