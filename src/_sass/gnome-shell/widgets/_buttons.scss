@@ -1,8 +1,8 @@
 /* Buttons */
 
 .button {
-  min-height: 20px;
-  padding: $space-size + 2px $space-size * 2;
+  min-height: 24px;
+  padding: $space-size $space-size * 2;
   border: none;
   border-radius: $material-radius;
   text-align: center;
@@ -17,6 +17,7 @@
 }
 
 .icon-button {
+  min-height: 16px;
   padding: $space-size * 2;
   border-radius: $circular-radius;
   border: none;

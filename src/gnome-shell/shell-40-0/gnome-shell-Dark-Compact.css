@@ -167,8 +167,8 @@ StEntry StLabel.hint-text {
 
 /* Buttons */
 .button {
-  min-height: 20px;
-  padding: 6px 8px;
+  min-height: 24px;
+  padding: 4px 8px;
   border: none;
   border-radius: 10px;
   text-align: center;
@@ -227,6 +227,7 @@ StEntry StLabel.hint-text {
 }
 
 .icon-button {
+  min-height: 16px;
   padding: 8px;
   border-radius: 9999px;
   border: none;

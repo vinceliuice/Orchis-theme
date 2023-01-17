@@ -1,11 +1,11 @@
 .quick-settings {
   padding: $space-size * 3 !important;
-  border-radius: 20px + $space-size * 3 !important;
+  border-radius: 8px + $space-size * 5 !important;
   margin-top: $space-size / 2 !important;
   border: none;
 
   .icon-button, .button {
-    padding: 12px;
+    padding: $space-size * 2;
   }
 }
 
@@ -16,8 +16,8 @@
 
 .quick-toggle {
   border-radius: $circular-radius;
-  min-width: 12em;
-  max-width: 12em;
+  min-width: if($compact == 'false', 12em, 11em);
+  max-width: if($compact == 'false', 12em, 11em);
   min-height: $space-size * 4 + 16px;
   border: none;
   background-color: rgba($text, 0.06) !important;
@@ -106,6 +106,7 @@
   }
 
   .popup-menu-item {
+    padding: $space-size + 2px !important;
     border-radius: $circular-radius !important;
 
     @if $submenu_style == 'true' {

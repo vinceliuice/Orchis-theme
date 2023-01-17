@@ -1318,7 +1318,9 @@ headerbar {
   entry,
   spinbutton,
   button,
-  stackswitcher {
+  stackswitcher,
+  menubutton,
+  splitbutton {
     margin-top: $space-size;
     margin-bottom: $space-size;
   }

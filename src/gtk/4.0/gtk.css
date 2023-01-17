@@ -1692,7 +1692,9 @@ headerbar > windowhandle > box > box.end {
 headerbar entry,
 headerbar spinbutton,
 headerbar button,
-headerbar stackswitcher {
+headerbar stackswitcher,
+headerbar menubutton,
+headerbar splitbutton {
   margin-top: 6px;
   margin-bottom: 6px;
 }
