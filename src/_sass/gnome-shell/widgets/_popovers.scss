@@ -214,7 +214,7 @@ $submenu_item_radius: $popup-radius - $space-size;
 
   .popup-separator-menu-item-separator {
     height: 1px; // increase visibility with a themed menu
-    margin: 0 0;
+    margin: 0;
     background-color: $border;
 
     .popup-sub-menu & { //submenu separators

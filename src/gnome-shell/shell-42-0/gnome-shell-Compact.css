@@ -2704,21 +2704,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .dash-separator {
   width: 1px;
-  margin: 0 2px;
-  margin-bottom: 12px;
+  margin: 0 2px 12px;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
 .dash-label {
   border-radius: 9999px;
   padding: 4px 8px;
-  margin: 4px 2px;
   color: white;
   background-color: rgba(0, 0, 0, 0.75);
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
   text-align: center;
-  -y-offset: 0;
+  -y-offset: 6px;
+  -x-offset: 6px;
 }
 
 /* App Grid */

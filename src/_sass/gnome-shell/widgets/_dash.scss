@@ -58,8 +58,7 @@ $dash_border_radius: if($corner_style == 'circular', $circular-radius, $material
 
 .dash-separator {
   width: 1px;
-  margin: 0 $margin-size;
-  margin-bottom: $dash_padding;
+  margin: 0 $margin-size $dash_padding;
   background-color: rgba(white, 0.15);
 }
 
@@ -67,11 +66,11 @@ $dash_border_radius: if($corner_style == 'circular', $circular-radius, $material
 .dash-label {
   border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
   padding: $space-size $space-size * 2;
-  margin: $margin-size * 2 $margin-size;
   color: on(dark);
   background-color: rgba(black, 0.75);
   border: none;
   box-shadow: $shell-shadow-z2;
   text-align: center;
-  -y-offset: 0; // distance from the dash edge
+  -y-offset: $margin-size * 3; // distance from the dash edge
+  -x-offset: $space-size + 2px;
 }
