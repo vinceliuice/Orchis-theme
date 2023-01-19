@@ -63,7 +63,7 @@ $bubble_button_radius: if($corner_style == 'circular', $circular-radius, $materi
   color: on(dark);
   background-color: $system;
   border: none;
-  box-shadow: $shell-shadow-z2;
-  border-radius: $material-radius;
+  box-shadow: $shell-shadow-z4;
+  border-radius: $circular-radius;
   padding: $space-size * 2;
 }

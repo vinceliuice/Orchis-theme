@@ -1133,7 +1133,7 @@ $submenu_item_radius: $popup-radius - $space-size;
   color: $text;
   background-color: $base;
   border: none;
-  box-shadow: $shell-shadow-z2;
+  box-shadow: $shell-shadow-z3;
   border-radius: $material-radius;
   padding: 12px;
 }
@@ -2969,7 +2969,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard, 20%), light
 
 .screen-shield-background { //just the shadow, really
   background: black;
-  box-shadow: $shell-shadow-z5;
+  box-shadow: $shell-shadow-z6;
 }
 
 /* Screen Shield */
@@ -3051,7 +3051,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard, 20%), light
   padding: 6px;
   border: none;
   border-radius: $material-radius;
-  box-shadow: $shell-shadow-z4;
+  box-shadow: $shell-shadow-z5;
 
   & > #Toolbar {
     padding: 0 8px;
@@ -3156,5 +3156,5 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard, 20%), light
   border: none;
   border-radius: $material-radius;
   padding: 6px;
-  box-shadow: $shell-shadow-z4;
+  box-shadow: $shell-shadow-z5;
 }

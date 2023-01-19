@@ -1102,7 +1102,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-left: 6px;
   background-color: #3C3C3C;
   border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup-separator-menu-item {
@@ -1345,7 +1345,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: white;
   background-color: #2C2C2C;
   border: none;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 12px;
 }
@@ -3201,7 +3201,7 @@ StWidget.focused .app-well-app-running-dot {
 .candidate-popup-content {
   background-color: #3C3C3C;
   border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   margin: 2px 8px;
   padding: 4px;
   spacing: 4px;

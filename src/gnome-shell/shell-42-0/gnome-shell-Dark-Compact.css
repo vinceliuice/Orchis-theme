@@ -137,12 +137,12 @@ stage {
   icon-shadow: none;
 }
 
-.screenshot-ui-panel, .workspace-switcher-container, .switcher-list, .resize-popup, .osd-window {
+.screenshot-ui-panel, .workspace-switcher-container, .switcher-list, .resize-popup, .osd-monitor-label, .osd-window {
   color: white;
   background-color: #212121;
   border: none;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
-  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.32);
+  border-radius: 9999px;
   padding: 8px;
 }
 
@@ -519,7 +519,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: #3C3C3C;
   border-radius: 18px;
   border: none;
-  box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup-menu .popup-menu-item {
@@ -1776,7 +1776,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: white;
   background-color: #2C2C2C;
   border: 0 none rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-dialog .modal-dialog-content-box {
@@ -2096,8 +2096,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
   spacing: 8px;
   padding: 8px 12px;
-  margin-bottom: 32px;
-  min-height: 24px;
+  margin-bottom: 8em;
 }
 
 .osd-window > * {
@@ -2105,7 +2104,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .osd-window StIcon {
-  icon-size: 24px;
+  icon-size: 32px;
 }
 
 .osd-window .osd-monitor-label {
@@ -2122,13 +2121,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .osd-window .level {
   height: 4px;
+  min-width: 160px;
+  margin-bottom: 4px;
   -barlevel-height: 4px;
   -barlevel-background-color: rgba(50, 129, 234, 0.3);
   -barlevel-active-background-color: #3281EA;
   -barlevel-overdrive-color: #F44336;
   -barlevel-overdrive-separator-width: 3px;
   -barlevel-border-width: 0;
-  min-width: 120px;
+}
+
+.osd-window .level:first-child {
+  margin-bottom: 0px;
 }
 
 .osd-window .level:ltr {
@@ -2137,6 +2141,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .osd-window .level:rtl {
   margin-left: 4px;
+}
+
+.osd-monitor-label {
+  border-radius: 16px;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 6px;
+  text-align: center;
+  min-width: 1.3em;
 }
 
 /* Pad OSD */

@@ -28,7 +28,7 @@
   margin: $space-size 10px 13px 10px;
   background-color: $surface;
   border-radius: $popup-radius;
-  box-shadow: 0 3px 8px rgba(black, 0.2);
+  box-shadow: $shell-shadow-z3;
 }
 
 $submenu_item_radius: $popup-radius - $space-size;

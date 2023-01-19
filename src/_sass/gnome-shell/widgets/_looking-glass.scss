@@ -8,7 +8,7 @@
   padding: 0;
   border: none;
   border-radius: $popup-radius;
-  box-shadow: $shell-shadow-z4;
+  box-shadow: $shell-shadow-z5;
 
   & > #Toolbar {
     padding: $space-size $space-size * 1.5;
@@ -142,7 +142,7 @@
   border: none;
   border-radius: $material-radius;
   padding: $space-size;
-  box-shadow: $shell-shadow-z3;
+  box-shadow: $shell-shadow-z4;
 
   .window-close {
     margin: $space-size;

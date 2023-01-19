@@ -87,8 +87,8 @@ stage {
   color: white;
   background-color: #212121;
   border: none;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
-  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.32);
+  border-radius: 9999px;
   padding: 12px;
 }
 
@@ -604,7 +604,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   height: 1px;
-  margin: 0 0;
+  margin: 0;
   background-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -1446,7 +1446,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFFFFF;
   border: 0 none rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-dialog .modal-dialog-content-box {

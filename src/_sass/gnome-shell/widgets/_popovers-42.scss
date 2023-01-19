@@ -28,7 +28,7 @@
     background-color: $surface;
     border-radius: $popup-radius;
     border: none;
-    box-shadow: 0 3px 8px -3px rgba(black, 0.2);
+    box-shadow: $shell-shadow-z3;
   }
 
   $submenu_item_radius: $popup-radius - $space-size;
