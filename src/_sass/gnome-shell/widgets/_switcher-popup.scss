@@ -8,6 +8,7 @@
 // switcher onscreen panel
 .switcher-list {
   @extend %osd_panel;
+  border-radius: $window-radius;
 
   .item-box {
     padding: 8px;
@@ -20,7 +21,7 @@
 
     &:selected {
       background-color: $primary;
-      color: on(dark);
+      color: on($primary);
     }
   }
 
@@ -45,10 +46,11 @@
 }
 
 .switcher-arrow {
-  border-color: rgba(0,0,0,0);
-  color: $text-disabled;
+  border-color: on(dark, secondary);
+  color: on(dark, secondary);
+
   &:highlighted {
-    color: $text;
+    color: on($primary);
   }
 }
 

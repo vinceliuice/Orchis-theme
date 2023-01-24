@@ -199,7 +199,7 @@ StWidget.focused .app-well-app-running-dot {
 .system-action-icon {
   background-color: rgba(0,0,0,0.8);
   color: #fff;
-  border-radius: 99px;
+  border-radius: $circular-radius;
 }
 
 .page-navigation-hint {

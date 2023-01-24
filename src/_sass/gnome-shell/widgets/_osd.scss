@@ -10,6 +10,7 @@ $osd_levelbar_height: 4px;
   margin: $margin-size * 8; // 32px
   min-width: 64px;
   min-height: 64px;
+  border-radius: $window-radius;
 
   StIcon {
     icon-size: 96px;

@@ -9,6 +9,7 @@ $osd_levelbar_height: 4px;
   spacing: $space-size * 2;
   padding: $space-size * 2 $space-size * 3;
   margin-bottom: 8em;
+  border-radius: $circular-radius;
 
   & > * { spacing: 8px; }
 
@@ -68,4 +69,5 @@ $osd_levelbar_height: 4px;
 
 .resize-popup {
   @extend %osd_panel;
+  border-radius: $window-radius;
 }

@@ -88,7 +88,6 @@ stage {
   background-color: #212121;
   border: none;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.32);
-  border-radius: 9999px;
   padding: 12px;
 }
 
@@ -1768,6 +1767,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 32px;
   min-width: 64px;
   min-height: 64px;
+  border-radius: 18px;
 }
 
 .osd-window StIcon {
@@ -1813,6 +1813,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 24px;
 }
 
+.switcher-list {
+  border-radius: 18px;
+}
+
 .switcher-list .item-box {
   padding: 8px;
   border-radius: 10px;
@@ -1847,12 +1851,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-arrow {
-  border-color: rgba(0, 0, 0, 0);
-  color: rgba(0, 0, 0, 0.38);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .switcher-arrow:highlighted {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 .input-source-switcher-symbol {
@@ -1868,6 +1872,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Workspace Switcher */
 .workspace-switcher-group {
   padding: 12px;
+}
+
+.workspace-switcher-container {
+  border-radius: 18px;
 }
 
 .workspace-switcher {
@@ -2584,7 +2592,7 @@ StWidget.focused .app-well-app-running-dot {
 .system-action-icon {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  border-radius: 99px;
+  border-radius: 9999px;
 }
 
 .page-navigation-hint {

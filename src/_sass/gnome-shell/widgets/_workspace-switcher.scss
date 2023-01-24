@@ -5,6 +5,7 @@
 
 .workspace-switcher-container {
   @extend %osd_panel;
+  border-radius: $window-radius;
 }
 
 .workspace-switcher {
