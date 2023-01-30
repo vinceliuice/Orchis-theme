@@ -291,7 +291,7 @@ spinner {
 
 entry {
   min-height: $medium-size;
-  padding: 0 8px;
+  padding: 0 $space-size + 2px;
   border-spacing: $space-size;
   border-radius: $corner-radius;
   @extend %entry-basic;
@@ -1327,7 +1327,10 @@ headerbar {
 
   menubutton > button,
   spinbutton > button,
-  splitbutton > button {
+  splitbutton > button,
+  splitbutton > menubutton,
+  .linked > menubutton,
+  entry > menubutton {
     margin-top: 0;
     margin-bottom: 0;
   }

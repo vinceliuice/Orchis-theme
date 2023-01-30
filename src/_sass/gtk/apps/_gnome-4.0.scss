@@ -288,6 +288,7 @@
 #NautilusQueryEditor { // search entry
   border-radius: $circular-radius;
   color: $titlebar-text-secondary;
+  padding: 0 ($medium-size - $menuitem-size) / 2 0 ($space-size + 2px);
 
   &:focus-within { color: $titlebar-text; }
 
@@ -296,7 +297,7 @@
   > menubutton > button.image-button {
     min-width: $menuitem-size;
     min-height: $menuitem-size;
-    margin: 0;
+    margin: ($medium-size - $menuitem-size) / 2 0;
     padding: 0;
   }
 
