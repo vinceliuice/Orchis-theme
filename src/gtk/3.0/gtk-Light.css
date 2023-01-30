@@ -5568,6 +5568,10 @@ window.background.csd > grid.horizontal > paned.horizontal > scrolledwindow > tr
   background-color: #FFFFFF;
 }
 
+window.background.csd > grid.horizontal > paned.horizontal > box + separator + scrolledwindow {
+  border-radius: 0 0 18px 0;
+}
+
 window.background.csd > grid.horizontal > paned.horizontal > box.vertical > scrolledwindow {
   border-radius: 0 0 0 18px;
   background-color: #F2F2F2;
