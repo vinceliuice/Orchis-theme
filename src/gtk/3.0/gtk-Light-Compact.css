@@ -1918,7 +1918,7 @@ menu > arrow,
 .context-menu > arrow {
   min-height: 16px;
   min-width: 16px;
-  padding: 3px;
+  padding: 4px;
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.6);
   border-radius: 6px;
@@ -1934,8 +1934,8 @@ menu > arrow.top,
 menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom {
-  margin-top: 8px;
-  margin-bottom: -6px;
+  margin-top: 10px;
+  margin-bottom: -12px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
   border-image: image(rgba(0, 0, 0, 0.12)) 1 0 0/1px 0 0;
 }
