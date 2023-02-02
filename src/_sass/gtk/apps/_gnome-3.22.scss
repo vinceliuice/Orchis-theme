@@ -1688,6 +1688,10 @@ window.background.csd {
       }
     }
 
+    > box + separator + scrolledwindow {
+      border-radius: 0 0 $window-radius 0;
+    }
+
     > box.vertical {
       > scrolledwindow {
         border-radius: 0 0 0 $window-radius;

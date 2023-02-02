@@ -1766,7 +1766,7 @@ menu,
   > arrow {
     min-height: 16px;
     min-width: 16px;
-    padding: $space-size / 2 + 1px;
+    padding: $space-size;
     background-color: $surface;
     color: $text-secondary;
     border-radius: $menu-radius - 3px;
@@ -1777,8 +1777,8 @@ menu,
     }
 
     &.bottom {
-      margin-top: 4px * 2;
-      margin-bottom: -6px;
+      margin-top: (8px + $space-size / 2);
+      margin-bottom: -12px;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
       border-image: image($divider) 1 0 0 / 1px 0 0;
     }

@@ -1267,8 +1267,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  margin: 18px 4px;
-  padding: 8px;
+  margin: 20px 4px !important;
+  padding: 8px !important;
   border-radius: 9999px;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -1288,11 +1288,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-media-control:last-child:ltr {
-  margin-right: 16px;
+  margin-right: 16px !important;
 }
 
 .message-media-control:last-child:rtl {
-  margin-left: 16px;
+  margin-left: 16px !important;
 }
 
 .media-message-cover-icon {

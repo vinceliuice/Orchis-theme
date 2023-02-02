@@ -136,16 +136,17 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: ($space-size * 2 + 10px) 4px;
-  padding: $space-size * 2;
+  margin: ($space-size * 2 + 12px) 4px !important;
+  padding: $space-size * 2 !important;
   border-radius: $circular-radius;
   color: $text-secondary;
+
   &:hover, &:focus { color: $text; background-color: $secondary-fill; }
   &:active { color: $text; background-color: $track; }
   &:insensitive { color: $text-secondary-disabled; }
 
-  &:last-child:ltr { margin-right: 16px; }
-  &:last-child:rtl { margin-left: 16px; }
+  &:last-child:ltr { margin-right: 16px !important; }
+  &:last-child:rtl { margin-left: 16px !important; }
 }
 
 // album-art

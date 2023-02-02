@@ -1701,7 +1701,10 @@ headerbar splitbutton {
 
 headerbar menubutton > button,
 headerbar spinbutton > button,
-headerbar splitbutton > button {
+headerbar splitbutton > button,
+headerbar splitbutton > menubutton,
+headerbar .linked > menubutton,
+headerbar entry > menubutton {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -4995,6 +4998,7 @@ popover.entry-completion > contents {
 #NautilusQueryEditor {
   border-radius: 9999px;
   color: rgba(0, 0, 0, 0.6);
+  padding: 0 4px 0 8px;
 }
 
 #NautilusQueryEditor:focus-within {
@@ -5008,7 +5012,7 @@ popover.entry-completion > contents {
 #NautilusQueryEditor > menubutton > button.image-button {
   min-width: 28px;
   min-height: 28px;
-  margin: 0;
+  margin: 4px 0;
   padding: 0;
 }
 

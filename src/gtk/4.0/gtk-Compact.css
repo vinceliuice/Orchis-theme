@@ -328,7 +328,7 @@ headerbar popover.background entry image:disabled, entry image:disabled {
 
 entry {
   min-height: 32px;
-  padding: 0 8px;
+  padding: 0 6px;
   border-spacing: 4px;
   border-radius: 10px;
 }
@@ -1701,7 +1701,10 @@ headerbar splitbutton {
 
 headerbar menubutton > button,
 headerbar spinbutton > button,
-headerbar splitbutton > button {
+headerbar splitbutton > button,
+headerbar splitbutton > menubutton,
+headerbar .linked > menubutton,
+headerbar entry > menubutton {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -5041,6 +5044,7 @@ popover.entry-completion > contents {
 #NautilusQueryEditor {
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
+  padding: 0 4px 0 6px;
 }
 
 #NautilusQueryEditor:focus-within {
@@ -5054,7 +5058,7 @@ popover.entry-completion > contents {
 #NautilusQueryEditor > menubutton > button.image-button {
   min-width: 24px;
   min-height: 24px;
-  margin: 0;
+  margin: 4px 0;
   padding: 0;
 }
 
