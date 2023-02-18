@@ -2439,10 +2439,10 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   spacing: 30px;
   -shell-grid-horizontal-item-size: 136px;
   -shell-grid-vertical-item-size: 136px;
-  row-spacing: 24px;
-  column-spacing: 24px;
-  max-row-spacing: 48px;
-  max-column-spacing: 48px;
+  row-spacing: 36px;
+  column-spacing: 36px;
+  max-row-spacing: 72px;
+  max-column-spacing: 72px;
 }
 
 .icon-grid .overview-icon {

@@ -2755,7 +2755,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app .overview-icon, .search-provider-icon, .list-search-result {
   color: white;
   border-radius: 15px;
-  padding: 4px;
+  padding: 8px;
   border: none;
   transition-duration: 150ms;
   text-align: center;
