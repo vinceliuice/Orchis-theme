@@ -290,8 +290,10 @@ $menu_radius: $corner-radius + $space-size;
 .popup-menu,
 %menu {
   padding: 0;
+  margin: 0;
   color: $text;
   background-color: transparent;
+  box-shadow: none;
 
   &-arrow { icon-size: 16px; }
 
