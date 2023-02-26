@@ -145,6 +145,46 @@
 
       &:checked:disabled { background-color: transparent; } // remove pointless indicator
     }
+
+    list.left-overlay-menu {
+      box-shadow: $shadow-z4, inset 0 1px highlight($base);
+      background-color: $base;
+      padding: $space-size;
+      margin: $space-size;
+      border-radius: $menu-radius;
+
+      > row.activatable {
+        border-radius: $menuitem-radius;
+
+        &:not(:last-child) {
+          margin-bottom: $space-size / 2;
+        }
+
+        button.menuitem {
+          border-radius: $menuitem-radius;
+        }
+      }
+    }
+
+    .budgie-menu-footer {
+      border-top: 1px solid $border;
+      padding: $space-size;
+
+      button.flat:not(.indicator-item) {
+        min-height: 16px;
+        min-width: 16px;
+        padding: $space-size;
+        border-radius: $menuitem-radius;
+
+        &.image-button {
+          border-radius: $circular-radius;
+
+          &:not(.last-child) {
+            margin-right: $space-size;
+          }
+        }
+      }
+    }
   }
 
   &.user-menu {
@@ -431,6 +471,10 @@
         color: on($panel);
       }
     }
+
+    separator {
+      background-color: $border;
+    }
   }
 
   // Tasklist
@@ -542,7 +586,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       border-bottom: 1px solid $divider;
 
       stackswitcher button {
-        margin: -4px 0 -5px; // remove unwanted vertical margins
+        // margin: -4px 0 -5px; // remove unwanted vertical margins
         padding: 0 16px;
         min-height: $medium-size;
       }
@@ -627,7 +671,7 @@ calendar.raven-calendar {
 // MPRIS Applet
 .raven-mpris {
   background-color: $scrim;
-  color: on($scrim);
+  color: on($scrim, secondary);
 
   label { min-height: 24px; }
 
@@ -636,6 +680,10 @@ calendar.raven-calendar {
 
     @extend %button-on-dark;
   }
+}
+
+image.raven-mpris {
+  border-radius: $corner-radius;
 }
 
 // notification list

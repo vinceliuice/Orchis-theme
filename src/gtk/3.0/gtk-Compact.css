@@ -7230,6 +7230,46 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: transparent;
 }
 
+.budgie-popover.budgie-menu list.left-overlay-menu {
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  background-color: #FFFFFF;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 9px;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu > row.activatable {
+  border-radius: 5px;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu > row.activatable:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.budgie-popover.budgie-menu list.left-overlay-menu > row.activatable button.menuitem {
+  border-radius: 5px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 4px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat:not(.indicator-item) {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat:not(.indicator-item).image-button {
+  border-radius: 9999px;
+}
+
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat:not(.indicator-item).image-button:not(.last-child) {
+  margin-right: 4px;
+}
+
 .budgie-popover.user-menu list,
 .budgie-popover.user-menu row {
   border: none;
@@ -7514,6 +7554,11 @@ MsdOsdWindow.background.osd .progressbar {
   color: white;
 }
 
+.budgie-panel menubar separator,
+.budgie-panel .menubar separator {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
 .budgie-panel #tasklist-button {
   padding: 0 4px;
 }
@@ -7636,7 +7681,6 @@ frame.raven-frame > border {
 }
 
 .raven .raven-header.top stackswitcher button {
-  margin: -4px 0 -5px;
   padding: 0 16px;
   min-height: 32px;
 }
@@ -7717,7 +7761,7 @@ calendar.raven-calendar:selected {
 
 .raven-mpris {
   background-color: #242424;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .raven-mpris label {
@@ -7726,6 +7770,10 @@ calendar.raven-calendar:selected {
 
 .raven-mpris button.image-button {
   padding: 8px;
+}
+
+image.raven-mpris {
+  border-radius: 10px;
 }
 
 .raven-notifications-view > .raven-background > viewport.frame {

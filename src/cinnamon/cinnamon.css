@@ -306,8 +306,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu,
 .popup-combo-menu {
   padding: 0;
+  margin: 0;
   color: rgba(0, 0, 0, 0.87);
   background-color: transparent;
+  box-shadow: none;
 }
 
 .menu-arrow,
