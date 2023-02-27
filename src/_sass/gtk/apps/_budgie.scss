@@ -221,16 +221,13 @@
       button.indicator-item {
         transition: none;
         animation: none;
-
-        &:hover {
-        }
       }
     }
   }
 
-  &.sound-popover {
-    // separator { margin: $space-size / 2 0; }
-  }
+  // &.sound-popover {
+  //   separator { margin: $space-size / 2 0; }
+  // }
 
   &.night-light-indicator {
     .container { padding: $space-size / 2; }
@@ -777,7 +774,6 @@ image.raven-mpris {
 // Internal part of the Switcher
 .budgie-switcher {
   padding: $space-size * 2;
-  margin: $space-size;
 }
 
 .budgie-panel {
