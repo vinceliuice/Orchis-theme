@@ -88,6 +88,10 @@
 
   scrolledwindow.sidebar.categories { // AppMenu
     background-color: $fill;
+
+    button.category-button {
+      border-radius: 0;
+    }
   }
 
   treeview.view.sidebar { //AppMenu (Elementary) old version
@@ -367,7 +371,7 @@
   color: on($panel, secondary);
   font-weight: 500;
 
-  &.transparent { background-color: $scrim; }
+  &.transparent { background-color: $panel; }
 
   .bottom & {
     &.dock-mode {
@@ -528,6 +532,10 @@
       }
     }
   }
+
+  .lock-keys {
+    image:disabled { color: on($panel, secondary-disabled); }
+  }
 }
 
 %underscores {
@@ -575,9 +583,13 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
   @if $panel_style == "float" {
     margin: 8px 6px 6px;
     border-radius: $corner-radius;
+
+    scrollbar {
+      background-color: transparent;
+    }
   }
 
-  > box { margin-bottom: -10px; } // remove extra space between box and .raven-header.bottom
+  // > box { margin-bottom: -10px; } // remove extra space between box and .raven-header.bottom
 
   stackswitcher.linked {
     margin: 6px 16px;
@@ -619,7 +631,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
     border-style: solid none;
     border-width: 1px;
     border-color: $divider;
-    background-color: $base;
+    background-color: transparent;
 
     // &.middle { border-bottom-style: none; } // applet background between two headers
 
@@ -663,6 +675,12 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
         label { padding-left: 12px; }
       }
+    }
+  }
+
+  levelbar {
+    &, trough, block {
+      border-radius: $circular-radius;
     }
   }
 }
@@ -774,12 +792,6 @@ image.raven-mpris {
 // Internal part of the Switcher
 .budgie-switcher {
   padding: $space-size * 2;
-}
-
-.budgie-panel {
-  .lock-keys {
-    image:disabled { color: on($panel, secondary-disabled); }
-  }
 }
 
 .drop-shadow {

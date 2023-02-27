@@ -7147,6 +7147,10 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: rgba(255, 255, 255, 0.04);
 }
 
+.budgie-popover scrolledwindow.sidebar.categories button.category-button {
+  border-radius: 0;
+}
+
 .budgie-popover treeview.view.sidebar {
   background: none;
   border-right: none;
@@ -7417,7 +7421,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel.transparent {
-  background-color: #242424;
+  background-color: rgba(33, 33, 33, 0.65);
 }
 
 .bottom .budgie-panel.dock-mode {
@@ -7584,6 +7588,10 @@ MsdOsdWindow.background.osd .progressbar {
   border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, currentColor 100%, transparent 0%) 0 2 0 0/0 2px 0 0;
 }
 
+.budgie-panel .lock-keys image:disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button {
   border-image: radial-gradient(circle closest-corner at center calc(1px), currentColor 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
@@ -7643,8 +7651,8 @@ frame.raven-frame > border {
   border-radius: 12px;
 }
 
-.raven > box {
-  margin-bottom: -10px;
+.raven scrollbar {
+  background-color: transparent;
 }
 
 .raven stackswitcher.linked {
@@ -7686,7 +7694,7 @@ frame.raven-frame > border {
   border-style: solid none;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: #2C2C2C;
+  background-color: transparent;
 }
 
 .raven .raven-background > overlay > widget > image {
@@ -7733,6 +7741,10 @@ frame.raven-frame > border {
 
 .raven .audio-widget list.devices-list.sound-devices > row.activatable label {
   padding-left: 12px;
+}
+
+.raven levelbar, .raven levelbar trough, .raven levelbar block {
+  border-radius: 9999px;
 }
 
 calendar.raven-calendar {
@@ -7828,10 +7840,6 @@ image.raven-mpris {
 
 .budgie-switcher {
   padding: 12px;
-}
-
-.budgie-panel .lock-keys image:disabled {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .drop-shadow {
