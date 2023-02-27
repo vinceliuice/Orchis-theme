@@ -127,7 +127,13 @@ install() {
   fi
 
   mkdir -p                                                                      "$THEME_DIR/xfwm4"
-  cp -r "$SRC_DIR/xfwm4/assets${ELSE_LIGHT:-}$ctype/"*.png                      "$THEME_DIR/xfwm4"
+
+  if [[ "$macstyle" == "true" ]] ; then
+    cp -r "$SRC_DIR/xfwm4/assets${ELSE_LIGHT:-}$ctype-mac/"*.png                "$THEME_DIR/xfwm4"
+  else
+    cp -r "$SRC_DIR/xfwm4/assets${ELSE_LIGHT:-}$ctype/"*.png                    "$THEME_DIR/xfwm4"
+  fi
+
   cp -r "$SRC_DIR/xfwm4/themerc${ELSE_LIGHT:-}$ctype"                           "$THEME_DIR/xfwm4/themerc"
 
   mkdir -p                                                                      "$THEME_DIR/cinnamon"
