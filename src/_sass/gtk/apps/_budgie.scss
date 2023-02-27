@@ -724,12 +724,18 @@ image.raven-mpris {
 }
 
 // Notifications
-.budgie-notification-window { background-color: transparent; }
+.budgie-notification-window {
+  background-color: transparent;
+}
 
 .budgie-notification {
   .notification-title { font-size: 120%; }
 
   .notification-body { color: $text-secondary; }
+
+  .linked > button {
+    @extend %circular-button;
+  }
 }
 
 // On Screen Display in Budgie
@@ -781,7 +787,7 @@ image.raven-mpris {
 .budgie-run-dialog {
   @extend %budgie_dialog;
 
-  &.background.csd, decoration { border-radius: $window-radius $window-radius $window-radius $window-radius; }
+  &.background.csd, decoration { border-radius: $window-radius; }
 
   label:not(:last-child),
   .dialog-title {
