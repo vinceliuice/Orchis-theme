@@ -260,6 +260,17 @@ window.background:not(.csd) {
   }
 }
 
+//
+// Xapp popup
+//
+
+.background.popup.xapp-status-icon-menu-window {
+  decoration {
+    border-radius: $menu-radius;
+    box-shadow: $shadow-z4;
+  }
+}
+
 /************
  * Inkscape *
  ************/

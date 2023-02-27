@@ -35,8 +35,8 @@
   border: none;
   border-radius: $corner-radius;
   box-shadow: $shadow-z3;
-  background-color: $surface;
-  border-color: $surface;
+  background-color: $base;
+  border-color: $base;
 
   .container { padding: $space-size; }
 
@@ -46,6 +46,33 @@
 
   list { background-color: transparent; }
 
+  entry, button, spinbutton, button.combo {
+    border-radius: $menuitem-radius;
+  }
+
+  .linked > entry,
+  .linked > button {
+    &:first-child {
+      border-top-left-radius: $menuitem-radius;
+      border-bottom-left-radius: $menuitem-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $menuitem-radius;
+      border-bottom-right-radius: $menuitem-radius;
+    }
+  }
+
+  button.flat:not(.image-button) {
+    min-height: $menuitem-size;
+    padding: 0 8px;
+    color: $text;
+    font-weight: normal;
+    border-radius: $menuitem-radius;
+
+    &:disabled { color: $text-disabled; }
+  }
+
   row {
     padding: 0;
 
@@ -53,11 +80,11 @@
 
     button {
       @extend %button-flat-simple;
-      border-radius: $corner-radius - $space-size;
+      border-radius: $menuitem-radius;
     }
   }
 
-  calendar:not(.header) { border-radius: $corner-radius - $space-size; }
+  calendar:not(.header) { border-radius: $menuitem-radius; }
 
   scrolledwindow.sidebar.categories { // AppMenu
     background-color: $fill;
@@ -108,18 +135,6 @@
     }
   }
 
-  button { border-radius: $corner-radius - $space-size; }
-
-  button.flat:not(.image-button) {
-    min-height: $menuitem-size;
-    padding: 0 8px;
-    color: $text;
-    font-weight: normal;
-    border-radius: $corner-radius - $space-size;
-
-    &:disabled { color: $text-disabled; }
-  }
-
   &.budgie-menu {
     .container { padding: 0; }
 
@@ -135,7 +150,7 @@
       font-size: 120%;
     }
 
-    button.flat:not(.image-button):not(.indicator-item) {
+    row.activatable > button.flat {
       @extend %row_activatable;
       min-height: 32px;
       padding: 0 8px;
@@ -144,6 +159,46 @@
       &:checked { @extend %selected_items; }
 
       &:checked:disabled { background-color: transparent; } // remove pointless indicator
+    }
+
+    list.left-overlay-menu {
+      box-shadow: $shadow-z4, inset 0 1px highlight($base);
+      background-color: $base;
+      padding: $space-size;
+      margin: $space-size;
+      border-radius: $menu-radius;
+
+      > row.activatable {
+        border-radius: $menuitem-radius;
+
+        &:not(:last-child) {
+          margin-bottom: $space-size / 2;
+        }
+
+        button.menuitem {
+          border-radius: $menuitem-radius;
+        }
+      }
+    }
+
+    .budgie-menu-footer {
+      border-top: 1px solid $border;
+      padding: $space-size;
+
+      button.flat {
+        min-height: 16px;
+        min-width: 16px;
+        padding: $space-size;
+        border-radius: $menuitem-radius;
+
+        &.image-button {
+          border-radius: $circular-radius;
+
+          &:not(.last-child) {
+            margin-right: $space-size;
+          }
+        }
+      }
     }
   }
 
@@ -166,16 +221,13 @@
       button.indicator-item {
         transition: none;
         animation: none;
-
-        &:hover {
-        }
       }
     }
   }
 
-  &.sound-popover {
-    // separator { margin: $space-size / 2 0; }
-  }
+  // &.sound-popover {
+  //   separator { margin: $space-size / 2 0; }
+  // }
 
   &.night-light-indicator {
     .container { padding: $space-size / 2; }
@@ -398,7 +450,7 @@
   separator { background-color: on($panel, track); }
 
   // used to indicate unread notifications
-  .alert { color: $destructive; }
+  .alert { color: $suggested; }
 
   // End Section needs to be fancy
   // .end-region { }
@@ -430,6 +482,10 @@
       &:hover, &:active {
         color: on($panel);
       }
+    }
+
+    separator {
+      background-color: $border;
     }
   }
 
@@ -542,7 +598,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       border-bottom: 1px solid $divider;
 
       stackswitcher button {
-        margin: -4px 0 -5px; // remove unwanted vertical margins
+        // margin: -4px 0 -5px; // remove unwanted vertical margins
         padding: 0 16px;
         min-height: $medium-size;
       }
@@ -627,7 +683,7 @@ calendar.raven-calendar {
 // MPRIS Applet
 .raven-mpris {
   background-color: $scrim;
-  color: on($scrim);
+  color: on($scrim, secondary);
 
   label { min-height: 24px; }
 
@@ -636,6 +692,12 @@ calendar.raven-calendar {
 
     @extend %button-on-dark;
   }
+}
+
+image.raven-mpris {
+  background-color: $divider;
+  color: $text-secondary;
+  border-radius: $corner-radius;
 }
 
 // notification list
@@ -676,9 +738,19 @@ calendar.raven-calendar {
 }
 
 // Notifications
-.budgie-notification-window { background-color: transparent; }
+.budgie-notification-window {
+  background-color: transparent;
+
+  .linked > button {
+    &, &:first-child, &:last-child {
+      @extend %circular-button;
+    }
+  }
+}
 
 .budgie-notification {
+  padding: $space-size * 2;
+
   .notification-title { font-size: 120%; }
 
   .notification-body { color: $text-secondary; }
@@ -686,7 +758,7 @@ calendar.raven-calendar {
 
 // On Screen Display in Budgie
 .budgie-osd-window {
-  @extend .budgie-notification-window;
+  background-color: transparent;
 }
 
 // Internal part of the OSD
@@ -696,12 +768,12 @@ calendar.raven-calendar {
 
 // Alt+tab switcher in Budgie
 .budgie-switcher-window {
-  @extend .budgie-notification-window;
+  background-color: transparent;
 }
 
 // Internal part of the Switcher
 .budgie-switcher {
-  @extend .budgie-notification;
+  padding: $space-size * 2;
 }
 
 .budgie-panel {
@@ -712,19 +784,21 @@ calendar.raven-calendar {
 
 .drop-shadow {
   margin: 5px 9px;
-  padding: 3px;
+  padding: $space-size;
   border-radius: $window-radius;
   box-shadow: $shadow-z4, inset 0 1px highlight($surface);
   background-color: $surface;
 
   button { @extend %button-flat-simple; }
-
-  .linked > button { border-radius: $window-radius; }
 }
 
 %budgie_dialog {
   box-shadow: inset 0 1px highlight($surface);
   background-color: $surface;
+
+  > box > grid {
+    padding: 24px;
+  }
 }
 
 // Session Dialog
@@ -733,7 +807,7 @@ calendar.raven-calendar {
 .budgie-run-dialog {
   @extend %budgie_dialog;
 
-  &.background.csd, decoration { border-radius: $window-radius $window-radius $window-radius $window-radius; }
+  &.background.csd, decoration { border-radius: $window-radius; }
 
   label:not(:last-child),
   .dialog-title {
@@ -755,6 +829,10 @@ calendar.raven-calendar {
 .budgie-polkit-dialog {
   .message { color: $text-secondary; }
   .failure { color: $destructive; }
+
+  > box > grid {
+    padding: 24px 24px 0;
+  }
 }
 
 // Run Dialog
