@@ -41,7 +41,7 @@
   outline-color: alpha(currentColor, 0.1);
 }
 
-XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked, box.vertical > widget > widget:selected, calendar:selected, row:selected, treeview.view:selected, modelbutton.flat:selected,
+XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover.budgie-menu row.activatable > button.flat:checked, box.vertical > widget > widget:selected, calendar:selected, row:selected, treeview.view:selected, modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(235, 235, 235, 0.987);
@@ -615,7 +615,7 @@ actionbar > revealer > box .linked > button:checked:disabled:not(.suggested-acti
   color: rgba(0, 0, 0, 0.38);
 }
 
-.budgie-notification .linked > button, .budgie-switcher .linked > button, .raven .expander-button, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle,
+.budgie-notification-window .linked > button, .budgie-notification-window .linked > button:first-child, .budgie-notification-window .linked > button:last-child, .raven .expander-button, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle,
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat), window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
@@ -624,7 +624,7 @@ radio, headerbar button.titlebutton, button.close, button.circular, .inline-tool
   border-radius: 9999px;
 }
 
-.budgie-notification .linked > button label, .budgie-switcher .linked > button label, .raven .expander-button label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle label,
+.budgie-notification-window .linked > button label, .budgie-notification-window .linked > button:first-child label, .budgie-notification-window .linked > button:last-child label, .raven .expander-button label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle label,
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat) label, window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised label, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
@@ -1835,25 +1835,25 @@ menubar > menuitem label:disabled,
   border-radius: 12px;
 }
 
-menu,
-.menu,
-.context-menu {
+menu {
   margin: 3px;
   padding: 6px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.csd menu, .csd .menu, .csd .context-menu {
-  border: none;
   border-radius: 11px;
 }
 
-menu menuitem,
-.menu menuitem,
-.context-menu menuitem {
+background:not(.popup) menu {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+}
+
+.csd menu {
+  border: none;
+}
+
+menu menuitem {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 20px;
   min-width: 40px;
@@ -1864,58 +1864,40 @@ menu menuitem,
   border-radius: 5px;
 }
 
-menu menuitem:hover,
-.menu menuitem:hover,
-.context-menu menuitem:hover {
+menu menuitem:hover {
   transition: none;
   background-color: alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
-menu menuitem:disabled,
-.menu menuitem:disabled,
-.context-menu menuitem:disabled {
+menu menuitem:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
-menu menuitem arrow,
-.menu menuitem arrow,
-.context-menu menuitem arrow {
+menu menuitem arrow {
   min-height: 16px;
   min-width: 16px;
 }
 
-menu menuitem arrow:dir(ltr),
-.menu menuitem arrow:dir(ltr),
-.context-menu menuitem arrow:dir(ltr) {
+menu menuitem arrow:dir(ltr) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   margin-left: 8px;
 }
 
-menu menuitem arrow:dir(rtl),
-.menu menuitem arrow:dir(rtl),
-.context-menu menuitem arrow:dir(rtl) {
+menu menuitem arrow:dir(rtl) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
   margin-right: 8px;
 }
 
-menu menuitem label:dir(rtl), menu menuitem label:dir(ltr),
-.menu menuitem label:dir(rtl),
-.menu menuitem label:dir(ltr),
-.context-menu menuitem label:dir(rtl),
-.context-menu menuitem label:dir(ltr) {
+menu menuitem label:dir(rtl), menu menuitem label:dir(ltr) {
   color: inherit;
 }
 
-menu .view:selected,
-.menu .view:selected,
-.context-menu .view:selected {
+menu .view:selected {
   background-color: rgba(235, 235, 235, 0.987);
 }
 
-menu > arrow,
-.menu > arrow,
-.context-menu > arrow {
+menu > arrow {
   min-height: 16px;
   min-width: 16px;
   padding: 6px;
@@ -1924,41 +1906,31 @@ menu > arrow,
   border-radius: 8px;
 }
 
-menu > arrow.top,
-.menu > arrow.top,
-.context-menu > arrow.top {
+menu > arrow.top {
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
   border-image: image(rgba(0, 0, 0, 0.12)) 0 0 1/0 0 1px;
 }
 
-menu > arrow.bottom,
-.menu > arrow.bottom,
-.context-menu > arrow.bottom {
+menu > arrow.bottom {
   margin-top: 11px;
   margin-bottom: -12px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
   border-image: image(rgba(0, 0, 0, 0.12)) 1 0 0/1px 0 0;
 }
 
-menu > arrow:hover,
-.menu > arrow:hover,
-.context-menu > arrow:hover {
+menu > arrow:hover {
   background-image: image(alpha(currentColor, 0.08));
   color: rgba(0, 0, 0, 0.87);
   border-image: none;
 }
 
-menu > arrow:disabled,
-.menu > arrow:disabled,
-.context-menu > arrow:disabled {
+menu > arrow:disabled {
   border-color: transparent;
   background-color: transparent;
   color: transparent;
 }
 
-menu separator,
-.menu separator,
-.context-menu separator {
+menu separator {
   margin: 3px 0;
 }
 
@@ -3299,7 +3271,7 @@ list row {
   padding: 2px;
 }
 
-.budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item), .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable, treeview.view header button, row.activatable {
+.budgie-popover.budgie-menu row.activatable > button.flat, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable, treeview.view header button, row.activatable {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
@@ -3309,16 +3281,16 @@ list row {
   background-size: 1000% 1000%;
 }
 
-.budgie-popover.budgie-menu button.flat:focus:not(.image-button):not(.indicator-item), .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:focus, treeview.view header button:focus, row.activatable:focus {
+.budgie-popover.budgie-menu row.activatable > button.flat:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:focus, treeview.view header button:focus, row.activatable:focus {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-popover.budgie-menu button.flat:hover:not(.image-button):not(.indicator-item), .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover, treeview.view header button:hover, row.activatable:hover {
+.budgie-popover.budgie-menu row.activatable > button.flat:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover, treeview.view header button:hover, row.activatable:hover {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-popover.budgie-menu button.has-open-popup.flat:not(.image-button):not(.indicator-item), .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.has-open-popup.activatable, treeview.view header button.has-open-popup, .budgie-popover.budgie-menu button.flat:active:not(.image-button):not(.indicator-item), .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active, treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
+.budgie-popover.budgie-menu row.activatable > button.has-open-popup.flat, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.has-open-popup.activatable, treeview.view header button.has-open-popup, .budgie-popover.budgie-menu row.activatable > button.flat:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active, treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
@@ -6237,6 +6209,11 @@ window.background:not(.csd) > window > menu menuitem {
   transition: none;
 }
 
+.background.popup.xapp-status-icon-menu-window decoration {
+  border-radius: 11px;
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
 /************
  * Inkscape *
  ************/
@@ -7125,6 +7102,34 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: transparent;
 }
 
+.budgie-popover entry, .budgie-popover button, .budgie-popover spinbutton, .budgie-popover button.combo {
+  border-radius: 5px;
+}
+
+.budgie-popover .linked > entry:first-child,
+.budgie-popover .linked > button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.budgie-popover .linked > entry:last-child,
+.budgie-popover .linked > button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.budgie-popover button.flat:not(.image-button) {
+  min-height: 28px;
+  padding: 0 8px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: normal;
+  border-radius: 5px;
+}
+
+.budgie-popover button.flat:not(.image-button):disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+
 .budgie-popover row {
   padding: 0;
 }
@@ -7134,11 +7139,11 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover row button {
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .budgie-popover calendar:not(.header) {
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .budgie-popover scrolledwindow.sidebar.categories {
@@ -7185,22 +7190,6 @@ MsdOsdWindow.background.osd .progressbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.budgie-popover button {
-  border-radius: 6px;
-}
-
-.budgie-popover button.flat:not(.image-button) {
-  min-height: 28px;
-  padding: 0 8px;
-  color: rgba(0, 0, 0, 0.87);
-  font-weight: normal;
-  border-radius: 6px;
-}
-
-.budgie-popover button.flat:not(.image-button):disabled {
-  color: rgba(0, 0, 0, 0.38);
-}
-
 .budgie-popover.budgie-menu .container {
   padding: 0;
 }
@@ -7219,13 +7208,13 @@ MsdOsdWindow.background.osd .progressbar {
   font-size: 120%;
 }
 
-.budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item) {
+.budgie-popover.budgie-menu row.activatable > button.flat {
   min-height: 32px;
   padding: 0 8px;
   border-radius: 0;
 }
 
-.budgie-popover.budgie-menu button.flat:not(.image-button):not(.indicator-item):checked:disabled {
+.budgie-popover.budgie-menu row.activatable > button.flat:checked:disabled {
   background-color: transparent;
 }
 
@@ -7254,18 +7243,18 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 6px;
 }
 
-.budgie-popover.budgie-menu .budgie-menu-footer button.flat:not(.indicator-item) {
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat {
   min-height: 16px;
   min-width: 16px;
   padding: 6px;
   border-radius: 5px;
 }
 
-.budgie-popover.budgie-menu .budgie-menu-footer button.flat:not(.indicator-item).image-button {
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat.image-button {
   border-radius: 9999px;
 }
 
-.budgie-popover.budgie-menu .budgie-menu-footer button.flat:not(.indicator-item).image-button:not(.last-child) {
+.budgie-popover.budgie-menu .budgie-menu-footer button.flat.image-button:not(.last-child) {
   margin-right: 6px;
 }
 
@@ -7518,7 +7507,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel .alert {
-  color: #E53935;
+  color: #1A73E8;
 }
 
 .budgie-panel .titlebar:not(headerbar) {
@@ -7772,6 +7761,8 @@ calendar.raven-calendar:selected {
 }
 
 image.raven-mpris {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
 }
 
@@ -7810,20 +7801,37 @@ image.raven-mpris {
   box-shadow: none;
 }
 
-.budgie-notification-window, .budgie-switcher-window, .budgie-osd-window {
+.budgie-notification-window {
   background-color: transparent;
 }
 
-.budgie-notification .notification-title, .budgie-switcher .notification-title {
+.budgie-notification {
+  padding: 12px;
+}
+
+.budgie-notification .notification-title {
   font-size: 120%;
 }
 
-.budgie-notification .notification-body, .budgie-switcher .notification-body {
+.budgie-notification .notification-body {
   color: rgba(0, 0, 0, 0.6);
+}
+
+.budgie-osd-window {
+  background-color: transparent;
 }
 
 .budgie-osd .budgie-osd-text {
   font-size: 120%;
+}
+
+.budgie-switcher-window {
+  background-color: transparent;
+}
+
+.budgie-switcher {
+  padding: 12px;
+  margin: 6px;
 }
 
 .budgie-panel .lock-keys image:disabled {
@@ -7832,14 +7840,10 @@ image.raven-mpris {
 
 .drop-shadow {
   margin: 5px 9px;
-  padding: 3px;
+  padding: 6px;
   border-radius: 18px;
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
-}
-
-.drop-shadow .linked > button {
-  border-radius: 18px;
 }
 
 .budgie-session-dialog,
@@ -7847,6 +7851,12 @@ image.raven-mpris {
 .budgie-run-dialog {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
+}
+
+.budgie-session-dialog > box > grid,
+.budgie-polkit-dialog > box > grid,
+.budgie-run-dialog > box > grid {
+  padding: 24px;
 }
 
 .budgie-session-dialog.background.csd, .budgie-session-dialog decoration,
@@ -7892,6 +7902,10 @@ image.raven-mpris {
 
 .budgie-polkit-dialog .failure {
   color: #E53935;
+}
+
+.budgie-polkit-dialog > box > grid {
+  padding: 24px 24px 0;
 }
 
 .budgie-run-dialog entry.search {
