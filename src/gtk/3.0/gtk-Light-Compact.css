@@ -7722,12 +7722,6 @@ frame.raven-frame > border {
   padding-bottom: 0;
 }
 
-.raven .audio-widget scale.marks-after label {
-  font-size: 90%;
-  padding: 0;
-  margin: -10px 0 0 6px;
-}
-
 .raven .audio-widget button.flat.expander-button {
   margin-top: 4px;
   margin-bottom: 4px;
