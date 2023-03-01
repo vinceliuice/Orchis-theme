@@ -410,7 +410,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-inactive-menu-item:insensitive,
 .popup-menu .popup-inactive-menu-item:insensitive,
 .popup-combo-menu .popup-inactive-menu-item:insensitive {
-  color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.15);
 }
 
 .menu .popup-menu-item:active .popup-inactive-menu-item,

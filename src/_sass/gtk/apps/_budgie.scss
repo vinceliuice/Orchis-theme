@@ -749,6 +749,16 @@ image.raven-mpris {
   }
 }
 
+.drop-shadow {
+  margin: 5px 9px;
+  padding: $space-size;
+  border-radius: $window-radius;
+  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
+  background-color: $surface;
+
+  button { @extend %button-flat-simple; }
+}
+
 // Notifications
 .budgie-notification-window {
   background-color: transparent;
@@ -768,16 +778,6 @@ image.raven-mpris {
   .notification-body { color: $text-secondary; }
 }
 
-// On Screen Display in Budgie
-.budgie-osd-window {
-  background-color: transparent;
-}
-
-// Internal part of the OSD
-.budgie-osd {
-  .budgie-osd-text { font-size: 120%; }
-}
-
 // Alt+tab switcher in Budgie
 .budgie-switcher-window {
   background-color: transparent;
@@ -788,15 +788,38 @@ image.raven-mpris {
   padding: $space-size * 2;
 }
 
-.drop-shadow {
-  margin: 5px 9px;
-  padding: $space-size;
-  border-radius: $window-radius;
-  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
-  background-color: $surface;
+.budgie-osd-window, // On Screen Display in Budgie
+.budgie-power-dialog { // Session window
+  background-color: transparent;
+  color: on($osd, secondary);
 
-  button { @extend %button-flat-simple; }
+  .drop-shadow {
+    box-shadow: $shadow-z4, inset 0 1px highlight($osd);
+    background-color: $osd;
+
+    button { @extend %button-on-dark; }
+  }
 }
+
+.budgie-osd-window {
+  image { color: on($osd, secondary); }
+
+  progressbar trough {
+    background-color: on($osd, track-disabled);
+  }
+}
+
+.budgie-power-dialog {
+  .titlebar, decoration {
+    background: none;
+    box-shadow: none;
+  }
+}
+
+// Internal part of the OSD
+// .budgie-osd {
+//   .budgie-osd-text { font-size: 120%; }
+// }
 
 %budgie_dialog {
   box-shadow: inset 0 1px highlight($surface);
@@ -807,7 +830,7 @@ image.raven-mpris {
   }
 }
 
-// Session Dialog
+// Dialogs
 .budgie-session-dialog,
 .budgie-polkit-dialog,
 .budgie-run-dialog {

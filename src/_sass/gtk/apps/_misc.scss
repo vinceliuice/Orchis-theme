@@ -113,7 +113,7 @@ window.background.chromium {
 
   menu {
     padding: 0;
-    border-color: $divider;
+    border: 1px solid $divider;
     box-shadow: none;
 
     menuitem { border-radius: 0; }

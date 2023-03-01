@@ -21,7 +21,7 @@
     @if ($state == 'disabled') { @return rgba(black, 0.38); }
     @if ($state == 'secondary-disabled') { @return rgba(black, 0.26); }
     @if ($state == 'track') { @return rgba(black, 0.26); }
-    @if ($state == 'track-disabled') { @return rgba(black, 0.12); }
+    @if ($state == 'track-disabled') { @return rgba(black, 0.15); }
     @if ($state == 'divider') { @return rgba(black, 0.12); }
     @if ($state == 'secondary-fill') { @return rgba(black, 0.08); }
     @if ($state == 'fill') { @return rgba(black, 0.04); }
@@ -31,7 +31,7 @@
     @if ($state == 'disabled') { @return rgba(white, 0.5); }
     @if ($state == 'secondary-disabled') { @return rgba(white, 0.3); }
     @if ($state == 'track') { @return rgba(white, 0.3); }
-    @if ($state == 'track-disabled') { @return rgba(white, 0.12); }
+    @if ($state == 'track-disabled') { @return rgba(white, 0.15); }
     @if ($state == 'divider') { @return rgba(white, 0.12); }
     @if ($state == 'secondary-fill') { @return rgba(white, 0.08); }
     @if ($state == 'fill') { @return rgba(white, 0.04); }
