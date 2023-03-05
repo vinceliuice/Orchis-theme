@@ -114,7 +114,7 @@ $titlebar-backdrop:                     if($topbar == 'dark', background(g), bac
 
 $keyboard:                              if($variant == 'light', $grey-050, $grey-800); // for gnome-shell keyboard
 $keyboard-alt:                          if($variant == 'light', $grey-300, $grey-900); // for gnome-shell keyboard
-$system:                                if($blackness == 'true', $grey-850, $grey-800); // for gnome-shell keyboard
+$system:                                if($blackness == 'true', $grey-850, $grey-750); // for gnome-shell keyboard
 $popover:                               if($variant == 'light', background(a), background(e));
 
 $panel-solid:                           if($topbar == 'dark', background(e), background(c)); // for Unity panel which doesn't allow translucent colors

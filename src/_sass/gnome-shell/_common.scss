@@ -61,7 +61,7 @@ $bubble_button_radius: if($corner_style == 'circular', $circular-radius, $materi
 
 %osd_panel {
   color: on(dark);
-  background-color: $system;
+  background-color: $popover;
   border: none;
   box-shadow: $shell-shadow-z4;
   padding: $space-size * 2;
