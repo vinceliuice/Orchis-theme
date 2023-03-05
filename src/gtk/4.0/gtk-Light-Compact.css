@@ -5412,6 +5412,29 @@ window.dialog > .dialog-vbox > box > scrolledwindow > viewport > widget > list.b
   border-radius: 0;
 }
 
+button.colorpad {
+  padding: 0px;
+  margin: 0px;
+  background-blend-mode: screen;
+  background-image: linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55), linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
+  background-color: @colorpad_color;
+  color: @colorpad_fg_color;
+  background-size: 18px 18px;
+  background-position: 0px 0px, 9px 9px;
+}
+
+button.colorpad:hover {
+  filter: brightness(93%);
+}
+
+button.colorpad:active {
+  filter: brightness(86%);
+}
+
+button.colorpad:checked {
+  filter: brightness(100%);
+}
+
 avatar {
   border-radius: 9999px;
   font-weight: bold;

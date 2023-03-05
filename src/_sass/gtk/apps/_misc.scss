@@ -397,8 +397,8 @@ window.background.csd {
 window.background:not(.solid-csd):not(.csd) {
   // reserved area at the most-right side of GtkMenuBar
   > grid.horizontal > grid.horizontal {
-    background-color: $titlebar;
-    box-shadow: inset 0 -1px $divider;
+    background-color: transparent;
+    // box-shadow: inset 0 -1px $divider;
 
     // > button.flat.small-button { // 'close' button
     // }

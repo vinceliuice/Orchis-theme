@@ -460,7 +460,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu-content {
   padding: 6px 0;
   margin: 6px 10px 13px 10px;
-  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.96);
   border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }

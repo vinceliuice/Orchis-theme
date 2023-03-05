@@ -171,14 +171,14 @@ na-tray-applet {
 }
 
 // remove right space a bit
-na-tray-applet > widget > box {
-  // margin-right: 2px;
-}
+// na-tray-applet > widget > box {
+//   margin-right: 2px;
+// }
 
 // no background for icon-padding area
-na-tray-applet widget box widget {
-  // background-color: transparent;
-}
+// na-tray-applet widget box widget {
+//   background-color: transparent;
+// }
 
 // Classic icon style
 .mate-panel-menu-bar {

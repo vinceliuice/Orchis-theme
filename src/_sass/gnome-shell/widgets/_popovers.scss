@@ -26,7 +26,7 @@
 .popup-menu-content {
   padding: $space-size 0;
   margin: $space-size 10px 13px 10px;
-  background-color: $surface;
+  background-color: if($opacity == 'solid', $popover, rgba($popover, 0.96));
   border-radius: $popup-radius;
   box-shadow: $shell-shadow-z3;
 }
