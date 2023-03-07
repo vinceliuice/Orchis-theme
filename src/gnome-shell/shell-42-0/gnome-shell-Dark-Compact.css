@@ -2460,7 +2460,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .power-status.panel-status-indicators-box {
-  spacing: 0;
+  spacing: 2px;
+  padding: 0 2px;
+}
+
+#panel .power-status.panel-status-indicators-box StLabel {
+  margin-right: 2px;
 }
 
 #panel .screencast-indicator,

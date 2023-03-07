@@ -216,7 +216,10 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
 
   // spacing between power icon and (optional) percentage label
   .power-status.panel-status-indicators-box {
-    spacing: 0;
+    spacing: $space-size / 2;
+    padding: 0 $space-size / 2;
+
+    StLabel { margin-right: $space-size / 2; }
   }
 
   // indicator for active
