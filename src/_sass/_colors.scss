@@ -119,6 +119,7 @@ $popover:                               if($variant == 'light', background(a), b
 
 $panel-solid:                           if($topbar == 'dark', background(e), background(c)); // for Unity panel which doesn't allow translucent colors
 $panel:                                 if($opacity == 'default', rgba($panel-solid, 0.65), $panel-solid);
+$shell:                                 if($topbar == 'dark', rgba(black, 0.65), background(c)); // for gnome-shell
 
 $button:                                if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
 $entry:                                 if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));

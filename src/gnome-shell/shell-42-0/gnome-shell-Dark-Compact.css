@@ -2277,12 +2277,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel {
   font-weight: bold;
   font-feature-settings: "tnum";
-  padding: 0 2px !important;
+  padding: 0 !important;
   transition-duration: 250ms;
-  background-color: rgba(33, 33, 33, 0.65);
+  height: 34px;
+  background-color: rgba(0, 0, 0, 0.65);
   margin: 2px;
   border-radius: 9999px;
-  height: 34px;
 }
 
 #panel.unlock-screen, #panel.login-screen, #panel:overview {
@@ -2384,10 +2384,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: transparent;
   background-color: transparent;
   box-shadow: none;
+  -natural-hpadding: 2px !important;
+  -minimum-hpadding: 2px !important;
 }
 
 #panel .panel-button#panelActivities > * {
-  width: 28px;
+  width: 30px;
 }
 
 #panel .panel-button#panelActivities:hover {
@@ -2400,23 +2402,49 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
-  border: none !important;
-  margin: 2px !important;
-  border-radius: 9999px;
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button {
+  border: 0 none transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  -natural-hpadding: 2px !important;
+  -minimum-hpadding: 2px !important;
 }
 
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:hover,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:hover {
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon {
+  border-radius: 9999px;
+  width: 30px;
+  margin: 2px 0;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon:hover,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon:hover {
   background-color: rgba(255, 255, 255, 0.12);
   box-shadow: none;
 }
 
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:active, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:overview, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:focus, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button:checked,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:active,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:overview,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:focus,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button:checked {
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon:active, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon:overview, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon:focus, #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon:checked,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon:active,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon:overview,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon:focus,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon:checked {
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .arcmenu-menu-button {
+  border-radius: 9999px;
+  width: 30px;
+  margin: 2px 0;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .arcmenu-menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .arcmenu-menu-button:active, #panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .arcmenu-menu-button:overview, #panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .arcmenu-menu-button:focus, #panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .arcmenu-menu-button:checked {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
 }
@@ -2424,12 +2452,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel Gjs_ui_panel_AggregateMenu.panel-button .system-status-icon {
   margin: 0 !important;
   padding: 4px !important;
-}
-
-#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon,
-#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon {
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 #panel .panel-status-indicators-box,
@@ -2444,6 +2466,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel .screencast-indicator,
 #panel .remote-access-indicator {
   color: #FBC02D;
+}
+
+#panel Gjs_status_keyboard_InputSourceIndicator.panel-button,
+#panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
+  -natural-hpadding: 8px !important;
+  -minimum-hpadding: 8px !important;
 }
 
 #appMenu {
@@ -4121,18 +4149,23 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer .number-overlay {
+  min-width: 1.2em;
+  min-height: 1.2em;
   color: white;
   background-color: rgba(0, 0, 0, 0.75);
   text-align: center;
+  padding: 0.4em 0.5em;
 }
 
 #dashtodockContainer .notification-badge {
+  min-width: 1.2em;
+  min-height: 1.2em;
   color: white;
   background-color: #3281EA;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
   border-radius: 9999px;
   margin: 2px 3px 5px;
-  padding: 0.2em 0.6em;
+  padding: 0.4em 0.5em;
   font-weight: bold;
   text-align: center;
 }

@@ -2,27 +2,27 @@
 // a.k.a. the panel
 
 $panel_transition_duration: 250ms; // same as the overview transition duration
+$panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 2px);
 
 #panel {
   font-weight: bold;
   font-feature-settings: "tnum";
-  padding: 0 $space-size / 2 !important;
+  padding: 0 !important;
   transition-duration: $panel_transition_duration;
+  height: $panel_height;
 
   @if $opacity == 'solid' {
     background-color: $panel-solid;
   } @else {
-    background-color: $panel;
+    background-color: $shell;
   }
 
   @if $panel_style == 'compact' {
     margin: 0;
     border-radius: 0;
-    height: $medium-size - 2px;
   } @else {
     margin: $space-size / 2;
     border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
-    height: $medium-size + 2px;
   }
 
   // transparent panel on lock & login screens
@@ -136,9 +136,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       color: transparent;
       background-color: transparent;
       box-shadow: none;
+      -natural-hpadding: $space-size / 2 !important;
+      -minimum-hpadding: $space-size / 2 !important;
 
       > * {
-        width: $medium-size - $space-size;
+        width: $panel_height - $space-size;
       }
 
       &:hover {
@@ -154,19 +156,49 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
   // Gjs_ui_panel_AggregateMenu.panel-button,
   Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button,
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button {
+    border: 0 none transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -natural-hpadding: $space-size / 2 !important;
+    -minimum-hpadding: $space-size / 2 !important;
+  }
+
+  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
-    border: none !important;
-    margin: $space-size / 2 !important;
-    border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+    .arc-menu-icon {
+      border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+      width: $panel_height - $space-size;
+      margin: $space-size / 2 0;
 
-    &:hover {
-      background-color: on(dark, divider);
-      box-shadow: none;
+      &:hover {
+        background-color: on(dark, divider);
+        box-shadow: none;
+      }
+
+      &:active, &:overview, &:focus, &:checked {
+        background-color: on(dark, track);
+        box-shadow: none;
+      }
     }
+  }
 
-    &:active, &:overview, &:focus, &:checked {
-      background-color: on(dark, track);
-      box-shadow: none;
+  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button {
+    .arcmenu-menu-button {
+      border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+      width: $panel_height - $space-size;
+      margin: $space-size / 2 0;
+
+      &:hover {
+        background-color: on(dark, divider);
+        box-shadow: none;
+      }
+
+      &:active, &:overview, &:focus, &:checked {
+        background-color: on(dark, track);
+        box-shadow: none;
+      }
     }
   }
 
@@ -174,14 +206,6 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     .system-status-icon {
       margin: 0 !important;
       padding: $space-size !important;
-    }
-  }
-
-  Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
-  Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
-    .arc-menu-icon {
-      margin: 0 !important;
-      padding: 0 !important;
     }
   }
 
@@ -198,6 +222,12 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   // indicator for active
   .screencast-indicator,
   .remote-access-indicator { color: $warning; }
+
+  Gjs_status_keyboard_InputSourceIndicator.panel-button,
+  Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
+    -natural-hpadding: $space-size * 2 !important;
+    -minimum-hpadding: $space-size * 2 !important;
+  }
 }
 
 // App Menu
