@@ -225,7 +225,7 @@
   box-shadow: none;
   text-shadow: none;
   color: $text-secondary;
-  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+  background-color: $fill;
 
   &:hover, &:focus {
     color: $text;
