@@ -1979,7 +1979,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button .system-status-icon {
   icon-size: 16px;
-  padding: 6px;
+  padding: 4px;
   margin: 0 3px;
 }
 
@@ -1987,18 +1987,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 8px;
 }
 
-#panel .panel-button .panel-status-menu-box .system-status-icon {
-  margin: 0;
-}
-
 #panel .panel-button .panel-status-indicators-box .system-status-icon {
   margin: 0 !important;
   padding: 4px !important;
 }
 
-#panel .panel-button .panel-status-indicators-box,
+#panel .panel-button .panel-status-indicators-box {
+  spacing: 0;
+}
+
 #panel .panel-button .panel-status-menu-box {
-  spacing: 2px;
+  spacing: 4px;
+  padding: 4px;
+}
+
+#panel .panel-button .panel-status-menu-box .system-status-icon {
+  margin: 0;
+  padding: 0;
 }
 
 #panel .panel-button .power-status.panel-status-indicators-box {
@@ -2057,6 +2062,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -minimum-hpadding: 2px !important;
 }
 
+#panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .panel-status-menu-box,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .panel-status-menu-box,
+#panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button .panel-status-menu-box {
+  spacing: 0;
+  padding: 0;
+}
+
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button .arc-menu-icon,
 #panel Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button .arc-menu-icon {
   border-radius: 9999px;
@@ -2102,8 +2114,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel Gjs_status_keyboard_InputSourceIndicator.panel-button,
 #panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
-  -natural-hpadding: 8px !important;
-  -minimum-hpadding: 8px !important;
+  -natural-hpadding: 6px !important;
+  -minimum-hpadding: 6px !important;
+}
+
+#panel Gjs_status_accessibility_ATIndicator.panel-button {
+  -natural-hpadding: 3px !important;
+  -minimum-hpadding: 3px !important;
 }
 
 #panel .screencast-indicator,

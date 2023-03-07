@@ -96,7 +96,7 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
     // status area icons
     .system-status-icon {
       icon-size: 16px;
-      padding: $space-size * 1.5;
+      padding: $space-size;
       margin: 0 3px;
     }
 
@@ -104,18 +104,23 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
       padding: $space-size * 2;
     }
 
-    .panel-status-menu-box .system-status-icon {
-      margin: 0;
-    }
-
     .panel-status-indicators-box .system-status-icon {
       margin: 0 !important;
       padding: $space-size !important;
     }
 
-    .panel-status-indicators-box,
+    .panel-status-indicators-box {
+      spacing: 0;
+    }
+
     .panel-status-menu-box {
-      spacing: 2px;
+      spacing: $space-size;
+      padding: $space-size;
+
+      .system-status-icon {
+        margin: 0;
+        padding: 0;
+      }
     }
 
     // spacing between power icon and (optional) percentage label
@@ -176,6 +181,11 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
     padding: 0 !important;
     -natural-hpadding: $space-size / 2 !important;
     -minimum-hpadding: $space-size / 2 !important;
+
+    .panel-status-menu-box {
+      spacing: 0;
+      padding: 0;
+    }
   }
 
   Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,
@@ -224,8 +234,13 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
 
   Gjs_status_keyboard_InputSourceIndicator.panel-button,
   Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
-    -natural-hpadding: $space-size * 2 !important;
-    -minimum-hpadding: $space-size * 2 !important;
+    -natural-hpadding: $space-size * 1.5 !important;
+    -minimum-hpadding: $space-size * 1.5 !important;
+  }
+
+  Gjs_status_accessibility_ATIndicator.panel-button {
+    -natural-hpadding: 3px !important;
+    -minimum-hpadding: 3px !important;
   }
 
   // indicator for active

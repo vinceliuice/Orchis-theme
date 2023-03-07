@@ -10,11 +10,13 @@ $screenshot_ui_panel_padding: $space-size * 3;
 $screenshot_ui_shot_cast_margin: 21px;
 $screenshot_ui_panel_border_radius: $material-radius + $screenshot_ui_shot_cast_margin;
 $screenshot_ui_shot_cast_spacing: 3px;
-
 $screenshot_ui_button_red: $error;
 
 .screenshot-ui-panel {
-  @extend %osd_panel;
+  color: on($osd);
+  background-color: $osd;
+  border: none;
+  box-shadow: $shell-shadow-z4;
   border-radius: $screenshot_ui_panel_border_radius;
   padding: $screenshot_ui_panel_padding;
   // Reduce the bottom padding a little to accommodate the large capture button.
@@ -192,7 +194,7 @@ $screenshot_ui_button_red: $error;
 }
 
 .screenshot-ui-tooltip {
-  color: on(dark);
+  color: on($system);
   background-color: $system;
   border-radius: $circular-radius;
   padding: $space-size $space-size * 2;
