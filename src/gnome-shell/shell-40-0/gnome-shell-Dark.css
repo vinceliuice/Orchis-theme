@@ -1996,6 +1996,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px !important;
 }
 
+#panel .panel-button .panel-status-indicators-box,
+#panel .panel-button .panel-status-menu-box {
+  spacing: 2px;
+}
+
+#panel .panel-button .power-status.panel-status-indicators-box {
+  spacing: 3px;
+  padding: 0 3px;
+}
+
+#panel .panel-button .power-status.panel-status-indicators-box StLabel {
+  margin-right: 3px;
+}
+
 #panel .panel-button .appindicator-trayicons-box {
   margin: 0 6px;
 }
@@ -2086,29 +2100,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px !important;
 }
 
-#panel .panel-status-indicators-box,
-#panel .panel-status-menu-box {
-  spacing: 2px;
-}
-
-#panel .power-status.panel-status-indicators-box {
-  spacing: 3px;
-  padding: 0 3px;
-}
-
-#panel .power-status.panel-status-indicators-box StLabel {
-  margin-right: 3px;
+#panel Gjs_status_keyboard_InputSourceIndicator.panel-button,
+#panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
+  -natural-hpadding: 12px !important;
+  -minimum-hpadding: 12px !important;
 }
 
 #panel .screencast-indicator,
 #panel .remote-access-indicator {
   color: #FBC02D;
-}
-
-#panel Gjs_status_keyboard_InputSourceIndicator.panel-button,
-#panel Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
-  -natural-hpadding: 12px !important;
-  -minimum-hpadding: 12px !important;
 }
 
 #appMenu {

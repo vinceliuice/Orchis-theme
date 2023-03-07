@@ -113,6 +113,19 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
       padding: $space-size !important;
     }
 
+    .panel-status-indicators-box,
+    .panel-status-menu-box {
+      spacing: 2px;
+    }
+
+    // spacing between power icon and (optional) percentage label
+    .power-status.panel-status-indicators-box {
+      spacing: $space-size / 2;
+      padding: 0 $space-size / 2;
+
+      StLabel { margin-right: $space-size / 2; }
+    }
+
     .appindicator-trayicons-box {
       margin: 0 6px;
     }
@@ -209,28 +222,15 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
     }
   }
 
-  .panel-status-indicators-box,
-  .panel-status-menu-box {
-    spacing: 2px;
-  }
-
-  // spacing between power icon and (optional) percentage label
-  .power-status.panel-status-indicators-box {
-    spacing: $space-size / 2;
-    padding: 0 $space-size / 2;
-
-    StLabel { margin-right: $space-size / 2; }
-  }
-
-  // indicator for active
-  .screencast-indicator,
-  .remote-access-indicator { color: $warning; }
-
   Gjs_status_keyboard_InputSourceIndicator.panel-button,
   Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
     -natural-hpadding: $space-size * 2 !important;
     -minimum-hpadding: $space-size * 2 !important;
   }
+
+  // indicator for active
+  .screencast-indicator,
+  .remote-access-indicator { color: $warning; }
 }
 
 // App Menu
