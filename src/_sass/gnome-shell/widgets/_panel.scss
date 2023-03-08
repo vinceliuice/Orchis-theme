@@ -3,6 +3,7 @@
 
 $panel_transition_duration: 250ms; // same as the overview transition duration
 $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 2px);
+$panel_button_hpadding: ($panel_height - 16px) / 2;
 
 #panel {
   font-weight: bold;
@@ -50,15 +51,21 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
   .panel-button {
     font-weight: bold;
     color: on($panel-solid);
-    -natural-hpadding: 6px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: $panel_button_hpadding;
+    -minimum-hpadding: $panel_button_hpadding;
     transition-duration: 150ms;
     border: $space-size / 2 solid transparent;
     border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
     margin: 0;
 
-    &.clock-display .clock {
-      border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
+    &.clock-display {
+      -natural-hpadding: 0 !important;
+      -minimum-hpadding: 0 !important;
+
+      .clock {
+        border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
+        margin: 0 $space-size * 2 !important;
+      }
     }
 
     &:hover {
@@ -97,53 +104,53 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
     .system-status-icon {
       icon-size: 16px;
       padding: $space-size;
-      margin: 0 3px;
+      margin: 0;
     }
 
-    .system-tray-icons {
-      padding: $space-size * 2;
-    }
+    // .appindicator-trayicons-box {
+    //   margin: 0 3px;
+    // }
 
-    .panel-status-indicators-box .system-status-icon {
-      margin: 0 !important;
-      padding: $space-size !important;
-    }
+    // .appindicator-box {
+    //   margin: 0 3px;
+    // }
 
-    .panel-status-indicators-box {
-      spacing: 0;
-    }
+    // .system-tray-icons {
+    //   padding: $space-size;
+    // }
 
-    .panel-status-menu-box {
-      spacing: $space-size;
-      padding: $space-size;
-
-      .system-status-icon {
-        margin: 0;
-        padding: 0;
-      }
-    }
+    // .panel-status-indicators-box {
+    //   spacing: $space-size;
+    //
+    //   .system-status-icon {
+    //     padding: $space-size / 2;
+    //   }
+    // }
 
     // spacing between power icon and (optional) percentage label
-    .power-status.panel-status-indicators-box {
-      spacing: $space-size / 2;
-      padding: 0 $space-size / 2;
+    // .power-status.panel-status-indicators-box { }
 
-      StLabel { margin-right: $space-size / 2; }
-    }
-
-    .appindicator-trayicons-box {
-      margin: 0 6px;
-    }
-
-    .appindicator-box {
-      margin: 0 3px;
-    }
+    // .panel-status-menu-box { // indicators and menubutton icons
+    //   spacing: $space-size;
+    //   padding: 0;
+    //   margin: 0;
+    //
+    //   .system-status-icon {
+    //     padding: 0;
+    //   }
+    // }
 
     // app menu icon
     .app-menu-icon {
       -st-icon-style: symbolic;
-      // dimensions of the icon are hardcoded
     }
+
+    // Gjs_ui_panelAppMenuButton.panel-button {
+    //   .panel-status-menu-box {
+    //     spacing: 0;
+    //     padding: 0;
+    //   }
+    // }
 
     &#panelActivities {
       $size_suffix: if($compact == 'true', '-small', '');
@@ -185,6 +192,7 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
     .panel-status-menu-box {
       spacing: 0;
       padding: 0;
+      margin: 0;
     }
   }
 
@@ -192,7 +200,7 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenu_MenuButton.panel-button {
     .arc-menu-icon {
       border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
-      width: $panel_height - $space-size;
+      width: $panel_height - $space-size + 1px;
       margin: $space-size / 2 0;
 
       &:hover {
@@ -210,7 +218,7 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button {
     .arcmenu-menu-button {
       border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
-      width: $panel_height - $space-size;
+      width: $panel_height - $space-size + 1px;
       margin: $space-size / 2 0;
 
       &:hover {
@@ -225,23 +233,19 @@ $panel_height: if($panel_style == 'compact', $medium-size - 2px, $medium-size + 
     }
   }
 
-  Gjs_ui_panel_AggregateMenu.panel-button {
-    .system-status-icon {
-      margin: 0 !important;
-      padding: $space-size !important;
-    }
+  // Gjs_ui_panel_AggregateMenu.panel-button { }
+
+  // Input indicators
+  Gjs_status_keyboard_InputSourceIndicator.panel-button, // Ibus
+  Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button { // Fcitx
+    -natural-hpadding: $panel_button_hpadding + $space-size !important;
+    -minimum-hpadding: $panel_button_hpadding + $space-size !important;
   }
 
-  Gjs_status_keyboard_InputSourceIndicator.panel-button,
-  Gjs_appindicatorsupport_rgcjonas_gmail_com_indicatorStatusIcon_AppIndicatorsIndicatorStatusIcon.panel-button {
-    -natural-hpadding: $space-size * 1.5 !important;
-    -minimum-hpadding: $space-size * 1.5 !important;
-  }
-
-  Gjs_status_accessibility_ATIndicator.panel-button {
-    -natural-hpadding: 3px !important;
-    -minimum-hpadding: 3px !important;
-  }
+  // Gjs_status_accessibility_ATIndicator.panel-button {
+  //   -natural-hpadding: 3px !important;
+  //   -minimum-hpadding: 3px !important;
+  // }
 
   // indicator for active
   .screencast-indicator,
