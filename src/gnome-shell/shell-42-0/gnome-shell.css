@@ -2312,11 +2312,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel .panel-button.clock-display {
   -natural-hpadding: 0 !important;
   -minimum-hpadding: 0 !important;
+  padding: 0 !important;
+  spacing: 0 !important;
 }
 
 #panel .panel-button.clock-display .clock {
   border-radius: 9999px;
-  margin: 0 12px !important;
 }
 
 #panel .panel-button:hover {

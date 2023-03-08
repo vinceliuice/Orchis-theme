@@ -61,10 +61,11 @@ $panel_button_hpadding: ($panel_height - 16px) / 2;
     &.clock-display {
       -natural-hpadding: 0 !important;
       -minimum-hpadding: 0 !important;
+      padding: 0 !important;
+      spacing: 0 !important;
 
       .clock {
         border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
-        margin: 0 $space-size * 2 !important;
       }
     }
 
