@@ -395,9 +395,9 @@
       border-radius: 0 $window-radius $window-radius 0;
 
       .icon-tasklist {
-        .launcher {
-          &:first-child { border-top-right-radius: $window-radius; }
-          &:last-child { border-bottom-right-radius: $window-radius; }
+        > box > revealer {
+          &:first-child > button.launcher { border-top-right-radius: $window-radius; }
+          &:last-child > button.launcher { border-bottom-right-radius: $window-radius; }
         }
       }
     }
@@ -408,9 +408,9 @@
       border-radius: $window-radius 0 0 $window-radius;
 
       .icon-tasklist {
-        .launcher {
-          &:first-child { border-top-left-radius: $window-radius; }
-          &:last-child { border-bottom-left-radius: $window-radius; }
+        > box > revealer {
+          &:first-child > button.launcher { border-top-left-radius: $window-radius; }
+          &:last-child > button.launcher { border-bottom-left-radius: $window-radius; }
         }
       }
     }
