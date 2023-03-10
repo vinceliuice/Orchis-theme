@@ -116,9 +116,9 @@
 .calendar-day-base {
   @include font(caption);
   text-align: center;
-  width: $menuitem-size !important;
-  height: $menuitem-size !important;
-  padding: 2px !important;
+  width: 3em !important;
+  height: 3em !important;
+  padding: 0 !important;
   margin: 2px !important;
   border-radius: $circular-radius;
   color: $text-secondary;
@@ -141,9 +141,10 @@
   }
 
   &.calendar-day-heading {  //day of week heading
-    width: $menuitem-size; height: $menuitem-size - 7px;
-    margin-top: 2px;
-    padding: 7px 0 0;
+    width: 24px !important;
+    height: 24px - $space-size !important;
+    margin-top: 2px !important;
+    padding: $space-size 0 0 !important;
     border-radius: $circular-radius;
     background-color: transparent;
     color: $text-disabled;
@@ -202,17 +203,16 @@
 }
 
 .calendar-week-number {
-  height: 28px !important;
-  width: 28px !important;
-  margin: $margin-size !important;
-  padding: 0 !important;
+  margin: 6px !important;
+  padding: 0 $space-size + 2px !important;
   border-radius: $circular-radius;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $text-disabled;
-  font-size: inherit;
+  font-size: pt(11px);
   font-weight: bold;
   text-align: center;
   text-shadow: none;
+  font-feature-settings: "tnum";
 }
 
 // buttons under calendar
