@@ -7450,11 +7450,11 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 0 18px 18px 0;
 }
 
-.left .budgie-panel.dock-mode .icon-tasklist .launcher:first-child {
+.left .budgie-panel.dock-mode .icon-tasklist > box > revealer:first-child > button.launcher {
   border-top-right-radius: 18px;
 }
 
-.left .budgie-panel.dock-mode .icon-tasklist .launcher:last-child {
+.left .budgie-panel.dock-mode .icon-tasklist > box > revealer:last-child > button.launcher {
   border-bottom-right-radius: 18px;
 }
 
@@ -7462,11 +7462,11 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 18px 0 0 18px;
 }
 
-.right .budgie-panel.dock-mode .icon-tasklist .launcher:first-child {
+.right .budgie-panel.dock-mode .icon-tasklist > box > revealer:first-child > button.launcher {
   border-top-left-radius: 18px;
 }
 
-.right .budgie-panel.dock-mode .icon-tasklist .launcher:last-child {
+.right .budgie-panel.dock-mode .icon-tasklist > box > revealer:last-child > button.launcher {
   border-bottom-left-radius: 18px;
 }
 
