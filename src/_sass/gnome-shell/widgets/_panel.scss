@@ -64,8 +64,13 @@ $panel_button_hpadding: ($panel_height - 16px) / 2;
       padding: 0 !important;
       spacing: 0 !important;
 
+      .clock-display-box {
+        spacing: 0;
+      }
+
       .clock {
         border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
+        padding: 0 $space-size * 2 !important;
       }
     }
 
@@ -108,9 +113,9 @@ $panel_button_hpadding: ($panel_height - 16px) / 2;
       margin: 0;
     }
 
-    // .appindicator-trayicons-box {
-    //   margin: 0 3px;
-    // }
+    .appindicator-trayicons-box {
+      margin: 0 $space-size;
+    }
 
     // .appindicator-box {
     //   margin: 0 3px;

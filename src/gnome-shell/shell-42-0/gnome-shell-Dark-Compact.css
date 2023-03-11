@@ -736,15 +736,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 /* Date/Time Menu */
-.clock-display-box {
-  spacing: 2px;
-}
-
-.clock-display-box .clock {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 #calendarArea {
   padding: 8px 0;
 }
@@ -2319,8 +2310,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 0 !important;
 }
 
+#panel .panel-button.clock-display .clock-display-box {
+  spacing: 0;
+}
+
 #panel .panel-button.clock-display .clock {
   border-radius: 9999px;
+  padding: 0 8px !important;
 }
 
 #panel .panel-button:hover {
@@ -2355,6 +2351,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
   padding: 4px;
   margin: 0;
+}
+
+#panel .panel-button .appindicator-trayicons-box {
+  margin: 0 4px;
 }
 
 #panel .panel-button .app-menu-icon {
