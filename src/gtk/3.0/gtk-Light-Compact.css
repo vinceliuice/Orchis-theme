@@ -8070,13 +8070,17 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
  * LightDM GTK+ Greeter *
  ************************/
 #panel_window {
-  background-color: #2C2C2C;
-  color: white;
+  background-color: transparent;
+  color: #FFFFFF;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 #panel_window menubar,
 #panel_window separator {
   background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 #panel_window separator {
@@ -8099,17 +8103,39 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   color: rgba(255, 255, 255, 0.3);
 }
 
+#panel_window menu {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #dedede;
+}
+
 #login_window,
 #shutdown_dialog,
 #restart_dialog {
-  margin: 8px;
+  margin: 0;
   border-radius: 10px;
-  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 10.8px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: none;
   background-color: #FFFFFF;
+}
+
+#login_window menu,
+#shutdown_dialog menu,
+#restart_dialog menu {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #dedede;
 }
 
 #content_frame {
   padding-bottom: 16px;
+}
+
+#user_image {
+  border-radius: 10px;
+}
+
+#user_image_border {
+  border-radius: 10px;
 }
 
 #buttonbox_frame {
