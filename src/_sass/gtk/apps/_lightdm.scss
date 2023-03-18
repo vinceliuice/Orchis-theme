@@ -80,14 +80,14 @@
 // .lightdm-gtk-greeter button {}
 
 // the user's avatar box
-#user_image {
-  border-radius: $corner-radius;
-}
+// #user_image {
+//   border-radius: $corner-radius;
+// }
 
 // the border around the user's avatar box
-#user_image_border {
-  border-radius: $corner-radius;
-}
+// #user_image_border {
+//   border-radius: $corner-radius;
+// }
 
 // the lower half of the login-window, in GtkDialog terms the buttonbox or action area
 #buttonbox_frame {

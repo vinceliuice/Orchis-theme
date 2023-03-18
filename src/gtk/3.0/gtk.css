@@ -1845,19 +1845,25 @@ menubar > menuitem label:disabled,
 menu {
   margin: 3px;
   padding: 6px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
   background-clip: border-box;
-  border-radius: 11px;
 }
 
-background:not(.popup) menu {
+.background > menu {
+  border-radius: 11px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.background:not(.popup) > menu {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0;
+  box-shadow: none;
 }
 
-.csd menu {
+.background.csd > menu {
   border: none;
+  border-radius: 11px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
 }
 
 menu menuitem {
@@ -8129,14 +8135,6 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 
 #content_frame {
   padding-bottom: 16px;
-}
-
-#user_image {
-  border-radius: 12px;
-}
-
-#user_image_border {
-  border-radius: 12px;
 }
 
 #buttonbox_frame {

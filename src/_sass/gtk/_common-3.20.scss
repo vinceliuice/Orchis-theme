@@ -1707,18 +1707,24 @@ menubar,
 menu {
   margin: $space-size / 2; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: $space-size;
-  box-shadow: inset 0 1px highlight($surface);
   background-color: $surface;
   background-clip: border-box;
-  border-radius: $menu-radius;
 
-  background:not(.popup) & {
-    border: 1px solid $frame; // adds borders in a non composited env
-    border-radius: 0;
+  .background > & {
+    border-radius: $menu-radius;
+    box-shadow: inset 0 1px highlight($surface);
   }
 
-  .csd & {
+  .background:not(.popup) > & {
+    border: 1px solid $frame; // adds borders in a non composited env
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .background.csd > & {
     border: none; // axes borders in a composited env
+    border-radius: $menu-radius;
+    box-shadow: inset 0 1px highlight($surface);
   }
 
   menuitem {
