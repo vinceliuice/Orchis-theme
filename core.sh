@@ -393,7 +393,7 @@ install_theme() {
     done
   done
 
-  if [[ -f "$HOME/.config/xfce4/panel/whiskermenu-7.rc" ]]; then
+  if (which xfce4-popup-whiskermenu 2> /dev/null); then
     sed -i "s|.*menu-opacity=.*|menu-opacity=0|" "$HOME/.config/xfce4/panel/whiskermenu"*".rc"
   fi
 
