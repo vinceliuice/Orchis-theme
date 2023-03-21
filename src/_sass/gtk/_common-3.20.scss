@@ -3758,8 +3758,7 @@ colorswatch {
     overlay { box-shadow: none; }
   }
 
-  row:selected & {
-  }
+  // row:selected & { }
 
   &#editor-color-sample {
     border-radius: $menu-radius;

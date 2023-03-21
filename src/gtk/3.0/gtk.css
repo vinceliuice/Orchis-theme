@@ -8036,6 +8036,91 @@ XfdesktopIconView.view .rubberband {
   -XfwmTabwinWidget-preview-size: 64px;
 }
 
+/***************
+ * Whiskermenu *
+ ***************/
+window#whiskermenu-window {
+  border-radius: 0;
+  background-color: #FFFFFF;
+  border: none;
+}
+
+window#whiskermenu-window entry.search {
+  border-radius: 5px;
+}
+
+window#whiskermenu-window entry.search:focus {
+  background-color: #FFFFFF;
+}
+
+window#whiskermenu-window > frame > border {
+  border-radius: 18px;
+  padding: 6px 8px 6px 9px;
+  margin: 6px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2), 0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
+}
+
+window#whiskermenu-window box.categories > button.radio {
+  padding: 3px 6px;
+  margin: 1px 0;
+  border-radius: 5px;
+}
+
+window#whiskermenu-window box.categories > button.radio:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+window#whiskermenu-window box.categories > button.radio:checked, window#whiskermenu-window box.categories > button.radio:active {
+  background-color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+window#whiskermenu-window box.categories > button.radio:checked:hover, window#whiskermenu-window box.categories > button.radio:active:hover {
+  background-image: none;
+}
+
+window#whiskermenu-window scrolledwindow.frame {
+  padding: 3px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+window#whiskermenu-window scrolledwindow.frame treeview.view {
+  border-radius: 5px;
+}
+
+window#whiskermenu-window scrolledwindow.frame treeview.view:not(:hover):not(:selected) {
+  background: none;
+}
+
+window#whiskermenu-window scrolledwindow.frame treeview.view:selected:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+window#whiskermenu-window scrolledwindow.frame iconview {
+  border-radius: 5px;
+}
+
+window#whiskermenu-window scrollbar {
+  border: none;
+}
+
+window#whiskermenu-window scrollbar, window#whiskermenu-window scrollbar.dragging, window#whiskermenu-window scrollbar.hovering, window#whiskermenu-window scrollbar.overlay-indicator, window#whiskermenu-window scrollbar.overlay-indicator.dragging, window#whiskermenu-window scrollbar.overlay-indicator.hovering {
+  background-color: transparent;
+}
+
+window#whiskermenu-window .title-area > .commands-area > button.flat.command-button {
+  border-radius: 5px;
+}
+
+window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:checked, window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:active {
+  background-color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.87);
+}
+
 /**********
  * Thunar *
  **********/
@@ -8071,6 +8156,13 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
 
 window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwindow.frame.sidebar.shortcuts-pane treeview.view:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
+}
+
+dialog.xfsm-logout-dialog {
+  box-shadow: none;
+  border: none;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.97);
 }
 
 /************************

@@ -392,6 +392,14 @@ install_theme() {
       done
     done
   done
+
+  if [[ -f "$HOME/.config/xfce4/panel/whiskermenu-7.rc" ]]; then
+    sed -i "s|.*menu-opacity=.*|menu-opacity=0|" "$HOME/.config/xfce4/panel/whiskermenu"*".rc"
+  fi
+
+  if (pgrep xfce4-session &> /dev/null); then
+    xfce4-panel -r
+  fi
 }
 
 uninstall_theme() {
