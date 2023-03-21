@@ -195,11 +195,15 @@ window#whiskermenu-window {
     }
   }
 
-  .sidebar .view:not(:selected) { background-color: transparent; }
+  .sidebar {
+    border: none;
+
+    .view:not(:selected) { background-color: transparent; }
+  }
 
   statusbar {
     margin: 0 -10px;
-    padding: 0 4px;
+    padding: 0 $space-size;
     border-top: 1px solid $divider;
   }
 

@@ -41,7 +41,7 @@
   outline-color: alpha(currentColor, 0.1);
 }
 
-XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover.budgie-menu row.activatable > button.flat:checked, box.vertical > widget > widget:selected, calendar:selected, row:selected, treeview.view:selected, modelbutton.flat:selected,
+XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover.budgie-menu row.activatable > button.flat:checked, box.vertical > widget > widget:selected, row:selected, treeview.view:selected, modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(235, 235, 235, 0.987);
@@ -52,7 +52,7 @@ XfdesktopIconView.view:active, calendar.raven-calendar:selected, .budgie-popover
   background-color: rgba(26, 115, 232, 0.2);
 }
 
-.nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, statuspage.search-view entry.search > window.background treeview.view:selected, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
+.nemo-window .nemo-window-pane widget.entry:selected, window.background.csd evview.view.content-view:selected, window.background.csd evview.view.content-view:selected:backdrop, statuspage.search-view entry.search > window.background treeview.view:selected, calendar:selected, spinbutton.vertical selection, spinbutton:not(.vertical) selection,
 entry selection, label selection, textview text selection:focus, textview text selection, widget.view:selected, .view:selected {
   color: white;
   background-color: #1A73E8;
@@ -1531,7 +1531,7 @@ searchbar > revealer > box {
   background-size: 1000% 1000%;
 }
 
-.solid-csd .titlebar:dir(rtl), .solid-csd .titlebar:dir(ltr) {
+.solid-csd .titlebar, .solid-csd .titlebar:dir(rtl), .solid-csd .titlebar:dir(ltr) {
   border-radius: 0;
   box-shadow: none;
 }
@@ -3378,7 +3378,7 @@ expander title > arrow:disabled {
  * Calendar *
  ************/
 calendar {
-  padding: 1px;
+  padding: 2px 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -3388,13 +3388,18 @@ calendar:disabled {
 }
 
 calendar:selected {
-  border-radius: 11px;
+  border-radius: 5px;
 }
 
 calendar.header {
   border-style: none none solid;
   border-color: rgba(0, 0, 0, 0.12);
   border-radius: 0;
+}
+
+calendar.button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 calendar.highlight {
@@ -3946,7 +3951,7 @@ messagedialog.csd decoration {
 
 .solid-csd decoration {
   margin: 0;
-  padding: 2px;
+  padding: 1px;
   border-radius: 0;
   box-shadow: none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
@@ -8134,6 +8139,10 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 
 .thunar .standard-view.frame > .view {
   border-radius: 10px;
+}
+
+.thunar .sidebar {
+  border: none;
 }
 
 .thunar .sidebar .view:not(:selected) {

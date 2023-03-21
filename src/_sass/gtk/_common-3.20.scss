@@ -1330,7 +1330,7 @@ searchbar > revealer > box {
   }
 
   .solid-csd & {
-    &:dir(rtl), &:dir(ltr) { // specificity bump
+    &, &:dir(rtl), &:dir(ltr) { // specificity bump
       border-radius: 0;
       box-shadow: none; // just remove the highlight
     }
@@ -3205,16 +3205,16 @@ expander {
  * Calendar *
  ************/
 calendar {
-  padding: 1px;
+  padding: $space-size / 2 $space-size;
   border: 1px solid $divider;
   color: $text;
 
   &:disabled { color: $text-disabled; }
 
   &:selected {
-    @extend %selected_items;
+    @extend %selected_items_primary;
 
-    border-radius: $corner-radius + 1px;
+    border-radius: $menuitem-radius;
   }
 
   &.header {
@@ -3223,7 +3223,14 @@ calendar {
     border-radius: 0;
   }
 
-  &.button { @extend %button-flat-simple; }
+  &.button {
+    @extend %button-flat-simple;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
 
   &.highlight {
     color: $text-secondary;
@@ -3859,7 +3866,7 @@ decoration {
 
   .solid-csd & {
     margin: 0;
-    padding: 2px;
+    padding: 1px;
     border-radius: 0;
     box-shadow: none;
     box-shadow: inset 0 1px highlight($titlebar);
