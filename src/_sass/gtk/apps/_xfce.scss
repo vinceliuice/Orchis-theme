@@ -222,9 +222,40 @@ window.background.csd.thunar {
   }
 }
 
+
+/***************
+ * xfsm dialog *
+ ***************/
+
 dialog.xfsm-logout-dialog {
   box-shadow: none;
   border: none;
   border-radius: $window-radius;
   background-color: if($opacity == 'solid', $popover, rgba($popover, 0.97));
+}
+
+
+/**********************
+ * Xfce Notify Window *
+ **********************/
+
+#XfceNotifyWindow {
+  box-shadow: none;
+  border: none;
+  border-radius: $window-radius;
+  color: on(dark, secondary);
+  background-color: rgba(black, 0.75);
+  padding: $space-size;
+
+  buttonbox { padding: 0; }
+
+  button { @extend %button-on-dark; }
+
+  label#summary { font-weight: bold; }
+
+  // progressbar {
+  //   progress { }
+
+  //   trough { }
+  // }
 }

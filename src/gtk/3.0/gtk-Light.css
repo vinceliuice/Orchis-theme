@@ -549,25 +549,25 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   }
 }
 
-.xfce4-panel.background button, .xfce4-panel.background button.flat, .budgie-osd-window .drop-shadow button,
+#XfceNotifyWindow button, .xfce4-panel.background button, .xfce4-panel.background button.flat, .budgie-osd-window .drop-shadow button,
 .budgie-power-dialog .drop-shadow button, .raven-mpris button.image-button, .mate-panel-menu-bar button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.xfce4-panel.background button:focus, .budgie-osd-window .drop-shadow button:focus,
-.budgie-power-dialog .drop-shadow button:focus, .raven-mpris button.image-button:focus, .mate-panel-menu-bar button:focus, infobar.warning > revealer > box button:focus, .xfce4-panel.background button:hover, .budgie-osd-window .drop-shadow button:hover,
-.budgie-power-dialog .drop-shadow button:hover, .raven-mpris button.image-button:hover, .mate-panel-menu-bar button:hover, infobar.warning > revealer > box button:hover, .xfce4-panel.background button:active, .budgie-osd-window .drop-shadow button:active,
-.budgie-power-dialog .drop-shadow button:active, .raven-mpris button.image-button:active, .mate-panel-menu-bar button:active, infobar.warning > revealer > box button:active, .xfce4-panel.background button:checked, .budgie-osd-window .drop-shadow button:checked,
+#XfceNotifyWindow button:focus, .xfce4-panel.background button:focus, .budgie-osd-window .drop-shadow button:focus,
+.budgie-power-dialog .drop-shadow button:focus, .raven-mpris button.image-button:focus, .mate-panel-menu-bar button:focus, infobar.warning > revealer > box button:focus, #XfceNotifyWindow button:hover, .xfce4-panel.background button:hover, .budgie-osd-window .drop-shadow button:hover,
+.budgie-power-dialog .drop-shadow button:hover, .raven-mpris button.image-button:hover, .mate-panel-menu-bar button:hover, infobar.warning > revealer > box button:hover, #XfceNotifyWindow button:active, .xfce4-panel.background button:active, .budgie-osd-window .drop-shadow button:active,
+.budgie-power-dialog .drop-shadow button:active, .raven-mpris button.image-button:active, .mate-panel-menu-bar button:active, infobar.warning > revealer > box button:active, #XfceNotifyWindow button:checked, .xfce4-panel.background button:checked, .budgie-osd-window .drop-shadow button:checked,
 .budgie-power-dialog .drop-shadow button:checked, .raven-mpris button.image-button:checked, .mate-panel-menu-bar button:checked, infobar.warning > revealer > box button:checked {
   color: white;
 }
 
-.xfce4-panel.background button:disabled, .budgie-osd-window .drop-shadow button:disabled,
+#XfceNotifyWindow button:disabled, .xfce4-panel.background button:disabled, .budgie-osd-window .drop-shadow button:disabled,
 .budgie-power-dialog .drop-shadow button:disabled, .raven-mpris button.image-button:disabled, .mate-panel-menu-bar button:disabled, infobar.warning > revealer > box button:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.xfce4-panel.background button:checked:disabled, .budgie-osd-window .drop-shadow button:checked:disabled,
+#XfceNotifyWindow button:checked:disabled, .xfce4-panel.background button:checked:disabled, .budgie-osd-window .drop-shadow button:checked:disabled,
 .budgie-power-dialog .drop-shadow button:checked:disabled, .raven-mpris button.image-button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, infobar.warning > revealer > box button:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -8166,11 +8166,34 @@ window.background.csd.thunar > grid.horizontal > paned.horizontal > scrolledwind
   background-color: transparent;
 }
 
+/***************
+ * xfsm dialog *
+ ***************/
 dialog.xfsm-logout-dialog {
   box-shadow: none;
   border: none;
   border-radius: 18px;
   background-color: rgba(255, 255, 255, 0.97);
+}
+
+/**********************
+ * Xfce Notify Window *
+ **********************/
+#XfceNotifyWindow {
+  box-shadow: none;
+  border: none;
+  border-radius: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 6px;
+}
+
+#XfceNotifyWindow buttonbox {
+  padding: 0;
+}
+
+#XfceNotifyWindow label#summary {
+  font-weight: bold;
 }
 
 /************************
