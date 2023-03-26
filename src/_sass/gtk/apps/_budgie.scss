@@ -847,6 +847,10 @@ image.raven-mpris {
     background: none;
     box-shadow: none;
   }
+
+  .drop-shadow {
+    border-radius: $window-radius + $space-size;
+  }
 }
 
 // Internal part of the OSD

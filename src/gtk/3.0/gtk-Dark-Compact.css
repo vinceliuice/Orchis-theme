@@ -7908,6 +7908,10 @@ image.raven-mpris {
   box-shadow: none;
 }
 
+.budgie-power-dialog .drop-shadow {
+  border-radius: 20px;
+}
+
 .budgie-session-dialog,
 .budgie-polkit-dialog,
 .budgie-run-dialog {
