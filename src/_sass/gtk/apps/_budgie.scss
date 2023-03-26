@@ -664,7 +664,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
     border-style: solid none;
     border-width: 1px;
     border-color: $divider;
-    background-color: transparent;
+    background-color: $base;
 
     // &.middle { border-bottom-style: none; } // applet background between two headers
 
@@ -690,6 +690,8 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       margin-top: 4px;
       margin-bottom: 4px;
     }
+
+    list { background: none; }
 
     list.devices-list.sound-devices {
       > row.activatable {

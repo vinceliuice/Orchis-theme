@@ -7745,7 +7745,7 @@ frame.raven-frame > border {
   border-style: solid none;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.12);
-  background-color: transparent;
+  background-color: #FFFFFF;
 }
 
 .raven .raven-background > overlay > widget > image {
@@ -7773,6 +7773,10 @@ frame.raven-frame > border {
 .raven .audio-widget button.flat.expander-button {
   margin-top: 4px;
   margin-bottom: 4px;
+}
+
+.raven .audio-widget list {
+  background: none;
 }
 
 .raven .audio-widget list.devices-list.sound-devices > row.activatable:selected, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked {
