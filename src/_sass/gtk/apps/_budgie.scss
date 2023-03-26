@@ -495,7 +495,7 @@
 
   // Tasklist
   #tasklist-button {
-    padding: 0 4px;
+    padding: 0 $space-size;
 
     @extend %underscores;
   }
@@ -535,6 +535,39 @@
 
   .lock-keys {
     image:disabled { color: on($panel, secondary-disabled); }
+  }
+
+  // Add padding for panel indicators icons
+  > box > widget > widget {
+    > image, // normal
+    > stack > image, // Screenshot
+    > box > image { // Places
+      margin-left: $space-size;
+      margin-right: $space-size;
+    }
+
+    > box > image + label { // Reset for mailneg
+      margin-left: -$space-size + 2px;
+    }
+
+    > box { // keyboard Layout
+      > widget > image { margin-left: $space-size; }
+      > stack > widget > label { margin-right: $space-size; }
+    }
+
+    > box > widget > widget > image { // Status
+      margin-left: $space-size / 2;
+      margin-right: $space-size / 2;
+    }
+  }
+
+  // Time label
+  .budgie-clock-applet,
+  .budgie-calendar-applet {
+    > widget > box {
+      padding-left: $space-size / 2;
+      padding-right: $space-size / 2;
+    }
   }
 }
 
@@ -826,7 +859,7 @@ image.raven-mpris {
   background-color: $surface;
 
   > box > grid {
-    padding: 24px;
+    padding: $space-size * 4;
   }
 }
 
@@ -860,7 +893,7 @@ image.raven-mpris {
   .failure { color: $destructive; }
 
   > box > grid {
-    padding: 24px 24px 0;
+    padding-bottom: 0;
   }
 }
 

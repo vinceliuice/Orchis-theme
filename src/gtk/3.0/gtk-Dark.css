@@ -7566,7 +7566,7 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel #tasklist-button {
-  padding: 0 4px;
+  padding: 0 6px;
 }
 
 .budgie-panel.vertical #tasklist-button {
@@ -7607,6 +7607,36 @@ MsdOsdWindow.background.osd .progressbar {
 
 .budgie-panel .lock-keys image:disabled {
   color: rgba(255, 255, 255, 0.3);
+}
+
+.budgie-panel > box > widget > widget > image,
+.budgie-panel > box > widget > widget > stack > image,
+.budgie-panel > box > widget > widget > box > image {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > image + label {
+  margin-left: -4px;
+}
+
+.budgie-panel > box > widget > widget > box > widget > image {
+  margin-left: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > stack > widget > label {
+  margin-right: 6px;
+}
+
+.budgie-panel > box > widget > widget > box > widget > widget > image {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.budgie-panel .budgie-clock-applet > widget > box,
+.budgie-panel .budgie-calendar-applet > widget > box {
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button {
@@ -7937,7 +7967,7 @@ image.raven-mpris {
 }
 
 .budgie-polkit-dialog > box > grid {
-  padding: 24px 24px 0;
+  padding-bottom: 0;
 }
 
 .budgie-run-dialog entry.search {

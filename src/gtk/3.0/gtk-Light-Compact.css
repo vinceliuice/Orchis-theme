@@ -7612,6 +7612,36 @@ MsdOsdWindow.background.osd .progressbar {
   color: rgba(0, 0, 0, 0.26);
 }
 
+.budgie-panel > box > widget > widget > image,
+.budgie-panel > box > widget > widget > stack > image,
+.budgie-panel > box > widget > widget > box > image {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.budgie-panel > box > widget > widget > box > image + label {
+  margin-left: -2px;
+}
+
+.budgie-panel > box > widget > widget > box > widget > image {
+  margin-left: 4px;
+}
+
+.budgie-panel > box > widget > widget > box > stack > widget > label {
+  margin-right: 4px;
+}
+
+.budgie-panel > box > widget > widget > box > widget > widget > image {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.budgie-panel .budgie-clock-applet > widget > box,
+.budgie-panel .budgie-calendar-applet > widget > box {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button {
   border-image: radial-gradient(circle closest-corner at center calc(1px), currentColor 0%, transparent 0%) 0 0 0 0/0 0 0 0;
 }
@@ -7891,7 +7921,7 @@ image.raven-mpris {
 .budgie-session-dialog > box > grid,
 .budgie-polkit-dialog > box > grid,
 .budgie-run-dialog > box > grid {
-  padding: 24px;
+  padding: 16px;
 }
 
 .budgie-session-dialog.background.csd, .budgie-session-dialog decoration,
@@ -7940,7 +7970,7 @@ image.raven-mpris {
 }
 
 .budgie-polkit-dialog > box > grid {
-  padding: 24px 24px 0;
+  padding-bottom: 0;
 }
 
 .budgie-run-dialog entry.search {
