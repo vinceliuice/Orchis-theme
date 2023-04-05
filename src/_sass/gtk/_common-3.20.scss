@@ -736,9 +736,9 @@ button.color {
   min-width: $small-size;
   padding: $space-size;
 
-  colorswatch:only-child {
-    // &, overlay { border-radius: 0; }
-  }
+  // colorswatch:only-child {
+  //   &, overlay { border-radius: 0; }
+  // }
 }
 
 
@@ -1295,7 +1295,7 @@ searchbar > revealer > box {
   &.default-decoration {
     min-height: $small-size;
     box-shadow: inset 0 1px highlight($titlebar);
-    border-radius: $corner-radius $corner-radius 0 0;
+    border-radius: $window-radius $window-radius 0 0;
     border: none;
 
     @if $mac_style == 'true' {
@@ -2435,8 +2435,6 @@ switch {
     background-color: $primary;
     color: $primary;
   }
-
-  row:selected & { }
 }
 
 
@@ -3423,11 +3421,6 @@ stacksidebar.sidebar {
 
 separator.sidebar {
   background-color: $divider;
-
-  &.selection-mode,
-  .selection-mode & {
-    // background-color: $divider;
-  }
 }
 
 
@@ -3740,14 +3733,6 @@ colorswatch {
 
   &.light { color: on(light); }
 
-  overlay {
-    // transition: $transition-shadow;
-
-    // &:hover { }
-    //
-    // &:drop(active) { }
-  }
-
   &#add-color-button {
     border-radius: $menu-radius $menu-radius 0 0;
     color: $text;
@@ -3814,9 +3799,9 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 decoration {
-  transition: $transition-shadow;
   border-radius: $window-radius;
   box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+  border: none;
 
   // FIXME rationalize shadows
 
@@ -3829,6 +3814,7 @@ decoration {
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
     box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+    transition: $transition-shadow;
   }
 
   .maximized &,
@@ -3845,6 +3831,11 @@ decoration {
   .ssd & {
     border-radius: $window-radius $window-radius 0 0;
     box-shadow: none; // just doing borders, wm draws actual shadows
+    margin: 0;
+
+    &, &:backdrop {
+      transition: none;
+    }
   }
 
   .csd.popup & {
@@ -3967,12 +3958,12 @@ stackswitcher {
  *************/
 // Outline for low res icons
 .lowres-icon {
-  // -gtk-icon-shadow: none;
+  -gtk-icon-shadow: none;
 }
 
 // Drapshadow for large icons
 .icon-dropshadow {
-  // -gtk-icon-shadow: none;
+  -gtk-icon-shadow: none;
 }
 
 

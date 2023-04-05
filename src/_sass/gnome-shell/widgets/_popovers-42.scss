@@ -125,7 +125,7 @@
 
   // symbolic icons in popover
   .popup-menu-arrow,
-  .popup-menu-icon { icon-size: 16px; }
+  .popup-menu-icon { icon-size: $base-icon-size; }
 
   // popover submenus
   .popup-sub-menu {
@@ -213,11 +213,12 @@
 
     .popup-separator-menu-item-separator {
       height: 1px; // increase visibility with a themed menu
-      margin: $space-size $space-size * 8;
+      margin: $space-size $space-size * 8 $space-size $space-size * 6 !important;
       background-color: $border;
 
       .popup-sub-menu & { //submenu separators
-        margin: $space-size $space-size * 9 $space-size $space-size * 4;
+        margin: $space-size $space-size * 9 $space-size $space-size * 4 !important;
+
         @if $submenu_style == 'false' {
           background-color: rgba(black, 0.10);
         }

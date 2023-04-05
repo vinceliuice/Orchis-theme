@@ -72,9 +72,11 @@
 // expanded folder
 .app-folder-dialog { //style like the dash
   border-radius: $material-radius * 4;
-  border: 0 solid rgba(white, 0.15);
+  border: none;
   background-color: rgba($system, 0.95);
   spacing: 6px;
+  box-shadow: none;
+  outline: none;
 
   .folder-name-container {
     padding: 24px 36px 0;
@@ -125,7 +127,7 @@
       padding: $space-size;
       border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
 
-      > StIcon { icon-size: 16px }
+      > StIcon { icon-size: $base-icon-size }
 
       &:hover { background-color: on(dark, divider); }
       &:checked, &:active { background-color: on(dark, track); }
@@ -161,7 +163,7 @@
 }
 
 StWidget.focused .app-well-app-running-dot {
-  width: 16px;
+  width: $base-icon-size;
   background-color: $primary;
 }
 
@@ -228,26 +230,24 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .page-navigation-arrow {
-  & > StIcon {
-    margin: 6px;
-    padding: 18px;
-    width: 24px;
-    height: 24px;
-    border-radius: $circular-radius;
-    color: on(dark);
-  }
+  margin: 6px;
+  padding: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: $circular-radius;
+  color: on(dark);
 
-  &:insensitive > StIcon {
+  &:insensitive {
     background-color: rgba(white, 0.06);
     color: white;
   }
 
-  &:hover > StIcon {
+  &:hover {
     background-color: rgba(white, 0.12);
     color: white;
   }
 
-  &:active > StIcon {
+  &:active {
     background-color: rgba(white, 0.24);
     color: white;
   }

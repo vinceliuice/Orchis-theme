@@ -13,12 +13,12 @@ StEntry {
   &:focus { @include entry(focus);}
   &:insensitive { @include entry(insensitive);}
   StIcon.capslock-warning {
-    icon-size: 16px;
+    icon-size: $base-icon-size;
     warning-color: $warning;
     padding: 0 0;
   }
   StIcon.peek-password {
-    icon-size: 16px;
+    icon-size: $base-icon-size;
     padding: 0 4px;
   }
   StLabel.hint-text {

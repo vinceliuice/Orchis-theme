@@ -56,7 +56,7 @@
 }
 
 // icons in list
-.nm-dialog-icon { icon-size: 16px; }
+.nm-dialog-icon { icon-size: $base-icon-size; }
 .nm-dialog-icons { spacing: $space-size * 2; }
 
 // no networks

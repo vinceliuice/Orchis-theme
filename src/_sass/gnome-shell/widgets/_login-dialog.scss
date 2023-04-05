@@ -55,7 +55,7 @@
       background-color: on(dark, track);
     }
 
-    StIcon { icon-size: 16px; }
+    StIcon { icon-size: $base-icon-size; }
   }
 
   .caps-lock-warning-label,
@@ -128,7 +128,7 @@
   @include font(title);
   text-align: center;
   font-weight: normal;
-  padding-top: 16px;
+  padding-top: $base-icon-size;
 }
 
 .login-dialog-prompt-layout {

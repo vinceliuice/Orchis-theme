@@ -145,6 +145,7 @@ stage {
   padding: 12px;
 }
 
+/* General Typography */
 /* WIDGETS */
 .shell-link {
   border-radius: 10px;
@@ -281,6 +282,7 @@ StEntry StLabel.hint-text {
 
 .icon-button {
   min-height: 16px;
+  min-width: 16px;
   padding: 12px;
   border-radius: 9999px;
   border: none;
@@ -551,7 +553,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item:checked.selected {
+.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item.selected:checked {
   background-color: rgba(0, 0, 0, 0.2) !important;
   color: rgba(0, 0, 0, 0.85) !important;
 }
@@ -561,7 +563,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-menu .popup-menu-item:checked.selected:active {
+.popup-menu .popup-menu-item.selected:checked:active {
   background-color: rgba(0, 0, 0, 0.15) !important;
   color: rgba(0, 0, 0, 0.75) !important;
 }
@@ -658,12 +660,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
   height: 1px;
-  margin: 6px 48px;
+  margin: 6px 48px 6px 36px !important;
   background-color: rgba(0, 0, 0, 0.12);
 }
 
 .popup-sub-menu .popup-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  margin: 6px 54px 6px 24px;
+  margin: 6px 54px 6px 24px !important;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -1539,6 +1541,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
+.quick-toggle-menu .popup-menu-item:insensitive {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+
 .quick-toggle-menu .popup-menu-item > StIcon {
   -st-icon-style: symbolic;
 }
@@ -1552,6 +1558,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .quick-toggle-menu .popup-menu-item .popup-separator-menu-item-separator {
+  margin: 6px 18px 6px 0 !important;
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -2320,12 +2327,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.12);
 }
 
-#panel .panel-button:hover.clock-display {
+#panel .panel-button.clock-display:hover {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button:hover.clock-display .clock {
+#panel .panel-button.clock-display:hover .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.12);
 }
 
@@ -2334,12 +2341,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
-#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
+#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:focus.clock-display .clock, #panel .panel-button:checked.clock-display .clock {
+#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
@@ -2357,7 +2364,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel .panel-button#panelActivities {
+#panel #panelActivities.panel-button {
   background-image: url("assets/activities.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -2369,15 +2376,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -minimum-hpadding: 3px !important;
 }
 
-#panel .panel-button#panelActivities > * {
+#panel #panelActivities.panel-button > * {
   width: 32px;
 }
 
-#panel .panel-button#panelActivities:hover {
+#panel #panelActivities.panel-button:hover {
   background-image: url("assets/activities-active.svg");
 }
 
-#panel .panel-button#panelActivities:hover, #panel .panel-button#panelActivities:active, #panel .panel-button#panelActivities:overview, #panel .panel-button#panelActivities:focus, #panel .panel-button#panelActivities:checked {
+#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
   color: transparent;
   box-shadow: none;
 }
@@ -2827,9 +2834,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder-dialog {
   border-radius: 40px;
-  border: 0 solid rgba(255, 255, 255, 0.15);
+  border: none;
   background-color: rgba(36, 36, 36, 0.95);
   spacing: 6px;
+  box-shadow: none;
+  outline: none;
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2989,7 +2998,7 @@ StWidget.focused .app-well-app-running-dot {
   border-radius: 0px 15px 15px 0px;
 }
 
-.page-navigation-arrow > StIcon {
+.page-navigation-arrow {
   margin: 6px;
   padding: 18px;
   width: 24px;
@@ -2998,17 +3007,17 @@ StWidget.focused .app-well-app-running-dot {
   color: white;
 }
 
-.page-navigation-arrow:insensitive > StIcon {
+.page-navigation-arrow:insensitive {
   background-color: rgba(255, 255, 255, 0.06);
   color: white;
 }
 
-.page-navigation-arrow:hover > StIcon {
+.page-navigation-arrow:hover {
   background-color: rgba(255, 255, 255, 0.12);
   color: white;
 }
 
-.page-navigation-arrow:active > StIcon {
+.page-navigation-arrow:active {
   background-color: rgba(255, 255, 255, 0.24);
   color: white;
 }

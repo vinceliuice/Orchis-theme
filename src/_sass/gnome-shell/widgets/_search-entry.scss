@@ -16,7 +16,7 @@ $search_entry_width: 320px;
   &:insensitive { @include entry(insensitive); }
 
   .search-entry-icon {
-    icon-size: 16px;
+    icon-size: $base-icon-size;
     padding: 0 4px;
     color: $text-secondary;
   }

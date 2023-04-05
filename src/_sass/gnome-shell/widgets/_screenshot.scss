@@ -101,14 +101,14 @@ $screenshot_ui_button_red: $error;
 
   border-radius: $material-radius - $screenshot_ui_shot_cast_spacing;
 
-  StIcon { icon-size: 16px; }
+  StIcon { icon-size: $base-icon-size; }
 }
 
 .screenshot-ui-show-pointer-button {
   @extend %osd_button;
   border-radius: $circular-radius;
   padding: $space-size * 2 !important;
-  StIcon { icon-size: 16px; }
+  StIcon { icon-size: $base-icon-size; }
 }
 
 .screenshot-ui-area-indicator-shade {

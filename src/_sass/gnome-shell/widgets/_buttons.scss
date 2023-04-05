@@ -17,7 +17,8 @@
 }
 
 .icon-button {
-  min-height: 16px;
+  min-height: $base-icon-size;
+  min-width: $base-icon-size;
   padding: $space-size * 2;
   border-radius: $circular-radius;
   border: none;
@@ -29,5 +30,5 @@
   &:insensitive { @include button(flat-insensitive); }
   &:focus { @include button(flat-focus); }
 
-  & > StIcon { icon-size: 16px; }
+  & > StIcon { icon-size: $base-icon-size; }
 }

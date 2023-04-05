@@ -125,7 +125,7 @@ $submenu_item_radius: $popup-radius - $space-size;
 
 // symbolic icons in popover
 .popup-menu-arrow,
-.popup-menu-icon { icon-size: 16px; }
+.popup-menu-icon { icon-size: $base-icon-size; }
 
 // popover submenus
 .popup-sub-menu {

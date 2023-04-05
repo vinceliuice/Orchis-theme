@@ -74,8 +74,8 @@
 
     // fallback
     > .fallback-app-icon {
-      width: 16px;
-      height: 16px;
+      width: $base-icon-size;
+      height: $base-icon-size;
     }
   }
 
@@ -145,8 +145,8 @@
   &:active { color: $text; background-color: $track; }
   &:insensitive { color: $text-secondary-disabled; }
 
-  &:last-child:ltr { margin-right: 16px !important; }
-  &:last-child:rtl { margin-left: 16px !important; }
+  &:last-child:ltr { margin-right: $base-icon-size !important; }
+  &:last-child:rtl { margin-left: $base-icon-size !important; }
 }
 
 // album-art

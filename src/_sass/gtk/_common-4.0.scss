@@ -700,10 +700,6 @@ button.color {
   min-height: $small-size;
   min-width: $small-size;
   padding: $space-size;
-
-  colorswatch:only-child {
-    // &, overlay { border-radius: 0; }
-  }
 }
 
 %list_button,
@@ -951,8 +947,12 @@ button.combo:only-child {
   border-radius: $corner-radius;
   box-shadow: $shadow-z4, inset 0 1px highlight($surface);
   background-color: $surface;
+  color: $text;
 
-  &:backdrop { box-shadow: $shadow-z2, inset 0 1px highlight($surface); }
+  &:backdrop {
+    box-shadow: $shadow-z2, inset 0 1px highlight($surface);
+    color: $text-disabled;
+  }
 }
 
 /************
@@ -1388,7 +1388,15 @@ headerbar {
     padding: $space-size;
     background-image: none;
     background-color: $titlebar;
-    box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
+    border-radius: $window-radius $window-radius 0 0;
+    box-shadow: inset 0 1px highlight($titlebar);
+
+    .tiled &,
+    .maximized &,
+    .fullscreen & {
+      box-shadow: none;
+      border-radius: 0;
+    }
 
     windowcontrols {
       button,
@@ -2435,8 +2443,6 @@ switch {
     background-color: $primary;
     color: $primary;
   }
-
-  row:selected & { }
 }
 
 
@@ -3488,10 +3494,11 @@ list.boxed-list {
  *********************/
 .app-notification {
   @extend %toolbar_osd;
-  margin: 8px;
+  margin: $space-size * 1.5;
   border-spacing: $space-size * 1.5;
   padding: $space-size * 1.5;
   border: none;
+  background-image: none;
 
   button {
     @extend %button-flat;
@@ -4253,24 +4260,16 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 window {
-  outline: none;
-  padding: 0;
-  margin: 0;
+  border: none;
 
   &.csd {
+    outline: none;
+    padding: 0;
+    margin: 0;
     border-radius: $window-radius;
     box-shadow: $shadow-z16,
-                0 16px (24px * .6) 2px transparent,
-                0 6px (30px * .6) 5px transparent,
+                0 0 0 100px transparent,
                 inset 0 1px highlight($titlebar);
-
-    &.maximized,
-    &.fullscreen,
-    &.tiled,
-    &.tiled-top,
-    &.tiled-right,
-    &.tiled-bottom,
-    &.tiled-left { border-radius: 0; }
 
     @if $topbar == 'dark' {
       &.background {
@@ -4290,8 +4289,7 @@ window {
       // or the jumping will happen during the transition.
       transition: $transition-shadow;
       box-shadow: $shadow-z4,
-                  0 16px (24px * .6) 2px transparent,
-                  0 6px (30px * .6) 5px transparent,
+                  0 0 0 100px transparent,
                   inset 0 1px highlight($titlebar);
 
       @if $topbar == 'dark' {
@@ -4310,16 +4308,14 @@ window {
       background-color: $surface;
       background-image: none;
       box-shadow: $shadow-z16,
-                  0 16px (24px * .6) 2px transparent,
-                  0 6px (30px * .6) 5px transparent,
+                  0 0 0 100px transparent,
                   inset 0 1px highlight($titlebar);
 
       &:backdrop {
         background-color: $background;
         background-image: none;
         box-shadow: $shadow-z4,
-                    0 16px (24px * .6) 2px transparent,
-                    0 6px (30px * .6) 5px transparent,
+                    0 0 0 100px transparent,
                     inset 0 1px highlight($titlebar);
       }
     }
@@ -4332,10 +4328,23 @@ window {
         }
       }
     }
-  }
 
-  &.ssd {
-    box-shadow: none; // just doing borders, wm draws actual shadows
+    &.tiled,
+    &.tiled-top,
+    &.tiled-left,
+    &.tiled-right,
+    &.tiled-bottom {
+      border-radius: 0;
+      outline: none;
+    }
+  
+    &.maximized,
+    &.fullscreen {
+      border-radius: 0;
+      outline: none;
+      box-shadow: none;
+      transition: none;
+    }
   }
 
   &.solid-csd {
