@@ -659,9 +659,9 @@ button:drop(active) {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-session-dialog .linked.horizontal > button,
+.budgie-settings-window buttonbox.inline-toolbar button, .budgie-session-dialog .linked.horizontal > button,
 .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, .nautilus-window.background.csd notebook > header tab button.flat, .nautilus-window.background.csd notebook > header tab:checked button.flat, .nautilus-window.background.csd notebook > header tab:active button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, row button.circular, check,
+.budgie-run-dialog .linked.horizontal > button, .drop-shadow button, .budgie-panel button, .budgie-popover row button, #mate-menu button, #MatePanelPopupWindow button, popover.messagepopover .popover-action-area button, tabbox > tab button, .gedit-search-slider .linked > button, .nautilus-window.background.csd notebook > header tab button.flat, .nautilus-window.background.csd notebook > header tab:checked button.flat, .nautilus-window.background.csd notebook > header tab:active button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button, placessidebar.sidebar row button.sidebar-button, calendar.button, row button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
 .menuitem.button.flat, .nemo-window .toolbar button, #buttonbox_frame button, .xfce4-panel.background button, .xfce4-panel.background button.flat, .raven stackswitcher.linked > button, .lock-dialog button, .mate-panel-menu-bar button, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button, layouttabbar button, filechooser #pathbarbox > stack > box > button, messagedialog.csd .dialog-action-box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action), .caja-pathbar button,
@@ -677,9 +677,9 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
   color: rgba(0, 0, 0, 0.6);
 }
 
-.budgie-session-dialog .linked.horizontal > button:focus,
+.budgie-settings-window buttonbox.inline-toolbar button:focus, .budgie-session-dialog .linked.horizontal > button:focus,
 .budgie-polkit-dialog .linked.horizontal > button:focus,
-.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-panel button:focus, .budgie-popover row button:focus, .budgie-settings-window buttonbox.inline-toolbar button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, .nautilus-window.background.csd notebook > header tab button.flat:focus, .nautilus-window.background.csd notebook > header tab:checked button.flat:focus, .nautilus-window.background.csd notebook > header tab:active button.flat:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, row button.circular:focus, check:focus,
+.budgie-run-dialog .linked.horizontal > button:focus, .drop-shadow button:focus, .budgie-panel button:focus, .budgie-popover row button:focus, #mate-menu button:focus, #MatePanelPopupWindow button:focus, popover.messagepopover .popover-action-area button:focus, tabbox > tab button:focus, .gedit-search-slider .linked > button:focus, .nautilus-window.background.csd notebook > header tab button.flat:focus, .nautilus-window.background.csd notebook > header tab:checked button.flat:focus, .nautilus-window.background.csd notebook > header tab:active button.flat:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:focus, placessidebar.sidebar row button.sidebar-button:focus, calendar.button:focus, row button.circular:focus, check:focus,
 radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, spinbutton.vertical button:focus, spinbutton:not(.vertical) button:focus, modelbutton.flat:focus,
 .menuitem.button.flat:focus, .nemo-window .toolbar button:focus, #buttonbox_frame button:focus, .xfce4-panel.background button:focus, .raven stackswitcher.linked > button:focus, .lock-dialog button:focus, .mate-panel-menu-bar button:focus, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:focus, layouttabbar button:focus, filechooser #pathbarbox > stack > box > button:focus, messagedialog.csd .dialog-action-box button:focus, .app-notification button:focus, actionbar > revealer > box button:focus:not(.suggested-action):not(.destructive-action), .caja-pathbar button:focus,
@@ -688,9 +688,9 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
   color: rgba(0, 0, 0, 0.87);
 }
 
-.budgie-session-dialog .linked.horizontal > button:hover,
+.budgie-settings-window buttonbox.inline-toolbar button:hover, .budgie-session-dialog .linked.horizontal > button:hover,
 .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-panel button:hover, .budgie-popover row button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, .nautilus-window.background.csd notebook > header tab button.flat:hover, .nautilus-window.background.csd notebook > header tab:checked button.flat:hover, .nautilus-window.background.csd notebook > header tab:active button.flat:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, row button.circular:hover, check:hover,
+.budgie-run-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .budgie-panel button:hover, .budgie-popover row button:hover, #mate-menu button:hover, #MatePanelPopupWindow button:hover, popover.messagepopover .popover-action-area button:hover, tabbox > tab button:hover, .gedit-search-slider .linked > button:hover, .nautilus-window.background.csd notebook > header tab button.flat:hover, .nautilus-window.background.csd notebook > header tab:checked button.flat:hover, .nautilus-window.background.csd notebook > header tab:active button.flat:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:hover, placessidebar.sidebar row button.sidebar-button:hover, calendar.button:hover, row button.circular:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
 .menuitem.button.flat:hover, .nemo-window .toolbar button:hover, #buttonbox_frame button:hover, .xfce4-panel.background button:hover, .raven stackswitcher.linked > button:hover, .lock-dialog button:hover, .mate-panel-menu-bar button:hover, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:hover, layouttabbar button:hover, filechooser #pathbarbox > stack > box > button:hover, messagedialog.csd .dialog-action-box button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action), .caja-pathbar button:hover,
@@ -699,9 +699,9 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
   color: rgba(0, 0, 0, 0.87);
 }
 
-.budgie-session-dialog .linked.horizontal > button:active,
+.budgie-settings-window buttonbox.inline-toolbar button:active, .budgie-session-dialog .linked.horizontal > button:active,
 .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-panel button:active, .budgie-popover row button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, .nautilus-window.background.csd notebook > header tab button.flat:active, .nautilus-window.background.csd notebook > header tab:checked button.flat:active, .nautilus-window.background.csd notebook > header tab:active button.flat:active, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, row button.circular:active, check:active,
+.budgie-run-dialog .linked.horizontal > button:active, .drop-shadow button:active, .budgie-panel button:active, .budgie-popover row button:active, #mate-menu button:active, #MatePanelPopupWindow button:active, popover.messagepopover .popover-action-area button:active, tabbox > tab button:active, .gedit-search-slider .linked > button:active, .nautilus-window.background.csd notebook > header tab button.flat:active, .nautilus-window.background.csd notebook > header tab:checked button.flat:active, .nautilus-window.background.csd notebook > header tab:active button.flat:active, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:active, placessidebar.sidebar row button.sidebar-button:active, calendar.button:active, row button.circular:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
 .menuitem.button.flat:active, .nemo-window .toolbar button:active, #buttonbox_frame button:active, .xfce4-panel.background button:active, .raven stackswitcher.linked > button:active, .lock-dialog button:active, .mate-panel-menu-bar button:active, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:active, layouttabbar button:active, filechooser #pathbarbox > stack > box > button:active, messagedialog.csd .dialog-action-box button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action), .caja-pathbar button:active,
@@ -714,9 +714,9 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
   color: rgba(0, 0, 0, 0.87);
 }
 
-.budgie-session-dialog .linked.horizontal > button:disabled,
+.budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-session-dialog .linked.horizontal > button:disabled,
 .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-panel button:disabled, .budgie-popover row button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, .nautilus-window.background.csd notebook > header tab button.flat:disabled, .nautilus-window.background.csd notebook > header tab:checked button.flat:disabled, .nautilus-window.background.csd notebook > header tab:active button.flat:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, row button.circular:disabled, check:disabled,
+.budgie-run-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .budgie-panel button:disabled, .budgie-popover row button:disabled, #mate-menu button:disabled, #MatePanelPopupWindow button:disabled, popover.messagepopover .popover-action-area button:disabled, tabbox > tab button:disabled, .gedit-search-slider .linked > button:disabled, .nautilus-window.background.csd notebook > header tab button.flat:disabled, .nautilus-window.background.csd notebook > header tab:checked button.flat:disabled, .nautilus-window.background.csd notebook > header tab:active button.flat:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable:selected button.sidebar-button:disabled, placessidebar.sidebar row button.sidebar-button:disabled, calendar.button:disabled, row button.circular:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, .nemo-window .toolbar button:disabled, #buttonbox_frame button:disabled, .xfce4-panel.background button:disabled, .raven stackswitcher.linked > button:disabled, .lock-dialog button:disabled, .mate-panel-menu-bar button:disabled, window.background.csd.geary-main-window stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled,
 window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded > .geary-composer-embed headerbar button:disabled, layouttabbar button:disabled, filechooser #pathbarbox > stack > box > button:disabled, messagedialog.csd .dialog-action-box button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action), .caja-pathbar button:disabled,
@@ -7078,23 +7078,6 @@ MsdOsdWindow.background.osd .progressbar {
   background-color: transparent;
 }
 
-.budgie-settings-window > box > scrolledwindow {
-  background-color: #FAFAFA;
-  border-bottom-left-radius: 16px;
-}
-
-.budgie-settings-window > box > scrolledwindow list.sidebar {
-  background-color: transparent;
-}
-
-.budgie-settings-window buttonbox.inline-toolbar {
-  border-style: none none solid;
-}
-
-.budgie-settings-window buttonbox.inline-toolbar button {
-  border-radius: 10px;
-}
-
 .budgie-popover {
   border: none;
   border-radius: 10px;
@@ -7995,6 +7978,35 @@ image.raven-mpris {
 
 .budgie-run-dialog scrolledwindow {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.budgie-settings-window > box > scrolledwindow {
+  background-color: #FAFAFA;
+  border-bottom-left-radius: 16px;
+}
+
+.budgie-settings-window > box > scrolledwindow list.sidebar {
+  background-color: transparent;
+}
+
+.budgie-settings-window buttonbox.inline-toolbar {
+  border-style: none none solid;
+}
+
+.budgie-settings-window buttonbox.inline-toolbar button {
+  border-radius: 10px;
+}
+
+button.centerbutton {
+  border-radius: 10px;
+}
+
+button.centerbutton:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+button.centerbutton:last-child {
+  border-radius: 0 10px 10px 0;
 }
 
 /**************

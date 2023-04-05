@@ -8,28 +8,6 @@
 // this transparent..
 .budgie-container { background-color: transparent; }
 
-// Budgie setting
-.budgie-settings-window {
-  > box > scrolledwindow {
-    background-color: $base-alt;
-    border-bottom-left-radius: $window-radius;
-
-    list.sidebar {
-      background-color: transparent;
-    }
-  }
-
-  buttonbox.inline-toolbar {
-    border-style: none none solid;
-
-    button {
-      border-radius: $corner-radius;
-
-      @extend %button-flat-simple;
-    }
-  }
-}
-
 // Budgie popover
 .budgie-popover {
   border: none;
@@ -916,4 +894,40 @@ image.raven-mpris {
   list .dim-label { color: $text; }
 
   scrolledwindow { border-top: 1px solid $divider; }
+}
+
+//
+// Budgie desktop apps
+//
+
+// Budgie setting
+.budgie-settings-window {
+  > box > scrolledwindow {
+    background-color: $base-alt;
+    border-bottom-left-radius: $window-radius;
+
+    list.sidebar {
+      background-color: transparent;
+    }
+  }
+
+  buttonbox.inline-toolbar {
+    border-style: none none solid;
+
+    button {
+      border-radius: $corner-radius;
+
+      @extend %button-flat-simple;
+    }
+  }
+}
+
+button.centerbutton { // FIXME: not work
+  &:first-child {
+    border-radius: $corner-radius 0 0 $corner-radius;
+  }
+
+  &:last-child {
+    border-radius: 0 $corner-radius $corner-radius 0;
+  }
 }
