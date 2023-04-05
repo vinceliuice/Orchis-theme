@@ -322,9 +322,14 @@ if [[ ${remove} == 'true' ]]; then
     uninstall_theme
   fi
 else
+  if [[ "$libadwaita" == 'true' && "$UID" == "$ROOT_UID" ]]; then
+    echo -e "Do not run -l with sudo, that will link libadwaita theme to root folder !"
+    exit 0
+  fi
+
   install_theme
 
-  if [[ "$libadwaita" == 'true' ]]; then
+  if [[ "$libadwaita" == 'true' && "$UID" != "$ROOT_UID" ]]; then
     link_theme
   fi
 fi

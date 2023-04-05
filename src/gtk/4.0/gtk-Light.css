@@ -5435,6 +5435,10 @@ button.colorpad:checked {
   filter: brightness(100%);
 }
 
+window#desktopwindow {
+  background: none;
+}
+
 avatar {
   border-radius: 9999px;
   font-weight: bold;

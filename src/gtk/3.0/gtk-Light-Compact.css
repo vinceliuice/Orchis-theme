@@ -7997,10 +7997,6 @@ image.raven-mpris {
   border-radius: 10px;
 }
 
-button.centerbutton {
-  border-radius: 10px;
-}
-
 button.centerbutton:first-child {
   border-radius: 10px 0 0 10px;
 }

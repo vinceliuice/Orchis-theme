@@ -775,26 +775,30 @@ window.dialog {
 }
 
 button.colorpad {
-    padding: 0px;
-    margin: 0px;
-    background-blend-mode: screen;
-    background-image:
-        linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55),
-        linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
-    background-color: gtkcolor(colorpad_color);
-    color:  gtkcolor(colorpad_fg_color);
-    background-size: 18px 18px;
-    background-position: 0px 0px, 9px 9px;
+  padding: 0px;
+  margin: 0px;
+  background-blend-mode: screen;
+  background-image:
+      linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55),
+      linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
+  background-color: gtkcolor(colorpad_color);
+  color:  gtkcolor(colorpad_fg_color);
+  background-size: 18px 18px;
+  background-position: 0px 0px, 9px 9px;
 
-    &:hover {
-        filter: brightness(93%);
-    }
+  &:hover {
+      filter: brightness(93%);
+  }
 
-    &:active {
-        filter: brightness(86%);
-    }
+  &:active {
+      filter: brightness(86%);
+  }
 
-    &:checked {
-        filter: brightness(100%);
-    }
+  &:checked {
+      filter: brightness(100%);
+  }
+}
+
+window#desktopwindow {
+  background: none;
 }
