@@ -230,26 +230,24 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .page-navigation-arrow {
-  & > StIcon {
-    margin: 6px;
-    padding: 18px;
-    width: 24px;
-    height: 24px;
-    border-radius: $circular-radius;
-    color: on(dark);
-  }
+  margin: 6px;
+  padding: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: $circular-radius;
+  color: on(dark);
 
-  &:insensitive > StIcon {
+  &:insensitive {
     background-color: rgba(white, 0.06);
     color: white;
   }
 
-  &:hover > StIcon {
+  &:hover {
     background-color: rgba(white, 0.12);
     color: white;
   }
 
-  &:active > StIcon {
+  &:active {
     background-color: rgba(white, 0.24);
     color: white;
   }

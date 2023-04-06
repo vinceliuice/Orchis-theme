@@ -2,7 +2,7 @@
 
 // overall menu
 #calendarArea {
-  padding: $space-size * 2 0;
+  padding: $space-size 0;
 }
 
 .calendar {
@@ -18,16 +18,16 @@
 // Calendar menu side column
 .datemenu-calendar-column {
   spacing: $space-size;
-  border: 0 solid $border;
-  padding: 0 $space-size;
+  border: none;
+  padding: 0 !important;
   color: $text-secondary;
 
   &:hover, &:focus { color: $text; background-color: $secondary-fill; }
 
   &:active { color: $text; background-color: $track; }
 
-  &:ltr { margin-right: $space-size + 2px; border-left-width: 0; }
-  &:rtl { margin-left: $space-size + 2px; border-right-width: 0; }
+  &:ltr { margin-right: $space-size; border-left-width: 0; }
+  &:rtl { margin-left: $space-size; border-right-width: 0; }
 
   .datemenu-displays-box {
     spacing: $space-size;
@@ -117,7 +117,10 @@
   font-feature-settings: "tnum";
   text-shadow: none;
 
-  &:hover, &:focus { background-color: $secondary-fill; }
+  &:hover, &:focus {
+    background-color: $secondary-fill;
+    box-shadow: none;
+  }
 
   &:active {
     color: $text-secondary;
