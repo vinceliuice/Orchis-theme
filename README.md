@@ -76,6 +76,12 @@ OPTIONS:
 
 > For more information, run: `./install.sh -h`
 
+## Tweaks for Orchis
+
+![libadwaita](images/libadwaita.png?raw=true)
+
+![tweaks-view](images/tweaks-view.png?raw=true)
+
 ### Fix for libadwaita (Gnome-shell >= 42.0)
 
 run: `./install.sh -l` (Default light version will installed)
@@ -93,12 +99,6 @@ if you want install other theme version for libadwaita you can run like:
 ```
 
 and so on ... 
-
-### Tweaks for Orchis
-
-![libadwaita](images/libadwaita.png?raw=true)
-
-![tweaks-view](images/tweaks-view.png?raw=true)
 
 ### Flatpak Installation
 
