@@ -82,7 +82,7 @@ run: `./install.sh -l` (Default light version will installed)
 
 This fix is just a link from selected Ochis gtk-4.0 theme in `$HOME/.theme` to `$HOME/.config/gtk-4.0/gtk.css`
 so it will not support change theme through `Gnome-tweaks`
-if you want install other theme version for libadwaita you can run:
+if you want install other theme version for libadwaita you can run like:
 
 ```sh
 ./install.sh -c dark -l #(Link dark version)
@@ -92,7 +92,9 @@ if you want install other theme version for libadwaita you can run:
 ./install.sh -c dark -t purple -l #(Link dark purple version)
 ```
 
-...
+and so on ... 
+
+### Tweaks for Orchis
 
 ![libadwaita](images/libadwaita.png?raw=true)
 
