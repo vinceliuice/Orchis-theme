@@ -1,7 +1,10 @@
 # Orchis theme
 
 Orchis is a [Material Design](https://material.io) theme for GNOME/GTK based desktop environments.
+
 Based on nana-4 -- [materia-theme](https://github.com/nana-4/materia-theme)
+
+![screenshot](images/screenshot.png?raw=true)
 
 ## Requirements
 
@@ -76,9 +79,9 @@ OPTIONS:
 
 run: `./install.sh -l`
 
-![1](images/libadwaita.png?raw=true)
+![libadwaita](images/libadwaita.png?raw=true)
 
-![1](images/tweaks-view.png?raw=true)
+![tweaks-view](images/tweaks-view.png?raw=true)
 
 ### Flatpak Installation
 
@@ -105,4 +108,4 @@ flatpak override --filesystem=xdg-config/gtk-4.0
 ![Firefox-theme](src/firefox/preview02.png?raw=true)
 
 ## Preview
-![1](images/preview.jpg?raw=true)
+![preview](images/preview.jpg?raw=true)
