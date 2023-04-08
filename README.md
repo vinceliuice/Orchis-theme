@@ -78,11 +78,11 @@ OPTIONS:
 
 ## Tweaks for Orchis
 
-![libadwaita](images/libadwaita.png?raw=true)
-
 ![tweaks-view](images/tweaks-view.png?raw=true)
 
 ### Fix for libadwaita (Gnome-shell >= 42.0)
+
+![libadwaita](images/libadwaita.png?raw=true)
 
 run: `./install.sh -l` (Default light version will installed)
 
