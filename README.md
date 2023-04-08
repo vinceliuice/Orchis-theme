@@ -62,10 +62,11 @@ OPTIONS:
                           ...
                           13. 15px
 
-  --shell                 install gnome-shell version [38|40|42]
+  --shell                 install gnome-shell version [38|40|42|44]
                           1. 38:                 Gnome-shell version < 40.0
                           2. 40:                 Gnome-shell version = 40.0
-                          3. 42:                 Gnome-shell version >= 42.0
+                          3. 42:                 Gnome-shell version = 42.0
+                          4. 44:                 Gnome-shell version >= 44.0
 
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes
