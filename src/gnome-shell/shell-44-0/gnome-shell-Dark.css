@@ -1788,9 +1788,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
-  border-width: 1px 0 0 0;
-  border-color: rgba(255, 255, 255, 0.08);
-  border-style: solid;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
 .notification-banner .notification-button:first-child {

@@ -28,9 +28,7 @@ $notification_banner_width: 34em;
     background-color: transparent;
     color: $text-secondary;
     font-weight: 500;
-    border-width: 1px 0 0 0;
-    border-color: $secondary-fill;
-    border-style: solid;
+    border-top: 1px solid $border !important;
 
     &:first-child { border-radius: 0 0 0 $material-radius; }
 
