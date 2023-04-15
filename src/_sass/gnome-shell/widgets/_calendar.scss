@@ -2,7 +2,7 @@
 
 // overall menu
 #calendarArea {
-  padding: $space-size 0;
+  padding: $space-size + 2px 0 !important;
 }
 
 .calendar {
@@ -20,14 +20,28 @@
   spacing: $space-size;
   border: none;
   padding: 0 !important;
+  margin: 0 !important;
   color: $text-secondary;
 
   &:hover, &:focus { color: $text; background-color: $secondary-fill; }
 
   &:active { color: $text; background-color: $track; }
 
-  &:ltr { margin-right: $space-size; border-left-width: 0; }
-  &:rtl { margin-left: $space-size; border-right-width: 0; }
+  &:ltr {
+    margin-right: $space-size !important;
+    margin-left: $space-size + 6px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left-width: 0;
+  }
+
+  &:rtl {
+    margin-left: $space-size !important;
+    margin-right: $space-size + 6px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-right-width: 0;
+  }
 
   .datemenu-displays-box {
     spacing: $space-size;
@@ -198,7 +212,7 @@
 
 .calendar-week-number {
   margin: 6px !important;
-  padding: 0 $space-size + 2px !important;
+  padding: 0 8px !important;
   border-radius: $circular-radius;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $text-disabled;

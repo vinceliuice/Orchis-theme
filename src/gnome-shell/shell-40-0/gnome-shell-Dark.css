@@ -648,7 +648,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Date/Time Menu */
 #calendarArea {
-  padding: 6px 0;
+  padding: 8px 0 !important;
 }
 
 .calendar {
@@ -665,6 +665,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 6px;
   border: none;
   padding: 0 !important;
+  margin: 0 !important;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -679,12 +680,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .datemenu-calendar-column:ltr {
-  margin-right: 6px;
+  margin-right: 6px !important;
+  margin-left: 12px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border-left-width: 0;
 }
 
 .datemenu-calendar-column:rtl {
-  margin-left: 6px;
+  margin-left: 6px !important;
+  margin-right: 12px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border-right-width: 0;
 }
 
@@ -1057,12 +1064,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-list-sections:ltr {
-  margin-right: 12px;
+  margin-right: 4px;
   padding-left: 6px;
 }
 
 .message-list-sections:rtl {
-  margin-left: 12px;
+  margin-left: 4px;
   padding-right: 6px;
 }
 
@@ -1218,7 +1225,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 12px;
   color: rgba(255, 255, 255, 0.5);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   icon-size: 24px !important;
 }
 

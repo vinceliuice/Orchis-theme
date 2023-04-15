@@ -32,8 +32,8 @@
   padding-bottom: $space-size;
 
   // to account for scrollbar
-  &:ltr { margin-right: $margin-size * 3; padding-left: $space-size; }
-  &:rtl { margin-left: $margin-size * 3; padding-right: $space-size; }
+  &:ltr { margin-right: $margin-size; padding-left: $space-size; }
+  &:rtl { margin-left: $margin-size; padding-right: $space-size; }
 }
 
 .message-list-section,
@@ -166,7 +166,7 @@
     padding: $space-size * 2;
     color: $text-disabled;
     border: none;
-    border-radius: $material-radius;
+    border-radius: $menuitem-radius;
     icon-size: 24px !important;
   }
 }
