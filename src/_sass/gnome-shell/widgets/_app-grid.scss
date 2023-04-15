@@ -2,7 +2,7 @@
 
 %icon_tile {
   color: on(dark);
-  border-radius: $material-radius * 1.5;
+  border-radius: $material-radius * 2;
   padding: $space-size * 2;
   border: none;
   transition-duration: $longer-duration;
@@ -60,12 +60,16 @@
   border-radius: $material-radius * 2;
 
   .overview-icon {
-    background-color: on(dark, divider);
+    background-color: on(dark, fill);
     border-radius: $material-radius * 2;
   }
 
   &:hover .overview-icon {
     background-color: on(dark, divider);
+  }
+
+  &:active .overview-icon {
+    background-color: on(dark, track);
   }
 }
 
