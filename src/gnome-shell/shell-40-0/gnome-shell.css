@@ -3591,8 +3591,8 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer .notification-badge {
-  min-width: 1.2em;
-  min-height: 1.2em;
+  min-width: 16px;
+  min-height: 16px;
   color: white;
   background-color: #1A73E8;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
