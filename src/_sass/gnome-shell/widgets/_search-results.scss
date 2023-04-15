@@ -9,7 +9,7 @@
 // search results sections "the boxes"
 .search-section {
   // This should be equal to #searchResultsContent spacing
-  spacing: $margin-size * 2;
+  spacing: $margin-size * 3;
 
   // separator
   .search-section-separator {
@@ -58,7 +58,8 @@
 }
 
 .grid-search-results {
-  spacing: $space-size * 6;
+  spacing: $space-size * 5;
+  margin: 0 $margin-size * 3;
 }
 
 // Search results with icons

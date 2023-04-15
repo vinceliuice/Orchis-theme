@@ -583,7 +583,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item:checked.selected {
   background-color: rgba(0, 0, 0, 0.2) !important;
   color: rgba(0, 0, 0, 0.85) !important;
 }
@@ -593,7 +593,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.popup-menu .popup-menu-item.selected:checked:active {
+.popup-menu .popup-menu-item:checked.selected:active {
   background-color: rgba(0, 0, 0, 0.15) !important;
   color: rgba(0, 0, 0, 0.75) !important;
 }
@@ -1469,17 +1469,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-toggle:checked {
   background-color: #1A73E8 !important;
-  color: white;
+  color: white !important;
 }
 
 .quick-toggle:checked:hover {
   background-color: rgba(24, 106, 214, 0.987) !important;
-  color: white;
+  color: white !important;
 }
 
 .quick-toggle:checked:active {
   background-color: rgba(22, 96, 195, 0.974) !important;
-  color: white;
+  color: white !important;
 }
 
 .quick-toggle > StBoxLayout {
@@ -1758,7 +1758,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-height: 64px;
   width: 34em;
   font-size: 1em;
-  margin: 5px;
+  margin: 8px 8px 12px;
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(255, 255, 255, 0.92);
@@ -2459,12 +2459,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.12);
 }
 
-#panel .panel-button.clock-display:hover {
+#panel .panel-button:hover.clock-display {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button.clock-display:hover .clock {
+#panel .panel-button:hover.clock-display .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.12);
 }
 
@@ -2473,12 +2473,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
-#panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
   box-shadow: none;
   background-color: transparent;
 }
 
-#panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+#panel .panel-button:active.clock-display .clock, #panel .panel-button:overview.clock-display .clock, #panel .panel-button:focus.clock-display .clock, #panel .panel-button:checked.clock-display .clock {
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
 }
 
@@ -2496,7 +2496,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-#panel #panelActivities.panel-button {
+#panel .panel-button#panelActivities {
   background-image: url("assets/activities-small.svg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -2508,15 +2508,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -minimum-hpadding: 2px !important;
 }
 
-#panel #panelActivities.panel-button > * {
+#panel .panel-button#panelActivities > * {
   width: 30px;
 }
 
-#panel #panelActivities.panel-button:hover {
+#panel .panel-button#panelActivities:hover {
   background-image: url("assets/activities-active-small.svg");
 }
 
-#panel #panelActivities.panel-button:hover, #panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
+#panel .panel-button#panelActivities:hover, #panel .panel-button#panelActivities:active, #panel .panel-button#panelActivities:overview, #panel .panel-button#panelActivities:focus, #panel .panel-button#panelActivities:checked {
   color: transparent;
   box-shadow: none;
 }
@@ -2754,7 +2754,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .search-section {
-  spacing: 4px;
+  spacing: 6px;
 }
 
 .search-section .search-section-separator {
@@ -2789,7 +2789,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .grid-search-results {
-  spacing: 24px;
+  spacing: 20px;
+  margin: 0 6px;
 }
 
 .search-provider-icon .list-search-provider-content {
