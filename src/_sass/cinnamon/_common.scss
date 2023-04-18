@@ -5,8 +5,6 @@
 
 $asset_path: assets;
 $font-size: 9;
-$panel_bg: rgba($panel-solid, 0.75);
-$panel_fg: on($panel-solid, secondary);
 
 stage {
   // @include fontsize($font-size);
@@ -467,10 +465,10 @@ $menu_radius: $corner-radius + $space-size;
 
 .panel {
   &-top, &-bottom, &-left, &-right {
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
     font-size: 1em;
     padding: 0px;
-    background-color: $panel_bg;
+    background-color: $panel;
     box-shadow: 0 0 5px rgba(#000, 0.5), 0 0 16px rgba(#000, 0.24);
 
     .panel-button,
@@ -499,7 +497,7 @@ $menu_radius: $corner-radius + $space-size;
     -minimum-hpadding: 3px;
     font-weight: bold;
     height: 22px;
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
   }
 
   &-button {
@@ -507,7 +505,7 @@ $menu_radius: $corner-radius + $space-size;
     -minimum-hpadding: 2px;
     font-weight: bold;
     transition-duration: 100ms;
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
   }
 }
 
@@ -1115,7 +1113,7 @@ $menu_radius: $corner-radius + $space-size;
 
   &:highlighted {
     border-color: rgba(0,0,0,0);
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
   }
 }
 
@@ -1157,8 +1155,8 @@ $menu_radius: $corner-radius + $space-size;
   color: on($tooltip);
   background-color: rgba(darken($tooltip, 3%), 0.95);
   border: 1px solid rgba(black, 0.65);
-  padding: 0 5px 6px 5px;
-  border-radius: $corner-radius;
+  padding: 0 $space-size $space-size;
+  border-radius: $window-radius;
   box-shadow: 0 3px 8px rgba(black, 0.75), 0 5px 18px rgba(black, 0.55);
 
   > StBoxLayout:first-child {
@@ -1188,7 +1186,7 @@ $menu_radius: $corner-radius + $space-size;
 .run-dialog {
   padding: $space-size $space-size * 2;
   background-color: $tooltip;
-  border-radius: $corner-radius;
+  border-radius: $window-radius;
   color: on($tooltip);
 
   > * { padding: 0; }
@@ -1204,7 +1202,7 @@ $menu_radius: $corner-radius + $space-size;
 
   &-error-box {
     padding-top: 15px;
-    spacing: 5px;
+    spacing: $space-size;
   }
 
   &-completion-box {
@@ -1510,8 +1508,8 @@ $menu_radius: $corner-radius + $space-size;
   font-weight: bold;
   spacing: 1em;
   padding: 16px;
-  color: $panel_fg;
-  background-color: $panel_bg;
+  color: on($panel-solid, secondary);
+  background-color: $panel;
 }
 
 .osd-window {
@@ -1521,9 +1519,9 @@ $menu_radius: $corner-radius + $space-size;
   padding: 20px;
   min-width: 64px;
   min-height: 64px;
-  color: $panel_fg;
-  border-radius: 0;
-  background-color: $panel_bg;
+  color: on($panel-solid, secondary);
+  border-radius: $window-radius;
+  background-color: $panel;
   border: none;
 
   .osd-monitor-label { font-size: 3em; }
@@ -1577,7 +1575,7 @@ $menu_radius: $corner-radius + $space-size;
     font-weight: normal;
     background-image: none;
     transition-duration: 100ms;
-    color: rgba($panel_fg, 0.9);
+    color: rgba(on($panel-solid, secondary), 0.9);
     border-radius: 0;
 
     .panel-bottom & StLabel { padding-left: $space-size; }
@@ -1596,33 +1594,33 @@ $menu_radius: $corner-radius + $space-size;
     }
 
     &:hover {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       background-gradient-direction: none;
-      background-color: rgba($panel_fg, 0.15);
+      background-color: rgba(on($panel-solid, secondary), 0.15);
     }
 
     &:active,
     &:checked,
     &:running {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       background-gradient-direction: none;
-      background-color: rgba($panel_fg, 0.25);
-      border-color: on($panel_bg, track);
+      background-color: rgba(on($panel-solid, secondary), 0.25);
+      border-color: on($panel, track);
 
       &:hover {
-        background-color: rgba($panel_fg, 0.3);
+        background-color: rgba(on($panel-solid, secondary), 0.3);
       }
     }
 
     &:focus {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       background-gradient-direction: none;
-      background-image: radial-gradient(5px 5px 45deg, circle cover, $panel_fg 0%, $panel_fg 100%);
+      background-image: radial-gradient(5px 5px 45deg, circle cover, on($panel-solid, secondary) 0%, on($panel-solid, secondary) 100%);
       border-color: $primary;
-      background-color: rgba($panel_fg, 0.2);
+      background-color: rgba(on($panel-solid, secondary), 0.2);
 
       &:hover {
-        background-color: rgba($panel_fg, 0.3);
+        background-color: rgba(on($panel-solid, secondary), 0.3);
       }
 
       @each $position in (top),
@@ -1734,7 +1732,7 @@ $menu_radius: $corner-radius + $space-size;
     transition-duration: 100ms;
     border: none;
     margin: 0;
-    color: rgba($panel_fg, 0.6);
+    color: rgba(on($panel-solid, secondary), 0.6);
     border-radius: 0;
     spacing: $space-size;
     border-bottom: 2px solid transparent;
@@ -1744,30 +1742,30 @@ $menu_radius: $corner-radius + $space-size;
     }
 
     &:hover {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       background-gradient-direction: none;
-      background-color: rgba($panel_fg, 0.15);
+      background-color: rgba(on($panel-solid, secondary), 0.15);
     }
 
     &:active {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       background-gradient-direction: none;
       background-color: transparent;
-      border-color: on($panel_bg, track);
+      border-color: on($panel, track);
 
       &:hover {
-        background-color: rgba($panel_fg, 0.15);
+        background-color: rgba(on($panel-solid, secondary), 0.15);
       }
     }
 
     &:focus {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       background-gradient-direction: none;
-      background-color: rgba($panel_fg, 0.2);
+      background-color: rgba(on($panel-solid, secondary), 0.2);
       border-color: $primary;
 
       &:hover {
-        background-color: rgba($panel_fg, 0.3);
+        background-color: rgba(on($panel-solid, secondary), 0.3);
       }
     }
 
@@ -1944,7 +1942,7 @@ $menu_radius: $corner-radius + $space-size;
 .workspace-button {
   width: 20px;
   height: 10px;
-  color: $panel_fg;
+  color: on($panel-solid, secondary);
   padding: 3px;
   padding-top: 4px;
   transition-duration: 300;
@@ -1971,16 +1969,16 @@ $menu_radius: $corner-radius + $space-size;
 }
 
 .workspace-graph .workspace .windows {
-  -active-window-background: lighten($panel_bg, 15%);
+  -active-window-background: lighten($panel, 15%);
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: lighten($panel_bg, 15%);
+  -inactive-window-background: lighten($panel, 15%);
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
 .workspace-graph .workspace:active .windows {
-  -active-window-background: lighten($panel_bg, 20%);
+  -active-window-background: lighten($panel, 20%);
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: lighten($panel_bg, 5%);
+  -inactive-window-background: lighten($panel, 5%);
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
@@ -2002,11 +2000,11 @@ $menu_radius: $corner-radius + $space-size;
 
   &:hover {
     background-gradient-direction: none;
-    background-color: rgba($panel_fg, 0.1);
+    background-color: rgba(on($panel-solid, secondary), 0.1);
   }
 
   &:active {
-    background-color: rgba($panel_fg, 0.2);
+    background-color: rgba(on($panel-solid, secondary), 0.2);
   }
 }
 
@@ -2019,11 +2017,11 @@ $menu_radius: $corner-radius + $space-size;
 
   &:hover {
     background-gradient-direction: none;
-    background-color: rgba($panel_fg, 0.1);
+    background-color: rgba(on($panel-solid, secondary), 0.1);
   }
 
   &:active {
-    background-color: rgba($panel_fg, 0.2);
+    background-color: rgba(on($panel-solid, secondary), 0.2);
   }
 
   .icon-box { padding: 2px; }
@@ -2046,12 +2044,12 @@ $menu_radius: $corner-radius + $space-size;
 
   &-separator-line {
     width: 1px;
-    background: rgba($panel_fg, 0.12);
+    background: rgba(on($panel-solid, secondary), 0.12);
   }
 
   &-box {
     padding: 0 $space-size;
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
     text-shadow: none;
     transition-duration: 100ms;
     border-radius: 0;
@@ -2061,13 +2059,13 @@ $menu_radius: $corner-radius + $space-size;
     }
 
     &:hover {
-      color: $panel_fg;
-      background-color: rgba($panel_fg, 0.15);
+      color: on($panel-solid, secondary);
+      background-color: rgba(on($panel-solid, secondary), 0.15);
     }
 
     &:checked, &:checked:hover {
-      color: $panel_fg;
-      background-color: rgba($panel_fg, 0.25);
+      color: on($panel-solid, secondary);
+      background-color: rgba(on($panel-solid, secondary), 0.25);
     }
 
     &:highlight {
@@ -2079,20 +2077,20 @@ $menu_radius: $corner-radius + $space-size;
 
   &-label {
     font-weight: bold;
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
 
     .applet-box:checked & {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       text-shadow: none;
     }
   }
 
   &-icon {
-    color: $panel_fg;
+    color: on($panel-solid, secondary);
     icon-size: 16px;
 
     .applet-box:checked & {
-      color: $panel_fg;
+      color: on($panel-solid, secondary);
       text-shadow: none;
     }
   }

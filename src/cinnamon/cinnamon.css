@@ -554,7 +554,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
   padding: 0px;
-  background-color: rgba(33, 33, 33, 0.75);
+  background-color: rgba(33, 33, 33, 0.65);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 16px rgba(0, 0, 0, 0.24);
 }
 
@@ -1255,8 +1255,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: white;
   background-color: rgba(45, 45, 45, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.65);
-  padding: 0 5px 6px 5px;
-  border-radius: 12px;
+  padding: 0 6px 6px;
+  border-radius: 18px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.75), 0 5px 18px rgba(0, 0, 0, 0.55);
 }
 
@@ -1281,7 +1281,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .run-dialog {
   padding: 6px 12px;
   background-color: rgba(52, 52, 52, 0.9);
-  border-radius: 12px;
+  border-radius: 18px;
   color: white;
 }
 
@@ -1302,7 +1302,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .run-dialog-error-box {
   padding-top: 15px;
-  spacing: 5px;
+  spacing: 6px;
 }
 
 .run-dialog-completion-box {
@@ -1660,7 +1660,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 1em;
   padding: 16px;
   color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(33, 33, 33, 0.75);
+  background-color: rgba(33, 33, 33, 0.65);
 }
 
 .osd-window {
@@ -1671,8 +1671,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   min-width: 64px;
   min-height: 64px;
   color: rgba(255, 255, 255, 0.7);
-  border-radius: 0;
-  background-color: rgba(33, 33, 33, 0.75);
+  border-radius: 18px;
+  background-color: rgba(33, 33, 33, 0.65);
   border: none;
 }
 
@@ -2182,16 +2182,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .workspace-graph .workspace .windows {
-  -active-window-background: rgba(71, 71, 71, 0.75);
+  -active-window-background: rgba(71, 71, 71, 0.65);
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: rgba(71, 71, 71, 0.75);
+  -inactive-window-background: rgba(71, 71, 71, 0.65);
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
 .workspace-graph .workspace:active .windows {
-  -active-window-background: rgba(84, 84, 84, 0.75);
+  -active-window-background: rgba(84, 84, 84, 0.65);
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: rgba(46, 46, 46, 0.75);
+  -inactive-window-background: rgba(46, 46, 46, 0.65);
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
