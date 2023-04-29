@@ -80,9 +80,9 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     max-width: auto;
 
     &:ltr { border-radius: $circular-radius 0 0 $circular-radius; }
-    &:ltr > StBoxLayout { padding-right: $space-size * 1.5; }
+    &:ltr > StBoxLayout { padding-right: 0; }
     &:rtl { border-radius: 0 $circular-radius $circular-radius 0; }
-    &:rtr > StBoxLayout { padding-left: $space-size * 1.5; }
+    &:rtr > StBoxLayout { padding-left: 0; }
 
     &:ltr:last-child { border-radius: $circular-radius; }
     &:rtl:last-child { border-radius: $circular-radius; }

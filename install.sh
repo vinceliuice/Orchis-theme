@@ -81,22 +81,22 @@ while [[ "$#" -gt 0 ]]; do
       ;;
     --shell)
       shift
-      for variant in $@; do
-        case "$variant" in
+      for shell in $@; do
+        case "$shell" in
           38)
-            shell="32-8"
+            shell="38"
             shift
             ;;
           40)
-            shell="40-0"
+            shell="40"
             shift
             ;;
           42)
-            shell="42-0"
+            shell="42"
             shift
             ;;
           44)
-            shell="44-0"
+            shell="44"
             shift
             ;;
           -*)
