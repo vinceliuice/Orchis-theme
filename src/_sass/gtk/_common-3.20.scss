@@ -3800,7 +3800,7 @@ colorchooser .popover.osd {
  **********************/
 decoration {
   border-radius: $window-radius;
-  box-shadow: $shadow-z16, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+  box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
   border: none;
 
   // FIXME rationalize shadows
@@ -3813,7 +3813,7 @@ decoration {
     // change when we go to backdrop, to prevent jumping windows.
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
-    box-shadow: $shadow-z4, 0 16px (24px * .6) 2px transparent, 0 6px (30px * .6) 5px transparent;
+    box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
     transition: $transition-shadow;
   }
 

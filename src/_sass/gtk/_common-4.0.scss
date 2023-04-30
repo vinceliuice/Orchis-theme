@@ -4267,8 +4267,7 @@ window {
     padding: 0;
     margin: 0;
     border-radius: $window-radius;
-    box-shadow: $shadow-z16,
-                0 0 0 100px transparent,
+    box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent,
                 inset 0 1px highlight($titlebar);
 
     @if $topbar == 'dark' {
@@ -4288,8 +4287,7 @@ window {
       // The biggest shadow should be in the same order then in the active state
       // or the jumping will happen during the transition.
       transition: $transition-shadow;
-      box-shadow: $shadow-z4,
-                  0 0 0 100px transparent,
+      box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent,
                   inset 0 1px highlight($titlebar);
 
       @if $topbar == 'dark' {
@@ -4307,16 +4305,10 @@ window {
     &.messagedialog {
       background-color: $surface;
       background-image: none;
-      box-shadow: $shadow-z16,
-                  0 0 0 100px transparent,
-                  inset 0 1px highlight($titlebar);
 
       &:backdrop {
         background-color: $background;
         background-image: none;
-        box-shadow: $shadow-z4,
-                    0 0 0 100px transparent,
-                    inset 0 1px highlight($titlebar);
       }
     }
 
