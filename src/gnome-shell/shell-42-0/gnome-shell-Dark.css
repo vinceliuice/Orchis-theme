@@ -2394,8 +2394,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto;
-  color: transparent;
-  background-color: transparent;
+  color: transparent !important;
+  background-color: transparent !important;
+  font-size: 0;
   box-shadow: none;
   -natural-hpadding: 3px !important;
   -minimum-hpadding: 3px !important;

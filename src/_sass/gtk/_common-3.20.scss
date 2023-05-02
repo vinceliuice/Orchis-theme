@@ -2292,11 +2292,11 @@ scrollbar {
     border: 4px solid transparent;
     border-radius: $circular-radius;
     background-clip: padding-box;
-    background-color: $text-disabled;
+    background-color: $text-secondary-disabled;
 
-    &:hover { background-color: $text-secondary; }
+    &:hover { background-color: $text-disabled; }
 
-    &:active { background-color: $text; }
+    &:active { background-color: $text-secondary; }
 
     &:disabled { background-color: $text-secondary-disabled; }
   }

@@ -2585,17 +2585,17 @@ scrollbar > range > trough > slider {
   border: 4px solid transparent;
   border-radius: 9999px;
   background-clip: padding-box;
-  background-color: rgba(0, 0, 0, 0.38);
   box-shadow: none;
   outline: none;
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 scrollbar > range > trough > slider:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.38);
 }
 
 scrollbar > range > trough > slider:active {
-  background-color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 scrollbar > range > trough > slider:disabled {
@@ -2624,6 +2624,11 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
   background-color: transparent;
   box-shadow: none;
   outline: none;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough {
+  padding: 0;
+  margin: 0;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider {
