@@ -19,6 +19,7 @@ menupopup {
 .menupopup-arrowscrollbox {
 	border: 0 !important;
 	background: var(--gnome-menu-background) !important;
+	color: var(--gnome-button-color) !important;
 }
 
 menupopup menupopup {
