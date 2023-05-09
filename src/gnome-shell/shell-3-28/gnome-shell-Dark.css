@@ -1857,6 +1857,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 }
 
 .events-button .events-list {
+  color: rgba(255, 255, 255, 0.7);
   spacing: 12px;
   text-shadow: none;
 }

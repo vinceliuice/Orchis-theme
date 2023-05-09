@@ -259,9 +259,9 @@ $theme_list_radius: $window-radius - $space-size;
 
   // Floating status bar
   .floating-bar {
-    min-height: $small-size;
-    padding: 2px;
-    margin: 6px;
+    min-height: $menuitem-size;
+    padding: $space-size / 2;
+    margin: $space-size;
     border-style: none;
     border-radius: $circular-radius;
     background-color: rgba($background, 0.95);

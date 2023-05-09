@@ -4557,6 +4557,7 @@ window.csd {
   outline: none;
   padding: 0;
   margin: 0;
+  transition: none;
   border-radius: 16px;
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 16px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.4);
 }
@@ -4994,9 +4995,9 @@ popover.entry-completion > contents {
 }
 
 .nautilus-window .floating-bar {
-  min-height: 22px;
+  min-height: 24px;
   padding: 2px;
-  margin: 6px;
+  margin: 4px;
   border: none;
   border-radius: 9999px;
   background-color: rgba(242, 242, 242, 0.95);

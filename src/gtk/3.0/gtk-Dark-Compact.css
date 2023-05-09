@@ -4377,9 +4377,9 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window .floating-bar {
-  min-height: 22px;
+  min-height: 24px;
   padding: 2px;
-  margin: 6px;
+  margin: 4px;
   border-style: none;
   border-radius: 9999px;
   background-color: rgba(33, 33, 33, 0.95);

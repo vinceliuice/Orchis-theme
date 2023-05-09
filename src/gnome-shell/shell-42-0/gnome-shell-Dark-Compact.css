@@ -1050,6 +1050,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .events-button .events-list {
+  color: rgba(255, 255, 255, 0.7);
   spacing: 12px;
   text-shadow: none;
 }
