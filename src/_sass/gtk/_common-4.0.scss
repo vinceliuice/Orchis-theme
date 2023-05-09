@@ -4271,6 +4271,7 @@ window {
     outline: none;
     padding: 0;
     margin: 0;
+    transition: none;
     border-radius: $window-radius;
     box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent,
                 inset 0 1px highlight($titlebar);
