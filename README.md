@@ -118,11 +118,3 @@ global:
 flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
-### Firefox theme
-[Install Firefox theme](src/firefox)
-
-![Firefox-theme](src/firefox/preview01.png?raw=true)
-![Firefox-theme](src/firefox/preview02.png?raw=true)
-
-## Preview
-![preview](images/preview.jpg?raw=true)
