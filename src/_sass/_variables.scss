@@ -24,7 +24,7 @@ $large-icon-size: 32px;
 //
 
 $window-radius: $default_corner + $space-size;
-$corner-radius: if($compact == 'false', $default_corner, $default_corner - 2px);
+$corner-radius: if($compact == 'false', $default_corner, max(0, $default_corner - 2px));
 $material-radius: $default_corner / 2 + 4px;
 $menu-radius: $default_corner / 4 + $space-size + 2px;
 $popup-radius: $default_corner + $space-size + 2px;
