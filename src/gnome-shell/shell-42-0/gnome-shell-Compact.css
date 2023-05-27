@@ -2295,6 +2295,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0 !important;
   transition-duration: 250ms;
   height: 34px;
+  border: none;
+  box-shadow: none;
   background-color: rgba(0, 0, 0, 0.65);
   margin: 2px;
   border-radius: 9999px;

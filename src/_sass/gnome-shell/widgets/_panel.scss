@@ -11,6 +11,8 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
   padding: 0 !important;
   transition-duration: $panel_transition_duration;
   height: $panel_height;
+  border: none;
+  box-shadow: none;
 
   @if $opacity == 'solid' {
     background-color: $panel-solid;
