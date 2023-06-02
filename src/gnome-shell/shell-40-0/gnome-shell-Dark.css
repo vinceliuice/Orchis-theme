@@ -848,24 +848,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-today {
   font-weight: bold !important;
-  color: white;
-  background-color: #3281EA;
+  color: white !important;
+  background-color: #3281EA !important;
   border: none;
 }
 
 .calendar-today:hover, .calendar-today:focus {
-  background-color: #408aeb;
-  color: white;
+  background-color: #408aeb !important;
+  color: white !important;
 }
 
 .calendar-today:active, .calendar-today:selected {
-  background-color: #3281EA;
-  color: white;
+  background-color: #3281EA !important;
+  color: white !important;
 }
 
 .calendar-today:active:hover, .calendar-today:active:focus, .calendar-today:selected:hover, .calendar-today:selected:focus {
-  background-color: #408aeb;
-  color: white;
+  background-color: #408aeb !important;
+  color: white !important;
 }
 
 .calendar-day-with-events {

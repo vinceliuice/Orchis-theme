@@ -944,24 +944,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-today {
   font-weight: bold !important;
-  color: white;
-  background-color: #1A73E8;
+  color: white !important;
+  background-color: #1A73E8 !important;
   border: none;
 }
 
 .calendar-today:hover, .calendar-today:focus {
-  background-color: #287ce9;
-  color: white;
+  background-color: #287ce9 !important;
+  color: white !important;
 }
 
 .calendar-today:active, .calendar-today:selected {
-  background-color: #1A73E8;
-  color: white;
+  background-color: #1A73E8 !important;
+  color: white !important;
 }
 
 .calendar-today:active:hover, .calendar-today:active:focus, .calendar-today:selected:hover, .calendar-today:selected:focus {
-  background-color: #287ce9;
-  color: white;
+  background-color: #287ce9 !important;
+  color: white !important;
 }
 
 .calendar-day-with-events {
@@ -1601,7 +1601,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-toggle-menu .header .icon.active {
   background-color: #1A73E8 !important;
-  color: white;
+  color: white !important;
 }
 
 .quick-settings-system-item > StBoxLayout {

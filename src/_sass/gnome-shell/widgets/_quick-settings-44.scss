@@ -225,10 +225,6 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     }
   }
 
-  .popup-inactive-menu-item {
-    
-  }
-
   & .header {
     spacing-rows: 0.5 * $space-size;
     spacing-columns: $space-size * 2;
@@ -242,7 +238,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
       &.active {
         background-color: $primary !important;
-        color: on(dark);
+        color: on($primary) !important;
       }
     }
 

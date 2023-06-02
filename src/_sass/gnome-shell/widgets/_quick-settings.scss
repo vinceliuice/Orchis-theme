@@ -185,7 +185,7 @@
 
       &.active {
         background-color: $primary !important;
-        color: on(dark);
+        color: on($primary) !important;
       }
     }
   }
