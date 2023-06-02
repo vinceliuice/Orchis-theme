@@ -28,7 +28,7 @@
   .notification-badge {
     min-width: 16px;
     min-height: 16px;
-    color: white;
+    color: on($primary);
     background-color: $primary;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
     border-radius: $circular-radius;

@@ -1811,12 +1811,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
-  color: white;
+  color: white !important;
   background-color: #E53935;
 }
 
 .end-session-dialog .modal-dialog-linked-button:last-child:hover {
-  color: white;
+  color: white !important;
   background-color: #ea615e;
 }
 
@@ -1914,12 +1914,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog .modal-dialog-linked-button:last-child {
-  color: white;
+  color: white !important;
   background-color: #1A73E8;
 }
 
 .prompt-dialog .modal-dialog-linked-button:last-child:hover {
-  color: white;
+  color: white !important;
   background-color: #448dec;
 }
 
@@ -1929,7 +1929,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .prompt-dialog .modal-dialog-linked-button:last-child:insensitive {
-  color: rgba(26, 115, 232, 0.5);
+  color: rgba(26, 115, 232, 0.5) !important;
   background-color: rgba(26, 115, 232, 0.15);
 }
 

@@ -31,16 +31,16 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
   // border: 2px solid $mdborder_color;
 
   .modal-dialog-linked-button:last-child {
-    color: white;
+    color: on($destructive) !important;
     background-color: $destructive;
 
     &:hover {
-      color: white;
+      color: on($destructive) !important;
       background-color: lighten($destructive, 9%);
     }
 
     &:active {
-      color: white !important;
+      color: on($destructive) !important;
       background-color: darken($destructive, 5%);
     }
   }
@@ -122,21 +122,21 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
   }
 
   .modal-dialog-linked-button:last-child {
-    color: white;
+    color: on($suggested) !important;
     background-color: $suggested;
 
     &:hover {
-      color: white;
+      color: on($suggested) !important;
       background-color: lighten($suggested, 9%);
     }
 
     &:active {
-      color: white !important;
+      color: on($suggested) !important;
       background-color: darken($suggested, 5%);
     }
 
     &:insensitive {
-      color: rgba($suggested, 0.5);
+      color: rgba($suggested, 0.5) !important;
       background-color: rgba($suggested, 0.15);
     }
   }
