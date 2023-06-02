@@ -175,22 +175,22 @@
 
 .calendar-today {
   font-weight: bold !important;
-  color: white;
+  color: on($primary);
   background-color: $primary;
   border: none;
 
   &:hover, &:focus {
     background-color: lighten($primary, 3%);
-    color: white;
+    color: on($primary);
   }
 
   &:active, &:selected {
     background-color: $primary;
-    color: white;
+    color: on($primary);
 
     &:hover, &:focus {
       background-color: lighten($primary, 3%);
-      color: white;
+      color: on($primary);
     }
   }
 }
