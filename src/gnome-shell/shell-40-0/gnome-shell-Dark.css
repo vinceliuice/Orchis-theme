@@ -2521,8 +2521,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
   caret-color: white;
-  selection-background-color: #3281EA;
-  selected-color: white;
+  selection-background-color: rgba(255, 255, 255, 0.12) !important;
+  selected-color: white !important;
   width: 300px;
 }
 
@@ -2540,7 +2540,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog .folder-name-container .folder-name-entry:insensitive, .app-folder-dialog .folder-name-container .folder-name-entry StLabel.hint-text {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .app-folder-dialog .folder-name-container .folder-name-label {
@@ -2632,7 +2632,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .system-action-icon {
   background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: white;
   border-radius: 9999px;
 }
 

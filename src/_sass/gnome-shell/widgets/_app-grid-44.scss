@@ -96,15 +96,15 @@
       min-height: 28px;
       padding: $space-size;
       border: none;
-      color: on(dark);
+      color: on($system);
       background-color: rgba(white, 0.15);
-      caret-color: on(dark);
-      selection-background-color: $primary;
-      selected-color: on(dark);
+      caret-color: on($system);
+      selection-background-color: on($system, divider) !important;
+      selected-color: white !important;
       width: 300px;
 
       &:focus {
-        color: on(dark);
+        color: on($system);
         background-color: rgba(white, 0.25);
       }
 
@@ -115,16 +115,16 @@
       }
 
       &:insensitive, StLabel.hint-text {
-        color: rgba(white, 0.45);
+        color: on($system, disabled);
       }
     }
 
     /* FIXME: this is to keep the label in sync with the entry */
-    .folder-name-label { padding: 5px 7px; color: on(dark, secondary); }
+    .folder-name-label { padding: 5px 7px; color: on($system, secondary); }
 
     .edit-folder-button {
-      background-color: on(dark, divider);
-      color: on(dark, secondary);
+      background-color: on($system, divider);
+      color: on($system, secondary);
       border: none;
       height: 32px;
       width: 32px;
@@ -133,8 +133,8 @@
 
       > StIcon { icon-size: $base-icon-size }
 
-      &:hover { background-color: on(dark, divider); }
-      &:checked, &:active { background-color: on(dark, track); }
+      &:hover { background-color: on($system, divider); }
+      &:checked, &:active { background-color: on($system, track); }
     }
   }
 
@@ -162,7 +162,7 @@
 .app-well-app-running-dot {
   width: 8px; height: 2px;
   border-radius: 0;
-  background-color: on(dark);
+  background-color: on($system);
   margin-bottom: 0;
 }
 
@@ -204,7 +204,7 @@ StWidget.focused .app-well-app-running-dot {
 // shutdown and other actions in the grid
 .system-action-icon {
   background-color: rgba(0,0,0,0.8);
-  color: #fff;
+  color: white;
   border-radius: $circular-radius;
 }
 
@@ -239,7 +239,7 @@ StWidget.focused .app-well-app-running-dot {
   width: 24px;
   height: 24px;
   border-radius: $circular-radius;
-  color: on(dark);
+  color: on($system);
 
   &:insensitive {
     background-color: rgba(white, 0.06);
