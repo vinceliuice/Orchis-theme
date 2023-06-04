@@ -2030,7 +2030,8 @@ popover.background button.model:only-child {
 
 popover.background button.model {
   min-height: 32px;
-  padding: 0 8px;
+  min-width: 32px;
+  padding: 0 12px;
   margin: 0;
 }
 
@@ -4589,23 +4590,24 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:
 /*********
  * gedit *
  *********/
-window.org-gnome-gedit > paned.titlebar > separator {
+window.org-gnome-gedit > paned.titlebar > separator,
+window.background.csd > paned.titlebar > separator {
   background-color: transparent;
 }
 
-window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal {
-  margin: 4px 0;
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > box.horizontal {
+  margin: 4px 2px;
 }
 
-window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > scrolledwindow {
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > scrolledwindow {
   border-bottom-left-radius: 18px;
 }
 
-window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > scrolledwindow treeview.view:not(:hover):not(:active):not(:selected) {
+.gedit-side-panel-paned > box.vertical > stack > grid.horizontal > scrolledwindow treeview.view:not(:hover):not(:selected) {
   background: none;
 }
 
-window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned stack scrolledwindow viewport.frame list.gedit-document-panel {
+.gedit-side-panel-paned stack scrolledwindow viewport.frame list.gedit-document-panel {
   background: none;
 }
 
@@ -4621,6 +4623,7 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 
 .gedit-document-panel {
   background-color: #FAFAFA;
+  border-bottom-left-radius: 18px;
 }
 
 .gedit-document-panel row button.flat {
@@ -4638,7 +4641,12 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 }
 
 .gedit-search-slider {
-  margin: 4px 4px 8px;
+  margin: 0 6px 8px;
+  padding: 6px;
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 18px 18px;
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry {
@@ -4699,10 +4707,12 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
 
 .gedit-search-slider .linked > button:last-child:dir(ltr), .gedit-search-slider .linked > button:not(:first-child):dir(rtl) {
   margin-left: -3px;
+  border-radius: 9999px;
 }
 
 .gedit-search-slider .linked > button:first-child:dir(rtl), .gedit-search-slider .linked > button:not(:last-child):dir(ltr) {
   margin-right: -3px;
+  border-radius: 9999px;
 }
 
 frame.gedit-map-frame > border:dir(ltr) {

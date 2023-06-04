@@ -508,37 +508,35 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 // hard-coded css:
 // https://gitlab.gnome.org/GNOME/gedit/blob/master/gedit/resources/css/gedit-style.css
 
-window.org-gnome-gedit {
+window.org-gnome-gedit,
+window.background.csd {
   > paned.titlebar {
     > separator { background-color: transparent; }
   }
+}
 
-  > overlay > box.vertical {
-    > paned.gedit-side-panel-paned {
+.gedit-side-panel-paned {
+  // 'file-browser' pane
+  > box.vertical > stack > grid.horizontal {
+    > box.horizontal {  // header-part
+      margin: 4px 2px;
+    }
 
-      // 'file-browser' pane
-      > box.vertical > stack > grid.horizontal {
-        > box.horizontal {  // header-part
-          margin: 4px 0;
-        }
+    > scrolledwindow { // raised widget
+      border-bottom-left-radius: $window-radius;
 
-        > scrolledwindow { // raised widget
-          border-bottom-left-radius: $window-radius;
-
-          treeview.view:not(:hover):not(:active):not(:selected) {
-            background: none;
-          }
-        }
+      treeview.view:not(:hover):not(:selected) {
+        background: none;
       }
+    }
+  }
 
-      // 'files' pane
-      stack {
-        scrolledwindow {
-          viewport.frame {
-            list.gedit-document-panel {
-              background: none;
-            }
-          }
+  // 'files' pane
+  stack {
+    scrolledwindow {
+      viewport.frame {
+        list.gedit-document-panel {
+          background: none;
         }
       }
     }
@@ -559,6 +557,7 @@ window.org-gnome-gedit {
 
 .gedit-document-panel {
   background-color: $base-alt;
+  border-bottom-left-radius: $window-radius;
 
   // Try to look as the notebook tab close button
   row button.flat {
@@ -579,7 +578,12 @@ window.org-gnome-gedit {
 }
 
 .gedit-search-slider {
-  margin: 4px 4px 8px;
+  margin: 0 6px 8px;
+  padding: $space-size;
+  background-color: $surface;
+  color: $text-secondary;
+  box-shadow: $shadow-z4;
+  border-radius: 0 0 $window-radius $window-radius;
 
   .linked:not(.vertical) > entry {
     border-radius: $corner-radius;
@@ -629,10 +633,16 @@ window.org-gnome-gedit {
     @extend %small-button;
 
     &:last-child:dir(ltr),
-    &:not(:first-child):dir(rtl) { margin-left: -$space-size / 2; }
+    &:not(:first-child):dir(rtl) {
+      margin-left: -$space-size / 2;
+      border-radius: $circular-radius;
+    }
 
     &:first-child:dir(rtl),
-    &:not(:last-child):dir(ltr) { margin-right: -$space-size / 2; }
+    &:not(:last-child):dir(ltr) {
+      margin-right: -$space-size / 2;
+      border-radius: $circular-radius;
+    }
   }
 }
 
