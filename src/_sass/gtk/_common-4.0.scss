@@ -2763,9 +2763,9 @@ scale {
         $_url: 'assets/scale-slider#{$asset-suffix}';
 
         transition: background-color $duration $ease-out,
-                    background-size 0ms,
-                    background-image 0ms;
-        animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
+                    background-size 0,
+                    background-image 0;
+        // animation: ripple-on-slider $ripple-fade-in-duration $ease-out forwards;
         background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
                           radial-gradient(circle, $overlay-active 10%, transparent 0%);
         background-size: auto, 0% 0%;

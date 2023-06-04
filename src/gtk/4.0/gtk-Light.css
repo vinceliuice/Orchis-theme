@@ -3083,8 +3083,7 @@ scale > trough > slider:focus:hover {
 }
 
 scale > trough > slider:active {
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
-  animation: ripple-on-slider 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   background-image: -gtk-scaled(url("assets/scale-slider.png"), url("assets/scale-slider@2.png")), radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: auto, 0% 0%;
   color: #1A73E8;
