@@ -1484,6 +1484,42 @@ headerbar {
   }
 }
 
+%firefox_window_button {
+  &.minimize, &.maximize, &.close {
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: center;
+
+    &, &:hover, &:active {
+      box-shadow: none;
+      color: transparent;
+      animation: none;
+      transition: $transition;
+    }
+  }
+
+  &.minimize { // Window minimize button
+    &:hover, &:active {
+      background-image: -gtk-scaled(url("assets/scalable/minimize-symbolic.svg"),
+                                    url("assets/scalable/minimize-symbolic@2.svg"));
+    }
+  }
+
+  &.maximize { // Window maximize button
+    &:hover, &:active {
+      background-image: -gtk-scaled(url("assets/scalable/maximize-symbolic.svg"),
+                                    url("assets/scalable/maximize-symbolic@2.svg"));
+    }
+  }
+
+  &.close { // Window close button
+    &:hover, &:active {
+      background-image: -gtk-scaled(url("assets/scalable/close-symbolic.svg"),
+                                    url("assets/scalable/close-symbolic@2.svg"));
+    }
+  }
+}
+
 headerbar {
   @if $mac_style == 'true' {
     > box.left,
@@ -1501,6 +1537,19 @@ headerbar {
 
     @if $mac_style == 'true' {
       @extend %mac_window_button;
+    }
+  }
+
+  @if $mac_style == 'true' {
+    .background.csd &.titlebar.default-decoration button.titlebutton {
+      @extend %firefox_window_button;
+    }
+  
+    .background.csd.maximized &.titlebar.default-decoration button.titlebutton.maximize {
+      &:hover, &:active {
+        background-image: -gtk-scaled(url("assets/scalable/unmaximize-symbolic.svg"),
+                                      url("assets/scalable/unmaximize-symbolic@2.svg"))
+      }
     }
   }
 }
