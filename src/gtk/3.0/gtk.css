@@ -746,12 +746,6 @@ button.text-button {
   padding-right: 16px;
 }
 
-button.text-button.flat {
-  min-width: 48px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 button.image-button {
   min-width: 24px;
   padding: 6px;
@@ -6549,6 +6543,10 @@ stack > scrolledwindow > viewport > box > widget > box > frame.view > widget > b
 
 stack > scrolledwindow > viewport > box #c_box notebook {
   background-color: transparent;
+}
+
+#workspaces button {
+  min-width: 20px;
 }
 
 /*********

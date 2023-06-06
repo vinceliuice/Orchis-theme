@@ -589,3 +589,8 @@ stack > scrolledwindow > viewport > box {
     }
   }
 }
+
+// Waybar
+#workspaces button {
+  min-width: 20px;
+}
