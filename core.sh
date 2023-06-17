@@ -405,6 +405,12 @@ install_theme() {
   if (pgrep xfce4-session &> /dev/null); then
     xfce4-panel -r
   fi
+
+  local DASH_TO_DOCK_STYLESHEET="$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css"
+
+  if [[ -f "$DASH_TO_DOCK_STYLESHEET" ]]; then
+    mv "$DASH_TO_DOCK_STYLESHEET" "$DASH_TO_DOCK_STYLESHEET".bak
+  fi
 }
 
 uninstall_theme() {
