@@ -433,15 +433,28 @@ datechooser.view {
 // Gnome Software
 //
 
-flowboxchild > button.card {
-  &.category-tile {
-    padding: $space-size * 3.5;
+flowboxchild {
+  &.card {
     border: none;
-    border-radius: $corner-radius;
+    box-shadow: none;
+    padding: 0;
+    background: none;
   }
 
-  &.category-tile-iconless {
-    padding: $space-size * 1.5 $space-size * 2.5;
+  > button.card {
+    &.category-tile {
+      padding: $space-size * 3.5;
+      border: none;
+      border-radius: $corner-radius;
+      box-shadow: 0 2px 6px rgba(black, 0.1);
+    }
+
+    &.category-tile-iconless {
+      padding: $space-size * 1.5 $space-size * 2.5;
+      box-shadow: none;
+      background-color: $button;
+      @extend %button-flat-simple;
+    }
   }
 }
 

@@ -424,18 +424,13 @@ statuspage {
 }
 
 // Cards
-.card {
-  @at-root %card, & {
-    border-radius: $corner-radius;
-    box-shadow: none;
-    border: 1px solid $divider;
-    background-clip: padding-box;
-    background-color: $base;
-    color: $text-secondary;
-
-    // .osd &, &.osd {
-    // }
-  }
+.card, %card {
+  border-radius: $corner-radius;
+  box-shadow: none;
+  border: 1px solid $divider;
+  background-clip: padding-box;
+  background-color: $base;
+  color: $text-secondary;
 }
 
 // preferences
