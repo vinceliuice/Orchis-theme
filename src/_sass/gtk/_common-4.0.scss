@@ -3530,6 +3530,8 @@ expander {
 
   &:hover, &:active { color: $text; }
 
+  &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
+
   &:disabled { color: $text-secondary-disabled; }
 }
 

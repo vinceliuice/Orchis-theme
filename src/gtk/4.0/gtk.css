@@ -3874,6 +3874,10 @@ expander:hover, expander:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
+expander:checked {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
 expander:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
