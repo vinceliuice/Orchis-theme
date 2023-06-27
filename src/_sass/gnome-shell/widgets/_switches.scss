@@ -6,5 +6,11 @@
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
 
+  @if $submenu_style == 'false' and $variant == 'dark' {
+    .popup-sub-menu & {
+      background-image: url("assets/menu-toggle-off.svg");
+    }
+  }
+
   &:checked { background-image: url("assets/toggle-on.svg"); }
 }

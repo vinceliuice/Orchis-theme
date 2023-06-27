@@ -273,12 +273,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/toggle-on.svg");
 }
 
-.popup-menu-item:active .toggle-switch {
-  background-image: url("assets/toggle-off.svg");
-}
-
-.popup-menu-item:active .toggle-switch:checked {
-  background-image: url("assets/toggle-on.svg");
+.popup-sub-menu .toggle-switch {
+  background-image: url("assets/menu-toggle-off.svg");
 }
 
 .cinnamon-link {
@@ -320,36 +316,42 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-sub-menu,
 .popup-menu .popup-sub-menu,
 .popup-combo-menu .popup-sub-menu {
-  border-radius: 10px;
+  border-radius: 14px;
   background-gradient-direction: none;
   box-shadow: none;
-  background-color: #f2f2f2;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.menu .popup-sub-menu .popup-menu-item,
+.popup-menu .popup-sub-menu .popup-menu-item,
+.popup-combo-menu .popup-sub-menu .popup-menu-item {
+  color: rgba(0, 0, 0, 0.75) !important;
 }
 
 .menu .popup-sub-menu .popup-menu-item:active,
 .popup-menu .popup-sub-menu .popup-menu-item:active,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:active {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.85) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
 .menu .popup-sub-menu .popup-menu-item:active .popup-inactive-menu-item,
 .popup-menu .popup-sub-menu .popup-menu-item:active .popup-inactive-menu-item,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:active .popup-inactive-menu-item {
-  color: rgba(0, 0, 0, 0.38);
+  color: rgba(0, 0, 0, 0.45) !important;
 }
 
 .menu .popup-sub-menu .popup-menu-item:insensitive,
 .popup-menu .popup-sub-menu .popup-menu-item:insensitive,
 .popup-combo-menu .popup-sub-menu .popup-menu-item:insensitive {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.35) !important;
 }
 
 .menu .popup-sub-menu .popup-inactive-menu-item,
 .popup-menu .popup-sub-menu .popup-inactive-menu-item,
 .popup-combo-menu .popup-sub-menu .popup-inactive-menu-item {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.35) !important;
 }
 
 .menu .popup-sub-menu StScrollBar,
@@ -371,8 +373,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-combo-menu .popup-menu-content {
   color: white;
   padding: 4px;
-  background-color: rgba(44, 44, 44, 0.97);
-  border-radius: 14px;
+  background-color: rgba(33, 33, 33, 0.97);
+  border-radius: 18px;
   margin: 4px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }
@@ -382,7 +384,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-combo-menu .popup-menu-item {
   padding: 4px 8px;
   spacing: 8px;
-  border-radius: 10px;
+  border-radius: 9999px;
 }
 
 .menu .popup-menu-item:hover, .menu .popup-menu-item:active,
@@ -1166,7 +1168,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .switcher-list {
   color: white;
-  background-color: rgba(44, 44, 44, 0.97);
+  background-color: rgba(33, 33, 33, 0.97);
   border: none;
   border-radius: 10px;
   padding: 20px;
@@ -1546,9 +1548,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu StScrollView.menu-application-button {
   padding: 2px 0;
-  border-radius: 10px;
-  background-color: #f2f2f2;
-  color: rgba(0, 0, 0, 0.87);
+  border-radius: 14px;
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item {
@@ -1556,7 +1558,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 0;
   margin: 0 2px;
   border-radius: 10px;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.75) !important;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item:ltr {
@@ -1569,8 +1571,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu StScrollView.menu-application-button .popup-menu-item:active {
   border-image: none;
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(0, 0, 0, 0.12) !important;
 }
 
 .menu StScrollView.menu-application-button .popup-menu-item StIcon {
@@ -1868,7 +1870,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 4px;
   padding: 4px;
   margin: 4px;
-  background-color: rgba(44, 44, 44, 0.97);
+  background-color: rgba(33, 33, 33, 0.97);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
   border-radius: 16px;
   color: white;
@@ -2040,11 +2042,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .sound-player {
-  padding: 0 0;
+  padding: 0;
   margin-top: 6px;
-  border-radius: 10px;
-  background-color: #f2f2f2;
-  color: rgba(0, 0, 0, 0.87);
+  border-radius: 14px;
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .sound-player > StBoxLayout:first-child {
@@ -2059,11 +2061,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .sound-player > StBoxLayout:first-child StButton:small:hover {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.12) !important;
 }
 
 .sound-player > StBoxLayout:first-child StButton:small:active {
-  background-color: rgba(0, 0, 0, 0.26);
+  background-color: rgba(0, 0, 0, 0.26) !important;
 }
 
 .sound-player > StBoxLayout:first-child StButton:small StIcon {

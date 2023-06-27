@@ -7,7 +7,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="toggle-off.svg"
+   sodipodi:docname="menu-toggle-off.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -33,17 +33,17 @@
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#212121"
-     bordercolor="#666666"
-     borderopacity="1.0"
+     pagecolor="#ffffff"
+     bordercolor="#c7c7c7"
+     borderopacity="1"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.0786474"
-     inkscape:cx="-12.207975"
-     inkscape:cy="5.6117304"
+     inkscape:zoom="14.364584"
+     inkscape:cx="29.865118"
+     inkscape:cy="15.07179"
      inkscape:document-units="px"
-     inkscape:current-layer="g519"
-     showgrid="false"
+     inkscape:current-layer="layer1"
+     showgrid="true"
      inkscape:window-width="1920"
      inkscape:window-height="1000"
      inkscape:window-x="0"
@@ -52,7 +52,7 @@
      inkscape:document-rotation="0"
      inkscape:showpageshadow="2"
      inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#5a5a5a">
+     inkscape:deskcolor="#ffffff">
     <inkscape:grid
        type="xygrid"
        id="grid2985"
@@ -107,7 +107,7 @@
          rx="7"
          ry="7"
          id="rect7"
-         style="opacity:0.15;fill:#ffffff;fill-opacity:1" />
+         style="opacity:0.25;fill:#000000;fill-opacity:1" />
       <circle
          cx="29"
          cy="1045.3622"
@@ -120,7 +120,7 @@
          cy="1044.3622"
          r="10"
          id="circle14"
-         style="fill:#2f2f2f;fill-opacity:1;stroke-width:1" />
+         style="fill:#f2f2f2;fill-opacity:1;stroke-width:1" />
     </g>
   </g>
 </svg>

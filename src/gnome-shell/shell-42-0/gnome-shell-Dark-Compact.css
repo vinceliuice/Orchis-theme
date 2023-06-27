@@ -396,6 +396,10 @@ StEntry StLabel.hint-text {
   background-image: url("assets/toggle-off.svg");
 }
 
+.popup-sub-menu .toggle-switch {
+  background-image: url("assets/menu-toggle-off.svg");
+}
+
 .toggle-switch:checked {
   background-image: url("assets/toggle-on.svg");
 }
