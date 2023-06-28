@@ -1544,7 +1544,7 @@ headerbar {
     .background.csd &.titlebar.default-decoration button.titlebutton {
       @extend %firefox_window_button;
     }
-  
+
     .background.csd.maximized &.titlebar.default-decoration button.titlebutton.maximize {
       &:hover, &:active {
         background-image: -gtk-scaled(url("assets/scalable/unmaximize-symbolic.svg"),

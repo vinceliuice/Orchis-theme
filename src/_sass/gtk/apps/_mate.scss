@@ -15,6 +15,7 @@
   background-color: $panel;
   color: on($panel, secondary);
   font-weight: 500;
+  box-shadow: none;
 
   button {
     @extend %button-flat;
@@ -36,9 +37,9 @@ PanelToplevel.vertical > grid > button {
   min-height: 24px;
 }
 
-#PanelApplet {
-  // border-width: 0;
-}
+// #PanelApplet {
+//   border-width: 0;
+// }
 
 PanelSeparator {
   color: on($panel, divider);
@@ -55,6 +56,10 @@ MatePanelAppletFrameDBus {
 
 // main menu
 .mate-panel-menu-bar {
+  menubar {
+    box-shadow: none;
+  }
+
   // set normal menubar button
   menubar > menuitem {
     color: on($panel, secondary);

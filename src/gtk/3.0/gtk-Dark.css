@@ -6638,6 +6638,7 @@ UnityPanelWidget:backdrop,
   background-color: rgba(33, 33, 33, 0.65);
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
+  box-shadow: none;
 }
 
 .mate-panel-menu-bar button {
@@ -6670,6 +6671,10 @@ MatePanelAppletFrameDBus {
 
 .mate-panel-menu-bar.vertical MatePanelAppletFrameDBus {
   border-width: 1px 0;
+}
+
+.mate-panel-menu-bar menubar {
+  box-shadow: none;
 }
 
 .mate-panel-menu-bar menubar > menuitem {
