@@ -16,7 +16,7 @@ fi
 
 SASSC_OPT="-M -t expanded"
 
-THEME_NAME=Orchis
+THEME_NAME=$2
 THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
