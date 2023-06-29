@@ -41,8 +41,17 @@ install() {
   local size="$5"
   local ctype="$6"
 
-  [[ "$color" == '-Dark' ]] && local ELSE_DARK="$color"
-  [[ "$color" == '-Light' ]] && local ELSE_LIGHT="$color"
+  if [[ "$color" == '-Dark' ]]; then
+    local ELSE_DARK="$color"
+    local icon_color='-dark'
+    local else_icon_dark="$icon_color"
+  fi
+
+  if [[ "$color" == '-Light' ]]; then
+    local ELSE_LIGHT="$color"
+    local icon_color='-light'
+    local else_icon_light="$icon_color"
+  fi
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
@@ -57,15 +66,15 @@ install() {
 
   echo "[Desktop Entry]" >>                                                     "$THEME_DIR/index.theme"
   echo "Type=X-GNOME-Metatheme" >>                                              "$THEME_DIR/index.theme"
-  echo "Name==${2}${3}${4}${5}${6}" >>                                          "$THEME_DIR/index.theme"
+  echo "Name=${2}${3}${4}${5}${6}" >>                                           "$THEME_DIR/index.theme"
   echo "Comment=An flat Materia Gtk+ theme based on Elegant Design" >>          "$THEME_DIR/index.theme"
   echo "Encoding=UTF-8" >>                                                      "$THEME_DIR/index.theme"
   echo "" >>                                                                    "$THEME_DIR/index.theme"
   echo "[X-GNOME-Metatheme]" >>                                                 "$THEME_DIR/index.theme"
-  echo "GtkTheme==${2}${3}${4}${5}${6}" >>                                      "$THEME_DIR/index.theme"
-  echo "MetacityTheme==${2}${3}${4}${5}${6}" >>                                 "$THEME_DIR/index.theme"
-  echo "IconTheme=Tela-circle${ELSE_DARK:-}" >>                                 "$THEME_DIR/index.theme"
-  echo "CursorTheme=Vimix${ELSE_DARK:-}" >>                                     "$THEME_DIR/index.theme"
+  echo "GtkTheme=${2}${3}${4}${5}${6}" >>                                       "$THEME_DIR/index.theme"
+  echo "MetacityTheme=${2}${3}${4}${5}${6}" >>                                  "$THEME_DIR/index.theme"
+  echo "IconTheme=Tela-circle${else_icon_dark:-}" >>                            "$THEME_DIR/index.theme"
+  echo "CursorTheme=Vimix${else_icon_dark:-}" >>                                "$THEME_DIR/index.theme"
   echo "ButtonLayout=close,minimize,maximize:menu" >>                           "$THEME_DIR/index.theme"
 
   mkdir -p                                                                      "$THEME_DIR/gnome-shell"
