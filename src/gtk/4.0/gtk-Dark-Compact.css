@@ -1011,13 +1011,13 @@ list > row button.image-button:not(.flat):checked {
 }
 
 
-list > row button.image-button:not(.flat).suggested-action {
+list > row button.image-button.suggested-action:not(.flat) {
   background-color: #3281EA;
   color: white;
 }
 
 
-list > row button.image-button:not(.flat).destructive-action {
+list > row button.image-button.destructive-action:not(.flat) {
   background-color: #F44336;
   color: white;
 }
@@ -1640,44 +1640,44 @@ headerbar stackswitcher {
   border-radius: 9999px;
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:focus, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:hover, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:active {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):focus, headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):hover, headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):active {
   color: white;
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:disabled {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):checked {
   color: white;
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:checked:disabled {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop {
   color: rgba(255, 255, 255, 0.5);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop:focus, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop:hover, headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop:active {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop:focus, headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop:hover, headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop:active {
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop:disabled {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop:checked {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop:checked {
   color: rgba(255, 255, 255, 0.5);
 }
 
-headerbar stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button:backdrop:checked:disabled {
+headerbar stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1790,12 +1790,12 @@ headerbar windowcontrols {
   border-spacing: 4px;
 }
 
-headerbar windowcontrols:not(.empty).start:dir(ltr), headerbar windowcontrols:not(.empty).end:dir(rtl) {
+headerbar windowcontrols.start:not(.empty):dir(ltr), headerbar windowcontrols.end:not(.empty):dir(rtl) {
   margin-right: 0;
   margin-left: 0;
 }
 
-headerbar windowcontrols:not(.empty).start:dir(rtl), headerbar windowcontrols:not(.empty).end:dir(ltr) {
+headerbar windowcontrols.start:not(.empty):dir(rtl), headerbar windowcontrols.end:not(.empty):dir(ltr) {
   margin-left: 0;
   margin-right: 0;
 }
@@ -1913,13 +1913,13 @@ treeview.view:drop(active) {
   box-shadow: none;
 }
 
-columnview.view:drop(active).after,
-treeview.view:drop(active).after {
+columnview.view.after:drop(active),
+treeview.view.after:drop(active) {
   border-top-style: none;
 }
 
-columnview.view:drop(active).before,
-treeview.view:drop(active).before {
+columnview.view.before:drop(active),
+treeview.view.before:drop(active) {
   border-bottom-style: none;
 }
 
@@ -1930,13 +1930,13 @@ treeview.view > dndtarget:drop(active) {
   border-color: alpha(currentColor, 0.06);
 }
 
-columnview.view > dndtarget:drop(active).after,
-treeview.view > dndtarget:drop(active).after {
+columnview.view > dndtarget.after:drop(active),
+treeview.view > dndtarget.after:drop(active) {
   border-top-style: none;
 }
 
-columnview.view > dndtarget:drop(active).before,
-treeview.view > dndtarget:drop(active).before {
+columnview.view > dndtarget.before:drop(active),
+treeview.view > dndtarget.before:drop(active) {
   border-bottom-style: none;
 }
 
@@ -2333,7 +2333,7 @@ notebook > header tab:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-notebook > header tab:checked.reorderable-page {
+notebook > header tab.reorderable-page:checked {
   background-color: #2C2C2C;
 }
 
@@ -2655,19 +2655,19 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal > range > trough > slider {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) > range > trough > slider {
   min-width: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal button {
+scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) button {
   min-width: 8px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical > range > trough > slider {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) > range > trough > slider {
   min-height: 24px;
 }
 
-scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical button {
+scrollbar.overlay-indicator.vertical:not(.dragging):not(.hovering) button {
   min-height: 8px;
 }
 
@@ -3648,7 +3648,7 @@ columnview.column-separators > header > button {
   border-left-color: rgba(255, 255, 255, 0.12);
 }
 
-columnview > listview:not(.horizontal).separators > row:not(.separator) {
+columnview > listview.separators:not(.horizontal) > row:not(.separator) {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: none;
 }
@@ -3812,24 +3812,24 @@ list.boxed-list > row.expander {
   border: none;
 }
 
-list.content > row:first-child, list.content > row:first-child.expander row.header,
+list.content > row:first-child, list.content > row.expander:first-child row.header,
 list.boxed-list > row:first-child,
-list.boxed-list > row:first-child.expander row.header {
+list.boxed-list > row.expander:first-child row.header {
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }
 
-list.content > row:last-child, list.content > row:last-child.expander:not(:checked), list.content > row:last-child.expander:not(:checked) row.header, list.content > row:last-child.expander:checked list.nested, list.content > row:last-child.expander:checked list.nested > row:last-child, list.content > row:only-child, list.content > row:only-child.expander:not(:checked), list.content > row:only-child.expander:not(:checked) row.header, list.content > row:only-child.expander:checked list.nested, list.content > row:only-child.expander:checked list.nested > row:last-child,
+list.content > row:last-child, list.content > row.expander:last-child:not(:checked), list.content > row.expander:last-child:not(:checked) row.header, list.content > row.expander:last-child:checked list.nested, list.content > row.expander:last-child:checked list.nested > row:last-child, list.content > row:only-child, list.content > row.expander:only-child:not(:checked), list.content > row.expander:only-child:not(:checked) row.header, list.content > row.expander:only-child:checked list.nested, list.content > row.expander:only-child:checked list.nested > row:last-child,
 list.boxed-list > row:last-child,
-list.boxed-list > row:last-child.expander:not(:checked),
-list.boxed-list > row:last-child.expander:not(:checked) row.header,
-list.boxed-list > row:last-child.expander:checked list.nested,
-list.boxed-list > row:last-child.expander:checked list.nested > row:last-child,
+list.boxed-list > row.expander:last-child:not(:checked),
+list.boxed-list > row.expander:last-child:not(:checked) row.header,
+list.boxed-list > row.expander:last-child:checked list.nested,
+list.boxed-list > row.expander:last-child:checked list.nested > row:last-child,
 list.boxed-list > row:only-child,
-list.boxed-list > row:only-child.expander:not(:checked),
-list.boxed-list > row:only-child.expander:not(:checked) row.header,
-list.boxed-list > row:only-child.expander:checked list.nested,
-list.boxed-list > row:only-child.expander:checked list.nested > row:last-child {
+list.boxed-list > row.expander:only-child:not(:checked),
+list.boxed-list > row.expander:only-child:not(:checked) row.header,
+list.boxed-list > row.expander:only-child:checked list.nested,
+list.boxed-list > row.expander:only-child:checked list.nested > row:last-child {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   border-bottom-width: 0;
@@ -4080,12 +4080,12 @@ window.about.background.csd headerbar {
   background-color: #242424;
 }
 
-.sidebar:not(separator):dir(ltr), .sidebar:not(separator).left, .sidebar:not(separator).left:dir(rtl) {
+.sidebar:not(separator):dir(ltr), .sidebar.left:not(separator), .sidebar.left:not(separator):dir(rtl) {
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   border-left-style: none;
 }
 
-.sidebar:not(separator):dir(rtl), .sidebar:not(separator).right {
+.sidebar:not(separator):dir(rtl), .sidebar.right:not(separator) {
   border-left: 1px solid rgba(255, 255, 255, 0.12);
   border-right-style: none;
 }
@@ -4575,7 +4575,7 @@ window.csd:backdrop {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-window.csd:backdrop.background {
+window.csd.background:backdrop {
   background-color: transparent;
   background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 40px, #212121 40px, #212121);
 }
@@ -4698,7 +4698,7 @@ stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destruc
   border-radius: 9999px;
 }
 
-stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
+stackswitcher.linked:not(.vertical) > button.text-button:not(.suggested-action):not(.destructive-action) {
   min-width: 100px;
 }
 
@@ -5150,10 +5150,400 @@ leaflet button.clear-button.image-button {
   border-radius: 10px;
 }
 
-datechooser.view button.flat.pill, datechooser.view button.circular.day {
-  min-height: 24px;
-  min-width: 24px;
+label.primary-label, label.month-name, label.secondary-label {
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 8px;
+}
+
+label.primary-label, label.month-name {
+  color: #3281EA;
+}
+
+label.secondary-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+calendar-view {
+  font-size: 10pt;
+}
+
+calendar-view:selected {
+  color: #3281EA;
+  font-weight: bold;
+}
+
+calendar-view.header,
+label.header {
+  font-size: 10pt;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+calendar-view.current,
+weekgrid.current {
+  background-color: alpha(#3281EA, 0.3);
+}
+
+popover.events {
+  background-color: #212121;
+  padding: 0;
+}
+
+popover.events box {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+popover.events list {
+  background-color: #2C2C2C;
+  border-radius: 10px;
+}
+
+popover.events scrolledwindow {
+  border-width: 0;
+}
+
+popover.events button {
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-style: solid none none;
+  box-shadow: none;
+}
+
+event {
+  margin: 1px;
+  font-size: 0.9rem;
+}
+
+event widget.content {
+  margin: 4px;
+}
+
+event.timed, event:not(.slanted):not(.slanted-start):not(.slanted-end) {
+  border-radius: 10px;
+}
+
+event.timed widget.edge {
+  border-radius: 5px;
+  min-width: 5px;
+}
+
+event.slanted-start, event.slanted-end:dir(rtl) {
+  padding-left: 12px;
+  border-radius: 0 5px 5px 0;
+}
+
+event.slanted-end, event.slanted-start:dir(rtl) {
+  padding-right: 12px;
+  border-radius: 5px 0 0 5px;
+}
+
+event.color-dark:not(.timed) {
+  color: white;
+  outline-color: rgba(0, 0, 0, 0.3);
+}
+
+event.timed, event.color-light:not(.timed) {
+  color: alpha(black, 0.75);
+  outline-color: rgba(255, 255, 255, 0.5);
+}
+
+popover.event-popover,
+popover.event-popover > contents {
+  padding: 0;
+}
+
+.search-viewport {
+  background-color: #2C2C2C;
+}
+
+.calendar-list {
+  background-color: transparent;
+}
+
+.calendar-list > list {
+  border-radius: 4px;
+}
+
+.sources-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+.sources-button:hover:not(:backdrop) {
+  background-image: none;
+  text-shadow: none;
+}
+
+.calendar-color-image {
+  -gtk-icon-filter: none;
+}
+
+image.calendar-color-image,
+button:active:not(:backdrop) .calendar-color-image,
+button:checked:not(:backdrop) .calendar-color-image,
+.calendars-list .calendar-color-image:not(:backdrop):not(:disabled),
+.calendar-list .calendar-color-image:not(:backdrop):not(:disabled),
+.sources-button:not(:backdrop):not(:disabled) .calendar-color-image {
+  -gtk-icon-shadow: 0 1px alpha(black, 0.1);
+}
+
+datechooser navigator {
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+
+datechooser navigator label {
+  font-weight: bold;
+}
+
+datechooser navigator button, datechooser navigator button.popup, datechooser navigator button.image-button {
+  min-height: 32px;
+  min-width: 32px;
+  padding: 0;
+}
+
+datechooser .weeknum, datechooser .weekday {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: smaller;
+}
+
+datechooser button.day, datechooser button.day.text-button {
+  font-size: 10pt;
+  font-weight: normal;
+  margin: 2px;
+  padding: 0;
+  min-height: 32px;
+  min-width: 32px;
+  transition: none;
+}
+
+datechooser button.day dot, datechooser button.day.text-button dot {
+  background-color: white;
+  border-radius: 50%;
+  min-height: 2px;
+  min-width: 2px;
+}
+
+datechooser button.day:selected, datechooser button.day.today:selected, datechooser button.day.text-button:selected, datechooser button.day.text-button.today:selected {
+  background-color: #3281EA;
+  color: white;
+  font-weight: bold;
+}
+
+datechooser button.day:selected dot, datechooser button.day.today:selected dot, datechooser button.day.text-button:selected dot, datechooser button.day.text-button.today:selected dot {
+  background-color: white;
+}
+
+datechooser button.day.today, datechooser button.day.text-button.today {
+  color: #3281EA;
+}
+
+datechooser button.day.today dot, datechooser button.day.text-button.today dot {
+  background-color: #3281EA;
+}
+
+datechooser button.day.other-month:not(:hover), datechooser button.day.other-month:backdrop, datechooser button.day.text-button.other-month:not(:hover), datechooser button.day.text-button.other-month:backdrop {
+  color: alpha(currentColor, 0.1);
+}
+
+datechooser button.day.other-month:not(:hover) dot, datechooser button.day.other-month:backdrop dot, datechooser button.day.text-button.other-month:not(:hover) dot, datechooser button.day.text-button.other-month:backdrop dot {
+  background-color: alpha(currentColor, 0.1);
+}
+
+datechooser button.day.other-month:hover:not(:backdrop), datechooser button.day.text-button.other-month:hover:not(:backdrop) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+datechooser button.day.other-month:hover:not(:backdrop) dot, datechooser button.day.text-button.other-month:hover:not(:backdrop) dot {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.week-header {
+  padding: 0;
+}
+
+.week-header > box:first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.week-header .week-number {
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 8px 8px 12px 8px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.week-header.week-temperature {
+  font-size: 10pt;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.week-header.lines {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+weekhourbar > label {
+  font-size: 10pt;
+  padding: 4px 4px;
+}
+
+.week-view .lines {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+weekgrid > widget.now-strip {
+  background-color: alpha(#3281EA, 0.8);
+  margin: 0 0 0 1px;
+  min-height: 3px;
+}
+
+weekgrid:selected, weekgrid.dnd,
+.week-header:selected,
+.week-header.dnd {
+  background-color: alpha(#3281EA, 0.25);
+}
+
+monthcell {
+  border: solid 1px rgba(255, 255, 255, 0.12);
+  border-width: 1px 0 0 1px;
+  background-color: transparent;
+  transition: background-color 200ms;
+}
+
+monthcell:hover:not(.out-of-month):not(.today) {
+  background-color: #242424;
+  transition: background-color 200ms;
+  color: white;
+}
+
+monthcell:selected {
+  background-color: alpha(#3281EA, 0.1);
+}
+
+monthcell:selected:hover {
+  background-color: alpha(#3281EA, 0.2);
+}
+
+monthcell:selected label.day-label {
+  font-weight: bold;
+}
+
+monthcell:nth-child(7n + 1) {
+  border-left-width: 0;
+}
+
+monthcell.today {
+  background-color: alpha(#3281EA, 0.2);
+}
+
+monthcell.today:hover {
+  background-color: alpha(#3281EA, 0.3);
+  color: #3281EA;
+}
+
+monthcell.today:selected {
+  background-color: alpha(#3281EA, 0.25);
+}
+
+monthcell.today:selected:hover {
+  background-color: alpha(#3281EA, 0.35);
+}
+
+monthcell label {
+  color: white;
+  font-size: 0.9rem;
+}
+
+monthcell label.day-label {
+  font-size: 1rem;
+}
+
+monthcell.out-of-month {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+monthcell.out-of-month label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+monthcell button {
+  padding: 0 4px;
+  border-radius: 0;
+  border-bottom: none;
+  border-right: none;
+}
+
+monthpopover > box {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.notes-section box > textview {
+  border-radius: 10px;
   padding: 4px;
+}
+
+.notes-section box > textview > text {
+  background: none;
+}
+
+agenda-view list > row {
+  padding: 2px 8px;
+}
+
+agenda-view list > label {
+  padding: 4px 8px;
+}
+
+label.no-events {
+  font-style: italic;
+}
+
+searchbutton > popover > arrow {
+  background: none;
+  border: none;
+}
+
+datechooser {
+  padding: 4px;
+}
+
+datechooser .current-week {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: white;
+  border-radius: 10px;
+}
+
+menubutton.sources-button > button {
+  border-radius: 0;
+}
+
+menubutton.sources-button > button .title {
+  font-size: 10pt;
+  font-weight: normal;
+  padding: 0 4px;
+}
+
+menubutton.sources-button > button .subtitle {
+  font-size: 8pt;
+  padding: 0 4px;
+}
+
+menubutton.sources-button > button .calendar-color-image {
+  -gtk-icon-size: 12px;
+}
+
+menubutton stack > box {
+  border-spacing: 4px;
 }
 
 .contacts-contact-list list.navigation-sidebar {
@@ -5594,7 +5984,7 @@ splitbutton.suggested-action > button:checked:hover, splitbutton.suggested-actio
   background-image: image(rgba(0, 0, 0, 0.05));
 }
 
-splitbutton.suggested-action > button:checked.keyboard-activating, splitbutton.suggested-action > menubutton > button:checked.keyboard-activating, splitbutton.destructive-action > button:checked.keyboard-activating, splitbutton.destructive-action > menubutton > button:checked.keyboard-activating, splitbutton.opaque > button:checked.keyboard-activating, splitbutton.opaque > menubutton > button:checked.keyboard-activating, menubutton.suggested-action > button:checked.keyboard-activating, menubutton.destructive-action > button:checked.keyboard-activating, menubutton.opaque > button:checked.keyboard-activating, button.suggested-action:checked.keyboard-activating, button.destructive-action:checked.keyboard-activating, button.opaque:checked.keyboard-activating, splitbutton.suggested-action > button:checked:active, splitbutton.suggested-action > menubutton > button:checked:active, splitbutton.destructive-action > button:checked:active, splitbutton.destructive-action > menubutton > button:checked:active, splitbutton.opaque > button:checked:active, splitbutton.opaque > menubutton > button:checked:active, menubutton.suggested-action > button:checked:active, menubutton.destructive-action > button:checked:active, menubutton.opaque > button:checked:active, button.suggested-action:checked:active, button.destructive-action:checked:active, button.opaque:checked:active {
+splitbutton.suggested-action > button.keyboard-activating:checked, splitbutton.suggested-action > menubutton > button.keyboard-activating:checked, splitbutton.destructive-action > button.keyboard-activating:checked, splitbutton.destructive-action > menubutton > button.keyboard-activating:checked, splitbutton.opaque > button.keyboard-activating:checked, splitbutton.opaque > menubutton > button.keyboard-activating:checked, menubutton.suggested-action > button.keyboard-activating:checked, menubutton.destructive-action > button.keyboard-activating:checked, menubutton.opaque > button.keyboard-activating:checked, button.suggested-action.keyboard-activating:checked, button.destructive-action.keyboard-activating:checked, button.opaque.keyboard-activating:checked, splitbutton.suggested-action > button:checked:active, splitbutton.suggested-action > menubutton > button:checked:active, splitbutton.destructive-action > button:checked:active, splitbutton.destructive-action > menubutton > button:checked:active, splitbutton.opaque > button:checked:active, splitbutton.opaque > menubutton > button:checked:active, menubutton.suggested-action > button:checked:active, menubutton.destructive-action > button:checked:active, menubutton.opaque > button:checked:active, button.suggested-action:checked:active, button.destructive-action:checked:active, button.opaque:checked:active {
   background-image: image(rgba(0, 0, 0, 0.3));
 }
 
@@ -5984,7 +6374,7 @@ viewswitcher {
 }
 
 viewswitcher.wide {
-  border-spacing: 2px;
+  border-spacing: 0;
   border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.04);
   margin-top: 4px;

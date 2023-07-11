@@ -487,9 +487,9 @@ viewswitcher {
   margin: 0;
 
   &.wide {
-    border-spacing: $space-size / 2;
+    border-spacing: 0;
     border-radius: $circular-radius;
-    background-color: $fill;
+    background-color: $titlebar-fill;
     margin-top: $space-size;
     margin-bottom: $space-size;
 

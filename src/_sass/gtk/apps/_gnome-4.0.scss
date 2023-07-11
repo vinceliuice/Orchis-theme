@@ -412,11 +412,424 @@ leaflet {
 // Calendar
 //
 
-datechooser.view {
-  button.flat.pill, button.circular.day {
-    min-height: 24px;
-    min-width: 24px;
-    padding: $space-size;
+// labels
+label {
+  &.primary-label, &.month-name, &.secondary-label {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: $space-size * 2;
+  }
+
+  &.primary-label, &.month-name {
+    color: $primary;
+  }
+
+  &.secondary-label {
+    color: $text-disabled;
+  }
+}
+
+calendar-view {
+  font-size: 10pt;
+
+  &:selected {
+    color: $primary;
+    font-weight: bold;
+  }
+}
+
+calendar-view.header,
+label.header {
+  font-size: 10pt;
+  font-weight: bold;
+  color: $text-disabled;
+}
+
+calendar-view.current,
+weekgrid.current {
+  background-color: gtkalpha($primary, 0.3);
+}
+
+popover.events {
+  background-color: $popover;
+  padding: 0;
+
+  box {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  list {
+    background-color: $base;
+    border-radius: $corner-radius;
+  }
+
+  scrolledwindow {
+    border-width: 0;
+  }
+
+  button {
+    border-radius: $corner-radius;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-style: solid none none;
+    box-shadow: none;
+  }
+}
+
+// Event widget
+event {
+  margin: 1px;
+  font-size: 0.9rem;
+
+  widget.content {
+    margin: 4px;
+  }
+
+  &.timed,
+  &:not(.slanted):not(.slanted-start):not(.slanted-end) {
+    border-radius: $corner-radius;
+  }
+
+  &.timed widget.edge {
+    border-radius: $corner-radius / 2;
+    min-width: 5px;
+  }
+
+  &.slanted-start,
+  &.slanted-end:dir(rtl) {
+    padding-left: $space-size * 2 + 4px;
+    border-radius: 0 $corner-radius / 2 $corner-radius / 2 0;
+  }
+
+  &.slanted-end,
+  &.slanted-start:dir(rtl) {
+    padding-right: $space-size * 2 + 4px;
+    border-radius: $corner-radius / 2 0 0 $corner-radius / 2;
+  }
+
+  &:not(.timed).color-dark {
+    color: white;
+    outline-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &.timed,
+  &:not(.timed).color-light {
+    color: gtkalpha(black, 0.75);
+    outline-color: rgba(255, 255, 255, 0.5);
+  }
+
+}
+
+// Event Popover
+popover.event-popover,
+popover.event-popover > contents {
+  padding: 0;
+}
+
+.search-viewport {
+  background-color: $base;
+}
+
+// calendar popover
+.calendar-list {
+  background-color: transparent;
+
+  > list {
+    border-radius: 4px;
+  }
+}
+
+// Edit dialog's header button
+.sources-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  border-top-style: none;
+  border-bottom-style: none;
+
+  &:hover:not(:backdrop) {
+    background-image: none;
+    text-shadow: none;
+  }
+}
+
+// defeats the ugly hover effect of the calendar color dot on buttons
+.calendar-color-image {
+  -gtk-icon-filter: none;
+}
+
+// adds a subtle shadow to the calendar color dot when it makes sense
+image.calendar-color-image,
+button:active:not(:backdrop) .calendar-color-image,
+button:checked:not(:backdrop) .calendar-color-image,
+.calendars-list .calendar-color-image:not(:backdrop):not(:disabled),
+.calendar-list .calendar-color-image:not(:backdrop):not(:disabled),
+.sources-button:not(:backdrop):not(:disabled) .calendar-color-image {
+  -gtk-icon-shadow: 0 1px gtkalpha(black, 0.1);
+}
+
+// Date chooser
+
+// month/year controls
+datechooser {
+  navigator { // add some space between the two controls
+    margin-right: $space-size;
+    margin-left: $space-size;
+    margin-bottom: $space-size;
+  }
+
+  navigator {
+    label { font-weight: bold; }
+
+    button, button.popup, button.image-button {
+      min-height: $medium-size;
+      min-width: $medium-size;
+      padding: 0;
+    }
+  }
+
+  // day names and week numbers
+  .weeknum, .weekday {
+    color: $text-disabled;
+    font-size: smaller;
+  }
+
+  // days
+  button.day, button.day.text-button {
+    font-size: 10pt;
+    font-weight: normal;
+    margin: $space-size / 2;
+    padding: 0;
+    min-height: $medium-size;
+    min-width: $medium-size;
+    transition: none;
+
+    dot {
+      background-color: $text;
+      border-radius: 50%;
+      min-height: $space-size / 2;
+      min-width: $space-size / 2;
+    }
+
+    &:selected, &.today:selected {
+      background-color: $primary;
+      color: on($primary);
+      font-weight: bold;
+
+      dot { background-color: on($primary); }
+    }
+
+    &.today {
+      color: $primary;
+
+      dot { background-color: $primary; }
+    }
+
+    &.other-month {
+      &:not(:hover),
+      &:backdrop {
+        color: gtkalpha(currentColor, 0.1);
+
+        dot { background-color: gtkalpha(currentColor, 0.1); }
+      }
+
+      &:hover:not(:backdrop) {
+        color: $text-disabled;
+
+        dot { background-color: $text-disabled; }
+      }
+    }
+  }
+}
+
+// Week View CSS
+.week-header {
+  padding: 0;
+
+  & > box:first-child {
+    border-bottom: 1px solid $border;
+  }
+
+  .week-number {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: $space-size * 2 $space-size * 2 $space-size * 3 $space-size * 2;
+    color: $track;
+  }
+
+  &.week-temperature {
+    font-size: 10pt;
+    font-weight: bold;
+    color: $text-disabled;
+  }
+
+  &.lines {
+    color: $border;
+  }
+}
+
+weekhourbar > label {
+  font-size: 10pt;
+  padding: 4px $space-size;
+}
+
+.week-view .lines {
+  color: $border;
+}
+
+weekgrid > widget.now-strip {
+  background-color: gtkalpha($primary, 0.8);
+  margin: 0 0 0 1px;
+  min-height: 3px;
+}
+
+weekgrid,
+.week-header {
+  &:selected, &.dnd {
+    background-color: gtkalpha($primary, 0.25);
+  }
+}
+
+// Month cell
+monthcell {
+  border: solid 1px $border;
+  border-width: 1px 0 0 1px;
+  background-color: transparent;
+  transition: background-color 200ms;
+
+  &:hover:not(.out-of-month):not(.today) {
+    background-color: $base-alt;
+    transition: background-color 200ms;
+    color: $text;
+  }
+
+  &:selected {
+    background-color: gtkalpha($primary, 0.1);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.2);
+    }
+
+    label.day-label { font-weight: bold; }
+  }
+
+  &:nth-child(7n + 1) { border-left-width: 0; }
+
+  &.today {
+    background-color: gtkalpha($primary, 0.2);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.3);
+      color: $primary;
+    }
+
+    &:selected {
+      background-color: gtkalpha($primary, 0.25);
+
+      &:hover {
+        background-color: gtkalpha($primary, 0.35);
+      }
+    }
+  }
+
+  label {
+    color: $text;
+    font-size: 0.9rem;
+
+    &.day-label {
+      font-size: 1rem;
+    }
+  }
+
+  &.out-of-month {
+    background-color: $fill;
+
+    label {
+      color: $text-secondary;
+    }
+  }
+
+  button {
+    padding: 0 $space-size;
+    border-radius: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+}
+
+// Month popover
+monthpopover > box {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.notes-section box > textview {
+  border-radius: $corner-radius;
+  padding: $space-size;
+
+  > text {
+    background: none;
+  }
+}
+
+// Agenda View CSS
+agenda-view list {
+  > row {
+    padding: 2px $space-size * 2;
+  }
+
+  > label {
+    padding: $space-size $space-size * 2;
+  }
+}
+
+label.no-events {
+  font-style: italic;
+}
+
+// Search
+searchbutton > popover > arrow {
+  background: none;
+  border: none;
+}
+
+// Month selector
+datechooser {
+  padding: $space-size;
+
+  .current-week {
+    background-color: $fill;
+    color: $text;
+    border-radius: $corner-radius;
+  }
+}
+
+menubutton {
+  &.sources-button {
+    > button {
+      border-radius: 0;
+
+      .title {
+        font-size: 10pt;
+        font-weight: normal;
+        padding: 0 $space-size;
+      }
+
+      .subtitle {
+        font-size: 8pt;
+        padding: 0 $space-size;
+      }
+
+      .calendar-color-image {
+        -gtk-icon-size: 12px;
+      }
+    }
+  }
+
+  stack > box {
+    border-spacing: $space-size;
   }
 }
 
