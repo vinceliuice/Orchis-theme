@@ -543,19 +543,22 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
+    min-height: 24px;
+    min-width: 24px;
+    padding: $space-size;
     box-shadow: none;
-    padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
-    background-color: $base;
-    border: 1px solid $divider;
+    background-color: rgba(black, 0.5);
+    border: none;
     background-clip: padding-box;
+    color: rgba(white, 0.85);
 
-    &:hover { background-color: mix($text, $base, 10%); }
+    &:hover { background-color: rgba(black, 0.65); color: white; }
 
-    &:active { background-color: mix($text, $base, 20%); }
+    &:active { background-color: rgba(black, 0.75); color: white; }
 
-    &.image-button { padding: ($large-size - 24px) / 2; }
+    // &.image-button { padding: $space-size; }
 
-    &:disabled { opacity: 0; }
+    &:disabled { opacity: 0; color: rgba(white, 0.35); }
   }
 
   // Suggested and Destructive Action buttons
@@ -1910,6 +1913,7 @@ popover.background {
 
       > row {
         padding: $space-size $space-size * 2;
+        margin: 0;
       }
 
       separator { margin: 0; }

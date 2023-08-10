@@ -779,27 +779,29 @@ button.text-button.image-button image:not(:only-child) {
 }
 
 button.osd {
+  min-height: 24px;
+  min-width: 24px;
+  padding: 4px;
   box-shadow: none;
-  padding: 8px 12px;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
   background-clip: padding-box;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 button.osd:hover {
-  background-color: rgba(235, 235, 235, 0.987);
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
 }
 
 button.osd:active {
-  background-color: rgba(214, 214, 214, 0.974);
-}
-
-button.osd.image-button {
-  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
 }
 
 button.osd:disabled {
   opacity: 0;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 button.suggested-action {
@@ -2216,6 +2218,7 @@ popover.background > contents list {
 
 popover.background > contents list > row {
   padding: 4px 8px;
+  margin: 0;
 }
 
 popover.background > contents list separator {

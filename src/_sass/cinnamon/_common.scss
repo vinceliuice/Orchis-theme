@@ -194,7 +194,6 @@ StScrollBar {
   StBin {
     width: 24px;
     height: 24px;
-    background-image: url("#{$asset_path}/checkbox-unchecked.svg");
   }
 
   StBin, &:focus StBin { background-image: url("#{$asset_path}/checkbox-off.svg"); }
@@ -221,7 +220,6 @@ StScrollBar {
   StBin {
     width: 24px;
     height: 24px;
-    background-image: url("#{$asset_path}/checkbox-unchecked.svg");
   }
 
   StBin, &:focus StBin { background-image: url("#{$asset_path}/radiobutton-off.svg"); }

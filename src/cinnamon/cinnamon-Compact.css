@@ -217,7 +217,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .check-box StBin {
   width: 24px;
   height: 24px;
-  background-image: url("assets/checkbox-unchecked.svg");
 }
 
 .check-box StBin, .check-box:focus StBin {
@@ -243,7 +242,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .radiobutton StBin {
   width: 24px;
   height: 24px;
-  background-image: url("assets/checkbox-unchecked.svg");
 }
 
 .radiobutton StBin, .radiobutton:focus StBin {
