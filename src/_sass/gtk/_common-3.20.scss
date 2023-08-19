@@ -3875,6 +3875,8 @@ decoration {
   .tiled-bottom &,
   .tiled-left & { border-radius: 0; }
 
+  .maximized &,
+  .fullscreen &,
   .popup & { box-shadow: none; }
 
   // server-side decorations as used by mutter

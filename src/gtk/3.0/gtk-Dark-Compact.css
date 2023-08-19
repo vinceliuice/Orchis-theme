@@ -3922,7 +3922,7 @@ decoration:backdrop {
   border-radius: 0;
 }
 
-.popup decoration {
+.maximized decoration, .fullscreen decoration, .popup decoration {
   box-shadow: none;
 }
 
