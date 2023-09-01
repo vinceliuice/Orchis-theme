@@ -3220,6 +3220,8 @@ row {
     &.text-button:not(:disabled) { color: $primary; }
   }
 
+  > box > label { padding-left: $space-size * 1.5; }
+
   &.frame,
   border { border-style: none; }
 }

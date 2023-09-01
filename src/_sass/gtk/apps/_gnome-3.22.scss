@@ -1988,6 +1988,22 @@ preferencesgroup, .geary-accounts-editor-pane {
           }
         }
       }
+
+      geary-composer-editor {
+        box.background,
+        actionbar > revealer > box {
+          border-radius: 0 0 8px 8px;
+        }
+      }
+    }
+  }
+}
+
+geary-composer-box#GearyComposerWindow {
+  geary-composer-editor {
+    box.background,
+    actionbar > revealer > box {
+      border-radius: 0 0 $window-radius $window-radius;
     }
   }
 }
