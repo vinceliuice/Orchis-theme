@@ -1455,19 +1455,19 @@ window.devel {
 %mac_window_button {
   min-height: 16px;
   min-width: 16px;
-  padding: 0;
-  margin: 0 $space-size - 2px;
+  padding: ($medium-size - 16px) / 2 0;
+  margin-left: $space-size - 2px;
+  margin-right: $space-size - 2px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
 
-    &:hover {
+    &, &:hover, &:active {
       box-shadow: none;
-    }
-
-    &:active {
-      box-shadow: inset 0 0 0 9999px rgba(black, if($topbar == 'dark', 0.12, 0));
-      background-image: radial-gradient(circle, rgba(black, 0.12) 10%, transparent 0%);
+      background-color: transparent;
+      background-image: none;
+      transition: none;
+      animation: none;
     }
 
     &:hover, &:active {
@@ -1476,7 +1476,8 @@ window.devel {
 
     &:backdrop {
       color: transparent;
-      background-color: $titlebar-track;
+
+      > image { background-color: $titlebar-track; }
 
       &:hover, &:active {
         color: $titlebar-text-disabled;
@@ -1485,26 +1486,26 @@ window.devel {
   }
 
   &.minimize { // Window minimize button
-    background-color: $titlebutton-min;
+    > image { background-color: $titlebutton-min; }
 
-    &:active {
-      background-color: mix($titlebar-text, $titlebutton-min, 25%);
+    &:active > image {
+      background-color: mix(black, $titlebutton-min, 25%);
     }
   }
 
   &.maximize { // Window maximize button
-    background-color: $titlebutton-max;
+    > image { background-color: $titlebutton-max; }
 
-    &:active {
-      background-color: mix($titlebar-text, $titlebutton-max, 25%);
+    &:active > image {
+      background-color: mix(black, $titlebutton-max, 25%);
     }
   }
 
   &.close { // Window close button
-    background-color: $titlebutton-close;
+    > image { background-color: $titlebutton-close; }
 
-    &:active {
-      background-color: mix($titlebar-text, $titlebutton-close, 25%);
+    &:active > image {
+      background-color: mix(black, $titlebutton-close, 25%);
     }
   }
 }
@@ -1549,17 +1550,10 @@ headerbar windowcontrols {
 
     @if $mac_style == 'true' {
       @extend %mac_window_button;
-    } @else {
-      // @extend %button-flat-simple;
-
-      &, &:hover, &:active, &:backdrop {
-        > image {
-          background-color: transparent;
-        }
-      }
     }
 
     > image {
+      border-radius: 100%;
       padding: 0;
       border: none;
       outline: none;
