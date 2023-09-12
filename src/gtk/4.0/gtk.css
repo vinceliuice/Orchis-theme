@@ -578,7 +578,7 @@ editablelabel > stack > text {
 headerbar popover.background button:not(.suggested-action):not(.destructive-action), button {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   outline: none;
-  box-shadow: inset 0 0 0 9999px transparent;
+  box-shadow: inset 0 0 0 2px transparent;
   background-color: rgba(0, 0, 0, 0.04);
   background-image: radial-gradient(circle, transparent 0%, transparent 0%);
   background-repeat: no-repeat;
@@ -588,17 +588,17 @@ headerbar popover.background button:not(.suggested-action):not(.destructive-acti
 }
 
 headerbar popover.background button:focus:not(.suggested-action):not(.destructive-action), button:focus {
-  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08), inset 0 0 0 9999px transparent;
+  box-shadow: inset 0 0 0 2px alpha(currentColor, 0.08);
 }
 
 headerbar popover.background button:hover:not(.suggested-action):not(.destructive-action), button:hover {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
 }
 
 headerbar popover.background button:active:not(.suggested-action):not(.destructive-action), button:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 100% 100%;
 }
@@ -618,12 +618,11 @@ headerbar popover.background button:checked:not(.suggested-action):not(.destruct
 }
 
 headerbar popover.background button:checked:hover:not(.suggested-action):not(.destructive-action), button:checked:hover {
-  box-shadow: inset 0 0 0 9999px transparent;
+  box-shadow: inset 0 0 0 2px transparent;
 }
 
 headerbar popover.background button:checked:disabled:not(.suggested-action):not(.destructive-action), button:checked:disabled {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.1);
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.1);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -636,7 +635,7 @@ button {
 }
 
 button:drop(active) {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
 }
 
 flowboxchild > button.card.category-tile-iconless, .nautilus-window tabbar tab:active > button.flat, .nautilus-window tabbar tab:checked > button.flat, .nautilus-window tabbar tab:selected > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, row button.circular, check,
@@ -647,7 +646,7 @@ toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
 combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   outline: none;
-  box-shadow: inset 0 0 0 9999px transparent;
+  box-shadow: inset 0 0 0 2px transparent;
   background-color: transparent;
   background-image: radial-gradient(circle, transparent 0%, transparent 0%);
   background-repeat: no-repeat;
@@ -672,7 +671,7 @@ dnd tab button.image-button:hover, splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, filechooser #pathbarbox > stack > box > button:hover, window.messagedialog .response-area button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -684,7 +683,7 @@ toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:on
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 100% 100%;
   color: rgba(0, 0, 0, 0.87);
@@ -999,7 +998,7 @@ list > row button.image-button:not(.flat) {
 
 
 list > row button.image-button:not(.flat):hover {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
 }
 
 
@@ -1007,7 +1006,7 @@ list > row button.image-button:not(.flat):active,
 list > row button.image-button:not(.flat):checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 100% 100%;
 }
@@ -1247,14 +1246,14 @@ button.combo:only-child:focus {
 }
 
 button.combo:only-child:hover {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
 
 button.combo:only-child:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 100% 100%;
   color: rgba(0, 0, 0, 0.87);
@@ -1511,6 +1510,11 @@ headerbar {
   background-color: transparent;
 }
 
+headerbar.top {
+  background-color: #2C2C2C;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
 headerbar:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -1518,6 +1522,10 @@ headerbar:disabled {
 headerbar:backdrop {
   color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
+}
+
+headerbar:backdrop.top {
+  background-color: #2C2C2C;
 }
 
 headerbar:backdrop:disabled {
@@ -1754,7 +1762,7 @@ headerbar .selection-mode {
 
 headerbar.default-decoration {
   min-height: 24px;
-  padding: 6px;
+  padding: 0;
   background-image: none;
   background-color: #2C2C2C;
   border-radius: 18px 18px 0 0;
@@ -1803,11 +1811,12 @@ headerbar windowcontrols:not(.empty).start:dir(rtl), headerbar windowcontrols:no
 }
 
 headerbar windowcontrols button:not(.suggested-action):not(.destructive-action) > image {
-  border-radius: 100%;
   padding: 0;
   border: none;
   outline: none;
   box-shadow: none;
+  background-color: transparent;
+  background-image: none;
 }
 
 /************
@@ -4375,7 +4384,7 @@ infobar.info > revealer > box, infobar.info:hover > revealer > box, infobar.info
   background-color: #FFFFFF;
 }
 
-infobar.info > revealer > box button, infobar.info > revealer > box button.text-button:not(:disabled), infobar.info:hover > revealer > box button, infobar.info:hover > revealer > box button.text-button:not(:disabled), infobar.info:backdrop > revealer > box button, infobar.info:backdrop > revealer > box button.text-button:not(:disabled) {
+infobar.info > revealer > box button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled), infobar.info:hover > revealer > box button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled), infobar.info:backdrop > revealer > box button.text-button:not(.suggested-action):not(.destructive-action):not(:disabled) {
   color: #1A73E8;
 }
 
@@ -6064,13 +6073,13 @@ button.card {
 }
 
 button.card:hover {
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
 }
 
 button.card.keyboard-activating, button.card:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 100% 100%;
 }
@@ -6078,7 +6087,7 @@ button.card.keyboard-activating, button.card:active {
 button.card:checked {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms, border 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
+  background-color: alpha(currentColor, 0.08);
   background-image: radial-gradient(circle, alpha(currentColor, 0.12) 10%, transparent 0%);
   background-size: 100% 100%;
 }

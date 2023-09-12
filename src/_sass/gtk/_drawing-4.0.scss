@@ -96,7 +96,7 @@
                 background-size 0,
                 background-image 0;
     outline: none;
-    box-shadow: inset 0 0 0 9999px transparent;
+    box-shadow: inset 0 0 0 2px transparent;
     background-color: $button;
     background-image: radial-gradient(circle, transparent 0%, transparent 0%);
     background-repeat: no-repeat;
@@ -106,11 +106,11 @@
   }
 
   @if $t == hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
+    background-color: $overlay-hover;
   }
 
   @if $t == focus {
-    box-shadow: inset 0 0 0 2px $overlay-focus, inset 0 0 0 9999px transparent;
+    box-shadow: inset 0 0 0 2px $overlay-focus;
   }
 
   @if $t == active {
@@ -119,7 +119,7 @@
                 background-image 0ms,
                 border 0ms;
     animation: ripple $ripple-fade-in-duration $ease-out forwards;
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
+    background-color: $overlay-hover;
     background-image: radial-gradient(circle, $overlay-active 10%, transparent 0%);
     background-size: 100% 100%;
   }
@@ -139,12 +139,11 @@
   }
 
   @if $t == checked-hover {
-    box-shadow: inset 0 0 0 9999px transparent;
+    box-shadow: inset 0 0 0 2px transparent;
   }
 
   @if $t == checked-disabled {
-    box-shadow: inset 0 0 0 9999px $overlay-checked;
-    background-color: $fill;
+    background-color: $overlay-checked;
     color: $text-disabled;
   }
 
@@ -153,7 +152,7 @@
                 background-size 0,
                 background-image 0;
     outline: none;
-    box-shadow: inset 0 0 0 9999px transparent;
+    box-shadow: inset 0 0 0 2px transparent;
     background-color: transparent;
     background-image: radial-gradient(circle, transparent 0%, transparent 0%);
     background-repeat: no-repeat;
@@ -163,7 +162,7 @@
   }
 
   @if $t == flat-hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
+    background-color: $overlay-hover;
     color: $text;
   }
 
@@ -177,7 +176,7 @@
                 background-size 0ms,
                 background-image 0ms;
     animation: ripple $ripple-fade-in-duration $ease-out forwards;
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
+    background-color: $overlay-hover;
     background-image: radial-gradient(circle, $overlay-active 10%, transparent 0%);
     background-size: 100% 100%;
     color: $text;

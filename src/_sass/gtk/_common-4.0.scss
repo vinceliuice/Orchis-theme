@@ -1139,6 +1139,7 @@ headerbar {
 
   @if $topbar == 'dark' {
     background-color: transparent;
+    &.top { background-color: $titlebar; box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar); }
   } @else {
     background-color: $titlebar;
   }
@@ -1150,6 +1151,7 @@ headerbar {
 
     @if $topbar == 'dark' {
       background-color: transparent;
+      &.top { background-color: $titlebar-backdrop; }
     } @else {
       background-color: $titlebar-backdrop;
     }
@@ -1388,7 +1390,7 @@ headerbar {
 
   &.default-decoration {
     min-height: $small-size;
-    padding: $space-size;
+    padding: 0;
     background-image: none;
     background-color: $titlebar;
     border-radius: $window-radius $window-radius 0 0;
@@ -1409,6 +1411,7 @@ headerbar {
         @if $mac_style == 'true' {
           min-height: 16px;
           min-width: 16px;
+          padding: ($small-size - 16px) / 2 0;
           margin: 0 $space-size - 2px;
         } @else {
           min-height: $small-size;
@@ -1550,14 +1553,23 @@ headerbar windowcontrols {
 
     @if $mac_style == 'true' {
       @extend %mac_window_button;
-    }
 
-    > image {
-      border-radius: 100%;
-      padding: 0;
-      border: none;
-      outline: none;
-      box-shadow: none;
+      > image {
+        border-radius: 100%;
+        padding: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    } @else {
+      > image {
+        padding: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+      }
     }
   }
 }
@@ -4063,7 +4075,7 @@ infobar {
       background-color: $base;
 
       button {
-        &, &.text-button:not(:disabled) { color: $primary; }
+        &.text-button:not(.suggested-action):not(.destructive-action):not(:disabled) { color: $primary; }
       }
     }
   }
