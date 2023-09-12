@@ -1411,7 +1411,7 @@ headerbar {
         } @else {
           min-height: $small-size;
           min-width: $small-size;
-          margin: 0;
+          margin: $space-size 0;
         }
       }
     }
