@@ -1698,6 +1698,18 @@ headerbar > windowhandle > box > box.end {
   border-spacing: 4px;
 }
 
+headerbar > windowhandle > box > box.start:dir(ltr),
+headerbar > windowhandle > box > box.end:dir(rtl), headerbar > windowhandle > box > widget > box.start:dir(ltr),
+headerbar > windowhandle > box > widget > box.end:dir(rtl) {
+  margin-right: 4px;
+}
+
+headerbar > windowhandle > box > box.start:dir(rtl),
+headerbar > windowhandle > box > box.end:dir(ltr), headerbar > windowhandle > box > widget > box.start:dir(rtl),
+headerbar > windowhandle > box > widget > box.end:dir(ltr) {
+  margin-left: 4px;
+}
+
 headerbar entry,
 headerbar spinbutton,
 headerbar button,
@@ -1798,14 +1810,12 @@ headerbar windowcontrols {
   border-spacing: 4px;
 }
 
-headerbar windowcontrols:not(.empty).start:dir(ltr), headerbar windowcontrols:not(.empty).end:dir(rtl) {
-  margin-right: 0;
-  margin-left: 0;
+headerbar windowcontrols.start:dir(ltr), headerbar windowcontrols.end:dir(rtl) {
+  margin-right: 6px;
 }
 
-headerbar windowcontrols:not(.empty).start:dir(rtl), headerbar windowcontrols:not(.empty).end:dir(ltr) {
-  margin-left: 0;
-  margin-right: 0;
+headerbar windowcontrols.start:dir(rtl), headerbar windowcontrols.end:dir(ltr) {
+  margin-left: 6px;
 }
 
 headerbar windowcontrols button:not(.suggested-action):not(.destructive-action) > image {

@@ -1311,6 +1311,18 @@ headerbar {
     > box.end {
       border-spacing: $space-size;
     }
+
+    &, > widget {
+      > box.start:dir(ltr),
+      > box.end:dir(rtl) {
+        margin-right: $space-size;
+      }
+
+      > box.start:dir(rtl),
+      > box.end:dir(ltr) {
+        margin-left: $space-size;
+      }
+    }
   }
 
   // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
@@ -1514,33 +1526,17 @@ headerbar windowcontrols {
   border-spacing: $space-size;
 
   @if $mac_style == 'true' {
-    &:not(.empty) {
-      &.start:dir(ltr),
-      &.end:dir(rtl) {
-        margin-right: $window-space;
-        margin-left: $window-space;
-      }
+    padding: 0 $space-size;
+  }
 
-      &.start:dir(rtl),
-      &.end:dir(ltr) {
-        margin-left: $window-space;
-        margin-right: $window-space;
-      }
-    }
-  } @else {
-    &:not(.empty) {
-      &.start:dir(ltr),
-      &.end:dir(rtl) {
-        margin-right: 0;
-        margin-left: 0;
-      }
+  &.start:dir(ltr),
+  &.end:dir(rtl) {
+    margin-right: $space-size;
+  }
 
-      &.start:dir(rtl),
-      &.end:dir(ltr) {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
+  &.start:dir(rtl),
+  &.end:dir(ltr) {
+    margin-left: $space-size;
   }
 
   button:not(.suggested-action):not(.destructive-action) {
