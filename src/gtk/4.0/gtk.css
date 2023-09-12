@@ -1502,17 +1502,13 @@ headerbar entry image:disabled {
 
 headerbar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
   color: white;
   min-height: 48px;
   padding: 0;
   margin: 0;
-  background-color: transparent;
-}
-
-headerbar.top {
   background-color: #2C2C2C;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
+  border-radius: 18px 18px 0 0;
 }
 
 headerbar:disabled {
@@ -1521,10 +1517,6 @@ headerbar:disabled {
 
 headerbar:backdrop {
   color: rgba(255, 255, 255, 0.7);
-  background-color: transparent;
-}
-
-headerbar:backdrop.top {
   background-color: #2C2C2C;
 }
 
@@ -1758,6 +1750,7 @@ headerbar .selection-mode {
 
 .tiled headerbar, .tiled-top headerbar, .tiled-right headerbar, .tiled-bottom headerbar, .tiled-left headerbar, .maximized headerbar, .fullscreen headerbar {
   border-radius: 0;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 headerbar.default-decoration {
@@ -4574,19 +4567,9 @@ window.csd {
   box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 16px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-window.csd.background {
-  background-color: transparent;
-  background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 48px, #F2F2F2 48px, #F2F2F2);
-}
-
 window.csd:backdrop {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px rgba(255, 255, 255, 0.1);
-}
-
-window.csd:backdrop.background {
-  background-color: transparent;
-  background-image: linear-gradient(to bottom, #2C2C2C, #2C2C2C 48px, #F2F2F2 48px, #F2F2F2);
 }
 
 window.csd.messagedialog {
@@ -5140,16 +5123,34 @@ window.dialog > box > stack > box > box > notebook.frame {
   border-radius: 0;
 }
 
-leaflet {
+window > contents leaflet {
   background-color: transparent;
 }
 
-leaflet stack.background {
+window > contents leaflet stack.background {
   background-color: transparent;
 }
 
-leaflet > box > scrolledwindow > viewport > widget > stack {
+window > contents leaflet.unfolded stack.background leaflet box.vertical:last-child > headerbar,
+window > contents leaflet.unfolded stack.background leaflet + headerbar {
+  border-top-left-radius: 0;
+}
+
+window > contents leaflet.unfolded > separator + box.vertical > headerbar {
+  border-top-right-radius: 0;
+  border-top-left-radius: 18px;
+}
+
+window > contents leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #FFFFFF;
+}
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+window > contents leaflet.unfolded > box.vertical > headerbar {
+  border-top-left-radius: 0;
 }
 
 .history-view {
@@ -5583,10 +5584,6 @@ menubutton.sources-button > button .calendar-color-image {
 
 menubutton stack > box {
   border-spacing: 6px;
-}
-
-.contacts-contact-list list.navigation-sidebar {
-  background: none;
 }
 
 flowboxchild.card {

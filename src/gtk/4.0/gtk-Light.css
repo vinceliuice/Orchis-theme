@@ -1502,12 +1502,13 @@ headerbar entry image:disabled {
 
 headerbar {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
   color: rgba(0, 0, 0, 0.87);
   min-height: 48px;
   padding: 0;
   margin: 0;
   background-color: #FFFFFF;
+  border-radius: 18px 18px 0 0;
 }
 
 headerbar:disabled {
@@ -1749,6 +1750,7 @@ headerbar .selection-mode {
 
 .tiled headerbar, .tiled-top headerbar, .tiled-right headerbar, .tiled-bottom headerbar, .tiled-left headerbar, .maximized headerbar, .fullscreen headerbar {
   border-radius: 0;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.12);
 }
 
 headerbar.default-decoration {
@@ -5085,16 +5087,34 @@ window.dialog > box > stack > box > box > notebook.frame {
   border-radius: 0;
 }
 
-leaflet {
+window > contents leaflet {
   background-color: transparent;
 }
 
-leaflet stack.background {
+window > contents leaflet stack.background {
   background-color: transparent;
 }
 
-leaflet > box > scrolledwindow > viewport > widget > stack {
+window > contents leaflet.unfolded stack.background leaflet box.vertical:last-child > headerbar,
+window > contents leaflet.unfolded stack.background leaflet + headerbar {
+  border-top-left-radius: 0;
+}
+
+window > contents leaflet.unfolded > separator + box.vertical > headerbar {
+  border-top-right-radius: 0;
+  border-top-left-radius: 18px;
+}
+
+window > contents leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #FFFFFF;
+}
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+window > contents leaflet.unfolded > box.vertical > headerbar {
+  border-top-left-radius: 0;
 }
 
 .history-view {
@@ -5528,10 +5548,6 @@ menubutton.sources-button > button .calendar-color-image {
 
 menubutton stack > box {
   border-spacing: 6px;
-}
-
-.contacts-contact-list list.navigation-sidebar {
-  background: none;
 }
 
 flowboxchild.card {

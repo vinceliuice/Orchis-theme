@@ -355,15 +355,43 @@ window.dialog {
 }
 
 // leaflet
-leaflet {
+window > contents leaflet {
   background-color: transparent;
 
   stack.background {
     background-color: transparent;
   }
 
+  &.unfolded {
+    stack.background leaflet box.vertical:last-child > headerbar,
+    stack.background leaflet + headerbar {
+      border-top-left-radius: 0;
+    }
+
+    > separator + box.vertical > headerbar {
+      border-top-right-radius: 0;
+      border-top-left-radius: $window-radius;
+    }
+  }
+
   > box > scrolledwindow > viewport > widget > stack {
     background-color: $base;
+  }
+}
+
+//
+// Contacts
+//
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+window > contents leaflet {
+  &.unfolded {
+    > box.vertical > headerbar {
+      border-top-left-radius: 0;
+    }
   }
 }
 
@@ -832,15 +860,6 @@ menubutton {
     border-spacing: $space-size;
   }
 }
-
-//
-// Contacts
-//
-
-.contacts-contact-list list.navigation-sidebar {
-  background: none;
-}
-
 
 //
 // Gnome Software
