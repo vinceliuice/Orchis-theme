@@ -788,6 +788,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/calendar-arrow-left.svg");
 }
 
+.calendar-day,
 .calendar-day-base {
   font-size: 9pt;
   font-weight: 400;
@@ -798,28 +799,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 2px !important;
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
-  border: none;
+  border: none !important;
   font-feature-settings: "tnum";
   text-shadow: none;
 }
 
-.calendar-day-base:hover, .calendar-day-base:focus {
+.calendar-day:hover, .calendar-day:focus,
+.calendar-day-base:hover,
+.calendar-day-base:focus {
   background-color: rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
 
+.calendar-day:active,
 .calendar-day-base:active {
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.3);
-  border-color: transparent;
+  border: none !important;
 }
 
+.calendar-day:selected,
 .calendar-day-base:selected {
   color: white;
   background-color: rgba(255, 255, 255, 0.3);
-  border-color: transparent;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
+.calendar-day.calendar-weekend,
+.calendar-day-base.calendar-weekend {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.calendar-day.calendar-day-heading,
 .calendar-day-base.calendar-day-heading {
   width: 24px !important;
   height: 20px !important;
@@ -875,6 +888,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar-day-with-events {
   color: rgba(255, 255, 255, 0.5);
   background-image: url("assets/calendar-today.svg");
+  background-size: contain;
 }
 
 .calendar-day-with-events.calendar-work-day {
@@ -882,9 +896,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
+.calendar-other-month,
 .calendar-other-month-day {
   color: rgba(255, 255, 255, 0.3);
-  opacity: 0.5;
+  font-weight: normal;
 }
 
 .calendar-week-number {
@@ -2024,29 +2039,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button#panelActivities {
-  background-image: url("assets/activities-small.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  color: transparent !important;
-  background-color: transparent !important;
-  font-size: 0;
-  box-shadow: none;
-  -natural-hpadding: 2px !important;
-  -minimum-hpadding: 2px !important;
+  -natural-hpadding: 10px;
 }
 
-#panel .panel-button#panelActivities > * {
-  width: 30px;
+#panel .panel-button#panelActivities StBoxLayout {
+  spacing: 4px;
 }
 
-#panel .panel-button#panelActivities:hover {
-  background-image: url("assets/activities-active-small.svg");
-}
-
-#panel .panel-button#panelActivities:hover, #panel .panel-button#panelActivities:active, #panel .panel-button#panelActivities:overview, #panel .panel-button#panelActivities:focus, #panel .panel-button#panelActivities:checked {
-  color: transparent;
-  box-shadow: none;
+#panel .panel-button#panelActivities .workspace-dot {
+  border-radius: 9999px;
+  min-width: 8px;
+  min-height: 8px;
+  background-color: white;
 }
 
 #panel Gjs_arcmenu_arcmenu_com_menuButton_Arc_Menu_MenuButton.panel-button,

@@ -3082,14 +3082,12 @@ scrolledwindow {
   }
 
   stack &.frame {
-    // border-radius: $corner-radius;
-
     viewport.frame list { border: none; }
   }
 
   // This is used when content is touch-dragged past boundaries.
   // draws a box on top of the content, the size changes programmatically.
-  @at-root overshoot {
+  > overshoot {
     &.top { @include overshoot(top); }
 
     &.bottom { @include overshoot(bottom); }
@@ -3100,20 +3098,32 @@ scrolledwindow {
   }
 
   // Overflow indication, works similarly to the overshoot, the size if fixed tho.
-  // @at-root undershoot {
-  //   &.top { @include undershoot(top); }
-  //
-  //   &.bottom { @include undershoot(bottom); }
-  //
-  //   &.left { @include undershoot(left); }
-  //
-  //   &.right { @include undershoot(right); }
-  // }
+  &.undershoot-top {
+    @include undershoot(top);
+  }
 
-  @at-root junction { // the small square between two scrollbars
+  &.undershoot-bottom {
+    @include undershoot(bottom);
+  }
+
+  &.undershoot-start {
+    &:dir(ltr) { @include undershoot(left); }
+    &:dir(rtl) { @include undershoot(right); }
+  }
+
+  &.undershoot-end {
+    &:dir(ltr) { @include undershoot(right); }
+    &:dir(rtl) { @include undershoot(left); }
+  }
+
+  > junction { // the small square between two scrollbars
     border: none;
     background-color: $base;
   }
+}
+
+* scrolledwindow > undershoot {
+  box-shadow: none;
 }
 
 // vbox and hbox separators
@@ -3722,6 +3732,16 @@ filechooser {
   stack.view {
     frame > border { border: none; }
   }
+
+  gridview {
+    @include undershoot(top, $frame, true);
+  }
+
+  placesview {
+    > stack > scrolledwindow {
+      @include undershoot(bottom);
+    }
+  }
 }
 
 filechooserbutton > button > box {
@@ -3841,6 +3861,18 @@ separator.sidebar {
 .navigation-sidebar {
   padding: $space-size 0; //only vertical padding. horizontal row size would clip
   border-right: none;
+
+  &, &.view, &.view:disabled {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &.background {
+    &, &:disabled {
+      background-color: $background;
+      color: $text;
+    }
+  }
 
   > row {
     min-height: $small-size;

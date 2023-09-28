@@ -740,6 +740,15 @@ leaflet.titlebar, hdyleaflet.titlebar {
   }
 }
 
+// >= 45.0
+list.navigation-sidebar {
+  border-bottom-left-radius: $window-radius;
+
+  > separator {
+    background-color: transparent;
+  }
+}
+
 
 /************************
  * Gnome Control Center *

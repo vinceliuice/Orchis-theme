@@ -350,28 +350,14 @@ entry image.right {
   margin-right: 0px;
 }
 
-entry undershoot.left {
-  background-color: transparent;
-  background-image: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.3) 50%);
-  padding-left: 1px;
-  background-size: 1px 12px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: left top;
-  margin: 0 4px;
-  margin: 4px 0;
+entry undershoot.left > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
 }
 
-entry undershoot.right {
-  background-color: transparent;
-  background-image: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.3) 50%);
-  padding-right: 1px;
-  background-size: 1px 12px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: right top;
-  margin: 0 4px;
-  margin: 4px 0;
+entry undershoot.right > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
 }
 
 entry.error {
@@ -1811,11 +1797,11 @@ headerbar windowcontrols {
 }
 
 headerbar windowcontrols.start:dir(ltr), headerbar windowcontrols.end:dir(rtl) {
-  margin-right: 6px;
+  margin-right: 4px;
 }
 
 headerbar windowcontrols.start:dir(rtl), headerbar windowcontrols.end:dir(ltr) {
-  margin-left: 6px;
+  margin-left: 4px;
 }
 
 headerbar windowcontrols button:not(.suggested-action):not(.destructive-action) > image {
@@ -3455,7 +3441,7 @@ stack scrolledwindow.frame viewport.frame list {
   border: none;
 }
 
-overshoot.top {
+scrolledwindow > overshoot.top {
   background-size: 200% 70%;
   background-image: radial-gradient(farthest-side at top, rgba(255, 255, 255, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
@@ -3465,7 +3451,7 @@ overshoot.top {
   box-shadow: none;
 }
 
-overshoot.bottom {
+scrolledwindow > overshoot.bottom {
   background-size: 200% 70%;
   background-image: radial-gradient(farthest-side at bottom, rgba(255, 255, 255, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
@@ -3475,7 +3461,7 @@ overshoot.bottom {
   box-shadow: none;
 }
 
-overshoot.left {
+scrolledwindow > overshoot.left {
   background-size: 200% 70%;
   background-image: radial-gradient(farthest-side at left, rgba(255, 255, 255, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
@@ -3485,7 +3471,7 @@ overshoot.left {
   box-shadow: none;
 }
 
-overshoot.right {
+scrolledwindow > overshoot.right {
   background-size: 200% 70%;
   background-image: radial-gradient(farthest-side at right, rgba(255, 255, 255, 0.04) 99%, transparent 100%);
   background-repeat: no-repeat;
@@ -3495,9 +3481,43 @@ overshoot.right {
   box-shadow: none;
 }
 
-junction {
+scrolledwindow.undershoot-top > undershoot.top {
+  box-shadow: none;
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+scrolledwindow.undershoot-bottom > undershoot.bottom {
+  box-shadow: none;
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+scrolledwindow > junction {
   border: none;
   background-color: #2C2C2C;
+}
+
+* scrolledwindow > undershoot {
+  box-shadow: none;
 }
 
 separator {
@@ -4068,6 +4088,16 @@ filechooser stack.view frame > border {
   border: none;
 }
 
+filechooser gridview ~ undershoot.top {
+  box-shadow: none;
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+filechooser placesview > stack > scrolledwindow > undershoot.bottom {
+  box-shadow: none;
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
 filechooserbutton > button > box {
   border-spacing: 4px;
 }
@@ -4160,6 +4190,16 @@ separator.sidebar.spacer {
 .navigation-sidebar {
   padding: 4px 0;
   border-right: none;
+}
+
+.navigation-sidebar, .navigation-sidebar.view, .navigation-sidebar.view:disabled {
+  background-color: transparent;
+  color: inherit;
+}
+
+.navigation-sidebar.background, .navigation-sidebar.background:disabled {
+  background-color: #212121;
+  color: white;
 }
 
 .navigation-sidebar > row {
@@ -5128,6 +5168,11 @@ window > contents leaflet.unfolded > separator + box.vertical > headerbar {
 
 window > contents leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #2C2C2C;
+}
+
+window.background.csd > widget > navigation-split-view > widget > navigation-view-page > toolbarview > revraler > windowhandle > box > headerbar {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .contacts-contact-list list.navigation-sidebar {
@@ -6499,6 +6544,10 @@ tabbar .box {
   border-bottom: none;
 }
 
+tabbar tabbox {
+  padding: 0;
+}
+
 tabbar tabbox > tabboxchild {
   border-radius: 0;
   margin: 0;
@@ -6597,8 +6646,372 @@ tabbox:drop(active) {
   box-shadow: none;
 }
 
+flap > dimming,
+leaflet > dimming,
+navigation-view > dimming,
+overlay-split-view > dimming {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+flap > border,
+leaflet > border,
+navigation-view > border,
+overlay-split-view > border {
+  background: none;
+}
+
+flap > shadow,
+leaflet > shadow,
+navigation-view > shadow,
+overlay-split-view > shadow {
+  min-width: 56px;
+  min-height: 56px;
+}
+
+flap > shadow.left,
+leaflet > shadow.left,
+navigation-view > shadow.left,
+overlay-split-view > shadow.left {
+  background-image: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+flap > shadow.right,
+leaflet > shadow.right,
+navigation-view > shadow.right,
+overlay-split-view > shadow.right {
+  background-image: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+flap > shadow.up,
+leaflet > shadow.up,
+navigation-view > shadow.up,
+overlay-split-view > shadow.up {
+  background-image: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+flap > shadow.down,
+leaflet > shadow.down,
+navigation-view > shadow.down,
+overlay-split-view > shadow.down {
+  background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
 .unfolded stacksidebar.sidebar {
   border: none;
+}
+
+.sidebar-pane {
+  background-color: #242424;
+  color: white;
+  margin-top: 1px;
+}
+
+.sidebar-pane:backdrop {
+  background-color: #212121;
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.sidebar-pane .navigation-sidebar,
+.sidebar-pane headerbar,
+.sidebar-pane searchbar > revealer > box {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top {
+  box-shadow: none;
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
+  box-shadow: none;
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane scrolledwindow.undershoot-top > undershoot.top {
+  box-shadow: none;
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane scrolledwindow.undershoot-bottom > undershoot.bottom {
+  box-shadow: none;
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.sidebar-pane flap > dimming,
+.sidebar-pane leaflet > dimming,
+.sidebar-pane navigation-view > dimming,
+.sidebar-pane overlay-split-view > dimming {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-pane flap > border,
+.sidebar-pane leaflet > border,
+.sidebar-pane navigation-view > border,
+.sidebar-pane overlay-split-view > border {
+  background: none;
+}
+
+.sidebar-pane flap > shadow,
+.sidebar-pane leaflet > shadow,
+.sidebar-pane navigation-view > shadow,
+.sidebar-pane overlay-split-view > shadow {
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.sidebar-pane flap > shadow.left,
+.sidebar-pane leaflet > shadow.left,
+.sidebar-pane navigation-view > shadow.left,
+.sidebar-pane overlay-split-view > shadow.left {
+  background-image: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+.sidebar-pane flap > shadow.right,
+.sidebar-pane leaflet > shadow.right,
+.sidebar-pane navigation-view > shadow.right,
+.sidebar-pane overlay-split-view > shadow.right {
+  background-image: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+.sidebar-pane flap > shadow.up,
+.sidebar-pane leaflet > shadow.up,
+.sidebar-pane navigation-view > shadow.up,
+.sidebar-pane overlay-split-view > shadow.up {
+  background-image: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+.sidebar-pane flap > shadow.down,
+.sidebar-pane leaflet > shadow.down,
+.sidebar-pane navigation-view > shadow.down,
+.sidebar-pane overlay-split-view > shadow.down {
+  background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.7), alpha(rgba(0, 0, 0, 0.2), 0.14) 40px, alpha(rgba(0, 0, 0, 0.2), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.4), alpha(rgba(0, 0, 0, 0.2), 0.14) 7px, alpha(rgba(0, 0, 0, 0.2), 0) 24px);
+}
+
+.sidebar-pane banner > revealer > widget {
+  background-color: mix(#3281EA,#242424,0.7);
+  color: white;
+}
+
+.sidebar-pane banner > revealer > widget:backdrop {
+  background-color: mix(#3281EA,#242424,0.7);
+}
+
+.sidebar-pane:dir(ltr), .sidebar-pane.end:dir(rtl) {
+  border-top-left-radius: 16px;
+}
+
+.sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget {
+  box-shadow: inset -1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-pane:dir(rtl), .sidebar-pane.end:dir(ltr) {
+  border-top-right-radius: 16px;
+}
+
+.sidebar-pane:dir(rtl), .sidebar-pane:dir(rtl) banner > revealer > widget, .sidebar-pane.end:dir(ltr), .sidebar-pane.end:dir(ltr) banner > revealer > widget {
+  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Middle pane in three-pane setups */
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane {
+  background-color: #2C2C2C;
+  color: white;
+}
+
+.content-pane .sidebar-pane:backdrop,
+.sidebar-pane .content-pane:backdrop {
+  background-color: #212121;
+  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.content-pane .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top,
+.sidebar-pane .content-pane toolbarview.undershoot-top scrolledwindow > undershoot.top {
+  box-shadow: none;
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom,
+.sidebar-pane .content-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
+  box-shadow: none;
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane scrolledwindow.undershoot-top > undershoot.top,
+.sidebar-pane .content-pane scrolledwindow.undershoot-top > undershoot.top {
+  box-shadow: none;
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane scrolledwindow.undershoot-bottom > undershoot.bottom,
+.sidebar-pane .content-pane scrolledwindow.undershoot-bottom > undershoot.bottom {
+  box-shadow: none;
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left,
+.sidebar-pane .content-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right,
+.sidebar-pane .content-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right,
+.sidebar-pane .content-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
+  box-shadow: none;
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left,
+.sidebar-pane .content-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
+  box-shadow: none;
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.2), 0.75), transparent 4px);
+}
+
+.content-pane .sidebar-pane flap > dimming,
+.content-pane .sidebar-pane leaflet > dimming,
+.content-pane .sidebar-pane navigation-view > dimming,
+.content-pane .sidebar-pane overlay-split-view > dimming,
+.sidebar-pane .content-pane flap > dimming,
+.sidebar-pane .content-pane leaflet > dimming,
+.sidebar-pane .content-pane navigation-view > dimming,
+.sidebar-pane .content-pane overlay-split-view > dimming {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.content-pane .sidebar-pane flap > border,
+.content-pane .sidebar-pane leaflet > border,
+.content-pane .sidebar-pane navigation-view > border,
+.content-pane .sidebar-pane overlay-split-view > border,
+.sidebar-pane .content-pane flap > border,
+.sidebar-pane .content-pane leaflet > border,
+.sidebar-pane .content-pane navigation-view > border,
+.sidebar-pane .content-pane overlay-split-view > border {
+  background: none;
+}
+
+.content-pane .sidebar-pane flap > shadow,
+.content-pane .sidebar-pane leaflet > shadow,
+.content-pane .sidebar-pane navigation-view > shadow,
+.content-pane .sidebar-pane overlay-split-view > shadow,
+.sidebar-pane .content-pane flap > shadow,
+.sidebar-pane .content-pane leaflet > shadow,
+.sidebar-pane .content-pane navigation-view > shadow,
+.sidebar-pane .content-pane overlay-split-view > shadow {
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.content-pane .sidebar-pane flap > shadow.left,
+.content-pane .sidebar-pane leaflet > shadow.left,
+.content-pane .sidebar-pane navigation-view > shadow.left,
+.content-pane .sidebar-pane overlay-split-view > shadow.left,
+.sidebar-pane .content-pane flap > shadow.left,
+.sidebar-pane .content-pane leaflet > shadow.left,
+.sidebar-pane .content-pane navigation-view > shadow.left,
+.sidebar-pane .content-pane overlay-split-view > shadow.left {
+  background-image: linear-gradient(to right, alpha(rgba(255, 255, 255, 0.12), 0.7), alpha(rgba(255, 255, 255, 0.12), 0.14) 40px, alpha(rgba(255, 255, 255, 0.12), 0) 56px), linear-gradient(to right, alpha(rgba(255, 255, 255, 0.12), 0.4), alpha(rgba(255, 255, 255, 0.12), 0.14) 7px, alpha(rgba(255, 255, 255, 0.12), 0) 24px);
+}
+
+.content-pane .sidebar-pane flap > shadow.right,
+.content-pane .sidebar-pane leaflet > shadow.right,
+.content-pane .sidebar-pane navigation-view > shadow.right,
+.content-pane .sidebar-pane overlay-split-view > shadow.right,
+.sidebar-pane .content-pane flap > shadow.right,
+.sidebar-pane .content-pane leaflet > shadow.right,
+.sidebar-pane .content-pane navigation-view > shadow.right,
+.sidebar-pane .content-pane overlay-split-view > shadow.right {
+  background-image: linear-gradient(to left, alpha(rgba(255, 255, 255, 0.12), 0.7), alpha(rgba(255, 255, 255, 0.12), 0.14) 40px, alpha(rgba(255, 255, 255, 0.12), 0) 56px), linear-gradient(to left, alpha(rgba(255, 255, 255, 0.12), 0.4), alpha(rgba(255, 255, 255, 0.12), 0.14) 7px, alpha(rgba(255, 255, 255, 0.12), 0) 24px);
+}
+
+.content-pane .sidebar-pane flap > shadow.up,
+.content-pane .sidebar-pane leaflet > shadow.up,
+.content-pane .sidebar-pane navigation-view > shadow.up,
+.content-pane .sidebar-pane overlay-split-view > shadow.up,
+.sidebar-pane .content-pane flap > shadow.up,
+.sidebar-pane .content-pane leaflet > shadow.up,
+.sidebar-pane .content-pane navigation-view > shadow.up,
+.sidebar-pane .content-pane overlay-split-view > shadow.up {
+  background-image: linear-gradient(to bottom, alpha(rgba(255, 255, 255, 0.12), 0.7), alpha(rgba(255, 255, 255, 0.12), 0.14) 40px, alpha(rgba(255, 255, 255, 0.12), 0) 56px), linear-gradient(to bottom, alpha(rgba(255, 255, 255, 0.12), 0.4), alpha(rgba(255, 255, 255, 0.12), 0.14) 7px, alpha(rgba(255, 255, 255, 0.12), 0) 24px);
+}
+
+.content-pane .sidebar-pane flap > shadow.down,
+.content-pane .sidebar-pane leaflet > shadow.down,
+.content-pane .sidebar-pane navigation-view > shadow.down,
+.content-pane .sidebar-pane overlay-split-view > shadow.down,
+.sidebar-pane .content-pane flap > shadow.down,
+.sidebar-pane .content-pane leaflet > shadow.down,
+.sidebar-pane .content-pane navigation-view > shadow.down,
+.sidebar-pane .content-pane overlay-split-view > shadow.down {
+  background-image: linear-gradient(to top, alpha(rgba(255, 255, 255, 0.12), 0.7), alpha(rgba(255, 255, 255, 0.12), 0.14) 40px, alpha(rgba(255, 255, 255, 0.12), 0) 56px), linear-gradient(to top, alpha(rgba(255, 255, 255, 0.12), 0.4), alpha(rgba(255, 255, 255, 0.12), 0.14) 7px, alpha(rgba(255, 255, 255, 0.12), 0) 24px);
+}
+
+.content-pane .sidebar-pane banner > revealer > widget,
+.sidebar-pane .content-pane banner > revealer > widget {
+  background-color: mix(#3281EA,#2C2C2C,0.7);
+  color: white;
+}
+
+.content-pane .sidebar-pane banner > revealer > widget:backdrop,
+.sidebar-pane .content-pane banner > revealer > widget:backdrop {
+  background-color: mix(#3281EA,#2C2C2C,0.7);
+}
+
+.content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane:dir(ltr) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(rtl), .content-pane .sidebar-pane.end:dir(rtl) banner > revealer > widget,
+.sidebar-pane .content-pane:dir(ltr),
+.sidebar-pane .content-pane:dir(ltr) banner > revealer > widget,
+.sidebar-pane .content-pane.end:dir(rtl),
+.sidebar-pane .content-pane.end:dir(rtl) banner > revealer > widget {
+  box-shadow: inset -1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.content-pane .sidebar-pane:dir(rtl), .content-pane .sidebar-pane:dir(rtl) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(ltr), .content-pane .sidebar-pane.end:dir(ltr) banner > revealer > widget,
+.sidebar-pane .content-pane:dir(rtl),
+.sidebar-pane .content-pane:dir(rtl) banner > revealer > widget,
+.sidebar-pane .content-pane.end:dir(ltr),
+.sidebar-pane .content-pane.end:dir(ltr) banner > revealer > widget {
+  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-pane .sidebar-pane {
+  background-color: transparent;
+  color: inherit;
+}
+
+.top-bar headerbar, .top-bar headerbar:backdrop {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.top-bar .collapse-spacing {
+  padding: 0;
 }
 
 /* GTK NAMED COLORS

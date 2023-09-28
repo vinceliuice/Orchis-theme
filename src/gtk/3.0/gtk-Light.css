@@ -4778,6 +4778,14 @@ leaflet.titlebar > .titlebar.tweak-titlebar-right + separator, leaflet.titlebar 
   background-image: image(rgba(0, 0, 0, 0.12));
 }
 
+list.navigation-sidebar {
+  border-bottom-left-radius: 18px;
+}
+
+list.navigation-sidebar > separator {
+  background-color: transparent;
+}
+
 /************************
  * Gnome Control Center *
  ************************/

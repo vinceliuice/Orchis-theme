@@ -118,6 +118,7 @@
   &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
 }
 
+.calendar-day,
 .calendar-day-base {
   @include font(caption);
   text-align: center;
@@ -127,7 +128,7 @@
   margin: 2px !important;
   border-radius: $circular-radius;
   color: $text-secondary;
-  border: none;
+  border: none !important;
   font-feature-settings: "tnum";
   text-shadow: none;
 
@@ -139,13 +140,21 @@
   &:active {
     color: $text-secondary;
     background-color: $track;
-    border-color: transparent; //avoid jumparound due to today
+    border: none !important; //avoid jumparound due to today
   }
 
   &:selected {
     color: $text;
     background-color: $track;
-    border-color: transparent; //avoid jumparound due to today
+    border: none !important; //avoid jumparound due to today
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  &.calendar-weekday {}
+
+  &.calendar-weekend {
+    color: $text-disabled;
   }
 
   &.calendar-day-heading {  //day of week heading
@@ -198,6 +207,7 @@
 .calendar-day-with-events {
   color: $text-disabled;
   background-image: url("assets/calendar-today.svg");
+  background-size: contain;
 
   &.calendar-work-day {
     color: $text-disabled;
@@ -205,9 +215,10 @@
   }
 }
 
+.calendar-other-month,
 .calendar-other-month-day {
   color: $text-secondary-disabled;
-  opacity: 0.5;
+  font-weight: normal;
 }
 
 .calendar-week-number {

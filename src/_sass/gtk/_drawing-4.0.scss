@@ -232,45 +232,72 @@
 }
 
 
-@mixin undershoot($p) {
+@mixin undershoot($p, $c: $frame, $neighbor: false) {
 //
 // undershoot
 //
 // $p: position
+// $c: shade color
+// $neighbor: use ~ instead of >
 //
 // possible $p values:
 // top, bottom, right, left
 //
 
-  $_undershoot_color_dark: $track;
-  $_undershoot_color_light: transparent;
+  $_border_pos: '';
+  $_direction: '';
+  $_selector: if($neighbor, '~', '>');
 
-  $_gradient_dir: left;
-  $_dash_bg_size: 12px 1px;
-  $_gradient_repeat: repeat-x;
-  $_bg_pos: left $p;
-
-  @if ($p == left) or ($p == right) {
-    $_gradient_dir: top;
-    $_dash_bg_size: 1px 12px;
-    $_gradient_repeat: repeat-y;
-    $_bg_pos: $p top;
+  @if $p==top {
+    $_direction: bottom;
+    $_border_pos: 0 1px;
+  } @else if $p==bottom {
+    $_direction: top;
+    $_border_pos: 0 -1px;
+  } @else if $p==left {
+    $_direction: right;
+    $_border_pos: 1px 0;
+  } @else if $p==right {
+    $_direction: left;
+    $_border_pos: -1px 0;
+  } @else {
+    @error "Unknown position #{$p}"
   }
 
-  background-color: transparent; // shouldn't be needed, but better to be sure
+  #{$_selector} undershoot.#{$p} {
+    box-shadow: none;
+    background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent 4px);
+  }
+}
+  
+@mixin background-shadow($direction, $color) {
+  background-image:
+    linear-gradient($direction,
+                    gtkalpha($color, 0.7),
+                    gtkalpha($color, 0.14) 40px,
+                    gtkalpha($color, 0) 56px),
+    linear-gradient($direction,
+                    gtkalpha($color, 0.4),
+                    gtkalpha($color, 0.14) 7px,
+                    gtkalpha($color, 0) 24px);
+}
 
-  background-image: linear-gradient(to $_gradient_dir, // this is the dashed line
-                                    $_undershoot_color_light 50%,
-                                    $_undershoot_color_dark 50%);
+@mixin transition-shadows($color) {
+  > dimming {
+    background: $color;
+  }
 
-  padding-#{$p}: 1px;
-  background-size: $_dash_bg_size;
-  background-repeat: $_gradient_repeat;
-  background-origin: content-box;
-  background-position: $_bg_pos;
-  margin: 0 4px;
+  > border {
+    background: none;
+  }
 
-  @if ($p == left) or ($p == right) {
-    margin: 4px 0;
+  > shadow {
+    min-width: 56px;
+    min-height: 56px;
+
+    &.left  { @include background-shadow(to right,  $color); }
+    &.right { @include background-shadow(to left,   $color); }
+    &.up    { @include background-shadow(to bottom, $color); }
+    &.down  { @include background-shadow(to top,    $color); }
   }
 }

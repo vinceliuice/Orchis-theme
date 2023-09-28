@@ -379,6 +379,15 @@ window > contents leaflet {
   }
 }
 
+window.background.csd {
+  > widget > navigation-split-view > widget > navigation-view-page > toolbarview > revraler > windowhandle > box {
+    > headerbar {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
 //
 // Contacts
 //
