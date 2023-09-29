@@ -485,6 +485,12 @@ preferencesgroup > box {
 
 viewswitcher {
   margin: 0;
+  border-spacing: $space-size / 2;
+
+  &.narrow {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   &.wide {
     border-spacing: 0;
@@ -521,9 +527,9 @@ viewswitcher {
     > stack > box {
       &.narrow {
         font-size: 0.75rem;
-        padding-top: $space-size + 1px;
-        padding-bottom: $space-size - 1px;
-        border-spacing: $space-size - 2px;
+        padding-top: $space-size;
+        padding-bottom: $space-size;
+        border-spacing: $space-size / 2;
 
         > stack > label {
           padding-left: $space-size + 2px;
@@ -545,9 +551,59 @@ viewswitcherbar actionbar > revealer > box {
 }
 
 // AdwViewSwitcherTitle
-viewswitchertitle viewswitcher {
-  margin-left: $space-size * 2;
-  margin-right: $space-size * 2;
+viewswitchertitle {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  viewswitcher {
+    margin-left: $space-size * 2;
+    margin-right: $space-size * 2;
+
+    &.narrow {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      button.toggle {
+        > stack > box {
+          &.narrow {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-spacing: 0;
+          }
+        }
+      }
+    }
+
+    &.wide {
+      margin-top: $space-size;
+      margin-bottom: $space-size;
+    }
+  }
+
+  windowtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .top-bar headerbar & viewswitcher {
+    &.narrow {
+      button.toggle {
+        border-radius: 0 0 $corner-radius $corner-radius;
+
+        &:checked {
+          background-color: $primary;
+          color: on($primary);
+    
+          &:backdrop { color: on($primary, disabled); }
+    
+          indicatorbin.needs-attention > indicator {
+            > label { color: $primary; }
+            background-color: on($primary);
+          }
+        }
+      }
+    }
+  }
 }
 
 // AdwIndicatorBin
@@ -779,7 +835,8 @@ overlay-split-view {
     border-top-left-radius: $window-radius;
 
     &, banner > revealer > widget {
-      box-shadow: inset -1px 0 $border;
+      box-shadow: none;
+      border-right: 1px solid $border;
     }
   }
 
@@ -787,8 +844,19 @@ overlay-split-view {
     border-top-right-radius: $window-radius;
 
     &, banner > revealer > widget {
-      box-shadow: inset 1px 0 $border;
+      box-shadow: none;
+      border-left: 1px solid $border;
     }
+  }
+
+  window.maxmized &:dir(ltr),
+  window.maxmized &.end:dir(rtl) {
+    border-top-left-radius: 0;
+  }
+
+  window.maxmized &:dir(rtl),
+  window.maxmized &.end:dir(rtl) {
+    border-top-right-radius: 0;
   }
 }
 
@@ -848,15 +916,31 @@ overlay-split-view {
   }
 
   &:dir(ltr), &.end:dir(rtl) {
+    border-top-left-radius: $window-radius;
+
     &, banner > revealer > widget {
-      box-shadow: inset -1px 0 $border;
+      box-shadow: none;
+      border-right: 1px solid $border;
     }
   }
 
   &:dir(rtl), &.end:dir(ltr) {
+    border-top-right-radius: $window-radius;
+
     &, banner > revealer > widget {
-      box-shadow: inset 1px 0 $border;
+      box-shadow: none;
+      border-left: 1px solid $border;
     }
+  }
+
+  window.maxmized &:dir(ltr),
+  window.maxmized &.end:dir(rtl) {
+    border-top-left-radius: 0;
+  }
+
+  window.maxmized &:dir(rtl),
+  window.maxmized &.end:dir(rtl) {
+    border-top-right-radius: 0;
   }
 }
 

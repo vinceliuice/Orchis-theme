@@ -545,19 +545,26 @@ editablelabel > stack > text {
   }
 }
 
-.nautilus-window tabbar tab > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, popover.background.touch-selection button, popover.background.magnifier button, headerbar.selection-mode button:not(.suggested-action):not(.destructive-action) {
+.nautilus-window tabbar tab > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, popover.background.touch-selection button, popover.background.magnifier button, headerbar.selection-mode button:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window tabbar tab > button.flat:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:focus, infobar.warning > revealer > box button:focus, popover.background.touch-selection button:focus, popover.background.magnifier button:focus, headerbar.selection-mode button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window tabbar tab > button.flat:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:hover, infobar.warning > revealer > box button:hover, popover.background.touch-selection button:hover, popover.background.magnifier button:hover, headerbar.selection-mode button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window tabbar tab > button.flat:active, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:active, infobar.warning > revealer > box button:active, popover.background.touch-selection button:active, popover.background.magnifier button:active, headerbar.selection-mode button:active:not(.suggested-action):not(.destructive-action), .nautilus-window tabbar tab > button.flat:checked, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:checked, infobar.warning > revealer > box button:checked, popover.background.touch-selection button:checked, popover.background.magnifier button:checked, headerbar.selection-mode button:checked:not(.suggested-action):not(.destructive-action) {
+.nautilus-window tabbar tab > button.flat:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:focus,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:focus, infobar.warning > revealer > box button:focus, popover.background.touch-selection button:focus, popover.background.magnifier button:focus, headerbar.selection-mode button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window tabbar tab > button.flat:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:hover,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:hover, infobar.warning > revealer > box button:hover, popover.background.touch-selection button:hover, popover.background.magnifier button:hover, headerbar.selection-mode button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window tabbar tab > button.flat:active, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:active,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:active, infobar.warning > revealer > box button:active, popover.background.touch-selection button:active, popover.background.magnifier button:active, headerbar.selection-mode button:active:not(.suggested-action):not(.destructive-action), .nautilus-window tabbar tab > button.flat:checked, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:checked,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:checked, infobar.warning > revealer > box button:checked, popover.background.touch-selection button:checked, popover.background.magnifier button:checked, headerbar.selection-mode button:checked:not(.suggested-action):not(.destructive-action) {
   color: white;
 }
 
-.nautilus-window tabbar tab > button.flat:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:disabled, infobar.warning > revealer > box button:disabled, popover.background.touch-selection button:disabled, popover.background.magnifier button:disabled, headerbar.selection-mode button:disabled:not(.suggested-action):not(.destructive-action) {
+.nautilus-window tabbar tab > button.flat:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:disabled,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:disabled, infobar.warning > revealer > box button:disabled, popover.background.touch-selection button:disabled, popover.background.magnifier button:disabled, headerbar.selection-mode button:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.nautilus-window tabbar tab > button.flat:checked:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, popover.background.touch-selection button:checked:disabled, popover.background.magnifier button:checked:disabled, headerbar.selection-mode button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.nautilus-window tabbar tab > button.flat:checked:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:checked:disabled,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable button.sidebar-button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, popover.background.touch-selection button:checked:disabled, popover.background.magnifier button:checked:disabled, headerbar.selection-mode button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -624,7 +631,8 @@ button:drop(active) {
   background-color: alpha(currentColor, 0.08);
 }
 
-flowboxchild > button.card.category-tile-iconless, .nautilus-window tabbar tab:active > button.flat, .nautilus-window tabbar tab:checked > button.flat, .nautilus-window tabbar tab:selected > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, row button.circular, check,
+flowboxchild > button.card.category-tile-iconless, .nautilus-window tabbar tab:active > button.flat, .nautilus-window tabbar tab:checked > button.flat, .nautilus-window tabbar tab:selected > button.flat, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button, stackswitcher.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button, calendar > header > button, row button.circular, check,
 radio, scrollbar button, notebook > header > tabs > arrow, popover.background modelbutton, spinbutton:not(.vertical) > button, spinbutton.vertical > button, tabbar tab button.image-button,
 dnd tab button.image-button, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, filechooser #pathbarbox > stack > box > button, window.messagedialog .response-area button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action), headerbar button:not(.suggested-action):not(.destructive-action), .toolbar button,
@@ -641,7 +649,8 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
   color: rgba(0, 0, 0, 0.6);
 }
 
-flowboxchild > button.card.category-tile-iconless:focus, .nautilus-window tabbar tab:active > button.flat:focus, .nautilus-window tabbar tab:checked > button.flat:focus, .nautilus-window tabbar tab:selected > button.flat:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:focus, stackswitcher.linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, row button.circular:focus, check:focus,
+flowboxchild > button.card.category-tile-iconless:focus, .nautilus-window tabbar tab:active > button.flat:focus, .nautilus-window tabbar tab:checked > button.flat:focus, .nautilus-window tabbar tab:selected > button.flat:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:focus,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:focus, stackswitcher.linked:not(.vertical) > button:focus:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:focus, calendar > header > button:focus, row button.circular:focus, check:focus,
 radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, popover.background modelbutton:focus, spinbutton:not(.vertical) > button:focus, spinbutton.vertical > button:focus, tabbar tab button.image-button:focus,
 dnd tab button.image-button:focus, splitbutton.flat > button:focus,
 splitbutton.flat > menubutton > button:focus, menubutton.flat > button:focus, filechooser #pathbarbox > stack > box > button:focus, window.messagedialog .response-area button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, headerbar popover.background button.flat:focus:not(.suggested-action):not(.destructive-action), headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
@@ -651,7 +660,8 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
   color: rgba(0, 0, 0, 0.87);
 }
 
-flowboxchild > button.card.category-tile-iconless:hover, .nautilus-window tabbar tab:active > button.flat:hover, .nautilus-window tabbar tab:checked > button.flat:hover, .nautilus-window tabbar tab:selected > button.flat:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:hover, stackswitcher.linked:not(.vertical) > button:hover:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, row button.circular:hover, check:hover,
+flowboxchild > button.card.category-tile-iconless:hover, .nautilus-window tabbar tab:active > button.flat:hover, .nautilus-window tabbar tab:checked > button.flat:hover, .nautilus-window tabbar tab:selected > button.flat:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:hover,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:hover, stackswitcher.linked:not(.vertical) > button:hover:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:hover, calendar > header > button:hover, row button.circular:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, popover.background modelbutton:hover, spinbutton:not(.vertical) > button:hover, spinbutton.vertical > button:hover, tabbar tab button.image-button:hover,
 dnd tab button.image-button:hover, splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, filechooser #pathbarbox > stack > box > button:hover, window.messagedialog .response-area button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
@@ -661,7 +671,8 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
   color: rgba(0, 0, 0, 0.87);
 }
 
-flowboxchild > button.card.category-tile-iconless:active, .nautilus-window tabbar tab:active > button.flat:active, .nautilus-window tabbar tab:checked > button.flat:active, .nautilus-window tabbar tab:selected > button.flat:active, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:active, stackswitcher.linked:not(.vertical) > button:active:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, row button.circular:active, check:active,
+flowboxchild > button.card.category-tile-iconless:active, .nautilus-window tabbar tab:active > button.flat:active, .nautilus-window tabbar tab:checked > button.flat:active, .nautilus-window tabbar tab:selected > button.flat:active, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:active,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:active, stackswitcher.linked:not(.vertical) > button:active:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:active, calendar > header > button:active, row button.circular:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, popover.background modelbutton:active, spinbutton:not(.vertical) > button:active, spinbutton.vertical > button:active, tabbar tab button.image-button:active,
 dnd tab button.image-button:active, splitbutton.flat > button:active,
 splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, filechooser #pathbarbox > stack > box > button:active, window.messagedialog .response-area button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, headerbar popover.background button.flat:active:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
@@ -675,7 +686,8 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
   color: rgba(0, 0, 0, 0.87);
 }
 
-flowboxchild > button.card.category-tile-iconless:disabled, .nautilus-window tabbar tab:active > button.flat:disabled, .nautilus-window tabbar tab:checked > button.flat:disabled, .nautilus-window tabbar tab:selected > button.flat:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:disabled, stackswitcher.linked:not(.vertical) > button:disabled:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, row button.circular:disabled, check:disabled,
+flowboxchild > button.card.category-tile-iconless:disabled, .nautilus-window tabbar tab:active > button.flat:disabled, .nautilus-window tabbar tab:checked > button.flat:disabled, .nautilus-window tabbar tab:selected > button.flat:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:disabled,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button:disabled, stackswitcher.linked:not(.vertical) > button:disabled:not(.suggested-action):not(.destructive-action), placessidebar .navigation-sidebar > row button.sidebar-button:disabled, calendar > header > button:disabled, row button.circular:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, popover.background modelbutton:disabled, spinbutton:not(.vertical) > button:disabled, spinbutton.vertical > button:disabled, tabbar tab button.image-button:disabled,
 dnd tab button.image-button:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, filechooser #pathbarbox > stack > box > button:disabled, window.messagedialog .response-area button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, headerbar popover.background button.flat:disabled:not(.suggested-action):not(.destructive-action), headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
@@ -4875,140 +4887,196 @@ popover.entry-completion > contents {
   min-width: 0;
 }
 
-.nautilus-window flap.unfolded > placessidebar {
+.nautilus-window .sidebar-pane, .nautilus-window .sidebar-pane:backdrop {
   background-color: transparent;
+}
+
+.nautilus-window .sidebar-pane:dir(ltr), .nautilus-window .sidebar-pane:dir(ltr) banner > revealer > widget, .nautilus-window .sidebar-pane.end:dir(rtl), .nautilus-window .sidebar-pane.end:dir(rtl) banner > revealer > widget {
+  box-shadow: none;
+  border-right: none;
+}
+
+.nautilus-window .sidebar-pane:dir(rtl), .nautilus-window .sidebar-pane:dir(rtl) banner > revealer > widget, .nautilus-window .sidebar-pane.end:dir(ltr), .nautilus-window .sidebar-pane.end:dir(ltr) banner > revealer > widget {
+  box-shadow: none;
+  border-left: none;
+}
+
+.nautilus-window flap.unfolded > placessidebar,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar {
+  background-color: #2C2C2C;
   border-radius: 16px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow {
   margin: 0 0 8px 8px;
   border-radius: 12px;
   background-color: transparent;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow overshoot.top {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > overshoot.top, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > undershoot.top,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > overshoot.top,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > undershoot.top {
   border-radius: 12px 12px 0 0;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow overshoot.bottom {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > overshoot.bottom, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > undershoot.bottom,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > overshoot.bottom,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > undershoot.bottom {
   border-radius: 0 0 12px 12px;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar {
   padding: 16px 0 16px 0;
   background: none;
   border-radius: 12px;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > separator {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > separator,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > separator {
   background: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable {
   border-radius: 0;
   padding: 0;
   margin: -8px 0 -8px 0;
   animation: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable > revealer.sidebar-revealer {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable > revealer.sidebar-revealer,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable > revealer.sidebar-revealer {
   padding-left: 12px;
   padding-right: 0;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable > revealer.sidebar-revealer > box {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable > revealer.sidebar-revealer > box,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable > revealer.sidebar-revealer > box {
   padding-right: 16px;
   padding-left: 0;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:active {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:focus, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:active,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:focus,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:active {
   background: none;
   box-shadow: none;
   animation: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable label.sidebar-label {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable image.sidebar-icon {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable image.sidebar-icon {
   padding-right: 4px;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable label.sidebar-label {
   color: inherit;
   min-height: 54px;
   padding-left: 4px;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable.sidebar-placeholder-row {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable.sidebar-placeholder-row,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable.sidebar-placeholder-row {
   background-color: transparent;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active),
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) {
   border-radius: 0;
   border-radius: 9999px 0 0 9999px;
   background-color: rgba(245, 124, 0, 0.1);
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active), .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active), .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active),
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:drop(active) label.sidebar-label {
   color: #F57C00;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:hover label.sidebar-label {
   color: #1A73E8;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected {
   background-color: transparent;
   font-weight: 700;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon {
   color: #1A73E8;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label {
   color: #1A73E8;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button {
   color: #1A73E8;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected > revealer > box {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected > revealer > box,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected > revealer > box {
   color: #1A73E8;
   background-color: #FFFFFF;
-  border-image-width: 10px 10px 10px 46px;
-  border-image-slice: 10 10 10 46;
+  border-image-width: 16px 16px 16px 46px;
+  border-image-slice: 16 16 16 46;
   border-image-repeat: stretch;
   border-image-source: -gtk-scaled(url("assets/row-selected.png"), url("assets/row-selected@2.png"));
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected label.sidebar-label {
   padding-left: 14px;
+  padding-right: 0;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:selected button.sidebar-button {
   color: #1A73E8;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled label.sidebar-label {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled image.sidebar-icon, .nautilus-window flap.unfolded > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > viewport > list.navigation-sidebar > row.activatable:disabled label.sidebar-label {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > scrollbar {
   margin: 2px 2px 2px 0;
   background: none;
   border: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar though {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar though,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > scrollbar though {
   background: none;
 }
 
-.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar though > slider {
+.nautilus-window flap.unfolded > placessidebar > scrolledwindow > scrollbar though > slider,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar > scrolledwindow > scrollbar though > slider {
   border: none;
 }
 
@@ -5044,18 +5112,18 @@ popover.entry-completion > contents {
   background-color: transparent;
 }
 
-.nautilus-window .nautilus-grid-view.view, .nautilus-window .nautilus-grid-view.view gridview.view {
+.nautilus-window .nautilus-grid-view, .nautilus-window .nautilus-grid-view gridview.view {
   background-color: #FFFFFF;
   border-radius: 12px;
   margin: 0 4px 4px 0;
 }
 
-.nautilus-window .nautilus-list-view.view {
+.nautilus-window .nautilus-list-view {
   border-radius: 12px;
   margin: 0 4px 4px 0;
 }
 
-.nautilus-window .nautilus-list-view.view .view {
+.nautilus-window .nautilus-list-view .view {
   background-color: transparent;
 }
 
@@ -5098,6 +5166,7 @@ popover.entry-completion > contents {
   border-radius: 9999px;
   background-color: rgba(242, 242, 242, 0.95);
   box-shadow: none;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .nautilus-window .floating-bar button {
@@ -5367,19 +5436,6 @@ popover.event-popover > contents {
   border-radius: 4px;
 }
 
-.sources-button {
-  margin-top: 0;
-  margin-bottom: 0;
-  border-radius: 0;
-  border-top-style: none;
-  border-bottom-style: none;
-}
-
-.sources-button:hover:not(:backdrop) {
-  background-image: none;
-  text-shadow: none;
-}
-
 .calendar-color-image {
   -gtk-icon-filter: none;
 }
@@ -5623,6 +5679,19 @@ datechooser .current-week {
   border-radius: 10px;
 }
 
+menubutton.sources-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+menubutton.sources-button:hover:not(:backdrop) {
+  background-image: none;
+  text-shadow: none;
+}
+
 menubutton.sources-button > button {
   border-radius: 0;
 }
@@ -5644,6 +5713,24 @@ menubutton.sources-button > button .calendar-color-image {
 
 menubutton stack > box {
   border-spacing: 4px;
+}
+
+.topbar headerbar menubutton.sources-button > button {
+  border-radius: 0 0 10px 10px;
+}
+
+navigation-split-view .content-pane navigation-view-page > toolbarview.view {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  border-top-right-radius: 16px;
+}
+
+window.maximized navigation-split-view .content-pane navigation-view-page > toolbarview.view {
+  box-shadow: none;
+  border-top-right-radius: 0;
+}
+
+agenda-view > scrolledwindow > viewport > list.background {
+  background-color: transparent;
 }
 
 flowboxchild.card {
@@ -6467,6 +6554,12 @@ preferencesgroup > box button.background-preview-button.toggle:checked {
 
 viewswitcher {
   margin: 0;
+  border-spacing: 2px;
+}
+
+viewswitcher.narrow {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 viewswitcher.wide {
@@ -6509,8 +6602,8 @@ viewswitcher button.toggle {
 
 viewswitcher button.toggle > stack > box.narrow {
   font-size: 0.75rem;
-  padding-top: 5px;
-  padding-bottom: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   border-spacing: 2px;
 }
 
@@ -6528,9 +6621,56 @@ viewswitcherbar actionbar > revealer > box {
   padding: 0;
 }
 
+viewswitchertitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 viewswitchertitle viewswitcher {
   margin-left: 8px;
   margin-right: 8px;
+}
+
+viewswitchertitle viewswitcher.narrow {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+viewswitchertitle viewswitcher.narrow button.toggle > stack > box.narrow {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-spacing: 0;
+}
+
+viewswitchertitle viewswitcher.wide {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+viewswitchertitle windowtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle {
+  border-radius: 0 0 10px 10px;
+}
+
+.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked {
+  background-color: #1A73E8;
+  color: white;
+}
+
+.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked:backdrop {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked indicatorbin.needs-attention > indicator {
+  background-color: white;
+}
+
+.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked indicatorbin.needs-attention > indicator > label {
+  color: #1A73E8;
 }
 
 indicatorbin > indicator, indicatorbin > mask {
@@ -6853,7 +6993,8 @@ overlay-split-view > shadow.down {
 }
 
 .sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget {
-  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .sidebar-pane:dir(rtl), .sidebar-pane.end:dir(ltr) {
@@ -6861,7 +7002,16 @@ overlay-split-view > shadow.down {
 }
 
 .sidebar-pane:dir(rtl), .sidebar-pane:dir(rtl) banner > revealer > widget, .sidebar-pane.end:dir(ltr), .sidebar-pane.end:dir(ltr) banner > revealer > widget {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+window.maxmized .sidebar-pane:dir(ltr), window.maxmized .sidebar-pane.end:dir(rtl) {
+  border-top-left-radius: 0;
+}
+
+window.maxmized .sidebar-pane:dir(rtl), window.maxmized .sidebar-pane.end:dir(rtl) {
+  border-top-right-radius: 0;
 }
 
 /* Middle pane in three-pane setups */
@@ -7014,12 +7164,25 @@ overlay-split-view > shadow.down {
   background-color: mix(#1A73E8,#FFFFFF,0.7);
 }
 
+.content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane.end:dir(rtl),
+.sidebar-pane .content-pane:dir(ltr),
+.sidebar-pane .content-pane.end:dir(rtl) {
+  border-top-left-radius: 16px;
+}
+
 .content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane:dir(ltr) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(rtl), .content-pane .sidebar-pane.end:dir(rtl) banner > revealer > widget,
 .sidebar-pane .content-pane:dir(ltr),
 .sidebar-pane .content-pane:dir(ltr) banner > revealer > widget,
 .sidebar-pane .content-pane.end:dir(rtl),
 .sidebar-pane .content-pane.end:dir(rtl) banner > revealer > widget {
-  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.content-pane .sidebar-pane:dir(rtl), .content-pane .sidebar-pane.end:dir(ltr),
+.sidebar-pane .content-pane:dir(rtl),
+.sidebar-pane .content-pane.end:dir(ltr) {
+  border-top-right-radius: 16px;
 }
 
 .content-pane .sidebar-pane:dir(rtl), .content-pane .sidebar-pane:dir(rtl) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(ltr), .content-pane .sidebar-pane.end:dir(ltr) banner > revealer > widget,
@@ -7027,7 +7190,16 @@ overlay-split-view > shadow.down {
 .sidebar-pane .content-pane:dir(rtl) banner > revealer > widget,
 .sidebar-pane .content-pane.end:dir(ltr),
 .sidebar-pane .content-pane.end:dir(ltr) banner > revealer > widget {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+window.maxmized .content-pane .sidebar-pane:dir(ltr), window.maxmized .content-pane .sidebar-pane.end:dir(rtl), window.maxmized .sidebar-pane .content-pane:dir(ltr), window.maxmized .sidebar-pane .content-pane.end:dir(rtl) {
+  border-top-left-radius: 0;
+}
+
+window.maxmized .content-pane .sidebar-pane:dir(rtl), window.maxmized .content-pane .sidebar-pane.end:dir(rtl), window.maxmized .sidebar-pane .content-pane:dir(rtl), window.maxmized .sidebar-pane .content-pane.end:dir(rtl) {
+  border-top-right-radius: 0;
 }
 
 .sidebar-pane .sidebar-pane {
