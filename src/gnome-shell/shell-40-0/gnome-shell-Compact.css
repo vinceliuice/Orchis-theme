@@ -894,7 +894,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-other-month,
 .calendar-other-month-day {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.26) !important;
   font-weight: normal;
 }
 

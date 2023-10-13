@@ -1046,30 +1046,6 @@ searchbar > revealer > box {
  * Header bars *
  ***************/
 
-%flat-titlebar-button {
-  color: $text-secondary;
-
-  &:focus, &:hover, &:active, &:checked { color: $text; }
-
-  &:disabled { color: $text-secondary-disabled; }
-
-  &:checked:disabled { color: $text-disabled; }
-
-  &:backdrop {
-    color: $text-disabled;
-
-    &:focus, &:hover, &:active { color: $text-secondary; }
-
-    &:disabled { color: $text-secondary-disabled; }
-
-    &:checked {
-      color: $text-secondary;
-
-      &:disabled { color: $text-secondary-disabled; }
-    }
-  }
-}
-
 %titlebar-button {
   @extend %button-flat;
   color: $titlebar-text-secondary;
@@ -1129,6 +1105,36 @@ searchbar > revealer > box {
   }
 }
 
+%titlebar-button-reset {
+  @extend %button-flat;
+  color: $text-secondary;
+
+  &:focus, &:hover, &:active, &:checked { color: $text; }
+
+  &:disabled { color: $text-secondary-disabled; }
+
+  &:checked {
+    &:disabled {
+      background-color: transparent;
+      color: $text-disabled;
+    }
+  }
+
+  &:backdrop {
+    color: $text-disabled;
+
+    &:focus, &:hover, &:active { color: $text-secondary; }
+
+    &:disabled { color: $text-secondary-disabled; }
+
+    &:checked {
+      color: $text-secondary;
+
+      &:disabled { color: $text-secondary-disabled; }
+    }
+  }
+}
+
 headerbar {
   transition: background-color $duration $ease-out, color $duration $ease-out;
   box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
@@ -1144,13 +1150,29 @@ headerbar {
   &:backdrop {
     color: $titlebar-text-secondary;
     background-color: $titlebar-backdrop;
+    opacity: 1;
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
   &.flat {
-    background-color: transparent;
-    box-shadow: inset 0 1px highlight($titlebar);
+    color: $text;
+
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: inset 0 1px highlight($titlebar);
+    }
+
+    .subtitle,
+    .dim-label {
+      color: $text-secondary;
+  
+      &:backdrop { color: $text-disabled; }
+    }
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %titlebar-button-reset;
+    }
   }
 
   .title {
@@ -1217,17 +1239,6 @@ headerbar {
   }
 
   button.toggle { border-radius: $circular-radius; }
-
-  &.flat {
-    background-color: $background;
-    box-shadow: inset 0 1px highlight($background);
-    color: $text-secondary;
-    border-radius: $window-radius $window-radius 0 0;
-
-    button:not(.suggested-action):not(.destructive-action) {
-      @extend %flat-titlebar-button;
-    }
-  }
 
   background.csd.info &.flat,
   background.csd.about &.flat { // reset
@@ -3771,9 +3782,14 @@ window.aboutdialog {
 window.about.background.csd {
   headerbar {
     color: $text-secondary;
+    
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: inset 0 1px highlight($titlebar);
+    }
 
     button:not(.suggested-action):not(.destructive-action) {
-      @extend %flat-titlebar-button;
+      @extend %titlebar-button-reset;
     }
   }
 }

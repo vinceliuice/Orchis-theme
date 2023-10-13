@@ -779,8 +779,9 @@ overlay-split-view {
     transition: background-color $duration $ease-out;
   }
 
+  .sidebar,
+  .toolbar,
   .navigation-sidebar,
-  headerbar,
   searchbar > revealer > box {
     background-color: transparent;
     box-shadow: none;
@@ -949,15 +950,31 @@ overlay-split-view {
   color: inherit;
 }
 
-// Gnome >= 45.0
-.top-bar {
+.sidebar-pane,
+.content-pane {
   headerbar {
+    color: $text;
+
     &, &:backdrop {
       background-color: transparent;
       box-shadow: none;
     }
-  }
 
+    .subtitle,
+    .dim-label {
+      color: $text-secondary;
+  
+      &:backdrop { color: $text-disabled; }
+    }
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %titlebar-button-reset;
+    }
+  }
+}
+
+// Gnome >= 45.0
+.top-bar {
   .collapse-spacing {
     padding: 0;
   }
