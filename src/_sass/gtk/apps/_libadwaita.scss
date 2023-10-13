@@ -796,47 +796,6 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     border: none;
   }
 
-  separator {
-    background-color: $titlebar-divider;
-  }
-
-  scrollbar {
-    background-color: transparent;
-    border: none;
-
-    > range > trough {
-      > slider {
-        background-color: $titlebar-text-secondary-disabled;
-  
-        &:hover { background-color: $titlebar-text-disabled; }
-    
-        &:active { background-color: $titlebar-text-secondary; }
-    
-        &:disabled { background-color: $titlebar-text-secondary-disabled; }
-      }
-    }
-
-    &.overlay-indicator {
-      &:not(.dragging):not(.hovering) {
-        > range > trough {
-          > slider {
-            border: none;
-          }
-        }
-
-        button {
-          border: none;
-          background-color: $titlebar-text-disabled;
-
-          &:disabled { background-color: $titlebar-text-secondary-disabled; }
-        }
-      }
-
-      &.dragging,
-      &.hovering { background-color: transparent; }
-    }
-  }
-
   toolbarview.undershoot-top scrolledwindow {
     @include undershoot(top);
   }
@@ -911,7 +870,93 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     }
   }
 
-  entry { @extend %titlebar-entry; }
+  @if $variant == 'light' and $topbar == 'dark' {
+    entry { @extend %titlebar-entry; }
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %titlebar-button;
+    }
+
+    separator {
+      background-color: $titlebar-divider;
+    }
+  
+    .dim-label { color: $titlebar-text-disabled; }
+  
+    popover {
+      > arrow,
+      > contents {
+        background-color: $titlebar-backdrop;
+        color: $titlebar-text;
+
+        separator {
+          background-color: $titlebar-divider;
+        }
+
+        entry { @extend %titlebar-entry; }
+
+        modelbutton,
+        button:not(.suggested-action):not(.destructive-action) {
+          @extend %titlebar-button;
+        }
+
+        modelbutton {
+          color: $titlebar-text;
+      
+          accelerator {
+            color: $titlebar-text-disabled;
+  
+            &:disabled {
+              color: $titlebar-divider;
+            }
+          }
+        }
+
+        checkbutton,
+        radiobutton,
+        label {
+          color: $titlebar-text;
+        }
+      }
+    }
+  
+    scrollbar {
+      background-color: transparent;
+      border: none;
+  
+      > range > trough {
+        > slider {
+          background-color: $titlebar-text-secondary-disabled;
+    
+          &:hover { background-color: $titlebar-text-disabled; }
+      
+          &:active { background-color: $titlebar-text-secondary; }
+      
+          &:disabled { background-color: $titlebar-text-secondary-disabled; }
+        }
+      }
+  
+      &.overlay-indicator {
+        &:not(.dragging):not(.hovering) {
+          > range > trough {
+            > slider {
+              border: none;
+            }
+          }
+  
+          button {
+            border: none;
+            background-color: $titlebar-text-disabled;
+  
+            &:disabled { background-color: $titlebar-text-secondary-disabled; }
+          }
+        }
+  
+        &.dragging,
+        &.hovering { background-color: transparent; }
+      }
+    }
+  }
 }
 
 .content-pane {

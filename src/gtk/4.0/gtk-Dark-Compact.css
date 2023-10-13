@@ -1489,41 +1489,41 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
   color: rgba(255, 255, 255, 0.3);
 }
 
-.sidebar-pane entry, headerbar entry {
+headerbar entry {
   caret-color: white;
 }
 
-.sidebar-pane entry, headerbar entry, headerbar entry:focus-within {
+headerbar entry, headerbar entry:focus-within {
   background-color: rgba(255, 255, 255, 0.04);
 }
 
-.sidebar-pane entry, headerbar entry, .sidebar-pane entry > text, headerbar entry > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
+headerbar entry, headerbar entry > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
   color: white;
 }
 
-.sidebar-pane entry:disabled, headerbar entry:disabled {
+headerbar entry:disabled {
   background-color: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane entry > text > placeholder, headerbar entry > text > placeholder {
+headerbar entry > text > placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane entry > text > block-cursor, headerbar entry > text > block-cursor {
+headerbar entry > text > block-cursor {
   color: #2C2C2C;
   background-color: white;
 }
 
-.sidebar-pane entry > image, headerbar entry > image {
+headerbar entry > image {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane entry > image:hover, headerbar entry > image:hover, .sidebar-pane entry > image:active, headerbar entry > image:active {
+headerbar entry > image:hover, headerbar entry > image:active {
   color: white;
 }
 
-.sidebar-pane entry > image:disabled, headerbar entry > image:disabled {
+headerbar entry > image:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -4718,11 +4718,6 @@ window.csd.messagedialog:backdrop {
   background-image: none;
 }
 
-window.csd.about.background, window.csd.about.background:backdrop, window.csd.info.background, window.csd.info.background:backdrop {
-  background-color: #212121;
-  background-image: none;
-}
-
 window.csd.tiled, window.csd.tiled-top, window.csd.tiled-left, window.csd.tiled-right, window.csd.tiled-bottom {
   border-radius: 0;
   outline: none;
@@ -5531,6 +5526,16 @@ button:checked:not(:backdrop) .calendar-color-image,
   -gtk-icon-shadow: 0 1px alpha(black, 0.1);
 }
 
+datechooser {
+  padding: 4px;
+}
+
+datechooser .current-week {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: white;
+  border-radius: 10px;
+}
+
 datechooser navigator {
   margin-right: 4px;
   margin-left: 4px;
@@ -5550,6 +5555,15 @@ datechooser navigator button, datechooser navigator button.popup, datechooser na
 datechooser .weeknum, datechooser .weekday {
   color: rgba(255, 255, 255, 0.5);
   font-size: smaller;
+}
+
+.sidebar-pane datechooser .current-week {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: white;
+}
+
+.sidebar-pane datechooser .weeknum, .sidebar-pane datechooser .weekday {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 datechooser button.day, datechooser button.day.text-button {
@@ -5593,14 +5607,6 @@ datechooser button.day.other-month:not(:hover), datechooser button.day.other-mon
 
 datechooser button.day.other-month:not(:hover) dot, datechooser button.day.other-month:backdrop dot, datechooser button.day.text-button.other-month:not(:hover) dot, datechooser button.day.text-button.other-month:backdrop dot {
   background-color: alpha(currentColor, 0.1);
-}
-
-datechooser button.day.other-month:hover:not(:backdrop), datechooser button.day.text-button.other-month:hover:not(:backdrop) {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-datechooser button.day.other-month:hover:not(:backdrop) dot, datechooser button.day.text-button.other-month:hover:not(:backdrop) dot {
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .week-header {
@@ -5749,16 +5755,6 @@ label.no-events {
 searchbutton > popover > arrow {
   background: none;
   border: none;
-}
-
-datechooser {
-  padding: 4px;
-}
-
-datechooser .current-week {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: white;
-  border-radius: 10px;
 }
 
 menubutton.sources-button {
@@ -6985,70 +6981,6 @@ navigation-view .medium {
   background-color: transparent;
   box-shadow: none;
   border: none;
-}
-
-.sidebar-pane separator,
-.content-pane .sidebar-pane separator,
-.sidebar-pane .content-pane separator {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-.sidebar-pane scrollbar,
-.content-pane .sidebar-pane scrollbar,
-.sidebar-pane .content-pane scrollbar {
-  background-color: transparent;
-  border: none;
-}
-
-.sidebar-pane scrollbar > range > trough > slider,
-.content-pane .sidebar-pane scrollbar > range > trough > slider,
-.sidebar-pane .content-pane scrollbar > range > trough > slider {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.sidebar-pane scrollbar > range > trough > slider:hover,
-.content-pane .sidebar-pane scrollbar > range > trough > slider:hover,
-.sidebar-pane .content-pane scrollbar > range > trough > slider:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.sidebar-pane scrollbar > range > trough > slider:active,
-.content-pane .sidebar-pane scrollbar > range > trough > slider:active,
-.sidebar-pane .content-pane scrollbar > range > trough > slider:active {
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.sidebar-pane scrollbar > range > trough > slider:disabled,
-.content-pane .sidebar-pane scrollbar > range > trough > slider:disabled,
-.sidebar-pane .content-pane scrollbar > range > trough > slider:disabled {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider,
-.content-pane .sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider,
-.sidebar-pane .content-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider {
-  border: none;
-}
-
-.sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button,
-.content-pane .sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button,
-.sidebar-pane .content-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
-  border: none;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled,
-.content-pane .sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled,
-.sidebar-pane .content-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.sidebar-pane scrollbar.overlay-indicator.dragging, .sidebar-pane scrollbar.overlay-indicator.hovering,
-.content-pane .sidebar-pane scrollbar.overlay-indicator.dragging,
-.content-pane .sidebar-pane scrollbar.overlay-indicator.hovering,
-.sidebar-pane .content-pane scrollbar.overlay-indicator.dragging,
-.sidebar-pane .content-pane scrollbar.overlay-indicator.hovering {
-  background-color: transparent;
 }
 
 .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top,

@@ -4377,15 +4377,6 @@ window {
       }
     }
 
-    &.about, &.info {
-      @if $topbar == 'dark' {
-        &.background, &.background:backdrop {
-          background-color: $background;
-          background-image: none;
-        }
-      }
-    }
-
     &.tiled,
     &.tiled-top,
     &.tiled-left,

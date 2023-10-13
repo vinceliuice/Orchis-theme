@@ -1482,41 +1482,41 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
   color: rgba(0, 0, 0, 0.26);
 }
 
-.sidebar-pane entry, headerbar entry {
+headerbar entry {
   caret-color: rgba(0, 0, 0, 0.87);
 }
 
-.sidebar-pane entry, headerbar entry, headerbar entry:focus-within {
+headerbar entry, headerbar entry:focus-within {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
-.sidebar-pane entry, headerbar entry, .sidebar-pane entry > text, headerbar entry > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
+headerbar entry, headerbar entry > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.sidebar-pane entry:disabled, headerbar entry:disabled {
+headerbar entry:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
 }
 
-.sidebar-pane entry > text > placeholder, headerbar entry > text > placeholder {
+headerbar entry > text > placeholder {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.sidebar-pane entry > text > block-cursor, headerbar entry > text > block-cursor {
+headerbar entry > text > block-cursor {
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.87);
 }
 
-.sidebar-pane entry > image, headerbar entry > image {
+headerbar entry > image {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.sidebar-pane entry > image:hover, headerbar entry > image:hover, .sidebar-pane entry > image:active, headerbar entry > image:active {
+headerbar entry > image:hover, headerbar entry > image:active {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.sidebar-pane entry > image:disabled, headerbar entry > image:disabled {
+headerbar entry > image:disabled {
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -5518,6 +5518,16 @@ button:checked:not(:backdrop) .calendar-color-image,
   -gtk-icon-shadow: 0 1px alpha(black, 0.1);
 }
 
+datechooser {
+  padding: 6px;
+}
+
+datechooser .current-week {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 12px;
+}
+
 datechooser navigator {
   margin-right: 6px;
   margin-left: 6px;
@@ -5537,6 +5547,15 @@ datechooser navigator button, datechooser navigator button.popup, datechooser na
 datechooser .weeknum, datechooser .weekday {
   color: rgba(0, 0, 0, 0.38);
   font-size: smaller;
+}
+
+.sidebar-pane datechooser .current-week {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.sidebar-pane datechooser .weeknum, .sidebar-pane datechooser .weekday {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 datechooser button.day, datechooser button.day.text-button {
@@ -5580,14 +5599,6 @@ datechooser button.day.other-month:not(:hover), datechooser button.day.other-mon
 
 datechooser button.day.other-month:not(:hover) dot, datechooser button.day.other-month:backdrop dot, datechooser button.day.text-button.other-month:not(:hover) dot, datechooser button.day.text-button.other-month:backdrop dot {
   background-color: alpha(currentColor, 0.1);
-}
-
-datechooser button.day.other-month:hover:not(:backdrop), datechooser button.day.text-button.other-month:hover:not(:backdrop) {
-  color: rgba(0, 0, 0, 0.38);
-}
-
-datechooser button.day.other-month:hover:not(:backdrop) dot, datechooser button.day.text-button.other-month:hover:not(:backdrop) dot {
-  background-color: rgba(0, 0, 0, 0.38);
 }
 
 .week-header {
@@ -5736,16 +5747,6 @@ label.no-events {
 searchbutton > popover > arrow {
   background: none;
   border: none;
-}
-
-datechooser {
-  padding: 6px;
-}
-
-datechooser .current-week {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: rgba(0, 0, 0, 0.87);
-  border-radius: 12px;
 }
 
 menubutton.sources-button {
@@ -6972,70 +6973,6 @@ navigation-view .medium {
   background-color: transparent;
   box-shadow: none;
   border: none;
-}
-
-.sidebar-pane separator,
-.content-pane .sidebar-pane separator,
-.sidebar-pane .content-pane separator {
-  background-color: rgba(0, 0, 0, 0.12);
-}
-
-.sidebar-pane scrollbar,
-.content-pane .sidebar-pane scrollbar,
-.sidebar-pane .content-pane scrollbar {
-  background-color: transparent;
-  border: none;
-}
-
-.sidebar-pane scrollbar > range > trough > slider,
-.content-pane .sidebar-pane scrollbar > range > trough > slider,
-.sidebar-pane .content-pane scrollbar > range > trough > slider {
-  background-color: rgba(0, 0, 0, 0.26);
-}
-
-.sidebar-pane scrollbar > range > trough > slider:hover,
-.content-pane .sidebar-pane scrollbar > range > trough > slider:hover,
-.sidebar-pane .content-pane scrollbar > range > trough > slider:hover {
-  background-color: rgba(0, 0, 0, 0.38);
-}
-
-.sidebar-pane scrollbar > range > trough > slider:active,
-.content-pane .sidebar-pane scrollbar > range > trough > slider:active,
-.sidebar-pane .content-pane scrollbar > range > trough > slider:active {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.sidebar-pane scrollbar > range > trough > slider:disabled,
-.content-pane .sidebar-pane scrollbar > range > trough > slider:disabled,
-.sidebar-pane .content-pane scrollbar > range > trough > slider:disabled {
-  background-color: rgba(0, 0, 0, 0.26);
-}
-
-.sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider,
-.content-pane .sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider,
-.sidebar-pane .content-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > slider {
-  border: none;
-}
-
-.sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button,
-.content-pane .sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button,
-.sidebar-pane .content-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
-  border: none;
-  background-color: rgba(0, 0, 0, 0.38);
-}
-
-.sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled,
-.content-pane .sidebar-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled,
-.sidebar-pane .content-pane scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
-  background-color: rgba(0, 0, 0, 0.26);
-}
-
-.sidebar-pane scrollbar.overlay-indicator.dragging, .sidebar-pane scrollbar.overlay-indicator.hovering,
-.content-pane .sidebar-pane scrollbar.overlay-indicator.dragging,
-.content-pane .sidebar-pane scrollbar.overlay-indicator.hovering,
-.sidebar-pane .content-pane scrollbar.overlay-indicator.dragging,
-.sidebar-pane .content-pane scrollbar.overlay-indicator.hovering {
-  background-color: transparent;
 }
 
 .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top,

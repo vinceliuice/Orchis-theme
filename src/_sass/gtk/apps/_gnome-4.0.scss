@@ -633,6 +633,14 @@ button:checked:not(:backdrop) .calendar-color-image,
 
 // month/year controls
 datechooser {
+  padding: $space-size;
+
+  .current-week { // Month selector
+    background-color: $fill;
+    color: $text;
+    border-radius: $corner-radius;
+  }
+
   navigator { // add some space between the two controls
     margin-right: $space-size;
     margin-left: $space-size;
@@ -653,6 +661,17 @@ datechooser {
   .weeknum, .weekday {
     color: $text-disabled;
     font-size: smaller;
+  }
+
+  .sidebar-pane & {
+    .current-week { // Month selector
+      background-color: $titlebar-fill;
+      color: $titlebar-text;
+    }
+
+    .weeknum, .weekday {
+      color: $titlebar-text-disabled;
+    }
   }
 
   // days
@@ -692,12 +711,6 @@ datechooser {
         color: gtkalpha(currentColor, 0.1);
 
         dot { background-color: gtkalpha(currentColor, 0.1); }
-      }
-
-      &:hover:not(:backdrop) {
-        color: $text-disabled;
-
-        dot { background-color: $text-disabled; }
       }
     }
   }
@@ -853,17 +866,6 @@ label.no-events {
 searchbutton > popover > arrow {
   background: none;
   border: none;
-}
-
-// Month selector
-datechooser {
-  padding: $space-size;
-
-  .current-week {
-    background-color: $fill;
-    color: $text;
-    border-radius: $corner-radius;
-  }
 }
 
 menubutton {
