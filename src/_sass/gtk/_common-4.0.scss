@@ -149,7 +149,10 @@ label {
   }
 }
 
-%dim-label, .dim-label { color: $text-secondary; }
+%dim-label, .dim-label {
+  color: $text-disabled;
+  opacity: 1;
+}
 
 .accent {
   color: $primary;
@@ -280,7 +283,18 @@ spinner {
   &:drop(active) { @include entry(hover); }
   &:disabled { @include entry(disabled); }
 
-  image {
+  > text {
+    > placeholder {
+      @extend .dim-label;
+    }
+
+    > block-cursor {
+      color: $background;
+      background-color: $text;
+    }
+  }
+
+  > image {
     color: $text-secondary;
 
     &:hover, &:active { color: $text; }
@@ -1046,6 +1060,36 @@ searchbar > revealer > box {
  * Header bars *
  ***************/
 
+%titlebar-button-reset {
+  @extend %button-flat;
+  color: $text-secondary;
+
+  &:focus, &:hover, &:active, &:checked { color: $text; }
+
+  &:disabled { color: $text-secondary-disabled; }
+
+  &:checked {
+    &:disabled {
+      background-color: transparent;
+      color: $text-disabled;
+    }
+  }
+
+  &:backdrop {
+    color: $text-disabled;
+
+    &:focus, &:hover, &:active { color: $text-secondary; }
+
+    &:disabled { color: $text-secondary-disabled; }
+
+    &:checked {
+      color: $text-secondary;
+
+      &:disabled { color: $text-secondary-disabled; }
+    }
+  }
+}
+
 %titlebar-button {
   @extend %button-flat;
   color: $titlebar-text-secondary;
@@ -1096,42 +1140,23 @@ searchbar > revealer > box {
     color: $titlebar-text-disabled;
   }
 
-  image {
+  > text {
+    > placeholder {
+      color: $titlebar-text-disabled;
+    }
+
+    > block-cursor {
+      color: $titlebar;
+      background-color: $titlebar-text;
+    }
+  }
+
+  > image {
     color: $titlebar-text-secondary;
 
     &:hover, &:active { color: $titlebar-text; }
 
     &:disabled { color: $titlebar-text-disabled; }
-  }
-}
-
-%titlebar-button-reset {
-  @extend %button-flat;
-  color: $text-secondary;
-
-  &:focus, &:hover, &:active, &:checked { color: $text; }
-
-  &:disabled { color: $text-secondary-disabled; }
-
-  &:checked {
-    &:disabled {
-      background-color: transparent;
-      color: $text-disabled;
-    }
-  }
-
-  &:backdrop {
-    color: $text-disabled;
-
-    &:focus, &:hover, &:active { color: $text-secondary; }
-
-    &:disabled { color: $text-secondary-disabled; }
-
-    &:checked {
-      color: $text-secondary;
-
-      &:disabled { color: $text-secondary-disabled; }
-    }
   }
 }
 
@@ -1150,7 +1175,12 @@ headerbar {
   &:backdrop {
     color: $titlebar-text-secondary;
     background-color: $titlebar-backdrop;
-    opacity: 1;
+    filter: none;
+
+    > windowhandle {
+      filter: none;
+      transition: none;
+    }
 
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }

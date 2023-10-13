@@ -1354,7 +1354,7 @@ searchbar > revealer > box {
 }
 
 .titlebar:backdrop {
-  background-color: #2C2C2C;
+  background-color: #3C3C3C;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1796,7 +1796,7 @@ menubar,
 
 menubar:backdrop,
 .menubar:backdrop {
-  background-color: #2C2C2C;
+  background-color: #3C3C3C;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -3964,7 +3964,7 @@ messagedialog.csd decoration {
 }
 
 .solid-csd decoration:backdrop {
-  background-color: #2C2C2C;
+  background-color: #3C3C3C;
 }
 
 /**********************
@@ -4656,29 +4656,29 @@ window.background.csd > paned.titlebar > separator {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr):not(:only-child) {
   margin-right: -56px;
   padding-right: 56px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) .gedit-search-entry-occurrences-tag {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr):not(:only-child) .gedit-search-entry-occurrences-tag {
   margin-left: 4px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) image.right {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr):not(:only-child) image.right {
   margin-right: 0;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl):not(:only-child) {
   margin-left: -56px;
   padding-left: 56px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) .gedit-search-entry-occurrences-tag {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl):not(:only-child) .gedit-search-entry-occurrences-tag {
   margin-right: 4px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) image.left {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl):not(:only-child) image.left {
   margin-left: 0;
 }
 
@@ -5811,7 +5811,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.sidebar:backdrop,
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > separator.sidebar:backdrop {
-  background-color: #2C2C2C;
+  background-color: #3C3C3C;
 }
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical + separator.sidebar {
@@ -6596,7 +6596,7 @@ UnityDecoration .top {
 }
 
 UnityDecoration .top:backdrop {
-  background-color: #2C2C2C;
+  background-color: #3C3C3C;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -8494,7 +8494,7 @@ read if you used those and something break with a version upgrade you're on your
 @define-color wm_unfocused_title rgba(255, 255, 255, 0.7);
 @define-color wm_highlight rgba(255, 255, 255, 0.1);
 @define-color wm_bg #2C2C2C;
-@define-color wm_unfocused_bg #2C2C2C;
+@define-color wm_unfocused_bg #3C3C3C;
 /*
 FIXME this is really an API */
 @define-color content_view_bg #2C2C2C;

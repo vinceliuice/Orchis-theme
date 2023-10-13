@@ -17,6 +17,31 @@
     box-shadow: none;
   }
 
+  .sidebar-pane,
+  .content-pane {
+    headerbar {
+      color: $titlebar-text;
+      background-color: transparent;
+      box-shadow: none;
+  
+      &, &:backdrop {
+        background-color: transparent;
+        box-shadow: none;
+      }
+  
+      .subtitle,
+      .dim-label {
+        color: $titlebar-text-secondary;
+    
+        &:backdrop { color: $titlebar-text-disabled; }
+      }
+  
+      button:not(.suggested-action):not(.destructive-action) {
+        @extend %titlebar-button;
+      }
+    }
+  }
+
   flap > separator {
     background: none;
     min-width: 0;

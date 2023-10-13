@@ -1354,7 +1354,7 @@ searchbar > revealer > box {
 }
 
 .titlebar:backdrop {
-  background-color: #FFFFFF;
+  background-color: #FAFAFA;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -1796,7 +1796,7 @@ menubar,
 
 menubar:backdrop,
 .menubar:backdrop {
-  background-color: #FFFFFF;
+  background-color: #FAFAFA;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -3964,7 +3964,7 @@ messagedialog.csd decoration {
 }
 
 .solid-csd decoration:backdrop {
-  background-color: #FFFFFF;
+  background-color: #FAFAFA;
 }
 
 /**********************
@@ -4655,29 +4655,29 @@ window.background.csd > paned.titlebar > separator {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr):not(:only-child) {
   margin-right: -66px;
   padding-right: 66px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) .gedit-search-entry-occurrences-tag {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr):not(:only-child) .gedit-search-entry-occurrences-tag {
   margin-left: 6px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr) image.right {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(ltr):not(:only-child) image.right {
   margin-right: 0;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl):not(:only-child) {
   margin-left: -66px;
   padding-left: 66px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) .gedit-search-entry-occurrences-tag {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl):not(:only-child) .gedit-search-entry-occurrences-tag {
   margin-right: 6px;
 }
 
-.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl) image.left {
+.gedit-search-slider .linked:not(.vertical) > entry:dir(rtl):not(:only-child) image.left {
   margin-left: 0;
 }
 
@@ -5814,7 +5814,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.sidebar:backdrop,
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > separator.sidebar:backdrop {
-  background-color: #FFFFFF;
+  background-color: #FAFAFA;
 }
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical + separator.sidebar {
@@ -6599,7 +6599,7 @@ UnityDecoration .top {
 }
 
 UnityDecoration .top:backdrop {
-  background-color: #FFFFFF;
+  background-color: #FAFAFA;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -8497,7 +8497,7 @@ read if you used those and something break with a version upgrade you're on your
 @define-color wm_unfocused_title rgba(0, 0, 0, 0.6);
 @define-color wm_highlight rgba(255, 255, 255, 0.4);
 @define-color wm_bg #FFFFFF;
-@define-color wm_unfocused_bg #FFFFFF;
+@define-color wm_unfocused_bg #FAFAFA;
 /*
 FIXME this is really an API */
 @define-color content_view_bg #FFFFFF;

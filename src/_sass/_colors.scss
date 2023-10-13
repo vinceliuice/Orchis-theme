@@ -123,7 +123,7 @@ $scrim:                                 background(f);
 $scrim-alt:                             background(g);
 $scrim-inverse:                         rgba(white, 0.1);
 $titlebar:                              if($topbar == 'dark', background(g), background(a));
-$titlebar-backdrop:                     if($topbar == 'dark', background(g), background(a));
+$titlebar-backdrop:                     if($topbar == 'dark', background(h), background(b));
 
 $keyboard:                              if($variant == 'light', $grey-050, $grey-800); // for gnome-shell keyboard
 $keyboard-alt:                          if($variant == 'light', $grey-300, $grey-900); // for gnome-shell keyboard

@@ -766,16 +766,24 @@ overlay-split-view {
   @include transition-shadows($frame);
 }
 
+navigation-view .medium {
+  padding-top: $space-size * 2;
+}
+
 // Sidebar
 .unfolded stacksidebar.sidebar { border: none; }
 
-.sidebar-pane {
-  background-color: $base-alt;
-  color: $text;
-  margin-top: 1px;
+$sidebar: if($variant == 'light' and $topbar == 'dark', $titlebar, $base-alt);
+$sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backdrop, $background);
+
+.sidebar-pane,
+.content-pane .sidebar-pane,
+.sidebar-pane .content-pane {
+  background-color: $sidebar;
+  color: on($sidebar);
 
   &:backdrop {
-    background-color: $background;
+    background-color: $sidebar-backdrop;
     transition: background-color $duration $ease-out;
   }
 
@@ -786,6 +794,47 @@ overlay-split-view {
     background-color: transparent;
     box-shadow: none;
     border: none;
+  }
+
+  separator {
+    background-color: $titlebar-divider;
+  }
+
+  scrollbar {
+    background-color: transparent;
+    border: none;
+
+    > range > trough {
+      > slider {
+        background-color: $titlebar-text-secondary-disabled;
+  
+        &:hover { background-color: $titlebar-text-disabled; }
+    
+        &:active { background-color: $titlebar-text-secondary; }
+    
+        &:disabled { background-color: $titlebar-text-secondary-disabled; }
+      }
+    }
+
+    &.overlay-indicator {
+      &:not(.dragging):not(.hovering) {
+        > range > trough {
+          > slider {
+            border: none;
+          }
+        }
+
+        button {
+          border: none;
+          background-color: $titlebar-text-disabled;
+
+          &:disabled { background-color: $titlebar-text-secondary-disabled; }
+        }
+      }
+
+      &.dragging,
+      &.hovering { background-color: transparent; }
+    }
   }
 
   toolbarview.undershoot-top scrolledwindow {
@@ -824,17 +873,15 @@ overlay-split-view {
   }
 
   banner > revealer > widget {
-    background-color: gtkmix($primary, $base-alt, 30%);
-    color: $text;
+    background-color: gtkmix($primary, $sidebar, 30%);
+    color: on($sidebar);
 
     &:backdrop {
-      background-color: gtkmix($primary, $base-alt, 30%);
+      background-color: gtkmix($primary, $sidebar, 30%);
     }
   }
 
   &:dir(ltr), &.end:dir(rtl) {
-    border-top-left-radius: $window-radius;
-
     &, banner > revealer > widget {
       box-shadow: none;
       border-right: 1px solid $border;
@@ -842,106 +889,10 @@ overlay-split-view {
   }
 
   &:dir(rtl), &.end:dir(ltr) {
-    border-top-right-radius: $window-radius;
-
     &, banner > revealer > widget {
       box-shadow: none;
       border-left: 1px solid $border;
     }
-  }
-
-  window.maxmized &:dir(ltr),
-  window.maxmized &.end:dir(rtl) {
-    border-top-left-radius: 0;
-  }
-
-  window.maxmized &:dir(rtl),
-  window.maxmized &.end:dir(rtl) {
-    border-top-right-radius: 0;
-  }
-}
-
-/* Middle pane in three-pane setups */
-.content-pane .sidebar-pane,
-.sidebar-pane .content-pane {
-  background-color: $base;
-  color: $text;
-
-  &:backdrop {
-    background-color: $background;
-    transition: background-color $duration $ease-out;
-  }
-
-  toolbarview.undershoot-top scrolledwindow {
-    @include undershoot(top);
-  }
-
-  toolbarview.undershoot-bottom scrolledwindow {
-    @include undershoot(bottom);
-  }
-
-  scrolledwindow {
-    &.undershoot-top {
-      @include undershoot(top);
-    }
-
-    &.undershoot-bottom {
-      @include undershoot(bottom)
-    }
-
-    &.undershoot-start {
-      &:dir(ltr) { @include undershoot(left); }
-      &:dir(rtl) { @include undershoot(right); }
-    }
-
-    &.undershoot-end {
-      &:dir(ltr) { @include undershoot(right); }
-      &:dir(rtl) { @include undershoot(left); }
-    }
-  }
-
-  flap,
-  leaflet,
-  navigation-view,
-  overlay-split-view {
-    @include transition-shadows($border);
-  }
-
-  banner > revealer > widget {
-    background-color: gtkmix($primary, $base, 30%);
-    color: $text;
-
-    &:backdrop {
-      background-color: gtkmix($primary, $base, 30%);
-    }
-  }
-
-  &:dir(ltr), &.end:dir(rtl) {
-    border-top-left-radius: $window-radius;
-
-    &, banner > revealer > widget {
-      box-shadow: none;
-      border-right: 1px solid $border;
-    }
-  }
-
-  &:dir(rtl), &.end:dir(ltr) {
-    border-top-right-radius: $window-radius;
-
-    &, banner > revealer > widget {
-      box-shadow: none;
-      border-left: 1px solid $border;
-    }
-  }
-
-  window.maxmized &:dir(ltr),
-  window.maxmized &.end:dir(rtl) {
-    border-top-left-radius: 0;
-  }
-
-  window.maxmized &:dir(rtl),
-  window.maxmized &.end:dir(rtl) {
-    border-top-right-radius: 0;
   }
 }
 
@@ -950,14 +901,27 @@ overlay-split-view {
   color: inherit;
 }
 
-.sidebar-pane,
-.content-pane {
+.sidebar-pane {
   headerbar {
-    color: $text;
+    border-top-right-radius: 0;
 
     &, &:backdrop {
       background-color: transparent;
-      box-shadow: none;
+      box-shadow: inset 0 1px highlight($titlebar);
+    }
+  }
+
+  entry { @extend %titlebar-entry; }
+}
+
+.content-pane {
+  headerbar {
+    color: $text;
+    border-top-left-radius: 0;
+
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: inset 0 1px highlight($background);
     }
 
     .subtitle,
@@ -970,6 +934,16 @@ overlay-split-view {
     button:not(.suggested-action):not(.destructive-action) {
       @extend %titlebar-button-reset;
     }
+
+    entry {
+      @extend %entry-basic;
+    }
+
+    viewswitcher {
+      &.wide {
+        background-color: $fill;
+      }
+    }
   }
 }
 
@@ -977,5 +951,9 @@ overlay-split-view {
 .top-bar {
   .collapse-spacing {
     padding: 0;
+  }
+
+  windowhandle {
+    filter: none;
   }
 }

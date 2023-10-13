@@ -596,7 +596,7 @@ window.background.csd {
 
     $buttons_width: $small-size * 2 + $space-size * 3;
 
-    &:dir(ltr) {
+    &:dir(ltr):not(:only-child) {
       margin-right: -$buttons_width;
       padding-right: $buttons_width;
 
@@ -605,7 +605,7 @@ window.background.csd {
       image.right { margin-right: 0; }
     }
 
-    &:dir(rtl) {
+    &:dir(rtl):not(:only-child) {
       margin-left: -$buttons_width;
       padding-left: $buttons_width;
 
