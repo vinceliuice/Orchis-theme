@@ -36,7 +36,7 @@
         &:backdrop { color: $titlebar-text-disabled; }
       }
   
-      button:not(.suggested-action):not(.destructive-action) {
+      button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
         @extend %titlebar-button;
       }
     }
