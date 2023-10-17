@@ -4830,6 +4830,37 @@ window.background.csd > box.horizontal > stack.background > widget > box.vertica
   background: none;
 }
 
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button,
+window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button,
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button {
+  min-width: 28px;
+  min-height: 26px;
+  margin: 3px;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+}
+
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:hover,
+window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:hover,
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:active,
+window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:active,
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:active {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+}
+
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:disabled,
+window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:disabled,
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view flowboxchild button.osd.remove-button:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.45);
+}
+
 window.background.csd > leaflet > stack.background frame.view,
 window.background.csd > hdyleaflet > stack.background frame.view,
 window.background.csd > box.horizontal > stack.background frame.view {
@@ -5803,19 +5834,18 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-composer-
 }
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.sidebar,
+.geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.geary-sidebar-pane-separator,
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > separator.sidebar {
-  background-color: #2C2C2C;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #2C2C2C 0%, #2C2C2C 39px, rgba(255, 255, 255, 0.12) 39px, rgba(255, 255, 255, 0.12) 100%);
+  transition: background-image 75ms cubic-bezier(0, 0, 0.2, 1), color 75ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.sidebar:backdrop,
+.geary-main-window > deck > overlay > .geary-main-layout > leaflet > separator.geary-sidebar-pane-separator:backdrop,
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > separator.sidebar:backdrop {
-  background-color: #3C3C3C;
-}
-
-.geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical + separator.sidebar {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #3C3C3C 0%, #3C3C3C 39px, rgba(255, 255, 255, 0.12) 39px, rgba(255, 255, 255, 0.12) 100%);
 }
 
 .geary-main-window > deck > overlay > .geary-main-layout > leaflet > leaflet > box.vertical > .geary-conversation-frame > scrolledwindow {

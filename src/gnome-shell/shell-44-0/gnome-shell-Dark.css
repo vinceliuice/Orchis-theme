@@ -421,12 +421,16 @@ StEntry StLabel.hint-text {
   background-image: url("assets/toggle-off.svg");
 }
 
-.popup-sub-menu .toggle-switch {
+.toggle-switch:checked {
+  background-image: url("assets/toggle-on.svg");
+}
+
+.popup-sub-menu .toggle-switch, .quick-toggle-menu .toggle-switch {
   background-image: url("assets/menu-toggle-off.svg");
 }
 
-.toggle-switch:checked {
-  background-image: url("assets/toggle-on.svg");
+.popup-sub-menu .toggle-switch:checked, .quick-toggle-menu .toggle-switch:checked {
+  background-image: url("assets/toggle-on.svg") !important;
 }
 
 /* Slider */
