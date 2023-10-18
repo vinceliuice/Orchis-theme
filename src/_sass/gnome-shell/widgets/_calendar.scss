@@ -94,27 +94,40 @@
 }
 
 .pager-button {
-  width: $menuitem-size;
-  height: $menuitem-size;
+  width: $menuitem-size !important;
+  height: $menuitem-size !important;
   margin: 2px;
+  padding: 2px !important;
   border-radius: $circular-radius;
   background-color: transparent;
   color: $text-secondary;
 
-  &:hover, &:focus { color: $text; background-color: $secondary-fill; }
+  &:hover, &:focus {
+    color: $text;
+    background-color: $secondary-fill;
+    box-shadow: none !important;
+  }
 
   &:active { color: $text; background-color: $track; }
+}
+
+// prev/next month icons
+.calendar-change-month-back StIcon,
+.calendar-change-month-forward StIcon {
+  icon-size: $base-icon-size;
 }
 
 .calendar-change-month-back { //arrow back
   padding: 0 2px;
   background-image: url("assets/calendar-arrow-left.svg");
+
   &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
 }
 
 .calendar-change-month-forward { //arrow foreward
   padding: 0 2px;
   background-image: url("assets/calendar-arrow-right.svg");
+
   &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
 }
 

@@ -869,9 +869,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .pager-button {
-  width: 28px;
-  height: 28px;
+  width: 28px !important;
+  height: 28px !important;
   margin: 2px;
+  padding: 2px !important;
   border-radius: 9999px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.6);
@@ -880,11 +881,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .pager-button:hover, .pager-button:focus {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.08);
+  box-shadow: none !important;
 }
 
 .pager-button:active {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.26);
+}
+
+.calendar-change-month-back StIcon,
+.calendar-change-month-forward StIcon {
+  icon-size: 16px;
 }
 
 .calendar-change-month-back {
