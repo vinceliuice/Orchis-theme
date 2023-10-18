@@ -36,8 +36,14 @@
         &:backdrop { color: $titlebar-text-disabled; }
       }
 
-      button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
-        @extend %titlebar-button;
+      @if $mac_style == 'true' {
+        button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
+          @extend %titlebar-button;
+        }
+      } @else {
+        button:not(.suggested-action):not(.destructive-action) {
+          @extend %titlebar-button;
+        }
       }
 
       popover.background { // reset
@@ -296,6 +302,7 @@
     }
 
     .nautilus-list-view {
+      background-color: $base;
       border-radius: $window-radius - $space-size;
       margin: 0 $space-size $space-size 0;
 
@@ -365,6 +372,7 @@
   border-radius: $circular-radius;
   color: $titlebar-text-secondary;
   padding: 0 ($medium-size - $menuitem-size) / 2 0 ($space-size + 2px);
+  @extend %titlebar-entry;
 
   &:focus-within { color: $titlebar-text; }
 
