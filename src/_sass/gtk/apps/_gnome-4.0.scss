@@ -933,27 +933,27 @@ agenda-view > scrolledwindow > viewport > list.background {
 //
 
 flowboxchild {
-  &.card {
+  &.card:not(.category-tile) {
     border: none;
     box-shadow: none;
     padding: 0;
     background: none;
   }
+}
 
-  > button.card {
-    &.category-tile {
-      padding: $space-size * 3.5;
-      border: none;
-      border-radius: $corner-radius;
-      box-shadow: 0 2px 6px rgba(black, 0.1);
-    }
+.card {
+  &.category-tile {
+    padding: $space-size * 3.5;
+    border: none;
+    border-radius: $corner-radius;
+    box-shadow: 0 2px 6px rgba(black, 0.1);
+  }
 
-    &.category-tile-iconless {
-      padding: $space-size * 1.5 $space-size * 2.5;
-      box-shadow: none;
-      background-color: $button;
-      @extend %button-flat-simple;
-    }
+  &.category-tile-iconless {
+    padding: $space-size * 1.5 $space-size * 2.5;
+    box-shadow: none;
+    background-color: $button;
+    @extend %button-flat-simple;
   }
 }
 

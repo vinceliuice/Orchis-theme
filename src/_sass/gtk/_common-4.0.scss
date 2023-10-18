@@ -1200,8 +1200,14 @@ headerbar {
       &:backdrop { color: $text-disabled; }
     }
 
-    button:not(.suggested-action):not(.destructive-action) {
-      @extend %titlebar-button-reset;
+    @if $mac_style == 'true' {
+      button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
+        @extend %titlebar-button-reset;
+      }
+    } @else {
+      button:not(.suggested-action):not(.destructive-action) {
+        @extend %titlebar-button-reset;
+      }
     }
   }
 
@@ -3818,8 +3824,14 @@ window.about.background.csd {
       box-shadow: inset 0 1px highlight($titlebar);
     }
 
-    button:not(.suggested-action):not(.destructive-action) {
-      @extend %titlebar-button-reset;
+    @if $mac_style == 'true' {
+      button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
+        @extend %titlebar-button-reset;
+      }
+    } @else {
+      button:not(.suggested-action):not(.destructive-action) {
+        @extend %titlebar-button-reset;
+      }
     }
   }
 }
