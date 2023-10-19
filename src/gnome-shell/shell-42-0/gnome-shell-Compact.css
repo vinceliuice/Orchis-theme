@@ -539,16 +539,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
 }
 
-.popup-menu .popup-menu-item:ltr {
-  padding-right: 8px;
-  padding-left: 0;
-}
-
-.popup-menu .popup-menu-item:rtl {
-  padding-right: 0;
-  padding-left: 8px;
-}
-
 .popup-menu .popup-menu-item:checked {
   font-weight: normal;
   border-radius: 14px 14px 0 0;

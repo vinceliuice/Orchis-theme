@@ -44,9 +44,6 @@
     background-image: none;
     border: none;
 
-    &:ltr { padding-right: $space-size * 2; padding-left: 0; }
-    &:rtl { padding-right: 0; padding-left: $space-size * 2; }
-
     &:checked {
       font-weight: normal;
       border-radius: $submenu_item_radius $submenu_item_radius 0 0;
