@@ -3872,6 +3872,11 @@ stacksidebar {
   + separator.vertical,
   separator.horizontal { @extend %hide_separators; }
 
+  .sidebar-pane &.sidebar,
+  leaflet.unfolded > box > &.sidebar {
+    border: none;
+  }
+
   list {
     padding: $space-size;
     background-color: $base-alt; // This should not be necessary, but the parent stacksidebar ignores background-color.
@@ -4368,8 +4373,7 @@ window {
     margin: 0;
     transition: none;
     border-radius: $window-radius;
-    box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent,
-                inset 0 1px highlight($titlebar);
+    box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
@@ -4377,8 +4381,7 @@ window {
       // The biggest shadow should be in the same order then in the active state
       // or the jumping will happen during the transition.
       transition: $transition-shadow;
-      box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent,
-                  inset 0 1px highlight($titlebar);
+      box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
     }
 
     &.messagedialog {

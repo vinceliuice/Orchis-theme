@@ -439,27 +439,54 @@ window.dialog {
 }
 
 // leaflet
-window > contents leaflet {
-  background-color: transparent;
-
-  stack.background {
+window > contents {
+  leaflet {
     background-color: transparent;
-  }
 
-  &.unfolded {
-    stack.background leaflet box.vertical:last-child > headerbar,
-    stack.background leaflet + headerbar {
-      border-top-left-radius: 0;
+    stack.background {
+      background-color: transparent;
     }
 
-    > separator + box.vertical > headerbar {
-      border-top-right-radius: 0;
-      border-top-left-radius: $window-radius;
+    &.unfolded {
+      stack.background leaflet box:last-child > headerbar,
+      stack.background leaflet + headerbar {
+        border-top-left-radius: 0;
+      }
+
+      > separator + box > headerbar {
+        border-top-right-radius: 0;
+      }
+    }
+
+    > box > scrolledwindow > viewport > widget > stack {
+      background-color: $base;
     }
   }
+}
 
-  > box > scrolledwindow > viewport > widget > stack {
-    background-color: $base;
+window > widget {
+  leaflet {
+    background-color: transparent;
+
+    stack.background {
+      background-color: transparent;
+    }
+
+    &.unfolded {
+      stack.background > widget > overlay > leaflet > box > headerbar, // Control display header
+      stack.background > widget > box > widget > headerbar,
+      > box:not(:last-child) headerbar { // Calendar and Builder right header
+        border-top-left-radius: 0;
+      }
+
+      > separator + box > headerbar { // Calendar and control left header
+        border-top-right-radius: 0;
+      }
+    }
+
+    > box > scrolledwindow > viewport > widget > stack {
+      background-color: $base;
+    }
   }
 }
 
