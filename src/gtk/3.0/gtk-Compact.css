@@ -549,26 +549,19 @@ treeview entry.flat, treeview entry.flat:focus, treeview entry, treeview entry:f
   }
 }
 
-#XfceNotifyWindow button, .xfce4-panel.background button, .xfce4-panel.background button.flat, .budgie-osd-window .drop-shadow button,
-.budgie-power-dialog .drop-shadow button, .raven-mpris button.image-button, .mate-panel-menu-bar button, .nautilus-window.background.csd notebook > header tab button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
+#XfceNotifyWindow button, .xfce4-panel.background button, .xfce4-panel.background button.flat, .budgie-osd-window .drop-shadow button, .raven-mpris button.image-button, .mate-panel-menu-bar button, .nautilus-window.background.csd notebook > header tab button.flat, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button {
   color: rgba(255, 255, 255, 0.7);
 }
 
-#XfceNotifyWindow button:focus, .xfce4-panel.background button:focus, .budgie-osd-window .drop-shadow button:focus,
-.budgie-power-dialog .drop-shadow button:focus, .raven-mpris button.image-button:focus, .mate-panel-menu-bar button:focus, .nautilus-window.background.csd notebook > header tab button.flat:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:focus, infobar.warning > revealer > box button:focus, #XfceNotifyWindow button:hover, .xfce4-panel.background button:hover, .budgie-osd-window .drop-shadow button:hover,
-.budgie-power-dialog .drop-shadow button:hover, .raven-mpris button.image-button:hover, .mate-panel-menu-bar button:hover, .nautilus-window.background.csd notebook > header tab button.flat:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:hover, infobar.warning > revealer > box button:hover, #XfceNotifyWindow button:active, .xfce4-panel.background button:active, .budgie-osd-window .drop-shadow button:active,
-.budgie-power-dialog .drop-shadow button:active, .raven-mpris button.image-button:active, .mate-panel-menu-bar button:active, .nautilus-window.background.csd notebook > header tab button.flat:active, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:active, infobar.warning > revealer > box button:active, #XfceNotifyWindow button:checked, .xfce4-panel.background button:checked, .budgie-osd-window .drop-shadow button:checked,
-.budgie-power-dialog .drop-shadow button:checked, .raven-mpris button.image-button:checked, .mate-panel-menu-bar button:checked, .nautilus-window.background.csd notebook > header tab button.flat:checked, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked, infobar.warning > revealer > box button:checked {
+#XfceNotifyWindow button:focus, .xfce4-panel.background button:focus, .budgie-osd-window .drop-shadow button:focus, .raven-mpris button.image-button:focus, .mate-panel-menu-bar button:focus, .nautilus-window.background.csd notebook > header tab button.flat:focus, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:focus, infobar.warning > revealer > box button:focus, #XfceNotifyWindow button:hover, .xfce4-panel.background button:hover, .budgie-osd-window .drop-shadow button:hover, .raven-mpris button.image-button:hover, .mate-panel-menu-bar button:hover, .nautilus-window.background.csd notebook > header tab button.flat:hover, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:hover, infobar.warning > revealer > box button:hover, #XfceNotifyWindow button:active, .xfce4-panel.background button:active, .budgie-osd-window .drop-shadow button:active, .raven-mpris button.image-button:active, .mate-panel-menu-bar button:active, .nautilus-window.background.csd notebook > header tab button.flat:active, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:active, infobar.warning > revealer > box button:active, #XfceNotifyWindow button:checked, .xfce4-panel.background button:checked, .budgie-osd-window .drop-shadow button:checked, .raven-mpris button.image-button:checked, .mate-panel-menu-bar button:checked, .nautilus-window.background.csd notebook > header tab button.flat:checked, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked, infobar.warning > revealer > box button:checked {
   color: white;
 }
 
-#XfceNotifyWindow button:disabled, .xfce4-panel.background button:disabled, .budgie-osd-window .drop-shadow button:disabled,
-.budgie-power-dialog .drop-shadow button:disabled, .raven-mpris button.image-button:disabled, .mate-panel-menu-bar button:disabled, .nautilus-window.background.csd notebook > header tab button.flat:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:disabled, infobar.warning > revealer > box button:disabled {
+#XfceNotifyWindow button:disabled, .xfce4-panel.background button:disabled, .budgie-osd-window .drop-shadow button:disabled, .raven-mpris button.image-button:disabled, .mate-panel-menu-bar button:disabled, .nautilus-window.background.csd notebook > header tab button.flat:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:disabled, infobar.warning > revealer > box button:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-#XfceNotifyWindow button:checked:disabled, .xfce4-panel.background button:checked:disabled, .budgie-osd-window .drop-shadow button:checked:disabled,
-.budgie-power-dialog .drop-shadow button:checked:disabled, .raven-mpris button.image-button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nautilus-window.background.csd notebook > header tab button.flat:checked:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked:disabled, infobar.warning > revealer > box button:checked:disabled {
+#XfceNotifyWindow button:checked:disabled, .xfce4-panel.background button:checked:disabled, .budgie-osd-window .drop-shadow button:checked:disabled, .raven-mpris button.image-button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nautilus-window.background.csd notebook > header tab button.flat:checked:disabled, .nautilus-window.background.csd placessidebar > viewport.frame > list > row.activatable button.sidebar-button:checked:disabled, infobar.warning > revealer > box button:checked:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -622,7 +615,7 @@ actionbar > revealer > box .linked > button:checked:disabled:not(.suggested-acti
   color: rgba(0, 0, 0, 0.38);
 }
 
-.budgie-notification-window .linked > button, .budgie-notification-window .linked > button:first-child, .budgie-notification-window .linked > button:last-child, .raven .expander-button, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle,
+.budgie-notification-window .linked > button, .budgie-notification-window .linked > button:first-child, .budgie-notification-window .linked > button:last-child, .raven-notifications-group list > row button.flat, .raven .expander-button, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle,
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat), window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button,
@@ -631,7 +624,7 @@ radio, headerbar button.titlebutton, button.close, button.circular, .inline-tool
   border-radius: 9999px;
 }
 
-.budgie-notification-window .linked > button label, .budgie-notification-window .linked > button:first-child label, .budgie-notification-window .linked > button:last-child label, .raven .expander-button label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle label,
+.budgie-notification-window .linked > button label, .budgie-notification-window .linked > button:first-child label, .budgie-notification-window .linked > button:last-child label, .raven-notifications-group list > row button.flat label, .raven .expander-button label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > box.horizontal:not(.linked) > button.toggle label,
 window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button:not(.toggle):not(.raised):not(.flat) label, window.background > box.vertical > toolbar.primary-toolbar > toolitem button.flat.scale label, window.background > box.vertical > toolbar.primary-toolbar > toolitem > .linked > button.image-button.raised label, window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
 window.csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > box.horizontal > button label,
 window.solid-csd > box.vertical > box.vertical > toolbar.horizontal > toolitem > .linked > button label,
@@ -3279,7 +3272,7 @@ list row {
   padding: 2px;
 }
 
-.budgie-popover.budgie-menu row.activatable > button.flat, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable, treeview.view header button, row.activatable {
+.budgie-popover.budgie-menu row.activatable > button.flat, .budgie-popover scrolledwindow.sidebar + separator + scrolledwindow list > row.activatable, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable, treeview.view header button, row.activatable {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
   box-shadow: inset 0 0 0 9999px transparent;
@@ -3289,16 +3282,16 @@ list row {
   background-size: 1000% 1000%;
 }
 
-.budgie-popover.budgie-menu row.activatable > button.flat:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:focus, treeview.view header button:focus, row.activatable:focus {
+.budgie-popover.budgie-menu row.activatable > button.flat:focus, .budgie-popover scrolledwindow.sidebar + separator + scrolledwindow list > row.activatable:focus, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:focus, treeview.view header button:focus, row.activatable:focus {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-popover.budgie-menu row.activatable > button.flat:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover, treeview.view header button:hover, row.activatable:hover {
+.budgie-popover.budgie-menu row.activatable > button.flat:hover, .budgie-popover scrolledwindow.sidebar + separator + scrolledwindow list > row.activatable:hover, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:hover, treeview.view header button:hover, row.activatable:hover {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), box-shadow 0ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
 }
 
-.budgie-popover.budgie-menu row.activatable > button.has-open-popup.flat, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.has-open-popup.activatable, treeview.view header button.has-open-popup, .budgie-popover.budgie-menu row.activatable > button.flat:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active, treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
+.budgie-popover.budgie-menu row.activatable > button.has-open-popup.flat, .budgie-popover scrolledwindow.sidebar + separator + scrolledwindow list > row.has-open-popup.activatable, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.has-open-popup.activatable, treeview.view header button.has-open-popup, .budgie-popover.budgie-menu row.activatable > button.flat:active, .budgie-popover scrolledwindow.sidebar + separator + scrolledwindow list > row.activatable:active, .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable:active, treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0ms, background-image 0ms;
   animation: ripple 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.08);
@@ -4891,6 +4884,10 @@ window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected),
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
+}
+
+window.background.csd > leaflet.folded > box.vertical > scrolledwindow.view {
+  border-bottom-right-radius: 16px;
 }
 
 window.background.csd stack.background clamp.medium frame > box.vertical > box.vertical > list {
@@ -7166,8 +7163,12 @@ MsdOsdWindow.background.osd .progressbar {
   border-color: #FFFFFF;
 }
 
-.budgie-popover .container {
+.budgie-popover > .container {
   padding: 4px;
+}
+
+.budgie-popover > .container .container {
+  padding: 0;
 }
 
 .budgie-popover separator {
@@ -7250,28 +7251,33 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover scrolledwindow.sidebar:not(.categories) {
-  background-color: rgba(0, 0, 0, 0.04);
   border-right: none;
-  border-bottom-left-radius: 10px;
+  background: none;
+}
+
+.budgie-popover scrolledwindow.sidebar:not(.categories) list {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 5px;
+  padding: 2px;
 }
 
 .budgie-popover scrolledwindow.sidebar:not(.categories) list > row.activatable {
+  border-radius: 2.5px;
   padding: 4px 6px;
 }
 
-.budgie-popover.bottom scrolledwindow.sidebar:not(.categories) {
-  padding-top: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 0;
+.budgie-popover scrolledwindow.sidebar + separator {
+  background-color: transparent;
+  min-width: 0;
+  min-height: 0;
 }
 
-.budgie-popover > frame.container > grid.horizontal > grid.horizontal > widget > grid.horizontal > stack {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+.budgie-popover scrolledwindow.sidebar + separator + scrolledwindow {
+  margin-left: 2px;
 }
 
-.budgie-popover.bottom > frame.container > grid.horizontal > grid.horizontal > widget > grid.horizontal > stack {
-  border-top: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+.budgie-popover scrolledwindow.sidebar + separator + scrolledwindow list > row.activatable {
+  border-radius: 5px;
 }
 
 .budgie-popover.budgie-menu .container {
@@ -7358,6 +7364,14 @@ MsdOsdWindow.background.osd .progressbar {
 .budgie-popover.user-menu > frame.container > box.vertical row.activatable:first-child button.indicator-item {
   transition: none;
   animation: none;
+}
+
+.budgie-popover.sound-popover .container {
+  padding: 0;
+}
+
+.budgie-popover.sound-popover separator {
+  margin: 2px 0;
 }
 
 .budgie-popover.night-light-indicator .container {
@@ -7460,42 +7474,6 @@ MsdOsdWindow.background.osd .progressbar {
   border-radius: 10px;
 }
 
-.budgie-panel button.budgie-menu-launcher {
-  padding: 0 0;
-  margin: 2px 0;
-  min-width: 16px;
-  min-height: 16px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.budgie-panel button.budgie-menu-launcher {
-  background: none;
-  box-shadow: none;
-}
-
-.budgie-panel button.budgie-menu-launcher image {
-  padding: 0;
-  margin: 0;
-  border-radius: 9999px;
-  background-image: image(rgba(255, 255, 255, 0.12));
-}
-
-.budgie-panel button.budgie-menu-launcher:hover {
-  color: white;
-}
-
-.budgie-panel button.budgie-menu-launcher:hover image {
-  background-image: image(rgba(255, 255, 255, 0.2));
-}
-
-.budgie-panel button.budgie-menu-launcher:active, .budgie-panel button.budgie-menu-launcher:checked {
-  color: white;
-}
-
-.budgie-panel button.budgie-menu-launcher:active image, .budgie-panel button.budgie-menu-launcher:checked image {
-  background-image: image(rgba(255, 255, 255, 0.28));
-}
-
 .budgie-panel {
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
   background-color: #212121;
@@ -7560,17 +7538,6 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-panel button:active {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.budgie-panel button.budgie-menu-launcher {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.budgie-panel button.budgie-menu-launcher:focus {
-  background: none;
-  box-shadow: none;
-  border: none;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -7921,6 +7888,19 @@ image.raven-mpris {
   box-shadow: none;
 }
 
+.raven-notifications-group .raven-notifications-group-header {
+  padding-left: 4px;
+}
+
+.raven-notifications-group list > row {
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.raven-notifications-group list > row .notification-clone {
+  padding-left: 4px;
+}
+
 .drop-shadow {
   margin: 5px 9px;
   padding: 4px;
@@ -7953,14 +7933,12 @@ image.raven-mpris {
   padding: 8px;
 }
 
-.budgie-osd-window,
-.budgie-power-dialog {
+.budgie-osd-window {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.budgie-osd-window .drop-shadow,
-.budgie-power-dialog .drop-shadow {
+.budgie-osd-window .drop-shadow {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #212121;
 }
@@ -7973,7 +7951,16 @@ image.raven-mpris {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.budgie-power-dialog .titlebar, .budgie-power-dialog decoration {
+.budgie-power-dialog {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  background-color: #FFFFFF;
+}
+
+.budgie-power-dialog.background, .budgie-power-dialog decoration {
+  border-radius: 20px;
+}
+
+.budgie-power-dialog .titlebar {
   background: none;
   box-shadow: none;
 }

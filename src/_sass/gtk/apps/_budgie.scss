@@ -16,7 +16,13 @@
   background-color: $base;
   border-color: $base;
 
-  .container { padding: $space-size; }
+  > .container {
+    padding: $space-size;
+
+    .container {
+      padding: 0;
+    }
+  }
 
   separator { margin: $space-size / 2 0; }
 
@@ -88,32 +94,36 @@
 
   // AppMenu (Elementary)
   scrolledwindow.sidebar:not(.categories) {
-    background-color: $fill;
     border-right: none;
-    border-bottom-left-radius: $corner-radius;
+    background: none;
 
-    list > row.activatable {
-      @extend %row_activatable;
-      padding: $space-size ($space-size + 2px);
+    list {
+      background-color: $fill;
+      border-radius: $corner-radius / 2;
+      padding: $space-size / 2;
+
+      > row.activatable {
+        @extend %row_activatable;
+        border-radius: $corner-radius / 4;
+        padding: $space-size ($space-size + 2px);
+      }
     }
   }
 
-  &.bottom scrolledwindow.sidebar:not(.categories) {
-    padding-top: $corner-radius;
-    border-top-left-radius: $corner-radius;
-    border-bottom-left-radius: 0;
+  scrolledwindow.sidebar+separator {
+    background-color: transparent;
+    min-width: 0;
+    min-height: 0;
   }
 
-  > frame.container > grid.horizontal > grid.horizontal {
-    > widget > grid.horizontal > stack {
-      border-top: 1px solid $divider;
-    }
-  }
-
-  &.bottom > frame.container > grid.horizontal > grid.horizontal {
-    > widget > grid.horizontal > stack {
-      border-top: none;
-      border-bottom: 1px solid $divider;
+  scrolledwindow.sidebar+separator+scrolledwindow {
+    margin-left: $space-size / 2;
+  
+    list {
+      > row.activatable {
+        @extend %row_activatable;
+        border-radius: $corner-radius / 2;
+      }
     }
   }
 
@@ -207,9 +217,10 @@
     }
   }
 
-  // &.sound-popover {
-  //   separator { margin: $space-size / 2 0; }
-  // }
+  &.sound-popover {
+    .container { padding: 0; }
+    separator { margin: $space-size / 2 0; }
+  }
 
   &.night-light-indicator {
     .container { padding: $space-size / 2; }
@@ -307,7 +318,7 @@
 }
 
 %panel_circular_button {
-  padding: 0 0;
+  padding: 0;
   margin: ($space-size / 2) 0;
   min-width: 16px;
   min-height: 16px;
@@ -407,17 +418,17 @@
     &:active { color: on($panel, secondary); }
 
     // Menu Button
-    &.budgie-menu-launcher {
-      @extend %panel_circular_button;
-      color: on($panel, secondary);
+    // &.budgie-menu-launcher {
+    //   @extend %panel_circular_button;
+    //   color: on($panel, secondary);
 
-      &:focus { // Fixed issues when global menubar item is hovering
-        background: none;
-        box-shadow: none;
-        border: none;
-        color: on($panel, secondary);
-      }
-    }
+    //   &:focus { // Fixed issues when global menubar item is hovering
+    //     background: none;
+    //     box-shadow: none;
+    //     border: none;
+    //     color: on($panel, secondary);
+    //   }
+    // }
 
     // Raven Trigger
     &.raven-trigger {
@@ -579,7 +590,6 @@ frame.raven-frame > border {
 $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
 @each $pos, $b_pos in $pos_list {
-
   // Raven borders
   .#{$pos} frame.raven-frame > border {
     margin-#{$b_pos}: 32px;
@@ -762,6 +772,25 @@ image.raven-mpris {
   }
 }
 
+.raven-notifications-group {
+  .raven-notifications-group-header {
+    padding-left: $space-size;
+  }
+
+  list > row {
+    border-radius: $corner-radius;
+    padding: $space-size;
+
+    .notification-clone {
+      padding-left: $space-size;
+    }
+
+    button.flat {
+      @extend %circular-button;
+    }
+  }
+}
+
 .drop-shadow {
   margin: 5px 9px;
   padding: $space-size;
@@ -801,8 +830,7 @@ image.raven-mpris {
   padding: $space-size * 2;
 }
 
-.budgie-osd-window, // On Screen Display in Budgie
-.budgie-power-dialog { // Session window
+.budgie-osd-window { // On Screen Display in Budgie
   background-color: transparent;
   color: on($osd, secondary);
 
@@ -823,7 +851,14 @@ image.raven-mpris {
 }
 
 .budgie-power-dialog {
-  .titlebar, decoration {
+  box-shadow: inset 0 1px highlight($surface);
+  background-color: $surface;
+
+  &.background, decoration {
+    border-radius: $window-radius + $space-size;
+  }
+
+  .titlebar {
     background: none;
     box-shadow: none;
   }

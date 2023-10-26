@@ -842,6 +842,12 @@ window.background.csd {
     }
   }
 
+  > leaflet.folded {
+    > box.vertical > scrolledwindow.view {
+      border-bottom-right-radius: $window-radius;
+    }
+  }
+
   stack.background clamp.medium {
     frame > box.vertical > box.vertical { // VPN setting
       > list {
