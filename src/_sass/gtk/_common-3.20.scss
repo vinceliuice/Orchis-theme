@@ -1724,10 +1724,8 @@ menubar,
     color: $titlebar-text-secondary;
   }
 
-  .csd & { transition: $transition; }
-
   > menuitem {
-    transition: $transition;
+    transition: none;
     min-height: 20px;
     padding: 2px 8px;
     color: $titlebar-text-secondary;
@@ -1777,7 +1775,7 @@ menu {
   }
 
   menuitem {
-    transition: background-color $duration $ease-out;
+    transition: none;
     min-height: 20px;
     min-width: 40px;
     padding: ($space-size / 2 + 1px) $space-size * 1.5;
@@ -1787,7 +1785,7 @@ menu {
     border-radius: $menu-radius - $space-size;
 
     &:hover {
-      transition: none;
+      // transition: background-color $duration $ease-out;
       background-color: $overlay-hover;
       color: $text;
     }
@@ -1994,6 +1992,10 @@ notebook {
     > stack {
       .inline-toolbar {
         border-radius: 0 0 $corner-radius / 2 $corner-radius / 2;
+      }
+
+      > scrolledwindow.frame {
+        border: none;
       }
     }
   }

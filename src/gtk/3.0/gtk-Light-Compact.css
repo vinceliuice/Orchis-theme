@@ -1793,13 +1793,9 @@ menubar:backdrop,
   color: rgba(0, 0, 0, 0.6);
 }
 
-.csd menubar, .csd .menubar {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-}
-
 menubar > menuitem,
 .menubar > menuitem {
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
+  transition: none;
   min-height: 20px;
   padding: 2px 8px;
   color: rgba(0, 0, 0, 0.6);
@@ -1854,7 +1850,7 @@ menu {
 }
 
 menu menuitem {
-  transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
+  transition: none;
   min-height: 20px;
   min-width: 40px;
   padding: 3px 6px;
@@ -1865,7 +1861,6 @@ menu menuitem {
 }
 
 menu menuitem:hover {
-  transition: none;
   background-color: alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
 }
@@ -2086,6 +2081,10 @@ notebook.frame, notebook.frame > stack {
 
 notebook.frame > stack .inline-toolbar {
   border-radius: 0 0 5px 5px;
+}
+
+notebook.frame > stack > scrolledwindow.frame {
+  border: none;
 }
 
 .background.csd notebook.frame, .background.csd notebook.frame > stack {
