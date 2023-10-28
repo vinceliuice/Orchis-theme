@@ -879,6 +879,11 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     }
   }
 
+  window.maximized & headerbar,
+  window.tiled & headerbar {
+    box-shadow: none;
+  }
+
   @if $variant == 'light' and $topbar == 'dark' {
     entry { @extend %titlebar-entry; }
 
@@ -998,6 +1003,11 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
         background-color: $fill;
       }
     }
+  }
+
+  window.maximized & headerbar,
+  window.tiled & headerbar {
+    box-shadow: none;
   }
 }
 

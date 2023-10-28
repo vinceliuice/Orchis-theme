@@ -4998,7 +4998,7 @@ popover.entry-completion > contents {
   background-color: #2C2C2C;
 }
 
-.nautilus-window headerbar {
+.nautilus-window:not(.view) headerbar {
   background-color: transparent;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
@@ -5081,6 +5081,10 @@ row.expander:not(:checked) .nautilus-window .content-pane headerbar image.expand
 .nautilus-window .sidebar-pane headerbar popover.background > contents > grid stack > scrolledwindow row + separator,
 .nautilus-window .content-pane headerbar popover.background > contents > grid stack > scrolledwindow row + separator {
   background-color: transparent;
+}
+
+.nautilus-window .content-pane headerbar, .nautilus-window .content-pane headerbar:backdrop {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .nautilus-window flap > separator {
@@ -5936,16 +5940,6 @@ menubutton stack > box {
 
 .topbar headerbar menubutton.sources-button > button {
   border-radius: 0 0 12px 12px;
-}
-
-navigation-split-view .content-pane navigation-view-page > toolbarview.view {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
-  border-top-right-radius: 18px;
-}
-
-window.maximized navigation-split-view .content-pane navigation-view-page > toolbarview.view {
-  box-shadow: none;
-  border-top-right-radius: 0;
 }
 
 agenda-view > scrolledwindow > viewport > list.background {
@@ -7350,6 +7344,10 @@ navigation-view .medium {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
+window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
+  box-shadow: none;
+}
+
 .sidebar-pane separator {
   background-color: rgba(255, 255, 255, 0.12);
 }
@@ -7463,6 +7461,10 @@ row.expander:not(:checked) .content-pane headerbar image.expander-row-arrow:back
 
 .content-pane headerbar viewswitcher.wide {
   background-color: rgba(0, 0, 0, 0.04);
+}
+
+window.maximized .content-pane headerbar, window.tiled .content-pane headerbar {
+  box-shadow: none;
 }
 
 .top-bar {
