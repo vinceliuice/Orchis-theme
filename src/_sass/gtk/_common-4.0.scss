@@ -137,6 +137,7 @@ label {
 
     // selection { color: $text-disabled; }
 
+    row &,
     headerbar &,
     tab &,
     button & { color: inherit; }
@@ -3228,8 +3229,10 @@ list.frame { border-radius: $corner-radius; }
 
 row {
   background-clip: padding-box;
+  color: $text-secondary;
 
   @at-root %row_activatable, &.activatable {
+    color: $text-secondary;
     transition: $transition,
                 background-size $ripple-fade-out-duration $ease-out,
                 background-image $ripple-fade-out-opacity-duration $ease-out;
@@ -3242,6 +3245,7 @@ row {
 
     &:focus {
       box-shadow: inset 0 0 0 9999px $overlay-focus;
+      color: $text;
     }
 
     &:hover {
@@ -3250,6 +3254,7 @@ row {
                   background-size $ripple-fade-out-duration $ease-out,
                   background-image $ripple-fade-out-opacity-duration $ease-out;
       box-shadow: inset 0 0 0 9999px $overlay-hover;
+      color: $text;
     }
 
     &.has-open-popup, // this is for indicathing which row generated a popover see https://bugzilla.gnome.org/show_bug.cgi?id=754411
@@ -3261,6 +3266,7 @@ row {
       box-shadow: inset 0 0 0 9999px $overlay-hover;
       background-image: radial-gradient(circle farthest-corner at center, $overlay-active 30%, transparent 0%);
       background-size: 100% 100%;
+      color: $text;
     }
   }
 
@@ -3283,18 +3289,14 @@ row {
   }
 
   &:selected {
-    @extend %selected_items;
+    background-color: $overlay-selected;
     color: inherit; // for overlays
-
-    image,
-    label { color: $text; }
 
     button image,
     button label { color: inherit; }
 
     &:disabled {
-      image,
-      label { color: $text-disabled; }
+      color: $text-disabled;
     }
   }
 }
