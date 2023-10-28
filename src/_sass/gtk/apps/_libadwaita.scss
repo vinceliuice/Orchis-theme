@@ -655,6 +655,7 @@ tabbar {
 
   tabbox {
     padding: 0;
+    min-height: $menuitem-size;
 
     > tabboxchild {
       border-radius: 0;
@@ -764,6 +765,14 @@ leaflet,
 navigation-view,
 overlay-split-view {
   @include transition-shadows($frame);
+}
+
+toolbarview.undershoot-top scrolledwindow {
+  @include undershoot(top);
+}
+
+toolbarview.undershoot-bottom scrolledwindow {
+  @include undershoot(bottom);
 }
 
 navigation-view .medium {
@@ -994,6 +1003,9 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 
 // Gnome >= 45.0
 .top-bar {
+  background: none;
+  box-shadow: none;
+
   .collapse-spacing {
     padding: 0;
   }

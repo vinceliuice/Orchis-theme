@@ -14,19 +14,16 @@
 
   headerbar {
     background-color: transparent;
-    box-shadow: none;
+    box-shadow: inset 0 1px highlight($titlebar);
   }
 
   .sidebar-pane,
   .content-pane {
     headerbar {
       color: $titlebar-text;
-      background-color: transparent;
-      box-shadow: none;
 
       &, &:backdrop {
         background-color: transparent;
-        box-shadow: none;
       }
 
       .subtitle,

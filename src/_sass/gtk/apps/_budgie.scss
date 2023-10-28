@@ -110,13 +110,13 @@
     }
   }
 
-  scrolledwindow.sidebar+separator {
+  scrolledwindow.sidebar + separator {
     background-color: transparent;
     min-width: 0;
     min-height: 0;
   }
 
-  scrolledwindow.sidebar+separator+scrolledwindow {
+  scrolledwindow.sidebar + separator + scrolledwindow {
     margin-left: $space-size / 2;
   
     list {
