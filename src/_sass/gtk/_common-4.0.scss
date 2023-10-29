@@ -1304,28 +1304,32 @@ headerbar {
   }
 
   popover.background { // reset
-    > contents {
+    @if $variant == 'light' and $topbar == 'dark' {
       color: $text;
 
-      .dim-label { color: $text-secondary; }
+      > contents {
+        color: $text;
+
+        .dim-label { color: $text-secondary; }
+      }
+
+      button:not(.suggested-action):not(.destructive-action) {
+        @extend %button-basic;
+
+        &.flat {
+          @extend %button-flat;
+        }
+
+        image { color: $text; }
+      }
+
+      entry { @extend %entry-basic; }
     }
 
     button, entry, spinbutton {
       border-radius: $menuitem-radius;
       margin: 0;
     }
-
-    button:not(.suggested-action):not(.destructive-action) {
-      @extend %button-basic;
-
-      &.flat {
-        @extend %button-flat;
-      }
-
-      image { color: $text; }
-    }
-
-    entry { @extend %entry-basic; }
 
     .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
       border-radius: 0;
@@ -1919,6 +1923,7 @@ popover.menu {
 popover.background {
   font: initial;
   padding: 0;
+  color: $text;
 
   &, &:backdrop {
     background-color: transparent;

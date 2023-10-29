@@ -701,9 +701,10 @@ button:drop(active) {
 radio, scrollbar button, notebook > header > tabs > arrow, popover.background modelbutton, spinbutton:not(.vertical) > button, spinbutton.vertical > button, tabbar tab button.image-button,
 dnd tab button.image-button, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, .nautilus-window .sidebar-pane headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button, window.messagedialog .response-area button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton,
+.nautilus-window .content-pane headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button, window.messagedialog .response-area button, window.dialog.message.csd .dialog-action-area > button, .app-notification button, headerbar popover.background button.flat:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton, .sidebar-pane popover > arrow button.image-button.model,
 .sidebar-pane popover > arrow button:not(.suggested-action):not(.destructive-action),
 .sidebar-pane popover > contents modelbutton,
+.sidebar-pane popover > contents button.image-button.model,
 .sidebar-pane popover > contents button:not(.suggested-action):not(.destructive-action), .sidebar-pane button:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:not(.suggested-action):not(.destructive-action), headerbar button:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:not(.suggested-action):not(.destructive-action), headerbar.flat button:not(.suggested-action):not(.destructive-action), .toolbar button,
 toolbar button, dropdown > .linked:not(.vertical) > button:not(:only-child),
@@ -724,8 +725,9 @@ combobox > .linked:not(.vertical) > button:not(:only-child), button.flat {
 radio:focus, scrollbar button:focus, notebook > header > tabs > arrow:focus, popover.background modelbutton:focus, spinbutton:not(.vertical) > button:focus, spinbutton.vertical > button:focus, tabbar tab button.image-button:focus,
 dnd tab button.image-button:focus, splitbutton.flat > button:focus,
 splitbutton.flat > menubutton > button:focus, menubutton.flat > button:focus, .nautilus-window .sidebar-pane headerbar popover.background button.flat:focus:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:focus:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:focus, window.messagedialog .response-area button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, headerbar popover.background button.flat:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:focus,
-.sidebar-pane popover > contents modelbutton:focus, .sidebar-pane button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:focus:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar popover.background button.flat:focus:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:focus, window.messagedialog .response-area button:focus, window.dialog.message.csd .dialog-action-area > button:focus, .app-notification button:focus, headerbar popover.background button.flat:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:focus, .sidebar-pane popover > arrow button.image-button.model:focus,
+.sidebar-pane popover > contents modelbutton:focus,
+.sidebar-pane popover > contents button.image-button.model:focus, .sidebar-pane button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:focus:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:focus:not(.suggested-action):not(.destructive-action), .toolbar button:focus,
 toolbar button:focus, dropdown > .linked:not(.vertical) > button:focus:not(:only-child),
 combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:focus {
@@ -738,8 +740,9 @@ combobox > .linked:not(.vertical) > button:focus:not(:only-child), button.flat:f
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, popover.background modelbutton:hover, spinbutton:not(.vertical) > button:hover, spinbutton.vertical > button:hover, tabbar tab button.image-button:hover,
 dnd tab button.image-button:hover, splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, .nautilus-window .sidebar-pane headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:hover, window.messagedialog .response-area button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:hover,
-.sidebar-pane popover > contents modelbutton:hover, .sidebar-pane button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:hover:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:hover, window.messagedialog .response-area button:hover, window.dialog.message.csd .dialog-action-area > button:hover, .app-notification button:hover, headerbar popover.background button.flat:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:hover, .sidebar-pane popover > arrow button.image-button.model:hover,
+.sidebar-pane popover > contents modelbutton:hover,
+.sidebar-pane popover > contents button.image-button.model:hover, .sidebar-pane button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:hover:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:hover:not(.suggested-action):not(.destructive-action), .toolbar button:hover,
 toolbar button:hover, dropdown > .linked:not(.vertical) > button:hover:not(:only-child),
 combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:hover {
@@ -752,8 +755,9 @@ combobox > .linked:not(.vertical) > button:hover:not(:only-child), button.flat:h
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, popover.background modelbutton:active, spinbutton:not(.vertical) > button:active, spinbutton.vertical > button:active, tabbar tab button.image-button:active,
 dnd tab button.image-button:active, splitbutton.flat > button:active,
 splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, .nautilus-window .sidebar-pane headerbar popover.background button.flat:active:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:active:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:active, window.messagedialog .response-area button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, headerbar popover.background button.flat:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:active,
-.sidebar-pane popover > contents modelbutton:active, .sidebar-pane button:active:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:active:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar popover.background button.flat:active:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:active, window.messagedialog .response-area button:active, window.dialog.message.csd .dialog-action-area > button:active, .app-notification button:active, headerbar popover.background button.flat:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:active, .sidebar-pane popover > arrow button.image-button.model:active,
+.sidebar-pane popover > contents modelbutton:active,
+.sidebar-pane popover > contents button.image-button.model:active, .sidebar-pane button:active:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:active:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:active:not(.suggested-action):not(.destructive-action), .toolbar button:active,
 toolbar button:active, dropdown > .linked:not(.vertical) > button:active:not(:only-child),
 combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:active {
@@ -770,8 +774,9 @@ combobox > .linked:not(.vertical) > button:active:not(:only-child), button.flat:
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, popover.background modelbutton:disabled, spinbutton:not(.vertical) > button:disabled, spinbutton.vertical > button:disabled, tabbar tab button.image-button:disabled,
 dnd tab button.image-button:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, .nautilus-window .sidebar-pane headerbar popover.background button.flat:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:disabled, window.messagedialog .response-area button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, headerbar popover.background button.flat:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:disabled,
-.sidebar-pane popover > contents modelbutton:disabled, .sidebar-pane button:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar popover.background button.flat:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:disabled, window.messagedialog .response-area button:disabled, window.dialog.message.csd .dialog-action-area > button:disabled, .app-notification button:disabled, headerbar popover.background button.flat:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:disabled, .sidebar-pane popover > arrow button.image-button.model:disabled,
+.sidebar-pane popover > contents modelbutton:disabled,
+.sidebar-pane popover > contents button.image-button.model:disabled, .sidebar-pane button:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar button:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:disabled,
 toolbar button:disabled, dropdown > .linked:not(.vertical) > button:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.flat:disabled {
@@ -783,8 +788,9 @@ combobox > .linked:not(.vertical) > button:disabled:not(:only-child), button.fla
 tabbar tab button.image-button:checked,
 dnd tab button.image-button:checked, splitbutton.flat > button:checked,
 splitbutton.flat > menubutton > button:checked, menubutton.flat > button:checked, .nautilus-window .sidebar-pane headerbar popover.background button.flat:checked:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:checked:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:checked, window.messagedialog .response-area button:checked, window.dialog.message.csd .dialog-action-area > button:checked, .app-notification button:checked, headerbar popover.background button.flat:checked:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked,
-.sidebar-pane popover > contents modelbutton:checked, .sidebar-pane button:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:checked:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar popover.background button.flat:checked:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:checked, window.messagedialog .response-area button:checked, window.dialog.message.csd .dialog-action-area > button:checked, .app-notification button:checked, headerbar popover.background button.flat:checked:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked, .sidebar-pane popover > arrow button.image-button.model:checked,
+.sidebar-pane popover > contents modelbutton:checked,
+.sidebar-pane popover > contents button.image-button.model:checked, .sidebar-pane button:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:checked:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar button:checked:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:not(.suggested-action):not(.destructive-action), .toolbar button:checked,
 toolbar button:checked, dropdown > .linked:not(.vertical) > button:checked:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat:checked, button.flat:checked:hover {
@@ -795,8 +801,9 @@ combobox > .linked:not(.vertical) > button:checked:not(:only-child), button.flat
 tabbar tab button.image-button:checked:disabled,
 dnd tab button.image-button:checked:disabled, splitbutton.flat > button:checked:disabled,
 splitbutton.flat > menubutton > button:checked:disabled, menubutton.flat > button:checked:disabled, .nautilus-window .sidebar-pane headerbar popover.background button.flat:checked:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
-.nautilus-window .content-pane headerbar popover.background button.flat:checked:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:checked:disabled, window.messagedialog .response-area button:checked:disabled, window.dialog.message.csd .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, headerbar popover.background button.flat:checked:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked:disabled,
-.sidebar-pane popover > contents modelbutton:checked:disabled, .sidebar-pane button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
+.nautilus-window .content-pane headerbar popover.background button.flat:checked:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), filechooser #pathbarbox > stack > box > button:checked:disabled, window.messagedialog .response-area button:checked:disabled, window.dialog.message.csd .dialog-action-area > button:checked:disabled, .app-notification button:checked:disabled, headerbar popover.background button.flat:checked:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked:disabled, .sidebar-pane popover > arrow button.image-button.model:checked:disabled,
+.sidebar-pane popover > contents modelbutton:checked:disabled,
+.sidebar-pane popover > contents button.image-button.model:checked:disabled, .sidebar-pane button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .toolbar button:checked:disabled,
 toolbar button:checked:disabled, dropdown > .linked:not(.vertical) > button:checked:disabled:not(:only-child),
 combobox > .linked:not(.vertical) > button:checked:disabled:not(:only-child), button.flat:checked:disabled {
   background-color: alpha(currentColor, 0.1);
@@ -1511,70 +1518,85 @@ searchbar > revealer > box splitbutton {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.sidebar-pane popover > arrow modelbutton,
+.sidebar-pane popover > arrow modelbutton, .sidebar-pane popover > arrow button.image-button.model,
 .sidebar-pane popover > arrow button:not(.suggested-action):not(.destructive-action),
 .sidebar-pane popover > contents modelbutton,
+.sidebar-pane popover > contents button.image-button.model,
 .sidebar-pane popover > contents button:not(.suggested-action):not(.destructive-action), .sidebar-pane button:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:not(.suggested-action):not(.destructive-action), headerbar button:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow .linked:not(.vertical) > modelbutton,
+.sidebar-pane popover > arrow .linked:not(.vertical) > modelbutton, .sidebar-pane popover > arrow .linked:not(.vertical) > button.image-button.model,
 .sidebar-pane popover > arrow .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action),
 .sidebar-pane popover > contents .linked:not(.vertical) > modelbutton,
+.sidebar-pane popover > contents .linked:not(.vertical) > button.image-button.model,
 .sidebar-pane popover > contents .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), .sidebar-pane .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
   border-radius: 9999px;
 }
 
-.sidebar-pane popover > arrow modelbutton:focus,
-.sidebar-pane popover > contents modelbutton:focus, .sidebar-pane button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:focus:not(.suggested-action):not(.destructive-action),
-.nautilus-window .content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:hover,
-.sidebar-pane popover > contents modelbutton:hover, .sidebar-pane button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:hover:not(.suggested-action):not(.destructive-action),
-.nautilus-window .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:active,
-.sidebar-pane popover > contents modelbutton:active, .sidebar-pane button:active:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:active:not(.suggested-action):not(.destructive-action),
-.nautilus-window .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked,
-.sidebar-pane popover > contents modelbutton:checked, .sidebar-pane button:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:checked:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > arrow modelbutton:focus, .sidebar-pane popover > arrow button.image-button.model:focus,
+.sidebar-pane popover > contents modelbutton:focus,
+.sidebar-pane popover > contents button.image-button.model:focus, .sidebar-pane button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:focus:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:hover, .sidebar-pane popover > arrow button.image-button.model:hover,
+.sidebar-pane popover > contents modelbutton:hover,
+.sidebar-pane popover > contents button.image-button.model:hover, .sidebar-pane button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:hover:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:active, .sidebar-pane popover > arrow button.image-button.model:active,
+.sidebar-pane popover > contents modelbutton:active,
+.sidebar-pane popover > contents button.image-button.model:active, .sidebar-pane button:active:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:active:not(.suggested-action):not(.destructive-action),
+.nautilus-window .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked, .sidebar-pane popover > arrow button.image-button.model:checked,
+.sidebar-pane popover > contents modelbutton:checked,
+.sidebar-pane popover > contents button.image-button.model:checked, .sidebar-pane button:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:checked:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
   color: white;
 }
 
-.sidebar-pane popover > arrow modelbutton:disabled,
-.sidebar-pane popover > contents modelbutton:disabled, .sidebar-pane button:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > arrow modelbutton:disabled, .sidebar-pane popover > arrow button.image-button.model:disabled,
+.sidebar-pane popover > contents modelbutton:disabled,
+.sidebar-pane popover > contents button.image-button.model:disabled, .sidebar-pane button:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.sidebar-pane popover > arrow modelbutton:checked:disabled,
-.sidebar-pane popover > contents modelbutton:checked:disabled, .sidebar-pane button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane popover > arrow modelbutton:checked:disabled, .sidebar-pane popover > arrow button.image-button.model:checked:disabled,
+.sidebar-pane popover > contents modelbutton:checked:disabled,
+.sidebar-pane popover > contents button.image-button.model:checked:disabled, .sidebar-pane button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop,
-.sidebar-pane popover > contents modelbutton:backdrop, .sidebar-pane button:backdrop:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > arrow modelbutton:backdrop, .sidebar-pane popover > arrow button.image-button.model:backdrop,
+.sidebar-pane popover > contents modelbutton:backdrop,
+.sidebar-pane popover > contents button.image-button.model:backdrop, .sidebar-pane button:backdrop:not(.suggested-action):not(.destructive-action), .nautilus-window .sidebar-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action),
 .nautilus-window .content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:focus,
-.sidebar-pane popover > contents modelbutton:backdrop:focus, .sidebar-pane button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:backdrop:hover,
-.sidebar-pane popover > contents modelbutton:backdrop:hover, .sidebar-pane button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:backdrop:active,
-.sidebar-pane popover > contents modelbutton:backdrop:active, .sidebar-pane button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane popover > arrow modelbutton:backdrop:focus, .sidebar-pane popover > arrow button.image-button.model:backdrop:focus,
+.sidebar-pane popover > contents modelbutton:backdrop:focus,
+.sidebar-pane popover > contents button.image-button.model:backdrop:focus, .sidebar-pane button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:backdrop:hover, .sidebar-pane popover > arrow button.image-button.model:backdrop:hover,
+.sidebar-pane popover > contents modelbutton:backdrop:hover,
+.sidebar-pane popover > contents button.image-button.model:backdrop:hover, .sidebar-pane button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:backdrop:active, .sidebar-pane popover > arrow button.image-button.model:backdrop:active,
+.sidebar-pane popover > contents modelbutton:backdrop:active,
+.sidebar-pane popover > contents button.image-button.model:backdrop:active, .sidebar-pane button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:disabled,
-.sidebar-pane popover > contents modelbutton:backdrop:disabled, .sidebar-pane button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane popover > arrow modelbutton:backdrop:disabled, .sidebar-pane popover > arrow button.image-button.model:backdrop:disabled,
+.sidebar-pane popover > contents modelbutton:backdrop:disabled,
+.sidebar-pane popover > contents button.image-button.model:backdrop:disabled, .sidebar-pane button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:checked,
-.sidebar-pane popover > contents modelbutton:backdrop:checked, .sidebar-pane button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane popover > arrow modelbutton:backdrop:checked, .sidebar-pane popover > arrow button.image-button.model:backdrop:checked,
+.sidebar-pane popover > contents modelbutton:backdrop:checked,
+.sidebar-pane popover > contents button.image-button.model:backdrop:checked, .sidebar-pane button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:checked:disabled,
-.sidebar-pane popover > contents modelbutton:backdrop:checked:disabled, .sidebar-pane button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane popover > arrow modelbutton:backdrop:checked:disabled, .sidebar-pane popover > arrow button.image-button.model:backdrop:checked:disabled,
+.sidebar-pane popover > contents modelbutton:backdrop:checked:disabled,
+.sidebar-pane popover > contents button.image-button.model:backdrop:checked:disabled, .sidebar-pane button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1766,6 +1788,10 @@ background.csd.info headerbar.flat, background.csd.about headerbar.flat {
   box-shadow: none;
 }
 
+headerbar popover.background {
+  color: rgba(0, 0, 0, 0.87);
+}
+
 headerbar popover.background > contents {
   color: rgba(0, 0, 0, 0.87);
 }
@@ -1774,13 +1800,13 @@ headerbar popover.background > contents .dim-label, headerbar popover.background
   color: rgba(0, 0, 0, 0.6);
 }
 
+headerbar popover.background button:not(.suggested-action):not(.destructive-action) image {
+  color: rgba(0, 0, 0, 0.87);
+}
+
 headerbar popover.background button, headerbar popover.background entry, headerbar popover.background spinbutton {
   border-radius: 5px;
   margin: 0;
-}
-
-headerbar popover.background button:not(.suggested-action):not(.destructive-action) image {
-  color: rgba(0, 0, 0, 0.87);
 }
 
 headerbar popover.background .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
@@ -2340,6 +2366,7 @@ popover.menu label.title {
 popover.background {
   font: initial;
   padding: 0;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 popover.background, popover.background:backdrop {
@@ -5047,12 +5074,6 @@ popover.entry-completion > contents {
   color: white;
 }
 
-.nautilus-window .sidebar-pane headerbar, .nautilus-window .sidebar-pane headerbar:backdrop,
-.nautilus-window .content-pane headerbar,
-.nautilus-window .content-pane headerbar:backdrop {
-  background-color: transparent;
-}
-
 .nautilus-window .sidebar-pane headerbar .subtitle,
 .nautilus-window .sidebar-pane headerbar .dim-label,
 .nautilus-window .sidebar-pane .content-pane headerbar entry > text > placeholder,
@@ -5085,6 +5106,28 @@ row.expander:not(:checked) .nautilus-window .sidebar-pane headerbar image.expand
 .nautilus-window .content-pane headerbar row.expander:not(:checked) image.expander-row-arrow:backdrop,
 row.expander:not(:checked) .nautilus-window .content-pane headerbar image.expander-row-arrow:backdrop {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.nautilus-window .sidebar-pane headerbar popover.background .dim-label, .nautilus-window .sidebar-pane .content-pane headerbar popover.background entry > text > placeholder, .content-pane .nautilus-window .sidebar-pane headerbar popover.background entry > text > placeholder, .nautilus-window .sidebar-pane headerbar popover.background entry > text > placeholder, .nautilus-window .sidebar-pane headerbar popover.background row label.subtitle, row .nautilus-window .sidebar-pane headerbar popover.background label.subtitle, .nautilus-window .sidebar-pane headerbar popover.background row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) .nautilus-window .sidebar-pane headerbar popover.background image.expander-row-arrow,
+.nautilus-window .content-pane headerbar popover.background .dim-label,
+.nautilus-window .content-pane headerbar popover.background entry > text > placeholder,
+.nautilus-window .content-pane headerbar popover.background entry > text > placeholder,
+.nautilus-window .content-pane headerbar popover.background row label.subtitle,
+row .nautilus-window .content-pane headerbar popover.background label.subtitle,
+.nautilus-window .content-pane headerbar popover.background row.expander:not(:checked) image.expander-row-arrow,
+row.expander:not(:checked) .nautilus-window .content-pane headerbar popover.background image.expander-row-arrow {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.nautilus-window .sidebar-pane headerbar popover.background .dim-label:backdrop, .nautilus-window .sidebar-pane .content-pane headerbar popover.background entry > text > placeholder:backdrop, .content-pane .nautilus-window .sidebar-pane headerbar popover.background entry > text > placeholder:backdrop, .nautilus-window .sidebar-pane headerbar popover.background entry > text > placeholder:backdrop, .nautilus-window .sidebar-pane headerbar popover.background row label.subtitle:backdrop, row .nautilus-window .sidebar-pane headerbar popover.background label.subtitle:backdrop, .nautilus-window .sidebar-pane headerbar popover.background row.expander:not(:checked) image.expander-row-arrow:backdrop, row.expander:not(:checked) .nautilus-window .sidebar-pane headerbar popover.background image.expander-row-arrow:backdrop,
+.nautilus-window .content-pane headerbar popover.background .dim-label:backdrop,
+.nautilus-window .content-pane headerbar popover.background entry > text > placeholder:backdrop,
+.nautilus-window .content-pane headerbar popover.background entry > text > placeholder:backdrop,
+.nautilus-window .content-pane headerbar popover.background row label.subtitle:backdrop,
+row .nautilus-window .content-pane headerbar popover.background label.subtitle:backdrop,
+.nautilus-window .content-pane headerbar popover.background row.expander:not(:checked) image.expander-row-arrow:backdrop,
+row.expander:not(:checked) .nautilus-window .content-pane headerbar popover.background image.expander-row-arrow:backdrop {
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .nautilus-window .sidebar-pane headerbar popover.background button,
@@ -7507,6 +7550,10 @@ window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.sidebar-pane popover {
+  color: white;
+}
+
 .sidebar-pane popover > arrow,
 .sidebar-pane popover > contents {
   background-color: #3C3C3C;
@@ -7516,6 +7563,14 @@ window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
 .sidebar-pane popover > arrow separator,
 .sidebar-pane popover > contents separator {
   background-color: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-pane popover > arrow modelbutton:hover, .sidebar-pane popover > arrow button.image-button.model:hover,
+.sidebar-pane popover > arrow button:not(.suggested-action):not(.destructive-action):hover,
+.sidebar-pane popover > contents modelbutton:hover,
+.sidebar-pane popover > contents button.image-button.model:hover,
+.sidebar-pane popover > contents button:not(.suggested-action):not(.destructive-action):hover {
+  outline: none;
 }
 
 .sidebar-pane popover > arrow modelbutton,
@@ -7533,6 +7588,12 @@ window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
   color: rgba(255, 255, 255, 0.12);
 }
 
+.sidebar-pane popover > arrow modelbutton check:not(:checked):not(:indeterminate):not(:disabled), .sidebar-pane popover > arrow modelbutton radio:not(:checked):not(:indeterminate):not(:disabled),
+.sidebar-pane popover > contents modelbutton check:not(:checked):not(:indeterminate):not(:disabled),
+.sidebar-pane popover > contents modelbutton radio:not(:checked):not(:indeterminate):not(:disabled) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .sidebar-pane popover > arrow checkbutton,
 .sidebar-pane popover > arrow radiobutton,
 .sidebar-pane popover > arrow label,
@@ -7540,6 +7601,11 @@ window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
 .sidebar-pane popover > contents radiobutton,
 .sidebar-pane popover > contents label {
   color: white;
+}
+
+.sidebar-pane popover > arrow label:disabled,
+.sidebar-pane popover > contents label:disabled {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .sidebar-pane scrollbar {

@@ -897,6 +897,8 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     }
   
     popover {
+      color: $titlebar-text;
+
       > arrow,
       > contents {
         background-color: $titlebar-backdrop;
@@ -908,9 +910,13 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 
         entry { @extend %titlebar-entry; }
 
-        modelbutton,
+        modelbutton, button.image-button.model,
         button:not(.suggested-action):not(.destructive-action) {
           @extend %titlebar-button;
+
+          &:hover {
+            outline: none;
+          }
         }
 
         modelbutton {
@@ -923,12 +929,20 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
               color: $titlebar-divider;
             }
           }
+
+          check, radio {
+            &:not(:checked):not(:indeterminate):not(:disabled) { color: $titlebar-text-secondary; }
+          }
         }
 
         checkbutton,
         radiobutton,
         label {
           color: $titlebar-text;
+        }
+
+        label:disabled {
+          color: $titlebar-text-disabled;
         }
       }
     }

@@ -19,68 +19,72 @@
     }
   }
 
-  .sidebar-pane,
-  .content-pane {
-    headerbar {
-      color: $titlebar-text;
-
-      &, &:backdrop {
-        background-color: transparent;
-      }
-
-      .subtitle,
-      .dim-label {
-        color: $titlebar-text-secondary;
-    
-        &:backdrop { color: $titlebar-text-disabled; }
-      }
-
-      @if $mac_style == 'true' {
-        button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
-          @extend %titlebar-button;
+  @if $variant == 'light' and $topbar == 'dark' {
+    .sidebar-pane,
+    .content-pane {
+      headerbar {
+        color: $titlebar-text;
+  
+        .subtitle,
+        .dim-label {
+          color: $titlebar-text-secondary;
+      
+          &:backdrop { color: $titlebar-text-disabled; }
         }
-      } @else {
-        button:not(.suggested-action):not(.destructive-action) {
-          @extend %titlebar-button;
-        }
-      }
-
-      popover.background { // reset
-        button {
-          border-radius: $menuitem-radius;
-        }
-
-        button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
-          @extend %button-basic;
-
-          &.flat {
-            @extend %button-flat;
+  
+        @if $mac_style == 'true' {
+          button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
+            @extend %titlebar-button;
+          }
+        } @else {
+          button:not(.suggested-action):not(.destructive-action) {
+            @extend %titlebar-button;
           }
         }
+  
+        popover.background { // reset
+          .dim-label {
+            color: $text-secondary;
+        
+            &:backdrop { color: $text-disabled; }
+          }
 
-        .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
-          border-radius: 0;
-
-          &:first-child { border-radius: $menuitem-radius 0 0 $menuitem-radius; }
-          &:last-child { border-radius: 0 $menuitem-radius $menuitem-radius 0; }
-          &:only-child { border-radius: $menuitem-radius; }
-        }
-
-        > contents > grid stack > scrolledwindow {
-          border: 1px solid $border;
-
-          row + separator {
-            background-color: transparent;
+          button {
+            border-radius: $menuitem-radius;
+          }
+  
+          button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
+            @extend %button-basic;
+  
+            &.flat {
+              @extend %button-flat;
+            }
+          }
+  
+          .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
+            border-radius: 0;
+  
+            &:first-child { border-radius: $menuitem-radius 0 0 $menuitem-radius; }
+            &:last-child { border-radius: 0 $menuitem-radius $menuitem-radius 0; }
+            &:only-child { border-radius: $menuitem-radius; }
+          }
+  
+          > contents > grid stack > scrolledwindow {
+            border: 1px solid $border;
+  
+            row + separator {
+              background-color: transparent;
+            }
           }
         }
       }
     }
-  }
-
-  .content-pane {
-    headerbar {
-      &, &:backdrop {
-        box-shadow: inset 0 1px highlight($titlebar);
+  
+    .content-pane {
+      headerbar {
+        &, &:backdrop {
+          box-shadow: inset 0 1px highlight($titlebar);
+        }
       }
     }
   }
