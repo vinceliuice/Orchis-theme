@@ -1838,7 +1838,7 @@ menu {
 }
 
 .background:not(.popup) > menu {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0;
   box-shadow: none;
 }
@@ -5143,7 +5143,7 @@ layouttab {
   margin: 0 8px;
   border-style: none solid;
   border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 -2px #1A73E8;
   background-color: #FFFFFF;
 }
@@ -5159,7 +5159,7 @@ layouttab button.text-button, layouttab button.image-button, layouttab button {
 }
 
 layout {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   -PnlDockBin-handle-size: 1;
 }
 
@@ -5265,12 +5265,12 @@ popover.transfers list row > box {
 }
 
 dockbin {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   -PnlDockBin-handle-size: 1;
 }
 
 dockpaned {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 eggsearchbar box.search-bar {
@@ -5750,7 +5750,7 @@ frame.commit-frame > border {
  * Characters *
  **************/
 box.dialog-vbox scrolledwindow.related {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 list.categories {
@@ -5815,7 +5815,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer .geary-expanded 
   color: rgba(0, 0, 0, 0.87);
   background-color: #F2F2F2;
   box-shadow: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 window.background.csd.geary-main-window stack#conversation_viewer .geary-composer-box actionbar > revealer > box,
@@ -6813,7 +6813,7 @@ PanelApplet.wnck-applet .wnck-pager:selected {
 }
 
 #MatePanelPopupWindow {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 11px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
@@ -6859,7 +6859,7 @@ na-tray-applet {
 }
 
 .mate-panel-applet-slider {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 11px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
@@ -6879,7 +6879,7 @@ na-tray-applet {
 }
 
 #mate-menu {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
 }
 
@@ -7115,7 +7115,7 @@ na-tray-applet {
 
 /* mate-screensaver lock dialog */
 .lock-dialog {
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 11px;
   box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 11px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;

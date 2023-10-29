@@ -136,7 +136,6 @@ label.separator {
 label:disabled {
   opacity: 1;
   filter: none;
-  color: rgba(0, 0, 0, 0.38);
 }
 
 row label:disabled, headerbar label:disabled, tab label:disabled, button label:disabled {
@@ -295,7 +294,7 @@ spinner:checked:disabled {
   outline-offset: -2px;
 }
 
-.content-pane headerbar entry:drop(active), headerbar popover.background entry:drop(active), entry:drop(active) {
+.content-pane headerbar entry:not(:disabled):not(:focus-within):hover, headerbar popover.background entry:not(:disabled):not(:focus-within):hover, entry:not(:disabled):not(:focus-within):hover, .content-pane headerbar entry:drop(active), headerbar popover.background entry:drop(active), entry:drop(active) {
   background-color: alpha(currentColor, 0.08);
   color: rgba(0, 0, 0, 0.87);
   outline: 2px solid alpha(currentColor, 0.08);
@@ -305,14 +304,9 @@ spinner:checked:disabled {
 .content-pane headerbar entry:disabled, headerbar popover.background entry:disabled, entry:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
-  color: rgba(0, 0, 0, 0.38);
   outline: none;
   filter: none;
   opacity: 1;
-}
-
-.content-pane headerbar entry:disabled > label, headerbar popover.background entry:disabled > label, entry:disabled > label {
-  color: rgba(0, 0, 0, 0.38);
 }
 
 .content-pane headerbar entry > text > block-cursor, headerbar popover.background entry > text > block-cursor, entry > text > block-cursor {
@@ -358,12 +352,12 @@ entry image.right {
 
 entry undershoot.left > undershoot.left {
   box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 entry undershoot.right > undershoot.right {
   box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 entry.error {
@@ -374,13 +368,16 @@ entry.error {
   color: #E53935;
 }
 
-entry.error image {
-  color: #E53935;
-}
-
 entry.error selection {
   color: white;
   background-color: #E53935;
+}
+
+entry.error:not(:disabled):not(:focus-within):hover, entry.error:drop(active) {
+  background-color: alpha(currentColor, 0.08);
+  color: #E53935;
+  outline: 2px solid alpha(currentColor, 0.08);
+  outline-offset: -2px;
 }
 
 entry.error:focus-within {
@@ -393,15 +390,31 @@ entry.error:focus-within {
 
 entry.error:disabled {
   background-color: rgba(229, 57, 53, 0.04);
-  color: rgba(0, 0, 0, 0.38);
   color: rgba(229, 57, 53, 0.35);
   outline: none;
   filter: none;
   opacity: 1;
 }
 
-entry.error:disabled > label {
-  color: rgba(0, 0, 0, 0.38);
+entry.error > text > placeholder {
+  color: rgba(229, 57, 53, 0.35);
+}
+
+entry.error > text > block-cursor {
+  color: #E53935;
+  background-color: white;
+}
+
+entry.error > image {
+  color: rgba(229, 57, 53, 0.8);
+}
+
+entry.error > image:hover, entry.error > image:active {
+  color: #E53935;
+}
+
+entry.error > image:disabled {
+  color: rgba(229, 57, 53, 0.35);
 }
 
 entry.success {
@@ -412,13 +425,16 @@ entry.success {
   color: #0F9D58;
 }
 
-entry.success image {
-  color: #0F9D58;
-}
-
 entry.success selection {
   color: white;
   background-color: #0F9D58;
+}
+
+entry.success:not(:disabled):not(:focus-within):hover, entry.success:drop(active) {
+  background-color: alpha(currentColor, 0.08);
+  color: #0F9D58;
+  outline: 2px solid alpha(currentColor, 0.08);
+  outline-offset: -2px;
 }
 
 entry.success:focus-within {
@@ -431,15 +447,31 @@ entry.success:focus-within {
 
 entry.success:disabled {
   background-color: rgba(15, 157, 88, 0.04);
-  color: rgba(0, 0, 0, 0.38);
   color: rgba(15, 157, 88, 0.35);
   outline: none;
   filter: none;
   opacity: 1;
 }
 
-entry.success:disabled > label {
-  color: rgba(0, 0, 0, 0.38);
+entry.success > text > placeholder {
+  color: rgba(15, 157, 88, 0.35);
+}
+
+entry.success > text > block-cursor {
+  color: #0F9D58;
+  background-color: white;
+}
+
+entry.success > image {
+  color: rgba(15, 157, 88, 0.8);
+}
+
+entry.success > image:hover, entry.success > image:active {
+  color: #0F9D58;
+}
+
+entry.success > image:disabled {
+  color: rgba(15, 157, 88, 0.35);
 }
 
 entry.warning {
@@ -450,13 +482,16 @@ entry.warning {
   color: #FFD600;
 }
 
-entry.warning image {
-  color: #FFD600;
-}
-
 entry.warning selection {
   color: rgba(0, 0, 0, 0.87);
   background-color: #FFD600;
+}
+
+entry.warning:not(:disabled):not(:focus-within):hover, entry.warning:drop(active) {
+  background-color: alpha(currentColor, 0.08);
+  color: #FFD600;
+  outline: 2px solid alpha(currentColor, 0.08);
+  outline-offset: -2px;
 }
 
 entry.warning:focus-within {
@@ -469,15 +504,31 @@ entry.warning:focus-within {
 
 entry.warning:disabled {
   background-color: rgba(255, 214, 0, 0.04);
-  color: rgba(0, 0, 0, 0.38);
   color: rgba(255, 214, 0, 0.35);
   outline: none;
   filter: none;
   opacity: 1;
 }
 
-entry.warning:disabled > label {
-  color: rgba(0, 0, 0, 0.38);
+entry.warning > text > placeholder {
+  color: rgba(255, 214, 0, 0.35);
+}
+
+entry.warning > text > block-cursor {
+  color: #FFD600;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+entry.warning > image {
+  color: rgba(255, 214, 0, 0.8);
+}
+
+entry.warning > image:hover, entry.warning > image:active {
+  color: #FFD600;
+}
+
+entry.warning > image:disabled {
+  color: rgba(255, 214, 0, 0.35);
 }
 
 entry > progress,
@@ -1105,14 +1156,9 @@ spinbutton:not(.vertical):focus-within, spinbutton.vertical:focus-within {
 spinbutton:not(.vertical):disabled, spinbutton.vertical:disabled {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
-  color: rgba(0, 0, 0, 0.38);
   outline: none;
   filter: none;
   opacity: 1;
-}
-
-spinbutton:not(.vertical):disabled > label, spinbutton.vertical:disabled > label {
-  color: rgba(0, 0, 0, 0.38);
 }
 
 spinbutton:not(.vertical) > text, spinbutton.vertical > text {
@@ -1538,13 +1584,13 @@ searchbar > revealer > box splitbutton {
 }
 
 .sidebar-pane popover > arrow entry,
-.sidebar-pane popover > contents entry, .sidebar-pane entry, #NautilusQueryEditor, headerbar entry, headerbar entry:focus-within {
+.sidebar-pane popover > contents entry, .sidebar-pane entry, #NautilusQueryEditor, headerbar entry, headerbar entry:hover, headerbar entry:focus-within {
   background-color: rgba(255, 255, 255, 0.04);
 }
 
 .sidebar-pane popover > arrow entry,
 .sidebar-pane popover > contents entry, .sidebar-pane entry, #NautilusQueryEditor, headerbar entry, .sidebar-pane popover > arrow entry > text,
-.sidebar-pane popover > contents entry > text, .sidebar-pane entry > text, #NautilusQueryEditor > text, headerbar entry > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
+.sidebar-pane popover > contents entry > text, .sidebar-pane entry > text, #NautilusQueryEditor > text, headerbar entry > text, headerbar entry:hover, headerbar entry:hover > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
   color: white;
 }
 
@@ -1912,13 +1958,9 @@ headerbar.default-decoration windowcontrols menubutton {
   box-shadow: none;
 }
 
-window.devel headerbar.titlebar {
-  background: #2C2C2C cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, linear-gradient(to right, transparent 65%, rgba(26, 115, 232, 0.2)), linear-gradient(to top, #242424, #2C2C2C 3px, #3b3b3b);
-}
-
-window.devel headerbar.titlebar:backdrop {
-  background: #2C2C2C cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat, image(#2C2C2C);
-  /* background-color would flash */
+window.devel headerbar > windowhandle {
+  background-image: cross-fade(5% -gtk-recolor(url("assets/scalable/devel-symbolic.svg")), image(transparent));
+  background-repeat: repeat-x;
 }
 
 headerbar windowcontrols {
@@ -2352,6 +2394,10 @@ popover.background > contents list > row {
 
 popover.background > contents list separator {
   margin: 0;
+}
+
+popover.background > contents button, popover.background > contents entry, popover.background > contents spinbutton {
+  border-radius: 5px;
 }
 
 popover.background .view:not(:selected),
@@ -3612,32 +3658,32 @@ scrolledwindow > overshoot.right {
 
 scrolledwindow.undershoot-top > undershoot.top {
   box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 scrolledwindow.undershoot-bottom > undershoot.bottom {
   box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
   box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
   box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
   box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
   box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 scrolledwindow > junction {
@@ -4219,12 +4265,12 @@ filechooser stack.view frame > border {
 
 filechooser gridview ~ undershoot.top {
   box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 filechooser placesview > stack > scrolledwindow > undershoot.bottom {
   box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 filechooserbutton > button > box {
@@ -6118,6 +6164,127 @@ screenshot-carousel box.frame.view {
   background-image: linear-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
 }
 
+@define-color weather_temp_chart_fill_color rgba(255, 214, 0, 0.5);
+@define-color weather_temp_chart_stroke_color #ccab00;
+@define-color weather_thermometer_warm_color #FFD600;
+@define-color weather_thermometer_cold_color #1A73E8;
+#places-label {
+  font-weight: bold;
+}
+
+#temperature-label {
+  font-size: 32pt;
+  font-weight: 900;
+  margin-left: 9px;
+}
+
+#conditions-grid *:backdrop {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.content-view.cell {
+  font-weight: bold;
+}
+
+#locationEntry {
+  margin: 0;
+  padding-bottom: 4px;
+}
+
+.weather-popover {
+  margin-top: 4px;
+}
+
+.forecast-card {
+  transition: border-radius 100ms ease-out;
+  border-radius: 10px;
+}
+
+.forecast-card separator {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+#daily-forecast-box > separator:last-child {
+  background-color: transparent;
+  min-width: 0;
+}
+
+#conditions-grid,
+#attributionGrid {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+#weather-page .small .forecast-card {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-width: 1px 0;
+}
+
+.forecast-temperature-label {
+  font-weight: bold;
+  color: #ccab00;
+}
+
+WeatherThermometer {
+  margin-bottom: 8px;
+}
+
+WeatherThermometer > label.high {
+  font-weight: bold;
+  color: #FBC02D;
+}
+
+WeatherThermometer > label.low {
+  font-weight: bold;
+  color: #3281EA;
+}
+
+.forecast-button {
+  margin: 0 8px;
+}
+
+.forecast-graphic {
+  margin: 12px;
+}
+
+button.osd.circular {
+  border-radius: 9999px;
+  min-width: 22px;
+  min-height: 22px;
+}
+
+button.osd.circular > image {
+  padding: 0;
+}
+
+scrolledwindow.inline list,
+scrolledwindow.inline listview {
+  background: none;
+  color: inherit;
+}
+
+scrolledwindow.inline undershoot.top {
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.search-view {
+  background-color: #1A73E8;
+  color: white;
+}
+
+.search-view menubutton button:focus:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.3);
+}
+
+image.circular {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  border-radius: 9999px;
+}
+
 .polari-room-list .sidebar {
   background: none;
 }
@@ -6865,27 +7032,6 @@ viewswitchertitle windowtitle {
   margin-bottom: 0;
 }
 
-.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle {
-  border-radius: 0 0 10px 10px;
-}
-
-.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked {
-  background-color: #1A73E8;
-  color: white;
-}
-
-.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked:backdrop {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked indicatorbin.needs-attention > indicator {
-  background-color: white;
-}
-
-.top-bar headerbar viewswitchertitle viewswitcher.narrow button.toggle:checked indicatorbin.needs-attention > indicator > label {
-  color: #1A73E8;
-}
-
 indicatorbin > indicator, indicatorbin > mask {
   min-width: 4px;
   min-height: 4px;
@@ -7034,7 +7180,7 @@ flap > dimming,
 leaflet > dimming,
 navigation-view > dimming,
 overlay-split-view > dimming {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 flap > border,
@@ -7056,38 +7202,38 @@ flap > shadow.left,
 leaflet > shadow.left,
 navigation-view > shadow.left,
 overlay-split-view > shadow.left {
-  background-image: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 flap > shadow.right,
 leaflet > shadow.right,
 navigation-view > shadow.right,
 overlay-split-view > shadow.right {
-  background-image: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 flap > shadow.up,
 leaflet > shadow.up,
 navigation-view > shadow.up,
 overlay-split-view > shadow.up {
-  background-image: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 flap > shadow.down,
 leaflet > shadow.down,
 navigation-view > shadow.down,
 overlay-split-view > shadow.down {
-  background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 toolbarview.undershoot-top scrolledwindow > undershoot.top {
   box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 navigation-view .medium {
@@ -7133,56 +7279,56 @@ navigation-view .medium {
 .content-pane .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top,
 .sidebar-pane .content-pane toolbarview.undershoot-top scrolledwindow > undershoot.top {
   box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom,
 .content-pane .sidebar-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom,
 .sidebar-pane .content-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-top > undershoot.top,
 .content-pane .sidebar-pane scrolledwindow.undershoot-top > undershoot.top,
 .sidebar-pane .content-pane scrolledwindow.undershoot-top > undershoot.top {
   box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-bottom > undershoot.bottom,
 .content-pane .sidebar-pane scrolledwindow.undershoot-bottom > undershoot.bottom,
 .sidebar-pane .content-pane scrolledwindow.undershoot-bottom > undershoot.bottom {
   box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left,
 .content-pane .sidebar-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left,
 .sidebar-pane .content-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
   box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right,
 .content-pane .sidebar-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right,
 .sidebar-pane .content-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
   box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right,
 .content-pane .sidebar-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right,
 .sidebar-pane .content-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
   box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left,
 .content-pane .sidebar-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left,
 .sidebar-pane .content-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
   box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.75), transparent 4px);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
 .sidebar-pane flap > dimming,
@@ -7197,7 +7343,7 @@ navigation-view .medium {
 .sidebar-pane .content-pane leaflet > dimming,
 .sidebar-pane .content-pane navigation-view > dimming,
 .sidebar-pane .content-pane overlay-split-view > dimming {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-pane flap > border,
@@ -7243,7 +7389,7 @@ navigation-view .medium {
 .sidebar-pane .content-pane leaflet > shadow.left,
 .sidebar-pane .content-pane navigation-view > shadow.left,
 .sidebar-pane .content-pane overlay-split-view > shadow.left {
-  background-image: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to right, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 .sidebar-pane flap > shadow.right,
@@ -7258,7 +7404,7 @@ navigation-view .medium {
 .sidebar-pane .content-pane leaflet > shadow.right,
 .sidebar-pane .content-pane navigation-view > shadow.right,
 .sidebar-pane .content-pane overlay-split-view > shadow.right {
-  background-image: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to left, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 .sidebar-pane flap > shadow.up,
@@ -7273,7 +7419,7 @@ navigation-view .medium {
 .sidebar-pane .content-pane leaflet > shadow.up,
 .sidebar-pane .content-pane navigation-view > shadow.up,
 .sidebar-pane .content-pane overlay-split-view > shadow.up {
-  background-image: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 .sidebar-pane flap > shadow.down,
@@ -7288,7 +7434,7 @@ navigation-view .medium {
 .sidebar-pane .content-pane leaflet > shadow.down,
 .sidebar-pane .content-pane navigation-view > shadow.down,
 .sidebar-pane .content-pane overlay-split-view > shadow.down {
-  background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.7), alpha(rgba(0, 0, 0, 0.12), 0.14) 40px, alpha(rgba(0, 0, 0, 0.12), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.12), 0.4), alpha(rgba(0, 0, 0, 0.12), 0.14) 7px, alpha(rgba(0, 0, 0, 0.12), 0) 24px);
+  background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.7), alpha(rgba(0, 0, 0, 0.1), 0.14) 40px, alpha(rgba(0, 0, 0, 0.1), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.4), alpha(rgba(0, 0, 0, 0.1), 0.14) 7px, alpha(rgba(0, 0, 0, 0.1), 0) 24px);
 }
 
 .sidebar-pane banner > revealer > widget,

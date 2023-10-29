@@ -133,7 +133,7 @@ label {
   &:disabled {
     opacity: 1;
     filter: none;
-    color: $text-disabled;
+    // color: $text-disabled;
 
     // selection { color: $text-disabled; }
 
@@ -281,7 +281,7 @@ spinner {
 
   @include entry(normal);
   &:focus-within { @include entry(checked); }
-  &:drop(active) { @include entry(hover); }
+  &:not(:disabled):not(:focus-within):hover, &:drop(active) { @include entry(hover); }
   &:disabled { @include entry(disabled); }
 
   > text {
@@ -347,16 +347,35 @@ entry {
     &.#{$e_type} {
       @include entry(normal, $e_color);
 
-      image { color: $e_color; }
-
       selection {
         color: on($e_color);
         background-color: $e_color;
       }
 
+      &:not(:disabled):not(:focus-within):hover, &:drop(active) { @include entry(hover, $e_color); }
+
       &:focus-within { @include entry(checked, $e_color); }
 
       &:disabled { @include entry(disabled, $e_color); }
+
+      > text {
+        > placeholder {
+          color: rgba($e_color, 0.35);
+        }
+    
+        > block-cursor {
+          color: $e_color;
+          background-color: on($e_color);
+        }
+      }
+
+      > image {
+        color: rgba($e_color, 0.8);
+
+        &:hover, &:active { color: $e_color; }
+
+        &:disabled { color: rgba($e_color, 0.35); }
+      }
     }
   }
 
@@ -1128,7 +1147,7 @@ searchbar > revealer > box {
 %titlebar-entry {
   caret-color: $titlebar-text;
 
-  &, &:focus-within {
+  &, &:hover, &:focus-within {
     background-color: $titlebar-fill;
 
     &, & > text {
@@ -1488,23 +1507,9 @@ headerbar {
 }
 
 window.devel {
-  headerbar.titlebar {
-    $c: $titlebar;
-    $gradient: cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
-               linear-gradient(to right, transparent 65%, transparentize($primary, 0.8)),
-               linear-gradient(to top, darken($c, 3%), $c 3px, lighten($c, 6%));
-    @if $variant == 'dark' {
-      $gradient: cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
-                 linear-gradient(to right, transparent 65%, transparentize($primary, 0.9)),
-                 linear-gradient(to top, lighten($c, 3%) 3px, lighten($c, 5%));
-    }
-
-    background: $titlebar $gradient;
-
-    &:backdrop {
-      background: $titlebar cross-fade(10% -gtk-icontheme("system-run-symbolic"), image(transparent)) 90% 0/256px 256px no-repeat,
-                  image($titlebar); /* background-color would flash */
-    }
+  headerbar > windowhandle {
+    background-image: cross-fade(5% -gtk-recolor(url("assets/scalable/devel-symbolic.svg")), image(transparent));
+    background-repeat: repeat-x;
   }
 }
 
@@ -1965,6 +1970,8 @@ popover.background {
 
       separator { margin: 0; }
     }
+
+    button, entry, spinbutton { border-radius: $menuitem-radius; }
   }
 
   // FIXME: Use the popover color instead of transparent as a workaround for .view

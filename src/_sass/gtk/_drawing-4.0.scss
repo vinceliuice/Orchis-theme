@@ -73,13 +73,10 @@
 
   @if $t == disabled {
     background-color: if($fc == $primary, $fill, rgba($fc, 0.04));
-    color: $text-disabled;
     color: if($fc == $primary, $text-disabled, rgba($fc, 0.35));
     outline: none;
     filter: none;
     opacity: 1;
-
-    > label { color: $text-disabled; }
   }
 }
 

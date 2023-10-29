@@ -153,7 +153,7 @@ $destructive:                           $error;
 
 $check_radio_primary:                   if($check_radio == 'default', $success, $primary);
 
-$frame:                                 if($variant == 'light', rgba(black, 0.12), rgba(black, 0.20)); // instead of shadows
+$frame:                                 if($variant == 'light', rgba(black, 0.1), rgba(black, 0.25)); // instead of shadows
 $border:                                if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12));
 $solid-border:                          if($variant == 'light', darken($background, 8%), lighten($background, 12%));
 $border-alt:                            rgba(black, 0.16); // darker border color for Chrome and Firefox

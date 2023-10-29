@@ -1175,6 +1175,138 @@ screenshot-carousel box.frame.view {
 }
 
 //
+// Gnome Weather
+//
+
+@define-color weather_temp_chart_fill_color #{rgba($warning, 0.5)};
+@define-color weather_temp_chart_stroke_color #{darken($warning, 10%)};
+@define-color weather_thermometer_warm_color #{if($variant == 'light', $yellow-dark, $yellow-light)};
+@define-color weather_thermometer_cold_color #{if($variant == 'light', $blue-dark, $blue-light)};
+
+$weather_thermometer_high_color: $yellow-light;
+$weather_thermometer_low_color: $blue-light;
+$weather_forecast_color: darken($warning, 10%);
+
+#places-label {
+  font-weight: bold;
+}
+
+#temperature-label {
+  font-size: 32pt;
+  font-weight: 900;
+  margin-left: 9px;
+}
+
+#conditions-grid *:backdrop {
+  color: $text-secondary;
+}
+
+.content-view.cell {
+  font-weight: bold;
+}
+
+#locationEntry {
+  margin: 0;
+  padding-bottom: $space-size;
+}
+
+.weather-popover {
+  margin-top: $space-size;
+}
+
+.forecast-card {
+  transition: border-radius 100ms ease-out;
+  border-radius: $corner-radius;
+}
+
+.forecast-card separator {
+  background-color: $border;
+}
+
+#daily-forecast-box {
+  > separator:last-child {
+    background-color: transparent;
+    min-width: 0;
+  }
+}
+
+#conditions-grid,
+#attributionGrid {
+  margin-left: $space-size * 3;
+  margin-right: $space-size * 3;
+}
+
+#weather-page .small .forecast-card {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-width: 1px 0;
+}
+
+.forecast-temperature-label {
+  font-weight: bold;
+  color: $weather_forecast_color;
+}
+
+WeatherThermometer {
+  margin-bottom: $space-size * 2;
+}
+
+WeatherThermometer > label.high {
+  font-weight: bold;
+  color: $weather_thermometer_high_color;
+}
+
+WeatherThermometer > label.low {
+  font-weight: bold;
+  color: $weather_thermometer_low_color;
+}
+
+.forecast-button {
+  margin: 0 $space-size * 2;
+}
+
+.forecast-graphic {
+  margin: $space-size * 3;
+}
+
+button.osd.circular {
+  border-radius: $circular-radius;
+  min-width: $small-size;
+  min-height: $small-size;
+}
+
+button.osd.circular > image {
+  padding: 0;
+}
+
+scrolledwindow.inline list,
+scrolledwindow.inline listview {
+  background: none;
+  color: inherit;
+}
+
+scrolledwindow.inline undershoot.top {
+  box-shadow: inset 0 1px $border;
+}
+
+.search-view {
+  background-color: $blue-dark;
+  color: on($blue-dark);
+}
+
+.search-view menubutton button:focus:focus-visible {
+  outline-color: rgba(white, 0.3);
+}
+
+image.circular {
+  min-width: $medium-size;
+  min-height: $medium-size;
+  padding: 0;
+  border-radius: $circular-radius;
+}
+
+//
 // Polari
 //
 .polari-room-list {

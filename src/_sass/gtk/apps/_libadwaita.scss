@@ -584,26 +584,6 @@ viewswitchertitle {
     margin-top: 0;
     margin-bottom: 0;
   }
-
-  .top-bar headerbar & viewswitcher {
-    &.narrow {
-      button.toggle {
-        border-radius: 0 0 $corner-radius $corner-radius;
-
-        &:checked {
-          background-color: $primary;
-          color: on($primary);
-    
-          &:backdrop { color: on($primary, disabled); }
-    
-          indicatorbin.needs-attention > indicator {
-            > label { color: $primary; }
-            background-color: on($primary);
-          }
-        }
-      }
-    }
-  }
 }
 
 // AdwIndicatorBin
