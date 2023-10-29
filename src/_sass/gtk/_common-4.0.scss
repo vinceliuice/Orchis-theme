@@ -1147,16 +1147,15 @@ searchbar > revealer > box {
 %titlebar-entry {
   caret-color: $titlebar-text;
 
-  &, &:hover, &:focus-within {
-    background-color: $titlebar-fill;
+  &, &:drop(active), &:focus-within {
+    color: $titlebar-text;
+  }
 
-    &, & > text {
-      color: $titlebar-text;
-    }
+  &:not(:disabled):not(:focus-within):hover {
+    color: $titlebar-text;
   }
 
   &:disabled {
-    background-color: $titlebar-fill;
     color: $titlebar-text-disabled;
   }
 
@@ -1278,7 +1277,9 @@ headerbar {
     }
   }
 
-  entry { @extend %titlebar-entry; }
+  entry {
+    @extend %titlebar-entry;
+  }
 
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
@@ -3962,8 +3963,6 @@ separator.sidebar {
     &:selected {
       background-color: $overlay-checked;
       color: $primary;
-
-      label, image { color: $primary; }
 
       &:hover {
         background-color: $overlay-focus-hover;

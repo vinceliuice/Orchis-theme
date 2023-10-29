@@ -755,8 +755,8 @@ toolbarview.undershoot-bottom scrolledwindow {
   @include undershoot(bottom);
 }
 
-navigation-view .medium {
-  padding-top: $space-size * 2;
+navigation-view navigation-view-page .medium stack > button { // Nautilus properties
+  margin-top: $space-size * 2;
 }
 
 // Sidebar
@@ -774,15 +774,6 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
   &:backdrop {
     background-color: $sidebar-backdrop;
     transition: background-color $duration $ease-out;
-  }
-
-  .sidebar,
-  .toolbar,
-  .navigation-sidebar,
-  searchbar > revealer > box {
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
   }
 
   toolbarview.undershoot-top scrolledwindow {
@@ -850,6 +841,15 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 }
 
 .sidebar-pane {
+  .sidebar,
+  .toolbar,
+  .navigation-sidebar,
+  searchbar > revealer > box {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
   headerbar {
     border-top-right-radius: 0;
 
@@ -876,6 +876,25 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     }
   
     .dim-label { color: $titlebar-text-disabled; }
+
+    .navigation-sidebar {
+      color: $titlebar-text-secondary;
+    
+      > row {
+        color: $titlebar-text-secondary;
+    
+        &:hover, &:active,
+        &:focus-visible:focus-within {
+          color: $titlebar-text;
+        }
+
+        &:selected {
+          color: $primary;
+        }
+    
+        &:disabled { color: $titlebar-text-secondary-disabled; }
+      }
+    }
   
     popover {
       > arrow,

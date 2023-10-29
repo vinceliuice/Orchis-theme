@@ -134,8 +134,8 @@ $panel-solid:                           if($topbar == 'dark', background(e), bac
 $panel:                                 if($opacity == 'default', rgba($panel-solid, 0.65), $panel-solid);
 $shell:                                 if($topbar == 'dark', rgba(black, 0.65), background(c)); // for gnome-shell
 
-$button:                                if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
-$entry:                                 if($blackness == 'true' and $variant == 'dark', on($background, secondary-fill), on($background, fill));
+$button:                                gtkalpha(currentColor, 0.05);
+$entry:                                 gtkalpha(currentColor, 0.05);
 
 //
 // Misc colors

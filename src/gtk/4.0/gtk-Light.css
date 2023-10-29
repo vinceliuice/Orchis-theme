@@ -282,12 +282,12 @@ spinner:checked:disabled {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.87);
 }
 
 .content-pane headerbar entry:focus-within, headerbar popover.background entry:focus-within, entry:focus-within {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.87);
   outline-color: #1A73E8;
   outline-width: 2px;
@@ -302,7 +302,7 @@ spinner:checked:disabled {
 }
 
 .content-pane headerbar entry:disabled, headerbar popover.background entry:disabled, entry:disabled {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
   outline: none;
   filter: none;
@@ -364,7 +364,7 @@ entry.error {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(229, 57, 53, 0.08);
+  background-color: alpha(currentColor, 0.05);
   color: #E53935;
 }
 
@@ -381,7 +381,7 @@ entry.error:not(:disabled):not(:focus-within):hover, entry.error:drop(active) {
 }
 
 entry.error:focus-within {
-  background-color: rgba(229, 57, 53, 0.08);
+  background-color: alpha(currentColor, 0.05);
   color: #E53935;
   outline-color: #E53935;
   outline-width: 2px;
@@ -389,7 +389,7 @@ entry.error:focus-within {
 }
 
 entry.error:disabled {
-  background-color: rgba(229, 57, 53, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(229, 57, 53, 0.35);
   outline: none;
   filter: none;
@@ -421,7 +421,7 @@ entry.success {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(15, 157, 88, 0.08);
+  background-color: alpha(currentColor, 0.05);
   color: #0F9D58;
 }
 
@@ -438,7 +438,7 @@ entry.success:not(:disabled):not(:focus-within):hover, entry.success:drop(active
 }
 
 entry.success:focus-within {
-  background-color: rgba(15, 157, 88, 0.08);
+  background-color: alpha(currentColor, 0.05);
   color: #0F9D58;
   outline-color: #0F9D58;
   outline-width: 2px;
@@ -446,7 +446,7 @@ entry.success:focus-within {
 }
 
 entry.success:disabled {
-  background-color: rgba(15, 157, 88, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(15, 157, 88, 0.35);
   outline: none;
   filter: none;
@@ -478,7 +478,7 @@ entry.warning {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(255, 214, 0, 0.08);
+  background-color: alpha(currentColor, 0.05);
   color: #FFD600;
 }
 
@@ -495,7 +495,7 @@ entry.warning:not(:disabled):not(:focus-within):hover, entry.warning:drop(active
 }
 
 entry.warning:focus-within {
-  background-color: rgba(255, 214, 0, 0.08);
+  background-color: alpha(currentColor, 0.05);
   color: #FFD600;
   outline-color: #FFD600;
   outline-width: 2px;
@@ -503,7 +503,7 @@ entry.warning:focus-within {
 }
 
 entry.warning:disabled {
-  background-color: rgba(255, 214, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(255, 214, 0, 0.35);
   outline: none;
   filter: none;
@@ -586,7 +586,7 @@ editablelabel > stack > text {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -623,7 +623,7 @@ infobar.warning > revealer > box button:checked:disabled, popover.background.tou
   transition: all 75ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   outline: none;
   box-shadow: inset 0 0 0 2px transparent;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   background-image: radial-gradient(circle, transparent 0%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
@@ -653,7 +653,7 @@ infobar.warning > revealer > box button:checked:disabled, popover.background.tou
 .nautilus-window .sidebar-pane headerbar popover.background button:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize),
 .nautilus-window .content-pane headerbar popover.background button:disabled:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize), headerbar popover.background button:disabled:not(.suggested-action):not(.destructive-action), button:disabled {
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
   filter: none;
   opacity: 1;
@@ -880,7 +880,7 @@ button.suggested-action {
 
 button.suggested-action:disabled {
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
   filter: none;
   opacity: 1;
@@ -925,7 +925,7 @@ button.destructive-action {
 
 button.destructive-action:disabled {
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
   filter: none;
   opacity: 1;
@@ -1122,7 +1122,7 @@ spinbutton:not(.vertical), spinbutton.vertical {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.87);
   border-radius: 12px;
   padding: 0;
@@ -1130,7 +1130,7 @@ spinbutton:not(.vertical), spinbutton.vertical {
 }
 
 spinbutton:not(.vertical):focus-within, spinbutton.vertical:focus-within {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.87);
   outline-color: #1A73E8;
   outline-width: 2px;
@@ -1138,7 +1138,7 @@ spinbutton:not(.vertical):focus-within, spinbutton.vertical:focus-within {
 }
 
 spinbutton:not(.vertical):disabled, spinbutton.vertical:disabled {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
   outline: none;
   filter: none;
@@ -1300,7 +1300,7 @@ button.combo:only-child {
   transition: outline-color 300ms cubic-bezier(0, 0, 0.2, 1), outline-width 300ms cubic-bezier(0, 0, 0.2, 1), outline-offset 300ms cubic-bezier(0, 0, 0.2, 1);
   outline: 0 solid transparent;
   outline-offset: 4px;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -1330,7 +1330,7 @@ button.combo:only-child:checked {
 
 button.combo:only-child:disabled {
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
   color: rgba(0, 0, 0, 0.38);
   filter: none;
   opacity: 1;
@@ -1547,16 +1547,15 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
   caret-color: rgba(0, 0, 0, 0.87);
 }
 
-#NautilusQueryEditor, headerbar entry, headerbar entry:hover, headerbar entry:focus-within {
-  background-color: rgba(0, 0, 0, 0.04);
+#NautilusQueryEditor, headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
+  color: rgba(0, 0, 0, 0.87);
 }
 
-#NautilusQueryEditor, headerbar entry, #NautilusQueryEditor > text, headerbar entry > text, headerbar entry:hover, headerbar entry:hover > text, headerbar entry:focus-within, headerbar entry:focus-within > text {
+#NautilusQueryEditor:not(:disabled):not(:focus-within):hover, headerbar entry:not(:disabled):not(:focus-within):hover {
   color: rgba(0, 0, 0, 0.87);
 }
 
 #NautilusQueryEditor:disabled, headerbar entry:disabled {
-  background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -4359,10 +4358,6 @@ separator.sidebar.spacer {
   color: #1A73E8;
 }
 
-.navigation-sidebar > row:selected label, .navigation-sidebar > row:selected image {
-  color: #1A73E8;
-}
-
 .navigation-sidebar > row:selected:hover {
   background-color: alpha(currentColor, 0.16);
 }
@@ -5934,7 +5929,7 @@ flowboxchild.card:not(.category-tile) {
 .card.category-tile-iconless {
   padding: 9px 15px;
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: alpha(currentColor, 0.05);
 }
 
 app-context-bar > box:not(:first-child) > button.flat {
@@ -7161,8 +7156,8 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
   background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
 }
 
-navigation-view .medium {
-  padding-top: 12px;
+navigation-view navigation-view-page .medium stack > button {
+  margin-top: 12px;
 }
 
 .unfolded stacksidebar.sidebar {
@@ -7181,23 +7176,6 @@ navigation-view .medium {
 .sidebar-pane .content-pane:backdrop {
   background-color: #F2F2F2;
   transition: background-color 75ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.sidebar-pane .sidebar,
-.sidebar-pane .toolbar,
-.sidebar-pane .navigation-sidebar,
-.sidebar-pane searchbar > revealer > box,
-.content-pane .sidebar-pane .sidebar,
-.content-pane .sidebar-pane .toolbar,
-.content-pane .sidebar-pane .navigation-sidebar,
-.content-pane .sidebar-pane searchbar > revealer > box,
-.sidebar-pane .content-pane .sidebar,
-.sidebar-pane .content-pane .toolbar,
-.sidebar-pane .content-pane .navigation-sidebar,
-.sidebar-pane .content-pane searchbar > revealer > box {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
 }
 
 .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top,
@@ -7404,6 +7382,15 @@ navigation-view .medium {
 .sidebar-pane .sidebar-pane {
   background-color: transparent;
   color: inherit;
+}
+
+.sidebar-pane .sidebar,
+.sidebar-pane .toolbar,
+.sidebar-pane .navigation-sidebar,
+.sidebar-pane searchbar > revealer > box {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .sidebar-pane headerbar {

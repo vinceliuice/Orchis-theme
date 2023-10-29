@@ -46,7 +46,7 @@
                 outline-offset $ripple-fade-out-duration $ease-out;
     outline: 0 solid transparent;
     outline-offset: 4px;
-    background-color: if($fc == $primary, $entry, rgba($fc, 0.08));
+    background-color: $entry;
     color: if($fc == $primary, $text, $fc);
   }
 
@@ -59,12 +59,13 @@
 
   @if $t == focus {
     background-color: $overlay-focus;
+    color: if($fc == $primary, $text, $fc);
     outline: 2px solid if($fc == $primary, $track, $fc);
     outline-offset: -2px;
   }
 
   @if $t == checked {
-    background-color: if($fc == $primary, $entry, rgba($fc, 0.08));
+    background-color: $entry;
     color: if($fc == $primary, $text, $fc);
     outline-color: if($fc == $primary, $primary, $fc);
     outline-width: 2px;
@@ -72,7 +73,7 @@
   }
 
   @if $t == disabled {
-    background-color: if($fc == $primary, $fill, rgba($fc, 0.04));
+    background-color: $entry;
     color: if($fc == $primary, $text-disabled, rgba($fc, 0.35));
     outline: none;
     filter: none;
@@ -123,7 +124,7 @@
 
   @if $t == disabled {
     box-shadow: none;
-    background-color: $fill;
+    background-color: $button;
     color: $text-disabled;
     filter: none;
     opacity: 1;

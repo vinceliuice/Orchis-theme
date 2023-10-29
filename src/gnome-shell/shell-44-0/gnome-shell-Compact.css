@@ -861,7 +861,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .pager-button {
   width: 24px !important;
   height: 24px !important;
-  margin: 2px;
+  margin: 2px !important;
   padding: 2px !important;
   border-radius: 9999px;
   background-color: transparent;
