@@ -895,7 +895,19 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
         &:disabled { color: $titlebar-text-secondary-disabled; }
       }
     }
-  
+
+    check, radio {
+      color: $titlebar-text-secondary;
+
+      &:hover, &:active { color: $titlebar-text; }
+
+      &:disabled { color: $titlebar-text-secondary-disabled; }
+
+      &:checked, &:indeterminate { color: $check_radio_primary; }
+
+      &:checked:disabled, &:indeterminate:disabled { color: $titlebar-text-secondary-disabled; }
+    }
+
     popover {
       color: $titlebar-text;
 

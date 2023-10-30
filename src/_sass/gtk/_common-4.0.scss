@@ -603,13 +603,21 @@ button {
       color: on($b_color);
       box-shadow: none;
 
-      &:disabled { @include button(disabled); }
+      &:disabled {
+        color: rgba(on($b_color), 0.45);
+        background-color: rgba($b_color, 0.25);
+      }
 
       &:hover {
-        box-shadow: inset 0 0 0 9999px transparent,
-                    0 2px (4px * .6) -1px rgba($b_color, 0.2),
+        color: on($b_color);
+        background-color: mix(on($b_color), $b_color, percentage(0.1));
+        box-shadow: 0 2px (4px * .6) -1px rgba($b_color, 0.2),
                     0 4px (5px * .6) 0 rgba($b_color, 0.14),
                     0 1px (10px * .6) 0 rgba($b_color, 0.12);
+      }
+
+      &:active {
+        color: on($b_color);
       }
 
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
@@ -627,7 +635,10 @@ button {
         background-color: transparent;
         color: $b_color;
 
-        &:disabled { @include button(flat-disabled); }
+        &:disabled {
+          color: rgba(on($b_color), 0.45);
+          background-color: transparent;
+        }
 
         &:checked { background-color: rgba($b_color, 0.3); }
       }
@@ -998,7 +1009,7 @@ button.combo:only-child {
  ************/
 .toolbar,
 toolbar {
-  padding: $space-size / 2 $space-size;
+  padding: $space-size / 2;
   background-color: $background;
   border-spacing: $space-size;
 
@@ -1053,11 +1064,17 @@ toolbar {
   }
 }
 
-// oldstyle toolbar buttons
-.toolbar button {
-  margin: 1px;
-  @extend %button-flat;
-  border-radius: $corner-radius / 2;
+.toolbar {
+  button {
+    @extend %button-flat;
+    border-radius: $corner-radius / 2;
+  }
+
+  .bottom-bar & {
+    padding: $space-size;
+
+    button { border-radius: $corner-radius; }
+  }
 }
 
 // searchbar
@@ -1082,7 +1099,6 @@ searchbar > revealer > box {
  ***************/
 
 %titlebar-button-reset {
-  @extend %button-flat;
   color: $text-secondary;
 
   &:focus, &:hover, &:active, &:checked { color: $text; }
@@ -1112,7 +1128,6 @@ searchbar > revealer > box {
 }
 
 %titlebar-button {
-  @extend %button-flat;
   color: $titlebar-text-secondary;
 
   .linked:not(.vertical) > & {
@@ -1285,6 +1300,7 @@ headerbar {
   .linked:not(.vertical) > entry:not(:only-child) { border-radius: $corner-radius; }
 
   button:not(.suggested-action):not(.destructive-action) {
+    @extend %button-flat;
     @extend %titlebar-button;
   }
 
@@ -2524,31 +2540,6 @@ switch {
 /*************************
  * Check and Radio items *
  *************************/
-// draw regular check and radio items using our PNG assets
-// all assets are rendered from assets.svg. never add pngs directly
-
-// selection-mode
-.view.content-view.check:not(list),
-.content-view .tile check:not(list) {
-  min-height: 40px;
-  min-width: 40px;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  background-color: transparent;
-  background-image: none;
-  -gtk-icon-shadow: $icon-shadow-z2;
-
-  &:hover, &:active { -gtk-icon-shadow: $icon-shadow-z4; }
-
-  @each $s, $as in ('', '-unchecked'),
-                   (':checked', '-checked') {
-    &#{$s} {
-      -gtk-icon-source: -gtk-scaled(url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}.png"),
-                                    url("assets/selectionmode-checkbox#{$as}#{$asset-suffix}@2.png"));
-    }
-  }
-}
 
 checkbutton,
 radiobutton {
@@ -2559,7 +2550,7 @@ radiobutton {
 checkbutton.text-button,
 radiobutton.text-button {
   // this is for a nice focus on check and radios text
-  padding: 2px;
+  padding: $space-size / 2;
 
   label:not(:only-child) { margin: 0 4px; }
 
@@ -2734,6 +2725,30 @@ columnview.view {
 treeview.view radio:checked {
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-checked-symbolic.svg"));
   border-image: none;
+}
+
+// selection-mode
+checkbutton.selection-mode {
+  border-radius: $circular-radius;
+
+  check, radio {
+    padding: $space-size;
+    border-radius: $circular-radius;
+    -gtk-icon-size: 36px;
+
+    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/selection-unchecked-symbolic.svg")),
+                                  -gtk-recolor(url("assets/scalable/selection-unchecked-symbolic@2.svg")));
+
+    &:checked {
+      -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/selection-checked-symbolic.svg")),
+                                    -gtk-recolor(url("assets/scalable/selection-checked-symbolic@2.svg")));
+    }
+  }
+
+  label {
+    &:dir(ltr) { margin-right: $space-size; }
+    &:dir(rtl) { margin-left: $space-size; }
+  }
 }
 
 
