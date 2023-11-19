@@ -264,3 +264,24 @@ dialog.xfsm-logout-dialog {
   //   trough { }
   // }
 }
+
+/***********************
+ * Xfce4 Panel Plugins *
+ ***********************/
+#docklike-plugin {
+  .group {
+    border-radius: 3px;
+    margin: 2px;
+    padding: 2px;
+  }
+  button {
+    padding: 2px 4px;
+  }
+}
+
+
+#xfce-panel-toggle-button {
+  padding: 2px;
+  margin: 5px 2px;
+  border-radius: 50px;
+}
