@@ -109,8 +109,8 @@ XfdesktopIconView.view {
   border-radius: $corner-radius;
 
   // Set the application icon- and preview-size to 64px
-  -XfwmTabwinWidget-icon-size: 64px;
-  -XfwmTabwinWidget-preview-size: 64px;
+  -XfwmTabwinWidget-icon-size: 256px;
+  -XfwmTabwinWidget-preview-size: 256px;
 }
 
 /***************
@@ -130,7 +130,7 @@ window#whiskermenu-window {
 
   // Need to set Whisker menu background opacity less than 100
   > frame > border {
-    border-radius: $window-radius;
+    border-radius: 12px;
     padding: $space-size $space-size + 2px $space-size $space-size * 1.5;
     margin: $space-size;
     border: none;
