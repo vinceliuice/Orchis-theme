@@ -1497,10 +1497,6 @@ headerbar button:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
-  border-radius: 9999px;
-}
-
 headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
   color: white;
 }
@@ -1695,6 +1691,10 @@ headerbar splitbutton > menubutton > button:dir(ltr) {
 
 headerbar .linked:not(.vertical) > entry:not(:only-child) {
   border-radius: 12px;
+}
+
+headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+  border-radius: 9999px;
 }
 
 headerbar button.suggested-action:disabled,

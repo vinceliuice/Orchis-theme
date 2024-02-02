@@ -1130,10 +1130,6 @@ searchbar > revealer > box {
 %titlebar-button {
   color: $titlebar-text-secondary;
 
-  .linked:not(.vertical) > & {
-    border-radius: $circular-radius;
-  }
-
   &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
 
   &:disabled { color: $titlebar-text-secondary-disabled; }
@@ -1157,6 +1153,41 @@ searchbar > revealer > box {
 
       &:disabled { color: $titlebar-text-secondary-disabled; }
     }
+  }
+}
+
+%titlebar-entry-reset {
+  caret-color: $text;
+
+  &, &:drop(active), &:focus-within {
+    color: $text;
+  }
+
+  &:not(:disabled):not(:focus-within):hover {
+    color: $text;
+  }
+
+  &:disabled {
+    color: $text-disabled;
+  }
+
+  > text {
+    > placeholder {
+      color: $text-disabled;
+    }
+
+    > block-cursor {
+      color: $text;
+      background-color: $base;
+    }
+  }
+
+  > image {
+    color: $text-secondary;
+
+    &:hover, &:active { color: $text; }
+
+    &:disabled { color: $text-disabled; }
   }
 }
 
@@ -1302,6 +1333,10 @@ headerbar {
   button:not(.suggested-action):not(.destructive-action) {
     @extend %button-flat;
     @extend %titlebar-button;
+  }
+
+  .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+    border-radius: $circular-radius;
   }
 
   button.suggested-action,

@@ -46,6 +46,9 @@
 
         popover.background { // reset
           > contents {
+            background-color: $surface;
+            color: $text;
+
             .dim-label {
               color: $text-secondary;
 

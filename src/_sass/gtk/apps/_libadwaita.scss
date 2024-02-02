@@ -909,52 +909,28 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     }
 
     popover {
-      color: $titlebar-text;
+      color: $text;
 
       > arrow,
       > contents {
-        background-color: $titlebar-backdrop;
-        color: $titlebar-text;
+        color: $text;
 
         separator {
-          background-color: $titlebar-divider;
+          background-color: $divider;
         }
 
-        entry { @extend %titlebar-entry; }
+        .dim-label { color: $text-disabled; }
 
-        modelbutton, button.image-button.model,
+        entry {
+          @extend %titlebar-entry-reset;
+        }
+
         button:not(.suggested-action):not(.destructive-action) {
-          @extend %titlebar-button;
+          @extend %titlebar-button-reset;
 
           &:hover {
             outline: none;
           }
-        }
-
-        modelbutton {
-          color: $titlebar-text;
-      
-          accelerator {
-            color: $titlebar-text-disabled;
-  
-            &:disabled {
-              color: $titlebar-divider;
-            }
-          }
-
-          check, radio {
-            &:not(:checked):not(:indeterminate):not(:disabled) { color: $titlebar-text-secondary; }
-          }
-        }
-
-        checkbutton,
-        radiobutton,
-        label {
-          color: $titlebar-text;
-        }
-
-        label:disabled {
-          color: $titlebar-text-disabled;
         }
       }
     }

@@ -1456,125 +1456,146 @@ searchbar > revealer > box splitbutton {
 /***************
  * Header bars *
  ***************/
-.content-pane headerbar button:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:not(.suggested-action):not(.destructive-action), headerbar.flat button:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:not(.suggested-action):not(.destructive-action), headerbar.flat button:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:active:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:focus:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:hover:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:active:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:active:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:active:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:checked:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:checked:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:disabled:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.content-pane headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:checked:disabled:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:checked:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.38);
 }
 
-.content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.content-pane headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:focus:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:focus:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:hover:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:hover:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:active:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:active:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:active:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.content-pane headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:disabled:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.content-pane headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:checked:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:checked:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.content-pane headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action),
+.sidebar-pane popover > contents button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), window.about.background.csd headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(0, 0, 0, 0.26);
 }
 
-.sidebar-pane popover > arrow modelbutton, .sidebar-pane popover > arrow button.image-button.model,
-.sidebar-pane popover > arrow button:not(.suggested-action):not(.destructive-action),
-.sidebar-pane popover > contents modelbutton,
-.sidebar-pane popover > contents button.image-button.model,
-.sidebar-pane popover > contents button:not(.suggested-action):not(.destructive-action), .sidebar-pane button:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:not(.suggested-action):not(.destructive-action), headerbar button:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:not(.suggested-action):not(.destructive-action), headerbar button:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow .linked:not(.vertical) > modelbutton, .sidebar-pane popover > arrow .linked:not(.vertical) > button.image-button.model,
-.sidebar-pane popover > arrow .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action),
-.sidebar-pane popover > contents .linked:not(.vertical) > modelbutton,
-.sidebar-pane popover > contents .linked:not(.vertical) > button.image-button.model,
-.sidebar-pane popover > contents .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), .sidebar-pane .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action), headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
-  border-radius: 9999px;
-}
-
-.sidebar-pane popover > arrow modelbutton:focus, .sidebar-pane popover > arrow button.image-button.model:focus,
-.sidebar-pane popover > contents modelbutton:focus,
-.sidebar-pane popover > contents button.image-button.model:focus, .sidebar-pane button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:hover, .sidebar-pane popover > arrow button.image-button.model:hover,
-.sidebar-pane popover > contents modelbutton:hover,
-.sidebar-pane popover > contents button.image-button.model:hover, .sidebar-pane button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:active, .sidebar-pane popover > arrow button.image-button.model:active,
-.sidebar-pane popover > contents modelbutton:active,
-.sidebar-pane popover > contents button.image-button.model:active, .sidebar-pane button:active:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:checked, .sidebar-pane popover > arrow button.image-button.model:checked,
-.sidebar-pane popover > contents modelbutton:checked,
-.sidebar-pane popover > contents button.image-button.model:checked, .sidebar-pane button:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar button:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane button:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane button:active:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action), .sidebar-pane button:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar button:checked:not(.suggested-action):not(.destructive-action) {
   color: white;
 }
 
-.sidebar-pane popover > arrow modelbutton:disabled, .sidebar-pane popover > arrow button.image-button.model:disabled,
-.sidebar-pane popover > contents modelbutton:disabled,
-.sidebar-pane popover > contents button.image-button.model:disabled, .sidebar-pane button:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.sidebar-pane popover > arrow modelbutton:checked:disabled, .sidebar-pane popover > arrow button.image-button.model:checked:disabled,
-.sidebar-pane popover > contents modelbutton:checked:disabled,
-.sidebar-pane popover > contents button.image-button.model:checked:disabled, .sidebar-pane button:checked:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:checked:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop, .sidebar-pane popover > arrow button.image-button.model:backdrop,
-.sidebar-pane popover > contents modelbutton:backdrop,
-.sidebar-pane popover > contents button.image-button.model:backdrop, .sidebar-pane button:backdrop:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:backdrop:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:focus, .sidebar-pane popover > arrow button.image-button.model:backdrop:focus,
-.sidebar-pane popover > contents modelbutton:backdrop:focus,
-.sidebar-pane popover > contents button.image-button.model:backdrop:focus, .sidebar-pane button:backdrop:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:backdrop:hover, .sidebar-pane popover > arrow button.image-button.model:backdrop:hover,
-.sidebar-pane popover > contents modelbutton:backdrop:hover,
-.sidebar-pane popover > contents button.image-button.model:backdrop:hover, .sidebar-pane button:backdrop:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane popover > arrow modelbutton:backdrop:active, .sidebar-pane popover > arrow button.image-button.model:backdrop:active,
-.sidebar-pane popover > contents modelbutton:backdrop:active,
-.sidebar-pane popover > contents button.image-button.model:backdrop:active, .sidebar-pane button:backdrop:active:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:backdrop:focus:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .sidebar-pane button:backdrop:hover:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .sidebar-pane button:backdrop:active:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:disabled, .sidebar-pane popover > arrow button.image-button.model:backdrop:disabled,
-.sidebar-pane popover > contents modelbutton:backdrop:disabled,
-.sidebar-pane popover > contents button.image-button.model:backdrop:disabled, .sidebar-pane button:backdrop:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:backdrop:disabled:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:checked, .sidebar-pane popover > arrow button.image-button.model:backdrop:checked,
-.sidebar-pane popover > contents modelbutton:backdrop:checked,
-.sidebar-pane popover > contents button.image-button.model:backdrop:checked, .sidebar-pane button:backdrop:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:backdrop:checked:not(.suggested-action):not(.destructive-action), .nautilus-window .content-pane headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow modelbutton:backdrop:checked:disabled, .sidebar-pane popover > arrow button.image-button.model:backdrop:checked:disabled,
-.sidebar-pane popover > contents modelbutton:backdrop:checked:disabled,
-.sidebar-pane popover > contents button.image-button.model:backdrop:checked:disabled, .sidebar-pane button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.sidebar-pane button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
 .sidebar-pane popover > arrow entry,
-.sidebar-pane popover > contents entry, .sidebar-pane entry, #NautilusQueryEditor, headerbar entry {
+.sidebar-pane popover > contents entry {
+  caret-color: rgba(0, 0, 0, 0.87);
+}
+
+.sidebar-pane popover > arrow entry,
+.sidebar-pane popover > contents entry {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.sidebar-pane popover > arrow entry:not(:disabled):not(:focus-within):hover,
+.sidebar-pane popover > contents entry:not(:disabled):not(:focus-within):hover {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.sidebar-pane popover > arrow entry:disabled,
+.sidebar-pane popover > contents entry:disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.sidebar-pane popover > arrow entry > text > placeholder,
+.sidebar-pane popover > contents entry > text > placeholder {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.sidebar-pane popover > arrow entry > text > block-cursor,
+.sidebar-pane popover > contents entry > text > block-cursor {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFFFFF;
+}
+
+.sidebar-pane popover > arrow entry > image,
+.sidebar-pane popover > contents entry > image {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sidebar-pane popover > arrow entry > image:hover,
+.sidebar-pane popover > contents entry > image:hover, .sidebar-pane popover > arrow entry > image:active,
+.sidebar-pane popover > contents entry > image:active {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.sidebar-pane popover > arrow entry > image:disabled,
+.sidebar-pane popover > contents entry > image:disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.sidebar-pane entry, #NautilusQueryEditor, headerbar entry {
   caret-color: white;
 }
 
-.sidebar-pane popover > arrow entry,
-.sidebar-pane popover > contents entry, .sidebar-pane entry, #NautilusQueryEditor, headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
+.sidebar-pane entry, #NautilusQueryEditor, headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
   color: white;
 }
 
@@ -1595,19 +1616,15 @@ searchbar > revealer > box splitbutton {
   background-color: white;
 }
 
-.sidebar-pane popover > arrow entry > image,
-.sidebar-pane popover > contents entry > image, .sidebar-pane entry > image, #NautilusQueryEditor > image, headerbar entry > image {
+.sidebar-pane entry > image, #NautilusQueryEditor > image, headerbar entry > image {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane popover > arrow entry > image:hover,
-.sidebar-pane popover > contents entry > image:hover, .sidebar-pane entry > image:hover, #NautilusQueryEditor > image:hover, headerbar entry > image:hover, .sidebar-pane popover > arrow entry > image:active,
-.sidebar-pane popover > contents entry > image:active, .sidebar-pane entry > image:active, #NautilusQueryEditor > image:active, headerbar entry > image:active {
+.sidebar-pane entry > image:hover, #NautilusQueryEditor > image:hover, headerbar entry > image:hover, .sidebar-pane entry > image:active, #NautilusQueryEditor > image:active, headerbar entry > image:active {
   color: white;
 }
 
-.sidebar-pane popover > arrow entry > image:disabled,
-.sidebar-pane popover > contents entry > image:disabled, .sidebar-pane entry > image:disabled, #NautilusQueryEditor > image:disabled, headerbar entry > image:disabled {
+.sidebar-pane entry > image:disabled, #NautilusQueryEditor > image:disabled, headerbar entry > image:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1739,6 +1756,10 @@ headerbar splitbutton > menubutton > button:dir(ltr) {
 
 headerbar .linked:not(.vertical) > entry:not(:only-child) {
   border-radius: 12px;
+}
+
+headerbar .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
+  border-radius: 9999px;
 }
 
 headerbar button.suggested-action:disabled,
@@ -5086,6 +5107,12 @@ row.expander:not(:checked) .nautilus-window .content-pane headerbar image.expand
   color: rgba(255, 255, 255, 0.5);
 }
 
+.nautilus-window .sidebar-pane headerbar popover.background > contents,
+.nautilus-window .content-pane headerbar popover.background > contents {
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.87);
+}
+
 .nautilus-window .sidebar-pane headerbar popover.background > contents .dim-label, .nautilus-window .sidebar-pane .content-pane headerbar popover.background > contents entry > text > placeholder, .content-pane .nautilus-window .sidebar-pane headerbar popover.background > contents entry > text > placeholder, .nautilus-window .sidebar-pane headerbar popover.background > contents entry > text > placeholder, .nautilus-window .sidebar-pane headerbar popover.background > contents row label.subtitle, row .nautilus-window .sidebar-pane headerbar popover.background > contents label.subtitle, .nautilus-window .sidebar-pane headerbar popover.background > contents row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) .nautilus-window .sidebar-pane headerbar popover.background > contents image.expander-row-arrow,
 .nautilus-window .content-pane headerbar popover.background > contents .dim-label,
 .nautilus-window .content-pane headerbar popover.background > contents entry > text > placeholder,
@@ -7548,61 +7575,36 @@ window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
 }
 
 .sidebar-pane popover {
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .sidebar-pane popover > arrow,
 .sidebar-pane popover > contents {
-  background-color: #3C3C3C;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .sidebar-pane popover > arrow separator,
 .sidebar-pane popover > contents separator {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
-.sidebar-pane popover > arrow modelbutton:hover, .sidebar-pane popover > arrow button.image-button.model:hover,
+.sidebar-pane popover > arrow .dim-label, .sidebar-pane popover > arrow .content-pane headerbar entry > text > placeholder, .content-pane headerbar .sidebar-pane popover > arrow entry > text > placeholder, .sidebar-pane popover > arrow entry > text > placeholder, .sidebar-pane popover > arrow headerbar popover.background entry > text > placeholder, headerbar popover.background .sidebar-pane popover > arrow entry > text > placeholder, .sidebar-pane popover > arrow row label.subtitle, row .sidebar-pane popover > arrow label.subtitle, .sidebar-pane popover > arrow row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) .sidebar-pane popover > arrow image.expander-row-arrow,
+.sidebar-pane popover > contents .dim-label,
+.sidebar-pane popover > contents .content-pane headerbar entry > text > placeholder,
+.content-pane headerbar .sidebar-pane popover > contents entry > text > placeholder,
+.sidebar-pane popover > contents entry > text > placeholder,
+.sidebar-pane popover > contents headerbar popover.background entry > text > placeholder,
+headerbar popover.background .sidebar-pane popover > contents entry > text > placeholder,
+.sidebar-pane popover > contents row label.subtitle,
+row .sidebar-pane popover > contents label.subtitle,
+.sidebar-pane popover > contents row.expander:not(:checked) image.expander-row-arrow,
+row.expander:not(:checked) .sidebar-pane popover > contents image.expander-row-arrow {
+  color: rgba(0, 0, 0, 0.38);
+}
+
 .sidebar-pane popover > arrow button:not(.suggested-action):not(.destructive-action):hover,
-.sidebar-pane popover > contents modelbutton:hover,
-.sidebar-pane popover > contents button.image-button.model:hover,
 .sidebar-pane popover > contents button:not(.suggested-action):not(.destructive-action):hover {
   outline: none;
-}
-
-.sidebar-pane popover > arrow modelbutton,
-.sidebar-pane popover > contents modelbutton {
-  color: white;
-}
-
-.sidebar-pane popover > arrow modelbutton accelerator,
-.sidebar-pane popover > contents modelbutton accelerator {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.sidebar-pane popover > arrow modelbutton accelerator:disabled,
-.sidebar-pane popover > contents modelbutton accelerator:disabled {
-  color: rgba(255, 255, 255, 0.12);
-}
-
-.sidebar-pane popover > arrow modelbutton check:not(:checked):not(:indeterminate):not(:disabled), .sidebar-pane popover > arrow modelbutton radio:not(:checked):not(:indeterminate):not(:disabled),
-.sidebar-pane popover > contents modelbutton check:not(:checked):not(:indeterminate):not(:disabled),
-.sidebar-pane popover > contents modelbutton radio:not(:checked):not(:indeterminate):not(:disabled) {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.sidebar-pane popover > arrow checkbutton,
-.sidebar-pane popover > arrow radiobutton,
-.sidebar-pane popover > arrow label,
-.sidebar-pane popover > contents checkbutton,
-.sidebar-pane popover > contents radiobutton,
-.sidebar-pane popover > contents label {
-  color: white;
-}
-
-.sidebar-pane popover > arrow label:disabled,
-.sidebar-pane popover > contents label:disabled {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .sidebar-pane scrollbar {
