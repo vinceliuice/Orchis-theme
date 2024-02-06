@@ -5355,6 +5355,117 @@ window > widget leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #2C2C2C;
 }
 
+.large-button {
+  padding: 4px;
+}
+
+.alarm-time {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.clocks-ampm-toggle-button,
+.clocks-secondary-standalone-label {
+  font-size: 18pt;
+}
+
+.clocks-standalone-label,
+.clocks-ringing-label {
+  font-size: 6em;
+  font-weight: 300;
+}
+
+.clocks-ringing-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.clocks-alarm-setup-time {
+  font-size: 32pt;
+}
+
+.clocks-timer-label,
+.clocks-spinbutton {
+  font-size: 48pt;
+}
+
+.timer-panel .timer-header {
+  font-size: 20pt;
+  font-weight: 300;
+}
+
+.timer-countdown {
+  font-size: 40pt;
+  font-weight: 300;
+}
+
+/* Stopwatch Panel */
+.lap-time {
+  font-weight: bold;
+}
+
+.stopped-stopwatch label,
+.running-stopwatch label,
+.paused-stopwatch label {
+  font-size: 70px;
+  font-weight: lighter;
+}
+
+.stopped-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+.running-stopwatch .seconds-label,
+.running-stopwatch .miliseconds-label {
+  color: #3281EA;
+}
+
+.stopped-stopwatch .miliseconds-label,
+.running-stopwatch .miliseconds-label,
+.paused-stopwatch .miliseconds-label {
+  font-size: 50px;
+}
+
+.running-stopwatch .seconds-label,
+.paused-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+.clock-location {
+  font-weight: bolder;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.clock-time {
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+}
+
+.none .clock-time {
+  background: alpha(currentColor, 0.2);
+}
+
+.night .clock-time {
+  color: #1A73E8;
+  background-color: alpha(#3281EA, 0.25);
+}
+
+.naut .clock-time,
+.astro .clock-time {
+  color: #F57C00;
+  background-color: alpha(#FB8C00, 0.25);
+}
+
+.civil .clock-time,
+.day .clock-time {
+  color: #FFD600;
+  background: alpha(#FBC02D, 0.25);
+}
+
 .contacts-contact-list list.navigation-sidebar {
   background: none;
 }
@@ -7403,6 +7514,7 @@ panelthemeselector checkbutton.theme-selector radio:hover,
 panelthemeselector checkbutton.theme-selector radio:active,
 panelthemeselector checkbutton.theme-selector radio:checked {
   background-color: transparent;
+  background-image: none;
 }
 
 themeselector checkbutton.theme-selector radio:checked,

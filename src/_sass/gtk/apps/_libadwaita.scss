@@ -1070,6 +1070,7 @@ panelthemeselector { // Gnome builder
 
       &:hover, &:active, &:checked {
         background-color: transparent;
+        background-image: none;
       }
 
       &:checked {

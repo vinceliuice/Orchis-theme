@@ -40,7 +40,7 @@
     color: $text !important;
     background-color: transparent;
     transition-duration: $shorter-duration;
-    border-radius: if($corner_style == 'circular', $circular-radius, $submenu_item_radius);
+    border-radius: $submenu_item_radius;
     background-image: none;
     border: none;
 
@@ -249,16 +249,6 @@
     margin: 0 $margin-size;
     -st-icon-style: symbolic;
   }
-
-  .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { /* 12px spacing + 2*4px padding */
-      padding-left: $space-size * 2 + $margin-size; margin-left: 0;
-    }
-
-    &:rtl { /* 12px spacing + 2*4px padding */
-      padding-right: $space-size * 2 + $margin-size; margin-right: 0;
-    }
-  }
 }
 
 // right-click (and panel) app menu
@@ -268,24 +258,14 @@
   // this is unneeded at the top-level in this menu, hide it
   .popup-menu-ornament { width: 0 !important; }
 
-  .popup-menu-item > :first-child {
-    &:ltr {
-      padding-left: $space-size * 2; margin-left: 0;
-    }
-
-    &:rtl {
-      padding-right: $space-size * 2; margin-right: 0;
-    }
-  }
-
   .popup-inactive-menu-item:first-child {
     // "Open Windows" label
     > StLabel {
       font-weight: bold;
       font-size: $root-font-size;
 
-      &:ltr { margin-right: 0; }
-      &:rtl { margin-left: 0; }
+      &:ltr { margin-right: $margin-size * 2; }
+      &:rtl { margin-left: $margin-size * 2; }
     }
 
     .popup-separator-menu-item-separator {

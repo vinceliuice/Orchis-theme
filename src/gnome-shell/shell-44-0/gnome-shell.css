@@ -559,7 +559,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.87) !important;
   background-color: transparent;
   transition-duration: 100ms;
-  border-radius: 9999px;
+  border-radius: 14px;
   background-image: none;
   border: none;
 }
@@ -709,18 +709,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -st-icon-style: symbolic;
 }
 
-.aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
-  /* 12px spacing + 2*4px padding */
-  padding-left: 16px;
-  margin-left: 0;
-}
-
-.aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
-  /* 12px spacing + 2*4px padding */
-  padding-right: 16px;
-  margin-right: 0;
-}
-
 .app-menu {
   max-width: 27.25em;
 }
@@ -729,27 +717,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 0 !important;
 }
 
-.app-menu .popup-menu-item > :first-child:ltr {
-  padding-left: 12px;
-  margin-left: 0;
-}
-
-.app-menu .popup-menu-item > :first-child:rtl {
-  padding-right: 12px;
-  margin-right: 0;
-}
-
 .app-menu .popup-inactive-menu-item:first-child > StLabel {
   font-weight: bold;
   font-size: 14px;
 }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel:ltr {
-  margin-right: 0;
+  margin-right: 8px;
 }
 
 .app-menu .popup-inactive-menu-item:first-child > StLabel:rtl {
-  margin-left: 0;
+  margin-left: 8px;
 }
 
 .app-menu .popup-inactive-menu-item:first-child .popup-separator-menu-item-separator {

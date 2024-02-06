@@ -533,6 +533,125 @@ window > widget {
 }
 
 //
+// Gnome Clocks
+//
+
+.large-button {
+  padding: $space-size;
+}
+
+// alarms
+.alarm-time {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.clocks-ampm-toggle-button,
+.clocks-secondary-standalone-label {
+  font-size: 18pt;
+}
+
+.clocks-standalone-label,
+.clocks-ringing-label {
+  font-size: 6em;
+  font-weight: 300;
+}
+
+.clocks-ringing-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.clocks-alarm-setup-time {
+  font-size: 32pt;
+}
+
+// Timer Panel
+.clocks-timer-label,
+.clocks-spinbutton {
+  font-size: 48pt;
+}
+
+// disguise insensitive spinbuttons as normal labels
+.timer-panel .timer-header {
+  font-size: 20pt;
+  font-weight: 300;
+}
+
+.timer-countdown {
+  font-size: 40pt;
+  font-weight: 300;
+}
+
+/* Stopwatch Panel */
+.lap-time {
+  font-weight: bold;
+}
+
+.stopped-stopwatch label,
+.running-stopwatch label,
+.paused-stopwatch label {
+  font-size: 70px;
+  font-weight: lighter;
+}
+
+.stopped-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+.running-stopwatch .seconds-label,
+.running-stopwatch .miliseconds-label {
+  color: $primary;
+}
+
+.stopped-stopwatch .miliseconds-label,
+.running-stopwatch .miliseconds-label,
+.paused-stopwatch .miliseconds-label {
+  font-size: 50px;
+}
+
+.running-stopwatch .seconds-label,
+.paused-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+// World
+.clock-location {
+  font-weight: bolder;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.clock-time {
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+}
+
+.none .clock-time {
+  background: gtkalpha(currentColor, 0.2);
+}
+
+.night .clock-time {
+  color: $blue-dark;
+  background-color: gtkalpha($blue-light, 0.25);
+}
+
+.naut .clock-time,
+.astro .clock-time {
+  color: $orange-dark;
+  background-color: gtkalpha($orange-light, 0.25);
+}
+
+.civil .clock-time,
+.day .clock-time {
+  color: $yellow-dark;
+  background: gtkalpha($yellow-light, 0.25);
+}
+
+//
 // Contacts
 //
 
