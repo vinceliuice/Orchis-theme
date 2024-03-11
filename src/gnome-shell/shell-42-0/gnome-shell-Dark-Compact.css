@@ -2521,6 +2521,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(25, 25, 25, 0.9);
   border-radius: 9999px;
   padding: 4px 8px;
+  box-shadow: none;
+  border: none;
 }
 
 .window-close, .screenshot-ui-close-button {

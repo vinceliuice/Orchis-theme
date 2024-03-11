@@ -841,6 +841,7 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 }
 
 .sidebar-pane {
+  .topbar,
   .sidebar,
   .toolbar,
   .navigation-sidebar,
@@ -1014,8 +1015,19 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 
 // Gnome >= 45.0
 .top-bar {
-  background: none;
   box-shadow: none;
+
+  &, &:backdrop {
+    background-color: $base;
+  }
+
+  searchbar {
+    background-color: transparent;
+
+    > revealer > box {
+      background-color: transparent;
+    }
+  }
 
   .collapse-spacing {
     padding: 0;
@@ -1023,6 +1035,13 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 
   windowhandle {
     filter: none;
+  }
+}
+
+.sidebar-pane,
+.content-pane {
+  .top-bar, .top-bar:backdrop {
+    background-color: transparent;
   }
 }
 

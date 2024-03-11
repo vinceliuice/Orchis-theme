@@ -7388,6 +7388,7 @@ navigation-view navigation-view-page .medium stack > button {
   color: inherit;
 }
 
+.sidebar-pane .topbar,
 .sidebar-pane .sidebar,
 .sidebar-pane .toolbar,
 .sidebar-pane .navigation-sidebar,
@@ -7447,8 +7448,19 @@ window.maximized .content-pane headerbar, window.tiled .content-pane headerbar {
 }
 
 .top-bar {
-  background: none;
   box-shadow: none;
+}
+
+.top-bar, .top-bar:backdrop {
+  background-color: #2C2C2C;
+}
+
+.top-bar searchbar {
+  background-color: transparent;
+}
+
+.top-bar searchbar > revealer > box {
+  background-color: transparent;
 }
 
 .top-bar .collapse-spacing {
@@ -7457,6 +7469,12 @@ window.maximized .content-pane headerbar, window.tiled .content-pane headerbar {
 
 .top-bar windowhandle {
   filter: none;
+}
+
+.sidebar-pane .top-bar, .sidebar-pane .top-bar:backdrop,
+.content-pane .top-bar,
+.content-pane .top-bar:backdrop {
+  background-color: transparent;
 }
 
 themeselector,

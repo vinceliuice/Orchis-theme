@@ -17,6 +17,8 @@ $window_close_button_padding: 3px;
   background-color: $tooltip;
   border-radius: if($corner-style == 'circular', $circular-radius, $material-radius);
   padding: $space-size $space-size * 2;
+  box-shadow: none;
+  border: none;
 }
 
 // Close button
