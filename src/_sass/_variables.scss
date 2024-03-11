@@ -27,7 +27,7 @@ $window-radius: $default_corner + $space-size;
 $corner-radius: if($compact == 'false', $default_corner, max(0, $default_corner - 2px));
 $material-radius: $default_corner / 2 + 4px;
 $menu-radius: $default_corner / 4 + $space-size + 2px;
-$popup-radius: $default_corner + $space-size + 2px;
+$popup-radius: $default_corner + $space-size * 2 - 4px;
 $menuitem-radius: $default_corner / 4 + 2px;
 $circular-radius: 9999px;
 $panel-corner-radius: 0; // For gnome-shell

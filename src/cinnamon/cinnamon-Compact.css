@@ -302,7 +302,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .menu .popup-sub-menu,
 .popup-menu .popup-sub-menu,
 .popup-combo-menu .popup-sub-menu {
-  border-radius: 14px;
+  border-radius: 12px;
   background-gradient-direction: none;
   box-shadow: none;
   color: rgba(0, 0, 0, 0.75) !important;
@@ -360,7 +360,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.87);
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.97);
-  border-radius: 18px;
+  border-radius: 16px;
   margin: 4px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }
@@ -1534,7 +1534,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .menu StScrollView.menu-application-button {
   padding: 2px 0;
-  border-radius: 14px;
+  border-radius: 12px;
   color: rgba(0, 0, 0, 0.75) !important;
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
@@ -2030,7 +2030,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .sound-player {
   padding: 0;
   margin-top: 6px;
-  border-radius: 14px;
+  border-radius: 12px;
   color: rgba(0, 0, 0, 0.75) !important;
   background-color: rgba(0, 0, 0, 0.1) !important;
 }

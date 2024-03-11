@@ -958,7 +958,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0 4px;
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 0 0 14px 14px;
+  border-radius: 0 0 12px 12px;
   border: none;
   box-shadow: none;
   background-image: none;
@@ -966,7 +966,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-sub-menu .popup-menu-item {
   margin: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   color: rgba(0, 0, 0, 0.75);
   background-image: none;
 }
@@ -1021,7 +1021,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: #eaeaea;
   color: rgba(0, 0, 0, 0.75);
   font-weight: normal;
-  border-radius: 14px 14px 0 0;
+  border-radius: 12px 12px 0 0;
   border: none;
   box-shadow: none;
 }

@@ -135,8 +135,8 @@
 .calendar-day-base {
   @include font(caption);
   text-align: center;
-  width: 3em !important;
-  height: 3em !important;
+  width: if($compact == 'false', 3em, 2.5em) !important;
+  height: if($compact == 'false', 3em, 2.5em) !important;
   padding: 0 !important;
   margin: 2px !important;
   border-radius: $circular-radius;

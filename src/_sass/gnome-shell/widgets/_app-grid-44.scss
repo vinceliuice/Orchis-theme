@@ -3,7 +3,7 @@
 %icon_tile {
   color: on(dark);
   border-radius: $material-radius * 2;
-  padding: $space-size * 2;
+  padding: 12px;
   border: none;
   transition-duration: $longer-duration;
   text-align: center;
@@ -49,7 +49,7 @@
 
   .overview-icon.overview-icon-with-label {
     > StBoxLayout {
-      spacing: $space-size;
+      spacing: 6px;
     }
   }
 }

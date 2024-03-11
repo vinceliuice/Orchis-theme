@@ -23,8 +23,8 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
 .quick-toggle, .quick-menu-toggle {
   border-radius: $circular-radius;
-  min-width: if($compact == 'false', 12em, 11em);
-  max-width: if($compact == 'false', 12em, 11em);
+  min-width: if($compact == 'false', 12em, 10.5em);
+  max-width: if($compact == 'false', 12em, 10.5em);
   min-height: $toggle-height;
   border: none;
 }
