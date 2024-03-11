@@ -15,6 +15,7 @@
 .xfce4-panel.background {
   border: none; // Sadly the border is hard-coded
   border-color: transparent;
+  background-color: $panel;
   color: on($panel, secondary);
   font-weight: 500;
 
@@ -41,21 +42,6 @@
   // &.horizontal .tasklist button { margin: 0 1px; }
 
   // &.vertical .tasklist button { margin: 1px 0; }
-}
-
-#XfcePanelWindow {
-  background-color: transparent;
-}
-
-#XfcePanelWindowWrapper {
-  border-radius: 21px;
-  padding: 8px 18px;
-}
-
-#clock-button {
-  background-color: $panel;
-  border-radius: 21px;
-  padding: 5px 18px;
 }
 
 // Workspace switcher provided by libwnck
@@ -110,7 +96,7 @@ XfdesktopIconView.view {
 
   // Set the application icon- and preview-size to 64px
   -XfwmTabwinWidget-icon-size: 256px;
-  -XfwmTabwinWidget-preview-size: 256px;
+  -XfwmTabwinWidget-preview-size: 512px;
 }
 
 /***************
@@ -130,7 +116,7 @@ window#whiskermenu-window {
 
   // Need to set Whisker menu background opacity less than 100
   > frame > border {
-    border-radius: 12px;
+    border-radius: $window-radius;
     padding: $space-size $space-size + 2px $space-size $space-size * 1.5;
     margin: $space-size;
     border: none;
