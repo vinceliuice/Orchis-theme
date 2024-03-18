@@ -516,7 +516,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   padding: 0;
   margin: 0;
-  border-radius: 16px;
 }
 
 .popup-menu .popup-menu-content {
