@@ -3296,6 +3296,24 @@ list {
 
 list.frame { border-radius: $corner-radius; }
 
+button listview.view {
+  background-color: transparent;
+}
+
+menubutton.flat > button:checked listview.view {
+  > row { color: $text; }
+}
+
+list.operations-list {
+  > row {
+    border-radius: $menuitem-radius;
+
+    &, &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
 row {
   background-clip: padding-box;
   color: $text-secondary;

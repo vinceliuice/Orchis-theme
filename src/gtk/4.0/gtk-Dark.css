@@ -3694,6 +3694,28 @@ list.frame {
   border-radius: 12px;
 }
 
+button listview.view {
+  background-color: transparent;
+}
+
+menubutton.flat > button:checked listview.view > row {
+  color: white;
+}
+
+list.operations-list {
+  border: 5px;
+  padding: 0;
+}
+
+list.operations-list > row {
+  border: 5px;
+  margin: 0;
+}
+
+list.operations-list > row, list.operations-list > row:focus {
+  background-color: transparent;
+}
+
 row {
   background-clip: padding-box;
   color: rgba(255, 255, 255, 0.7);
