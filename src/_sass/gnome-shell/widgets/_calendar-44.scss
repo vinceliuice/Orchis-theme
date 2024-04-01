@@ -85,12 +85,16 @@
   margin: 2px;
   padding: 6px 16px;
   border-radius: $material-radius;
-  color: $text-secondary;
+  color: $text-secondary !important;
+  background-color: transparent !important;
   font-weight: bold;
   text-align: center;
   text-shadow: none;
 
-  &:focus { color: $text; background-color: $secondary-fill; }
+  &:focus {
+    color: $text !important;
+    background-color: $secondary-fill !important;
+  }
 }
 
 .pager-button {
@@ -131,7 +135,7 @@
   &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
 }
 
-.calendar-day-base {
+.calendar-day {
   @include font(caption);
   text-align: center;
   width: if($compact == 'false', 3em, 2.5em) !important;
@@ -139,25 +143,27 @@
   padding: 0 !important;
   margin: 2px !important;
   border-radius: $circular-radius;
-  color: $text-secondary;
+  color: $text-secondary !important;
   border: none !important;
   font-feature-settings: "tnum";
   text-shadow: none;
+  background-color: transparent !important;
 
   &:hover, &:focus {
-    background-color: $secondary-fill;
+    color: $text !important;
+    background-color: $secondary-fill !important;
     box-shadow: none;
   }
 
   &:active {
-    color: $text-secondary;
-    background-color: $track;
+    color: $text !important;
+    background-color: $track !important;
     border: none !important; //avoid jumparound due to today
   }
 
   &:selected {
-    color: $text;
-    background-color: $track;
+    color: $text !important;
+    background-color: $track !important;
     border: none !important; //avoid jumparound due to today
     box-shadow: none !important;
     outline: none !important;
@@ -168,20 +174,20 @@
   &.calendar-weekend {
     color: $text-disabled;
   }
+}
 
-  &.calendar-day-heading {  //day of week heading
+  .calendar-day-heading {  //day of week heading
     width: 24px !important;
     height: 24px - $space-size !important;
     margin-top: 2px !important;
     padding: $space-size 0 0 !important;
     border-radius: $circular-radius;
-    background-color: transparent;
-    color: $text-disabled;
+    background-color: transparent !important;
+    color: $text-disabled !important;
     @include font(caption);
     font-weight: bold;
     text-align: center;
   }
-}
 
 .calendar-day { //border collapse hack - see calendar.js
   border-width: 0;
@@ -227,9 +233,13 @@
   }
 }
 
-.calendar-other-month-day {
+.calendar-other-month {
   color: $text-secondary-disabled !important;
   font-weight: normal;
+
+  &.calendar-weekend {
+    color: $text-secondary-disabled !important;
+  }
 }
 
 .calendar-week-number {

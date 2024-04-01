@@ -1,5 +1,12 @@
 @import 'tweaks-temp';
 
+// Function to convert px values to em
+@function to_em($input, $base: 16px) {
+  // multiplied and divided by 1000 to make up for round() shortcoming
+  $em_value: ($input / $base) * 1.091 * 1000;
+  @return round($em_value) / 1000 * 1em;
+}
+
 $asset-suffix: if($variant == 'dark', '-dark', '');
 $theme-asset-suffix: if($topbar == 'dark', if($variant == 'dark', '-dark', ''), '-light');
 $blackness-asset-suffix: if($blackness == 'false' or $topbar == 'light', '', '-blackness');
@@ -17,7 +24,17 @@ $large-size: if($compact == 'false', 48px, 40px);
 $bar-size: 6px;
 $menuitem-size: if($compact == 'false', 28px, 24px);
 $base-icon-size: 16px;
-$large-icon-size: 32px;
+$medium-icon-size: $base-icon-size * 1.5; // 24px
+$large-icon-size: $base-icon-size * 2;
+
+// Scaled values
+// Used in elements that follow text scaling factors
+$scaled-padding: to_em(6px); // same as $base_padding
+
+// Used for symbolic icons that scale
+$scalable-icon-size: to_em(16px);
+$medium-scalable-icon-size: $scalable-icon-size * 1.5;
+$large-scalable-icon-size: $scalable-icon-size * 2;
 
 //
 // Radiuses

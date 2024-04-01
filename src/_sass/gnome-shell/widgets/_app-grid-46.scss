@@ -1,0 +1,255 @@
+/* App Grid */
+
+$app_icon_size: 96px;
+$app_folder_size: 720px;
+
+// app icons
+.icon-grid {
+  row-spacing: 12px;
+  column-spacing: 12px;
+  max-row-spacing: 36px;
+  max-column-spacing: 36px;
+  page-padding-top: 24px;
+  page-padding-bottom: 24px;
+  page-padding-left: 18px;
+  page-padding-right: 18px;
+}
+
+/* App Icons */
+
+// items in the app grid and dash
+.overview-tile {
+  border-radius: $material-radius * 2;
+  padding: 12px;
+  spacing: 6px;
+  transition-duration: $longer_duration;
+  text-align: center;
+  background-color: transparent;
+  color: on(dark);
+  border: 1px solid transparent;
+  box-shadow: inset 0 1px transparent;
+
+  &:hover,
+  &:focus,
+  &:highlighted,
+  &:selected {
+    background-color: on(dark, divider);
+    color: on(dark);
+    transition-duration: 0ms;
+    border-image: none;
+    background-image: none;
+  }
+
+  &:active,
+  &:checked {
+    background-color: on(dark, track);
+    transition-duration: $longer-duration;
+    color: on(dark);
+  }
+
+  // the icon itself
+  .overview-icon {
+    // item with a label
+    &.overview-icon-with-label {
+      > StBoxLayout {
+        spacing: 6px;
+      }
+    }
+  }
+}
+
+// app folders
+.app-folder {
+  background-color: on(dark, fill);
+  border-radius: $material-radius * 2;
+
+  &:focus, &:hover { background-color: on(dark, divider); }
+  &:active, &:highlighted, &:selected,
+  &:checked { background-color: on(dark, track); }
+  &:insensitive { background-color: transparent; }
+}
+
+// Running app indicator (also shown in dash)
+.app-grid-running-dot {
+  width: 6px; height: 3px;
+  border-radius: 2px;
+  background-color: on(dark, track);
+  margin-bottom: 1px;
+}
+
+StWidget.focused {
+  .app-grid-running-dot {
+    width: 18px;
+    background-color: $primary;
+  }
+}
+
+.app-folder-dialog-container {
+  // pad the top with panel height so the folder doesn't overlap the panel on smaller resolutions
+  padding-top: $panel_height;
+}
+
+// expanded folder
+.app-folder-dialog { //style like the dash
+  border-radius: $material-radius * 4;
+  border: none;
+  background-color: rgba($system, 0.95);
+  color: on($system);
+  spacing: 6px;
+  box-shadow: none;
+  outline: none;
+
+  .folder-name-container {
+    padding: 24px 36px 0;
+    spacing: 12px;
+
+    .folder-name-label,
+    .folder-name-entry {
+      font-size: 18pt;
+      font-weight: 800;
+    }
+
+    .folder-name-entry {
+      min-height: 28px;
+      padding: $space-size;
+      border: none;
+      color: on($system);
+      background-color: rgba(white, 0.15);
+      caret-color: on($system);
+      selection-background-color: on($system, divider) !important;
+      selected-color: white !important;
+      width: 300px;
+
+      &:focus {
+        color: on($system);
+        background-color: rgba(white, 0.25);
+      }
+
+      .search-entry-icon { color: rgba(white, 0.85); }
+
+      &:hover, &:focus {
+        .search-entry-icon { color: rgba(white, 0.95); }
+      }
+
+      &:insensitive, StLabel.hint-text {
+        color: on($system, disabled);
+      }
+    }
+
+    /* FIXME: this is to keep the label in sync with the entry */
+    & .folder-name-label { padding: 5px 7px; color: on($system, secondary); }
+
+    & .icon-button {
+      background-color: on($system, divider);
+      color: on($system, secondary);
+      border: none;
+      height: 32px;
+      width: 32px;
+      padding: $space-size;
+      border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
+
+      & > StIcon { icon-size: $base-icon-size }
+
+      &:hover { background-color: on($system, divider); }
+      &:checked, &:active { background-color: on($system, track); }
+    }
+  }
+
+  & .icon-grid {
+    row-spacing: 12px;
+    column-spacing: 30px;
+    page-padding-top: 0;
+    page-padding-bottom: 0;
+    page-padding-left: 0;
+    page-padding-right: 0;
+  }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+  }
+}
+
+// Rename popup for app folders
+.rename-folder-popup {
+  .rename-folder-popup-item {
+    spacing: $space-size;
+    &:ltr, &:rtl { padding: 0 $space-size * 2; }
+  }
+}
+
+// right-click app menu
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
+}
+
+// App Grid pagination indicators
+.page-indicator {
+  padding: $space-size $space-size * 2 0;
+
+  .page-indicator-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px; // the same as height&width
+    background-color: white;
+    transition-duration: 400ms;
+  }
+}
+
+.apps-scroll-view {
+  padding: 0;
+}
+
+// shutdown and other actions in the grid
+.system-action-icon {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  border-radius: $circular-radius;
+}
+
+.page-navigation-hint {
+  &.dnd {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.next:ltr,
+  &.previous:rtl {
+    background-gradient-start: rgba(255, 255, 255, 0.05);
+    background-gradient-end: transparent;
+    background-gradient-direction: horizontal;
+    border-radius: 15px 0px 0px 15px;
+  }
+
+  &.previous:ltr,
+  &.next:rtl {
+    background-gradient-start: transparent;
+    background-gradient-end: rgba(255, 255, 255, 0.05);
+    background-gradient-direction: horizontal;
+    border-radius: 0px 15px 15px 0px;
+  }
+}
+
+.page-navigation-arrow {
+  margin: 6px;
+  padding: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: $circular-radius;
+  color: on($system);
+  background-color: transparent;
+
+  &:insensitive {
+    background-color: rgba(white, 0.06);
+    color: on($system, disabled);
+  }
+
+  &:hover {
+    background-color: rgba(white, 0.12);
+    color: on($system);
+  }
+
+  &:active {
+    background-color: rgba(white, 0.24);
+    color: on($system);
+  }
+}

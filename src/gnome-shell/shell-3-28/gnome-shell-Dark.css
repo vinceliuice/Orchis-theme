@@ -112,22 +112,22 @@ StEntry {
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.12);
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 GPasteSearchEntry:hover,
 .search-entry:hover,
 StEntry:hover {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 GPasteSearchEntry:focus,
 .search-entry:focus,
 StEntry:focus {
   color: white;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #3281EA;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #3281EA !important;
 }
 
 GPasteSearchEntry:insensitive,
@@ -2259,8 +2259,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
-  border-color: transparent;
-  box-shadow: none;
+  border-color: transparent !important;
+  box-shadow: none !important;
   selection-background-color: #3281EA;
   selected-color: white !important;
 }
@@ -2269,8 +2269,8 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
   color: rgba(0, 0, 0, 0.85);
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
-  border: none;
-  box-shadow: none;
+  border: none !important;
+  box-shadow: none !important;
   padding: 0 8px;
   selection-background-color: #3281EA;
   selected-color: white !important;
@@ -2288,7 +2288,7 @@ Gjs_ui_panel_ActivitiesButton.panel-button:active, Gjs_ui_panel_ActivitiesButton
 
 #overview .search-entry:insensitive {
   color: rgba(0, 0, 0, 0.35);
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 #overview .search-entry StLabel.hint-text {
@@ -3303,15 +3303,15 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.12);
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 .login-dialog StEntry:focus,
 .unlock-dialog StEntry:focus {
   color: white;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #3281EA;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #3281EA !important;
 }
 
 .login-dialog StEntry:insensitive,
@@ -4079,14 +4079,14 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.12);
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 .popup-menu .search-entry:focus {
   color: white;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #3281EA;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #3281EA !important;
   color: white;
 }
 

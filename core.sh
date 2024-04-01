@@ -378,10 +378,15 @@ check_shell() {
   elif [[ "$shell" == "44" ]]; then
     GS_VERSION="44-0"
     echo "Install for gnome-shell version = 44.0"
+  elif [[ "$shell" == "46" ]]; then
+    GS_VERSION="46-0"
+    echo "Install for gnome-shell version = 46.0"
   elif [[ "$(command -v gnome-shell)" ]]; then
     gnome-shell --version
     SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-    if [[ "${SHELL_VERSION:-}" -ge "44" ]]; then
+    if [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
+      GS_VERSION="46-0"
+    elif [[ "${SHELL_VERSION:-}" -ge "44" ]]; then
       GS_VERSION="44-0"
     elif [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
       GS_VERSION="42-0"
@@ -392,7 +397,7 @@ check_shell() {
     fi
     else
       echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-      GS_VERSION="44-0"
+      GS_VERSION="46-0"
   fi
 }
 

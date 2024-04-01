@@ -1,5 +1,22 @@
 /* Buttons */
 
+%flat_button {
+  @include button(flat-normal);
+  &:focus { @include button(flat-focus); }
+  &:hover { @include button(flat-hover); }
+  &:selected, &:active { @include button(flat-active); }
+  &:checked { @include button(flat-checked); }
+  &:insensitive { @include button(flat-insensitive); }
+}
+
+%default_button {
+  @include button(normal, $c:$primary, $tc:on($primary, secondary));
+  &:focus { @include button(focus, $c:$primary, $tc:on($primary)); }
+  &:hover { @include button(hover, $c:$primary, $tc:on($primary)); }
+  &:insensitive { @include button(insensitive, $c:$primary, $tc:on($primary, secondary-disabled)); }
+  &:active { @include button(active, $c:$primary, $tc:on($primary)); }
+}
+
 .button {
   min-height: 24px;
   padding: $space-size $space-size * 2;
@@ -14,6 +31,16 @@
   &:checked { @include button(flat-checked); }
   &:insensitive { @include button(flat-insensitive); }
   &:focus { @include button(flat-focus); }
+
+  // default style
+  &.default {
+    @extend %default_button;
+  }
+
+  // flat style
+  &.flat {
+    @extend %flat_button;
+  }
 }
 
 .icon-button {
@@ -22,13 +49,26 @@
   padding: $space-size * 2;
   border-radius: $circular-radius;
   border: none;
-  @include button(flat-normal);
 
+  @include button(flat-normal);
   &:hover { @include button(flat-hover); }
   &:active { @include button(flat-active); }
   &:checked { @include button(flat-checked); }
   &:insensitive { @include button(flat-insensitive); }
   &:focus { @include button(flat-focus); }
 
-  & > StIcon { icon-size: $base-icon-size; }
+  StIcon {
+    icon-size: $base-icon-size;
+    -st-icon-style: symbolic;
+  }
+
+  // default style
+  &.default {
+    @extend %default_button;
+  }
+
+  // flat style
+  &.flat {
+    @extend %flat_button;
+  }
 }

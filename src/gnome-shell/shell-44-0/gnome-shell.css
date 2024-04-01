@@ -215,18 +215,18 @@ StEntry {
   color: rgba(0, 0, 0, 0.6);
   background-color: #FFFFFF;
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 StEntry:hover {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 StEntry:focus {
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #1A73E8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #1A73E8 !important;
 }
 
 StEntry:insensitive {
@@ -236,7 +236,7 @@ StEntry:insensitive {
 StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #FFD600;
-  padding: 0 0;
+  padding: 0 4px;
 }
 
 StEntry StIcon.peek-password {
@@ -250,6 +250,107 @@ StEntry StLabel.hint-text {
 }
 
 /* Buttons */
+.icon-button.flat, .background-app-item .flat.close-button, .button.flat {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:focus, .background-app-item .flat.close-button:focus, .button.flat:focus {
+  color: rgba(0, 0, 0, 0.87);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.icon-button.flat:hover, .background-app-item .flat.close-button:hover, .button.flat:hover {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:selected, .background-app-item .flat.close-button:selected, .button.flat:selected, .icon-button.flat:active, .background-app-item .flat.close-button:active, .button.flat:active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.26);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:checked, .background-app-item .flat.close-button:checked, .button.flat:checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.26);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:insensitive, .background-app-item .flat.close-button:insensitive, .button.flat:insensitive {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default, .background-app-item .default.close-button, .button.default {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #1A73E8;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default:focus, .background-app-item .default.close-button:focus, .button.default:focus {
+  color: #1A73E8;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.icon-button.default:focus:active, .background-app-item .default.close-button:focus:active, .button.default:focus:active {
+  color: white;
+}
+
+.icon-button.default:hover, .background-app-item .default.close-button:hover, .button.default:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default:insensitive, .background-app-item .default.close-button:insensitive, .button.default:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #1A73E8;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default:active, .background-app-item .default.close-button:active, .button.default:active {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.24);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
 .button {
   min-height: 24px;
   padding: 6px 12px;
@@ -368,8 +469,9 @@ StEntry StLabel.hint-text {
   outline: none !important;
 }
 
-.icon-button > StIcon, .background-app-item .close-button > StIcon {
+.icon-button StIcon, .background-app-item .close-button StIcon {
   icon-size: 16px;
+  -st-icon-style: symbolic;
 }
 
 /* Check Boxes */
@@ -824,15 +926,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 2px;
   padding: 6px 16px;
   border-radius: 10px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6) !important;
+  background-color: transparent !important;
   font-weight: bold;
   text-align: center;
   text-shadow: none;
 }
 
 .calendar-month-label:focus {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.87) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .pager-button {
@@ -879,8 +982,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/calendar-arrow-left.svg");
 }
 
-.calendar-day,
-.calendar-day-base {
+.calendar-day {
   font-size: 9pt;
   font-weight: 400;
   text-align: center;
@@ -889,49 +991,45 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0 !important;
   margin: 2px !important;
   border-radius: 9999px;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6) !important;
   border: none !important;
   font-feature-settings: "tnum";
   text-shadow: none;
+  background-color: transparent !important;
 }
 
-.calendar-day:hover, .calendar-day:focus,
-.calendar-day-base:hover,
-.calendar-day-base:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+.calendar-day:hover, .calendar-day:focus {
+  color: rgba(0, 0, 0, 0.87) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
   box-shadow: none;
 }
 
-.calendar-day:active,
-.calendar-day-base:active {
-  color: rgba(0, 0, 0, 0.6);
-  background-color: rgba(0, 0, 0, 0.26);
+.calendar-day:active {
+  color: rgba(0, 0, 0, 0.87) !important;
+  background-color: rgba(0, 0, 0, 0.26) !important;
   border: none !important;
 }
 
-.calendar-day:selected,
-.calendar-day-base:selected {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(0, 0, 0, 0.26);
+.calendar-day:selected {
+  color: rgba(0, 0, 0, 0.87) !important;
+  background-color: rgba(0, 0, 0, 0.26) !important;
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
 }
 
-.calendar-day.calendar-weekend,
-.calendar-day-base.calendar-weekend {
+.calendar-day.calendar-weekend {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.calendar-day.calendar-day-heading,
-.calendar-day-base.calendar-day-heading {
+.calendar-day-heading {
   width: 24px !important;
   height: 18px !important;
   margin-top: 2px !important;
   padding: 6px 0 0 !important;
   border-radius: 9999px;
-  background-color: transparent;
-  color: rgba(0, 0, 0, 0.38);
+  background-color: transparent !important;
+  color: rgba(0, 0, 0, 0.38) !important;
   font-size: 9pt;
   font-weight: 400;
   font-weight: bold;
@@ -987,10 +1085,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
-.calendar-other-month,
-.calendar-other-month-day {
+.calendar-other-month {
   color: rgba(0, 0, 0, 0.26) !important;
   font-weight: normal;
+}
+
+.calendar-other-month.calendar-weekend {
+  color: rgba(0, 0, 0, 0.26) !important;
 }
 
 .calendar-week-number {
@@ -2671,18 +2772,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.6);
   background-color: #FFFFFF;
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 .search-entry:hover {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 .search-entry:focus {
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #1A73E8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #1A73E8 !important;
 }
 
 .search-entry:insensitive {
@@ -2707,22 +2808,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
-  border-color: transparent;
-  box-shadow: none;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 #overview .search-entry:hover {
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 #overview .search-entry:focus {
   color: rgba(0, 0, 0, 0.85);
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
-  border: none;
-  box-shadow: none;
+  border: none !important;
+  box-shadow: none !important;
   selection-background-color: #1A73E8;
   selected-color: white !important;
 }
@@ -3857,15 +3958,15 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(0, 0, 0, 0.6);
   background-color: #FFFFFF;
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 .login-dialog StEntry:focus,
 .unlock-dialog StEntry:focus {
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #1A73E8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #1A73E8 !important;
 }
 
 .login-dialog StEntry:insensitive,

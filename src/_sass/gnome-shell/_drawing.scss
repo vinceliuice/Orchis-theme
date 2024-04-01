@@ -106,18 +106,18 @@
     color: $text-secondary;
     background-color: if($variant == 'light', $base, on(dark, divider));
     margin: 2px 6px 6px;
-    border: 2px solid transparent;
-    box-shadow: 0 3px 3px rgba(black, 0.24), 0 5px 8px rgba(black, 0.05);
+    border: 2px solid transparent !important;
+    box-shadow: 0 3px 3px rgba(black, 0.24), 0 5px 8px rgba(black, 0.05) !important;
   }
 
   @if $t == focus {
     color: $text;
-    box-shadow: 0 3px 3px rgba(black, 0.20), 0 5px 8px rgba(black, 0.08);
-    border: 2px solid $primary;
+    box-shadow: 0 3px 3px rgba(black, 0.20), 0 5px 8px rgba(black, 0.08) !important;
+    border: 2px solid $primary !important;
   }
 
   @if $t == hover {
-    box-shadow: 0 3px 3px rgba(black, 0.20), 0 5px 8px rgba(black, 0.12);
+    box-shadow: 0 3px 3px rgba(black, 0.20), 0 5px 8px rgba(black, 0.12) !important;
   }
 
   @if $t == insensitive {
@@ -137,27 +137,27 @@
     caret-color: rgba(black, 0.75);
     color: rgba(black, 0.75);
     background-color: rgba(white, 0.75);
-    border-color: transparent;
-    box-shadow: none;
+    border-color: transparent !important;
+    box-shadow: none !important;
   }
 
   @if $t == focus {
     color: rgba(black, 0.85);
     border-color: transparent;
     background-color: rgba(white, 0.95);
-    border: none;
-    box-shadow: none;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   @if $t == hover {
     color: rgba(black, 0.75);
     background-color: rgba(white, 0.85);
-    box-shadow: none;
+    box-shadow: none !important;
   }
 
   @if $t == insensitive {
     color: rgba(black, 0.35);
-    box-shadow: none;
+    box-shadow: none !important;
   }
 }
 

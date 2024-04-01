@@ -190,18 +190,18 @@ StEntry {
   color: rgba(0, 0, 0, 0.6);
   background-color: #FFFFFF;
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 StEntry:hover {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 StEntry:focus {
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #1A73E8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #1A73E8 !important;
 }
 
 StEntry:insensitive {
@@ -211,7 +211,7 @@ StEntry:insensitive {
 StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #FFD600;
-  padding: 0 0;
+  padding: 0 4px;
 }
 
 StEntry StIcon.peek-password {
@@ -225,6 +225,107 @@ StEntry StLabel.hint-text {
 }
 
 /* Buttons */
+.icon-button.flat, .button.flat {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:focus, .button.flat:focus {
+  color: rgba(0, 0, 0, 0.87);
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.icon-button.flat:hover, .button.flat:hover {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:selected, .button.flat:selected, .icon-button.flat:active, .button.flat:active {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.26);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:checked, .button.flat:checked {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.26);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.flat:insensitive, .button.flat:insensitive {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default, .button.default {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #1A73E8;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default:focus, .button.default:focus {
+  color: #1A73E8;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.icon-button.default:focus:active, .button.default:focus:active {
+  color: white;
+}
+
+.icon-button.default:hover, .button.default:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default:insensitive, .button.default:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #1A73E8;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.icon-button.default:active, .button.default:active {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.24);
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
 .button {
   min-height: 24px;
   padding: 6px 12px;
@@ -343,8 +444,9 @@ StEntry StLabel.hint-text {
   outline: none !important;
 }
 
-.icon-button > StIcon {
+.icon-button StIcon {
   icon-size: 16px;
+  -st-icon-style: symbolic;
 }
 
 /* Check Boxes */
@@ -854,7 +956,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/calendar-arrow-left.svg");
 }
 
-.calendar-day,
 .calendar-day-base {
   font-size: 9pt;
   font-weight: 400;
@@ -870,21 +971,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
-.calendar-day:hover, .calendar-day:focus,
-.calendar-day-base:hover,
-.calendar-day-base:focus {
+.calendar-day-base:hover, .calendar-day-base:focus {
   background-color: rgba(0, 0, 0, 0.08);
   box-shadow: none;
 }
 
-.calendar-day:active,
 .calendar-day-base:active {
   color: rgba(0, 0, 0, 0.6);
   background-color: rgba(0, 0, 0, 0.26);
   border: none !important;
 }
 
-.calendar-day:selected,
 .calendar-day-base:selected {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.26);
@@ -893,12 +990,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   outline: none !important;
 }
 
-.calendar-day.calendar-weekend,
 .calendar-day-base.calendar-weekend {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.calendar-day.calendar-day-heading,
 .calendar-day-base.calendar-day-heading {
   width: 24px !important;
   height: 18px !important;
@@ -962,7 +1057,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
-.calendar-other-month,
 .calendar-other-month-day {
   color: rgba(0, 0, 0, 0.26) !important;
   font-weight: normal;
@@ -2553,18 +2647,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.6);
   background-color: #FFFFFF;
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 .search-entry:hover {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.12) !important;
 }
 
 .search-entry:focus {
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #1A73E8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #1A73E8 !important;
 }
 
 .search-entry:insensitive {
@@ -2589,22 +2683,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   caret-color: rgba(0, 0, 0, 0.75);
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.75);
-  border-color: transparent;
-  box-shadow: none;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 #overview .search-entry:hover {
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 #overview .search-entry:focus {
   color: rgba(0, 0, 0, 0.85);
   border-color: transparent;
   background-color: rgba(255, 255, 255, 0.95);
-  border: none;
-  box-shadow: none;
+  border: none !important;
+  box-shadow: none !important;
   selection-background-color: #1A73E8;
   selected-color: white !important;
 }
@@ -3739,15 +3833,15 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(0, 0, 0, 0.6);
   background-color: #FFFFFF;
   margin: 2px 6px 6px;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent !important;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 5px 8px rgba(0, 0, 0, 0.05) !important;
 }
 
 .login-dialog StEntry:focus,
 .unlock-dialog StEntry:focus {
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid #1A73E8;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), 0 5px 8px rgba(0, 0, 0, 0.08) !important;
+  border: 2px solid #1A73E8 !important;
 }
 
 .login-dialog StEntry:insensitive,
