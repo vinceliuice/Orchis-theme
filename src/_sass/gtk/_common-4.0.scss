@@ -611,9 +611,7 @@ button {
       &:hover {
         color: on($b_color);
         background-color: mix(on($b_color), $b_color, percentage(0.1));
-        box-shadow: 0 2px (4px * .6) -1px rgba($b_color, 0.2),
-                    0 4px (5px * .6) 0 rgba($b_color, 0.14),
-                    0 1px (10px * .6) 0 rgba($b_color, 0.12);
+        box-shadow: 0 2px 4px 0 gtkalpha(black, 0.2);
       }
 
       &:active {
@@ -621,13 +619,6 @@ button {
       }
 
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
-
-      &:checked:hover {
-        box-shadow: inset 0 0 0 9999px transparent,
-                    0 3px 3px -3px rgba($b_color, 0.3),
-                    0 2px 3px -1px rgba($b_color, 0.24),
-                    0 2px 5px 0 rgba($b_color, 0.12);
-      }
 
       &:focus { box-shadow: 0 0 0 2px rgba($b_color, 0.35); }
 

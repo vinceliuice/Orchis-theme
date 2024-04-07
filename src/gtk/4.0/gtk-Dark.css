@@ -872,7 +872,7 @@ button.suggested-action:disabled {
 button.suggested-action:hover {
   color: white;
   background-color: #478eec;
-  box-shadow: 0 2px 2.4px -1px rgba(50, 129, 234, 0.2), 0 4px 3px 0 rgba(50, 129, 234, 0.14), 0 1px 6px 0 rgba(50, 129, 234, 0.12);
+  box-shadow: 0 2px 4px 0 alpha(black, 0.2);
 }
 
 button.suggested-action:active {
@@ -881,10 +881,6 @@ button.suggested-action:active {
 
 button.suggested-action:checked {
   background-color: #70a7f0;
-}
-
-button.suggested-action:checked:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(50, 129, 234, 0.3), 0 2px 3px -1px rgba(50, 129, 234, 0.24), 0 2px 5px 0 rgba(50, 129, 234, 0.12);
 }
 
 button.suggested-action:focus {
@@ -919,7 +915,7 @@ button.destructive-action:disabled {
 button.destructive-action:hover {
   color: white;
   background-color: #f5564a;
-  box-shadow: 0 2px 2.4px -1px rgba(244, 67, 54, 0.2), 0 4px 3px 0 rgba(244, 67, 54, 0.14), 0 1px 6px 0 rgba(244, 67, 54, 0.12);
+  box-shadow: 0 2px 4px 0 alpha(black, 0.2);
 }
 
 button.destructive-action:active {
@@ -928,10 +924,6 @@ button.destructive-action:active {
 
 button.destructive-action:checked {
   background-color: #f77b72;
-}
-
-button.destructive-action:checked:hover {
-  box-shadow: inset 0 0 0 9999px transparent, 0 3px 3px -3px rgba(244, 67, 54, 0.3), 0 2px 3px -1px rgba(244, 67, 54, 0.24), 0 2px 5px 0 rgba(244, 67, 54, 0.12);
 }
 
 button.destructive-action:focus {
@@ -3702,14 +3694,8 @@ menubutton.flat > button:checked listview.view > row {
   color: white;
 }
 
-list.operations-list {
-  border: 5px;
-  padding: 0;
-}
-
 list.operations-list > row {
-  border: 5px;
-  margin: 0;
+  border-radius: 5px;
 }
 
 list.operations-list > row, list.operations-list > row:focus {
