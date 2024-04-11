@@ -54,14 +54,14 @@ wnck-pager {
 }
 
 XfdesktopIconView.view {
-  border-radius: $corner-radius;
+  border-radius: $menuitem-radius;
   background-color: transparent;
   color: on(dark);
   text-shadow: $text-shadow;
 
   // XfdesktopIconView uses :active instead of :selected for selection
-  &:active {
-    @extend %selected_items;
+  &:active, &:selected, &:checked {
+    @extend %selected_items_primary;
 
     box-shadow: none;
   }

@@ -310,7 +310,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default, .background-app-item .default.close-button, .message .message-header .default.message-expand-button,
+.keyboard-brightness-level .button:checked, .icon-button.default, .background-app-item .default.close-button, .message .message-header .default.message-expand-button,
 .message .message-header .default.message-close-button, .button.default {
   color: rgba(255, 255, 255, 0.7);
   background-color: #1A73E8;
@@ -320,7 +320,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default:focus, .background-app-item .default.close-button:focus, .message .message-header .default.message-expand-button:focus,
+.keyboard-brightness-level .button:focus:checked, .icon-button.default:focus, .background-app-item .default.close-button:focus, .message .message-header .default.message-expand-button:focus,
 .message .message-header .default.message-close-button:focus, .button.default:focus {
   color: #1A73E8;
   text-shadow: none;
@@ -329,12 +329,12 @@ StEntry StLabel.hint-text {
   outline: none !important;
 }
 
-.icon-button.default:focus:active, .background-app-item .default.close-button:focus:active, .message .message-header .default.message-expand-button:focus:active,
+.keyboard-brightness-level .button:focus:active:checked, .icon-button.default:focus:active, .background-app-item .default.close-button:focus:active, .message .message-header .default.message-expand-button:focus:active,
 .message .message-header .default.message-close-button:focus:active, .button.default:focus:active {
   color: white;
 }
 
-.icon-button.default:hover, .background-app-item .default.close-button:hover, .message .message-header .default.message-expand-button:hover,
+.keyboard-brightness-level .button:hover:checked, .icon-button.default:hover, .background-app-item .default.close-button:hover, .message .message-header .default.message-expand-button:hover,
 .message .message-header .default.message-close-button:hover, .button.default:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.12);
@@ -344,7 +344,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default:insensitive, .background-app-item .default.close-button:insensitive, .message .message-header .default.message-expand-button:insensitive,
+.keyboard-brightness-level .button:insensitive:checked, .icon-button.default:insensitive, .background-app-item .default.close-button:insensitive, .message .message-header .default.message-expand-button:insensitive,
 .message .message-header .default.message-close-button:insensitive, .button.default:insensitive {
   color: rgba(255, 255, 255, 0.3);
   background-color: #1A73E8;
@@ -354,7 +354,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default:active, .background-app-item .default.close-button:active, .message .message-header .default.message-expand-button:active,
+.keyboard-brightness-level .button:active:checked, .icon-button.default:active, .background-app-item .default.close-button:active, .message .message-header .default.message-expand-button:active,
 .message .message-header .default.message-close-button:active, .button.default:active {
   color: white;
   background-color: rgba(255, 255, 255, 0.24);
@@ -1792,6 +1792,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.65) !important;
 }
 
+.quick-toggle-menu:insensitive {
+  background-color: white !important;
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
 .quick-toggle-menu .popup-menu-item {
   padding: 6px !important;
   border-radius: 9999px !important;
@@ -1818,6 +1823,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-toggle-menu .popup-menu-item > StIcon {
   -st-icon-style: symbolic;
+  icon-size: 1.091em;
 }
 
 .quick-toggle-menu .popup-menu-item > :first-child:ltr {
@@ -1910,6 +1916,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .device-subtitle {
   color: rgba(0, 0, 0, 0.38);
+}
+
+.keyboard-brightness-level {
+  spacing: 4px;
 }
 
 .background-apps-quick-toggle {

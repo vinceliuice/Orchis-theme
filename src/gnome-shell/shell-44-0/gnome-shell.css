@@ -303,7 +303,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default, .background-app-item .default.close-button, .button.default {
+.keyboard-brightness-level .button:checked, .icon-button.default, .background-app-item .default.close-button, .button.default {
   color: rgba(255, 255, 255, 0.7);
   background-color: #1A73E8;
   border-color: transparent;
@@ -312,7 +312,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default:focus, .background-app-item .default.close-button:focus, .button.default:focus {
+.keyboard-brightness-level .button:focus:checked, .icon-button.default:focus, .background-app-item .default.close-button:focus, .button.default:focus {
   color: #1A73E8;
   text-shadow: none;
   icon-shadow: none;
@@ -320,11 +320,11 @@ StEntry StLabel.hint-text {
   outline: none !important;
 }
 
-.icon-button.default:focus:active, .background-app-item .default.close-button:focus:active, .button.default:focus:active {
+.keyboard-brightness-level .button:focus:active:checked, .icon-button.default:focus:active, .background-app-item .default.close-button:focus:active, .button.default:focus:active {
   color: white;
 }
 
-.icon-button.default:hover, .background-app-item .default.close-button:hover, .button.default:hover {
+.keyboard-brightness-level .button:hover:checked, .icon-button.default:hover, .background-app-item .default.close-button:hover, .button.default:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.12);
   border-color: transparent;
@@ -333,7 +333,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default:insensitive, .background-app-item .default.close-button:insensitive, .button.default:insensitive {
+.keyboard-brightness-level .button:insensitive:checked, .icon-button.default:insensitive, .background-app-item .default.close-button:insensitive, .button.default:insensitive {
   color: rgba(255, 255, 255, 0.3);
   background-color: #1A73E8;
   border-color: transparent;
@@ -342,7 +342,7 @@ StEntry StLabel.hint-text {
   icon-shadow: none;
 }
 
-.icon-button.default:active, .background-app-item .default.close-button:active, .button.default:active {
+.keyboard-brightness-level .button:active:checked, .icon-button.default:active, .background-app-item .default.close-button:active, .button.default:active {
   color: white;
   background-color: rgba(255, 255, 255, 0.24);
   border-color: transparent;
@@ -1717,6 +1717,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.65) !important;
 }
 
+.quick-toggle-menu:insensitive {
+  background-color: white !important;
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
 .quick-toggle-menu .popup-menu-item {
   padding: 8px !important;
   border-radius: 9999px !important;
@@ -1743,6 +1748,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .quick-toggle-menu .popup-menu-item > StIcon {
   -st-icon-style: symbolic;
+  icon-size: 1.091em;
 }
 
 .quick-toggle-menu .popup-menu-item > :first-child:ltr {
@@ -1827,6 +1833,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .device-subtitle {
   color: rgba(0, 0, 0, 0.38);
+}
+
+.keyboard-brightness-level {
+  spacing: 6px;
 }
 
 .background-apps-quick-toggle {
