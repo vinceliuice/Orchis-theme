@@ -872,15 +872,16 @@ button.suggested-action:disabled {
 button.suggested-action:hover {
   color: white;
   background-color: #478eec;
-  box-shadow: 0 2px 4px 0 alpha(black, 0.2);
+  box-shadow: none;
 }
 
 button.suggested-action:active {
   color: white;
+  background-color: #5b9aee;
 }
 
 button.suggested-action:checked {
-  background-color: #70a7f0;
+  background-color: #5194ed;
 }
 
 button.suggested-action:focus {
@@ -915,15 +916,16 @@ button.destructive-action:disabled {
 button.destructive-action:hover {
   color: white;
   background-color: #f5564a;
-  box-shadow: 0 2px 4px 0 alpha(black, 0.2);
+  box-shadow: none;
 }
 
 button.destructive-action:active {
   color: white;
+  background-color: #f6695e;
 }
 
 button.destructive-action:checked {
-  background-color: #f77b72;
+  background-color: #f65f54;
 }
 
 button.destructive-action:focus {
@@ -3512,6 +3514,10 @@ frame.flat > border, statusbar frame > border {
   border: none;
 }
 
+actionbar {
+  box-shadow: none;
+}
+
 actionbar > revealer > box {
   padding: 6px;
   border-spacing: 6px;
@@ -3519,6 +3525,10 @@ actionbar > revealer > box {
   background-color: #2C2C2C;
   background-clip: border-box;
   box-shadow: none;
+}
+
+actionbar > revealer > box, actionbar > revealer > box > box.start, actionbar > revealer > box > box.end {
+  border-spacing: 6px;
 }
 
 actionbar > revealer > box entry,

@@ -611,14 +611,15 @@ button {
       &:hover {
         color: on($b_color);
         background-color: mix(on($b_color), $b_color, percentage(0.1));
-        box-shadow: 0 2px 4px 0 gtkalpha(black, 0.2);
+        box-shadow: none;
       }
 
       &:active {
         color: on($b_color);
+        background-color: mix(on($b_color), $b_color, percentage(0.2));
       }
 
-      &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
+      &:checked { background-color: mix(on($b_color), $b_color, percentage(0.15)); }
 
       &:focus { box-shadow: 0 0 0 2px rgba($b_color, 0.35); }
 
@@ -3168,18 +3169,26 @@ frame {
   statusbar & > border { border: none; } // for backward compatibility
 }
 
-actionbar > revealer > box {
-  padding: $space-size;
-  border-spacing: $space-size;
-  border-top: 1px solid $divider;
-  background-color: $base;
-  background-clip: border-box;
+actionbar {
   box-shadow: none;
 
-  entry,
-  button,
-  menubutton,
-  splitbutton { margin: 0; }
+  > revealer > box {
+    padding: $space-size;
+    border-spacing: $space-size;
+    border-top: 1px solid $divider;
+    background-color: $base;
+    background-clip: border-box;
+    box-shadow: none;
+
+    &, > box.start, > box.end {
+      border-spacing: $space-size;
+    }
+
+    entry,
+    button,
+    menubutton,
+    splitbutton { margin: 0; }
+  }
 }
 
 statusbar {
