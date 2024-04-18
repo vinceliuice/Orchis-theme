@@ -63,7 +63,6 @@
 // message bubbles
 .message {
   border-radius: $material-radius;
-  text-shadow: none;
   padding: 0;
   margin: 0;
   box-shadow: $shell-shadow-z2;
@@ -74,13 +73,14 @@
   &:hover, &:focus, &:active { background-color: $base; }
 
   .popup-menu & {
+    @extend .events-button;
+    border: 1px solid transparent;
+    border-left: none;
+    padding: 0;
+    margin: 0;
     box-shadow: none;
     margin: $margin-size;
-    background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
     color: $text-secondary;
-
-    &:hover, &:focus { background-color: $secondary-fill; }
-    &:active { background-color: $track; }
   }
 
   // subtract side padding to accommodate the close button's border
@@ -130,7 +130,7 @@
       @extend .icon-button;
       color: $text;
       background-color: $fill;
-      padding: 4px;
+      padding: $margin-size;
 
       &:hover { background-color: $divider; }
       &:active,
@@ -139,7 +139,7 @@
     }
 
     .message-expand-button {
-      padding: $space-size;
+      padding: $margin-size;
 
       &:ltr { margin-right: $space-size; }
       &:rtl { margin-left: $space-size; }
@@ -195,7 +195,7 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: 4px !important;
+  margin: $margin-size $space-size / 2 !important;
   padding: 0 $space-size * 2 !important;
   border-radius: $circular-radius;
   color: $text-secondary;

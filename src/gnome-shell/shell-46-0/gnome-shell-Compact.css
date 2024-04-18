@@ -1129,7 +1129,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .world-clocks-button,
 .weather-button,
-.events-button {
+.events-button,
+.popup-menu .message {
   padding: 4px 8px;
   border-radius: 10px;
   border: none;
@@ -1143,14 +1144,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .weather-button:hover,
 .weather-button:focus,
 .events-button:hover,
-.events-button:focus {
+.popup-menu .message:hover,
+.events-button:focus,
+.popup-menu .message:focus {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.08);
 }
 
 .world-clocks-button:active,
 .weather-button:active,
-.events-button:active {
+.events-button:active,
+.popup-menu .message:active {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.26);
 }
@@ -1180,17 +1184,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 0.9em;
 }
 
-.events-button .events-box {
+.events-button .events-box, .popup-menu .message .events-box {
   spacing: 6px;
 }
 
-.events-button .events-list {
+.events-button .events-list, .popup-menu .message .events-list {
   color: rgba(0, 0, 0, 0.6);
   spacing: 12px;
   text-shadow: none;
 }
 
-.events-button .event-time {
+.events-button .event-time, .popup-menu .message .event-time {
   color: rgba(0, 0, 0, 0.26);
   font-feature-settings: "tnum";
 }
@@ -1325,7 +1329,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message {
   border-radius: 10px;
-  text-shadow: none;
   padding: 0;
   margin: 0;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
@@ -1338,18 +1341,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .message {
+  border: 1px solid transparent;
+  border-left: none;
+  padding: 0;
+  margin: 0;
   box-shadow: none;
   margin: 2px;
-  background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.6);
-}
-
-.popup-menu .message:hover, .popup-menu .message:focus {
-  background-color: rgba(0, 0, 0, 0.08);
-}
-
-.popup-menu .message:active {
-  background-color: rgba(0, 0, 0, 0.26);
 }
 
 .message:ltr {
@@ -1400,7 +1398,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message .message-header .message-close-button {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.04);
-  padding: 4px;
+  padding: 2px;
 }
 
 .message .message-header .message-expand-button:hover,
@@ -1420,7 +1418,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message .message-header .message-expand-button {
-  padding: 4px;
+  padding: 2px;
 }
 
 .message .message-header .message-expand-button:ltr {
@@ -1477,7 +1475,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Media Controls */
 .message-media-control {
-  margin: 4px !important;
+  margin: 2px 2px !important;
   padding: 0 8px !important;
   border-radius: 9999px;
   color: rgba(0, 0, 0, 0.6);
@@ -1951,20 +1949,29 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 1em;
   margin: 4px;
   border-radius: 16px;
+  border-left: none;
+  border-bottom: none;
 }
 
 .notification-buttons-bin {
-  spacing: 0;
+  background-color: transparent;
   padding: 0;
+  spacing: 0;
+  margin: 0;
 }
 
 .notification-button {
   min-height: 40px;
-  padding: 0 16px;
+  padding: 2px 16px;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.6);
   font-weight: 500;
-  border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.popup-menu .notification-button {
+  padding: 0 16px;
 }
 
 .notification-button:first-child:ltr {
@@ -1994,15 +2001,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .notification-button:focus {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.08) !important;
-  outline: none !important;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.08);
 }
 
 .notification-button:hover {
   background-color: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.87);
-  box-shadow: none !important;
-  outline: none !important;
+  box-shadow: none;
 }
 
 .notification-button:active, .notification-button:checked {
@@ -2011,8 +2016,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .notification-button:insensitive {
-  background-color: transparent !important;
-  color: rgba(0, 0, 0, 0.26) !important;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.26);
 }
 
 .popup-menu .notification-button:first-child:ltr {
