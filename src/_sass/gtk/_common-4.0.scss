@@ -1225,6 +1225,8 @@ headerbar {
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
+  .info &,
+  .about &,
   &.flat {
     color: $text;
 
@@ -1322,12 +1324,6 @@ headerbar {
   }
 
   button.toggle { border-radius: $circular-radius; }
-
-  .info &.flat,
-  .about &.flat { // reset
-    background-color: transparent;
-    box-shadow: none;
-  }
 
   popover.background { // reset
     @if $variant == 'light' and $topbar == 'dark' {

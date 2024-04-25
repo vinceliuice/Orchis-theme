@@ -1414,40 +1414,40 @@ searchbar > revealer > box splitbutton {
 /***************
  * Header bars *
  ***************/
-.content-pane headerbar button:not(.suggested-action):not(.destructive-action), window.about headerbar button:not(.suggested-action):not(.destructive-action), headerbar.flat button:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:not(.suggested-action):not(.destructive-action), window.about headerbar button:not(.suggested-action):not(.destructive-action), .info headerbar button:not(.suggested-action):not(.destructive-action), .about headerbar button:not(.suggested-action):not(.destructive-action), headerbar.flat button:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), window.about headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), window.about headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), window.about headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:active:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), window.about headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:focus:not(.suggested-action):not(.destructive-action), .info headerbar button:focus:not(.suggested-action):not(.destructive-action), .about headerbar button:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:hover:not(.suggested-action):not(.destructive-action), .info headerbar button:hover:not(.suggested-action):not(.destructive-action), .about headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:active:not(.suggested-action):not(.destructive-action), .info headerbar button:active:not(.suggested-action):not(.destructive-action), .about headerbar button:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:active:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:checked:not(.suggested-action):not(.destructive-action), .info headerbar button:checked:not(.suggested-action):not(.destructive-action), .about headerbar button:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:not(.suggested-action):not(.destructive-action) {
   color: white;
 }
 
-.content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), window.about headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:disabled:not(.suggested-action):not(.destructive-action), .info headerbar button:disabled:not(.suggested-action):not(.destructive-action), .about headerbar button:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.content-pane headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), window.about headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .info headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .about headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.content-pane headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:focus:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:focus:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:hover:not(.suggested-action):not(.destructive-action), .content-pane headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:active:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.content-pane headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.content-pane headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.content-pane headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), window.about headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.content-pane headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), .info headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), .about headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action), headerbar.flat button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1555,16 +1555,32 @@ headerbar:backdrop:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-headerbar.flat {
+.info headerbar, .about headerbar, headerbar.flat {
   color: white;
 }
 
-headerbar.flat, headerbar.flat:backdrop {
+.info headerbar, .info headerbar:backdrop, .about headerbar, .about headerbar:backdrop, headerbar.flat, headerbar.flat:backdrop {
   background-color: transparent;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-headerbar.flat .subtitle,
+.info headerbar .subtitle,
+.info headerbar .dim-label,
+.info headerbar row.expander:not(:checked) image.expander-row-arrow,
+row.expander:not(:checked) .info headerbar image.expander-row-arrow,
+.info headerbar row label.subtitle,
+row .info headerbar label.subtitle,
+.info .content-pane headerbar entry > text > placeholder,
+.content-pane .info headerbar entry > text > placeholder,
+.info headerbar entry > text > placeholder, .about headerbar .subtitle,
+.about headerbar .dim-label,
+.about headerbar row.expander:not(:checked) image.expander-row-arrow,
+row.expander:not(:checked) .about headerbar image.expander-row-arrow,
+.about headerbar row label.subtitle,
+row .about headerbar label.subtitle,
+.about .content-pane headerbar entry > text > placeholder,
+.content-pane .about headerbar entry > text > placeholder,
+.about headerbar entry > text > placeholder, headerbar.flat .subtitle,
 headerbar.flat .dim-label,
 headerbar.flat row.expander:not(:checked) image.expander-row-arrow,
 row.expander:not(:checked) headerbar.flat image.expander-row-arrow,
@@ -1575,7 +1591,23 @@ headerbar.flat entry > text > placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar.flat .subtitle:backdrop,
+.info headerbar .subtitle:backdrop,
+.info headerbar .dim-label:backdrop,
+.info headerbar row.expander:not(:checked) image.expander-row-arrow:backdrop,
+row.expander:not(:checked) .info headerbar image.expander-row-arrow:backdrop,
+.info headerbar row label.subtitle:backdrop,
+row .info headerbar label.subtitle:backdrop,
+.info .content-pane headerbar entry > text > placeholder:backdrop,
+.content-pane .info headerbar entry > text > placeholder:backdrop,
+.info headerbar entry > text > placeholder:backdrop, .about headerbar .subtitle:backdrop,
+.about headerbar .dim-label:backdrop,
+.about headerbar row.expander:not(:checked) image.expander-row-arrow:backdrop,
+row.expander:not(:checked) .about headerbar image.expander-row-arrow:backdrop,
+.about headerbar row label.subtitle:backdrop,
+row .about headerbar label.subtitle:backdrop,
+.about .content-pane headerbar entry > text > placeholder:backdrop,
+.content-pane .about headerbar entry > text > placeholder:backdrop,
+.about headerbar entry > text > placeholder:backdrop, headerbar.flat .subtitle:backdrop,
 headerbar.flat .dim-label:backdrop,
 headerbar.flat row.expander:not(:checked) image.expander-row-arrow:backdrop,
 row.expander:not(:checked) headerbar.flat image.expander-row-arrow:backdrop,
@@ -1663,11 +1695,6 @@ headerbar button.destructive-action:disabled {
 
 headerbar button.toggle {
   border-radius: 9999px;
-}
-
-.info headerbar.flat, .about headerbar.flat {
-  background-color: transparent;
-  box-shadow: none;
 }
 
 headerbar popover.background button, headerbar popover.background entry, headerbar popover.background spinbutton {
@@ -7453,6 +7480,10 @@ window.maximized .content-pane headerbar, window.tiled .content-pane headerbar {
   background-color: #3C3C3C;
 }
 
+.info .top-bar, .info .top-bar:backdrop, .about .top-bar, .about .top-bar:backdrop {
+  background-color: transparent;
+}
+
 tabview .top-bar, tabview .top-bar:backdrop {
   background-color: #2C2C2C;
 }
@@ -7477,6 +7508,15 @@ tabview .top-bar, tabview .top-bar:backdrop {
 .content-pane .top-bar,
 .content-pane .top-bar:backdrop {
   background-color: transparent;
+}
+
+floating-sheet > dimming {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+floating-sheet > sheet.background {
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 16px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
 }
 
 themeselector,

@@ -1045,6 +1045,13 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     background-color: $titlebar-backdrop;
   }
 
+  .info &,
+  .about & {
+    &, &:backdrop {
+      background-color: transparent;
+    }
+  }
+
   tabview &, tabview &:backdrop {
     background-color: $base;
   }
@@ -1070,6 +1077,21 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 .content-pane {
   .top-bar, .top-bar:backdrop {
     background-color: transparent;
+  }
+}
+
+//
+// Floating Sheet
+//
+
+floating-sheet {
+  > dimming {
+    background-color: rgba(black, 0.25);
+  }
+
+  > sheet.background {
+    box-shadow: $shadow-z16;
+    border-radius: $window-radius;
   }
 }
 
