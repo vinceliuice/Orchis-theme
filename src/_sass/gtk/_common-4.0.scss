@@ -1323,8 +1323,8 @@ headerbar {
 
   button.toggle { border-radius: $circular-radius; }
 
-  background.csd.info &.flat,
-  background.csd.about &.flat { // reset
+  .info &.flat,
+  .about &.flat { // reset
     background-color: transparent;
     box-shadow: none;
   }
@@ -3889,7 +3889,12 @@ window.aboutdialog {
   }
 }
 
-window.about.background.csd {
+window.about {
+  .top-bar {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
   headerbar {
     color: $text-secondary;
     
