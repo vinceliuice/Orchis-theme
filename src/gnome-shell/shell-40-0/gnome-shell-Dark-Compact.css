@@ -1952,17 +1952,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .switcher-list {
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 .switcher-list .item-box {
   padding: 8px;
   border-radius: 10px;
   border: none;
+  background-color: transparent;
+  color: white;
 }
 
 .switcher-list .item-box:outlined {
   background-color: rgba(255, 255, 255, 0.08);
+  color: white;
 }
 
 .switcher-list .item-box:selected {

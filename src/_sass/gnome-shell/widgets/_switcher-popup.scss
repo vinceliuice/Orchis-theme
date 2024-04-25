@@ -8,15 +8,18 @@
 // switcher onscreen panel
 .switcher-list {
   @extend %osd_panel;
-  border-radius: $window-radius;
+  border-radius: $material-radius + $space-size * 2;
 
   .item-box {
     padding: 8px;
     border-radius: $material-radius;
     border: none;
+    background-color: transparent;
+    color: $text;
 
     &:outlined {
       background-color: $secondary-fill;
+      color: $text;
     }
 
     &:selected {
