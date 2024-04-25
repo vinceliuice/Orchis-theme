@@ -4448,7 +4448,12 @@ window {
     margin: 0;
     transition: none;
     border-radius: $window-radius;
-    box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+
+    @if $variant == 'light' and $topbar == 'dark' {
+      box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px $titlebar;
+    } @else {
+      box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+    }
 
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
@@ -4456,16 +4461,23 @@ window {
       // The biggest shadow should be in the same order then in the active state
       // or the jumping will happen during the transition.
       transition: $transition-shadow;
-      box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+
+      @if $variant == 'light' and $topbar == 'dark' {
+        box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px $titlebar-backdrop;
+      } @else {
+        box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+      }
     }
 
-    &.messagedialog {
-      background-color: $surface;
-      background-image: none;
+    // &.messagedialog { }
 
-      &:backdrop {
-        background-color: $background;
-        background-image: none;
+    @if $variant == 'light' and $topbar == 'dark' {
+      &.about, &.messagedialog, &.message {
+        box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+  
+        &:backdrop {
+          box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+        }
       }
     }
 

@@ -4800,22 +4800,20 @@ window.csd {
   margin: 0;
   transition: none;
   border-radius: 18px;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 16px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 16px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px #2C2C2C;
 }
 
 window.csd:backdrop {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent, inset 0 1px #3C3C3C;
+}
+
+window.csd.about, window.csd.messagedialog, window.csd.message {
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 16px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
+}
+
+window.csd.about:backdrop, window.csd.messagedialog:backdrop, window.csd.message:backdrop {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
-}
-
-window.csd.messagedialog {
-  background-color: #FFFFFF;
-  background-image: none;
-}
-
-window.csd.messagedialog:backdrop {
-  background-color: #F2F2F2;
-  background-image: none;
 }
 
 window.csd.tiled, window.csd.tiled-top, window.csd.tiled-left, window.csd.tiled-right, window.csd.tiled-bottom {
@@ -5154,6 +5152,10 @@ row.expander:not(:checked) .nautilus-window .content-pane headerbar popover.back
 
 .nautilus-window .sidebar-pane headerbar popover.background > contents > grid stack > scrolledwindow row + separator,
 .nautilus-window .content-pane headerbar popover.background > contents > grid stack > scrolledwindow row + separator {
+  background-color: transparent;
+}
+
+.nautilus-window .content-pane, .nautilus-window .content-pane:backdrop {
   background-color: transparent;
 }
 
@@ -7645,7 +7647,7 @@ navigation-view navigation-view-page .medium stack > button {
   color: inherit;
 }
 
-.sidebar-pane .topbar,
+.sidebar-pane .top-bar,
 .sidebar-pane .sidebar,
 .sidebar-pane .toolbar,
 .sidebar-pane .navigation-sidebar,
@@ -7787,6 +7789,10 @@ row.expander:not(:checked) .sidebar-pane popover > contents image.expander-row-a
   background-color: transparent;
 }
 
+.content-pane, .content-pane:backdrop {
+  background-color: #F2F2F2;
+}
+
 .content-pane headerbar {
   color: rgba(0, 0, 0, 0.87);
   border-top-left-radius: 0;
@@ -7827,9 +7833,14 @@ window.maximized .content-pane headerbar, window.tiled .content-pane headerbar {
 
 .top-bar {
   box-shadow: none;
+  background-color: #2C2C2C;
 }
 
-.top-bar, .top-bar:backdrop {
+.top-bar:backdrop {
+  background-color: #3C3C3C;
+}
+
+tabview .top-bar, tabview .top-bar:backdrop {
   background-color: #FFFFFF;
 }
 

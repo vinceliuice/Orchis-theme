@@ -4720,16 +4720,6 @@ window.csd:backdrop {
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
 }
 
-window.csd.messagedialog {
-  background-color: #FFFFFF;
-  background-image: none;
-}
-
-window.csd.messagedialog:backdrop {
-  background-color: #F2F2F2;
-  background-image: none;
-}
-
 window.csd.tiled, window.csd.tiled-top, window.csd.tiled-left, window.csd.tiled-right, window.csd.tiled-bottom {
   border-radius: 0;
   outline: none;
@@ -7383,7 +7373,7 @@ navigation-view navigation-view-page .medium stack > button {
   color: inherit;
 }
 
-.sidebar-pane .topbar,
+.sidebar-pane .top-bar,
 .sidebar-pane .sidebar,
 .sidebar-pane .toolbar,
 .sidebar-pane .navigation-sidebar,
@@ -7404,6 +7394,10 @@ navigation-view navigation-view-page .medium stack > button {
 
 window.maximized .sidebar-pane headerbar, window.tiled .sidebar-pane headerbar {
   box-shadow: none;
+}
+
+.content-pane, .content-pane:backdrop {
+  background-color: #F2F2F2;
 }
 
 .content-pane headerbar {
@@ -7444,9 +7438,14 @@ window.maximized .content-pane headerbar, window.tiled .content-pane headerbar {
 
 .top-bar {
   box-shadow: none;
+  background-color: #FFFFFF;
 }
 
-.top-bar, .top-bar:backdrop {
+.top-bar:backdrop {
+  background-color: #FAFAFA;
+}
+
+tabview .top-bar, tabview .top-bar:backdrop {
   background-color: #FFFFFF;
 }
 

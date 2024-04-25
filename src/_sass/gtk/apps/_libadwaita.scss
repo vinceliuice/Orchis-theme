@@ -860,7 +860,7 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 }
 
 .sidebar-pane {
-  .topbar,
+  .top-bar,
   .sidebar,
   .toolbar,
   .navigation-sidebar,
@@ -995,6 +995,10 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 }
 
 .content-pane {
+  &, &:backdrop {
+    background-color: $background;
+  }
+
   headerbar {
     color: $text;
     border-top-left-radius: 0;
@@ -1035,8 +1039,13 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 // Gnome >= 45.0
 .top-bar {
   box-shadow: none;
+  background-color: $titlebar;
 
-  &, &:backdrop {
+  &:backdrop {
+    background-color: $titlebar-backdrop;
+  }
+
+  tabview &, tabview &:backdrop {
     background-color: $base;
   }
 
