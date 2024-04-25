@@ -480,6 +480,25 @@ preferencesgroup > box {
 }
 
 //
+// AdwBanner
+//
+
+banner > revealer > widget {
+  /* There are 2 more instances in _sidebars.css, keep in sync with that */
+  background-color: gtkmix($primary, $base, 30%);
+  color: $text;
+  padding: $space-size;
+
+  &:backdrop {
+    background-color: gtkmix($primary, $base, 15%);
+
+    > label, > button {
+      filter: opacity(.5);
+    }
+  }
+}
+
+//
 // viewswitcher
 //
 

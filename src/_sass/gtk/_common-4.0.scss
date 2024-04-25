@@ -1001,11 +1001,11 @@ button.combo:only-child {
  ************/
 .toolbar,
 toolbar {
-  padding: $space-size / 2;
+  padding: $space-size;
   background-color: $background;
   border-spacing: $space-size;
 
-  button { @extend %button-flat; }
+  > button { @extend %button-flat; }
 
   // on OSD
   .osd & { background-color: transparent; }
@@ -1035,30 +1035,12 @@ toolbar {
   &.vertical > separator { margin: 2px; }
 
   &:not(.inline-toolbar):not(.osd) {
-    scale,
-    entry,
-    spinbutton,
-    button { margin: 2px; }
-
-    .linked entry,
-    .linked spinbutton,
-    .linked button {
-      &:not(:first-child) { margin-left: 0; }
-      &:not(:last-child) { margin-right: 0; }
-    }
-
-    spinbutton {
-      entry,
-      button { margin: 0; }
-    }
-
     switch { margin: 2px + $space-size 2px; }
   }
 }
 
 .toolbar {
-  button {
-    @extend %button-flat;
+  > button {
     border-radius: $corner-radius / 2;
   }
 
