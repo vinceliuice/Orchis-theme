@@ -7,6 +7,9 @@ source "${REPO_DIR}/gtkrc.sh"
 ROOT_UID=0
 DEST_DIR=
 
+MY_USERNAME="${SUDO_USER:-$(logname 2> /dev/null || echo "${USER}")}"
+MY_HOME=$(getent passwd "${MY_USERNAME}" | cut -d: -f6)
+
 # Destination directory
 if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
@@ -190,23 +193,6 @@ uninstall() {
   [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
 }
 
-clean() {
-  local dest="$1"
-  local name="$2"
-  local theme="$3"
-  local color="$4"
-  local size="$5"
-
-  local THEME_DIR="$dest/$name$theme$color$size"
-
-  if [[ "${theme}" == '' && "${color}" == '' && "${size}" == '' ]]; then
-    todo='nothing'
-  elif [[ -d "${THEME_DIR}" ]]; then
-    rm -rf "${THEME_DIR}"
-    echo -e "Find: ${THEME_DIR} ! removing it ..."
-  fi
-}
-
 uninstall_link() {
   rm -rf "${HOME}/.config/gtk-4.0/"{assets,gtk.css,gtk-dark.css}
   echo -e "\nRemoving ${HOME}/.config/gtk-4.0 links..."
@@ -237,10 +223,14 @@ install_package() {
     echo sassc needs to be installed to generate the css.
     if has_command zypper; then
       sudo zypper in sassc
+    elif has_command apt; then
+      sudo apt install sassc
     elif has_command apt-get; then
       sudo apt-get install sassc
     elif has_command dnf; then
       sudo dnf install sassc
+    elif has_command yum; then
+      sudo yum install sassc
     elif has_command pacman; then
       sudo pacman -S --noconfirm sassc
     fi
@@ -398,6 +388,39 @@ check_shell() {
     else
       echo "'gnome-shell' not found, using styles for last gnome-shell version available."
       GS_VERSION="46-0"
+  fi
+}
+
+backup_file() {
+  if [[ -f "${1}.bak" ]]; then
+    rm -rf "${1}"
+  fi
+
+  if [[ -f "${1}" ]]; then
+    mv -n "${1}"{"",".bak"}
+  fi
+}
+
+fix_dash_to_dock() {
+  local DASH_TO_DOCK_DIR_ROOT="/usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
+  local DASH_TO_DOCK_DIR_HOME="${MY_HOME}/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com"
+  local UBUNTU_DOCK_DIR_ROOT="/usr/share/gnome-shell/extensions/ubuntu-dock@ubuntu.com"
+  local UBUNTU_DOCK_DIR_HOME="${MY_HOME}/.local/share/gnome-shell/extensions/ubuntu-dock@ubuntu.com"
+
+  if [[ -d "${DASH_TO_DOCK_DIR_HOME}" ]]; then
+    backup_file "${DASH_TO_DOCK_DIR_HOME}/stylesheet.css"
+  elif [[ -d "${DASH_TO_DOCK_DIR_ROOT}" ]]; then
+    sudo backup_file "${DASH_TO_DOCK_DIR_ROOT}/stylesheet.css"
+  fi
+
+  if [[ -d "${UBUNTU_DOCK_DIR_HOME}" ]]; then
+    backup_file "${UBUNTU_DOCK_DIR_HOME}/stylesheet.css"
+  elif [[ -d "${UBUNTU_DOCK_DIR_ROOT}" ]]; then
+    sudo backup_file "${UBUNTU_DOCK_DIR_ROOT}/stylesheet.css"
+  fi
+
+  if has_command dbus-launch; then
+    dbus-launch dconf write /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme true
   fi
 }
 

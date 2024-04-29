@@ -25,6 +25,7 @@ OPTIONS:
                           5. macos:              Change window buttons to MacOS style
                           6. submenu:            Set normal submenus color contrast (dark submenu style on dark version)
                           7. [nord|dracula]:     Nord/dracula colorscheme themes (nord and dracula can not mix use!)
+                          8. dock                Fixed for dash-to-dock extension
 
   --round                 Change theme round corner border-radius [Input the px value you want] (Suggested: 2px < value < 16px)
                           1. 3px
@@ -154,6 +155,11 @@ while [[ "$#" -gt 0 ]]; do
             dracula="true"
             ctype="-Dracula"
             echo -e "Install dracula colorscheme ..."
+            shift
+            ;;
+          dock)
+            dockfix="true"
+            echo -e "\nFix 'dash-to-dock' or 'ubuntu-dock' style ..."
             shift
             ;;
           -*)
@@ -316,8 +322,6 @@ if [[ "${#lcolors[@]}" -eq 0 ]] ; then
   lcolors=("${COLOR_VARIANTS[1]}")
 fi
 
-clean_theme
-
 if [[ ${remove} == 'true' ]]; then
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_link
@@ -326,6 +330,8 @@ if [[ ${remove} == 'true' ]]; then
   else
     uninstall_theme
   fi
+elif [[ "$dockfix" == 'true' ]]; then
+  fix_dash_to_dock
 else
   if [[ "$libadwaita" == 'true' && "$UID" == "$ROOT_UID" ]]; then
     echo -e "Do not run -l with sudo, that will link libadwaita theme to root folder !"

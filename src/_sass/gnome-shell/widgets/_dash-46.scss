@@ -65,7 +65,7 @@ $dash_border_radius: if($corner_style == 'circular', $circular-radius, $material
     // running app dot
     .app-grid-running-dot {
       // manually position the dot within the dash item
-      margin-bottom: $dash_padding + $dash_edge_offset - 3px; // 3px = size of dot (5px) subtracted from its translationY from appDisplay.js
+      margin-bottom: $dash_padding + $dash_edge_offset - 6px; // 3px = size of dot (5px) subtracted from its translationY from appDisplay.js
     }
   }
 
@@ -88,11 +88,12 @@ $dash_border_radius: if($corner_style == 'circular', $circular-radius, $material
 .dash-label {
   border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
   padding: $space-size $space-size * 2;
+  margin: $space-size * 1.5;
   color: on(dark);
   background-color: rgba(black, 0.75);
   border: none;
   box-shadow: $shell-shadow-z2;
   text-align: center;
-  -y-offset: $margin-size * 3; // distance from the dash edge
-  -x-offset: $space-size + 2px;
+  -y-offset: 0; // distance from the dash edge
+  -x-offset: 0;
 }

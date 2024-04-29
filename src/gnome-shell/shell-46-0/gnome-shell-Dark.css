@@ -3082,7 +3082,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dash .dash-item-container .app-grid-running-dot {
-  margin-bottom: 21px;
+  margin-bottom: 18px;
 }
 
 #dash .dash-separator {
@@ -3100,13 +3100,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .dash-label {
   border-radius: 9999px;
   padding: 6px 12px;
+  margin: 9px;
   color: white;
   background-color: rgba(0, 0, 0, 0.75);
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.32);
   text-align: center;
-  -y-offset: 12px;
-  -x-offset: 8px;
+  -y-offset: 0;
+  -x-offset: 0;
 }
 
 /* App Grid */
@@ -4517,7 +4518,13 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 0 !important;
 }
 
-#dashtodockContainer.top.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner #dash .show-apps, #dashtodockContainer.top.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.straight-corner #dash .show-apps, #dashtodockContainer.top.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.top.extended #dash .show-apps, #dashtodockContainer.top.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.top.shrink.extended #dash .show-apps {
+#dashtodockContainer.top.straight-corner #dash .show-apps,
+#dashtodockContainer.top.straight-corner #dash .overview-tile,
+#dashtodockContainer.top.straight-corner #dash .grid-search-result, #dashtodockContainer.top.shrink.straight-corner #dash .show-apps,
+#dashtodockContainer.top.shrink.straight-corner #dash .overview-tile, #dashtodockContainer.top.extended #dash .show-apps,
+#dashtodockContainer.top.extended #dash .overview-tile,
+#dashtodockContainer.top.extended #dash .grid-search-result, #dashtodockContainer.top.shrink.extended #dash .show-apps,
+#dashtodockContainer.top.shrink.extended #dash .overview-tile {
   margin: 0 !important;
 }
 
@@ -4537,7 +4544,13 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 0 !important;
 }
 
-#dashtodockContainer.bottom.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner #dash .show-apps, #dashtodockContainer.bottom.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.straight-corner #dash .show-apps, #dashtodockContainer.bottom.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended #dash .show-apps, #dashtodockContainer.bottom.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink.extended #dash .show-apps {
+#dashtodockContainer.bottom.straight-corner #dash .show-apps,
+#dashtodockContainer.bottom.straight-corner #dash .overview-tile,
+#dashtodockContainer.bottom.straight-corner #dash .grid-search-result, #dashtodockContainer.bottom.shrink.straight-corner #dash .show-apps,
+#dashtodockContainer.bottom.shrink.straight-corner #dash .overview-tile, #dashtodockContainer.bottom.extended #dash .show-apps,
+#dashtodockContainer.bottom.extended #dash .overview-tile,
+#dashtodockContainer.bottom.extended #dash .grid-search-result, #dashtodockContainer.bottom.shrink.extended #dash .show-apps,
+#dashtodockContainer.bottom.shrink.extended #dash .overview-tile {
   margin: 0 !important;
 }
 
@@ -4557,7 +4570,13 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 0 !important;
 }
 
-#dashtodockContainer.left.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner #dash .show-apps, #dashtodockContainer.left.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.straight-corner #dash .show-apps, #dashtodockContainer.left.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.left.extended #dash .show-apps, #dashtodockContainer.left.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended #dash .show-apps {
+#dashtodockContainer.left.straight-corner #dash .show-apps,
+#dashtodockContainer.left.straight-corner #dash .overview-tile,
+#dashtodockContainer.left.straight-corner #dash .grid-search-result, #dashtodockContainer.left.shrink.straight-corner #dash .show-apps,
+#dashtodockContainer.left.shrink.straight-corner #dash .overview-tile, #dashtodockContainer.left.extended #dash .show-apps,
+#dashtodockContainer.left.extended #dash .overview-tile,
+#dashtodockContainer.left.extended #dash .grid-search-result, #dashtodockContainer.left.shrink.extended #dash .show-apps,
+#dashtodockContainer.left.shrink.extended #dash .overview-tile {
   margin: 0 !important;
 }
 
@@ -4577,7 +4596,13 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 0 !important;
 }
 
-#dashtodockContainer.right.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner #dash .show-apps, #dashtodockContainer.right.shrink.straight-corner #dash .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.straight-corner #dash .show-apps, #dashtodockContainer.right.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.right.extended #dash .show-apps, #dashtodockContainer.right.shrink.extended #dash .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended #dash .show-apps {
+#dashtodockContainer.right.straight-corner #dash .show-apps,
+#dashtodockContainer.right.straight-corner #dash .overview-tile,
+#dashtodockContainer.right.straight-corner #dash .grid-search-result, #dashtodockContainer.right.shrink.straight-corner #dash .show-apps,
+#dashtodockContainer.right.shrink.straight-corner #dash .overview-tile, #dashtodockContainer.right.extended #dash .show-apps,
+#dashtodockContainer.right.extended #dash .overview-tile,
+#dashtodockContainer.right.extended #dash .grid-search-result, #dashtodockContainer.right.shrink.extended #dash .show-apps,
+#dashtodockContainer.right.shrink.extended #dash .overview-tile {
   margin: 0 !important;
 }
 
@@ -4589,7 +4614,9 @@ StWidget.focused .app-grid-running-dot {
   padding: 2px !important;
 }
 
-#dashtodockContainer.shrink .dash-item-container .app-well-app, #dashtodockContainer.shrink .show-apps {
+#dashtodockContainer.shrink .show-apps,
+#dashtodockContainer.shrink .overview-tile,
+#dashtodockContainer.shrink .grid-search-result {
   margin: 0 !important;
 }
 
@@ -4601,7 +4628,20 @@ StWidget.focused .app-grid-running-dot {
   background: transparent;
 }
 
-#dashtodockContainer.left .dash-item-container .app-well-app, #dashtodockContainer.left .show-apps, #dashtodockContainer.right .dash-item-container .app-well-app, #dashtodockContainer.right .show-apps {
+#dashtodockContainer.left #dash, #dashtodockContainer.right #dash {
+  margin-top: 0 !important;
+  padding: 12px !important;
+}
+
+#dashtodockContainer.left #dash #dashtodockDashContainer, #dashtodockContainer.right #dash #dashtodockDashContainer {
+  padding: 10px 0 !important;
+}
+
+#dashtodockContainer.left .show-apps,
+#dashtodockContainer.left .overview-tile,
+#dashtodockContainer.left .grid-search-result, #dashtodockContainer.right .show-apps,
+#dashtodockContainer.right .overview-tile,
+#dashtodockContainer.right .grid-search-result {
   padding: 2px 6px !important;
 }
 
@@ -4609,16 +4649,61 @@ StWidget.focused .app-grid-running-dot {
   margin-bottom: 0 !important;
 }
 
-#dashtodockContainer.left.shrink .dash-background, #dashtodockContainer.left.shrink.extended .dash-background, #dashtodockContainer.right.shrink .dash-background, #dashtodockContainer.right.shrink.extended .dash-background {
-  padding: 2px 4px !important;
+#dashtodockContainer.left.shrink #dash #dashtodockDashContainer, #dashtodockContainer.right.shrink #dash #dashtodockDashContainer {
+  padding: 4px 0 !important;
 }
 
-#dashtodockContainer.left.shrink .dash-item-container .app-well-app, #dashtodockContainer.left.shrink .show-apps, #dashtodockContainer.left.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.left.shrink.extended .show-apps, #dashtodockContainer.right.shrink .dash-item-container .app-well-app, #dashtodockContainer.right.shrink .show-apps, #dashtodockContainer.right.shrink.extended .dash-item-container .app-well-app, #dashtodockContainer.right.shrink.extended .show-apps {
+#dashtodockContainer.left.shrink .dash-background, #dashtodockContainer.right.shrink .dash-background {
+  padding: 4px !important;
+}
+
+#dashtodockContainer.left.shrink .show-apps,
+#dashtodockContainer.left.shrink .overview-tile,
+#dashtodockContainer.left.shrink .grid-search-result, #dashtodockContainer.right.shrink .show-apps,
+#dashtodockContainer.right.shrink .overview-tile,
+#dashtodockContainer.right.shrink .grid-search-result {
   margin: 0 !important;
-  padding: 2px 0 !important;
+  padding: 0 !important;
 }
 
-#dashtodockContainer.left.extended .dash-item-container .app-well-app, #dashtodockContainer.left.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.right.extended .dash-item-container .app-well-app, #dashtodockContainer.right.straight-corner .dash-item-container .app-well-app {
+#dashtodockContainer.left.extended #dash #dashtodockDashContainer, #dashtodockContainer.left.straight-corner #dash #dashtodockDashContainer, #dashtodockContainer.right.extended #dash #dashtodockDashContainer, #dashtodockContainer.right.straight-corner #dash #dashtodockDashContainer {
+  padding: 0 !important;
+}
+
+#dashtodockContainer.left.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child, #dashtodockContainer.left.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child, #dashtodockContainer.right.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child, #dashtodockContainer.right.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child {
+  padding-top: 0 !important;
+}
+
+#dashtodockContainer.left.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child, #dashtodockContainer.left.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child, #dashtodockContainer.right.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child, #dashtodockContainer.right.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child {
+  padding-bottom: 0 !important;
+}
+
+#dashtodockContainer.left.extended #dash #dashtodockDashContainer > :first-child .show-apps, #dashtodockContainer.left.straight-corner #dash #dashtodockDashContainer > :first-child .show-apps, #dashtodockContainer.right.extended #dash #dashtodockDashContainer > :first-child .show-apps, #dashtodockContainer.right.straight-corner #dash #dashtodockDashContainer > :first-child .show-apps {
+  padding-bottom: 6px !important;
+}
+
+#dashtodockContainer.left.extended #dash #dashtodockDashContainer > :last-child .show-apps, #dashtodockContainer.left.straight-corner #dash #dashtodockDashContainer > :last-child .show-apps, #dashtodockContainer.right.extended #dash #dashtodockDashContainer > :last-child .show-apps, #dashtodockContainer.right.straight-corner #dash #dashtodockDashContainer > :last-child .show-apps {
+  padding-bottom: 24px !important;
+}
+
+#dashtodockContainer.left.extended.shrink .dash-background, #dashtodockContainer.left.straight-corner.shrink .dash-background, #dashtodockContainer.right.extended.shrink .dash-background, #dashtodockContainer.right.straight-corner.shrink .dash-background {
+  padding: 0 !important;
+}
+
+#dashtodockContainer.left.extended.shrink .show-apps,
+#dashtodockContainer.left.extended.shrink .overview-tile,
+#dashtodockContainer.left.extended.shrink .grid-search-result, #dashtodockContainer.left.straight-corner.shrink .show-apps,
+#dashtodockContainer.left.straight-corner.shrink .overview-tile,
+#dashtodockContainer.left.straight-corner.shrink .grid-search-result, #dashtodockContainer.right.extended.shrink .show-apps,
+#dashtodockContainer.right.extended.shrink .overview-tile,
+#dashtodockContainer.right.extended.shrink .grid-search-result, #dashtodockContainer.right.straight-corner.shrink .show-apps,
+#dashtodockContainer.right.straight-corner.shrink .overview-tile,
+#dashtodockContainer.right.straight-corner.shrink .grid-search-result {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#dashtodockContainer.left.extended .overview-tile, #dashtodockContainer.left.extended .grid-search-result, #dashtodockContainer.left.straight-corner .overview-tile, #dashtodockContainer.left.straight-corner .grid-search-result, #dashtodockContainer.right.extended .overview-tile, #dashtodockContainer.right.extended .grid-search-result, #dashtodockContainer.right.straight-corner .overview-tile, #dashtodockContainer.right.straight-corner .grid-search-result {
   padding: 2px 12px !important;
 }
 
@@ -4630,20 +4715,87 @@ StWidget.focused .app-grid-running-dot {
   padding: 12px 10px !important;
 }
 
+#dashtodockContainer.top .show-apps,
+#dashtodockContainer.top .overview-tile,
+#dashtodockContainer.top .grid-search-result, #dashtodockContainer.bottom .show-apps,
+#dashtodockContainer.bottom .overview-tile,
+#dashtodockContainer.bottom .grid-search-result {
+  margin: 0 2px !important;
+  padding-bottom: 12px !important;
+}
+
+#dashtodockContainer.top .show-apps .overview-icon,
+#dashtodockContainer.top .overview-tile .overview-icon,
+#dashtodockContainer.top .grid-search-result .overview-icon, #dashtodockContainer.bottom .show-apps .overview-icon,
+#dashtodockContainer.bottom .overview-tile .overview-icon,
+#dashtodockContainer.bottom .grid-search-result .overview-icon {
+  padding: 6px !important;
+  spacing: 6px !important;
+}
+
 #dashtodockContainer.top.shrink .dash-background, #dashtodockContainer.bottom.shrink .dash-background {
   padding: 4px 2px !important;
 }
 
-#dashtodockContainer.top.shrink .dash-item-container .app-well-app, #dashtodockContainer.top.shrink .show-apps, #dashtodockContainer.bottom.shrink .dash-item-container .app-well-app, #dashtodockContainer.bottom.shrink .show-apps {
+#dashtodockContainer.top.shrink .show-apps,
+#dashtodockContainer.top.shrink .overview-tile,
+#dashtodockContainer.top.shrink .grid-search-result, #dashtodockContainer.bottom.shrink .show-apps,
+#dashtodockContainer.bottom.shrink .overview-tile,
+#dashtodockContainer.bottom.shrink .grid-search-result {
   margin: 0 !important;
   padding: 0 2px 12px !important;
+}
+
+#dashtodockContainer.top.extended #dash #dashtodockDashContainer, #dashtodockContainer.top.straight-corner #dash #dashtodockDashContainer, #dashtodockContainer.bottom.extended #dash #dashtodockDashContainer, #dashtodockContainer.bottom.straight-corner #dash #dashtodockDashContainer {
+  padding: 0 !important;
+}
+
+#dashtodockContainer.top.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child, #dashtodockContainer.top.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child, #dashtodockContainer.bottom.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child, #dashtodockContainer.bottom.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:first-child {
+  padding-left: 0 !important;
+}
+
+#dashtodockContainer.top.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child, #dashtodockContainer.top.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child, #dashtodockContainer.bottom.extended #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child, #dashtodockContainer.bottom.straight-corner #dash #dashtodockDashContainer #dashtodockDashScrollview:last-child {
+  padding-right: 0 !important;
+}
+
+#dashtodockContainer.top.extended #dash #dashtodockDashContainer > :first-child .show-apps, #dashtodockContainer.top.straight-corner #dash #dashtodockDashContainer > :first-child .show-apps, #dashtodockContainer.bottom.extended #dash #dashtodockDashContainer > :first-child .show-apps, #dashtodockContainer.bottom.straight-corner #dash #dashtodockDashContainer > :first-child .show-apps {
+  padding-left: 0 !important;
+}
+
+#dashtodockContainer.top.extended #dash #dashtodockDashContainer > :last-child .show-apps, #dashtodockContainer.top.straight-corner #dash #dashtodockDashContainer > :last-child .show-apps, #dashtodockContainer.bottom.extended #dash #dashtodockDashContainer > :last-child .show-apps, #dashtodockContainer.bottom.straight-corner #dash #dashtodockDashContainer > :last-child .show-apps {
+  padding-right: 18px !important;
+}
+
+#dashtodockContainer.top.extended.shrink .dash-background, #dashtodockContainer.top.straight-corner.shrink .dash-background, #dashtodockContainer.bottom.extended.shrink .dash-background, #dashtodockContainer.bottom.straight-corner.shrink .dash-background {
+  padding: 0 !important;
+}
+
+#dashtodockContainer.top.extended.shrink .show-apps,
+#dashtodockContainer.top.extended.shrink .overview-tile,
+#dashtodockContainer.top.extended.shrink .grid-search-result, #dashtodockContainer.top.straight-corner.shrink .show-apps,
+#dashtodockContainer.top.straight-corner.shrink .overview-tile,
+#dashtodockContainer.top.straight-corner.shrink .grid-search-result, #dashtodockContainer.bottom.extended.shrink .show-apps,
+#dashtodockContainer.bottom.extended.shrink .overview-tile,
+#dashtodockContainer.bottom.extended.shrink .grid-search-result, #dashtodockContainer.bottom.straight-corner.shrink .show-apps,
+#dashtodockContainer.bottom.straight-corner.shrink .overview-tile,
+#dashtodockContainer.bottom.straight-corner.shrink .grid-search-result {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #dashtodockContainer.top.extended .dash-separator, #dashtodockContainer.top.straight-corner .dash-separator, #dashtodockContainer.bottom.extended .dash-separator, #dashtodockContainer.bottom.straight-corner .dash-separator {
   margin: 0 8px !important;
 }
 
-#dashtodockContainer.top.extended .dash-item-container .app-well-app, #dashtodockContainer.top.extended .show-apps, #dashtodockContainer.top.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.top.straight-corner .show-apps, #dashtodockContainer.bottom.extended .dash-item-container .app-well-app, #dashtodockContainer.bottom.extended .show-apps, #dashtodockContainer.bottom.straight-corner .dash-item-container .app-well-app, #dashtodockContainer.bottom.straight-corner .show-apps {
+#dashtodockContainer.top.extended .show-apps,
+#dashtodockContainer.top.extended .overview-tile,
+#dashtodockContainer.top.extended .grid-search-result, #dashtodockContainer.top.straight-corner .show-apps,
+#dashtodockContainer.top.straight-corner .overview-tile,
+#dashtodockContainer.top.straight-corner .grid-search-result, #dashtodockContainer.bottom.extended .show-apps,
+#dashtodockContainer.bottom.extended .overview-tile,
+#dashtodockContainer.bottom.extended .grid-search-result, #dashtodockContainer.bottom.straight-corner .show-apps,
+#dashtodockContainer.bottom.straight-corner .overview-tile,
+#dashtodockContainer.bottom.straight-corner .grid-search-result {
   padding: 12px 2px !important;
 }
 
@@ -4651,11 +4803,12 @@ StWidget.focused .app-grid-running-dot {
   background-color: rgba(33, 33, 33, 0.65);
 }
 
-#dashtodockContainer #dash .app-well-app-running-dot {
-  margin-bottom: 3px !important;
+#dashtodockContainer #dash .app-grid-running-dot {
+  margin-bottom: 6px !important;
+  margin-top: 0 !important;
 }
 
-#dashtodockContainer #dash StWidget.focused .app-well-app-running-dot {
+#dashtodockContainer #dash StWidget.focused .app-grid-running-dot {
   background-color: #3281EA;
 }
 
@@ -4675,7 +4828,7 @@ StWidget.focused .app-grid-running-dot {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-#dashtodockContainer:overview #dash StWidget.focused .app-well-app-running-dot {
+#dashtodockContainer:overview #dash StWidget.focused .app-grid-running-dot {
   background-color: #3281EA;
 }
 
@@ -4688,7 +4841,7 @@ StWidget.focused .app-grid-running-dot {
   background-color: transparent !important;
 }
 
-#dashtodockContainer.extended:overview #dash, #dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
+#dashtodockContainer.opaque.extended:overview #dash, #dashtodockContainer.transparent.extended:overview #dash {
   background: none;
 }
 
@@ -4701,8 +4854,8 @@ StWidget.focused .app-grid-running-dot {
   padding: 1px 2px;
 }
 
-#dashtodockContainer.extended .app-well-app .overview-icon,
-#dashtodockContainer.extended .show-apps .overview-icon, #dashtodockContainer.extended:overview .app-well-app .overview-icon,
+#dashtodockContainer.extended .overview-tile .overview-icon, #dashtodockContainer.extended .grid-search-result .overview-icon,
+#dashtodockContainer.extended .show-apps .overview-icon, #dashtodockContainer.extended:overview .overview-tile .overview-icon,
 #dashtodockContainer.extended:overview .show-apps .overview-icon {
   border-radius: 10px;
 }
@@ -4720,6 +4873,10 @@ StWidget.focused .app-grid-running-dot {
   height: auto;
   border-right-width: 1px;
   margin: 32px 0;
+}
+
+.dash-label.bottom {
+  margin-bottom: 18px !important;
 }
 
 .dashtopanelMainPanel {
