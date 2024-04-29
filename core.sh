@@ -385,9 +385,9 @@ check_shell() {
     else
       GS_VERSION="3-28"
     fi
-    else
-      echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-      GS_VERSION="46-0"
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="46-0"
   fi
 }
 
