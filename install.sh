@@ -101,6 +101,10 @@ while [[ "$#" -gt 0 ]]; do
             shell="44"
             shift
             ;;
+          46)
+            shell="46"
+            shift
+            ;;
           -*)
             break
             ;;
