@@ -4975,6 +4975,10 @@ popover.entry-completion > contents {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
 }
 
+.nautilus-window .content-pane, .nautilus-window .content-pane:backdrop {
+  background-color: transparent;
+}
+
 .nautilus-window flap > separator {
   background: none;
   min-width: 0;
