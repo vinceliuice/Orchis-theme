@@ -5505,7 +5505,7 @@ row.expander:not(:checked) .nautilus-window .content-pane headerbar popover.back
 .nautilus-window .floating-bar {
   min-height: 24px;
   padding: 2px;
-  margin: 4px;
+  margin: 8px;
   border: none;
   border-radius: 9999px;
   background-color: rgba(242, 242, 242, 0.95);

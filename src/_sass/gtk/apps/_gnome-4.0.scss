@@ -431,7 +431,7 @@
   .floating-bar {
     min-height: $menuitem-size;
     padding: $space-size / 2;
-    margin: $space-size;
+    margin: if($variant == 'light' and $topbar == 'dark', $space-size * 2, $space-size);
     border: none;
     border-radius: $circular-radius;
     background-color: rgba($background, 0.95);
