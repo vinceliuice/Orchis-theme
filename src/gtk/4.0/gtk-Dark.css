@@ -1488,40 +1488,40 @@ headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructi
   color: rgba(255, 255, 255, 0.3);
 }
 
-#NautilusQueryEditor, headerbar entry {
+headerbar entry {
   caret-color: white;
 }
 
-#NautilusQueryEditor, headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
+headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
   color: white;
 }
 
-#NautilusQueryEditor:not(:disabled):not(:focus-within):hover, headerbar entry:not(:disabled):not(:focus-within):hover {
+headerbar entry:not(:disabled):not(:focus-within):hover {
   color: white;
 }
 
-#NautilusQueryEditor:disabled, headerbar entry:disabled {
+headerbar entry:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-#NautilusQueryEditor > text > placeholder, headerbar entry > text > placeholder {
+headerbar entry > text > placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-#NautilusQueryEditor > text > block-cursor, headerbar entry > text > block-cursor {
+headerbar entry > text > block-cursor {
   color: #2C2C2C;
   background-color: white;
 }
 
-#NautilusQueryEditor > image, headerbar entry > image {
+headerbar entry > image {
   color: rgba(255, 255, 255, 0.7);
 }
 
-#NautilusQueryEditor > image:hover, headerbar entry > image:hover, #NautilusQueryEditor > image:active, headerbar entry > image:active {
+headerbar entry > image:hover, headerbar entry > image:active {
   color: white;
 }
 
-#NautilusQueryEditor > image:disabled, headerbar entry > image:disabled {
+headerbar entry > image:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -5254,16 +5254,7 @@ popover.entry-completion > contents {
 
 #NautilusQueryEditor {
   border-radius: 9999px;
-  color: rgba(255, 255, 255, 0.7);
   padding: 0 4px 0 8px;
-}
-
-#NautilusQueryEditor:focus-within {
-  color: white;
-}
-
-#NautilusQueryEditor:disabled {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 #NautilusQueryEditor > menubutton > button.image-button {

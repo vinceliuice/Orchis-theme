@@ -986,7 +986,7 @@ button.combo:only-child {
  ************/
 toolbar {
   -GtkWidget-window-dragging: true;
-  padding: $space-size / 2;
+  padding: $space-size;
   background-color: $background;
 
   button { @extend %button-flat; }
@@ -1140,6 +1140,7 @@ searchbar > revealer > box {
   box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
   background-color: $titlebar;
   color: $titlebar-text;
+  padding: 0 $space-size;
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1293,15 +1294,15 @@ searchbar > revealer > box {
   }
 
   &.default-decoration {
-    min-height: $small-size;
+    min-height: $medium-size;
     box-shadow: inset 0 1px highlight($titlebar);
     border-radius: $window-radius $window-radius 0 0;
     border: none;
 
     @if $mac_style == 'true' {
-      padding: $space-size $space-size * 2;
+      padding: 0 $space-size * 2;
     } @else {
-      padding: $space-size $space-size / 2;
+      padding: 0 $space-size / 2;
     }
 
     .tiled &,
@@ -1541,8 +1542,10 @@ headerbar {
   }
 
   @if $mac_style == 'true' {
-    .background.csd &.titlebar.default-decoration button.titlebutton {
-      @extend %firefox_window_button;
+    .background.csd &.titlebar.default-decoration {
+      button.titlebutton {
+        @extend %firefox_window_button;
+      }
     }
 
     .background.csd.maximized &.titlebar.default-decoration button.titlebutton.maximize {

@@ -95,6 +95,8 @@
           box-shadow: inset 0 1px highlight($titlebar);
         }
 
+        entry { @extend %titlebar-entry; }
+
         @if $mac_style == 'true' {
           button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
             @extend %titlebar-button;
@@ -453,13 +455,7 @@
 
 #NautilusQueryEditor { // search entry
   border-radius: $circular-radius;
-  color: $titlebar-text-secondary;
   padding: 0 ($medium-size - $menuitem-size) / 2 0 ($space-size + 2px);
-  @extend %titlebar-entry;
-
-  &:focus-within { color: $titlebar-text; }
-
-  &:disabled { color: $titlebar-text-secondary-disabled; }
 
   > menubutton > button.image-button {
     min-width: $menuitem-size;

@@ -1549,40 +1549,40 @@ searchbar > revealer > box splitbutton {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.sidebar-pane entry, #NautilusQueryEditor, headerbar entry {
+.sidebar-pane entry, .nautilus-window .content-pane headerbar entry, headerbar entry {
   caret-color: white;
 }
 
-.sidebar-pane entry, #NautilusQueryEditor, headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
+.sidebar-pane entry, .nautilus-window .content-pane headerbar entry, headerbar entry, headerbar entry:drop(active), headerbar entry:focus-within {
   color: white;
 }
 
-.sidebar-pane entry:not(:disabled):not(:focus-within):hover, #NautilusQueryEditor:not(:disabled):not(:focus-within):hover, headerbar entry:not(:disabled):not(:focus-within):hover {
+.sidebar-pane entry:not(:disabled):not(:focus-within):hover, .nautilus-window .content-pane headerbar entry:not(:disabled):not(:focus-within):hover, headerbar entry:not(:disabled):not(:focus-within):hover {
   color: white;
 }
 
-.sidebar-pane entry:disabled, #NautilusQueryEditor:disabled, headerbar entry:disabled {
+.sidebar-pane entry:disabled, .nautilus-window .content-pane headerbar entry:disabled, headerbar entry:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane entry > text > placeholder, #NautilusQueryEditor > text > placeholder, headerbar entry > text > placeholder {
+.sidebar-pane entry > text > placeholder, .nautilus-window .content-pane headerbar entry > text > placeholder, headerbar entry > text > placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.sidebar-pane entry > text > block-cursor, #NautilusQueryEditor > text > block-cursor, headerbar entry > text > block-cursor {
+.sidebar-pane entry > text > block-cursor, .nautilus-window .content-pane headerbar entry > text > block-cursor, headerbar entry > text > block-cursor {
   color: #2C2C2C;
   background-color: white;
 }
 
-.sidebar-pane entry > image, #NautilusQueryEditor > image, headerbar entry > image {
+.sidebar-pane entry > image, .nautilus-window .content-pane headerbar entry > image, headerbar entry > image {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sidebar-pane entry > image:hover, #NautilusQueryEditor > image:hover, headerbar entry > image:hover, .sidebar-pane entry > image:active, #NautilusQueryEditor > image:active, headerbar entry > image:active {
+.sidebar-pane entry > image:hover, .nautilus-window .content-pane headerbar entry > image:hover, headerbar entry > image:hover, .sidebar-pane entry > image:active, .nautilus-window .content-pane headerbar entry > image:active, headerbar entry > image:active {
   color: white;
 }
 
-.sidebar-pane entry > image:disabled, #NautilusQueryEditor > image:disabled, headerbar entry > image:disabled {
+.sidebar-pane entry > image:disabled, .nautilus-window .content-pane headerbar entry > image:disabled, headerbar entry > image:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -5524,16 +5524,7 @@ row.expander:not(:checked) .nautilus-window .content-pane headerbar popover.back
 
 #NautilusQueryEditor {
   border-radius: 9999px;
-  color: rgba(255, 255, 255, 0.7);
   padding: 0 4px 0 6px;
-}
-
-#NautilusQueryEditor:focus-within {
-  color: white;
-}
-
-#NautilusQueryEditor:disabled {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 #NautilusQueryEditor > menubutton > button.image-button {
