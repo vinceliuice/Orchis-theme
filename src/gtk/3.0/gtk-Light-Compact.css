@@ -1085,7 +1085,7 @@ combobox button.combo cellview:dir(rtl) {
 combobox menu menuitem {
   min-height: 20px;
   min-width: 40px;
-  padding: 2px 6px;
+  padding: 4px 4px;
 }
 
 combobox.linked button:nth-child(2):dir(ltr) {
@@ -1827,7 +1827,7 @@ menubar > menuitem label:disabled,
 }
 
 menu {
-  margin: 2px;
+  margin: 4px;
   padding: 4px;
   background-color: #FFFFFF;
   background-clip: border-box;
@@ -1852,9 +1852,9 @@ menu {
 
 menu menuitem {
   transition: none;
-  min-height: 20px;
+  min-height: 28px;
   min-width: 40px;
-  padding: 3px 6px;
+  padding: 4.8px 4.48px;
   color: rgba(0, 0, 0, 0.87);
   font: initial;
   text-shadow: none;
@@ -8149,7 +8149,7 @@ XfdesktopIconView.view .rubberband {
   padding: 12px;
   border-radius: 10px;
   -XfwmTabwinWidget-icon-size: 64px;
-  -XfwmTabwinWidget-preview-size: 64px;
+  -XfwmTabwinWidget-preview-size: 512px;
 }
 
 /***************
@@ -8170,7 +8170,7 @@ window#whiskermenu-window entry.search:focus {
 }
 
 window#whiskermenu-window > frame > border {
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 4px 6px 4px 6px;
   margin: 4px;
   border: none;
@@ -8235,6 +8235,11 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:checked, window#whiskermenu-window .title-area > .commands-area > button.flat.command-button:active {
   background-color: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.87);
+}
+
+window#whiskermenu-window treeview {
+  margin: 4px;
+  padding: 4px;
 }
 
 /**********
@@ -8306,6 +8311,25 @@ dialog.xfsm-logout-dialog {
 
 #XfceNotifyWindow label#summary {
   font-weight: bold;
+}
+
+/***********************
+ * Xfce4 Panel Plugins *
+ ***********************/
+#docklike-plugin .group {
+  border-radius: 3px;
+  margin: 2px;
+  padding: 2px;
+}
+
+#docklike-plugin button {
+  padding: 2px 4px;
+}
+
+#xfce-panel-toggle-button {
+  padding: 2px;
+  margin: 5px 2px;
+  border-radius: 50px;
 }
 
 /************************

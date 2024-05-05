@@ -40,7 +40,6 @@ for color in "${_GCOLOR_VARIANTS[@]}"; do
     sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-40-0/gnome-shell$color$size."{scss,css}
     sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-42-0/gnome-shell$color$size."{scss,css}
     sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-44-0/gnome-shell$color$size."{scss,css}
-    sassc "${SASSC_OPT[@]}" "src/gnome-shell/shell-46-0/gnome-shell$color$size."{scss,css}
     sassc "${SASSC_OPT[@]}" "src/cinnamon/cinnamon$color$size."{scss,css}
   done
 done

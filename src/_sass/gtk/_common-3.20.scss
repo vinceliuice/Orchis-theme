@@ -894,7 +894,7 @@ combobox {
     menuitem { // reset
       min-height: 20px;
       min-width: 40px;
-      padding: $space-size / 2 $space-size * 1.5;
+      padding: $space-size $space-size;
     }
   }
 
@@ -1755,7 +1755,7 @@ menubar,
 }
 
 menu {
-  margin: $space-size / 2; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
+  margin: $space-size; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: $space-size;
   background-color: $surface;
   background-clip: border-box;
@@ -1779,9 +1779,9 @@ menu {
 
   menuitem {
     transition: none;
-    min-height: 20px;
+    min-height: 28px;
     min-width: 40px;
-    padding: ($space-size / 2 + 1px) $space-size * 1.5;
+    padding: ($space-size * 1.2) ($space-size * 1.12);
     color: $text;
     font: initial;
     text-shadow: none;
