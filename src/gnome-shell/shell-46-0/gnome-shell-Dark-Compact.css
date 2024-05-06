@@ -1350,7 +1350,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .message {
   border: 1px solid transparent;
-  border-left: none;
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -1961,8 +1960,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 1em;
   margin: 4px;
   border-radius: 16px;
-  border-left: none;
-  border-bottom: none;
 }
 
 .notification-buttons-bin {
