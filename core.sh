@@ -367,12 +367,22 @@ check_shell() {
 }
 
 backup_file() {
-  if [[ -f "${1}.bak" ]]; then
-    rm -rf "${1}"
+  if [[ -f "${1}.bak" || -d "${1}.bak" ]]; then
+    case "${2}" in
+      sudo)
+        sudo rm -rf "${1}" ;;
+      *)
+        rm -rf "${1}" ;;
+    esac
   fi
 
-  if [[ -f "${1}" ]]; then
-    mv -n "${1}"{"",".bak"}
+  if [[ -f "${1}" || -d "${1}" ]]; then
+    case "${2}" in
+      sudo)
+        sudo mv -n "${1}"{"",".bak"} ;;
+      *)
+        mv -n "${1}"{"",".bak"} ;;
+    esac
   fi
 }
 
@@ -385,13 +395,13 @@ fix_dash_to_dock() {
   if [[ -d "${DASH_TO_DOCK_DIR_HOME}" ]]; then
     backup_file "${DASH_TO_DOCK_DIR_HOME}/stylesheet.css"
   elif [[ -d "${DASH_TO_DOCK_DIR_ROOT}" ]]; then
-    sudo backup_file "${DASH_TO_DOCK_DIR_ROOT}/stylesheet.css"
+    backup_file "${DASH_TO_DOCK_DIR_ROOT}/stylesheet.css" "sudo"
   fi
 
   if [[ -d "${UBUNTU_DOCK_DIR_HOME}" ]]; then
     backup_file "${UBUNTU_DOCK_DIR_HOME}/stylesheet.css"
   elif [[ -d "${UBUNTU_DOCK_DIR_ROOT}" ]]; then
-    sudo backup_file "${UBUNTU_DOCK_DIR_ROOT}/stylesheet.css"
+    backup_file "${UBUNTU_DOCK_DIR_ROOT}/stylesheet.css" "sudo"
   fi
 
   if has_command dbus-launch; then
