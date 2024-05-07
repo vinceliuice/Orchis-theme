@@ -34,7 +34,7 @@ OPTIONS:
                           ...
                           13. 15px
 
-  --shell                 install gnome-shell version [38|40|42|44|46]
+  --shell                 install gnome-shell version [38|40|42|44|46] (Without this option script will detect shell version and install the right theme)
                           1. 38                 Gnome-shell version <= 38.0
                           2. 40                 Gnome-shell version = 40.0
                           3. 42                 Gnome-shell version = 42.0
