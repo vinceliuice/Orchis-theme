@@ -2150,13 +2150,15 @@ $submenu_item_radius: $popup-radius - $space-size;
   }
 
   &-cornerbar {
-    width: 8px;
+    width: $space-size + 4px;
     background: transparent;
 
     &-box {
       padding: 0;
-      background: transparent;
-      border-left: 1px solid on($panel, divider);
+      background: on($panel, fill);
+      border: none;
+      // border-left: 1px solid on($panel, divider); // not use ?
+      box-shadow: inset 1px 0 on($panel, divider);
 
       &:hover > .applet-cornerbar {
         background: on($panel, divider);
@@ -2164,7 +2166,7 @@ $submenu_item_radius: $popup-radius - $space-size;
     }
 
     &.vertical {
-      height: 8px;
+      height: $space-size + 4px;
     }
   }
 }
