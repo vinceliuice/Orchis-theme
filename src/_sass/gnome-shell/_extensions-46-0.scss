@@ -384,9 +384,29 @@ $dash_to_panel_item_radius: 5px;
     border-radius: 0 !important;
   }
 
-  .show-apps .overview-icon  {
+  .overview-tile {
+    padding: 0 !important;
     margin: 0 !important;
-    border-radius: $dash_to_panel_item_radius !important;
+    border: none !important;
+
+    .overview-icon {
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+    }
+  }
+
+  .show-apps {
+    color: on($panel) !important;
+    border-radius: 0 !important;
+
+    &:hover {
+      background: on($panel, divider) !important;
+    }
+
+    &:active {
+      background: on($panel, track) !important;
+    }
   }
 
   .panel-button {
@@ -428,6 +448,7 @@ $dash_to_panel_menu_radius: 12px;
 #dashtopanelPreviewScrollview {
   padding: $dash_to_panel_menu_radius 0 !important;
   border-radius: $dash_to_panel_menu_radius !important;
+  background: #0c0c0c !important;
 }
 
 //
