@@ -1661,6 +1661,16 @@ window.dialog {
 }
 
 //
+// Extensions
+//
+
+popover.details-popover {
+  > contents {
+    padding: $space-size * 2;
+  }
+}
+
+//
 // Rnote
 //
 

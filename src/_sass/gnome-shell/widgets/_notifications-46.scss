@@ -10,8 +10,8 @@ $notification_banner_width: 34em;
   font-size: 1em;
   margin: $space-size;
   border-radius: $popup-radius;
-  // border-left: none;
-  // border-bottom: none;
+  border-left: none;
+  border-bottom: none;
 }
 
 .notification-buttons-bin {

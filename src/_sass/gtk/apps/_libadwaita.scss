@@ -1092,6 +1092,7 @@ floating-sheet {
   > sheet.background {
     box-shadow: $shadow-z16;
     border-radius: $window-radius;
+    outline: none;
   }
 }
 
