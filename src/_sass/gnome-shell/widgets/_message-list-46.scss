@@ -196,7 +196,7 @@
 
 /* Media Controls */
 .message-media-control {
-  margin: $margin-size $space-size / 2 !important;
+  margin: (16px - $space-size * 2) $space-size / 2 !important;
   padding: 0 $space-size * 2 !important;
   border-radius: $circular-radius;
   color: $text-secondary;

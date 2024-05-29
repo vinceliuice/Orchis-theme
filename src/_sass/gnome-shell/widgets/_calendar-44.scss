@@ -176,18 +176,18 @@
   }
 }
 
-  .calendar-day-heading {  //day of week heading
-    width: 24px !important;
-    height: 24px - $space-size !important;
-    margin-top: 2px !important;
-    padding: $space-size 0 0 !important;
-    border-radius: $circular-radius;
-    background-color: transparent !important;
-    color: $text-disabled !important;
-    @include font(caption);
-    font-weight: bold;
-    text-align: center;
-  }
+.calendar-day-heading {  //day of week heading
+  width: 24px !important;
+  height: 24px - $space-size !important;
+  margin-top: 2px !important;
+  padding: $space-size 0 0 !important;
+  border-radius: $circular-radius;
+  background-color: transparent !important;
+  color: $text-disabled !important;
+  @include font(caption);
+  font-weight: bold;
+  text-align: center;
+}
 
 .calendar-day { //border collapse hack - see calendar.js
   border-width: 0;
@@ -244,7 +244,7 @@
 
 .calendar-week-number {
   margin: 6px !important;
-  padding: 0 8px !important;
+  padding: 0 $margin-size / 2 + $space-size !important;
   border-radius: $circular-radius;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $text-disabled;
