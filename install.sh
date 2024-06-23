@@ -335,8 +335,6 @@ if [[ ${remove} == 'true' ]]; then
   else
     uninstall_theme
   fi
-elif [[ "$dockfix" == 'true' ]]; then
-  fix_dash_to_dock
 else
   if [[ "$libadwaita" == 'true' && "$UID" == "$ROOT_UID" ]]; then
     echo -e "Do not run -l with sudo, that will link libadwaita theme to root folder !"
@@ -347,6 +345,10 @@ else
 
   if [[ "$libadwaita" == 'true' && "$UID" != "$ROOT_UID" ]]; then
     link_theme
+  fi
+
+  if [[ "$dockfix" == 'true' ]]; then
+    fix_dash_to_dock
   fi
 fi
 
