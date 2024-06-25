@@ -8,7 +8,9 @@ $dash_edge_offset: 12px;
 $dash_border_radius: if($corner_style == 'circular', $circular-radius, $material-radius + $dash_padding + $dash_spacing);
 
 #dash {
-  margin-top: $dash_padding;
+  // a bit of spacing so that dash doesn't touch the screen edges
+  padding-left: $space-size;
+  padding-right: $space-size;
 
   // background behind item container
   .dash-background {
@@ -65,7 +67,7 @@ $dash_border_radius: if($corner_style == 'circular', $circular-radius, $material
     // running app dot
     .app-grid-running-dot {
       // manually position the dot within the dash item
-      margin-bottom: $dash_padding + $dash_edge_offset - 6px; // 3px = size of dot (5px) subtracted from its translationY from appDisplay.js
+      offset-y: -$dash_padding;
     }
   }
 

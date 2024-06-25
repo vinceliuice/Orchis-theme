@@ -22,7 +22,7 @@
     color: white;
     background-color: rgba(black, 0.75);
     text-align: center;
-    padding: 0.4em 0.5em;
+    padding: 0.2em 0.4em;
   }
 
   .notification-badge {
@@ -33,7 +33,7 @@
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
     border-radius: $circular-radius;
     margin: 2px 3px 5px;
-    padding: 3px;
+    padding: 0.2em 0.4em;
     font-weight: bold;
     text-align: center;
   }
@@ -273,8 +273,9 @@
     }
 
     .app-grid-running-dot {
-      margin-bottom: 6px !important;
+      margin-bottom: 3px !important;
       margin-top: 0 !important;
+      offset-y: 0 !important;
     }
 
     StWidget.focused .app-grid-running-dot {
