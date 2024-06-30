@@ -308,6 +308,8 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
 .keyboard-brightness-level {
   spacing: $space-size;
+  background-color: $surface !important;
+  color: $text-secondary !important;
 
   .button:checked { @extend %default_button; }
 }
