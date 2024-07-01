@@ -30,6 +30,7 @@ OLD_COLOR_VARIANTS=('' '-light' '-dark')
 OLD_SIZE_VARIANTS=('' '-compact')
 
 ctype=
+icon='-default'
 
 # Check command availability
 function has_command() {
@@ -43,6 +44,7 @@ install() {
   local color="$4"
   local size="$5"
   local ctype="$6"
+  local icon="$7"
 
   if [[ "$color" == '-Dark' ]]; then
     local ELSE_DARK="$color"
@@ -93,6 +95,8 @@ install() {
 
   cp -r "$SRC_DIR/gnome-shell/theme$theme$ctype/more-results${ELSE_DARK:-}.svg" "$THEME_DIR/gnome-shell/assets/more-results.svg"
   cp -r "$SRC_DIR/gnome-shell/theme$theme$ctype/toggle-on${ELSE_DARK:-}.svg"    "$THEME_DIR/gnome-shell/assets/toggle-on.svg"
+
+  cp -r "$SRC_DIR/gnome-shell/activities/activities${icon}.svg"                 "$THEME_DIR/gnome-shell/assets/activities.svg"
 
   cd "$THEME_DIR/gnome-shell"
   ln -s assets/no-events.svg no-events.svg
@@ -258,6 +262,10 @@ install_dracula() {
   sed -i "/\$colorscheme:/s/default/dracula/" ${SRC_DIR}/_sass/_tweaks-temp.scss
 }
 
+activities_style() {
+  sed -i "/\$activities:/s/normal/icon/" ${SRC_DIR}/_sass/_tweaks-temp.scss
+}
+
 install_theme_color() {
   if [[ "$theme" != '' ]]; then
     case "$theme" in
@@ -327,6 +335,10 @@ theme_tweaks() {
 
   if [[ "$dracula" == "true" ]] ; then
     install_dracula
+  fi
+
+  if [[ "$activities" = "icon" ]] ; then
+    activities_style
   fi
 }
 
@@ -415,7 +427,7 @@ install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$icon"
       done
     done
   done

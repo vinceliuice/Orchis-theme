@@ -49,6 +49,45 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
     transition-duration: $panel_transition_duration;
   }
 
+  %icon_activities {
+    background-image: url("assets/activities.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
+    color: transparent !important;
+    background-color: transparent !important;
+    font-size: 0;
+    -natural-hpadding: $space-size / 2 !important;
+    -minimum-hpadding: $space-size / 2 !important;
+
+    > * {
+      width: $panel_height - $space-size;
+      // background-color: on($panel-solid, divider) !important;
+      // border-radius: $circular-radius;
+    }
+
+    .workspace-dot {
+      background-color: transparent;
+    }
+  }
+
+  %normal_activities {
+    -natural-hpadding: $space-size * 2.5;
+
+    StBoxLayout {
+      spacing: $space-size;
+    }
+
+    .workspace-dot {
+      border-radius: $circular-radius;
+      min-width: 8px;
+      min-height: 8px;
+      background-color: on($panel-solid);
+    }
+  }
+
   // panel menus
   .panel-button {
     font-weight: bold;
@@ -161,42 +200,10 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
     // }
 
     &#panelActivities {
-      // $size_suffix: if($compact == 'true', '-small', '');
-      // background-image: url("assets/activities#{$size_suffix}.svg");
-      // background-position: center center;
-      // background-repeat: no-repeat;
-      // background-size: auto;
-      // color: transparent !important;
-      // background-color: transparent !important;
-      // font-size: 0;
-      // box-shadow: none;
-      // -natural-hpadding: $space-size / 2 !important;
-      // -minimum-hpadding: $space-size / 2 !important;
-
-      // > * {
-      //   width: $panel_height - $space-size;
-      // }
-
-      // &:hover {
-      //   background-image: url("assets/activities-active#{$size_suffix}.svg");
-      // }
-
-      // &:hover, &:active, &:overview, &:focus, &:checked {
-      //   color: transparent;
-      //   box-shadow: none;
-      // }
-
-      -natural-hpadding: $space-size * 2.5;
-
-      & StBoxLayout {
-        spacing: $space-size;
-      }
-
-      & .workspace-dot {
-        border-radius: $circular-radius;
-        min-width: 8px;
-        min-height: 8px;
-        background-color: on($panel-solid);
+      @if $activities == 'icon' {
+        @extend %icon_activities;
+      } @else {
+        @extend %normal_activities;
       }
     }
   }

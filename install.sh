@@ -15,6 +15,10 @@ OPTIONS:
   -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
 
+  -i, --icon VARIANT      Specify icon variant(s) for shell panel activities button
+                          [default|apple|simple|gnome|ubuntu|arch|manjaro|fedora|debian|void|opensuse|popos|mxlinux|zorin|endeavouros|tux|nixos|gentoo|budgie]
+                          (Default: ChromeOS style)
+
   -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
 
   --tweaks                Specify versions for tweaks [solid|compact|black|primary|macos|submenu|(nord/dracula)] (Options can mix)
@@ -285,6 +289,99 @@ while [[ "$#" -gt 0 ]]; do
             exit 1
             ;;
         esac
+      done
+      ;;
+    -i|--icon)
+      activities='icon'
+      shift
+      for icons in "$@"; do
+        case "$icons" in
+          default)
+            icon='-default'
+            shift
+            ;;
+          apple)
+            icon='-apple'
+            shift
+            ;;
+          simple)
+            icon='-simple'
+            shift
+            ;;
+          gnome)
+            icon='-gnome'
+            shift
+            ;;
+          ubuntu)
+            icon='-ubuntu'
+            shift
+            ;;
+          arch)
+            icon='-arch'
+            shift
+            ;;
+          manjaro)
+            icon='-manjaro'
+            shift
+            ;;
+          fedora)
+            icon='-fedora'
+            shift
+            ;;
+          debian)
+            icon='-debian'
+            shift
+            ;;
+          void)
+            icon='-void'
+            shift
+            ;;
+          opensuse)
+            icon='-opensuse'
+            shift
+            ;;
+          popos)
+            icon='-popos'
+            shift
+            ;;
+          mxlinux)
+            icon='-mxlinux'
+            shift
+            ;;
+          zorin)
+            icon='-zorin'
+            shift
+            ;;
+          endeavouros)
+            icon='-endeavouros'
+            shift
+            ;;
+          tux)
+            icon='-tux'
+            shift
+            ;;
+          nixos)
+            icon='-nixos'
+            shift
+            ;;
+          gentoo)
+            icon='-gentoo'
+            shift
+            ;;
+          budgie)
+            icon='-budgie'
+            shift
+            ;;
+          -*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized icon variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+        echo "Install $icons icon for gnome-shell panel..."
       done
       ;;
     -h|--help)
