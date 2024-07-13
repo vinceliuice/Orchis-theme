@@ -1060,7 +1060,7 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     background-color: transparent;
 
     > revealer > box {
-      background-color: transparent;
+      background-color: $base;
     }
   }
 

@@ -1,0 +1,255 @@
+/* Popovers/Menus */
+
+//.the popover itself
+.popup-menu-boxpointer {
+  -arrow-rise: $space-size; // distance from the panel & screen edge
+}
+
+// container of the popover menu
+.popup-menu {
+  min-width: if($compact == 'true', 10em, 12em);
+  color: $text;
+
+  .popup-menu-content {
+    padding: $space-size;
+    margin: 0 3px 14px;
+    background-color: if($opacity == 'solid', $popover, rgba($popover, 0.97));
+    border-radius: $popup-radius;
+    border: none;
+    box-shadow: $shell-shadow-z3;
+  }
+
+  $submenu_item_radius: $popup-radius - $space-size;
+
+  // menu items
+  .popup-menu-item {
+    spacing: $space-size;
+    padding: $space-size $space-size * 2;
+    color: $text !important;
+    background-color: transparent;
+    transition-duration: $shorter-duration;
+    border-radius: $submenu_item_radius;
+    background-image: none;
+    border: none;
+
+    &:checked {
+      font-weight: normal;
+      border-radius: $submenu_item_radius $submenu_item_radius 0 0;
+      border: none;
+      box-shadow: none;
+
+      @if $submenu_style == 'true' {
+        color: $text-secondary !important;
+        background-color: $fill !important;
+      } @else {
+        background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
+        color: rgba(black, 0.75) !important;
+      }
+
+      &:hover, &:focus, &.selected {
+        @if $submenu_style == 'true' {
+          color: $text !important;
+          background-color: $secondary-fill !important;
+        } @else {
+          background-color: if($variant == 'light', rgba(black, 0.2), #e5e5e5) !important;
+          color: rgba(black, 0.85) !important;
+        }
+      }
+
+      &:active {
+        @if $submenu_style == 'true' {
+          color: $text !important;
+          background-color: $divider !important;
+        } @else {
+          background-color: #dfdfdf !important;
+          color: rgba(black, 0.75) !important;
+        }
+      }
+
+      &.selected:active {
+        @if $submenu_style == 'true' {
+          color: $text !important;
+          background-color: darken(rgba($primary, 0.2), 10%) !important;
+        } @else {
+          background-color: if($variant == 'light', rgba(black, 0.15), #e0e0e0) !important;
+          color: rgba(black, 0.75) !important;
+        }
+      }
+
+      &:insensitive {
+        @if $submenu_style == 'true' {
+          color: $text-secondary-disabled !important;
+        } @else {
+          color: rgba(black, 0.35) !important;
+        }
+      }
+    }
+
+    &:hover, &:focus, &.selected {
+      background-color: $secondary-fill !important;
+      color: $text !important;
+      transition-duration: 0ms;
+    }
+
+    &:active {
+      background-color: $track !important;
+      color: $text !important;
+      transition-duration: $longer-duration;
+    }
+
+    &.selected:active { color: $text !important; }
+    &:insensitive { color: $text-disabled !important; }
+
+    // add margin to switches in menu items
+    .toggle-switch {
+      &:ltr { margin-left: $margin-size; }
+      &:rtl { margin-right: $margin-size; }
+    }
+  }
+
+  .popup-ornamented-menu-item {
+    &:ltr { padding-left: $space-size; }
+    &:rtl { padding-right: $space-size; }
+  }
+
+  // all icons and other graphical elements
+  .popup-inactive-menu-item {
+    color: $text !important;
+
+    &:insensitive { color: $text-disabled !important; }
+  }
+
+  // symbolic icons in popover
+  .popup-menu-arrow,
+  .popup-menu-icon { icon-size: $base-icon-size; }
+
+  // popover submenus
+  .popup-sub-menu {
+    margin: 0;
+    border-radius: 0 0 $submenu_item_radius $submenu_item_radius;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+
+    @if $submenu_style == 'true' {
+      color: $text !important;
+      background-color: $fill !important;
+    } @else {
+      color: rgba(black, 0.75) !important;
+      background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95)) !important;
+    }
+
+    .popup-menu-item {
+      margin: 0;
+      border-radius: $submenu_item_radius;
+      background-image: none;
+
+      @if $submenu_style == 'true' {
+        color: $text !important;
+      } @else {
+        color: rgba(black, 0.75) !important;
+      }
+
+      &:hover, &:focus, &.selected {
+        @if $submenu_style == 'true' {
+          color: $text !important;
+          background-color: $secondary-fill !important;
+        } @else {
+          color: rgba(black, 0.85) !important;
+          background-color: rgba(black, 0.15) !important;
+        }
+      }
+
+      &:active {
+        @if $submenu_style == 'true' {
+          color: $text !important;
+          background-color: $divider !important;
+        } @else {
+          color: rgba(black, 0.85) !important;
+          background-color: rgba(black, 0.2) !important;
+        }
+      }
+
+      &.selected:active {
+        @if $submenu_style == 'true' {
+          color: $text-secondary !important;
+        } @else {
+          color: rgba(black, 0.75) !important;
+        }
+      }
+
+      &:insensitive {
+        @if $submenu_style == 'true' {
+          color: $text-secondary-disabled !important;
+        } @else {
+          color: rgba(black, 0.35) !important;
+        }
+      }
+    }
+
+    @if $submenu_style == 'false' {
+      @extend %scrollbar_on_light;
+    }
+  }
+
+  // container for radio and check boxes
+  .popup-menu-ornament {
+    icon-size: $scalable-icon-size !important;
+    width: $scalable-icon-size;
+  }
+
+  // separator
+  .popup-separator-menu-item {
+    // menu separator color
+    background: none;
+    border: none;
+
+    .popup-separator-menu-item-separator {
+      height: 1px; // increase visibility with a themed menu
+      background-color: $border;
+    }
+
+    .popup-sub-menu & { //submenu separators
+      background-color: transparent;
+
+      // account for ornament
+      &:ltr { margin-right: 2.5em; margin-left: 1.5em; }
+      &:rtl { margin-left: 2.5em; margin-right: 1.5em; }
+
+      @if $submenu_style == 'false' {
+        .popup-separator-menu-item-separator {
+          background-color: rgba(black, 0.10);
+        }
+      } @else {
+        .popup-separator-menu-item-separator {
+          background-color: $border;
+        }
+      }
+    }
+  }
+
+  &.panel-menu {
+    margin-bottom: 1.75em;
+  }
+}
+
+// desktop background menu
+.background-menu {
+  -boxpointer-gap: 0px;
+  -arrow-rise: 0px; // hide the beak on the menu
+}
+
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
+
+  .popup-inactive-menu-item:first-child {
+    // "Open Windows" label
+    > StLabel {
+      @extend %caption_heading;
+
+      &:ltr { margin-right: $margin-size * 2; }
+      &:rtl { margin-left: $margin-size * 2; }
+    }
+  }
+}

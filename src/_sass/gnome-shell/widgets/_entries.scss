@@ -5,13 +5,13 @@ StEntry {
   padding: 0 8px;
   border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
   border-width: 0;
-  selection-background-color: $primary;
-  selected-color: on(dark) !important;
+  selection-background-color: rgba($primary, 0.35) !important;
+  selected-color: $primary !important;
   @include font(subheading);
   @include entry(normal);
-  &:hover { @include entry(hover);}
-  &:focus { @include entry(focus);}
-  &:insensitive { @include entry(insensitive);}
+  &:hover { @include entry(hover); }
+  &:focus { @include entry(focus); }
+  &:insensitive { @include entry(insensitive); }
   StIcon.capslock-warning {
     icon-size: $base-icon-size;
     warning-color: $warning;
