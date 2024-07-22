@@ -1054,7 +1054,7 @@ toolbar {
 // searchbar
 searchbar > revealer > box {
   padding: $space-size;
-  border-spacing: $space-size;
+  border-spacing: 0;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: $divider;
@@ -3255,6 +3255,7 @@ list {
   color: $text-secondary;
 
   > row {
+    padding: 2px;
     background-clip: padding-box;
   }
 
@@ -3273,6 +3274,13 @@ list {
 }
 
 list.frame { border-radius: $corner-radius; }
+
+listview > header {
+  @extend .heading;
+  padding: 2px;
+  padding-top: $space-size * 3;
+  padding-bottom: $space-size;
+}
 
 button listview.view {
   background-color: transparent;
@@ -3436,13 +3444,18 @@ columnview {
 }
 
 .rich-list { /* rich lists usually containing other widgets than just labels/text */
-  & > row {
+  > row {
     padding: $space-size * 1.5 $space-size * 2;
     min-height: 32px; /* should be tall even when only containing a label */
 
-    & > box {
+    > box {
       border-spacing: $space-size * 2;
     }
+  }
+
+  > header {
+    padding-left: $space-size * 2;
+    padding-right: $space-size * 2;
   }
 }
 
@@ -3469,6 +3482,136 @@ row {
       margin-top: $space-size;
       margin-bottom: $space-size;
       border-spacing: $space-size / 2;
+      padding: 0;
+
+      &,
+      > .title,
+      > .subtitle {
+        padding: 0;
+        font-weight: inherit;
+      }
+    }
+
+    > .prefixes,
+    > .suffixes {
+      border-spacing: $space-size;
+    }
+  
+    > .icon,
+    > .prefixes {
+      &:dir(ltr) { margin-right: $space-size; }
+      &:dir(rtl) { margin-left: $space-size; }
+    }
+  }
+
+  &.property > box.header > box.title > {
+    .title {
+      font-size: smaller;
+      @extend .dim-label;
+    }
+
+    .subtitle {
+      font-size: inherit;
+      opacity: 1;
+    }
+  }
+
+  &.property.monospace {
+    font-family: inherit;
+
+    & > box.header > box.title > .subtitle {
+      font-family: monospace;
+    }
+  }
+}
+
+/******************************
+ * AdwEntryRow and AdwSpinRow *
+ ******************************/
+
+row.entry {
+  &:disabled {
+    text {
+      opacity: 0.45;
+    }
+
+    .dim-label, .subtitle {
+      opacity: 1;
+    }
+  }
+
+  .edit-icon, .indicator {
+    min-width: 24px;
+    min-height: 24px;
+    padding: $space-size;
+  }
+
+  .edit-icon:disabled {
+    opacity: 0.5;
+  }
+
+  .indicator {
+    opacity: 0.65;
+  }
+
+  &.monospace {
+    font-family: inherit;
+
+    text {
+      font-family: monospace;
+    }
+  }
+}
+
+row.spin {
+  spinbutton {
+    background: none;
+    border-spacing: $space-size;
+    box-shadow: none;
+
+    &, &:focus {
+      outline: none;
+    }
+
+    > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
+    > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &, &:dir(ltr):last-child, &:dir(rtl):first-child {
+        @extend %button-basic;
+        @extend %circular-button;
+        min-width: $menuitem-size;
+        min-height: $menuitem-size;
+        margin: 10px 2px;
+        border: none;
+      }
+    }
+  }
+
+  &:disabled spinbutton {
+    > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
+    > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &, &:dir(ltr):last-child, &:dir(rtl):first-child {
+        &:disabled {
+          filter: none;
+        }
+      }
+    }
+  }
+}
+
+row.entry,
+row.spin {
+  &:not(:selected).activatable.focused:hover,
+  &:not(:selected).activatable.focused:active {
+    background-color: transparent;
+  }
+
+  @each $e_type in error, warning, success {
+    &.#{$e_type} {
+      color: $primary;
+
+      .dim-label, .subtitle {
+        opacity: 1;
+      }
     }
   }
 }
@@ -3479,7 +3622,7 @@ row {
 
 row.combo {
   image.dropdown-arrow:disabled {
-    filter: opacity(0.35);
+    filter: opacity(0.45);
   }
 
   listview.inline {
@@ -3496,6 +3639,14 @@ row.combo {
 
   popover > contents {
     min-width: 120px;
+
+    .combo-searchbar {
+      margin: $space-size;
+
+      + scrolledwindow {
+        @include undershoot(top);
+      }
+    }
   }
 }
 
@@ -3580,6 +3731,38 @@ row.expander {
   }
 }
 
+/***************
+ * AdwButtonRow *
+ ***************/
+
+row.button {
+  > box {
+    margin-left: $space-size * 2;
+    margin-right: $space-size * 2;
+    border-spacing: $space-size;
+    min-height: $large-size - 6px;
+
+    > .icon:disabled {
+      filter: Opacity(0.45);
+    }
+  }
+
+  .title {
+    @extend .heading;
+  }
+
+  &.suggested-action,
+  &.destructive-action {
+    color: $primary;
+  }
+
+  &.destructive-action {
+    --accent-bg-color: $destructive;
+    --accent-fg-color: on($destructive);
+    --accent-color: $destructive;
+  }
+}
+
 /*****************
  * Boxed Lists *
  *****************/
@@ -3617,6 +3800,69 @@ list.boxed-list {
         border-bottom-left-radius: $boxed-radius;
         border-bottom-right-radius: $boxed-radius;
         border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+list.boxed-list-separate {
+  background: none;
+  color: $text;
+
+  > row {
+    @extend %card;
+
+    &:selected {
+      background-color: $overlay-selected;
+    }
+
+    border: none;
+    margin-bottom: $space-size * 2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:not(.expander) {
+      &:not(:selected).activatable {
+        &:hover {
+          background-color: $base;
+          background-image: image($overlay-hover);
+        }
+
+        &:active {
+          background-color: $base;
+          background-image: image($overlay-active);
+        }
+
+        &.has-open-popup {
+          background-color: $base;
+          background-image: image($overlay-normal);
+        }
+      }
+    }
+
+    &.entry, &.spin {
+      &:not(:selected).activatable.focused:hover,
+      &:not(:selected).activatable.focused:active {
+        background-color: $base;
+        background-image: none;
+      }
+    }
+
+    &.expander {
+      row.header {
+        @extend %boxed_list_row;
+        border-top-left-radius: $corner-radius;
+        border-top-right-radius: $corner-radius;
+      }
+
+      &:not(:checked) row.header,
+      &.expander:checked list.nested,
+      &.expander:checked list.nested > row:last-child {
+        border-bottom-left-radius: $corner-radius;
+        border-bottom-right-radius: $corner-radius;
+        border-bottom: none;
       }
     }
   }

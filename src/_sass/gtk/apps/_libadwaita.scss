@@ -1064,6 +1064,12 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     }
   }
 
+  .sidebar-pane & searchbar {
+    > revealer > box {
+      background-color: transparent;
+    }
+  }
+
   .collapse-spacing {
     padding: 0;
   }
