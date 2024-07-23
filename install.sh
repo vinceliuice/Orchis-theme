@@ -29,7 +29,7 @@ OPTIONS:
                           5. macos              Change window buttons to MacOS style
                           6. submenu            Set normal submenus color contrast (dark submenu style on dark version)
                           7. [nord|dracula]     Nord/dracula colorscheme themes (nord and dracula can not mix use!)
-                          8. dock                Fix style for 'dash-to-dock' or 'ubuntu-dock' extension
+                          8. dock               Fix style for 'dash-to-dock' or 'ubuntu-dock' extension
 
   --round                 Change theme round corner border-radius [Input the px value you want] (Suggested: 2px < value < 16px)
                           1. 3px
@@ -408,18 +408,6 @@ if [[ "${#sizes[@]}" -eq 0 ]] ; then
   sizes=("${SIZE_VARIANTS[@]}")
 fi
 
-if [[ "${#othemes[@]}" -eq 0 ]] ; then
-  othemes=("${OLD_THEME_VARIANTS[@]}")
-fi
-
-if [[ "${#ocolors[@]}" -eq 0 ]] ; then
-  ocolors=("${OLD_COLOR_VARIANTS[@]}")
-fi
-
-if [[ "${#osizes[@]}" -eq 0 ]] ; then
-  osizes=("${OLD_SIZE_VARIANTS[@]}")
-fi
-
 if [[ "${#lcolors[@]}" -eq 0 ]] ; then
   lcolors=("${COLOR_VARIANTS[1]}")
 fi
@@ -438,6 +426,7 @@ else
     exit 0
   fi
 
+  clean_theme
   install_theme
 
   if [[ "$libadwaita" == 'true' && "$UID" != "$ROOT_UID" ]]; then

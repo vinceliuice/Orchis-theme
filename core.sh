@@ -13,6 +13,10 @@ MY_HOME=$(getent passwd "${MY_USERNAME}" | cut -d: -f6)
 # Destination directory
 if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
+elif [[ -n "$XDG_DATA_HOME" ]]; then
+  DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.local/share/themes" ]]; then
+  DEST_DIR="$HOME/.local/share/themes"
 else
   DEST_DIR="$HOME/.themes"
 fi
@@ -23,11 +27,6 @@ THEME_NAME=Orchis
 THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
-
-# Old name variants
-OLD_THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-grey')
-OLD_COLOR_VARIANTS=('' '-light' '-dark')
-OLD_SIZE_VARIANTS=('' '-compact')
 
 ctype=
 icon='-default'
@@ -173,7 +172,7 @@ uninstall() {
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
-  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR"{'','-hdpi','-xhdpi'} && echo -e "Uninstalling "$THEME_DIR" ..."
 }
 
 uninstall_link() {
@@ -449,19 +448,25 @@ install_theme() {
 
 uninstall_theme() {
   for theme in "${THEME_VARIANTS[@]}"; do
-    for color in "${colors[@]}"; do
-      for size in "${sizes[@]}"; do
-        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+    for color in "${COLOR_VARIANTS[@]}"; do
+      for size in "${SIZE_VARIANTS[@]}"; do
+        for scheme in '' '-Nord' '-Dracula'; do
+          uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
       done
     done
   done
 }
 
 clean_theme() {
-  for theme in "${othemes[@]}"; do
-    for color in "${ocolors[@]}"; do
-      for size in "${osizes[@]}"; do
-        clean "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size"
+  local dest="$HOME/.themes"
+
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for color in "${COLOR_VARIANTS[@]}"; do
+      for size in "${SIZE_VARIANTS[@]}"; do
+        for scheme in '' '-Nord' '-Dracula'; do
+          uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
       done
     done
   done
