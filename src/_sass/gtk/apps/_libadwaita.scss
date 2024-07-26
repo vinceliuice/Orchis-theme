@@ -795,34 +795,6 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     transition: background-color $duration $ease-out;
   }
 
-  toolbarview.undershoot-top scrolledwindow {
-    @include undershoot(top);
-  }
-
-  toolbarview.undershoot-bottom scrolledwindow {
-    @include undershoot(bottom);
-  }
-
-  scrolledwindow {
-    &.undershoot-top {
-      @include undershoot(top);
-    }
-
-    &.undershoot-bottom {
-      @include undershoot(bottom)
-    }
-
-    &.undershoot-start {
-      &:dir(ltr) { @include undershoot(left); }
-      &:dir(rtl) { @include undershoot(right); }
-    }
-
-    &.undershoot-end {
-      &:dir(ltr) { @include undershoot(right); }
-      &:dir(rtl) { @include undershoot(left); }
-    }
-  }
-
   flap,
   leaflet,
   navigation-view,
@@ -1033,6 +1005,37 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
   window.maximized & headerbar,
   window.tiled & headerbar {
     box-shadow: none;
+  }
+}
+
+.sidebar-pane,
+.content-pane {
+  toolbarview.undershoot-top scrolledwindow {
+    @include undershoot(top, $style: solid);
+  }
+
+  toolbarview.undershoot-bottom scrolledwindow {
+    @include undershoot(bottom, $style: solid);
+  }
+
+  scrolledwindow {
+    &.undershoot-top {
+      @include undershoot(top, $style: solid);
+    }
+
+    &.undershoot-bottom {
+      @include undershoot(bottom, $style: solid);
+    }
+
+    &.undershoot-start {
+      &:dir(ltr) { @include undershoot(left, $style: solid); }
+      &:dir(rtl) { @include undershoot(right, $style: solid); }
+    }
+
+    &.undershoot-end {
+      &:dir(ltr) { @include undershoot(right, $style: solid); }
+      &:dir(rtl) { @include undershoot(left, $style: solid); }
+    }
   }
 }
 
