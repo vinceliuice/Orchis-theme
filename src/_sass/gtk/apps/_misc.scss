@@ -600,7 +600,7 @@ stack > scrolledwindow > viewport > box {
 //
 
 window.background:not(.csd):not(.solid-csd) {
-  > button:not(:hover):not(:active):not(:checked):not(:disabled) { // Why this ?
+  > button:not(:hover):not(:active):not(:checked):not(:disabled):not(.flat) { // Why this ?
     background-color: $base-alt;
   }
 }

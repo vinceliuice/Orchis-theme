@@ -1907,10 +1907,17 @@ popover.background {
     background-color: transparent;
   }
 
-  // FIXME: Use the popover color instead of transparent as a workaround for .view
-  list,
-  .view:not(:selected),
-  toolbar { background-color: $surface; }
+  > list > row {
+    &:first-child {
+      border-top-left-radius: $menu-radius;
+      border-top-right-radius: $menu-radius;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $menu-radius;
+      border-bottom-right-radius: $menu-radius;
+    }
+  }
 
   button, entry, spinbutton {
     border-radius: $menuitem-radius;
