@@ -140,7 +140,6 @@
   }
 
   @if $t == checked-disabled {
-    box-shadow: inset 0 0 0 9999px $overlay-checked;
     background-color: $button;
     color: $text-disabled;
   }
@@ -195,6 +194,52 @@
 
   @if $t == flat-checked-disabled {
     background-color: $overlay-checked;
+    color: $text-disabled;
+  }
+
+  @if $t == solid-normal {
+    transition: $transition;
+    outline: none;
+    box-shadow: none;
+    background-image: none;
+    background-color: gtkmix(currentColor, $base, 5%);
+    color: $text;
+  }
+
+  @if $t == solid-hover {
+    background-color: gtkmix(currentColor, $base, 8%);
+  }
+
+  @if $t == solid-focus {
+    box-shadow: inset 0 0 0 2px gtkmix(currentColor, $base, 8%);
+  }
+
+  @if $t == solid-active {
+    transition: $transition,
+                background-color 0ms;
+    animation: none;
+    background-color: gtkmix(currentColor, $base, 8%);
+    background-image: none;
+  }
+
+  @if $t == solid-disabled {
+    background-color: gtkmix(currentColor, $base, 5%);
+    color: $text-disabled;
+  }
+
+  @if $t == solid-checked {
+    box-shadow: none;
+    background-color: $primary;
+    color: on($primary);
+  }
+
+  @if $t == solid-checked-hover {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  @if $t == solid-checked-disabled {
+    background-color: gtkmix(currentColor, $base, 5%);
     color: $text-disabled;
   }
 }

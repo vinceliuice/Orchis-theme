@@ -594,3 +594,13 @@ stack > scrolledwindow > viewport > box {
 #workspaces button {
   min-width: 20px;
 }
+
+//
+// KiCad
+//
+
+window.background:not(.csd):not(.solid-csd) {
+  > button:not(:hover):not(:active):not(:checked):not(:disabled) { // Why this ?
+    background-color: $base-alt;
+  }
+}
