@@ -2401,9 +2401,9 @@ scrollbar {
       min-height: 4px;
     }
 
-    &.horizontal > trough > slider { margin: 2px 0; }
+    &.horizontal > trough > slider { margin: 3px; }
 
-    &.vertical > trough > slider { margin: 0 2px; }
+    &.vertical > trough > slider { margin: 3px; }
   }
 
   &.overlay-indicator {
@@ -2458,7 +2458,18 @@ scrollbar {
     }
 
     &.dragging,
-    &.hovering { background-color: rgba($surface, 0.9); }
+    &.hovering {
+      background-color: rgba($surface, 0.9);
+
+      > range > trough {
+        padding: 0;
+        margin: 0;
+
+        > slider {
+          margin: 3px;
+        }
+      }
+    }
   }
 
   &.horizontal > range > trough > slider { min-width: $_slider_min_length; }

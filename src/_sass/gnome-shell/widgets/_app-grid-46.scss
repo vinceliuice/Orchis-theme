@@ -58,6 +58,17 @@ $app_folder_size: 720px;
   }
 }
 
+.notification-badge {
+  min-width: 16px;
+  min-height: 16px;
+  color: on($primary);
+  background-color: $primary;
+  border-radius: $circular-radius;
+  padding: 0.2em 0.4em;
+  // font-weight: bold;
+  text-align: center;
+}
+
 // app folders
 .app-folder {
   background-color: on(dark, fill);

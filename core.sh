@@ -15,6 +15,8 @@ if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
 elif [[ -n "$XDG_DATA_HOME" ]]; then
   DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.themes" ]]; then
+  DEST_DIR="$HOME/.themes"
 elif [[ -d "$HOME/.local/share/themes" ]]; then
   DEST_DIR="$HOME/.local/share/themes"
 else
@@ -459,7 +461,7 @@ uninstall_theme() {
 }
 
 clean_theme() {
-  local dest="$HOME/.themes"
+  local dest="$HOME/.local/share/themes"
 
   for theme in "${THEME_VARIANTS[@]}"; do
     for color in "${COLOR_VARIANTS[@]}"; do
