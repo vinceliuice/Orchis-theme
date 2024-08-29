@@ -105,22 +105,22 @@
 *:disabled { -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
-  background-color: $background;
-  color: $text;
+  background-color: $titlebar;
+  color: $titlebar-text;
 
   &:hover {
-    background-color: darken($background, 5%);
-    color: $text;
+    background-color: darken($titlebar, 5%);
+    color: $titlebar-text;
   }
 
   &:active {
-    background-color: darken($background, 10%);
-    color: $text;
+    background-color: darken($titlebar, 10%);
+    color: $titlebar-text;
   }
 
   &:disabled {
-    background-color: $background;
-    color: $text-disabled;
+    background-color: $titlebar-backdrop;
+    color: $titlebar-text-disabled;
   }
 
   &:selected {
