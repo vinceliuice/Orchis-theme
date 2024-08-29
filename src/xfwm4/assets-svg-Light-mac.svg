@@ -48,9 +48,9 @@
   <sodipodi:namedview
      inkscape:document-rotation="0"
      inkscape:window-maximized="1"
-     inkscape:window-y="28"
+     inkscape:window-y="33"
      inkscape:window-x="0"
-     inkscape:window-height="1016"
+     inkscape:window-height="1019"
      inkscape:window-width="1920"
      inkscape:guide-bbox="true"
      showguides="true"
@@ -68,12 +68,12 @@
      inkscape:bbox-paths="true"
      inkscape:snap-bbox="true"
      units="px"
-     showgrid="false"
+     showgrid="true"
      inkscape:current-layer="svg2"
      inkscape:document-units="px"
-     inkscape:cy="72.937505"
-     inkscape:cx="445.06253"
-     inkscape:zoom="15.999999"
+     inkscape:cy="21.250001"
+     inkscape:cx="263.75002"
+     inkscape:zoom="1.9999999"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -91,7 +91,7 @@
        spacingy="1"
        spacingx="1"
        units="px"
-       visible="false" />
+       visible="true" />
   </sodipodi:namedview>
   <g
      id="close-active"
@@ -618,11 +618,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3362"
        cx="267"
        cy="705.36212"
-       r="8" />
+       r="10" />
     <path
        d="m 267,699.36215 a 6,6 0 0 0 -6,6 6,6 0 0 0 6,6 6,6 0 0 0 6,-6 6,6 0 0 0 -6,-6 z m 0,1 a 5,5 0 0 1 5,5 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 z"
        fill="#fafafa"
@@ -642,11 +642,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3358"
        cx="267"
        cy="623.36212"
-       r="8" />
+       r="10" />
     <path
        d="m 267.00007,619.82699 -6.3633,6.3633 0.70703,0.70703 5.6562,-5.6562 5.6562,5.6562 0.70703,-0.70703 -5.6562,-5.6562 z"
        fill="#fafafa"
@@ -670,11 +670,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3360"
        cx="267"
        cy="664.36212"
-       r="8" />
+       r="10" />
     <path
        d="m 267.00007,667.89732 -6.3633,-6.3633 0.70703,-0.70703 5.6562,5.6562 5.6562,-5.6562 0.70703,0.70703 -5.6562,5.6562 z"
        fill="#fafafa"
@@ -698,11 +698,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:9.99991;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3364"
        cx="267"
        cy="747.36206"
-       r="8" />
+       r="10" />
     <path
        id="path3418"
        d="m 267,741.36209 a 6,6 0 0 0 -6,6 6,6 0 0 0 6,6 6,6 0 0 0 6,-6 6,6 0 0 0 -6,-6 z m 0,1 a 5,5 0 0 1 5,5 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 z m 0,3 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z"
@@ -720,11 +720,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.15;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3356"
        cx="267"
        cy="582.36212"
-       r="8" />
+       r="10" />
     <path
        id="path3420"
        d="m 262,581.36215 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z m 5,0 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z m 5,0 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
@@ -742,11 +742,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3390"
        cx="307"
        cy="705.36212"
-       r="8" />
+       r="10" />
     <path
        d="m 307,699.36215 a 6,6 0 0 0 -6,6 6,6 0 0 0 6,6 6,6 0 0 0 6,-6 6,6 0 0 0 -6,-6 z m 0,1 a 5,5 0 0 1 5,5 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 z"
        fill="#fafafa"
@@ -766,11 +766,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3386"
        cx="307"
        cy="623.36212"
-       r="8" />
+       r="10" />
     <path
        d="m 307.00007,619.82699 -6.3633,6.3633 0.70703,0.70703 5.6562,-5.6562 5.6562,5.6562 0.70703,-0.70703 -5.6562,-5.6562 z"
        fill="#fafafa"
@@ -794,11 +794,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3388"
        cx="307"
        cy="664.36212"
-       r="8" />
+       r="10" />
     <path
        d="m 307.00007,667.89732 -6.3633,-6.3633 0.70703,-0.70703 5.6562,5.6562 5.6562,-5.6562 0.70703,0.70703 -5.6562,5.6562 z"
        fill="#fafafa"
@@ -822,11 +822,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:9.99991;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3392"
        cx="307"
        cy="747.36206"
-       r="8" />
+       r="10" />
     <path
        id="path3428"
        d="m 307,741.36209 a 6,6 0 0 0 -6,6 6,6 0 0 0 6,6 6,6 0 0 0 6,-6 6,6 0 0 0 -6,-6 z m 0,1 a 5,5 0 0 1 5,5 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 z m 0,3 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z"
@@ -844,11 +844,11 @@
        width="100%"
        height="100%" />
     <circle
-       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:9.99997;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
        id="circle3384"
        cx="307"
        cy="582.36212"
-       r="8" />
+       r="10" />
     <path
        id="path3430"
        d="m 302,581.36215 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z m 5,0 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z m 5,0 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
