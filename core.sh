@@ -548,17 +548,17 @@ uninstall_theme() {
 }
 
 clean_theme() {
+  if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
   local dest="$HOME/.local/share/themes"
 
-  for theme in "${THEME_VARIANTS[@]}"; do
-    for color in "${COLOR_VARIANTS[@]}"; do
-      for size in "${SIZE_VARIANTS[@]}"; do
-        for scheme in '' '-Nord' '-Dracula'; do
-          uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
-        done
+  for theme in "${themes[@]}"; do
+    for color in "${colors[@]}"; do
+      for size in "${sizes[@]}"; do
+        uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
       done
     done
   done
+  fi
 }
 
 link_theme() {
