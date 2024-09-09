@@ -823,26 +823,30 @@ event {
     margin: 4px;
   }
 
+  weekgrid > & {
+    margin: 5px 4px 0 3px;
+  }
+
   &.timed,
   &:not(.slanted):not(.slanted-start):not(.slanted-end) {
-    border-radius: $corner-radius;
+    border-radius: $menuitem-radius;
   }
 
   &.timed widget.edge {
-    border-radius: $corner-radius / 2;
+    border-radius: $menuitem-radius;
     min-width: 5px;
   }
 
   &.slanted-start,
   &.slanted-end:dir(rtl) {
     padding-left: $space-size * 2 + 4px;
-    border-radius: 0 $corner-radius / 2 $corner-radius / 2 0;
+    border-radius: 0 $menuitem-radius $menuitem-radius 0;
   }
 
   &.slanted-end,
   &.slanted-start:dir(rtl) {
     padding-right: $space-size * 2 + 4px;
-    border-radius: $corner-radius / 2 0 0 $corner-radius / 2;
+    border-radius: $menuitem-radius 0 0 $menuitem-radius;
   }
 
   &:not(.timed).color-dark {
@@ -850,12 +854,14 @@ event {
     outline-color: rgba(0, 0, 0, 0.3);
   }
 
-  &.timed,
   &:not(.timed).color-light {
     color: gtkalpha(black, 0.75);
     outline-color: rgba(255, 255, 255, 0.5);
   }
 
+  &.timed {
+    color: $text-secondary;
+  }
 }
 
 // Event Popover
@@ -971,9 +977,9 @@ datechooser {
     &.other-month {
       &:not(:hover),
       &:backdrop {
-        color: gtkalpha(currentColor, 0.1);
+        color: $text-secondary-disabled;
 
-        dot { background-color: gtkalpha(currentColor, 0.1); }
+        dot { background-color: $text-secondary-disabled; }
       }
     }
   }
