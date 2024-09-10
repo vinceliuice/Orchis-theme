@@ -106,21 +106,11 @@ if you want install other theme version for libadwaita you can run like:
 
 and so on ... 
 
-### Flatpak Installation
+### Fix for Flatpak
 
-Automatically install your host GTK+ 3.0 theme as a Flatpak. Use this:
-
-- [stylepak](https://github.com/refi64/stylepak)
-
-Also if you want to use this theme on a GTK+ 4.0 flatpak app, you can give the permission to access this file
-
-local:
-```
-flatpak override --user --filesystem=xdg-config/gtk-4.0
+```sh
+sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
-global:
-```
-flatpak override --filesystem=xdg-config/gtk-4.0
-```
+If you use flatpak apps, you can run this to fix theme issue
 

@@ -2388,9 +2388,9 @@ scrollbar {
       background-color: $text-secondary-disabled;
 
       &:hover { background-color: $text-disabled; }
-  
+
       &:active { background-color: $text-secondary; }
-  
+
       &:disabled { background-color: $text-secondary-disabled; }
     }
   }
@@ -3230,8 +3230,10 @@ scrolledwindow {
   }
 }
 
-* scrolledwindow > undershoot {
-  box-shadow: none;
+scrolledwindow > undershoot {
+  &.top, &.bottom, &.left, &.right {
+    box-shadow: none;
+  }
 }
 
 // vbox and hbox separators
@@ -3435,7 +3437,7 @@ columnview {
   }
 
   ~ undershoot.top {
-    box-shadow: inset 0 1px $divider;
+    box-shadow: none;
   }
 
   row:not(:selected) cell editablelabel {

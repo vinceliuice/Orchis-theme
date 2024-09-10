@@ -1010,11 +1010,11 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 
 .sidebar-pane,
 .content-pane {
-  toolbarview.undershoot-top scrolledwindow {
+  toolbarview.undershoot-top:not(.view) scrolledwindow {
     @include undershoot(top, $style: solid);
   }
 
-  toolbarview.undershoot-bottom scrolledwindow {
+  toolbarview.undershoot-bottom:not(.view) scrolledwindow {
     @include undershoot(bottom, $style: solid);
   }
 
