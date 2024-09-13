@@ -3756,7 +3756,7 @@ row.button {
     min-height: $large-size - 6px;
 
     > .icon:disabled {
-      filter: Opacity(0.45);
+      filter: opacity(0.45);
     }
   }
 
@@ -3764,15 +3764,12 @@ row.button {
     @extend .heading;
   }
 
-  &.suggested-action,
-  &.destructive-action {
+  &.suggested-action {
     color: $primary;
   }
 
   &.destructive-action {
-    --accent-bg-color: $destructive;
-    --accent-fg-color: on($destructive);
-    --accent-color: $destructive;
+    color: $destructive;
   }
 }
 
