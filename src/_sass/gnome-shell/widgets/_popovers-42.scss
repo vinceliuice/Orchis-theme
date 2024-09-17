@@ -9,7 +9,7 @@
   -arrow-base: $space-size * 2;
   -arrow-rise: $space-size / 2;
   -arrow-box-shadow: none; //dreaming. bug #689995
-  background: transparent; // needs to reset?
+  background: none; // needs to reset?
 }
 
 // container of the popover menu

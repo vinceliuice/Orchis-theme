@@ -3,6 +3,7 @@
 //.the popover itself
 .popup-menu-boxpointer {
   -arrow-rise: $space-size; // distance from the panel & screen edge
+  background: none; // needs to reset?
 }
 
 // container of the popover menu
