@@ -415,6 +415,12 @@
     }
   }
 
+  .nautilus-list-view {
+    #NautilusViewCell {
+      padding: 0;
+    }
+  }
+
   infobar {
     margin: $space-size / 2;
 

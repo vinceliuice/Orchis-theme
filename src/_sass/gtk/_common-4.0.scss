@@ -3394,15 +3394,20 @@ treeexpander {
 
 columnview {
   // move padding to child cells
-  > listview > row {
-    padding: 0;
+  > listview {
+    border-spacing: $space-size / 2;
+    padding: $space-size / 2 0;
 
-    // align horizontal sizing with header buttons
-    > cell {
-      padding: 8px 6px;
+    > row {
+      padding: 0;
 
-      &:not(:first-child) {
-        border-left: 1px solid transparent;
+      // align horizontal sizing with header buttons
+      > cell {
+        padding: $space-size / 2;
+
+        &:not(:first-child) {
+          border-left: 1px solid transparent;
+        }
       }
     }
   }
