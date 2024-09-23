@@ -903,7 +903,6 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
     popover {
       color: $text;
 
-      > arrow,
       > contents {
         color: $text;
 

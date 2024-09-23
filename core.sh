@@ -549,15 +549,15 @@ uninstall_theme() {
 
 clean_theme() {
   if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
-  local dest="$HOME/.local/share/themes"
+    local dest="$HOME/.local/share/themes"
 
-  for theme in "${themes[@]}"; do
-    for color in "${colors[@]}"; do
-      for size in "${sizes[@]}"; do
-        uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+    for theme in "${themes[@]}"; do
+      for color in "${colors[@]}"; do
+        for size in "${sizes[@]}"; do
+          uninstall "${dest}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
       done
     done
-  done
   fi
 }
 

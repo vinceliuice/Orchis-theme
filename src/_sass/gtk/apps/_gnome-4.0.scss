@@ -127,6 +127,8 @@
               }
             }
           }
+
+          entry { @extend %titlebar-entry-reset; }
         }
       }
     }
