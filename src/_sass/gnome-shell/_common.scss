@@ -18,7 +18,7 @@ $bubble_button_radius: if($corner_style == 'circular', $circular-radius, $materi
 
 %bubble_button {
   border: none;
-  margin-bottom: $space-size;
+  margin: 0;
   @include button(normal);
   @include font(button);
 
@@ -28,23 +28,31 @@ $bubble_button_radius: if($corner_style == 'circular', $circular-radius, $materi
   &:focus { @include button(focus); }
 
   &:first-child {
-    margin-left: $space-size !important;
-    margin-right: 0 !important;
     border-radius: $bubble_button_radius 0 0 $bubble_button_radius;
   }
 
   &:last-child {
-    margin-left: 0 !important;
-    margin-right: $space-size !important;
     border-right-width: 0;
     border-radius: 0 $bubble_button_radius $bubble_button_radius 0;
   }
 
   &:first-child:last-child {
-    margin: 0 $space-size $space-size $space-size !important;
     border-right-width: 0;
     border-radius: $bubble_button_radius;
   }
+}
+
+%dialog_button {
+  border: none;
+  margin: 0;
+  border-radius: $bubble_button_radius;
+  @include button(normal);
+  @include font(button);
+
+  &:hover { @include button(hover); }
+  &:active { @include button(active); color: $text !important; }
+  &:insensitive { @include button(insensitive); }
+  &:focus { @include button(focus); }
 }
 
 %osd_button {

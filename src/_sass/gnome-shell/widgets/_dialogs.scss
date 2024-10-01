@@ -10,9 +10,10 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
   background-color: $base;
   border: 0 none $mdborder_color;
   box-shadow: 0 3px 8px rgba(black, 0.2);
+  padding: 18px;
 
   .modal-dialog-content-box {
-    margin: 32px 40px;
+    margin: $margin-size * 4 40px $margin-size * 8;
     spacing: 32px;
     max-width: 28em;
     background-color: $base;
@@ -21,7 +22,8 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
   .modal-dialog-linked-button {
     min-height: 40px;
     padding: 0 16px;
-    @extend %bubble_button;
+    spacing: 0;
+    @extend %dialog_button;
   }
 }
 
@@ -143,7 +145,7 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
 
   .modal-dialog-content-box {
     margin-bottom: 24px;
-     background-color: $base;
+    background-color: $base;
   }
 }
 

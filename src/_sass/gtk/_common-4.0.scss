@@ -4400,6 +4400,18 @@ placesview {
   }
 }
 
+// Fr sidebar
+
+.fr-sidebar {
+  > row:not(.fr-sidebar-row) {
+    background-color: transparent;
+  }
+
+  > row.fr-sidebar-row {
+    padding: $space-size $space-size * 1.5;
+  }
+}
+
 
 /*********
  * Paned *

@@ -5,8 +5,14 @@
   height: 26px;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
 
-  &:checked { background-image: url("assets/toggle-on.svg"); }
+  &:checked {
+    background-image: url("assets/toggle-on.svg");
+    background-color: transparent;
+  }
 
   @if $submenu_style == 'false' and $variant == 'dark' {
     .popup-sub-menu &,
@@ -15,5 +21,14 @@
 
       &:checked { background-image: url("assets/toggle-on.svg") !important; }
     }
+  }
+
+  .handle {
+    margin: 0;
+    width: 0;
+    height: 0;
+    background: one;
+    box-shadow: none;
+    transition-duration: none;
   }
 }
