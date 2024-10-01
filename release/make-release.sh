@@ -34,7 +34,7 @@ Clear_theme() {
 for theme in "${_THEME_VARIANTS[@]}"; do
   for color in "${_COLOR_VARIANTS[@]}"; do
     for compact in "${_COMPA_VARIANTS[@]}"; do
-      [[ -d "${THEME_NAME}${theme}${color}${compact}" ]] && rm -rf "${THEME_NAME}${theme}${color}${compact}"
+      [[ -d "${THEME_NAME}${theme}${color}${compact}" ]] && rm -rf "${THEME_NAME}${theme}${color}${compact}"{'','-hdpi','-xhdpi'}
     done
   done
 done
