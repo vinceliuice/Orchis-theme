@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="150"
+   height="150"
+   version="1.1"
+   viewBox="0 0 39.687 39.688"
+   id="svg120"
+   sodipodi:docname="thumbnail-mac.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:export-batch-path="/home/vince/Documents/GitHub/Orchis-theme/src/metacity-1"
+   inkscape:export-batch-name="thumbnail-mac"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata124">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1020"
+     id="namedview122"
+     showgrid="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:zoom="4.8271824"
+     inkscape:cx="43.814379"
+     inkscape:cy="69.087922"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg120"
+     inkscape:pagecheckerboard="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1085"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
+  </sodipodi:namedview>
+  <defs
+     id="defs21">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1702"
+       x="-0.075130435"
+       y="-0.19200001"
+       width="1.1502609"
+       height="1.384">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.95251201"
+         id="feGaussianBlur1704" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2484">
+      <rect
+         style="fill:#e6e6e6;stroke-width:0.435626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+         id="rect2486"
+         width="26.458666"
+         height="8.466773"
+         x="6.0849934"
+         y="6.6146665" />
+    </clipPath>
+  </defs>
+  <g
+     id="thumbnail-mac">
+    <rect
+       style="fill:#e6e6e6;stroke-width:0.435626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       id="rect1083"
+       width="26.458666"
+       height="8.466773"
+       x="6.0849934"
+       y="6.6146665" />
+    <g
+       id="g1726"
+       clip-path="url(#clipPath2484)">
+      <rect
+         style="fill:#000000;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1702);opacity:0.35"
+         id="rect1682"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="8.2021866"
+         rx="3.17504"
+         ry="3.17504" />
+      <rect
+         style="fill:#f2f2f2;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+         id="rect1115"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="7.6730132"
+         rx="3.17504"
+         ry="3.17504" />
+      <path
+         id="rect2306"
+         style="fill:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+         d="M 16 29 C 9.352 29 4 34.352 4 41 L 4 42 C 4 35.352 9.352 30 16 30 L 107 30 C 113.648 30 119 35.352 119 42 L 119 41 C 119 34.352 113.648 29 107 29 L 16 29 z "
+         transform="matrix(0.26458667,0,0,0.26458667,-5e-4,0)" />
+    </g>
+    <circle
+       style="fill:#fd5f51;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path2409"
+       cx="26.561939"
+       cy="11.37729"
+       r="2.1166933" />
+    <circle
+       style="fill:#38c76a;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle2551"
+       cx="19.311424"
+       cy="11.37729"
+       r="2.1166933" />
+    <circle
+       style="fill:#fdbe04;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle2559"
+       cx="12.060911"
+       cy="11.37729"
+       r="2.1166933" />
+  </g>
+  <g
+     id="thumbnail-Dark-mac"
+     transform="translate(0,14.28768)">
+    <rect
+       style="fill:#606060;stroke-width:0.435626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;fill-opacity:1"
+       id="rect2499"
+       width="26.458666"
+       height="8.466773"
+       x="6.0849934"
+       y="6.6146665" />
+    <g
+       id="g2509"
+       clip-path="url(#clipPath2484)">
+      <rect
+         style="opacity:1;fill:#000000;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1702)"
+         id="rect2501"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="8.2021866"
+         rx="3.17504"
+         ry="3.17504" />
+      <rect
+         style="fill:#2c2c2c;fill-opacity:1;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round"
+         id="rect2505"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="7.6730132"
+         rx="3.17504"
+         ry="3.17504" />
+      <path
+         id="path2507"
+         style="fill:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:0.1"
+         d="M 16,29 C 9.352,29 4,34.352 4,41 v 1 C 4,35.352 9.352,30 16,30 h 91 c 6.648,0 12,5.352 12,12 v -1 c 0,-6.648 -5.352,-12 -12,-12 z"
+         transform="matrix(0.26458667,0,0,0.26458667,-5e-4,0)" />
+    </g>
+    <circle
+       style="fill:#fd5f51;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle2511"
+       cx="26.561939"
+       cy="11.37729"
+       r="2.1166933" />
+    <circle
+       style="fill:#38c76a;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle2513"
+       cx="19.311424"
+       cy="11.37729"
+       r="2.1166933" />
+    <circle
+       style="fill:#fdbe04;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle2515"
+       cx="12.060911"
+       cy="11.37729"
+       r="2.1166933" />
+  </g>
+</svg>

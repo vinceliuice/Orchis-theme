@@ -511,7 +511,14 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 window.org-gnome-gedit,
 window.background.csd {
   > paned.titlebar {
-    > separator { background-color: transparent; }
+    box-shadow: inset 0 -1px $divider, inset 0 1px highlight($titlebar);
+    background-color: $titlebar;
+
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+    }
+
+    > separator, > headerbar { background-color: transparent; }
   }
 }
 

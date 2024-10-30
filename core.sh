@@ -176,11 +176,20 @@ install() {
   cp -r "$SRC_DIR/cinnamon/thumbnails/thumbnail$theme${ELSE_DARK:-}$ctype.png"               "$THEME_DIR/cinnamon/thumbnail.png"
 
   mkdir -p                                                                                   "$THEME_DIR/metacity-1"
-  cp -r "$SRC_DIR/metacity-1/metacity-theme-2${color}.xml"                                   "$THEME_DIR/metacity-1/metacity-theme-2.xml"
-  cp -r "$SRC_DIR/metacity-1/metacity-theme-3.xml"                                           "$THEME_DIR/metacity-1"
-  cp -r "$SRC_DIR/metacity-1/assets"                                                         "$THEME_DIR/metacity-1"
-  cp -r "$SRC_DIR/metacity-1/thumbnail${ELSE_DARK:-}.png"                                    "$THEME_DIR/metacity-1/thumbnail.png"
-  cd "$THEME_DIR/metacity-1" && ln -s metacity-theme-2.xml metacity-theme-1.xml
+
+  if [[ "$macstyle" == "true" ]] ; then
+    cp -r "$SRC_DIR/metacity-1/metacity-theme-3-mac.xml"                                     "$THEME_DIR/metacity-1/metacity-theme-3.xml"
+    cp -r "$SRC_DIR/metacity-1/assets-mac"                                                   "$THEME_DIR/metacity-1/assets"
+    cp -r "$SRC_DIR/metacity-1/thumbnail${ELSE_DARK:-}-mac.png"                              "$THEME_DIR/metacity-1/thumbnail.png"
+  else
+    cp -r "$SRC_DIR/metacity-1/metacity-theme-3.xml"                                         "$THEME_DIR/metacity-1"
+    cp -r "$SRC_DIR/metacity-1/assets"                                                       "$THEME_DIR/metacity-1"
+    cp -r "$SRC_DIR/metacity-1/thumbnail${ELSE_DARK:-}.png"                                  "$THEME_DIR/metacity-1/thumbnail.png"
+  fi
+
+  (
+    cd "$THEME_DIR/metacity-1" && ln -s metacity-theme-3.xml metacity-theme-2.xml && ln -s metacity-theme-3.xml metacity-theme-1.xml
+  )
 
   mkdir -p                                                                                   "$THEME_DIR/plank"
   cp -r "$SRC_DIR/plank/"*                                                                   "$THEME_DIR/plank"
