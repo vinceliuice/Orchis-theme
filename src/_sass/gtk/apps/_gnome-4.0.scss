@@ -452,6 +452,16 @@
       @extend %small-button;
     }
   }
+
+  #NautilusPathBar {
+    background-color: $titlebar-fill;
+  
+    #NautilusPathButton {
+      &.current-dir {
+        color: $titlebar-text;
+      }
+    }
+  }
 }
 
 #NautilusViewCell {
@@ -468,7 +478,7 @@
   > menubutton > button.image-button {
     min-width: $menuitem-size;
     min-height: $menuitem-size;
-    margin: ($medium-size - $menuitem-size) / 2 0;
+    // margin: ($medium-size - $menuitem-size) / 2 0;
     padding: 0;
   }
 
@@ -476,16 +486,15 @@
 }
 
 #NautilusPathBar {
-  background-color: $titlebar-fill;
+  background-color: $fill;
   border-radius: $circular-radius;
-  margin: $space-size 0;
 
   #NautilusPathButton {
     margin: 0 $space-size / 2;
     border-radius: $circular-radius;
 
     &.current-dir {
-      color: $titlebar-text;
+      color: $text;
 
       &:hover, &:active {
         background: none;
@@ -509,6 +518,12 @@
    padding: 0;
    min-height: $small-size - 2px;
    min-width: $small-size - 2px;
+  }
+}
+
+#NautilusFileChooser {
+  .content-pane {
+    background-color: $base;
   }
 }
 

@@ -480,8 +480,8 @@ editablelabel > stack > text {
 
 button {
   min-height: 24px;
-  min-width: 16px;
-  padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
+  min-width: 24px;
+  padding: ($medium-size - 24px) / 2;
   border-radius: $corner-radius;
   font-weight: 500;
   @extend %button-basic;
@@ -507,12 +507,12 @@ button {
   }
 
   &.text-button {
-    min-width: 64px - 16px * 2;
+    min-width: 32px;
     padding-left: 16px;
     padding-right: 16px;
 
     &.flat {
-      min-width: 64px - 8px * 2;
+      min-width: 48px;
       padding-left: 8px;
       padding-right: 8px;
     }
@@ -875,8 +875,10 @@ spinbutton {
  * ComboBoxes *
  **************/
 
-dropdown > button > box {
-  border-spacing: $space-size;
+dropdown > button {
+  > box {
+    border-spacing: $space-size;
+  }
 }
 
 dropdown,
@@ -1003,9 +1005,11 @@ button.combo:only-child {
 toolbar {
   padding: $space-size;
   background-color: $background;
-  border-spacing: $space-size;
+  border-spacing: 0;
 
   > button { @extend %button-flat; }
+
+  button.pill { padding: ($medium-size - 24px) / 2 32px; }
 
   // on OSD
   .osd & { background-color: transparent; }
@@ -1350,12 +1354,10 @@ headerbar {
 
     button, entry, spinbutton {
       border-radius: $menuitem-radius;
-      margin: 0;
     }
 
     .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action) {
       border-radius: 0;
-      margin: 0;
 
       &:first-child { border-radius: $menuitem-radius 0 0 $menuitem-radius; }
       &:last-child { border-radius: 0 $menuitem-radius $menuitem-radius 0; }
@@ -1364,7 +1366,6 @@ headerbar {
   }
 
   stackswitcher { // reset
-    margin: $space-size 0;
     border-radius: $circular-radius;
 
     &.linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action).text-button {
@@ -1400,7 +1401,7 @@ headerbar {
   }
 
   > windowhandle > box {
-    padding: 0 $space-size;
+    padding: $space-size;
 
     &,
     > box.start,
@@ -1421,30 +1422,9 @@ headerbar {
     }
   }
 
-  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
-  entry,
-  spinbutton,
-  button,
-  stackswitcher,
-  menubutton,
-  splitbutton {
-    margin-top: $space-size;
-    margin-bottom: $space-size;
-  }
-
-  menubutton > button,
-  spinbutton > button,
-  splitbutton > button,
-  splitbutton > menubutton,
-  .linked > menubutton,
-  entry > menubutton {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
   switch {
-    margin-top: ($large-size - 24px) / 2;
-    margin-bottom: ($large-size - 24px) / 2;
+    margin-top: ($large-size - 30px) / 2;
+    margin-bottom: ($large-size - 30px) / 2;
   }
 
   &.selection-mode {
@@ -3371,7 +3351,8 @@ row {
     }
   }
 
-  button:checked & {
+  button:checked &.activatable,
+  button:checked:hover &.activatable {
     color: on($primary);
   }
 
@@ -4314,13 +4295,6 @@ separator.sidebar {
 /****************
  * File chooser *
  ****************/
-// dim the sidebar icons, see bug #786613 for details on this oddity
-row image.sidebar-icon {
-  transition: color $duration $ease-out;
-  color: $text-secondary;
-
-  &:disabled { color: $text-secondary-disabled; }
-}
 
 placessidebar {
   > viewport.frame { border-style: none; }
@@ -4343,8 +4317,6 @@ placessidebar {
         background-color: $overlay-checked;
         color: $primary;
         font-weight: 500;
-
-        image.sidebar-icon { color: $primary; }
       }
 
       &:disabled { color: $text-disabled; }
@@ -4370,14 +4342,10 @@ placessidebar {
 
       &.sidebar-new-bookmark-row {
         color: $primary;
-
-        image.sidebar-icon { color: $primary; }
       }
 
       &:drop(active) {
-        transition: $transition,
-                    box-shadow 0ms;
-        box-shadow: inset 0 0 0 9999px $overlay-hover;
+        background-color: $overlay-hover;
       }
     }
   }

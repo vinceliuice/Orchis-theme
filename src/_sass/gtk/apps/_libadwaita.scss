@@ -515,8 +515,6 @@ viewswitcher {
     border-spacing: 0;
     border-radius: $circular-radius;
     background-color: $titlebar-fill;
-    margin-top: $space-size;
-    margin-bottom: $space-size;
 
     button.toggle:checked, button.toggle.flat:checked {
       background-color: $primary;
@@ -1038,53 +1036,181 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
   }
 }
 
-// Gnome >= 45.0
-.top-bar {
-  box-shadow: none;
-  background-color: $titlebar;
 
-  &:backdrop {
-    background-color: $titlebar-backdrop;
-  }
+//
+// AdwToolbarView
+//
 
-  .info &,
-  .about & {
-    &, &:backdrop {
+toolbarview {
+  > .top-bar,
+  > .bottom-bar {
+    searchbar,
+    actionbar {
+      > revealer > box {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    .toolbar {
       background-color: transparent;
+      padding: 0 0 0 6px;
+      border-spacing: 0;
+    }
+
+    .collapse-spacing {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      headerbar {
+        min-height: $large-size;
+
+        > windowhandle > box {
+          padding-top: $space-size;
+          padding-bottom: $space-size;
+        }
+
+        &.default-decoration {
+          min-height: $small-size;
+
+          > windowhandle > box {
+            padding-top: $space-size;
+            padding-bottom: $space-size;
+          }
+        }
+      }
+
+      searchbar,
+      actionbar {
+        > revealer > box {
+          padding-top: $space-size;
+          padding-bottom: $space-size;
+        }
+      }
+
+      .toolbar  {
+        padding-top: $space-size;
+        padding-bottom: $space-size;
+      }
+
+      tabbar {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &.raised {
+      background-color: transparent;
+      color: $titlebar-text;
+
+      &:backdrop {
+        background-color: transparent;
+      }
+    }
+
+    &:backdrop > windowhandle {
+      filter: none;
     }
   }
 
-  tabview &, tabview &:backdrop {
-    background-color: $base;
-  }
+  .top-bar {
+    box-shadow: none;
+    background-color: $titlebar;
+  
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+    }
+  
+    .info &,
+    .about & {
+      &, &:backdrop {
+        background-color: transparent;
+      }
+    }
 
-  searchbar {
-    background-color: transparent;
-
-    > revealer > box {
+    tabview &, tabview &:backdrop {
       background-color: $base;
     }
-  }
 
-  .sidebar-pane & searchbar {
-    > revealer > box {
+    searchbar {
       background-color: transparent;
+
+      > revealer > box {
+        background-color: $base;
+      }
+    }
+
+    .sidebar-pane & searchbar {
+      > revealer > box {
+        background-color: transparent;
+      }
+    }
+
+    .collapse-spacing {
+      padding: 0;
+    }
+
+    windowhandle {
+      filter: none;
     }
   }
 
-  .collapse-spacing {
+  > .bottom-bar {
     padding: 0;
+    border-spacing: 0;
+    box-shadow: inset 0 1px $border;
+    background-color: $base-alt;
+    color: $text;
+
+    &:backdrop {
+      background-color: $background;
+      color: $text-disabled;
+    }
+
+    actionbar > revealer > box {
+      background-color: transparent;
+      color: inherit;
+      box-shadow: none;
+      padding-top: $space-size;
+
+      &:backdrop {
+        background-color: transparent;
+        transition: none;
+
+        > * {
+          filter: none;
+          transition: none;
+        }
+      }
+    }
   }
 
-  windowhandle {
-    filter: none;
+  > .top-bar.raised {
+    box-shadow: none;
+
+    &.border {
+      box-shadow: none;
+    }
+  }
+
+  > .bottom-bar.raised {
+    box-shadow: none;
+
+    &.border {
+      box-shadow: none;
+    }
   }
 }
 
 .sidebar-pane,
 .content-pane {
-  .top-bar, .top-bar:backdrop {
+  .top-bar,
+  .bottom-bar,
+  .top-bar:backdrop,
+  .bottom-bar:backdrop {
     background-color: transparent;
+    box-shadow: none;
   }
 }
 
