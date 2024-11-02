@@ -1,0 +1,227 @@
+/* Modal Dialogs */
+
+$mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
+
+.headline { @include font(title); }
+
+.modal-dialog {
+  border-radius: if($corner_style == 'circular', 20px + $space-size, $material-radius + $space-size);
+  color: $text;
+  background-color: $base;
+  border: 0 none $mdborder_color;
+  box-shadow: 0 3px 8px rgba(black, 0.2);
+  padding: $space-size * 2;
+
+  .modal-dialog-content-box {
+    margin: $margin-size * 4 40px $margin-size * 8;
+    spacing: 32px;
+    max-width: 28em;
+    background-color: $base;
+  }
+
+  .modal-dialog-button-box {
+    padding-top: $space-size;
+  }
+
+  .modal-dialog-button {
+    min-height: 40px;
+    padding: 0 16px;
+    spacing: 0;
+    @extend %dialog_button;
+  }
+}
+
+/* End Session Dialog */
+.end-session-dialog {
+  width: 30em;
+  // border: 2px solid $mdborder_color;
+
+  .modal-dialog-button:last-child {
+    color: on($destructive) !important;
+    background-color: $destructive;
+
+    &:hover {
+      color: on($destructive) !important;
+      background-color: lighten($destructive, 9%);
+    }
+
+    &:active {
+      color: on($destructive) !important;
+      background-color: darken($destructive, 5%);
+    }
+  }
+
+  .end-session-dialog-battery-warning,
+  .dialog-list-title {
+    color: $warning;
+  }
+}
+
+/* Message Dialog */
+.message-dialog-content {
+  spacing: 18px;
+
+  .message-dialog-title {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 800;
+
+    &.lightweight {
+      font-size: 13pt;
+      font-weight: 800;
+    }
+  }
+  .message-dialog-description { text-align: center; }
+}
+
+/* Dialog List */
+.dialog-list {
+  spacing: 18px;
+
+  .dialog-list-title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .dialog-list-scrollview { max-height: 200px; }
+  .dialog-list-box {
+    spacing: 1em;
+
+    .dialog-list-item {
+      spacing: 1em;
+
+      .dialog-list-item-title { font-weight: bold; }
+      .dialog-list-item-description {
+        color: $text-secondary;
+        @include font(title);
+      }
+    }
+  }
+}
+
+/* Run Dialog */
+.run-dialog {
+  .modal-dialog-content-box {
+    margin-top: 24px;
+    margin-bottom: 14px;
+  }
+  .run-dialog-entry { width: 20em; }
+  .run-dialog-description {
+    @include font(subheading);
+    text-align: center;
+    color: $text-disabled;
+  }
+}
+
+/* Password or Authentication Dialog */
+
+.prompt-dialog {
+  width: 28em;
+
+  .modal-dialog-button:first-child {
+    color: $destructive;
+
+    &:active {
+      color: white !important;
+      background-color: $destructive;
+    }
+  }
+
+  .modal-dialog-button:last-child {
+    color: on($suggested) !important;
+    background-color: $suggested;
+
+    &:hover {
+      color: on($suggested) !important;
+      background-color: lighten($suggested, 9%);
+    }
+
+    &:active {
+      color: on($suggested) !important;
+      background-color: darken($suggested, 5%);
+    }
+
+    &:insensitive {
+      color: rgba($suggested, 0.5) !important;
+      background-color: rgba($suggested, 0.15);
+    }
+  }
+
+  .modal-dialog-content-box {
+    margin-bottom: 24px;
+    background-color: $base;
+  }
+}
+
+.prompt-dialog-password-grid {
+  spacing-rows: 8px;
+  spacing-columns: 4px;
+
+  .prompt-dialog-password-entry {
+    width: auto;
+
+    // 4px (spacing) + 16px (spinner-width)
+    &:ltr { margin-left: 20px; }
+    &:rtl { margin-right: 20px; }
+  }
+}
+
+.prompt-dialog-password-layout {
+  spacing: 8px;
+}
+
+.prompt-dialog-password-entry {
+  width: 20em;
+}
+
+.prompt-dialog-error-label,
+.prompt-dialog-info-label,
+.prompt-dialog-null-label {
+  text-align: center;
+  @include font(title);
+}
+
+.prompt-dialog-error-label {
+  color: $warning;
+}
+
+
+/* Polkit Dialog */
+
+.polkit-dialog-user-layout {
+  text-align: center;
+  spacing: 8px;
+  margin-bottom: 6px;
+
+  .polkit-dialog-user-root-label { color: $warning; }
+}
+
+/* Audio selection dialog */
+.audio-device-selection-dialog {
+  .modal-dialog-content-box { margin-bottom: 28px; }
+  .audio-selection-box { spacing: 20px; }
+}
+
+.audio-selection-device {
+  border: 1px solid $border;
+  border-radius: $material-radius;
+  &:active,&:hover,&:focus { background-color: $primary; }
+}
+
+.audio-selection-device-box {
+  padding: 20px;
+  spacing: 20px;
+}
+
+.audio-selection-device-icon {
+  icon-size: 64px;
+}
+
+/* Welcome dialog */
+.welcome-dialog-image {
+  background-image: url("resource:///org/gnome/shell/theme/gnome-shell-start.svg");
+  background-size: contain;
+  /* Reasonable maximum dimensions */
+  height: 300px;
+  width: 300px;
+}

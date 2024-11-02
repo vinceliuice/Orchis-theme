@@ -1,0 +1,59 @@
+/* Notifications & Message Tray */
+
+$notification_banner_height: 64px;
+$notification_banner_width: 34em;
+
+// Banner notifications
+.notification-banner {
+  min-height: $notification_banner_height;
+  width: $notification_banner_width;
+  margin: $space-size;
+  padding: $space-size;
+  border-radius: $popup-radius;
+  border-left: none;
+  border-bottom: none;
+  box-shadow: $shell-shadow-z2;
+  color: $text;
+  background-color: rgba($base, 0.96);
+
+  &:hover, &:focus, &:active { background-color: $base; }
+}
+
+.notification-buttons-bin {
+  spacing: 0;
+}
+
+.notification-button {
+  min-height: 40px;
+  padding: $space-size / 2 16px;
+  margin: 0 !important;
+  background-color: transparent;
+  color: $text-secondary;
+  font-weight: 500;
+  border: none;
+  border-radius: $popup-radius - $space-size * 2;
+
+  .popup-menu & {
+    padding: 0 16px;
+    border-radius: $menuitem-radius;
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: $text-secondary;
+    box-shadow: inset 0 0 0 2px $secondary-fill;
+  }
+
+  &:hover {
+    background-color: $secondary-fill;
+    color: $text;
+    box-shadow: none;
+  }
+
+  &:active, &:checked { background-color: $track; color: $text; }
+
+  &:insensitive {
+    background-color: transparent;
+    color: $text-secondary-disabled;
+  }
+}

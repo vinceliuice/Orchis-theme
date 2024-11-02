@@ -787,35 +787,33 @@ button.link {
  * GtkSpinButton *
  *****************/
 spinbutton {
-  &:not(.vertical),
-  &.vertical {
-    @include entry(normal);
-    &:focus-within { @include entry(checked); }
-    &:disabled { @include entry(disabled); }
-    border-radius: $corner-radius;
+  @include entry(normal);
+  &:focus-within { @include entry(checked); }
+  &:disabled { @include entry(disabled); }
+  border-radius: $corner-radius;
+  padding: 0;
+  border-spacing: 0;
+
+  > text {
+    margin: 0;
+    border-image: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  > button {
+    @extend %button-flat-simple;
+    @extend %small-button;
     padding: 0;
-    border-spacing: 0;
+    border: $space-size solid transparent;
 
-    > text {
-      margin: 0;
-      border-image: none;
-      border-radius: 0;
-      box-shadow: none;
+    // Remove unwanted focus indicator
+    &:focus:not(:hover):not(:active):not(:disabled) {
       background-color: transparent;
-    }
-
-    > button {
-      @extend %button-flat-simple;
-      @extend %small-button;
-      padding: 0;
-      border: $space-size solid transparent;
-
-      // Remove unwanted focus indicator
-      &:focus:not(:hover):not(:active):not(:disabled) {
-        box-shadow: inset 0 0 0 9999px transparent;
-        color: $text-secondary;
-        outline: none;
-      }
+      color: $text-secondary;
+      outline: none;
+      box-shadow: none;
     }
   }
 
@@ -825,7 +823,7 @@ spinbutton {
     // and nuke the style on the internal entry
 
     > text {
-      min-width: $large-size - 8px * 2;
+      min-width: $large-size - 16px;
       // reset all the other props since the spinbutton node is styled here
       padding-left: $space-size * 2;
     }
@@ -879,6 +877,8 @@ dropdown > button {
   > box {
     border-spacing: $space-size;
   }
+
+  label { margin-left: $space-size; }
 }
 
 dropdown,
@@ -3571,11 +3571,12 @@ row.entry {
 row.spin {
   spinbutton {
     background: none;
-    border-spacing: $space-size;
     box-shadow: none;
+    border-spacing: $space-size;
 
-    &, &:focus {
+    &, &:focus &:focus-within {
       outline: none;
+      background: none;
     }
 
     > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):last-child,
@@ -3585,7 +3586,8 @@ row.spin {
         @extend %circular-button;
         min-width: $menuitem-size;
         min-height: $menuitem-size;
-        margin: 10px 2px;
+        padding: 0;
+        margin: $space-size 2px;
         border: none;
       }
     }
@@ -3677,7 +3679,7 @@ $boxed-radius: $corner-radius - 1px;
   border-bottom: 1px solid $divider;
 
   .osd &:focus:focus-visible {
-    outline-color: $fill;
+    outline-color: $overlay-focus;
   }
 }
 

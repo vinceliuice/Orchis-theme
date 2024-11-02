@@ -1,0 +1,22 @@
+/* Slider */
+
+$slider_size: if($compact == 'false', 22px, 20px);
+$slider_color: if($variant == 'light', $primary, white);
+
+.slider {
+
+  // slider trough
+  -barlevel-height: 2px; // has to be an odd number
+  -barlevel-background-color: $track; //background of the trough
+  // fill style
+  -barlevel-active-background-color: $primary; //active trough fill
+  // overfill style (red in this case)
+  -barlevel-overdrive-color: $destructive;
+  -barlevel-overdrive-separator-width: 2px;
+  // slider handler
+  -slider-handle-radius: $slider_size / 2 - 4px; // half the size of the size
+
+  color: $slider_color;
+  &:hover { color: lighten($slider_color, 5%); }
+  &:active { color: darken($slider_color, 5%); }
+}

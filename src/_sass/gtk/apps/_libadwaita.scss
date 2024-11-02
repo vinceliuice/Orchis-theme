@@ -886,6 +886,26 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
       }
     }
 
+    list.content,
+    list.boxed-list {
+      background-color: $titlebar-fill;
+      color: $titlebar-text;
+      border-color: $titlebar-divider;
+
+      > row {
+        // Regular rows and expander header rows background
+        &, &.expander row.header {
+          color: $titlebar-text-secondary;
+          border-color: $titlebar-divider;
+        }
+
+        &:hover, &:active,
+        &:focus-visible:focus-within {
+          color: $titlebar-text;
+        }
+      }
+    }
+
     check, radio {
       color: $titlebar-text-secondary;
 

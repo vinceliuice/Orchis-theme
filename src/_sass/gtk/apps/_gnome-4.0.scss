@@ -593,6 +593,18 @@ window > widget {
 }
 
 //
+// Gnome Tweaks
+//
+
+.tweak-titlebar-left + separator {
+  background-color: $titlebar;
+
+  &:backdrop {
+    background-color: $titlebar-backdrop;
+  }
+}
+
+//
 // Gnome Clocks
 //
 

@@ -12,6 +12,16 @@
   &:checked {
     background-image: url("assets/toggle-on.svg");
     background-color: transparent;
+    color: transparent;
+
+    &:hover {
+      background-color: transparent;
+      color: transparent;
+    }
+
+    .handle {
+      background: none;
+    }
   }
 
   @if $submenu_style == 'false' and $variant == 'dark' {
@@ -21,6 +31,10 @@
 
       &:checked { background-image: url("assets/toggle-on.svg") !important; }
     }
+  }
+
+  StIcon {
+    icon-size: 0;
   }
 
   .handle {
