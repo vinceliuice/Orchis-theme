@@ -802,11 +802,13 @@ spinbutton {
     background-color: transparent;
   }
 
-  > button {
+  > button.image-button.up,
+  > button.image-button.down {
     @extend %button-flat-simple;
     @extend %small-button;
     padding: 0;
-    border: $space-size solid transparent;
+    margin: $space-size;
+    border: none;
 
     // Remove unwanted focus indicator
     &:focus:not(:hover):not(:active):not(:disabled) {
@@ -830,10 +832,10 @@ spinbutton {
 
     > button {
       &.up:dir(ltr),
-      &.down:dir(rtl) { margin-left: -$space-size / 2; }
+      &.down:dir(rtl) { margin-left: $space-size / 2; }
 
       &.up:dir(rtl),
-      &.down:dir(ltr) { margin-right: -$space-size / 2; }
+      &.down:dir(ltr) { margin-right: $space-size / 2; }
     }
   }
 
@@ -847,9 +849,11 @@ spinbutton {
       padding: 0;
     }
 
-    > button {
-      &.up { margin: 0 $space-size / 2; }
-      &.down { margin: 0 $space-size / 2; }
+    > button.image-button.up,
+    > button.image-button.down {
+      margin: $space-size;
+      min-width: $large-size - $space-size * 3;
+      min-height: $large-size - $space-size * 3;
     }
   }
 
