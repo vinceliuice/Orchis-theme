@@ -86,10 +86,6 @@
     }
   
     .content-pane {
-      &, &:backdrop {
-        background-color: transparent;
-      }
-
       headerbar {
         &, &:backdrop {
           box-shadow: inset 0 1px highlight($titlebar);
@@ -130,6 +126,13 @@
 
           entry { @extend %titlebar-entry-reset; }
         }
+      }
+
+      .toolbar {
+        color: $text;
+        background-color: $base;
+        border-radius: $window-radius - $space-size;
+        margin: 0 $space-size $space-size 0;
       }
     }
 
@@ -387,6 +390,7 @@
       }
     }
 
+    .nautilus-network-view,
     .nautilus-list-view {
       color: $text;
       background-color: $base;
