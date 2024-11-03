@@ -1153,20 +1153,6 @@ toolbarview {
       background-color: $base;
     }
 
-    searchbar {
-      background-color: transparent;
-
-      > revealer > box {
-        background-color: $base;
-      }
-    }
-
-    .sidebar-pane & searchbar {
-      > revealer > box {
-        background-color: transparent;
-      }
-    }
-
     .collapse-spacing {
       padding: 0;
     }
