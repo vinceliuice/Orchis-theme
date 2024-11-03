@@ -1490,6 +1490,10 @@ headerbar {
       border-radius: 0;
     }
 
+    > windowhandle > box {
+      padding: 0 $space-size;
+    }
+
     windowcontrols {
       button,
       menubutton {
@@ -4746,6 +4750,11 @@ window {
       box-shadow: none;
       transition: none;
     }
+
+    &.ssd-frame {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &.solid-csd {
@@ -4756,6 +4765,12 @@ window {
     background-color: $titlebar;
 
     &:backdrop { background-color: $titlebar-backdrop; }
+  }
+
+  // server-side decorations as used by mutter
+  &.ssd {
+    // just doing borders, wm draws actual shadows
+    box-shadow: 0 0 0 1px $border;
   }
 }
 
