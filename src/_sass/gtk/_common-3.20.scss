@@ -1582,10 +1582,9 @@ headerbar {
     &, &:disabled { background-color: transparent; }
   }
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 0; }
-
-    &:last-child { margin-right: 0; }
+  label, image {
+    margin-left: 2px;
+    margin-right: 2px;
   }
 
   &.text-button {
