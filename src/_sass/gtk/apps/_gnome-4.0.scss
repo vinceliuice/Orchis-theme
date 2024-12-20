@@ -440,23 +440,6 @@
     border-radius: $space-size;
   }
 
-  .floating-bar {
-    min-height: $menuitem-size;
-    padding: $space-size / 2;
-    margin: if($variant == 'light' and $topbar == 'dark', $space-size * 2, $space-size);
-    border: none;
-    border-radius: $circular-radius;
-    background-color: rgba($background, 0.95);
-    box-shadow: none;
-    color: $text;
-
-    button {
-      margin: (32px - $small-size) / 2;
-
-      @extend %small-button;
-    }
-  }
-
   #NautilusPathBar {
     background-color: $titlebar-fill;
   
@@ -465,6 +448,23 @@
         color: $titlebar-text;
       }
     }
+  }
+}
+
+.floating-bar {
+  min-height: $menuitem-size;
+  padding: $space-size / 2;
+  margin: if($variant == 'light' and $topbar == 'dark', $space-size * 2, $space-size);
+  border: none;
+  border-radius: $circular-radius;
+  background-color: rgba($background, 0.95);
+  box-shadow: none;
+  color: $text;
+
+  button {
+    margin: (32px - $small-size) / 2;
+
+    @extend %small-button;
   }
 }
 
@@ -482,11 +482,10 @@
   > menubutton > button.image-button {
     min-width: $menuitem-size;
     min-height: $menuitem-size;
-    // margin: ($medium-size - $menuitem-size) / 2 0;
     padding: 0;
   }
 
-  > text { margin: 0; }
+  > * { margin: ($medium-size - $menuitem-size) / 2 0; }
 }
 
 #NautilusPathBar {
