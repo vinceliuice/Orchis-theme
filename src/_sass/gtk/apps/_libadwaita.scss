@@ -1065,7 +1065,13 @@ $sidebar-backdrop: if($variant == 'light' and $topbar == 'dark', $titlebar-backd
 toolbarview {
   > .top-bar,
   > .bottom-bar {
-    searchbar,
+    searchbar {
+      > revealer > box {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+
     actionbar {
       > revealer > box {
         background-color: transparent;
