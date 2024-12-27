@@ -148,13 +148,13 @@
   .background.csd &:selected { @extend %selected_items_color; }
 }
 
-widget.view {
-  // border-radius: $corner-radius;
+// widget.view {
+//   border-radius: $corner-radius;
 
-  &:selected {
-    @extend %selected_items_primary;
-  }
-}
+//   &:selected {
+//     @extend %selected_items_primary;
+//   }
+// }
 
 textview {
   text {
