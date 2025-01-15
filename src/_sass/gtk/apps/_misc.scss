@@ -397,18 +397,53 @@ window.background.csd {
 window.background:not(.solid-csd):not(.csd) {
   // reserved area at the most-right side of GtkMenuBar
   > grid.horizontal > grid.horizontal {
-    background-color: transparent;
-    // box-shadow: inset 0 -1px $divider;
+    box-shadow: inset 0 -1px $titlebar-divider;
+    background-color: $titlebar;
 
     // > button.flat.small-button { // 'close' button
     // }
   }
-}
 
-window.background:not(.solid-csd):not(.csd) {
+  > grid.horizontal > widget > widget {
+    viewport.frame > box > box > box > grid toolbar {
+      background: none;
+      border: none;
+      padding: 3px;
+    }
+
+    > scrolledwindow > viewport.frame {
+      background: $base; // Not Use ?
+
+      > grid > box.horizontal {
+        background: $base;
+
+        > box.vertical > toolbar {
+          background: $base;
+        }
+      }
+
+      > grid > box.vertical {
+        > toolbar {
+          background: none;
+          border: none;
+          padding: 6px;
+        }
+      }
+
+      > grid > box.horizontal > #combobox.linked,
+      > grid > box.horizontal > grid.horizontal > box.horizontal { background: $base; }
+    }
+
+    toolbar.small-button {
+      border: none;
+    }
+  }
+
   // for 'Notebookbar' toolbar
   > notebook:not(.frame) {
-    border: none; // unset borders
+    border: 1px solid $border; // unset borders
+    border-left: none;
+    border-right: none;
     background-color: $base;
     box-shadow: none;
 
@@ -417,12 +452,23 @@ window.background:not(.solid-csd):not(.csd) {
       box-shadow: none;
       background-color: $base;
     }
+
+    > header {
+      box-shadow: none;
+      margin: 0;
+      border: none;
+      background-color: transparent;
+
+      > tabs > tab { margin: 3px 0 0; }
+    }
   }
 }
 
 #combobox {
-  > entry { border-radius: 2px 0 0 2px; }
-  > button { border-radius: 0 2px 2px 0; }
+  // background-color: $base;
+
+  // > entry { }
+  // > button { }
 }
 
 #gtk-combobox-popup-window {

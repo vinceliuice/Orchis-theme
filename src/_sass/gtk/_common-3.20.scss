@@ -496,7 +496,7 @@ button {
   min-width: 16px;
   padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
   border-radius: $corner-radius;
-  font-weight: 500;
+  // font-weight: 500;
   @extend %button-basic;
 
   &:drop(active) { @include button(hover); }
@@ -1963,7 +1963,7 @@ popover.background {
   outline: none;
   background-clip: padding-box;
   color: $text-secondary;
-  font-weight: 500;
+  // font-weight: 500;
 
   &:hover {
     background-color: $fill;
