@@ -2107,6 +2107,7 @@ $submenu_item_radius: $popup-radius - $space-size;
     text-shadow: none;
     transition-duration: 100ms;
     border-radius: 0;
+    text-align: center;
 
     &.vertical {
       padding: $space-size 0;
