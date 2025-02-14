@@ -27,7 +27,7 @@
   @if $submenu_style == 'false' and $variant == 'dark' {
     .popup-sub-menu &,
     .quick-toggle-menu & {
-      background-image: url("assets/menu-toggle-off.svg");
+      background-image: url("assets/menu-toggle-off.svg") !important;
 
       &:checked { background-image: url("assets/toggle-on.svg") !important; }
     }

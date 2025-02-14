@@ -6,15 +6,12 @@
    height="26"
    id="svg2"
    version="1.1"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    sodipodi:docname="menu-toggle-off.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
+   xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs4">
     <filter
@@ -39,15 +36,15 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="14.364584"
-     inkscape:cx="29.865118"
-     inkscape:cy="15.07179"
+     inkscape:cx="29.83031"
+     inkscape:cy="15.106598"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1000"
+     inkscape:window-height="1006"
      inkscape:window-x="0"
-     inkscape:window-y="44"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:document-rotation="0"
      inkscape:showpageshadow="2"
@@ -61,66 +58,40 @@
        enabled="true"
        snapvisiblegridlinesonly="true"
        originx="0"
-       originy="0" />
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
   </sodipodi:namedview>
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <cc:license
-           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
-      </cc:Work>
-      <cc:License
-         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#Reproduction" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#Distribution" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#Notice" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#Attribution" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-1032.3622)">
-    <g
-       id="g519"
-       transform="matrix(-1,0,0,1,42,0)">
-      <rect
-         x="1"
-         y="1037.3622"
-         width="32"
-         height="14"
-         rx="7"
-         ry="7"
-         id="rect7"
-         style="opacity:0.25;fill:#000000;fill-opacity:1" />
-      <circle
-         cx="29"
-         cy="1045.3622"
-         r="10"
-         fill="#1a73e8"
-         id="circle376"
-         style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:1;filter:url(#filter932)" />
-      <circle
-         cx="29"
-         cy="1044.3622"
-         r="10"
-         id="circle14"
-         style="fill:#f2f2f2;fill-opacity:1;stroke-width:1" />
-    </g>
+    <rect
+       x="-41"
+       y="1037.3622"
+       width="32"
+       height="14"
+       rx="7"
+       ry="7"
+       id="rect7"
+       style="opacity:0.25;fill:#000000;fill-opacity:1"
+       transform="scale(-1,1)" />
+    <circle
+       cx="29"
+       cy="1045.3622"
+       r="10"
+       fill="#1a73e8"
+       id="circle376"
+       style="opacity:0.25;fill:#000000;fill-opacity:1;stroke-width:1;filter:url(#filter932)"
+       transform="matrix(-1,0,0,1,42,0)" />
+    <circle
+       cx="-13"
+       cy="1044.3622"
+       r="10"
+       id="circle14"
+       style="fill:#f2f2f2;fill-opacity:1;stroke-width:1"
+       transform="scale(-1,1)" />
   </g>
 </svg>
