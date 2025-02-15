@@ -1424,6 +1424,14 @@ styleselector {
     }
 
     * { color: on($yellow-light); }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($yellow-light, 10%);
+        color: on($yellow-light);
+      }
+    }
   }
 
   &.style-pink {
@@ -1433,6 +1441,14 @@ styleselector {
     }
 
     * { color: on($pink-light); }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($pink-light, 10%);
+        color: on($pink-light);
+      }
+    }
   }
 
   &.style-green {
@@ -1442,6 +1458,14 @@ styleselector {
     }
 
     * { color: on($green-light); }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($green-light, 10%);
+        color: on($green-light);
+      }
+    }
   }
 
   &.style-purple {
@@ -1451,6 +1475,14 @@ styleselector {
     }
 
     * { color: on($purple-light); }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($purple-light, 10%);
+        color: on($purple-light);
+      }
+    }
   }
 
   &.style-blue {
@@ -1460,6 +1492,14 @@ styleselector {
     }
 
     * { color: on($blue-light); }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($blue-light, 10%);
+        color: on($blue-light);
+      }
+    }
   }
 
   &.style-gray {
@@ -1469,6 +1509,14 @@ styleselector {
     }
 
     * { color: on($grey-500); }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($grey-500, 10%);
+        color: on($grey-500);
+      }
+    }
   }
 
   &.style-charcoal {
@@ -1478,5 +1526,13 @@ styleselector {
     }
 
     * { color: white; }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: #444444;
+        color: white;
+      }
+    }
   }
 }
