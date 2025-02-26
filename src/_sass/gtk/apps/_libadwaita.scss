@@ -477,6 +477,90 @@ preferencesgroup > box {
       outline-color: $primary;
     }
   }
+
+  flowbox.background-flowbox > flowboxchild {
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    border-radius: $corner-radius;
+    padding: $space-size / 2;
+
+    .background-thumbnail {
+      border-radius: $corner-radius - $space-size / 2;
+    }
+
+    &:hover {
+      outline-color: $divider;
+    }
+
+    &:active {
+      outline-color: $track;
+    }
+
+    &:selected {
+      outline-color: $primary;
+      background-color: transparent;
+    }
+  }
+
+  .cutout-button { background-color: $surface; }
+
+  @if $gnome_version == 'new' {
+    button.accent-button {
+      min-height: 24px;
+      min-width: 24px;
+      padding: $space-size / 2;
+      border-radius: $circular-radius;
+      background: $primary;
+      outline: none;
+      background-clip: content-box;
+      box-shadow: none;
+      border: none;
+
+      &:hover { box-shadow: 0 0 0 3px $divider; }
+
+      &:checked { box-shadow: 0 0 0 3px $primary; }
+
+      &.blue, &.teal, &.green, &.yellow, &.orange, &.red, &.pink, &.purple, &.slate {
+        --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
+      }
+
+      &.blue {
+        --accent-bg-color: var(--accent-blue);
+      }
+
+      &.teal {
+        --accent-bg-color: var(--accent-teal);
+      }
+
+      &.green {
+        --accent-bg-color: var(--accent-green);
+      }
+
+      &.yellow {
+        --accent-bg-color: var(--accent-yellow);
+      }
+
+      &.orange {
+        --accent-bg-color: var(--accent-orange);
+      }
+
+      &.red {
+        --accent-bg-color: var(--accent-red);
+      }
+
+      &.pink {
+        --accent-bg-color: var(--accent-pink);
+      }
+
+      &.purple {
+        --accent-bg-color: var(--accent-purple);
+      }
+
+      &.slate {
+        --accent-bg-color: var(--accent-slate);
+      }
+    }
+  }
 }
 
 //
@@ -524,13 +608,13 @@ viewswitcher {
 
     button.toggle:checked, button.toggle.flat:checked {
       background-color: $primary;
-      color: on($primary);
+      color: $primary-text;
 
-      &:backdrop { color: on($primary, disabled); }
+      &:backdrop { color: $primary-text-disabled; }
 
       indicatorbin.needs-attention > indicator {
         > label { color: $primary; }
-        background-color: on($primary);
+        background-color: $primary-text;
       }
     }
   }
@@ -633,7 +717,7 @@ indicatorbin {
   &.needs-attention > indicator {
     background-color: $primary;
 
-    > label { color: on($primary); }
+    > label { color: $primary-text; }
   }
 }
 
@@ -1240,299 +1324,5 @@ floating-sheet {
     box-shadow: $shadow-z16;
     border-radius: $window-radius;
     outline: none;
-  }
-}
-
-// ThemeSelector
-themeselector, // Gnome text editor
-panelthemeselector { // Gnome builder
-  margin: $space-size * 1.5;
-
-  checkbutton {
-    padding: 0;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 1px;
-    background-clip: content-box;
-    border-radius: $circular-radius;
-    box-shadow: inset 0 0 0 1px $border;
-
-    &.follow:checked,
-    &.light:checked,
-    &.dark:checked {
-      box-shadow: inset 0 0 0 2px $primary;
-    }
-
-    &.follow {
-      background-image: linear-gradient(to bottom right, #ffffff 50%, #202020 50%);
-    }
-
-    &.light {
-      background-color: #ffffff;
-    }
-
-    &.dark {
-      background-color: #202020;
-    }
-
-    &.theme-selector radio {
-      -gtk-icon-source: none;
-      border: none;
-      background: none;
-      box-shadow: none;
-      min-height: 20px;
-      min-width: 20px;
-      padding: 0;
-      margin: 0;
-
-      &:hover, &:active, &:checked {
-        background-color: transparent;
-        background-image: none;
-      }
-
-      &:checked {
-        -gtk-icon-size: 20px;
-        -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/select-symbolic.svg")), -gtk-recolor(url("assets/scalable/select-symbolic@2.svg")));
-        color: on($primary);
-        background-color: $primary;
-
-        &, &:hover, &:active {
-          box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
-        }
-      }
-    }
-  }
-}
-
-themeswitcher { // Gnome console
-  padding: $space-size;
-
-  .check {
-    min-height: 20px;
-    min-width: 20px;
-    background: none;
-    padding: 0;
-    margin: 0;
-    border-radius: $circular-radius;
-    color: on($primary);
-    background-color: $primary;
-
-    &, &:hover, &:active {
-      box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
-    }
-  }
-
-  checkbutton {
-    padding: 0;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 1px;
-    background-clip: content-box;
-    border-radius: $circular-radius;
-    box-shadow: inset 0 0 0 1px $border;
-
-    &:checked {
-      box-shadow: inset 0 0 0 2px $primary;
-    }
-
-    radio {
-      &, &:hover, &:active, &:checked, &:checked:hover, &:checked:active {
-        background-color: transparent;
-        border: none;
-        background: none;
-        box-shadow: none;
-        color: transparent;
-        -gtk-icon-source: none;
-        -gtk-icon-size: 0;
-      }
-    }
-
-    &.system {
-      background: linear-gradient(-45deg, #1e1e1e 50%, white 50%);
-    }
-
-    &.light {
-      color: gtkalpha(black, .8);
-      background-color: white;
-    }
-
-    &.dark {
-      color: white;
-      background-color: #1e1e1e;
-    }
-  }
-}
-
-// Sticky note
-styleselector {
-  checkbutton {
-    padding: 0;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 0;
-    background-clip: content-box;
-    border-radius: $circular-radius;
-    box-shadow: inset 0 0 0 1px $border;
-
-    &:hover {
-      box-shadow: inset 0 0 0 2px $border;
-    }
-
-    &:checked {
-      box-shadow: inset 0 0 0 2px $primary;
-    }
-
-    > radio {
-      min-height: 20px;
-      min-width: 20px;
-      padding: 0;
-      margin: 0;
-
-      &, &:hover, &:focus, &:not(:focus) {
-        color: transparent;
-        border: none;
-        background: none;
-        box-shadow: none;
-        -gtk-icon-source: none;
-        -gtk-icon-size: 0;
-      }
-
-      &:checked, &:active {
-        &, &:hover, &:focus, &:not(:focus) {
-          -gtk-icon-size: 20px;
-          -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/select-symbolic.svg")), -gtk-recolor(url("assets/scalable/select-symbolic@2.svg")));
-          color: on($primary);
-          background-color: $primary;
-          box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
-        }
-      }
-    }
-  }
-}
-
-.note-window {
-  headerbar {
-    &, &:backdrop {
-      box-shadow: none;
-    }
-  }
-
-  &.style-yellow {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: $yellow-light;
-      color: on($yellow-light);
-    }
-
-    * { color: on($yellow-light); }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: lighten($yellow-light, 10%);
-        color: on($yellow-light);
-      }
-    }
-  }
-
-  &.style-pink {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: $pink-light;
-      color: on($pink-light);
-    }
-
-    * { color: on($pink-light); }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: lighten($pink-light, 10%);
-        color: on($pink-light);
-      }
-    }
-  }
-
-  &.style-green {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: $green-light;
-      color: on($green-light);
-    }
-
-    * { color: on($green-light); }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: lighten($green-light, 10%);
-        color: on($green-light);
-      }
-    }
-  }
-
-  &.style-purple {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: $purple-light;
-      color: on($purple-light);
-    }
-
-    * { color: on($purple-light); }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: lighten($purple-light, 10%);
-        color: on($purple-light);
-      }
-    }
-  }
-
-  &.style-blue {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: $blue-light;
-      color: on($blue-light);
-    }
-
-    * { color: on($blue-light); }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: lighten($blue-light, 10%);
-        color: on($blue-light);
-      }
-    }
-  }
-
-  &.style-gray {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: $grey-500;
-      color: on($grey-500);
-    }
-
-    * { color: on($grey-500); }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: lighten($grey-500, 10%);
-        color: on($grey-500);
-      }
-    }
-  }
-
-  &.style-charcoal {
-    &, .text-view.view, .text-view.view > text, headerbar {
-      background-color: #333333;
-      color: white;
-    }
-
-    * { color: white; }
-
-    popover {
-      > arrow,
-      > contents {
-        background-color: #444444;
-        color: white;
-      }
-    }
   }
 }

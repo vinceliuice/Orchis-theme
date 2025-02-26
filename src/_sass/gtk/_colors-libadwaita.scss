@@ -104,8 +104,11 @@ $dark_5: #000000;
 // define variables for them in _colors.scss
 
 // The main accent color and the matching text value
-@define-color accent_bg_color #{$primary};
-@define-color accent_fg_color #{on($primary)};
+@if $gnome_version == 'old' or $accent_type == 'fixed' {
+  @define-color accent_bg_color #{$primary};
+  @define-color accent_fg_color #{on($primary)};
+}
+
 @define-color accent_color #{$primary};
 
 // destructive-action buttons
@@ -157,3 +160,32 @@ $dark_5: #000000;
 // Miscellaneous
 @define-color shade_color #{$border};
 @define-color scrollbar_outline_color #{$border};
+
+@if $gnome_version == 'new' {
+  :root {
+    --accent-blue: #{theme($color: 'default')};
+    --accent-teal: #{theme($color: 'teal')};
+    --accent-green: #{theme($color: 'green')};
+    --accent-yellow: #{theme($color: 'yellow')};
+    --accent-orange: #{theme($color: 'orange')};
+    --accent-red: #{theme($color: 'red')};
+    --accent-pink: #{theme($color: 'pink')};
+    --accent-purple: #{theme($color: 'purple')};
+    --accent-slate: #{theme($color: 'grey')};
+
+    --accent-color: @accent_bg_color;
+    --accent-bg-color: @accent_bg_color;
+    --accent-fg-color: @accent_fg_color;
+  }
+
+  $primary:                               var(--accent-bg-color);
+  $primary-text:                          on(dark);
+  $primary-text-secondary:                on(dark, secondary);
+  $primary-text-disabled:                 on(dark, disabled);
+  $primary-text-secondary-disabled:       on(dark, secondary-disabled);
+  $primary-track:                         on(dark, track);
+  $primary-track-disabled:                on(dark, track-disabled);
+  $primary-divider:                       on(dark, divider);
+  $primary-secondary-fill:                on(dark, secondary-fill);
+  $primary-fill:                          on(dark, fill);
+}

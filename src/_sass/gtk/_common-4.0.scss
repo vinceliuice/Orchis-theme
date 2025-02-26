@@ -446,8 +446,8 @@ editablelabel > stack > text {
  ***********/
 // stuff for .needs-attention
 @keyframes needs-attention {
-  from { background-image: radial-gradient(farthest-side, $primary 0%, transparentize($primary, 1) 0%); }
-  to { background-image: radial-gradient(farthest-side, $primary 95%, transparentize($primary, 1)); }
+  from { background-image: radial-gradient(farthest-side, $primary 0%, transparent 0%); }
+  to { background-image: radial-gradient(farthest-side, $primary 95%, transparent); }
 }
 
 %button-on-dark {
@@ -1379,10 +1379,10 @@ headerbar {
       &:disabled { color: $titlebar-text-secondary-disabled; }
 
       &:checked {
-        color: on($primary);
+        color: $primary-text;
 
         &:disabled {
-          color: on($primary, disabled);
+          color: $primary-text-disabled;
         }
       }
 
@@ -1394,9 +1394,9 @@ headerbar {
         &:disabled { color: $titlebar-text-secondary-disabled; }
 
         &:checked {
-          color: on($primary, disabled);
+          color: $primary-text-disabled;
 
-          &:disabled { color: on($primary, secondary-disabled); }
+          &:disabled { color: $primary-text-secondary-disabled; }
         }
       }
     }
@@ -1434,15 +1434,15 @@ headerbar {
     // but let's keep it for backwards compatibility.
     transition: background-color 0.1ms $ripple-fade-in-duration, color $duration $ease-out;
     animation: ripple-on-headerbar $ripple-fade-in-duration $ease-out;
-    box-shadow: inset 0 1px highlight($primary);
+    box-shadow: inset 0 1px $primary-divider;
     background-color: $primary;
-    color: on($primary);
+    color: $primary-text;
 
     &:backdrop {
-      color: on($primary, secondary);
+      color: $primary-text-secondary;
     }
 
-    .subtitle:link { color: on($primary); }
+    .subtitle:link { color: $primary-text; }
 
     button:not(.suggested-action):not(.destructive-action) {
       @extend %button-on-dark;
@@ -1457,7 +1457,7 @@ headerbar {
   }
 
   .selection-mode {
-    box-shadow: inset 0 1px highlight($primary); // Avoid double shadows
+    box-shadow: inset 0 1px $primary-divider; // Avoid double shadows
     background-color: $primary;
   }
 
@@ -2505,7 +2505,7 @@ switch {
   font-size: 0;
   color: transparent;
 
-  &:checked { background-color: rgba($primary, 0.5); }
+  &:checked { background-color: color-mix(in srgb, $primary 50%, transparent); }
 
   &:disabled { opacity: 0.5; }
 
@@ -3359,7 +3359,7 @@ row {
 
   button:checked &.activatable,
   button:checked:hover &.activatable {
-    color: on($primary);
+    color: $primary-text;
   }
 
   &:selected {
@@ -3448,7 +3448,7 @@ columnview {
     }
 
     &.editing text selection {
-      color: on($primary);
+      color: $primary-text;
       background-color: $primary;
     }
   }
@@ -4499,17 +4499,18 @@ infobar {
     & > revealer > box,
     &:backdrop > revealer > box {
       background-color: $primary;
-      color: on($primary);
+      color: $primary-text;
 
       button {
-        &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: on($primary); }
+        &, &:hover, &:focus, &:active, &:checked, &.text-button:not(:disabled) { color: $primary-text; }
       }
 
-      *:link { color: on($primary); }
+      *:link { color: $primary-text; }
     }
 
     &:hover > revealer > box {
-      background-color: if($variant == 'light', lighten($primary, 5%), darken($primary, 5%));
+      background-color: $divider;
+      background-image: image($primary);
     }
   }
 
@@ -4783,7 +4784,7 @@ window {
 }
 
 %selected_items_primary {
-  color: on($primary);
+  color: $primary-text;
   background-color: $primary;
 }
 
@@ -4856,7 +4857,7 @@ stackswitcher {
 
     &:checked {
       background-color: $primary;
-      color: on($primary);
+      color: $primary-text;
     }
   }
 

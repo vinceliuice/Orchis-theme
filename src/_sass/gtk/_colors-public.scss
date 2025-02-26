@@ -27,7 +27,7 @@ base background color of selections */
 
 /*
 text/foreground color of selections */
-@define-color theme_selected_fg_color #{"" + on($primary)};
+@define-color theme_selected_fg_color #{"" + $primary-text};
 
 /*
 base background color of insensitive widgets */
@@ -63,7 +63,7 @@ base background color of selections on backdrop windows */
 
 /*
 text/foreground color of selections on backdrop windows */
-@define-color theme_unfocused_selected_fg_color #{"" + on($primary)};
+@define-color theme_unfocused_selected_fg_color #{"" + $primary-text};
 
 /*
 insensitive color on backdrop windows */
@@ -106,9 +106,9 @@ FIXME this is really an API */
 // unfocused window 'dot(s)'
 @define-color budgie_tasklist_indicator_color #{"" + on($panel, secondary)};
 // focused window 'line'
-@define-color budgie_tasklist_indicator_color_active #{"" + $primary};
+@define-color budgie_tasklist_indicator_color_active #{"" + theme($theme)};
 // group-ed and unfocused window 'line(s)'
-@define-color budgie_tasklist_indicator_color_active_window #{"" + mix($primary, $panel, 45%)};
+@define-color budgie_tasklist_indicator_color_active_window #{"" + mix(theme($theme), $panel, 45%)};
 // attention 'dot'
 // FIXME: we can't fill whole widget backgrounds with our suggestion colour
 //        because of lacking specific style-class on 'needs_attention' state,

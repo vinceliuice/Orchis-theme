@@ -59,25 +59,25 @@
 
 @function theme($color) {
   @if ($variant == 'light') {
-    @if ($theme == 'default') { @return $blue-dark; }
-    @if ($theme == 'purple') { @return $purple-dark; }
-    @if ($theme == 'pink') { @return $pink-dark; }
-    @if ($theme == 'red') { @return $red-dark; }
-    @if ($theme == 'orange') { @return $orange-dark; }
-    @if ($theme == 'yellow') { @return $yellow-dark; }
-    @if ($theme == 'green') { @return $green-dark; }
-    @if ($theme == 'teal') { @return $teal-dark; }
-    @if ($theme == 'grey') { @return $grey-600; }
+    @if ($color == 'default') { @return $blue-dark; }
+    @if ($color == 'purple') { @return $purple-dark; }
+    @if ($color == 'pink') { @return $pink-dark; }
+    @if ($color == 'red') { @return $red-dark; }
+    @if ($color == 'orange') { @return $orange-dark; }
+    @if ($color == 'yellow') { @return $yellow-dark; }
+    @if ($color == 'green') { @return $green-dark; }
+    @if ($color == 'teal') { @return $teal-dark; }
+    @if ($color == 'grey') { @return $grey-600; }
   } @else {
-    @if ($theme == 'default') { @return $blue-light; }
-    @if ($theme == 'purple') { @return $purple-light; }
-    @if ($theme == 'pink') { @return $pink-light; }
-    @if ($theme == 'red') { @return $red-light; }
-    @if ($theme == 'orange') { @return $orange-light; }
-    @if ($theme == 'yellow') { @return $yellow-light; }
-    @if ($theme == 'green') { @return $green-light; }
-    @if ($theme == 'teal') { @return $teal-light; }
-    @if ($theme == 'grey') { @return $grey-200; }
+    @if ($color == 'default') { @return $blue-light; }
+    @if ($color == 'purple') { @return $purple-light; }
+    @if ($color == 'pink') { @return $pink-light; }
+    @if ($color == 'red') { @return $red-light; }
+    @if ($color == 'orange') { @return $orange-light; }
+    @if ($color == 'yellow') { @return $yellow-light; }
+    @if ($color == 'green') { @return $green-light; }
+    @if ($color == 'teal') { @return $teal-light; }
+    @if ($color == 'grey') { @return $grey-200; }
   }
 }
 
@@ -104,7 +104,7 @@
 // Basic colors
 //
 
-$primary:                               theme(color);
+$primary:                               theme($theme);
 $drop_target_color:                     $orange-dark;
 $background:                            if($variant == 'light', background(c), background(e));
 $surface:                               if($variant == 'light', background(a), background(h));
@@ -194,6 +194,16 @@ $titlebar-track-disabled:               on($titlebar, track-disabled);
 $titlebar-divider:                      on($titlebar, divider);
 $titlebar-secondary-fill:               on($titlebar, secondary-fill);
 $titlebar-fill:                         on($titlebar, fill);
+
+$primary-text:                          on($primary);
+$primary-text-secondary:                on($primary, secondary);
+$primary-text-disabled:                 on($primary, disabled);
+$primary-text-secondary-disabled:       on($primary, secondary-disabled);
+$primary-track:                         on($primary, track);
+$primary-track-disabled:                on($primary, track-disabled);
+$primary-divider:                       on($primary, divider);
+$primary-secondary-fill:                on($primary, secondary-fill);
+$primary-fill:                          on($primary, fill);
 
 //
 // Titlebutton colors

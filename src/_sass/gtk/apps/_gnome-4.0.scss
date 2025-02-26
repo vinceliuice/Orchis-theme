@@ -1000,10 +1000,10 @@ datechooser {
 
     &:selected, &.today:selected {
       background-color: $primary;
-      color: on($primary);
+      color: $primary-text;
       font-weight: bold;
 
-      dot { background-color: on($primary); }
+      dot { background-color: $primary-text; }
     }
 
     &.today {
@@ -1392,20 +1392,20 @@ screenshot-carousel box.frame.view {
   color: #1c71d8;
   background-color:#fdf8d7;
   background-image: linear-gradient($border 1px, transparent 1px),
-           linear-gradient(90deg, $border 1px, transparent 1px);
+                    linear-gradient(90deg, $border 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
   background-position: -1px -4px, center -1px;
 
   &:hover {
     background-color: lighten(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-             linear-gradient(90deg, $border 1px, transparent 1px);
+                      linear-gradient(90deg, $border 1px, transparent 1px);
   }
 
   &:active {
     background-color: darken(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-             linear-gradient(90deg, $border 1px, transparent 1px);
+                      linear-gradient(90deg, $border 1px, transparent 1px);
   }
 }
 
@@ -1550,7 +1550,7 @@ image.circular {
 
     > row.activatable:selected {
       background-color: $primary;
-      color: on($primary);
+      color: $primary-text;
     }
   }
 
@@ -1726,27 +1726,348 @@ button.colorpad {
   padding: 0px;
   margin: 0px;
   background-blend-mode: screen;
-  background-image:
-      linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55),
-      linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
+  background-image: linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55),
+                    linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
   background-color: gtkcolor(colorpad_color);
   color:  gtkcolor(colorpad_fg_color);
   background-size: 18px 18px;
   background-position: 0px 0px, 9px 9px;
 
   &:hover {
-      filter: brightness(93%);
+    filter: brightness(93%);
   }
 
   &:active {
-      filter: brightness(86%);
+    filter: brightness(86%);
   }
 
   &:checked {
-      filter: brightness(100%);
+    filter: brightness(100%);
   }
 }
 
 window#desktopwindow {
   background: none;
+}
+
+// ThemeSelector
+themeselector, // Gnome text editor
+panelthemeselector { // Gnome builder
+  margin: $space-size * 1.5;
+
+  checkbutton {
+    padding: 0;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 1px;
+    background-clip: content-box;
+    border-radius: $circular-radius;
+    box-shadow: inset 0 0 0 1px $border;
+
+    &.follow:checked,
+    &.light:checked,
+    &.dark:checked {
+      box-shadow: inset 0 0 0 2px $primary;
+    }
+
+    &.follow {
+      background-image: linear-gradient(to bottom right, #ffffff 50%, #202020 50%);
+    }
+
+    &.light {
+      background-color: #ffffff;
+    }
+
+    &.dark {
+      background-color: #202020;
+    }
+
+    &.theme-selector radio {
+      -gtk-icon-source: none;
+      border: none;
+      background: none;
+      box-shadow: none;
+      min-height: 20px;
+      min-width: 20px;
+      padding: 0;
+      margin: 0;
+
+      &:hover, &:active, &:checked {
+        background-color: transparent;
+        background-image: none;
+      }
+
+      &:checked {
+        -gtk-icon-size: 20px;
+        -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/select-symbolic.svg")), -gtk-recolor(url("assets/scalable/select-symbolic@2.svg")));
+        color: $primary-text;
+        background-color: $primary;
+
+        &, &:hover, &:active {
+          box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
+        }
+      }
+    }
+  }
+}
+
+themeswitcher { // Gnome console
+  padding: $space-size;
+
+  .check {
+    min-height: 20px;
+    min-width: 20px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: $circular-radius;
+    color: $primary-text;
+    background-color: $primary;
+
+    &, &:hover, &:active {
+      box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
+    }
+  }
+
+  checkbutton {
+    padding: 0;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 1px;
+    background-clip: content-box;
+    border-radius: $circular-radius;
+    box-shadow: inset 0 0 0 1px $border;
+
+    &:checked {
+      box-shadow: inset 0 0 0 2px $primary;
+    }
+
+    radio {
+      &, &:hover, &:active, &:checked, &:checked:hover, &:checked:active {
+        background-color: transparent;
+        border: none;
+        background: none;
+        box-shadow: none;
+        color: transparent;
+        -gtk-icon-source: none;
+        -gtk-icon-size: 0;
+      }
+    }
+
+    &.system {
+      background: linear-gradient(-45deg, #1e1e1e 50%, white 50%);
+    }
+
+    &.light {
+      color: gtkalpha(black, .8);
+      background-color: white;
+    }
+
+    &.dark {
+      color: white;
+      background-color: #1e1e1e;
+    }
+  }
+}
+
+// Sticky note
+styleselector {
+  checkbutton {
+    padding: 0;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0;
+    background-clip: content-box;
+    border-radius: $circular-radius;
+    box-shadow: inset 0 0 0 1px $border;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px $border;
+    }
+
+    &:checked {
+      box-shadow: inset 0 0 0 2px $primary;
+    }
+
+    > radio {
+      min-height: 20px;
+      min-width: 20px;
+      padding: 0;
+      margin: 0;
+
+      &, &:hover, &:focus, &:not(:focus) {
+        color: transparent;
+        border: none;
+        background: none;
+        box-shadow: none;
+        -gtk-icon-source: none;
+        -gtk-icon-size: 0;
+      }
+
+      &:checked, &:active {
+        &, &:hover, &:focus, &:not(:focus) {
+          -gtk-icon-size: 20px;
+          -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/select-symbolic.svg")), -gtk-recolor(url("assets/scalable/select-symbolic@2.svg")));
+          color: $primary-text;
+          background-color: $primary;
+          box-shadow: 0 2px 3px -1px rgba(black, 0.08), 0 1px 2px 0 rgba(black, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.note-window {
+  headerbar {
+    &, &:backdrop {
+      box-shadow: none;
+    }
+  }
+
+  &.style-yellow {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: $yellow-light;
+      color: on($yellow-light);
+    }
+
+    * { color: on($yellow-light); }
+
+    .text-view.view > text > selection {
+      background-color: on($yellow-light, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($yellow-light, 10%);
+        color: on($yellow-light);
+      }
+    }
+  }
+
+  &.style-pink {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: $pink-light;
+      color: on($pink-light);
+    }
+
+    * { color: on($pink-light); }
+
+    .text-view.view > text > selection {
+      background-color: on($pink-light, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($pink-light, 10%);
+        color: on($pink-light);
+      }
+    }
+  }
+
+  &.style-green {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: $green-light;
+      color: on($green-light);
+    }
+
+    * { color: on($green-light); }
+
+    .text-view.view > text > selection {
+      background-color: on($green-light, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($green-light, 10%);
+        color: on($green-light);
+      }
+    }
+  }
+
+  &.style-purple {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: $purple-light;
+      color: on($purple-light);
+    }
+
+    * { color: on($purple-light); }
+
+    .text-view.view > text > selection {
+      background-color: on($purple-light, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($purple-light, 10%);
+        color: on($purple-light);
+      }
+    }
+  }
+
+  &.style-blue {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: $blue-light;
+      color: on($blue-light);
+    }
+
+    * { color: on($blue-light); }
+
+    .text-view.view > text > selection {
+      background-color: on($blue-light, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($blue-light, 10%);
+        color: on($blue-light);
+      }
+    }
+  }
+
+  &.style-gray {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: $grey-500;
+      color: on($grey-500);
+    }
+
+    * { color: on($grey-500); }
+
+    .text-view.view > text > selection {
+      background-color: on($grey-500, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: lighten($grey-500, 10%);
+        color: on($grey-500);
+      }
+    }
+  }
+
+  &.style-charcoal {
+    &, .text-view.view, .text-view.view > text, headerbar {
+      background-color: #333333;
+      color: white;
+    }
+
+    * { color: white; }
+
+    .text-view.view > text > selection {
+      background-color: on(#333333, track);
+    }
+
+    popover {
+      > arrow,
+      > contents {
+        background-color: #444444;
+        color: white;
+      }
+    }
+  }
 }
