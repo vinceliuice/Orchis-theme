@@ -189,13 +189,6 @@ window#whiskermenu-window {
 
   .standard-view.frame {
     border: none;
-
-    widget.view {
-      &:selected {
-        @extend %selected_items_color;
-        border-radius: $corner-radius;
-      }
-    }
   }
 
   paned paned paned > notebook.frame {
