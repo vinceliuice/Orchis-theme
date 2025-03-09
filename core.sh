@@ -493,7 +493,7 @@ theme_tweaks() {
     gnome_version
   fi
 
-  if [[ "$fixed" = "true" ]] ; then
+  if [[ "$fixed" = "true" || "$dracula" == "true" || "$nord" == "true" ]] ; then
     accent_type
   fi
 }

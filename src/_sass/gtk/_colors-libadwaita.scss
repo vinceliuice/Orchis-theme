@@ -1,6 +1,6 @@
 $blue_1: #99c1f1;
 $blue_2: #62a0ea;
-$blue_3: #3584e4;
+$blue_3: theme($color: 'default');
 $blue_4: #1c71d8;
 $blue_5: #1a5fb4;
 $green_1: #8ff0a4;
@@ -43,6 +43,54 @@ $dark_2: #5e5c64;
 $dark_3: #3d3846;
 $dark_4: #241f31;
 $dark_5: #000000;
+
+:root {
+  --blue-1: $blue_1;
+  --blue-2: $blue_2;
+  --blue-3: $blue_3;
+  --blue-4: $blue_4;
+  --blue-5: $blue_5;
+  --green-1: $green-1;
+  --green-2: $green-2;
+  --green-3: $green-3;
+  --green-4: $green-4;
+  --green-5: $green-5;
+  --yellow-1: $yellow-1;
+  --yellow-2: $yellow-2;
+  --yellow-3: $yellow-3;
+  --yellow-4: $yellow-4;
+  --yellow-5: $yellow-5;
+  --orange-1: $orange-1;
+  --orange-2: $orange-2;
+  --orange-3: $orange-3;
+  --orange-4: $orange-4;
+  --orange-5: $orange-5;
+  --red-1: $red-1;
+  --red-2: $red-2;
+  --red-3: $red-3;
+  --red-4: $red-4;
+  --red-5: $red-5;
+  --purple-1: $purple-1;
+  --purple-2: $purple-2;
+  --purple-3: $purple-3;
+  --purple-4: $purple-4;
+  --purple-5: $purple-5;
+  --brown-1: $brown-1;
+  --brown-2: $brown-2;
+  --brown-3: $brown-3;
+  --brown-4: $brown-4;
+  --brown-5: $brown-5;
+  --light-1: $light-1;  // white
+  --light-2: $light-2;  // off-white
+  --light-3: $light-3;  // light grey
+  --light-4: $light-4;  // medium grey
+  --light-5: $light-5;  // dark grey
+  --dark-1: $dark-1;    // light grey
+  --dark-2: $dark-2;    // medium grey
+  --dark-3: $dark-3;    // dark grey
+  --dark-4: $dark-4;    // very dark grey
+  --dark-5: $dark-5;    // black
+}
 
 // Sass thinks we're using the colors in the variables as strings and may shoot
 // warning, it's innocuous and can be defeated by using #{$var}.

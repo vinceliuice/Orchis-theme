@@ -46,6 +46,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
       background_dark='#242932'
       base_dark='#1c1f26'
       base_blackness='#0d0e11'
+      surface_light='#f8fafc'
       surface_dark='#333a47'
 
       case "$theme" in
@@ -93,6 +94,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
       background_dark='#242632'
       base_dark='#1c1e26'
       base_blackness='#0d0d11'
+      surface_light='#f9f9fb'
       surface_dark='#343746'
 
       case "$theme" in
@@ -143,6 +145,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
       sed -i "s/#2c2c2c/${background_dark}/g" "assets${theme}${type}.svg"
       sed -i "s/#212121/${base_dark}/g" "assets${theme}${type}.svg"
       sed -i "s/#0f0f0f/${base_blackness}/g" "assets${theme}${type}.svg"
+      sed -i "s/#ffffff/${surface_light}/g" "assets${theme}${type}.svg"
       sed -i "s/#3C3C3C/${surface_dark}/g" "assets${theme}${type}.svg"
     elif [[ "$theme" != '' ]]; then
       cp -rf "assets.svg" "assets${theme}.svg"

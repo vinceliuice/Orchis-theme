@@ -181,7 +181,7 @@
     > scrolledwindow {
       margin: 0 0 $space-size * 2 $space-size * 2;
       border-radius: $window-radius - $space-size;
-      background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba($primary, 0.08));
+      background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba(theme($theme), 0.08));
 
       > overshoot, > undershoot {
         &.top { border-radius: $window-radius - $space-size $window-radius - $space-size 0 0; }
