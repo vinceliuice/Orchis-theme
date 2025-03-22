@@ -131,14 +131,9 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   }
 
   .quick-toggle-separator {
-    width: 1px;
-    // background-color: ?
-  }
-
-  &:checked {
-    .quick-toggle-separator {
-      // background-color: ?
-    }
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
