@@ -21,7 +21,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   spacing-columns: $space-size * 2;
 }
 
-.quick-toggle, .quick-menu-toggle {
+.quick-toggle, .quick-toggle-has-menu {
   border-radius: $circular-radius;
   min-width: if($compact == 'false', 12em, 10.5em);
   max-width: if($compact == 'false', 12em, 10.5em);
@@ -74,7 +74,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   .quick-toggle-icon { icon-size: $base-icon-size; }
 }
 
-.quick-menu-toggle {
+.quick-toggle-has-menu {
   .quick-toggle {
     min-width: auto;
     max-width: auto;
@@ -88,10 +88,15 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     &:rtl:last-child { border-radius: $circular-radius; }
   }
 
-  .quick-toggle-arrow {
+  .quick-toggle-menu-button {
     background-color: $secondary-fill !important;
     padding: $space-size $space-size * 1.75;
     border: none !important;
+
+    &:focus {
+      // background-color: ?
+      // color: ?
+    }
 
     &:hover {
       background-color: $divider !important;
@@ -104,6 +109,11 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     &:checked {
       background-color: $primary !important;
       color: on($primary);
+
+      &:focus {
+        // background-color: ?
+        // color: ?
+      }
 
       &:hover {
         background-color: mix($text, $primary, 10%) !important;
@@ -118,6 +128,17 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
     &:ltr { border-radius: 0 $circular-radius $circular-radius 0; }
     &:rtl { border-radius: $circular-radius 0 0 $circular-radius; }
+  }
+
+  .quick-toggle-separator {
+    width: 1px;
+    // background-color: ?
+  }
+
+  &:checked {
+    .quick-toggle-separator {
+      // background-color: ?
+    }
   }
 }
 
