@@ -89,7 +89,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   }
 
   .quick-toggle-menu-button {
-    background-color: $secondary-fill !important;
+    background-color: rgba($text, 0.06) !important;
     padding: $space-size $space-size * 1.75;
     border: none !important;
 
@@ -99,16 +99,16 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     }
 
     &:hover {
-      background-color: $divider !important;
+      background-color: rgba($text, 0.12) !important;
     }
 
     &:active {
-      background-color: $track !important;
+      background-color: rgba($text, 0.24) !important;
     }
 
     &:checked {
       background-color: $primary !important;
-      color: on($primary);
+      color: on($primary) !important;
 
       &:focus {
         // background-color: ?
@@ -117,12 +117,12 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
       &:hover {
         background-color: mix($text, $primary, 10%) !important;
-        color: on($primary);
+        color: on($primary) !important;
       }
 
       &:active {
         background-color: mix($text, $primary, 20%) !important;
-        color: on($primary);
+        color: on($primary) !important;
       }
     }
 
