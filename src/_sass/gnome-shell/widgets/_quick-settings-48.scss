@@ -1,0 +1,350 @@
+
+$toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
+
+.quick-settings {
+  padding: $space-size * 3 !important;
+  border-radius: 8px + $space-size * 5 !important;
+  margin-top: $space-size / 2 !important;
+  border: none;
+
+  .icon-button, .button {
+    padding: $space-size * 2;
+
+    > StIcon {
+      icon-size: $base-icon-size;
+    }
+  }
+}
+
+.quick-settings-grid {
+  spacing-rows: $space-size * 2;
+  spacing-columns: $space-size * 2;
+}
+
+.quick-toggle, .quick-toggle-has-menu {
+  border-radius: $circular-radius;
+  min-width: if($compact == 'false', 12em, 10.5em);
+  max-width: if($compact == 'false', 12em, 10.5em);
+  min-height: $toggle-height;
+  border: none;
+}
+
+.quick-toggle {
+  background-color: rgba($text, 0.06) !important;
+
+  &:hover {
+    background-color: rgba($text, 0.12) !important;
+  }
+
+  &:active {
+    background-color: rgba($text, 0.24) !important;
+  }
+
+  &:checked {
+    background-color: $primary !important;
+    color: on($primary) !important;
+
+    &:hover {
+      background-color: mix($text, $primary, 10%) !important;
+      color: on($primary) !important;
+    }
+
+    &:active {
+      background-color: mix($text, $primary, 20%) !important;
+      color: on($primary) !important;
+    }
+  }
+
+  & > StBoxLayout { spacing: $space-size; }
+
+  /* Move padding into the box; this is to allow menu arrows
+     to extend to the border */
+  &.button { padding: 0; }
+  & > StBoxLayout { padding: 0 $space-size * 2; }
+  &:ltr > StBoxLayout { padding-left: $space-size * 2.5; }
+  &:rtl > StBoxLayout { padding-right: $space-size * 2.5; }
+
+  .quick-toggle-title { font-weight: bold; }
+
+  & StBoxLayout > .quick-toggle-subtitle {
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  .quick-toggle-icon { icon-size: $base-icon-size; }
+}
+
+.quick-toggle-has-menu {
+  .quick-toggle {
+    min-width: auto;
+    max-width: auto;
+
+    &:ltr { border-radius: $circular-radius 0 0 $circular-radius; }
+    &:ltr > StBoxLayout { padding-right: 0; }
+    &:rtl { border-radius: 0 $circular-radius $circular-radius 0; }
+    &:rtr > StBoxLayout { padding-left: 0; }
+
+    &:ltr:last-child { border-radius: $circular-radius; }
+    &:rtl:last-child { border-radius: $circular-radius; }
+  }
+
+  .quick-toggle-menu-button {
+    background-color: rgba($text, 0.06) !important;
+    padding: $space-size $space-size * 1.75;
+    border: none !important;
+
+    &:focus {
+      // background-color: ?
+      // color: ?
+    }
+
+    &:hover {
+      background-color: rgba($text, 0.12) !important;
+    }
+
+    &:active {
+      background-color: rgba($text, 0.24) !important;
+    }
+
+    &:checked {
+      background-color: $primary !important;
+      color: on($primary) !important;
+
+      &:focus {
+        // background-color: ?
+        // color: ?
+      }
+
+      &:hover {
+        background-color: mix($text, $primary, 10%) !important;
+        color: on($primary) !important;
+      }
+
+      &:active {
+        background-color: mix($text, $primary, 20%) !important;
+        color: on($primary) !important;
+      }
+    }
+
+    &:ltr { border-radius: 0 $circular-radius $circular-radius 0; }
+    &:rtl { border-radius: $circular-radius 0 0 $circular-radius; }
+  }
+
+  .quick-toggle-separator {
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.quick-slider {
+  > StBoxLayout { spacing: $space-size; }
+
+  .icon-button {
+    padding: $space-size * 1.5;
+  }
+
+  .slider-bin {
+    &:focus { @include button(focus); }
+    min-height: $base-icon-size; // slider size
+    padding: $space-size;
+    border-radius: $circular-radius;
+  }
+
+  .quick-toggle-icon {
+    icon-size: $base-icon-size;
+  }
+}
+
+.quick-toggle-menu {
+  border-radius: $space-size * 5 !important;
+  padding: $space-size * 2;
+  margin: $space-size * 2 $space-size * 3.5 0;
+
+  @if $submenu_style == 'true' {
+    background-color: $surface !important;
+    color: $text-secondary !important;
+  } @else {
+    background-color: white !important;
+    color: rgba(black, 0.65) !important;
+  }
+
+  &:insensitive {
+    // override insensitive style on submenu
+    @if $submenu_style == 'true' {
+      background-color: $surface !important;
+      color: $text-secondary !important;
+    } @else {
+      background-color: white !important;
+      color: rgba(black, 0.65) !important;
+    }
+  }
+
+  .popup-menu-item {
+    padding: $space-size + 2px !important;
+    border-radius: $circular-radius !important;
+
+    @if $submenu_style == 'true' {
+      color: $text-secondary !important;
+
+      &:focus, &:hover, &.selected {
+        color: $text !important;
+        background-color: $secondary-fill !important;
+      }
+
+      &:active {
+        color: $text !important;
+        background-color: $divider !important;
+      }
+
+      &:insensitive {
+        color: $text-secondary-disabled !important;
+      }
+    } @else {
+      color: rgba(black, 0.65) !important;
+
+      StLabel { // FIXME: How to set color of network menu item on right
+        color: rgba(black, 0.65);
+      }
+
+      &:focus, &:hover, &.selected {
+        color: rgba(black, 0.75) !important;
+        background-color: rgba(black, 0.1) !important;
+      }
+
+      &:active {
+        color: rgba(black, 0.75) !important;
+        background-color: rgba(black, 0.2) !important;
+      }
+
+      &:insensitive {
+        color: rgba(black, 0.25) !important;
+      }
+    }
+
+    > StIcon {
+      -st-icon-style: symbolic;
+      icon-size: $scalable_icon_size;
+    }
+
+    & > :first-child {
+      &:ltr {
+        padding-left: $space-size  + $margin-size !important;
+      }
+
+      &:rtl {
+        padding-right: $space-size + $margin-size !important;
+      }
+    }
+
+    .popup-separator-menu-item-separator {
+      margin: $space-size $space-size * 3 $space-size 0 !important;
+      padding: 0 !important;
+
+      @if $submenu_style == 'true' {
+        background-color: $border !important;
+      } @else {
+        background-color: rgba(black, 0.1) !important;
+      }
+    }
+  }
+
+  & .header {
+    spacing-rows: 0.5 * $space-size;
+    spacing-columns: $space-size * 2;
+    padding-bottom: 2 * $space-size;
+
+    & .icon {
+      icon-size: 24px; // a non-standard symbolic size but ok
+      border-radius: $circular-radius;
+      padding: 1.5 * $space-size;
+      background-color: rgba(black, 0.08) !important;
+
+      &.active {
+        background-color: $primary !important;
+        color: on($primary) !important;
+      }
+    }
+
+    & .title {
+      @extend %title_3;
+    }
+
+    & .subtitle {
+      @extend %caption_heading;
+    }
+  }
+}
+
+.quick-settings-system-item {
+  & > StBoxLayout { spacing: 2 * $space-size; }
+
+  .icon-button {
+    background-color: rgba($text, 0.06);
+
+    &:hover { background-color: rgba($text, 0.12); }
+    &:active { background-color: rgba($text, 0.24); }
+
+    > StIcon { -st-icon-style: symbolic; }
+  }
+
+  & .power-item {
+    min-height: 0;
+    min-width: 0;
+
+    &:insensitive {
+      @include button(normal);
+      background-color: transparent;
+    }
+  }
+}
+
+.nm-network-item {
+  .wireless-secure-icon { icon-size: $base-icon-size / 2; }
+}
+
+.bt-device-item {
+  .popup-menu-icon { -st-icon-style: symbolic; }
+}
+
+.bt-menu-placeholder.popup-menu-item {
+  @extend %title_4;
+  text-align: center;
+
+  padding: 2em 4em;
+}
+
+.device-subtitle { color: $text-disabled; }
+
+.keyboard-brightness-level {
+  spacing: $space-size;
+  background-color: $surface !important;
+  color: $text-secondary !important;
+
+  .button:checked { @extend %default_button; }
+}
+
+// background apps
+
+.background-apps-quick-toggle {
+  min-height: $toggle-height;
+  background-color: transparent;
+
+  & StIcon { icon-size: $base-icon-size !important; }
+}
+
+.background-app-item {
+  & .title { @extend %heading; }
+  & .subtitle { @extend %caption; }
+  & .popup-menu-icon {
+    icon-size: $large-icon-size !important;
+    -st-icon-style: regular !important;
+  }
+
+  & .close-button {
+    @extend .icon-button;
+    padding: $space-size;
+  }
+
+  &.popup-inactive-menu-item { color: $text; }
+}
