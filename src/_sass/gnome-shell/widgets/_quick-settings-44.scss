@@ -45,12 +45,12 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     color: on($primary) !important;
 
     &:hover {
-      background-color: mix($text, $primary, 10%) !important;
+      background-color: mix(on($primary), $primary, 10%) !important;
       color: on($primary) !important;
     }
 
     &:active {
-      background-color: mix($text, $primary, 20%) !important;
+      background-color: mix(on($primary), $primary, 20%) !important;
       color: on($primary) !important;
     }
   }
@@ -106,12 +106,12 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
       color: on($primary);
   
       &:hover {
-        background-color: mix($text, $primary, 10%) !important;
+        background-color: mix(on($primary), $primary, 10%) !important;
         color: on($primary);
       }
   
       &:active {
-        background-color: mix($text, $primary, 20%) !important;
+        background-color: mix(on($primary), $primary, 20%) !important;
         color: on($primary);
       }
     }

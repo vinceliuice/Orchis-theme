@@ -8,8 +8,8 @@
   border: solid transparent;
 
   // padding and margins to account for scrollbar
-  &:ltr { margin-left: 0; margin-right: 0; padding-right: 0; border-right-width: 0; }
-  &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
+  &:ltr { margin-left: $space-size; margin-right: 0; padding-right: 0; border-right-width: 0; }
+  &:rtl { margin-right: $space-size; margin-left: 0; padding-left: 0; border-left-width: 0; }
 
   .message-list-placeholder {
     @extend %title_2;
@@ -94,30 +94,30 @@
   border-radius: $material-radius;
   padding: $space-size;
   margin: 0;
-  // border-width: 0; // can not set this ?
 
-  background-color: $base !important;
-  border-color: $base;
-  border: 1px;
-  box-shadow: $shadow-z2;
+  .popup-menu & {
+    box-shadow: none;
+    margin: $margin-size;
+    color: $text-secondary;
+    background-color: mix($text, $base, 5%) !important;
+
+    &:hover {
+      background-color: mix($text, $base, 10%) !important;
+    }
+
+    &:active {
+      background-color: mix($text, $base, 15%) !important;
+    }
+  }
 
   &:second-in-stack {
-    background-color: mix($background, $base, 20%) !important;
+    background-color: mix($text, $base, 5%) !important;
     box-shadow: $shadow-z2;
   }
 
   &:lower-in-stack {
-    background-color: mix($background, $base, 50%) !important;
-    border-color: if($variant == 'light', darken($base, 10%), transparent); // a not ideal workaround for light theme
+    background-color: mix($text, $base, 8%) !important;
     box-shadow: none;
-  }
-
-  .popup-menu & {
-    @extend .events-button;
-    box-shadow: none;
-    padding: $space-size;
-    margin: $margin-size;
-    color: $text-secondary;
   }
 
   // subtract side padding to accommodate the close button's border
