@@ -24,17 +24,18 @@
   }
 }
 
-.message-list-sections {
+.message-view {
   spacing: $space-size;
 
   // to account for scrollbar
   &:ltr { margin-right: $margin-size; padding-left: $space-size; }
   &:rtl { margin-left: $margin-size; padding-right: $space-size; }
-}
 
-.message-list-section,
-.message-list-section-list {
-  spacing: $space-size;
+  -st-vfade-offset: 68px;
+
+  .message {
+    margin-bottom: $margin-size !important;
+  }
 }
 
 // do-not-disturb + clear button
@@ -60,12 +61,56 @@
   }
 }
 
+.message-notification-group {
+  spacing: $space-size;
+
+  .message-group-header {
+    padding: $space-size;
+    .message-group-title {
+      margin: 0 $margin-size;
+    }
+  }
+
+  // close button
+  .message-collapse-button {
+    @extend .icon-button;
+    color: rgba($primary-text, 0.8);
+    background-color: rgba($primary, 0.8);
+    padding: 4px !important;
+    border: 4px transparent solid;
+    &:hover {
+      color: $primary-text;
+      background-color: rgba($primary, 0.7);
+    }
+    &:active {
+      color: rgba($primary-text, 0.8);
+      background-color: rgba($primary, 0.8);
+    }
+  }
+}
+
 // message bubbles
 .message {
   border-radius: $material-radius;
   padding: $space-size;
   margin: 0;
   // border-width: 0; // can not set this ?
+
+  background-color: $base !important;
+  border-color: $base;
+  border: 1px;
+  box-shadow: $shadow-z2;
+
+  &:second-in-stack {
+    background-color: mix($background, $base, 20%) !important;
+    box-shadow: $shadow-z2;
+  }
+
+  &:lower-in-stack {
+    background-color: mix($background, $base, 50%) !important;
+    border-color: if($variant == 'light', darken($base, 10%), transparent); // a not ideal workaround for light theme
+    box-shadow: none;
+  }
 
   .popup-menu & {
     @extend .events-button;
