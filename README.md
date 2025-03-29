@@ -37,18 +37,19 @@ Run the following commands in the terminal:
 
 ```
 OPTIONS:
-  -d, --dest DIR          Specify destination directory (Default: $HOME/.themes)
-  -n, --name NAME         Specify theme name (Default: Orchis)
+  -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
+  -n, --name NAME         Specify theme name (Default: $THEME_NAME)
 
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
   -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
 
   -i, --icon VARIANT      Specify icon variant(s) for shell panel activities button
-                          [default|apple|simple|gnome|ubuntu|arch|manjaro|fedora|debian|void|opensuse|popos|mxlinux|zorin|endeavouros|tux|nixos|gentoo|budgie]
+                          [default|apple|simple|gnome|ubuntu|arch|manjaro|fedora|debian|void|opensuse|popos|mxlinux|zorin|endeavouros|tux|nixos|gentoo|budgie|solus]
                           (Default: ChromeOS style)
 
   -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
+  -f, --fixed             Fixed accent(blue) color for gnome-shell >= 47 libadwaita theme
 
   --tweaks                Specify versions for tweaks [solid|compact|black|primary|macos|submenu|(nord/dracula)] (Options can mix)
                           1. solid              No transparency panel variant
@@ -73,6 +74,8 @@ OPTIONS:
                           3. 42                 Gnome-shell version = 42.0
                           4. 44                 Gnome-shell version = 44.0
                           5. 46                 Gnome-shell version = 46.0
+                          6. 47                 Gnome-shell version = 47.0
+                          7. 48                 Gnome-shell version = 48.0
 
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes
