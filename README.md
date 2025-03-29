@@ -37,8 +37,8 @@ Run the following commands in the terminal:
 
 ```
 OPTIONS:
-  -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
-  -n, --name NAME         Specify theme name (Default: $THEME_NAME)
+  -d, --dest DIR          Specify destination directory (Default: $HOME/.themes)
+  -n, --name NAME         Specify theme name (Default: Orchis)
 
   -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
   -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)s)
