@@ -209,7 +209,7 @@ $dark_5: #000000;
 @define-color shade_color #{$border};
 @define-color scrollbar_outline_color #{$border};
 
-@if $gnome_version == 'new' {
+@if $gnome_version == 'new' and $accent_type != "fixed" {
   :root {
     --accent-blue: #{theme($color: 'default')};
     --accent-teal: #{theme($color: 'teal')};
