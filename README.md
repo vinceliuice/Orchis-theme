@@ -81,7 +81,6 @@ OPTIONS:
   -u, --uninstall         Uninstall/Remove installed themes
 
   -h, --help              Show help
-
 ```
 
 > For more information, run: `./install.sh -h`
