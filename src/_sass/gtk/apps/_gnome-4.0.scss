@@ -170,6 +170,8 @@
         border-left: none;
       }
     }
+
+    .toolbar { margin: 0 0 $space-size * 2 $space-size; }
   }
 
   flap.unfolded > placessidebar,
