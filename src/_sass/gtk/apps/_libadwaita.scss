@@ -1240,6 +1240,14 @@ toolbarview {
       }
     }
 
+    @if $variant == 'light' and $topbar == 'dark' {
+      searchbar > revealer > box {
+        color: $titlebar-text;
+
+        entry { @extend %titlebar-entry; }
+      }
+    }
+
     tabview &, tabview &:backdrop {
       background-color: $base;
     }
