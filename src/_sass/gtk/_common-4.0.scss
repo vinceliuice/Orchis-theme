@@ -69,8 +69,12 @@ iconview {
 }
 
 rubberband {
+  @if $gnome_version == 'new' and $accent_type != "fixed" {
+    --accent-bg-color: @accent_bg_color;
+  }
+
   border: 1px solid $primary;
-  background-color: rgba($primary, 0.3);
+  background-color: color-mix(in srgb, $primary 30%, transparent);
 }
 
 flowbox {
@@ -4780,7 +4784,7 @@ window {
 
 %selected_items_color {
   color: $primary;
-  background-color: rgba($primary, 0.2);
+  background-color: color-mix(in srgb, $primary 20%, transparent);
 }
 
 %selected_items_primary {
