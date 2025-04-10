@@ -15,6 +15,10 @@
   color: $text-secondary;
 }
 
+.datemenu-popover {
+  border-radius: $material-radius + $space-size * 3 !important;
+}
+
 // Calendar menu side column
 .datemenu-calendar-column {
   spacing: $space-size;

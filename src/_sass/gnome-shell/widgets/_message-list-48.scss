@@ -28,8 +28,8 @@
   spacing: $space-size;
 
   // to account for scrollbar
-  &:ltr { margin-right: $margin-size; padding-left: $space-size; }
-  &:rtl { margin-left: $margin-size; padding-right: $space-size; }
+  &:ltr { margin-right: $margin-size * 3; padding-left: 0; }
+  &:rtl { margin-left: $margin-size * 3; padding-right: 0; }
 
   -st-vfade-offset: 68px;
 
@@ -111,12 +111,12 @@
   }
 
   &:second-in-stack {
-    background-color: mix($text, $base, 5%) !important;
-    box-shadow: $shadow-z2;
+    background-color: mix($text, $base, 8%) !important;
+    box-shadow: none;
   }
 
   &:lower-in-stack {
-    background-color: mix($text, $base, 8%) !important;
+    background-color: mix($text, $base, 11%) !important;
     box-shadow: none;
   }
 

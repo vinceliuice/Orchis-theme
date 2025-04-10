@@ -20,21 +20,21 @@ $notification_banner_width: 34em;
 }
 
 .notification-buttons-bin {
-  spacing: 0;
+  spacing: $space-size;
+  padding: 0;
 }
 
 .notification-button {
-  min-height: 40px;
-  padding: $space-size / 2 16px;
+  min-height: $medium-size;
+  padding: 0 16px;
   margin: 0 !important;
-  background-color: transparent;
+  background-color: $fill;
   color: $text-secondary;
   font-weight: 500;
   border: none;
   border-radius: $popup-radius - $space-size * 2;
 
   .popup-menu & {
-    padding: 0 16px;
     border-radius: $menuitem-radius;
   }
 
