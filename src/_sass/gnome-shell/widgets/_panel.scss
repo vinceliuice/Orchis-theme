@@ -247,8 +247,9 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
   Gjs_arcmenu_arcmenu_com_menuButton_ArcMenuMenuButton.panel-button {
     .arcmenu-menu-button {
       border-radius: if($corner_style == 'circular', $circular-radius, $material-radius);
-      width: $panel_height - $space-size + 1px;
+      // width: $panel_height - $space-size + 1px;
       margin: $space-size / 2 0;
+      padding: 0 ($panel_height - 16px - $space-size) / 2;
 
       &:hover {
         background-color: on(dark, divider);
