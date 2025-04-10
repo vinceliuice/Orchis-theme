@@ -2825,7 +2825,7 @@ scale {
       min-width: $slider_size;
       margin: $slider_margin;
       border-radius: 50%;
-      color: $primary;
+      color: $primary-fixed;
       background-color: transparent;
 
       &, &:focus, &:hover, &:active {
@@ -2860,18 +2860,17 @@ scale {
         background-image: -gtk-scaled(url('#{$_url}.png'), url('#{$_url}@2.png')),
                           radial-gradient(circle, $overlay-active 10%, transparent 0%);
         background-size: auto, 0% 0%;
-        color: $primary;
+        color: $primary-fixed;
       }
     }
 
     // the colored part of the backing bit
     > highlight {
-      transition: background-image $duration $ease-out;
-      background-image: image($primary);
+      transition: background-color $duration $ease-out;
+      background-color: $primary-fixed;
 
       &:disabled {
-        background-color: $background;
-        background-image: image($text-secondary-disabled);
+        background-color: $text-secondary-disabled;
       }
     }
 
