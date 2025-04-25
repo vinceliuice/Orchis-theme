@@ -122,7 +122,7 @@
 
   // symbolic icons in popover
   .popup-menu-arrow,
-  .popup-menu-icon { icon-size: $base-icon-size; }
+  .popup-menu-icon { icon-size: $base-icon-size !important; }
 
   // popover submenus
   .popup-sub-menu {

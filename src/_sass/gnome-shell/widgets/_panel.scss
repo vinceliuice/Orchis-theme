@@ -177,15 +177,15 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
     // spacing between power icon and (optional) percentage label
     // .power-status.panel-status-indicators-box { }
 
-    // .panel-status-menu-box { // indicators and menubutton icons
-    //   spacing: $space-size;
-    //   padding: 0;
-    //   margin: 0;
-    //
-    //   .system-status-icon {
-    //     padding: 0;
-    //   }
-    // }
+    .panel-status-menu-box { // indicators and menubutton icons
+      spacing: $space-size;
+      padding: $space-size;
+      margin: 0;
+
+      .system-status-icon {
+        padding: 0;
+      }
+    }
 
     // app menu icon
     .app-menu-icon {
