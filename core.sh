@@ -582,6 +582,12 @@ uninstall_theme() {
       done
     done
   done
+
+  local DASH_TO_DOCK_STYLESHEET_BAK="$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css.bak"
+
+  if [[ -f "$DASH_TO_DOCK_STYLESHEET_BAK" ]]; then
+    mv "$DASH_TO_DOCK_STYLESHEET_BAK" "${DASH_TO_DOCK_STYLESHEET_BAK%.bak}"
+  fi
 }
 
 clean_theme() {
