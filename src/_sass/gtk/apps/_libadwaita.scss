@@ -1277,7 +1277,7 @@ toolbarview {
       background-color: transparent;
       color: inherit;
       box-shadow: none;
-      padding-top: $space-size;
+      padding-top: 0;
 
       &:backdrop {
         background-color: transparent;
