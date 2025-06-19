@@ -187,8 +187,45 @@ window#whiskermenu-window {
 .thunar {
   toolbar { border-bottom: 1px solid $divider; }
 
+  headerbar.titlebar toolbar {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    &:not(.inline-toolbar):not(.osd) {
+      scale,
+      entry,
+      spinbutton,
+      button,
+      stackswitcher {
+        margin: 0 $space-size / 2;
+      }
+
+      button {
+        min-height: 0;
+        min-width: 0;
+      }
+
+      switch { margin: $space-size $space-size / 2; }
+    }
+  }
+
   .standard-view.frame {
     border: none;
+
+    widget.view {
+      padding: $space-size; // Not work ?
+      border-radius: 3px;
+    }
+
+    .view {
+      &:hover { color: $text; }
+
+      &:selected {
+        color: on($primary);
+        background: $primary;
+      }
+    }
   }
 
   paned paned paned > notebook.frame {

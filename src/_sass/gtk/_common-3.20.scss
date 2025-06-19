@@ -1086,7 +1086,7 @@ searchbar > revealer > box {
   @extend %button-flat;
   color: $titlebar-text-secondary;
 
-  .linked:not(.vertical) > & {
+  .linked:not(.vertical):not(.path-bar) > & {
     border-radius: $circular-radius;
   }
 
@@ -1180,6 +1180,10 @@ searchbar > revealer > box {
     background-color: $titlebar-divider;
   }
 
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %titlebar-button;
+  }
+
   entry { @extend %titlebar-entry; }
 
   .linked:not(.vertical) > entry {
@@ -1214,10 +1218,19 @@ searchbar > revealer > box {
   }
 
   // FIXME: Ugly overriding
-  .path-bar button:not(.suggested-action):not(.destructive-action).text-button {
-    min-width: 0;
-    padding-left: ($medium-size - 24px) / 2;
-    padding-right: ($medium-size - 24px) / 2;
+  .path-bar button:not(.suggested-action):not(.destructive-action) {
+    color: $titlebar-text-secondary;
+    border-radius: 3px;
+
+    &.text-button {
+      min-width: 0;
+      padding-left: ($medium-size - 24px) / 2;
+      padding-right: ($medium-size - 24px) / 2;
+    }
+  
+    &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
+  
+    &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
   &.selection-mode {
@@ -1355,10 +1368,6 @@ headerbar {
   button {
     margin-top: $space-size;
     margin-bottom: $space-size;
-  }
-
-  button:not(.suggested-action):not(.destructive-action) {
-    @extend %titlebar-button;
   }
 
   separator.titlebutton {
@@ -1724,6 +1733,13 @@ menubar,
   &:backdrop {
     background-color: $titlebar-backdrop;
     color: $titlebar-text-secondary;
+  }
+
+  headerbar & {
+    &, &:backdrop {
+      background-color: transparent;
+      box-shadow: none;
+    }
   }
 
   > menuitem {
