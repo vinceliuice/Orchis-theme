@@ -19,7 +19,7 @@ Based on nana-4 -- [materia-theme](https://github.com/nana-4/materia-theme)
 
 ## Donate
 
-If you like my project, you can buy me a coffee:
+If you like this project, consider supporting it with a coffee:
 
 <span class="paypal"><a href="https://www.paypal.me/vinceliuice" title="Donate to this project using Paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal donate button" /></a></span>
 
@@ -33,7 +33,8 @@ Run the following commands in the terminal:
 ./install.sh
 ```
 
-> Tip: `./install.sh` allows the following options:
+> [!TIP]
+> `./install.sh` allows the following options:
 
 ```
 OPTIONS:
@@ -56,7 +57,7 @@ OPTIONS:
                           2. compact            No floating panel variant
                           3. black              Full black variant
                           4. primary            Change radio icon checked color to primary theme color (Default is Green)
-                          5. macos              Change window buttons to MacOS style
+                          5. macos              Change window buttons to macOS style
                           6. submenu            Set normal submenus color contrast (dark submenu style on dark version)
                           7. [nord|dracula]     Nord/dracula colorscheme themes (nord and dracula can not mix use!)
                           8. dock               Fix style for 'dash-to-dock' or 'ubuntu-dock' extension
@@ -115,5 +116,5 @@ and so on ...
 sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
-If you use flatpak apps, you can run this to fix theme issue
+If you use flatpak apps, you can run this to fix theme issue.
 
