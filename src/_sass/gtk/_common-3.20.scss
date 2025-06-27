@@ -1628,6 +1628,7 @@ treeview.view {
   &:selected {
     @extend %selected_items;
     background-image: image($overlay-checked);
+    color: $primary;
   }
 
   rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
