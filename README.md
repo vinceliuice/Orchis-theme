@@ -57,7 +57,7 @@ OPTIONS:
                           2. compact            No floating panel variant
                           3. black              Full black variant
                           4. primary            Change radio icon checked color to primary theme color (Default is Green)
-                          5. macos              Change window buttons to MacOS style
+                          5. macos              Change window buttons to macOS style
                           6. submenu            Set normal submenus color contrast (dark submenu style on dark version)
                           7. [nord|dracula]     Nord/dracula colorscheme themes (nord and dracula can not mix use!)
                           8. dock               Fix style for 'dash-to-dock' or 'ubuntu-dock' extension
