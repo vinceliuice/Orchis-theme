@@ -19,7 +19,7 @@ Based on nana-4 -- [materia-theme](https://github.com/nana-4/materia-theme)
 
 ## Donate
 
-If you like my project, you can buy me a coffee:
+If you like this project, consider supporting it with a coffee:
 
 <span class="paypal"><a href="https://www.paypal.me/vinceliuice" title="Donate to this project using Paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal donate button" /></a></span>
 
@@ -116,5 +116,5 @@ and so on ...
 sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
-If you use flatpak apps, you can run this to fix theme issue
+If you use flatpak apps, you can run this to fix theme issue.
 
