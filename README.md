@@ -33,7 +33,8 @@ Run the following commands in the terminal:
 ./install.sh
 ```
 
-> Tip: `./install.sh` allows the following options:
+> [!TIP]
+> `./install.sh` allows the following options:
 
 ```
 OPTIONS:
