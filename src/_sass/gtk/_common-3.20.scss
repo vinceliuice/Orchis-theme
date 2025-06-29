@@ -1433,6 +1433,34 @@ headerbar {
   }
 }
 
+window.background.csd {
+  > widget > headerbar:not(.titlebar) {
+    min-height: $medium-size;
+    border: none;
+    box-shadow: none;
+
+    @if $mac_style == 'true' {
+      padding: 0 $space-size * 2;
+    } @else {
+      padding: 0 $space-size / 2;
+    }
+
+    button.titlebutton {
+      padding: 0;
+
+      @if $mac_style == 'true' {
+        min-height: 16px;
+        min-width: 16px;
+        margin: 0 $space-size - 2px;
+      } @else {
+        min-height: $small-size;
+        min-width: $small-size;
+        margin: 0 $space-size / 2;
+      }
+    }
+  }
+}
+
 //
 // Window buttons
 //
