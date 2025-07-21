@@ -87,11 +87,28 @@ these are pretty self explicative */
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
+
+$windows-border: if($variant == 'light', mix(black, $base, 35%), mix(black, $base, 80%));
+
 @define-color wm_title #{"" + $titlebar-text};
 @define-color wm_unfocused_title #{"" + $titlebar-text-secondary};
 @define-color wm_highlight #{"" + highlight($titlebar)};
+@define-color wm_border #{"" + $windows-border};
 @define-color wm_bg #{"" + $titlebar};
 @define-color wm_unfocused_bg #{"" + $titlebar-backdrop};
+
+@define-color wm_button_icon #{"" + white};
+
+@if $colorscheme == 'dracula' {
+  @define-color wm_button_icon alpha(#{black}, 0.5);
+}
+
+@define-color wm_button_close_hover_bg #{"" + $button-close};
+@define-color wm_button_close_active_bg #{"" + darken($button-close, 12%)};
+@define-color wm_button_max_hover_bg #{"" + $button-max};
+@define-color wm_button_max_active_bg #{"" + darken($button-max, 12%)};
+@define-color wm_button_min_hover_bg #{"" + $button-min};
+@define-color wm_button_min_active_bg #{"" + darken($button-min, 12%)};
 
 /*
 FIXME this is really an API */
