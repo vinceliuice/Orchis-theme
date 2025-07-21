@@ -563,9 +563,17 @@ $submenu_item_radius: $popup-radius - $space-size;
   }
 }
 
+.window-border {
+  border: 3px solid $primary;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Cover rounded corners and some bad adjustment gaps */
+  box-shadow: 0 0 0 1px $primary inset; 
+}
+
 .expo-workspaces-name-entry,
 .expo-workspaces-name-entry#selected {
-  height: 15px;
+  height: 12pt;
   border-radius: $corner-radius;
   font-size: 9pt;
   padding: 5px 8px;
@@ -573,12 +581,9 @@ $submenu_item_radius: $popup-radius - $space-size;
   @include entry(osd);
 
   &:focus {
-    border: 1px solid $primary;
-    background-color: $primary;
-    color: on($primary);
-    font-style: italic;
+    border: 2px solid $primary;
     transition-duration: 300;
-    selection-background-color: on($primary);
+    selection-background-color: $primary;
     selected-color: $primary;
   }
 }
