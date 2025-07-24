@@ -1941,7 +1941,7 @@ $submenu_item_radius: $popup-radius - $space-size;
 
   &-overlay {
     width: 290px;
-    height: 80px;
+    min-height: 80px;
     padding: $space-size*2 $space-size*3;
     spacing: $space-size;
     background-color: rgba(black, 0.45);
@@ -1965,7 +1965,7 @@ $submenu_item_radius: $popup-radius - $space-size;
       &:hover { background-color: on(dark, divider); }
       &:active { background-color: on(dark, track); }
       &:insensitive {
-        opacty: 0.35;
+        opacity: 0.35;
         color: on(dark, disabled);
       }
     }
