@@ -19,7 +19,7 @@ $app_folder_size: 720px;
 
 // items in the app grid and dash
 .overview-tile {
-  border-radius: $material-radius * 2;
+  border-radius: $material-radius * 3;
   padding: 12px;
   spacing: 6px;
   transition-duration: $longer_duration;
@@ -72,7 +72,7 @@ $app_folder_size: 720px;
 // app folders
 .app-folder {
   background-color: on(dark, fill);
-  border-radius: $material-radius * 2;
+  border-radius: $material-radius * 3;
 
   &:focus, &:hover { background-color: on(dark, divider); }
   &:active, &:highlighted, &:selected,
@@ -102,7 +102,7 @@ StWidget.focused {
 
 // expanded folder
 .app-folder-dialog { //style like the dash
-  border-radius: $material-radius * 4;
+  border-radius: $material-radius * 6;
   border: none;
   background-color: rgba($system, 0.95);
   color: on($system);

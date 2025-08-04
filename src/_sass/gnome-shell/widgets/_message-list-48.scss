@@ -99,24 +99,24 @@
     box-shadow: none;
     margin: $margin-size;
     color: $text-secondary;
-    background-color: mix($text, $base, 5%) !important;
+    background-color: mix($text, $base, if($variant =='light', 6%, 4%)) !important;
 
     &:hover {
-      background-color: mix($text, $base, 10%) !important;
+      background-color: mix($text, $base, if($variant == 'light', 10%, 7%)) !important;
     }
 
     &:active {
-      background-color: mix($text, $base, 15%) !important;
+      background-color: mix($text, $base, if($variant == 'light', 15%, 10%)) !important;
     }
   }
 
   &:second-in-stack {
-    background-color: mix($text, $base, 8%) !important;
+    background-color: mix($text, $base, if($variant == 'light', 9%, 2%)) !important;
     box-shadow: none;
   }
 
   &:lower-in-stack {
-    background-color: mix($text, $base, 11%) !important;
+    background-color: mix($text, $base, if($variant == 'light', 12%, 0%)) !important;
     box-shadow: none;
   }
 

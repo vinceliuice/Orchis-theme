@@ -25,7 +25,7 @@
 // content
 .search-section-content {
   background-color: on(dark, divider);
-  border-radius: $material-radius + $space-size;
+  border-radius: $material-radius + $space-size * 2;
   border: none;
   box-shadow: none;
   text-shadow: none;
