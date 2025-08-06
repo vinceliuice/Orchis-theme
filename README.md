@@ -46,7 +46,7 @@ OPTIONS:
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: All variants)
 
   -i, --icon VARIANT      Specify icon variant(s) for shell panel activities button
-                          [default|apple|simple|gnome|ubuntu|arch|manjaro|fedora|debian|void|opensuse|popos|mxlinux|zorin|endeavouros|tux|nixos|gentoo|budgie|solus]
+                          [default|apple|simple|gnome|ubuntu|arch|manjaro|fedora|debian|void|opensuse|popos|mxlinux|zorin|endeavouros|tux|nixos|gentoo|budgie|solus|kali]
                           (Default: ChromeOS style)
 
   -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
