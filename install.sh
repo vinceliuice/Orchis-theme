@@ -391,6 +391,10 @@ while [[ "$#" -gt 0 ]]; do
             icon='-solus'
             shift
             ;;
+          kali)
+            icon='-kali'
+            shift
+            ;;
           -*)
             break
             ;;
