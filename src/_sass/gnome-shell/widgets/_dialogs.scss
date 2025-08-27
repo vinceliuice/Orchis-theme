@@ -24,6 +24,10 @@ $mdborder_color: if($variant == 'light', rgba(black, 0.15), rgba(black, 0.75));
     padding: 0 16px;
     spacing: 0;
     @extend %dialog_button;
+
+    &:not(:first-child) {
+      margin-left: $space-size * 2;
+    }
   }
 }
 
