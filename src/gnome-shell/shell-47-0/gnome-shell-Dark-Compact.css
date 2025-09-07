@@ -2017,6 +2017,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .background-app-item .close-button {
   padding: 4px;
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.background-app-item .close-button:focus, .background-app-item .close-button:hover {
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.background-app-item .close-button:active {
+  color: rgba(0, 0, 0, 0.75) !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.background-app-item .close-button:insensitive {
+  color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .background-app-item.popup-inactive-menu-item {
@@ -2984,7 +2999,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .search-section-content {
   background-color: rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
+  border-radius: 18px;
   border: none;
   box-shadow: none;
   text-shadow: none;
@@ -3172,7 +3187,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* App Icons */
 .overview-tile, .grid-search-result {
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 12px;
   spacing: 6px;
   transition-duration: 150ms;
@@ -3213,7 +3228,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder {
   background-color: rgba(255, 255, 255, 0.04);
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 .app-folder:focus, .app-folder:hover {
@@ -3246,7 +3261,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .app-folder-dialog {
-  border-radius: 40px;
+  border-radius: 60px;
   border: none;
   background-color: rgba(36, 36, 36, 0.95);
   color: white;

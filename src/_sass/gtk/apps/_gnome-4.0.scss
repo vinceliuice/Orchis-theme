@@ -1,14 +1,13 @@
-
 //
 // Nautilus
 //
 .nautilus-window {
   &.background.csd {
-    color: if($topbar == 'dark' and $variant == 'light', $titlebar-text-secondary, $text-secondary);
+    color: if($topbar =='dark' and $variant =='light', $titlebar-text-secondary, $text-secondary);
 
     &, &:backdrop {
       background-image: none;
-      background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
+      background-color: if($topbar =='dark' and $variant =='light', $titlebar, $base);
     }
   }
 
@@ -19,7 +18,9 @@
     }
   }
 
-  headerbar popover.background { // reset
+  headerbar popover.background {
+
+    // reset
     > contents {
       button:not(.suggested-action):not(.destructive-action) {
         @extend %button-basic;
@@ -37,20 +38,25 @@
     }
   }
 
-  @if $variant == 'light' and $topbar == 'dark' {
+  @if $variant =='light' and $topbar =='dark' {
+
     .sidebar-pane,
     .content-pane {
       headerbar {
         color: $titlebar-text;
-  
+
         .subtitle,
         .dim-label {
           color: $titlebar-text-secondary;
-      
-          &:backdrop { color: $titlebar-text-disabled; }
+
+          &:backdrop {
+            color: $titlebar-text-disabled;
+          }
         }
 
-        popover.background { // reset
+        popover.background {
+
+          // reset
           > contents {
             background-color: $surface;
             color: $text;
@@ -58,7 +64,9 @@
             .dim-label {
               color: $text-secondary;
 
-              &:backdrop { color: $text-disabled; }
+              &:backdrop {
+                color: $text-disabled;
+              }
             }
 
             button {
@@ -67,16 +75,24 @@
 
             .linked:not(.vertical) > button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
               border-radius: 0;
-    
-              &:first-child { border-radius: $menuitem-radius 0 0 $menuitem-radius; }
-              &:last-child { border-radius: 0 $menuitem-radius $menuitem-radius 0; }
-              &:only-child { border-radius: $menuitem-radius; }
+
+              &:first-child {
+                border-radius: $menuitem-radius 0 0 $menuitem-radius;
+              }
+
+              &:last-child {
+                border-radius: 0 $menuitem-radius $menuitem-radius 0;
+              }
+
+              &:only-child {
+                border-radius: $menuitem-radius;
+              }
             }
           }
 
           > contents > grid stack > scrolledwindow {
             border: 1px solid $border;
-  
+
             row + separator {
               background-color: transparent;
             }
@@ -84,36 +100,44 @@
         }
       }
     }
-  
+
     .content-pane {
       headerbar {
         &, &:backdrop {
           box-shadow: inset 0 1px highlight($titlebar);
         }
 
-        entry { @extend %titlebar-entry; }
+        entry {
+          @extend %titlebar-entry;
+        }
 
-        @if $mac_style == 'true' {
+        @if $mac_style =='true' {
           button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
             @extend %titlebar-button;
           }
-        } @else {
+        }
+
+        @else {
           button:not(.suggested-action):not(.destructive-action) {
             @extend %titlebar-button;
           }
         }
 
-        popover.background { // reset
+        popover.background {
+
+          // reset
           > contents {
-            @if $mac_style == 'true' {
+            @if $mac_style =='true' {
               button:not(.suggested-action):not(.destructive-action):not(.close):not(.maximize):not(.minimize) {
                 @extend %button-basic;
-  
+
                 &.flat {
                   @extend %button-flat;
                 }
               }
-            } @else {
+            }
+
+            @else {
               button:not(.suggested-action):not(.destructive-action) {
                 @extend %button-basic;
 
@@ -124,7 +148,9 @@
             }
           }
 
-          entry { @extend %titlebar-entry-reset; }
+          entry {
+            @extend %titlebar-entry-reset;
+          }
         }
       }
 
@@ -155,7 +181,9 @@
   }
 
   .sidebar-pane {
-    &, &:backdrop { background-color: transparent; }
+    &, &:backdrop {
+      background-color: transparent;
+    }
 
     &:dir(ltr), &.end:dir(rtl) {
       &, banner > revealer > widget {
@@ -171,23 +199,30 @@
       }
     }
 
-    .toolbar { margin: 0 0 $space-size * 2 $space-size; }
+    .toolbar {
+      margin: 0 0 $space-size * 2 $space-size;
+    }
   }
 
   flap.unfolded > placessidebar,
   .sidebar-pane > toolbarview > placessidebar {
-    background-color: if($topbar == 'dark' and $variant == 'light', $titlebar, $base);
+    background-color: if($topbar =='dark' and $variant =='light', $titlebar, $base);
     border-radius: $window-radius;
     color: $titlebar-text-secondary;
 
     > scrolledwindow {
       margin: 0 0 $space-size * 2 $space-size * 2;
       border-radius: $window-radius - $space-size;
-      background-color: if($topbar == 'dark' and $variant == 'light', transparent, rgba(theme($theme), 0.08));
+      background-color: if($topbar =='dark' and $variant =='light', transparent, rgba(theme($theme), 0.08));
 
       > overshoot, > undershoot {
-        &.top { border-radius: $window-radius - $space-size $window-radius - $space-size 0 0; }
-        &.bottom { border-radius: 0 0 $window-radius - $space-size $window-radius - $space-size; }
+        &.top {
+          border-radius: $window-radius - $space-size $window-radius - $space-size 0 0;
+        }
+
+        &.bottom {
+          border-radius: 0 0 $window-radius - $space-size $window-radius - $space-size;
+        }
       }
 
       > viewport {
@@ -196,7 +231,9 @@
           background: none;
           border-radius: $window-radius - $space-size;
 
-          > separator { background: none; }
+          > separator {
+            background: none;
+          }
 
           > row.activatable {
             border-radius: 0;
@@ -234,12 +271,14 @@
               padding-left: $space-size;
             }
 
-            &.sidebar-placeholder-row { background-color: transparent; }
+            &.sidebar-placeholder-row {
+              background-color: transparent;
+            }
 
             &:drop(active) {
               border-radius: 0;
 
-              @if $topbar == 'dark' {
+              @if $topbar =='dark' {
                 border-radius: $circular_radius 0 0 $circular_radius;
               }
 
@@ -251,11 +290,15 @@
             }
 
             button.sidebar-button {
-              @if $topbar == 'dark' { @extend %button-on-dark; }
+              @if $topbar =='dark' {
+                @extend %button-on-dark;
+              }
             }
 
             &:hover {
-              image.sidebar-icon, label.sidebar-label { color: $primary; }
+              image.sidebar-icon, label.sidebar-label {
+                color: $primary;
+              }
             }
 
             &:selected {
@@ -263,9 +306,13 @@
               font-weight: 700;
               // font-size: larger;
 
-              image.sidebar-icon { color: $primary; }
+              image.sidebar-icon {
+                color: $primary;
+              }
 
-              image.sidebar-icon, label.sidebar-label { color: $primary; }
+              image.sidebar-icon, label.sidebar-label {
+                color: $primary;
+              }
 
               button.sidebar-button {
                 color: $primary;
@@ -281,7 +328,7 @@
                 border-image-slice: 16 9 16 46;
                 border-image-repeat: stretch;
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
-                                                 url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
+                  url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
               }
 
               label.sidebar-label {
@@ -324,27 +371,31 @@
     .box {
       padding: 0 $window-radius - $space-size;
       background-color: transparent;
-      box-shadow: inset 0 -1px if($topbar == 'dark' and $variant == 'light', transparent, $solid-border);
+      box-shadow: inset 0 -1px if($topbar =='dark' and $variant =='light', transparent, $solid-border);
     }
 
     tab {
       color: $titlebar-text-secondary;
 
-      @if $topbar == 'dark' and $variant == 'light' {
+      @if $topbar =='dark' and $variant =='light' {
         border: none;
       }
 
       &:hover:not(:selected):not(:active):not(:checked) {
         color: $titlebar-text;
-        background-color: if($topbar == 'dark', rgba($titlebar-text, 0.05), transparent);
+        background-color: if($topbar =='dark', rgba($titlebar-text, 0.05), transparent);
       }
 
       &:active, &:checked, &:selected {
         color: $text;
 
-        &:disabled { color: $text-disabled; }
+        &:disabled {
+          color: $text-disabled;
+        }
 
-        & > button.flat { @extend %button-flat-simple; }
+        & > button.flat {
+          @extend %button-flat-simple;
+        }
       }
 
       &:disabled {
@@ -352,16 +403,18 @@
       }
 
       & > button.flat {
-        @if $topbar == 'dark' {
+        @if $topbar =='dark' {
           @extend %button-on-dark;
-        } @else {
+        }
+
+        @else {
           @extend %button-flat-simple;
         }
       }
     }
   }
 
-  @if $variant == 'light' and $topbar == 'dark' {
+  @if $variant =='light' and $topbar =='dark' {
     tabview stack {
       background-color: transparent;
 
@@ -399,7 +452,9 @@
       border-radius: $window-radius - $space-size;
       margin: 0 $space-size $space-size 0;
 
-      .view { background-color: transparent; }
+      .view {
+        background-color: transparent;
+      }
     }
 
     placesview {
@@ -444,7 +499,7 @@
 
   #NautilusPathBar {
     background-color: $titlebar-fill;
-  
+
     #NautilusPathButton {
       &.current-dir {
         color: $titlebar-text;
@@ -456,7 +511,7 @@
 .floating-bar {
   min-height: $menuitem-size;
   padding: $space-size / 2;
-  margin: if($variant == 'light' and $topbar == 'dark', $space-size * 2, $space-size);
+  margin: if($variant =='light' and $topbar =='dark', $space-size * 2, $space-size);
   border: none;
   border-radius: $circular-radius;
   background-color: rgba($background, 0.95);
@@ -477,7 +532,8 @@
   }
 }
 
-#NautilusQueryEditor { // search entry
+#NautilusQueryEditor {
+  // search entry
   border-radius: $circular-radius;
   padding: 0 ($medium-size - $menuitem-size) / 2 0 ($space-size + 2px);
 
@@ -487,7 +543,9 @@
     padding: 0;
   }
 
-  > * { margin: ($medium-size - $menuitem-size) / 2 0; }
+  > * {
+    margin: ($medium-size - $menuitem-size) / 2 0;
+  }
 }
 
 #NautilusPathBar {
@@ -507,7 +565,9 @@
       }
     }
 
-    &:first-child { margin-left: 0; }
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   > menubutton > button {
@@ -519,10 +579,10 @@
   border-radius: $circular-radius;
 
   > button {
-   margin: $space-size / 2;
-   padding: 0;
-   min-height: $small-size - 2px;
-   min-width: $small-size - 2px;
+    margin: $space-size / 2;
+    padding: 0;
+    min-height: $small-size - 2px;
+    min-width: $small-size - 2px;
   }
 }
 
@@ -555,6 +615,7 @@ window > contents {
     }
 
     &.unfolded {
+
       stack.background leaflet box:last-child > headerbar,
       stack.background leaflet + headerbar {
         border-top-left-radius: 0;
@@ -581,12 +642,15 @@ window > widget {
 
     &.unfolded {
       stack.background > widget > overlay > leaflet > box > headerbar, // Control display header
+
       stack.background > widget > box > widget > headerbar,
-      > box:not(:last-child) headerbar { // Calendar and Builder right header
+      > box:not(:last-child) headerbar {
+        // Calendar and Builder right header
         border-top-left-radius: 0;
       }
 
-      > separator + box > headerbar { // Calendar and control left header
+      > separator + box > headerbar {
+        // Calendar and control left header
         border-top-right-radius: 0;
       }
     }
@@ -748,7 +812,9 @@ window > contents leaflet {
 // Calculator
 //
 
-.history-view { background-color: $base; }
+.history-view {
+  background-color: $base;
+}
 
 #displayitem {
   border-top: 1px solid $border;
@@ -944,20 +1010,24 @@ button:checked:not(:backdrop) .calendar-color-image,
 datechooser {
   padding: $space-size;
 
-  .current-week { // Month selector
+  .current-week {
+    // Month selector
     background-color: $fill;
     color: $text;
     border-radius: $corner-radius;
   }
 
-  navigator { // add some space between the two controls
+  navigator {
+    // add some space between the two controls
     margin-right: $space-size;
     margin-left: $space-size;
     margin-bottom: $space-size;
   }
 
   navigator {
-    label { font-weight: bold; }
+    label {
+      font-weight: bold;
+    }
 
     button, button.popup, button.image-button {
       min-height: $medium-size;
@@ -973,7 +1043,8 @@ datechooser {
   }
 
   .sidebar-pane & {
-    .current-week { // Month selector
+    .current-week {
+      // Month selector
       background-color: $titlebar-fill;
       color: $titlebar-text;
     }
@@ -1005,21 +1076,28 @@ datechooser {
       color: $primary-text;
       font-weight: bold;
 
-      dot { background-color: $primary-text; }
+      dot {
+        background-color: $primary-text;
+      }
     }
 
     &.today {
       color: $primary;
 
-      dot { background-color: $primary; }
+      dot {
+        background-color: $primary;
+      }
     }
 
     &.other-month {
+
       &:not(:hover),
       &:backdrop {
         color: $text-secondary-disabled;
 
-        dot { background-color: $text-secondary-disabled; }
+        dot {
+          background-color: $text-secondary-disabled;
+        }
       }
     }
   }
@@ -1093,10 +1171,14 @@ monthcell {
       background-color: gtkalpha($primary, 0.2);
     }
 
-    label.day-label { font-weight: bold; }
+    label.day-label {
+      font-weight: bold;
+    }
   }
 
-  &:nth-child(7n + 1) { border-left-width: 0; }
+  &:nth-child(7n + 1) {
+    border-left-width: 0;
+  }
 
   &.today {
     background-color: gtkalpha($primary, 0.2);
@@ -1184,7 +1266,7 @@ menubutton {
     border-radius: 0;
     border-top-style: none;
     border-bottom-style: none;
-    
+
     &:hover:not(:backdrop) {
       background-image: none;
       text-shadow: none;
@@ -1390,24 +1472,25 @@ screenshot-carousel box.frame.view {
 }
 
 .category-tile.category-work {
-  padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+  padding: 1px;
+  /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
   color: #1c71d8;
-  background-color:#fdf8d7;
+  background-color: #fdf8d7;
   background-image: linear-gradient($border 1px, transparent 1px),
-                    linear-gradient(90deg, $border 1px, transparent 1px);
+    linear-gradient(90deg, $border 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
   background-position: -1px -4px, center -1px;
 
   &:hover {
     background-color: lighten(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-                      linear-gradient(90deg, $border 1px, transparent 1px);
+      linear-gradient(90deg, $border 1px, transparent 1px);
   }
 
   &:active {
     background-color: darken(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-                      linear-gradient(90deg, $border 1px, transparent 1px);
+      linear-gradient(90deg, $border 1px, transparent 1px);
   }
 }
 
@@ -1557,6 +1640,7 @@ image.circular {
   }
 
   popover.background {
+
     > arrow,
     > contents {
       padding: 0;
@@ -1582,8 +1666,11 @@ window.org-gnome-Builder {
 }
 
 popover.background.global-search {
+
   > arrow,
-  > contents { padding: 0; }
+  > contents {
+    padding: 0;
+  }
 }
 
 panelframeswitcher {
@@ -1649,7 +1736,9 @@ panelstatusbar {
   background-color: $background;
 
   > menubutton > button,
-  > paneltogglebutton button.image-button { border-radius: 0; }
+  > paneltogglebutton button.image-button {
+    border-radius: 0;
+  }
 }
 
 // Setting window
@@ -1700,7 +1789,9 @@ window.dialog {
       border-radius: 0;
 
       > row {
-        &:first-child, &:last-child { border-radius: 0; }
+        &:first-child, &:last-child {
+          border-radius: 0;
+        }
       }
     }
   }
@@ -1729,9 +1820,9 @@ button.colorpad {
   margin: 0px;
   background-blend-mode: screen;
   background-image: linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55),
-                    linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
+    linear-gradient(45deg, #0f0f0f55 25%, transparent 25%, transparent 75%, #0f0f0f55 75%, #0f0f0f55);
   background-color: gtkcolor(colorpad_color);
-  color:  gtkcolor(colorpad_fg_color);
+  color: gtkcolor(colorpad_fg_color);
   background-size: 18px 18px;
   background-position: 0px 0px, 9px 9px;
 
@@ -1754,7 +1845,9 @@ window#desktopwindow {
 
 // ThemeSelector
 themeselector, // Gnome text editor
-panelthemeselector { // Gnome builder
+
+panelthemeselector {
+  // Gnome builder
   margin: $space-size * 1.5;
 
   checkbutton {
@@ -1813,7 +1906,8 @@ panelthemeselector { // Gnome builder
   }
 }
 
-themeswitcher { // Gnome console
+themeswitcher {
+  // Gnome console
   padding: $space-size;
 
   .check {
@@ -1932,13 +2026,16 @@ styleselector {
       color: on($yellow-light);
     }
 
-    * { color: on($yellow-light); }
+    * {
+      color: on($yellow-light);
+    }
 
     .text-view.view > text > selection {
       background-color: on($yellow-light, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: lighten($yellow-light, 10%);
@@ -1953,13 +2050,16 @@ styleselector {
       color: on($pink-light);
     }
 
-    * { color: on($pink-light); }
+    * {
+      color: on($pink-light);
+    }
 
     .text-view.view > text > selection {
       background-color: on($pink-light, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: lighten($pink-light, 10%);
@@ -1974,13 +2074,16 @@ styleselector {
       color: on($green-light);
     }
 
-    * { color: on($green-light); }
+    * {
+      color: on($green-light);
+    }
 
     .text-view.view > text > selection {
       background-color: on($green-light, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: lighten($green-light, 10%);
@@ -1995,13 +2098,16 @@ styleselector {
       color: on($purple-light);
     }
 
-    * { color: on($purple-light); }
+    * {
+      color: on($purple-light);
+    }
 
     .text-view.view > text > selection {
       background-color: on($purple-light, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: lighten($purple-light, 10%);
@@ -2016,13 +2122,16 @@ styleselector {
       color: on($blue-light);
     }
 
-    * { color: on($blue-light); }
+    * {
+      color: on($blue-light);
+    }
 
     .text-view.view > text > selection {
       background-color: on($blue-light, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: lighten($blue-light, 10%);
@@ -2037,13 +2146,16 @@ styleselector {
       color: on($grey-500);
     }
 
-    * { color: on($grey-500); }
+    * {
+      color: on($grey-500);
+    }
 
     .text-view.view > text > selection {
       background-color: on($grey-500, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: lighten($grey-500, 10%);
@@ -2058,18 +2170,52 @@ styleselector {
       color: white;
     }
 
-    * { color: white; }
+    * {
+      color: white;
+    }
 
     .text-view.view > text > selection {
       background-color: on(#333333, track);
     }
 
     popover {
+
       > arrow,
       > contents {
         background-color: #444444;
         color: white;
       }
+    }
+  }
+}
+
+//
+// Chrome
+//
+
+window.background.chromium {
+  background-color: $base;
+
+  headerbar.header-bar.titlebar {
+    padding: 0 $space-size * 2;
+    background-color: $background;
+    color: $text;
+    border-radius: $window-radius $window-radius 0 0;
+    box-shadow: inset 0 1px 0 rgba(white, 0.1);
+    border: none;
+
+    &:backdrop {
+      background-color: $background;
+      color: $text-disabled;
+      box-shadow: inset 0 1px 0 rgba(white, 0.1);
+      border: none;
+    }
+
+    button.titlebutton {
+      min-height: $small-size;
+      min-width: $small-size;
+      margin: $space-size $space-size / 2;
+      padding: 0;
     }
   }
 }

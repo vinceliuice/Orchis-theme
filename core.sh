@@ -557,10 +557,10 @@ install_theme() {
     done
   done
 
-  if (which xfce4-popup-whiskermenu 2> /dev/null); then
-    echo -e "For the rounded float whiskermenu, you need set your whiskermenu background opacity to 0 !"
+  if has_command xfce4-popup-whiskermenu; then
+    echo -e "\nFor the rounded float whiskermenu, you need set your whiskermenu background opacity to 0 !"
 
-    if (which notify-send 2> /dev/null); then
+    if has_command notify-send; then
       notify-send "You need set your whiskermenu background opacity to 0 !" -i dialog-warning-symbolic
     fi
 

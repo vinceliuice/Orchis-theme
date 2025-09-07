@@ -1,4 +1,3 @@
-
 $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
 .quick-settings {
@@ -23,8 +22,8 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
 .quick-toggle, .quick-menu-toggle {
   border-radius: $circular-radius;
-  min-width: if($compact == 'false', 12em, 10.5em);
-  max-width: if($compact == 'false', 12em, 10.5em);
+  min-width: if($compact =='false', 12em, 10.5em);
+  max-width: if($compact =='false', 12em, 10.5em);
   min-height: $toggle-height;
   border: none;
 }
@@ -55,23 +54,40 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     }
   }
 
-  & > StBoxLayout { spacing: $space-size; }
+  & > StBoxLayout {
+    spacing: $space-size;
+  }
 
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */
-  &.button { padding: 0; }
-  & > StBoxLayout { padding: 0 $space-size * 2; }
-  &:ltr > StBoxLayout { padding-left: $space-size * 2.5; }
-  &:rtl > StBoxLayout { padding-right: $space-size * 2.5; }
+  &.button {
+    padding: 0;
+  }
 
-  .quick-toggle-title { font-weight: bold; }
+  & > StBoxLayout {
+    padding: 0 $space-size * 2;
+  }
+
+  &:ltr > StBoxLayout {
+    padding-left: $space-size * 2.5;
+  }
+
+  &:rtl > StBoxLayout {
+    padding-right: $space-size * 2.5;
+  }
+
+  .quick-toggle-title {
+    font-weight: bold;
+  }
 
   & StBoxLayout > .quick-toggle-subtitle {
     font-weight: normal;
     font-size: 12px;
   }
 
-  .quick-toggle-icon { icon-size: $base-icon-size; }
+  .quick-toggle-icon {
+    icon-size: $base-icon-size;
+  }
 }
 
 .quick-menu-toggle {
@@ -79,13 +95,29 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     min-width: auto;
     max-width: auto;
 
-    &:ltr { border-radius: $circular-radius 0 0 $circular-radius; }
-    &:ltr > StBoxLayout { padding-right: 0; }
-    &:rtl { border-radius: 0 $circular-radius $circular-radius 0; }
-    &:rtr > StBoxLayout { padding-left: 0; }
+    &:ltr {
+      border-radius: $circular-radius 0 0 $circular-radius;
+    }
 
-    &:ltr:last-child { border-radius: $circular-radius; }
-    &:rtl:last-child { border-radius: $circular-radius; }
+    &:ltr > StBoxLayout {
+      padding-right: 0;
+    }
+
+    &:rtl {
+      border-radius: 0 $circular-radius $circular-radius 0;
+    }
+
+    &:rtr > StBoxLayout {
+      padding-left: 0;
+    }
+
+    &:ltr:last-child {
+      border-radius: $circular-radius;
+    }
+
+    &:rtl:last-child {
+      border-radius: $circular-radius;
+    }
   }
 
   .quick-toggle-arrow {
@@ -104,32 +136,42 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     &:checked {
       background-color: $primary !important;
       color: on($primary);
-  
+
       &:hover {
         background-color: mix(on($primary), $primary, 10%) !important;
         color: on($primary);
       }
-  
+
       &:active {
         background-color: mix(on($primary), $primary, 20%) !important;
         color: on($primary);
       }
     }
 
-    &:ltr { border-radius: 0 $circular-radius $circular-radius 0; }
-    &:rtl { border-radius: $circular-radius 0 0 $circular-radius; }
+    &:ltr {
+      border-radius: 0 $circular-radius $circular-radius 0;
+    }
+
+    &:rtl {
+      border-radius: $circular-radius 0 0 $circular-radius;
+    }
   }
 }
 
 .quick-slider {
-  > StBoxLayout { spacing: $space-size; }
+  > StBoxLayout {
+    spacing: $space-size;
+  }
 
   .icon-button {
     padding: $space-size * 1.5;
   }
 
   .slider-bin {
-    &:focus { @include button(focus); }
+    &:focus {
+      @include button(focus);
+    }
+
     min-height: $base-icon-size; // slider size
     padding: $space-size;
     border-radius: $circular-radius;
@@ -145,20 +187,25 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   padding: $space-size * 2;
   margin: $space-size * 2 $space-size * 3.5 0;
 
-  @if $submenu_style == 'true' {
+  @if $submenu_style =='true' {
     background-color: $surface !important;
     color: $text-secondary !important;
-  } @else {
+  }
+
+  @else {
     background-color: white !important;
     color: rgba(black, 0.65) !important;
   }
 
   &:insensitive {
+
     // override insensitive style on submenu
-    @if $submenu_style == 'true' {
+    @if $submenu_style =='true' {
       background-color: $surface !important;
       color: $text-secondary !important;
-    } @else {
+    }
+
+    @else {
       background-color: white !important;
       color: rgba(black, 0.65) !important;
     }
@@ -168,7 +215,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
     padding: $space-size + 2px !important;
     border-radius: $circular-radius !important;
 
-    @if $submenu_style == 'true' {
+    @if $submenu_style =='true' {
       color: $text-secondary !important;
 
       &:focus, &:hover, &.selected {
@@ -184,10 +231,13 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
       &:insensitive {
         color: $text-secondary-disabled !important;
       }
-    } @else {
+    }
+
+    @else {
       color: rgba(black, 0.65) !important;
 
-      StLabel { // FIXME: How to set color of network menu item on right
+      StLabel {
+        // FIXME: How to set color of network menu item on right
         color: rgba(black, 0.65);
       }
 
@@ -213,7 +263,7 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 
     & > :first-child {
       &:ltr {
-        padding-left: $space-size  + $margin-size !important;
+        padding-left: $space-size + $margin-size !important;
       }
 
       &:rtl {
@@ -225,9 +275,11 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
       margin: $space-size $space-size * 3 $space-size 0 !important;
       padding: 0 !important;
 
-      @if $submenu_style == 'true' {
+      @if $submenu_style =='true' {
         background-color: $border !important;
-      } @else {
+      }
+
+      @else {
         background-color: rgba(black, 0.1) !important;
       }
     }
@@ -261,15 +313,24 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 }
 
 .quick-settings-system-item {
-  & > StBoxLayout { spacing: 2 * $space-size; }
+  & > StBoxLayout {
+    spacing: 2 * $space-size;
+  }
 
   .icon-button {
     background-color: rgba($text, 0.06);
 
-    &:hover { background-color: rgba($text, 0.12); }
-    &:active { background-color: rgba($text, 0.24); }
+    &:hover {
+      background-color: rgba($text, 0.12);
+    }
 
-    > StIcon { -st-icon-style: symbolic; }
+    &:active {
+      background-color: rgba($text, 0.24);
+    }
+
+    > StIcon {
+      -st-icon-style: symbolic;
+    }
   }
 
   & .power-item {
@@ -284,11 +345,15 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
 }
 
 .nm-network-item {
-  .wireless-secure-icon { icon-size: $base-icon-size / 2; }
+  .wireless-secure-icon {
+    icon-size: $base-icon-size / 2;
+  }
 }
 
 .bt-device-item {
-  .popup-menu-icon { -st-icon-style: symbolic; }
+  .popup-menu-icon {
+    -st-icon-style: symbolic;
+  }
 }
 
 .bt-menu-placeholder.popup-menu-item {
@@ -298,14 +363,18 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   padding: 2em 4em;
 }
 
-.device-subtitle { color: $text-disabled; }
+.device-subtitle {
+  color: $text-disabled;
+}
 
 .keyboard-brightness-level {
   spacing: $space-size;
   background-color: $surface !important;
   color: $text-secondary !important;
 
-  .button:checked { @extend %default_button; }
+  .button:checked {
+    @extend %default_button;
+  }
 }
 
 // background apps
@@ -314,12 +383,20 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   min-height: $toggle-height;
   background-color: transparent;
 
-  & StIcon { icon-size: $base-icon-size !important; }
+  & StIcon {
+    icon-size: $base-icon-size !important;
+  }
 }
 
 .background-app-item {
-  & .title { @extend %heading; }
-  & .subtitle { @extend %caption; }
+  & .title {
+    @extend %heading;
+  }
+
+  & .subtitle {
+    @extend %caption;
+  }
+
   & .popup-menu-icon {
     icon-size: $large-icon-size !important;
     -st-icon-style: regular !important;
@@ -328,7 +405,27 @@ $toggle-height: $space-size * 4 + $margin-size + $base-icon-size;
   & .close-button {
     @extend .icon-button;
     padding: $space-size;
+
+    @if $submenu_style =='false' {
+      color: rgba(black, 0.65) !important;
+
+      &:focus, &:hover {
+        color: rgba(black, 0.75) !important;
+        background-color: rgba(black, 0.1) !important;
+      }
+
+      &:active {
+        color: rgba(black, 0.75) !important;
+        background-color: rgba(black, 0.2) !important;
+      }
+
+      &:insensitive {
+        color: rgba(black, 0.25) !important;
+      }
+    }
   }
 
-  &.popup-inactive-menu-item { color: $text; }
+  &.popup-inactive-menu-item {
+    color: $text;
+  }
 }
