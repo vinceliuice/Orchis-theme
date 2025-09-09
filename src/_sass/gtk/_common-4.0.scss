@@ -1709,6 +1709,7 @@ treeview.view {
     background-color: $base;
     background-image: image($overlay-checked);
     box-shadow: none;
+    color: $primary;
   }
 
   > rubberband { @extend rubberband; } // to avoid borders being overridden by the previously set props
