@@ -1675,10 +1675,14 @@ pathbar > button {
   padding: 2px;
 
   headerbar & {
-    margin-top: $space-size;
-    margin-bottom: $space-size;
     background-color: on($titlebar, fill);
     color: $titlebar-text-secondary;
+
+    button {
+      margin: 0;
+      min-height: 20px;
+      border-radius: $corner-radius - 2px;
+    }
   }
 
   > button {
