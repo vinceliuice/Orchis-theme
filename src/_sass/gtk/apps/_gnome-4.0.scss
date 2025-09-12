@@ -2219,3 +2219,57 @@ window.background.chromium {
     }
   }
 }
+
+//
+// io.bassi.Amberol
+//
+
+.main-window {
+  background: linear-gradient(127deg, color-mix(in srgb, var(--background-color-0) 55%, transparent), color-mix(in srgb, var(--background-color-0) 0%, transparent) 70.71%),
+    linear-gradient(217deg, color-mix(in srgb, var(--background-color-1) 55%, transparent), color-mix(in srgb, var(--background-color-1) 0%, transparent) 70.71%),
+    linear-gradient(336deg, color-mix(in srgb, var(--background-color-2) 55%, transparent), color-mix(in srgb, var(--background-color-2) 0%, transparent) 70.71%);
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+
+  .content-pane, .sidebar-pane {
+    &, &:backdrop {
+      background-color: transparent;
+    }
+  }
+}
+
+scrollbar,
+scrollbar.overlay-indicator {
+  border: none;
+
+  &,
+  &.dragging,
+  &.hovering {
+    background-color: transparent;
+  }
+}
+
+.main-window > overlay-split-view > widget.background > playlistview {
+  background: linear-gradient(127deg, color-mix(in srgb, var(--background-color-0) 55%, transparent), color-mix(in srgb, var(--background-color-0) 0%, transparent) 70.71%),
+    linear-gradient(217deg, color-mix(in srgb, var(--background-color-1) 55%, transparent), color-mix(in srgb, var(--background-color-1) 0%, transparent) 70.71%),
+    linear-gradient(336deg, color-mix(in srgb, var(--background-color-2) 55%, transparent), color-mix(in srgb, var(--background-color-2) 0%, transparent) 70.71%),
+    var(--window-bg-color);
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+.main-window volume > scale trough highlight {
+  background: color-mix(in srgb, var(--accent-bg-color) var(--dim-opacity), transparent);
+}
+
+.main-window songcover picture.cover {
+  background: linear-gradient(to bottom, var(--background-color-0), var(--background-color-1));
+}
+
+.drag-overlay-status-page {
+  background-color: color-mix(in srgb, var(--accent-bg-color) 50%, transparent);
+  color: var(--accent-fg-color);
+  padding: 32px;
+}
