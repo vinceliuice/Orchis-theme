@@ -1469,7 +1469,8 @@ window.background.csd {
   &.close, &.maximize, &.minimize {
     min-height: $small-size - 6px;
     min-width: $small-size - 6px;
-    padding: 5px;
+    padding: 4px;
+    margin: 2px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
@@ -1480,20 +1481,17 @@ window.background.csd {
     }
 
     &:hover {
-      background-color: $titlebar-fill;
+      background-color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
     }
-
     &:active {
       animation: none;
-      background-color: $titlebar-track;
+      background-color: if($variant == 'light', rgba(black, 0.30), rgba(white, 0.30));
       background-size: 16px 16px;
     }
-
     &:backdrop {
       opacity: 0.5;
-
       &:hover {
-        background-color: $titlebar-fill;
+        background-color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
         opacity: 1;
       }
     }
