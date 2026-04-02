@@ -1509,7 +1509,7 @@ headerbar {
           min-height: 16px;
           min-width: 16px;
           padding: ($small-size - 16px) / 2 0;
-          margin: 0 $space-size - 2px;
+          margin: 0 $space-size;
         } @else {
           min-height: $small-size;
           min-width: $small-size;
@@ -1597,8 +1597,8 @@ window.devel {
   min-height: 16px;
   min-width: 16px;
   padding: ($medium-size - 16px) / 2 0;
-  margin-left: $space-size - 2px;
-  margin-right: $space-size - 2px;
+  margin-left: $space-size;
+  margin-right: $space-size;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
@@ -1682,6 +1682,37 @@ headerbar windowcontrols {
         border: none;
         outline: none;
         box-shadow: none;
+        color: transparent;
+        background-size: 0 0;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+       &.close > image {
+        background-image: -gtk-scaled(
+          url("assets/scalable/close-symbolic-mac.svg"),
+          url("assets/scalable/close-symbolic-mac@2.svg"));
+      }
+
+      &.minimize > image {
+        background-image: -gtk-scaled(
+          url("assets/scalable/minimize-symbolic-mac.svg"),
+          url("assets/scalable/minimize-symbolic-mac@2.svg"));
+      }
+
+      &.maximize > image {
+        background-image: -gtk-scaled(
+          url("assets/scalable/maximize-symbolic-mac.svg"),
+          url("assets/scalable/maximize-symbolic-mac@2.svg"));
+      }
+
+      &.close:hover > image,
+      &.close:active > image,
+      &.minimize:hover > image,
+      &.minimize:active > image,
+      &.maximize:hover > image,
+      &.maximize:active > image {
+        background-size: 16px 16px;
       }
     } @else {
       @extend %standard_window_button;
@@ -1689,13 +1720,14 @@ headerbar windowcontrols {
   }
 }
 @if $mac_style == 'true' {
-  .maximized headerbar windowcontrols button.maximize {
-    &:hover, &:active {
-      background-image: -gtk-scaled(url("assets/scalable/unmaximize-symbolic.svg"),
-                                    url("assets/scalable/unmaximize-symbolic@2.svg"));
+  .maximized headerbar windowcontrols button.maximize:hover > image,
+  .maximized headerbar windowcontrols button.maximize:active > image {
+    background-image: -gtk-scaled(
+      url("assets/scalable/unmaximize-symbolic-mac.svg"),
+      url("assets/scalable/unmaximize-symbolic-mac@2.svg"));
     }
   }
-} @else {
+ @else {
   window.maximized headerbar windowcontrols button:not(.suggested-action):not(.destructive-action).maximize {
     background-image: -gtk-scaled(
       url("assets/scalable/unmaximize-symbolic#{$asset-suffix}.svg"),

@@ -1331,7 +1331,7 @@ searchbar > revealer > box {
       @if $mac_style == 'true' {
         min-height: 16px;
         min-width: 16px;
-        margin: 0 $space-size - 2px;
+        margin: 0 $space-size;
       } @else {
         min-height: $small-size;
         min-width: $small-size;
@@ -1451,7 +1451,7 @@ window.background.csd {
       @if $mac_style == 'true' {
         min-height: 16px;
         min-width: 16px;
-        margin: 0 $space-size - 2px;
+        margin: 0 $space-size;
       } @else {
         min-height: $small-size;
         min-width: $small-size;
@@ -1520,7 +1520,7 @@ window.background.csd {
   min-height: 16px;
   min-width: 16px;
   padding: 0;
-  margin: 0 $space-size - 2px;
+  margin: 0 $space-size;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
@@ -1576,36 +1576,34 @@ window.background.csd {
 %firefox_window_button {
   &.minimize, &.maximize, &.close {
     background-repeat: no-repeat;
-    background-size: 16px 16px;
+    background-size: 0 0;
     background-position: center;
-
     &, &:hover, &:active {
       box-shadow: none;
       color: transparent;
       animation: none;
       transition: $transition;
     }
-  }
 
-  &.minimize { // Window minimize button
     &:hover, &:active {
-      background-image: -gtk-scaled(url("assets/scalable/minimize-symbolic.svg"),
-                                    url("assets/scalable/minimize-symbolic@2.svg"));
+      background-size: 16px 16px;
+    }
+    image {
+      opacity: 0;
     }
   }
 
-  &.maximize { // Window maximize button
-    &:hover, &:active {
-      background-image: -gtk-scaled(url("assets/scalable/maximize-symbolic.svg"),
-                                    url("assets/scalable/maximize-symbolic@2.svg"));
-    }
+  &.minimize {
+    background-image: -gtk-scaled(url("assets/scalable/minimize-symbolic-mac.svg"),
+                                  url("assets/scalable/minimize-symbolic-mac@2.svg"));
   }
-
-  &.close { // Window close button
-    &:hover, &:active {
-      background-image: -gtk-scaled(url("assets/scalable/close-symbolic.svg"),
-                                    url("assets/scalable/close-symbolic@2.svg"));
-    }
+  &.maximize {
+    background-image: -gtk-scaled(url("assets/scalable/maximize-symbolic-mac.svg"),
+                                  url("assets/scalable/maximize-symbolic-mac@2.svg"));
+  }
+  &.close {
+    background-image: -gtk-scaled(url("assets/scalable/close-symbolic-mac.svg"),
+                                  url("assets/scalable/close-symbolic-mac@2.svg"));
   }
 }
 
@@ -1632,7 +1630,7 @@ headerbar {
   }
 
   @if $mac_style == 'true' {
-    .background.csd &.titlebar.default-decoration {
+    .background.csd &.titlebar {
       button.titlebutton {
         @extend %firefox_window_button;
       }
@@ -1640,8 +1638,8 @@ headerbar {
 
     .background.csd.maximized &.titlebar button.titlebutton.maximize {
       &:hover, &:active {
-        background-image: -gtk-scaled(url("assets/scalable/unmaximize-symbolic.svg"),
-                                      url("assets/scalable/unmaximize-symbolic@2.svg"))
+        background-image: -gtk-scaled(url("assets/scalable/unmaximize-symbolic-mac.svg"),
+                                      url("assets/scalable/unmaximize-symbolic-mac@2.svg"))
       }
     }
   } @else {
