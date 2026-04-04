@@ -6,7 +6,15 @@
   background-color: $background;
   color: $text;
 }
+window:backdrop *,
+headerbar:backdrop * {
+  color: $text-disabled;
+  -gtk-icon-effect: dim;
+}
 
+box.dialog-vbox:backdrop {
+  opacity: 0.6;
+}
 dnd {
   color: on($background);
 }

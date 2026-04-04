@@ -35,6 +35,16 @@
   &:focus { outline-color: $overlay-checked; }
 }
 
+window:backdrop *,
+headerbar:backdrop * {
+  color: $text-disabled;
+  -gtk-icon-effect: dim;
+}
+
+box.dialog-vbox:backdrop {
+  opacity: 0.6;
+}
+
 %selected_items {
   color: $text;
   background-color: mix($text, $base, 10%);
@@ -1657,37 +1667,94 @@ headerbar {
  ************/
 %pathbar_button,
 .path-bar.linked:not(.vertical) > button {
-  @extend %button-flat;
+  min-height: 26px;
+  min-width: 16px;
+  padding: 2px 6px;
+  border-right: 0px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  color: #5c616c;
+  outline-color: rgba(92, 97, 108, 0.3);
+  background-image: image(white);
 
-  padding-left: ($medium-size - 24px) / 2;
-  padding-right: ($medium-size - 24px) / 2;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                $primary 0%,
-                                transparent 0%)
-                                0 0 0 / 0 0 0px;
-  border-radius: $corner-radius;
-
-  &:checked {
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $primary 100%,
-                                  transparent 0%)
-                                  0 0 2 / 0 0 2px;
-
-    &, &:disabled { background-color: transparent; }
+  &:last-child {
+  border-right: 1px solid #d9d9d9;
   }
-
   label, image {
     margin-left: 2px;
     margin-right: 2px;
   }
 
-  &.text-button {
-    min-width: 0;
+  &:hover {
+    border-color: #d9d9d9;
+    border-bottom-color: #c2c2c2;
+    background-image: image(whitesmoke);
+    -gtk-icon-effect: highlight;
   }
 
+  &:active, &:checked {
+    border-image: none;
+    border-color: #d9d9d9;
+    background-color: #dbdbdb;
+    background-image: image(#dbdbdb);
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    transition-duration: 50ms;
+    &:disabled { background-color: #dbdbdb; }
+  }
+
+  &:backdrop {
+    color: #aeb0b6;
+    border-color: #d9d9d9;
+    background-image: image(#ffffff);
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    transition: 200ms ease-out;
+    -gtk-icon-effect: none;
+
+    &:active, &:checked {
+      color: #aeb0b6;
+      border-color: #d9d9d9;
+      background-image: image(#eaeaea);
+    }
+
+    &:disabled {
+      color: #d9d9d9;
+      border-color: #d9d9d9;
+      background-image: image(#fdfdfd);
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+
+      &:active, &:checked {
+        color: #d9d9d9;
+        border-color: #d9d9d9;
+        background-image: image(#eaeaea);
+      }
+    }
+  }
+
+  &:disabled {
+    color: #aeb0b6;
+    border-color: #d9d9d9;
+    background-image: image(#fdfdfd);
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+
+    &:active, &:checked {
+      color: #aeb0b6;
+      border-color: #d9d9d9;
+      background-image: image(#eaeaea);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0);
+    }
+  }
+
+  &.text-button { min-width: 0; }
+
   &.slider-button {
-    padding-left: (24px - 16px) / 2;
-    padding-right: (24px - 16px) / 2;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 
