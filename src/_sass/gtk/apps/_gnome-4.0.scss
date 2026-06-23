@@ -257,15 +257,15 @@
               animation: none;
             }
 
-            &, image.sidebar-icon, label.sidebar-label {
+            &, image, label {
               color: $titlebar-text-secondary;
             }
 
-            image.sidebar-icon {
+            image {
               padding-right: $space-size;
             }
 
-            label.sidebar-label {
+            label {
               color: inherit;
               min-height: 54px;
               padding-left: $space-size;
@@ -284,7 +284,7 @@
 
               background-color: rgba($drop_target_color, 0.1);
 
-              &, image.sidebar-icon, label.sidebar-label {
+              &, image, label {
                 color: $drop_target_color;
               }
             }
@@ -296,7 +296,7 @@
             }
 
             &:hover {
-              image.sidebar-icon, label.sidebar-label {
+              image, label {
                 color: $primary;
               }
             }
@@ -306,11 +306,11 @@
               font-weight: 700;
               // font-size: larger;
 
-              image.sidebar-icon {
+              image {
                 color: $primary;
               }
 
-              image.sidebar-icon, label.sidebar-label {
+              image, label {
                 color: $primary;
               }
 
@@ -331,7 +331,7 @@
                   url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
               }
 
-              label.sidebar-label {
+              label {
                 margin-left: $space-size + 4px;
               }
 
@@ -343,7 +343,7 @@
             }
 
             &:disabled {
-              &, image.sidebar-icon, label.sidebar-label {
+              &, image, label {
                 color: $titlebar-text-secondary-disabled;
               }
             }

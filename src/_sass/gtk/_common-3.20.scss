@@ -1227,9 +1227,9 @@ searchbar > revealer > box {
       padding-left: ($medium-size - 24px) / 2;
       padding-right: ($medium-size - 24px) / 2;
     }
-  
+
     &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
-  
+
     &:disabled { color: $titlebar-text-secondary-disabled; }
   }
 
@@ -3535,7 +3535,7 @@ separator.sidebar {
  * File chooser *
  ****************/
 // dim the sidebar icons, see bug #786613 for details on this oddity
-row image.sidebar-icon {
+row image {
   transition: color $duration $ease-out;
   color: $text-secondary;
 
@@ -3563,17 +3563,17 @@ placessidebar.sidebar {
       color: $primary;
       font-weight: 500;
 
-      image.sidebar-icon { color: $primary; }
+      image { color: $primary; }
     }
 
     &:disabled { color: $text-disabled; }
 
-    image.sidebar-icon {
+    image {
       &:dir(ltr) { padding-right: 8px; }
       &:dir(rtl) { padding-left: 8px; }
     }
 
-    label.sidebar-label {
+    label {
       color: inherit;
 
       &:dir(ltr) { padding-right: 2px; }
@@ -3590,7 +3590,7 @@ placessidebar.sidebar {
     &.sidebar-new-bookmark-row {
       color: $primary;
 
-      image.sidebar-icon { color: $primary; }
+      image { color: $primary; }
     }
 
     &:drop(active) {

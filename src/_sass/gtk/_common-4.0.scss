@@ -359,7 +359,7 @@ entry {
         > placeholder {
           color: rgba($e_color, 0.35);
         }
-    
+
         > block-cursor {
           color: $e_color;
           background-color: on($e_color);
@@ -1243,7 +1243,7 @@ headerbar {
     .subtitle,
     .dim-label {
       color: $text-secondary;
-  
+
       &:backdrop { color: $text-disabled; }
     }
 
@@ -3509,7 +3509,7 @@ row {
     > .suffixes {
       border-spacing: $space-size;
     }
-  
+
     > .icon,
     > .prefixes {
       &:dir(ltr) { margin-right: $space-size; }
@@ -4151,7 +4151,7 @@ window.about {
 
   headerbar {
     color: $text-secondary;
-    
+
     &, &:backdrop {
       background-color: transparent;
       box-shadow: inset 0 1px highlight($titlebar);
@@ -4331,12 +4331,12 @@ placessidebar {
 
       &:disabled { color: $text-disabled; }
 
-      image.sidebar-icon {
+      image {
         &:dir(ltr) { padding-right: 8px; }
         &:dir(rtl) { padding-left: 8px; }
       }
 
-      label.sidebar-label {
+      label {
         color: inherit;
 
         &:dir(ltr) { padding-right: 2px; }
@@ -4728,7 +4728,7 @@ window {
     @if $variant == 'light' and $topbar == 'dark' {
       &.about, &.messagedialog, &.message {
         box-shadow: $shadow-z16, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
-  
+
         &:backdrop {
           box-shadow: $shadow-z4, 0 16px 16px 2px transparent, 0 6px 18px 5px transparent;
         }
@@ -4743,7 +4743,7 @@ window {
       border-radius: 0;
       outline: none;
     }
-  
+
     &.maximized,
     &.fullscreen {
       border-radius: 0;

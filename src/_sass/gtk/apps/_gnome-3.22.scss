@@ -51,15 +51,15 @@ $theme_list_radius: $window-radius - $space-size;
               animation: none;
             }
 
-            &, image.sidebar-icon, label.sidebar-label {
+            &, image, label {
               color: $titlebar-text-secondary;
             }
 
-            image.sidebar-icon {
+            image {
               padding-right: $space-size;
             }
 
-            label.sidebar-label {
+            label {
               color: inherit;
               min-height: 54px;
               padding: 0 0 0 $space-size;
@@ -86,7 +86,7 @@ $theme_list_radius: $window-radius - $space-size;
 
               background-color: rgba($drop_target_color, 0.1);
 
-              &, image.sidebar-icon, label.sidebar-label {
+              &, image, label {
                 color: $drop_target_color;
               }
             }
@@ -96,7 +96,7 @@ $theme_list_radius: $window-radius - $space-size;
             }
 
             &:hover {
-              image.sidebar-icon, label.sidebar-label { color: $primary; }
+              image, label { color: $primary; }
             }
 
             &:selected {
@@ -104,7 +104,7 @@ $theme_list_radius: $window-radius - $space-size;
               font-weight: 700;
               // font-size: larger;
 
-              image.sidebar-icon, label.sidebar-label { color: $primary; }
+              image, label { color: $primary; }
 
               > revealer.sidebar-revealer > widget > box {
                 background-color: $base;
@@ -114,7 +114,7 @@ $theme_list_radius: $window-radius - $space-size;
                 border-image-source: -gtk-scaled(url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}.png"),
                                                  url("assets/row-selected#{$blackness-asset-suffix}#{$theme-asset-suffix}@2.png"));
 
-                label.sidebar-label {
+                label {
                   padding-left: 14px;
                 }
               }
@@ -127,7 +127,7 @@ $theme_list_radius: $window-radius - $space-size;
             }
 
             &:disabled {
-              &, image.sidebar-icon, label.sidebar-label {
+              &, image, label {
                 color: $titlebar-text-secondary-disabled;
               }
             }
