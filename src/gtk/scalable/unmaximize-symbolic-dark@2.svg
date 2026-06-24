@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="16"
-   height="16"
-   viewBox="0 0 16 16"
+   width="32"
+   height="32"
    version="1.1"
-   id="svg1"
-   sodipodi:docname="close-symbolic.svg"
+   viewBox="0 0 32 32"
+   id="svg2"
+   sodipodi:docname="unmaximize-symbolic@2.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1" />
+     id="defs2" />
   <sodipodi:namedview
-     id="namedview1"
+     id="namedview2"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -23,16 +23,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="15.71875"
-     inkscape:cx="0.57256461"
-     inkscape:cy="5.2485089"
+     inkscape:cx="15.968191"
+     inkscape:cy="16"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="svg2" />
   <path
-     d="M 4.41,3 3,4.41 6.59,8 3,11.59 4.41,13 8,9.41 11.59,13 13,11.59 9.41,8 13,4.41 11.59,3 8,6.59 Z"
-     style="display:inline;opacity:0.65;fill:#000000"
-     id="path1-8" />
+     id="path2896"
+     style="opacity:0.75;fill:#ffffff;stroke-width:2"
+     d="m 6,10 h 4 v 12 h 12 v 4 H 6 Z M 12,6 H 26 V 20 H 12 Z m 4,4 v 6 h 6 v -6 z" />
 </svg>

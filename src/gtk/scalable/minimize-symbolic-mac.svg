@@ -4,39 +4,40 @@
    height="16"
    viewBox="0 0 16 16"
    version="1.1"
-   sodipodi:docname="unmaximize.svg"
+   id="svg4"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   id="svg831"
+   sodipodi:docname="minimize.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs id="defs6" />
+  <defs
+     id="defs5" />
   <sodipodi:namedview
+     id="namedview6"
      pagecolor="#424242"
      bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
+     borderopacity="1.0"
      inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="23.125"
+     inkscape:cx="5.7513514"
+     inkscape:cy="9.8162162"
      inkscape:window-width="1440"
      inkscape:window-height="742"
-     id="namedview6"
-     showgrid="true"
-     inkscape:zoom="29.580633"
-     inkscape:cx="2.095966"
-     inkscape:cy="10.006547"
      inkscape:window-x="0"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
-     inkscape:pagecheckerboard="0"
-     inkscape:current-layer="svg831" />
-  <path
-     id="path2896"
-     style="opacity:0.65;fill:#000000"
-     d="M 3,5 L 5,5 L 5,11 L 11,11 L 11,13 L 3,13 Z
-        M 6,3 L 13,3 L 13,10 L 6,10 Z
-        M 8,5 L 8,8 L 11,8 L 11,5 Z" />
+     inkscape:current-layer="svg4" />
+  <rect
+     x="4"
+     y="8"
+     width="8"
+     height="1"
+     rx="0.5"
+     ry="0.5"
+     id="rect2932"
+     style="fill:#ffffff" />
 </svg>
