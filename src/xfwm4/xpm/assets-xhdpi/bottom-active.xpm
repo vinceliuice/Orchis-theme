@@ -1,5 +1,5 @@
 /* XPM */
-static char *bottom_active[] = {
+static const char *bottom_active[] = {
 /* columns rows colors chars-per-pixel */
 "32 4 1 1 ",
 "  c #2C2C2C s active_color_2",
