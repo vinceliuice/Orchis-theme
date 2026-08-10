@@ -162,7 +162,8 @@
       }
     }
 
-    #NautilusProgressIndicator {
+    #NautilusProgressIndicator,
+    .nautilus-progress-indicator {
       > menubutton > button {
         listview.view {
           color: $titlebar-text-secondary;
