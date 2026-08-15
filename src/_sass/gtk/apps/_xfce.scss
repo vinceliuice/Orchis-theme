@@ -105,7 +105,7 @@ XfdesktopIconView.view {
 
 window#whiskermenu-window {
   border-radius: 0;
-  background-color: $popover;
+  background-color: transparent;
   border: none;
 
   entry.search {
@@ -116,9 +116,9 @@ window#whiskermenu-window {
 
   // Need to set Whisker menu background opacity less than 100
   > frame > border {
-    border-radius: $window-radius;
+    border-radius: $window-radius $window-radius 0 0;
     padding: $space-size $space-size + 2px $space-size $space-size * 1.5;
-    margin: $space-size;
+    margin: $space-size * 2 $space-size * 2 2px 0;
     border: none;
     background-color: if($opacity == 'solid', $popover, rgba($popover, 0.97));
     box-shadow: $shadow-z4, inset 0 1px highlight($popover);
