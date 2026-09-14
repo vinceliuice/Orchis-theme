@@ -3,10 +3,19 @@
 INKSCAPE="/usr/bin/inkscape"
 OPTIPNG="/usr/bin/optipng"
 
+scale_svg_dimensions() {
+  local file="${1}" scale="${2}" width height
+
+  read -r width height <<< "$(sed -E 's/^<svg[^>]* width="([0-9.]+)" height="([0-9.]+)".*/\1 \2/' "$file")"
+  read -r width height <<< "$(awk -v width="$width" -v height="$height" -v scale="$scale" 'BEGIN { printf "%.15g %.15g", width * scale, height * scale }')"
+  sed -i -E "s/^(<svg[^>]* width=\")[0-9.]+(\" height=\")[0-9.]+/\1${width}\2${height}/" "$file"
+}
+
 svg_main() {
   local color="${1}"
   local style="${2}"
   local screen="${3}"
+  local DPI SCALE
 
   local SRC_FILE="assets-${type}${color}${style}.svg"
   local ASSETS_DIR="${type}/assets${color}${style}${screen}"
@@ -14,12 +23,15 @@ svg_main() {
   case "${screen}" in
     -hdpi)
       DPI='144'
+      SCALE='1.5'
       ;;
     -xhdpi)
       DPI='192'
+      SCALE='2'
       ;;
     *)
       DPI='96'
+      SCALE='1'
       ;;
   esac
 
@@ -36,6 +48,7 @@ svg_main() {
               --export-filename=$ASSETS_DIR/$i.svg $SRC_FILE >/dev/null
     # $OPTIPNG -o7 --quiet "$ASSETS_DIR/$i.svg"
     svgo "$ASSETS_DIR/$i.svg"
+    scale_svg_dimensions "$ASSETS_DIR/$i.svg" "$SCALE"
   fi
 
   (
