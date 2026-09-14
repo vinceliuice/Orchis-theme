@@ -6,7 +6,15 @@
   background-color: $background;
   color: $text;
 }
+window:backdrop *,
+headerbar:backdrop * {
+  color: $text-disabled;
+  -gtk-icon-effect: dim;
+}
 
+box.dialog-vbox:backdrop {
+  opacity: 0.6;
+}
 dnd {
   color: on($background);
 }
@@ -1214,6 +1222,15 @@ headerbar {
   margin: 0;
   background-color: $titlebar;
   border-radius: $window-radius $window-radius 0 0;
+  .maximized &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .fullscreen & {
+    border-radius: 0;
+  }
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1500,7 +1517,7 @@ headerbar {
           min-height: 16px;
           min-width: 16px;
           padding: ($small-size - 16px) / 2 0;
-          margin: 0 $space-size - 2px;
+          margin: 0 $space-size;
         } @else {
           min-height: $small-size;
           min-width: $small-size;
@@ -1525,16 +1542,71 @@ window.devel {
   }
 }
 
-//
 // Window buttons
 //
+%standard_window_button {
+  &.close, &.maximize, &.minimize {
+    min-height: $small-size - 6px;
+    min-width: $small-size - 6px;
+    padding: 2px;
+    margin: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    color: $titlebar-text;
+
+    > image {
+      opacity: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:hover {
+      background-color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
+    }
+
+    &:active {
+      animation: none;
+      background-color: if($variant == 'light', rgba(black, 0.30), rgba(white, 0.30));
+      background-size: 16px 16px;
+    }
+
+    &:backdrop {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: if($variant == 'light', rgba(black, 0.15), rgba(white, 0.15));
+        opacity: 1;
+      }
+    }
+  }
+
+  &.close {
+    background-image: -gtk-scaled(
+      url("assets/scalable/close-symbolic#{$asset-suffix}.svg"),
+      url("assets/scalable/close-symbolic#{$asset-suffix}@2.svg"));
+  }
+
+  &.minimize {
+    background-image: -gtk-scaled(
+      url("assets/scalable/minimize-symbolic#{$asset-suffix}.svg"),
+      url("assets/scalable/minimize-symbolic#{$asset-suffix}@2.svg"));
+  }
+
+  &.maximize {
+    background-image: -gtk-scaled(
+      url("assets/scalable/maximize-symbolic#{$asset-suffix}.svg"),
+      url("assets/scalable/maximize-symbolic#{$asset-suffix}@2.svg"));
+  }
+}
 
 %mac_window_button {
   min-height: 16px;
   min-width: 16px;
   padding: ($medium-size - 16px) / 2 0;
-  margin-left: $space-size - 2px;
-  margin-right: $space-size - 2px;
+  margin-left: $space-size;
+  margin-right: $space-size;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
@@ -1590,7 +1662,7 @@ window.devel {
 $window-space: if($mac_style == 'true', $space-size * 1.5, $space-size);
 
 headerbar windowcontrols {
-  border-spacing: $space-size;
+  border-spacing: 2px;
 
   @if $mac_style == 'true' {
     padding: 0 $space-size;
@@ -1618,17 +1690,56 @@ headerbar windowcontrols {
         border: none;
         outline: none;
         box-shadow: none;
+        color: transparent;
+        background-size: 0 0;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+       &.close > image {
+        background-image: -gtk-scaled(
+          url("assets/scalable/close-symbolic-mac.svg"),
+          url("assets/scalable/close-symbolic-mac@2.svg"));
+      }
+
+      &.minimize > image {
+        background-image: -gtk-scaled(
+          url("assets/scalable/minimize-symbolic-mac.svg"),
+          url("assets/scalable/minimize-symbolic-mac@2.svg"));
+      }
+
+      &.maximize > image {
+        background-image: -gtk-scaled(
+          url("assets/scalable/maximize-symbolic-mac.svg"),
+          url("assets/scalable/maximize-symbolic-mac@2.svg"));
+      }
+
+      &.close:hover > image,
+      &.close:active > image,
+      &.minimize:hover > image,
+      &.minimize:active > image,
+      &.maximize:hover > image,
+      &.maximize:active > image {
+        background-size: 16px 16px;
       }
     } @else {
-      > image {
-        padding: 0;
-        border: none;
-        outline: none;
-        box-shadow: none;
-        background-color: transparent;
-        background-image: none;
-      }
+      @extend %standard_window_button;
     }
+  }
+}
+@if $mac_style == 'true' {
+  .maximized headerbar windowcontrols button.maximize:hover > image,
+  .maximized headerbar windowcontrols button.maximize:active > image {
+    background-image: -gtk-scaled(
+      url("assets/scalable/unmaximize-symbolic-mac.svg"),
+      url("assets/scalable/unmaximize-symbolic-mac@2.svg"));
+    }
+  }
+ @else {
+  window.maximized headerbar windowcontrols button:not(.suggested-action):not(.destructive-action).maximize {
+    background-image: -gtk-scaled(
+      url("assets/scalable/unmaximize-symbolic#{$asset-suffix}.svg"),
+      url("assets/scalable/unmaximize-symbolic#{$asset-suffix}@2.svg"));
   }
 }
 
