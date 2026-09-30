@@ -21,6 +21,7 @@ OPTIONS:
 
   -l, --libadwaita        Link installed Orchis gtk-4.0 theme to config folder for all libadwaita app use Orchis theme
   -f, --fixed             Fixed accent(blue) color for gnome-shell >= 47 libadwaita theme
+  --no-gtk2               Skip the GTK2 theme (it needs gtk-engine-murrine)
 
   --tweaks                Specify versions for tweaks [solid|compact|black|primary|macos|submenu|(nord/dracula)] (Options can mix)
                           1. solid              No transparency panel variant
@@ -84,6 +85,10 @@ while [[ "$#" -gt 0 ]]; do
       ;;
     -f|--fixed)
       fixed="true"
+      shift
+      ;;
+    --no-gtk2)
+      no_gtk2="true"
       shift
       ;;
     --round)
