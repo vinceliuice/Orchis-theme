@@ -134,7 +134,7 @@ tab[selected]:-moz-window-inactive {
 }
 
 /* If tab close button is not present, don't force favicon to the center */
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-icon-stack {
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected]) .tab-icon-stack {
 	margin-left: 0 !important;
 }
 
@@ -205,7 +205,7 @@ tab[selected]:-moz-window-inactive {
 }
 
 /* Active tab */
-.tab-background[selected=true] {
+.tab-background[selected] {
 	background-color: var(--gnome-tabbar-tab-active-background) !important;
 	background-image: none !important;
 	border-radius: 12px 12px 0 0 !important;
@@ -213,7 +213,7 @@ tab[selected]:-moz-window-inactive {
 	border-image: none !important;
 	transition: all .2s ease;
 }
-.tab-background[selected=true]:-moz-window-inactive {
+.tab-background[selected]:-moz-window-inactive {
 	background-color: var(--gnome-inactive-tabbar-tab-active-background) !important;
 	border-radius: 12px 12px 0 0 !important;
 	border: none !important;
@@ -222,7 +222,7 @@ tab[selected]:-moz-window-inactive {
 }
 
 /* Tab hover */
-:root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background[selected=true] {
+:root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background[selected] {
 	background-color: var(--gnome-tabbar-tab-active-hover-background) !important;
 	border-radius: 12px 12px 0 0 !important;
 	border: none !important;
@@ -230,9 +230,9 @@ tab[selected]:-moz-window-inactive {
 	border-top: none !important;
 	transition: all .2s ease;
 }
-.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
-#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
-#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab:hover > .tab-stack > .tab-background > .tab-line:not([selected=true]) {
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected]),
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected]),
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab:hover > .tab-stack > .tab-background > .tab-line:not([selected]) {
 	background-color: var(--gnome-tabbar-tab-hover-background) !important;
 	border-radius: 12px 12px 0 0 !important;
 	border: none !important;
