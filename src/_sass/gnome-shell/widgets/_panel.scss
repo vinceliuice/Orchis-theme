@@ -10,7 +10,7 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
   font-feature-settings: "tnum";
   padding: 0 !important;
   transition-duration: $panel_transition_duration;
-  height: $panel_height;
+  min-height: $panel_height;
   border: none;
   box-shadow: none;
 
@@ -24,8 +24,8 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
     margin: 0;
     border-radius: 0;
   } @else {
-    margin: $space-size / 2;
-    border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
+    margin: 0;
+    border-radius: 0;
   }
 
   // transparent panel on lock & login screens
@@ -96,7 +96,7 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
     -minimum-hpadding: $panel_button_hpadding;
     transition-duration: 150ms;
     border: $space-size / 2 solid transparent;
-    border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
+    border-radius: 0;
     margin: 0;
 
     &.clock-display {
@@ -110,7 +110,7 @@ $panel_button_hpadding: ($panel_height - $base-icon-size) / 2;
       }
 
       .clock {
-        border-radius: if($corner_style == 'circular', $circular-radius, $material-radius + $space-size / 2);
+        border-radius: 0;
         padding: 0 $space-size * 2 !important;
       }
     }
