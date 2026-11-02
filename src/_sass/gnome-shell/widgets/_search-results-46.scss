@@ -38,7 +38,7 @@
   border-radius: $material-radius;
   background-color: transparent;
   color: on(dark, secondary);
-
+  text-shadow: none;
   &:focus,
   &:hover,
   &:selected {
@@ -108,11 +108,14 @@
   // list item title (with leading icon)
   .list-search-result-title {
     spacing: $space-size * 2;
-    // font-weight: bold;
+    color: on(dark);
+    text-shadow: none;
+    font-weight: bold;
   }
 
   // list item description
   .list-search-result-description {
-    color: on(dark, disabled);
+    color: on(dark, secondary);
+    text-shadow: none;
   }
 }
