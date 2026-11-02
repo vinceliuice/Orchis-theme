@@ -373,10 +373,12 @@
 
 $dash_to_panel_item_radius: 5px;
 
-.dashtopanelMainPanel {
+.dashtopanelMainPanel,
+.zorintaskbarMainPanel {
   border-radius: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
+  overflow: hidden !important;
 
   .dash-background {
     background-color: $panel;
@@ -387,38 +389,58 @@ $dash_to_panel_item_radius: 5px;
 
   .overview-tile {
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 4px 2px !important;
     border: none !important;
+    border-radius: 4px !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-radius: 4px !important;
+      background-color: on($panel, divider) !important;
+    }
 
     .overview-icon {
       padding: 0 !important;
       margin: 0 !important;
       border: none !important;
+      border-radius: 4px !important;
     }
+  }
+
+  .dtp-container {
+    border-radius: 4px !important;
   }
 
   .show-apps {
     color: on($panel) !important;
-    border-radius: 0 !important;
+    border-radius: 4px !important;
+    margin: 4px 2px !important;
 
     &:hover {
       background: on($panel, divider) !important;
+      border-radius: 4px !important;
     }
 
     &:active {
       background: on($panel, track) !important;
+      border-radius: 4px !important;
     }
   }
 
   .panel-button {
     &, &.clock-display .clock {
-      border-radius: $dash_to_panel_item_radius + $space-size / 2 !important;
-      margin: 0 !important;
+      border-radius: 4px !important;
+      margin: 4px 2px !important;
+    }
+
+    &:hover {
+      border-radius: 4px !important;
     }
   }
 
   .arcmenu-menu-button {
-    border-radius: $dash_to_panel_item_radius !important;
+    border-radius: 4px !important;
     padding: 2px 4px !important;
   }
 }
@@ -431,7 +453,8 @@ $dash_to_panel_item_radius: 5px;
 
 $dash_to_panel_menu_radius: 12px;
 
-.dashtopanelSecondaryMenu {
+.dashtopanelSecondaryMenu,
+.zorintaskbarSecondaryMenu {
 	border-radius: $dash_to_panel_menu_radius !important;
 }
 
@@ -446,7 +469,8 @@ $dash_to_panel_menu_radius: 12px;
   // }
 }
 
-#dashtopanelPreviewScrollview {
+#dashtopanelPreviewScrollview,
+#zorintaskbarPreviewScrollview {
   padding: $dash_to_panel_menu_radius 0 !important;
   border-radius: $dash_to_panel_menu_radius !important;
   background: #0c0c0c !important;
